@@ -2,12 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2014-07-08T06:57:21Z</lastmod>
+    <lastmod>2014-07-16T23:45:54Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://bundler.io/404.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/01/01/whats-new-in-v-1-5.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/compatibility.html</loc>
