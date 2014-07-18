@@ -8,6 +8,7 @@
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
     <div id='body'>
@@ -22,14 +23,27 @@
               <div class='description'>
                 Update the current environment
               </div>
-              <pre class="highlight plaintext">$ bundle update [GEM] [--local] [--source=SOURCE]</pre>
+              <pre class="highlight plaintext">$ bundle update [GEM] [--full-index] [--group=GROUP] [--jobs=NUMBER] [--local] [--quiet] [--source=SOURCE]</pre>
               <div class='notes'>
                 <p>
                   Options:
                 </p>
                 <p>
+                  <code>--full-index</code>: Use the rubygems modern index instead of
+                  the API endpoint
+                </p>
+                <p>
+                  <code>--group</code>: Update one or more gem groups
+                </p>
+                <p>
+                  <code>--jobs</code>: Specify the number of jobs to run in parallel
+                </p>
+                <p>
                   <code>--local</code>: Do not attempt to fetch gems remotely and use
                   the gem cache instead
+                </p>
+                <p>
+                  <code>--quiet</code>: Only output warnings and errors.
                 </p>
                 <p>
                   <code>--source</code>: Update a specific source (and all gems
@@ -219,6 +233,9 @@
             <li>
               <a href="/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html">The rumors of Bundler's death have been greatly exaggerated</a>
             </li>
+            <div class='buttons'>
+              <a href="/blog/">All posts</a>
+            </div>
           </ul>
           <h2>Bundler commands</h2>
           <ul>

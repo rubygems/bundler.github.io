@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2014-07-16T23:59:48Z</lastmod>
+    <lastmod>2014-07-18T06:20:02Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -19,7 +19,7 @@
     <loc>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog.html</loc>
+    <loc>http://bundler.io/blog/</loc>
   </url>
   <url>
     <loc>http://bundler.io/compatibility.html</loc>
@@ -29,9 +29,6 @@
   </url>
   <url>
     <loc>http://bundler.io/contributors.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/</loc>
   </url>
   <url>
     <loc>http://bundler.io/issues.html</loc>
@@ -595,6 +592,9 @@
     <loc>http://bundler.io/v1.6/groups.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.6/</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.6/rails23.html</loc>
   </url>
   <url>
@@ -619,6 +619,9 @@
     <loc>http://bundler.io/v1.6/whats_new.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/bundle_binstubs.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/bundle_check.html</loc>
   </url>
   <url>
@@ -641,6 +644,9 @@
   </url>
   <url>
     <loc>http://bundler.io/bundle_init.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/bundle_inject.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_install.html</loc>
@@ -700,6 +706,9 @@
     <loc>http://bundler.io/groups.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/rails23.html</loc>
   </url>
   <url>
@@ -722,5 +731,29 @@
   </url>
   <url>
     <loc>http://bundler.io/whats_new.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/07/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/07/16/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/12/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/12/07/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/10/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2013/10/12/</loc>
   </url>
 </urlset>

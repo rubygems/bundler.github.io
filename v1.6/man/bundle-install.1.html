@@ -149,8 +149,9 @@ It takes a space separated list of groups to install. It creates a
 <code>bundle</code> directory and installs the bundle there. It also generates
 a <code>bundle/bundler/setup.rb</code> file to replace Bundler's own setup.</p></dd>
 <dt><code>--trust-policy=[&lt;policy>]</code></dt><dd><p>Apply the Rubygems security policy named <var>policy</var>, where policy is one of
-HighSecurity, MediumSecurity, LowSecurity, or NoSecurity. For more detail,
-see the Rubygems signing documentation, linked below in <a href="#SEE-ALSO" title="SEE ALSO" data-bare-link="true">SEE ALSO</a>.</p></dd>
+HighSecurity, MediumSecurity, LowSecurity, AlmostNoSecurity, or NoSecurity.
+For more detail, see the Rubygems signing documentation, linked below in
+<a href="#SEE-ALSO" title="SEE ALSO" data-bare-link="true">SEE ALSO</a>.</p></dd>
 <dt><code>--jobs=[&lt;size>]</code></dt><dd><p>Install gems parallely by starting <var>size</var> number of parallel workers.</p></dd>
 <dt><code>--retry[&lt;tries]</code></dt><dd><p>Retries failed network or git requests <var>tries</var> times.</p></dd>
 <dt><code>--no-cache</code></dt><dd><p>Do not update the cache in <code>vendor/cache</code> with the newly bundled gems. This
@@ -418,8 +419,8 @@ does not work, run <a href="bundle-update.1.html">bundle update(1)</a>.</p>
 <h2 id="SEE-ALSO">SEE ALSO</h2>
 
 <ul>
-<li>Gem install docs: http://docs.rubygems.org/read/chapter/2</li>
-<li>Rubygems signing docs: http://docs.rubygems.org/read/chapter/21</li>
+<li>Gem install docs: http://guides.rubygems.org/rubygems-basics/#installing-gems</li>
+<li>Rubygems signing docs: http://guides.rubygems.org/security/</li>
 </ul>
 
 

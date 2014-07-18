@@ -8,6 +8,7 @@
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
     <div id='body'>
@@ -22,7 +23,7 @@
               <div class='description'>
                 Make sure all dependencies in your Gemfile are available to your application.
               </div>
-              <pre class="highlight plaintext">$ bundle install [--binstubs=PATH] [--clean] [--deployment] [--frozen]&#x000A;                 [--full-index] [--gemfile=FILE] [--local] [--no-cache]&#x000A;                 [--no-prune] [--path=PATH] [--quiet] [--shebang=STRING]&#x000A;                 [--standalone=ARRAY] [--system] [--without=GROUP GROUP]</pre>
+              <pre class="highlight plaintext">$ bundle install [--binstubs=PATH] [--clean] [--deployment] [--frozen]&#x000A;                 [--full-index] [--gemfile=FILE] [--local] [--no-cache]&#x000A;                 [--no-prune] [--path=PATH] [--quiet] [--shebang=STRING]&#x000A;                 [--standalone=ARRAY] [--system] [--without=GROUP GROUP]&#x000A;                 [--trust-policy=SECURITYLEVEL]</pre>
               <div class='notes'>
                 <p>
                   Options:
@@ -46,6 +47,9 @@
                   <code>--gemfile</code>: Use the specified gemfile instead of Gemfile
                 </p>
                 <p>
+                  <code>--jobs</code>: Install gems using parallel workers.
+                </p>
+                <p>
                   <code>--local</code>: Do not attempt to fetch gems remotely and use the gem cache instead
                 </p>
                 <p>
@@ -61,6 +65,9 @@
                   <code>--quiet</code>: Only output warnings and errors.
                 </p>
                 <p>
+                  <code>--retry</code>: Retry network and git requests that have failed.
+                </p>
+                <p>
                   <code>--shebang</code>: Specify a different shebang executable name than the default (usually 'ruby')
                 </p>
                 <p>
@@ -70,13 +77,10 @@
                   <code>--system</code>: Install to the system location ($BUNDLE_PATH or $GEM_HOME) even if the bundle was previously installed somewhere else for this application
                 </p>
                 <p>
+                  <code>--trust-policy</code>: Sets level of security when dealing with signed gems. Accepts `LowSecurity`, `MediumSecurity` and `HighSecurity` as values.
+                </p>
+                <p>
                   <code>--without</code>: Exclude gems that are part of the specified named group.
-                </p>
-                <p>
-                  <code>--jobs</code>: Install gems using parallel workers.
-                </p>
-                <p>
-                  <code>--retry</code>: Retry network and git requests that have failed.
                 </p>
               </div>
               <div class='notes'>
@@ -188,6 +192,9 @@
             <li>
               <a href="/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html">The rumors of Bundler's death have been greatly exaggerated</a>
             </li>
+            <div class='buttons'>
+              <a href="/blog/">All posts</a>
+            </div>
           </ul>
           <h2>Bundler commands</h2>
           <ul>

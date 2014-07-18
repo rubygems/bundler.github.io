@@ -8,6 +8,7 @@
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
     <div id='body'>
@@ -22,13 +23,17 @@
               <div class='description'>
                 Cleans up unused gems in your bundler directory
               </div>
-              <pre class="highlight plaintext">$ bundle clean [--force]</pre>
+              <pre class="highlight plaintext">$ bundle clean [--dry-run] [--force]</pre>
               <div class='notes'>
                 <p>
                   Options:
                 </p>
                 <p>
-                  <code>--force</code>: forces clean even if --path is set
+                  <code>--dry-run</code>: Only print out changes, do not actually clean
+                  gems
+                </p>
+                <p>
+                  <code>--force</code>: Forces clean even if --path is set
                 </p>
               </div>
             </div>
@@ -66,6 +71,9 @@
             <li>
               <a href="/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html">The rumors of Bundler's death have been greatly exaggerated</a>
             </li>
+            <div class='buttons'>
+              <a href="/blog/">All posts</a>
+            </div>
           </ul>
           <h2>Bundler commands</h2>
           <ul>

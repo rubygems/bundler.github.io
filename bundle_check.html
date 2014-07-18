@@ -8,6 +8,7 @@
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
     <div id='body'>
@@ -22,16 +23,21 @@
               <div class='description'>
                 Checks if the dependencies listed in Gemfile are satisfied by currently installed gems
               </div>
-              <pre class="highlight plaintext">$ bundle check [--gemfile=FILE] [--path=PATH]</pre>
+              <pre class="highlight plaintext">$ bundle check [--dry-run] [--gemfile=FILE] [--path=PATH]</pre>
               <div class='notes'>
                 <p>
                   Options:
                 </p>
                 <p>
+                  <code>--dry-run</code>: Locks the Gemfile.
+                </p>
+                <p>
                   <code>--gemfile</code>: Use the specified gemfile instead of Gemfile.
                 </p>
                 <p>
-                  <code>--path</code>: Specify a different path than the system default ($BUNDLE_PATH or $GEM_HOME). Bundler will remember this value for future installs on this machine.
+                  <code>--path</code>: Specify a different path than the system default
+                  ($BUNDLE_PATH or $GEM_HOME). Bundler will remember this value for future
+                  installs on this machine.
                 </p>
               </div>
               <div class='description'>
@@ -74,6 +80,9 @@
             <li>
               <a href="/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html">The rumors of Bundler's death have been greatly exaggerated</a>
             </li>
+            <div class='buttons'>
+              <a href="/blog/">All posts</a>
+            </div>
           </ul>
           <h2>Bundler commands</h2>
           <ul>

@@ -8,6 +8,7 @@
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
   <body>
     <div id='body'>
@@ -22,13 +23,24 @@
               <div class='description'>
                 Creates a skeleton for creating a rubygem
               </div>
-              <pre class="highlight plaintext">$ bundle gem GEM [--bin or -b]</pre>
+              <pre class="highlight plaintext">$ bundle gem GEM [--bin or -b] [--test=TESTFRAMEWORK] [--edit=TEXTEDITOR] [--ext]</pre>
               <div class='notes'>
                 <p>
                   Options:
                 </p>
                 <p>
                   <code>--bin or -b</code>: Generate a binary for your library.
+                </p>
+                <p>
+                  <code>--edit</code>: Opens generated gemspec with specified or default
+                  text editor set BUNDLER_EDITOR, EDITOR or VISUAL env variables.
+                </p>
+                <p>
+                  <code>--ext</code>: Generate a skeleton for a C-extension.
+                </p>
+                <p>
+                  <code>--test</code>: Generate a test directory for your library:
+                  'rspec' is the default, but 'minitest' is also supported.
                 </p>
               </div>
             </div>
@@ -66,6 +78,9 @@
             <li>
               <a href="/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html">The rumors of Bundler's death have been greatly exaggerated</a>
             </li>
+            <div class='buttons'>
+              <a href="/blog/">All posts</a>
+            </div>
           </ul>
           <h2>Bundler commands</h2>
           <ul>
