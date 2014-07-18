@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2014-07-18T06:20:02Z</lastmod>
+    <lastmod>2014-07-18T06:29:10Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -479,6 +479,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.5/groups.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.5/rails23.html</loc>
