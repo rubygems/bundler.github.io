@@ -89,7 +89,11 @@
                  [--jobs=SIZE]
                  [--retry=TRIES]
                  [--no-cache]
-                 [--quiet]</p>
+                 [--quiet]
+                 [--clean]
+                 [--full-index]
+                 [--no-prune]
+                 [--shebang]</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
@@ -145,8 +149,9 @@ It takes a space separated list of groups to install. It creates a
 <code>bundle</code> directory and installs the bundle there. It also generates
 a <code>bundle/bundler/setup.rb</code> file to replace Bundler's own setup.</p></dd>
 <dt><code>--trust-policy=[&lt;policy>]</code></dt><dd><p>Apply the Rubygems security policy named <var>policy</var>, where policy is one of
-HighSecurity, MediumSecurity, LowSecurity, or NoSecurity. For more detail,
-see the Rubygems signing documentation, linked below in <a href="#SEE-ALSO" title="SEE ALSO" data-bare-link="true">SEE ALSO</a>.</p></dd>
+HighSecurity, MediumSecurity, LowSecurity, AlmostNoSecurity, or NoSecurity.
+For more detail, see the Rubygems signing documentation, linked below in
+<a href="#SEE-ALSO" title="SEE ALSO" data-bare-link="true">SEE ALSO</a>.</p></dd>
 <dt><code>--jobs=[&lt;size>]</code></dt><dd><p>Install gems parallely by starting <var>size</var> number of parallel workers.</p></dd>
 <dt><code>--retry[&lt;tries]</code></dt><dd><p>Retries failed network or git requests <var>tries</var> times.</p></dd>
 <dt><code>--no-cache</code></dt><dd><p>Do not update the cache in <code>vendor/cache</code> with the newly bundled gems. This
@@ -154,6 +159,9 @@ does not remove any existing cached gems, only stops the newly bundled gems
 from being cached during the install.</p></dd>
 <dt class="flush"><code>--quiet</code></dt><dd><p>Do not print progress information to stdout. Instead, communicate the
 success of the install operation via exit status code.</p></dd>
+<dt class="flush"><code>--clean</code></dt><dd><p>Run bundle clean automatically after install.</p></dd>
+<dt><code>--full-index</code></dt><dd><p>Use the rubygems modern index instead of the API endpoint.</p></dd>
+<dt><code>--no-prune</code></dt><dd><p>Don't remove stale gems from the cache.</p></dd>
 </dl>
 
 
@@ -411,15 +419,15 @@ does not work, run <a href="bundle-update.1.html">bundle update(1)</a>.</p>
 <h2 id="SEE-ALSO">SEE ALSO</h2>
 
 <ul>
-<li>Gem install docs: http://docs.rubygems.org/read/chapter/2</li>
-<li>Rubygems signing docs: http://docs.rubygems.org/read/chapter/21</li>
+<li>Gem install docs: http://guides.rubygems.org/rubygems-basics/#installing-gems</li>
+<li>Rubygems signing docs: http://guides.rubygems.org/security/</li>
 </ul>
 
 
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>July 2014</li>
+    <li class='tc'>August 2014</li>
     <li class='tr'>bundle-install(1)</li>
   </ol>
 

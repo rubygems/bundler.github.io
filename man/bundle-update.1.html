@@ -76,7 +76,7 @@
 
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
-<p><code>bundle update</code> <var>*gems</var> [--source=NAME]</p>
+<p><code>bundle update</code> <var>*gems</var> [--source=NAME] [--local]</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
@@ -91,9 +91,10 @@ gem.</p>
 <h2 id="OPTIONS">OPTIONS</h2>
 
 <dl>
-<dt><code>--source=&lt;name></code></dt><dd>The name of a <code>:git</code> or <code>:path</code> source used in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. For
+<dt><code>--source=&lt;name></code></dt><dd><p>The name of a <code>:git</code> or <code>:path</code> source used in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. For
 instance, with a <code>:git</code> source of <code>http://github.com/rails/rails.git</code>,
-you would call <code>bundle update --source rails</code></dd>
+you would call <code>bundle update --source rails</code></p></dd>
+<dt class="flush"><code>--local</code></dt><dd><p>Do not attempt to fetch gems remotely and use the gem cache instead.</p></dd>
 </dl>
 
 
@@ -253,7 +254,7 @@ still match the gems listed in the <a class="man-ref" href="gemfile.5.html">Gemf
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>July 2014</li>
+    <li class='tc'>August 2014</li>
     <li class='tr'>bundle-update(1)</li>
   </ol>
 

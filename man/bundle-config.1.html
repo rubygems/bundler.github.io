@@ -158,11 +158,6 @@ is used.</dd>
 <dt><code>without</code> (<code>BUNDLE_WITHOUT</code>)</dt><dd>A <code>:</code>-separated list of groups whose gems bundler should not install</dd>
 <dt><code>bin</code> (<code>BUNDLE_BIN</code>)</dt><dd>Install executables from gems in the bundle to the specified directory.
 Defaults to <code>false</code>.</dd>
-<dt><code>gemfile</code> (<code>BUNDLE_GEMFILE</code>)</dt><dd>The name of the file that bundler should use as the <code>Gemfile</code>. This location
-of this file also sets the root of the project, which is used to resolve
-relative paths in the <code>Gemfile</code>, among other things. By default, bundler
-will search up from the current working directory until it finds a
-<code>Gemfile</code>.</dd>
 <dt><code>ssl_ca_cert</code> (<code>BUNDLE_SSL_CA_CERT</code>)</dt><dd>Path to a designated CA certificate file or folder containing multiple
 certificates for trusted CAs in PEM format.</dd>
 <dt><code>ssl_client_cert</code> (<code>BUNDLE_SSL_CLIENT_CERT</code>)</dt><dd>Path to a designated file containing a X.509 client certificate
@@ -176,6 +171,20 @@ flag to the <a href="bundle-install.1.html">bundle install(1)</a> command.</p>
 <p>You can set them globally either via environment variables or <code>bundle config</code>,
 whichever is preferable for your setup. If you use both, environment variables
 will take preference over global settings.</p>
+
+<p>An additional setting is available only as an environment variable:</p>
+
+<dl>
+<dt><code>BUNDLE_GEMFILE</code></dt><dd>The name of the file that bundler should use as the <code>Gemfile</code>. This location
+of this file also sets the root of the project, which is used to resolve
+relative paths in the <code>Gemfile</code>, among other things. By default, bundler
+will search up from the current working directory until it finds a
+<code>Gemfile</code>.</dd>
+</dl>
+
+
+<p>Bundler will ignore any <code>BUNDLE_GEMFILE</code> entries in local or global
+configuration files.</p>
 
 <h2 id="LOCAL-GIT-REPOS">LOCAL GIT REPOS</h2>
 
@@ -224,7 +233,7 @@ mirror to fetch gems.</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>July 2014</li>
+    <li class='tc'>August 2014</li>
     <li class='tr'>bundle-config(1)</li>
   </ol>
 
