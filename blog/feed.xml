@@ -5,16 +5,63 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2014-07-16T23:29:00Z</updated>
+  <updated>2014-08-14T01:22:00Z</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
+    <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
+    <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
+    <published>2014-08-14T01:22:00Z</published>
+    <updated>2014-08-13T18:33:12-07:00</updated>
+    <author>
+      <name>André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Versions Affected&lt;/strong&gt;: All versions &amp;lt; 1.7.0&lt;br /&gt;
+&lt;strong&gt;Not Affected&lt;/strong&gt;: Any Gemfile with one or zero sources&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fixed Versions&lt;/strong&gt;: 1.7.0&lt;br /&gt;
+&lt;strong&gt;Releases&lt;/strong&gt;: 1.7.0&lt;/p&gt;
+
+&lt;p&gt;Bundler 1.7 is a security-only release to address CVE-2013-0334, a vulnerability where a gem might be installed from an unintended source server, particularly while using both rubygems.org and gems.github.com.&lt;/p&gt;
+
+&lt;h3 id="impact"&gt;Impact&lt;/h3&gt;
+
+&lt;p&gt;Any Gemfile with multiple top-level &lt;code&gt;source&lt;/code&gt; lines cannot reliably control the gem server that a particular gem is fetched from. As a result, Bundler might install the wrong gem if more than one source provides a gem with the same name.&lt;/p&gt;
+
+&lt;p&gt;This is especially possible in the case of Github's legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on Rubygems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
+
+&lt;p&gt;To mitigate this, the Bundler and Rubygems.org teams worked together to copy almost every gem hosted on gems.github.com to rubygems.org, reducing the number of gems that can be used for such an attack.&lt;/p&gt;
+
+&lt;h3 id="resolution"&gt;Resolution&lt;/h3&gt;
+
+&lt;p&gt;To resolve this issue, upgrade to Bundler 1.7 by running &lt;code&gt;gem install bundler&lt;/code&gt;. The next time you run &lt;code&gt;bundle install&lt;/code&gt; for any Gemfile that contains multiple sources, each gem available from multiple sources will print a warning.&lt;/p&gt;
+
+&lt;p&gt;For every warning printed, edit the Gemfile to either specify a &lt;code&gt;:source&lt;/code&gt; option for that gem, or move the &lt;code&gt;gem&lt;/code&gt; line into a block that is passed to a &lt;code&gt;source&lt;/code&gt; method call.&lt;/p&gt;
+
+&lt;p&gt;For detailed information about the changes to how sources are handled in Bundler version 1.7, see the &lt;a href="http://bundler.io/v1.7/whats_new.html"&gt;release announcement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="workarounds"&gt;Workarounds&lt;/h3&gt;
+
+&lt;p&gt;If you are unable to upgrade to Bundler 1.7, it is possible to work around the issue by removing all but one &lt;code&gt;source&lt;/code&gt; line from your Gemfile. Gems from other sources must be installed via the &lt;code&gt;:git&lt;/code&gt; option, which is not susceptible to this issue, or unpacked into the application repository and used via the &lt;code&gt;:path&lt;/code&gt;option.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, backporting a fix for this issue proved impractical, as previous versions of Bundler lacked the ability to distinguish between gem servers.&lt;/p&gt;
+
+&lt;h3 id="credits"&gt;Credits&lt;/h3&gt;
+
+&lt;p&gt;Thanks to Andreas Loupasakis and Fotos Georgiadis for reporting this issue, James Tucker, Tony Arcieri, Eric Hodel, Michael Koziarski, and Kurt Seifried for assistance with the eventual solution, and David Radcliffe for importing legacy Github gems into Rubygems.org.&lt;/p&gt;
+
+&lt;p&gt;André Arko (@indirect), Tim Moore (@tmoore), and the Bundler team (@bundlerio)
+team@bundler.io&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler API outages on July 15 &amp; 16, 2014</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
     <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
     <published>2014-07-16T23:29:00Z</published>
-    <updated>2014-08-03T00:14:05-07:00</updated>
+    <updated>2014-08-13T18:31:38-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -42,7 +89,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html"/>
     <id>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</id>
     <published>2013-12-07T00:00:00Z</published>
-    <updated>2014-08-03T00:14:05-07:00</updated>
+    <updated>2014-07-16T16:48:13-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -70,7 +117,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html"/>
     <id>http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</id>
     <published>2013-10-12T00:00:00Z</published>
-    <updated>2014-08-03T00:14:05-07:00</updated>
+    <updated>2014-07-16T16:48:13-07:00</updated>
     <author>
       <name>Terence Lee</name>
     </author>
