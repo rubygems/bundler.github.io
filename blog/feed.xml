@@ -5,10 +5,24 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2014-08-14T01:22:00Z</updated>
+  <updated>2014-08-15T17:02:00Z</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Gem not found error on 1.7.0</title>
+    <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
+    <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
+    <published>2014-08-15T17:02:00Z</published>
+    <updated>2014-08-15T10:18:34-07:00</updated>
+    <author>
+      <name>André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We're understand the problem, and we're working on a fix as fast as we can. In the meantime, it's possible to work completely around the problem by adding the &lt;code&gt;--full-index&lt;/code&gt; option when you run &lt;code&gt;bundle install&lt;/code&gt;. I fully recognize that it sucks to have a regression in a security update, and I'm sorry that this happened. I can't guarantee something like this well never happen again, but we're adding tests to prevent this particular bug from recurring.&lt;/p&gt;
+
+&lt;p&gt;Sorry it's broken; we're working on fixing it. In the meantime, please work around the issue with &lt;code&gt;bundle install --full-index&lt;/code&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
