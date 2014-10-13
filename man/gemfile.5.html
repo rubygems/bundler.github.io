@@ -108,6 +108,25 @@ be selected for gems that need to use a non-standard repository, suppressing
 this warning, by using the <a href="#SOURCE-source-" data-bare-link="true"><code>:source</code> option</a> or a
 <a href="#BLOCK-FORM-OF-SOURCE-GIT-PATH-GROUP-and-PLATFORMS" data-bare-link="true"><code>source</code> block</a>.</p>
 
+<h3 id="CREDENTIALS-credentials-">CREDENTIALS (#credentials)</h3>
+
+<p>Some gem sources require a username and password. Use <code>bundle config</code> to set
+the username and password for any sources that need it. The command must be run
+once on each computer that will install the Gemfile, but this keeps the
+credentials from being stored in plain text in version control.</p>
+
+<pre><code>bundle config https://gems.example.com/ user:password
+</code></pre>
+
+<p>For some sources, like a company Gemfury account, it may be easier to simply
+include the credentials in the Gemfile as part of the source URL.</p>
+
+<pre><code>source "https://user:password@gems.example.com"
+</code></pre>
+
+<p>Credentials in the source URL will take precedence over credentials set using
+<code>config</code>.</p>
+
 <h2 id="RUBY-ruby-">RUBY (#ruby)</h2>
 
 <p>If your application requires a specific Ruby version or engine, specify your
@@ -470,7 +489,7 @@ bundler uses the following priority order:</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>August 2014</li>
+    <li class='tc'>October 2014</li>
     <li class='tr'>Gemfile(5)</li>
   </ol>
 

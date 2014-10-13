@@ -40,6 +40,25 @@
             </div>
             <div class='bullet'>
               <div class='description'>
+                Some gem sources require a username and password. Use
+                <code>bundle config</code> to set the username and password for any
+                sources that need it. The command must be run once on each computer that
+                will install the Gemfile, but this keeps the credentials from being stored
+                in plain text in version control.
+              </div>
+              <pre class="highlight plaintext">$ bundle config https://gems.example.com/ user:password</pre>
+              <div class='description'>
+                For some sources, like a company Gemfury account, it may be easier to
+                simply include the credentials in the Gemfile as part of the source URL.
+              </div>
+              <pre class="highlight ruby"><span class="n">source</span> <span class="s2">"https://user:password@gems.example.com"</span></pre>
+              <div class='description'>
+                Credentials in the source URL will take precedence over credentials set
+                using <code>config</code>.
+              </div>
+            </div>
+            <div class='bullet'>
+              <div class='description'>
                 Declare the gems that you need, including version numbers. Specify versions using the same
                 syntax that Rubygems supports for dependencies.
               </div>
@@ -77,7 +96,11 @@
               <div class='description'>
                 If several gems come from the same same server, you can use a <code>source</code> block to group them together.
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span></pre>
+              <div class='description'>
+                Credentials for gem servers can be specified either in the URL or using
+                <code>bundle config</code>, as described above.
+              </div>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -149,10 +172,10 @@
           <h2>Read the latest news</h2>
           <ul>
             <li>
-              <a href="/blog/2014/08/15/gem-not-found-error-on-1-7-0.html">Gem not found error on 1.7.0</a>
+              <a href="/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html">Bundler may install gems from a different source than expected (CVE-2013-0334)</a>
             </li>
             <li>
-              <a href="/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html">Bundler may install gems from a different source than expected (CVE-2013-0334)</a>
+              <a href="/blog/2014/07/16/bundler-api-outages.html">Bundler API outages on July 15 & 16, 2014</a>
             </li>
             <div class='buttons'>
               <a href="/blog/">All posts</a>
