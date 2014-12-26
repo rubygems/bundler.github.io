@@ -25,7 +25,7 @@
                 and <code>Gemfile.lock</code> to source control, but ignore the
                 <code>.bundle</code> folder, which is specific to each machine.
               </div>
-              <pre class="highlight plaintext">$ echo ".bundle\n" &gt;&gt; .gitignore&#x000A;$ git add Gemfile Gemfile.lock .gitignore&#x000A;$ git commit -m "Add Bundler support"</pre>
+              <pre class="highlight plaintext">$ echo ".bundle" &gt;&gt; .gitignore&#x000A;$ git add Gemfile Gemfile.lock .gitignore&#x000A;$ git commit -m "Add Bundler support"</pre>
               <div class='notes'>
                 Once you have done that, there are two ways to deploy using Bundler:
                 manually or automatically.
