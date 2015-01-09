@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
     <published>2014-08-14T01:22:00Z</published>
-    <updated>2014-11-04T17:02:16-06:00</updated>
+    <updated>2014-11-04T15:02:16-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -58,7 +58,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
     <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
     <published>2014-07-16T23:29:00Z</published>
-    <updated>2014-11-04T17:02:16-06:00</updated>
+    <updated>2014-11-04T15:02:16-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -86,7 +86,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html"/>
     <id>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</id>
     <published>2013-12-07T00:00:00Z</published>
-    <updated>2014-08-03T02:14:05-05:00</updated>
+    <updated>2014-08-03T00:14:05-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -114,7 +114,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html"/>
     <id>http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</id>
     <published>2013-10-12T00:00:00Z</published>
-    <updated>2014-08-03T02:14:05-05:00</updated>
+    <updated>2014-08-03T00:14:05-07:00</updated>
     <author>
       <name>Terence Lee</name>
     </author>
