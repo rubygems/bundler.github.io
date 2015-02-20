@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2015-01-23T02:36:51Z</lastmod>
+    <lastmod>2015-02-20T23:39:51Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -20,6 +20,9 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/blog/</loc>
@@ -857,6 +860,9 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2014/08/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2014/08/15/</loc>
   </url>
   <url>
     <loc>http://bundler.io/blog/2014/08/14/</loc>
