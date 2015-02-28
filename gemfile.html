@@ -125,6 +125,12 @@
             </div>
             <div class='bullet'>
               <div class='description'>
+                If you would like to use multiple local gems directly from the filesystem, you can set a global `path` option to the path containing the gem's files. This will automatically load gemspec files from subdirectories.
+              </div>
+              <pre class="highlight ruby"><span class="n">path</span> <span class="s1">'components'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'admin_ui'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'public_ui'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+            </div>
+            <div class='bullet'>
+              <div class='description'>
                 Dependencies can be placed into groups. Groups can be ignored at install-time (using <code>--without</code>) or required all at once (using <code>Bundler.require</code>).
               </div>
               <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;<span class="n">gem</span> <span class="s1">'debugger'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span></pre>
@@ -150,10 +156,10 @@
           <ul>
             <li><a href="/#getting-started">Get started</a></li>
             <li><a href="/issues.html">Report a bug</a></li>
-            <li><a href="/v1.7/whats_new.html">See what's new</a></li>
-            <li><a href="/v1.7/man/bundle.1.html">Read documentation</a></li>
+            <li><a href="/v1.8/whats_new.html">See what's new</a></li>
+            <li><a href="/v1.8/man/bundle.1.html">Read documentation</a></li>
             <li><a href="/#get-involved">Discuss and Contribute</a></li>
-            <li><a href="/v1.7/faq.html">View FAQs</a></li>
+            <li><a href="/v1.8/faq.html">View FAQs</a></li>
           </ul>
           <h2>Read the latest news</h2>
           <ul>
@@ -169,30 +175,30 @@
           </ul>
           <h2>Bundler commands</h2>
           <ul>
-            <li><a href="/v1.7/bundle_install.html">bundle install</a></li>
-            <li><a href="/v1.7/bundle_update.html">bundle update</a></li>
+            <li><a href="/v1.8/bundle_install.html">bundle install</a></li>
+            <li><a href="/v1.8/bundle_update.html">bundle update</a></li>
             <div class='buttons'>
-              <a href="/v1.7/commands.html">View all commands</a>
+              <a href="/v1.8/commands.html">View all commands</a>
             </div>
           </ul>
           <h2>Help with</h2>
           <ul>
-            <li><a href="/v1.7/gemfile.html">Gemfiles</a></li>
-            <li><a href="/v1.7/groups.html">Groups</a></li>
-            <li><a href="/v1.7/git.html">Gems from git</a></li>
-            <li><a href="/v1.7/bundler_setup.html">Bundler.setup</a></li>
-            <li><a href="/v1.7/deploying.html">Deploying</a></li>
-            <li><a href="/v1.7/bundler_sharing.html">Sharing</a></li>
-            <li><a href="/v1.7/updating_gems.html">Updating Gems</a></li>
+            <li><a href="/v1.8/gemfile.html">Gemfiles</a></li>
+            <li><a href="/v1.8/groups.html">Groups</a></li>
+            <li><a href="/v1.8/git.html">Gems from git</a></li>
+            <li><a href="/v1.8/bundler_setup.html">Bundler.setup</a></li>
+            <li><a href="/v1.8/deploying.html">Deploying</a></li>
+            <li><a href="/v1.8/bundler_sharing.html">Sharing</a></li>
+            <li><a href="/v1.8/updating_gems.html">Updating Gems</a></li>
             <li><a href="/compatibility.html">Compatible versions</a></li>
           </ul>
           <h2>Use Bundler with</h2>
           <ul>
-            <li><a href="/v1.7/rails3.html">Rails 3</a></li>
-            <li><a href="/v1.7/rails23.html">Rails 2.3</a></li>
-            <li><a href="/v1.7/sinatra.html">Sinatra</a></li>
-            <li><a href="/v1.7/rubygems.html">Rubygems</a></li>
-            <li><a href="/v1.7/rubymotion.html">RubyMotion</a></li>
+            <li><a href="/v1.8/rails3.html">Rails 3</a></li>
+            <li><a href="/v1.8/rails23.html">Rails 2.3</a></li>
+            <li><a href="/v1.8/sinatra.html">Sinatra</a></li>
+            <li><a href="/v1.8/rubygems.html">Rubygems</a></li>
+            <li><a href="/v1.8/rubymotion.html">RubyMotion</a></li>
           </ul>
           <div class='shirts'>
             <div class='content'>
@@ -231,7 +237,8 @@
       <a href="/v1.3/">v1.3</a>
       <a href="/v1.5/">v1.5</a>
       <a href="/v1.6/">v1.6</a>
-      <a class="current" href="/">v1.7</a>
+      <a href="/v1.7/">v1.7</a>
+      <a class="current" href="/">v1.8</a>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
