@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2014-08-16T03:02:00+10:00</updated>
+  <updated>2014-08-15T10:02:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-16T03:02:00+10:00</published>
-    <updated>2015-02-28T08:51:23+11:00</updated>
+    <published>2014-08-15T10:02:00-07:00</published>
+    <updated>2015-02-28T14:53:32-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -27,8 +27,8 @@
     <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
-    <published>2014-08-14T11:22:00+10:00</published>
-    <updated>2014-08-14T15:22:59+10:00</updated>
+    <published>2014-08-13T18:22:00-07:00</published>
+    <updated>2014-11-04T15:02:16-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -71,8 +71,8 @@
     <title>Bundler API outages on July 15 &amp; 16, 2014</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
     <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
-    <published>2014-07-17T09:29:00+10:00</published>
-    <updated>2014-08-14T15:22:59+10:00</updated>
+    <published>2014-07-16T16:29:00-07:00</published>
+    <updated>2014-11-04T15:02:16-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -99,8 +99,8 @@
     <title>The rumors of Bundler's death have been greatly exaggerated</title>
     <link rel="alternate" href="http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html"/>
     <id>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</id>
-    <published>2013-12-07T11:00:00+11:00</published>
-    <updated>2014-07-17T10:05:03+10:00</updated>
+    <published>2013-12-06T16:00:00-08:00</published>
+    <updated>2014-08-03T00:14:05-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -127,8 +127,8 @@
     <title>Goodbye Bundler 1.4, Hello Bundler 1.5</title>
     <link rel="alternate" href="http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html"/>
     <id>http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</id>
-    <published>2013-10-12T11:00:00+11:00</published>
-    <updated>2014-07-17T10:05:03+10:00</updated>
+    <published>2013-10-11T17:00:00-07:00</published>
+    <updated>2014-08-03T00:14:05-07:00</updated>
     <author>
       <name>Terence Lee</name>
     </author>
