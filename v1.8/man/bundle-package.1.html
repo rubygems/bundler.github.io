@@ -57,6 +57,7 @@
     <a href="#SYNOPSIS">SYNOPSIS</a>
     <a href="#DESCRIPTION">DESCRIPTION</a>
     <a href="#GIT-AND-PATH-GEMS">GIT AND PATH GEMS</a>
+    <a href="#SUPPORT-FOR-MULTIPLE-PLATFORMS">SUPPORT FOR MULTIPLE PLATFORMS</a>
     <a href="#REMOTE-FETCHING">REMOTE FETCHING</a>
   </div>
 
@@ -86,6 +87,13 @@ use the gems in the cache in preference to the ones on <code>rubygems.org</code>
 <p>Since Bundler 1.2, the <code>bundle package</code> command can also package <code>:git</code> and
 <code>:path</code> dependencies besides .gem files. This needs to be explicitly enabled
 via the <code>--all</code> option. Once used, the <code>--all</code> option will be remembered.</p>
+
+<h2 id="SUPPORT-FOR-MULTIPLE-PLATFORMS">SUPPORT FOR MULTIPLE PLATFORMS</h2>
+
+<p>When using gems that have different packages for different platforms, Bundler
+1.8 and newer support caching of gems for other platforms in <code>vendor/cache</code>.
+This needs to be enabled via the <code>--all-platforms</code> option. This setting will be
+remembered in your local bundler configuration.</p>
 
 <h2 id="REMOTE-FETCHING">REMOTE FETCHING</h2>
 

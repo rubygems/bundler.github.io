@@ -5,10 +5,33 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2014-08-15T10:02:00-07:00</updated>
+  <updated>2015-03-18T19:56:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Announcing Ruby Together</title>
+    <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
+    <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
+    <published>2015-03-18T19:56:00-07:00</published>
+    <updated>2015-03-18T20:42:14-07:00</updated>
+    <author>
+      <name/>
+    </author>
+    <content type="html">&lt;p&gt;All of the infrastructure used by Ruby developers today, including &lt;a href="https://bundler.io"&gt;Bundler&lt;/a&gt;, &lt;a href="https://rubygems.org/pages/download"&gt;RubyGems&lt;/a&gt;, and &lt;a href="https://rubygems.org/"&gt;RubyGems.org&lt;/a&gt; is maintained and developed by volunteers.  While it's good that no one company controls resources shared by the community, it's terrible that the only people who work on our shared infrastructure are doing so for free and in their spare time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; was founded so the community can cooperate to solve that problem. It will fund on-call rotations, maintenance work, and improvements to the &lt;a href="https://rubytogether.org/projects"&gt;shared, public infrastructure&lt;/a&gt; used by the entire community.&lt;/p&gt;
+
+&lt;p&gt;We'll also provide &lt;a href="https://rubytogether.org/benefits"&gt;benefits just for members&lt;/a&gt;. To begin with, opportunities to connect and exchange knowledge, turning &lt;a href="https://rubybench.org"&gt;RubyBench.org&lt;/a&gt; into a fully-fledged community performance benchmarking resource, and tracking and reporting on important deprecations and security issues for members.&lt;/p&gt;
+
+&lt;p&gt;The community that has grown up around Ruby is amazing, and provides many fantastic (and fantastically useful) tools that any developer can use. Let's work together to make sure those tools (and the community) are the best that they can be, for everyone.&lt;/p&gt;
+
+&lt;p&gt;If you or your company has benefited from the free and open-source tools available in Ruby, support those tools by becoming a member of Ruby Together. Membership dues directly fund work that benefits everyone using Ruby, and are usually tax-deductible. Both individual and corporate memberships are available. &lt;a href="https://rubytogether.org/join"&gt;Join us today&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;span style="font-size: 80%"&gt;This post was originally written for &lt;a href="https://rubytogether.org/news/2015-03-17-announcing-ruby-together"&gt;Ruby Together&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>

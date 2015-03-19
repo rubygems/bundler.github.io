@@ -37,10 +37,10 @@
               First, you declare these dependencies in a file at the root of your application, called
               <code>Gemfile</code>. It looks something like this:
             </p>
-            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;</pre>
+            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;</pre>
             <p>
               This <code>Gemfile</code> says a few things. First, it says that bundler should look for gems
-              declared in the <code>Gemfile</code> at <code>http://rubygems.org</code>. You can declare
+              declared in the <code>Gemfile</code> at <code>https://rubygems.org</code>. You can declare
               multiple Rubygems sources, and bundler will look for gems in the order you declared the
               sources.
             </p>
@@ -105,7 +105,7 @@
               gem is <code>require 'rack/cache'</code>, not <code>require 'rack-cache'</code>. To tell
               bundler to use <code>require 'rack/cache'</code>, update your Gemfile:
             </p>
-            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;</pre>
+            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;</pre>
             <p>
               For such a small <code>Gemfile</code>, we'd advise you to skip
               <code>Bundler.require</code> and just require the gems by hand (especially given the
@@ -125,7 +125,7 @@
             <p>
               To do this, you can group your dependencies:
             </p>
-            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+            <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
             <p>
               Now, in development, you can instruct bundler to skip the <code>production</code> group:
             </p>
@@ -549,7 +549,7 @@
                   Next, add any gems that your application depends on. If you care which version of a
                   particular gem that you need, be sure to include an appropriate version restriction:
                 </p>
-                <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span><span class="p">,</span> <span class="s1">'~&gt; 0.9.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-bug'</span>&#x000A;</pre>
+                <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span><span class="p">,</span> <span class="s1">'~&gt; 0.9.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-bug'</span>&#x000A;</pre>
               </li>
               <li>
                 <p>
@@ -561,7 +561,7 @@
                 <p>
                   To update a gem's version requirements, first modify the Gemfile:
                 </p>
-                <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'http://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-bug'</span>&#x000A;</pre>
+                <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-bug'</span>&#x000A;</pre>
                 <p>
                   and then run:
                 </p>
