@@ -5,16 +5,44 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-03-19T17:00:00-07:00</updated>
+  <updated>2015-03-21T11:00:00+11:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
   <entry>
+    <title>Hello, Bundler 1.9!</title>
+    <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
+    <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
+    <published>2015-03-21T11:00:00+11:00</published>
+    <updated>2015-03-22T12:09:53+11:00</updated>
+    <author>
+      <name>Samuel Giddins</name>
+    </author>
+    <content type="html">&lt;p&gt;A mere month and a half after the release of Bundler 1.8, we're happy to announce our next act: Bundler 1.9.&lt;/p&gt;
+
+&lt;p&gt;While the &lt;a href="https://github.com/bundler/bundler/blob/v1.9.0/CHANGELOG.md#190-2015-03-20"&gt;CHANGELOG&lt;/a&gt; for this version might seem rather short (and light on big new features), there is one cool thing to talk about: &lt;a href="https://github.com/CocoaPods/Molinillo"&gt;Molinillo&lt;/a&gt;. Molinillo is a new dependency resolution algorithm developed for &lt;a href="http://cocoapods.org"&gt;CocoaPods&lt;/a&gt; – the Cocoa dependency manager. Now, Bundler shares it's dependency resolver – one of the most integral parts of a dependency manager – with CocoaPods, with the core logic being independently documented and tested. Molinillo was developed thanks to a &lt;a href="https://stripe.com/blog/stripe-open-source-retreat"&gt;generous grant from Stripe&lt;/a&gt; for the express purpose of being a generic dependency resolution algorithm that was sharable across different code bases – specifically CocoaPods and Bundler (and possibly even &lt;a href="https://github.com/rubygems/rubygems/pull/1189"&gt;RubyGems&lt;/a&gt;)!&lt;/p&gt;
+
+&lt;h4 id="dependencies-in-bundler"&gt;Dependencies in Bundler?&lt;/h4&gt;
+
+&lt;p&gt;Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager &lt;em&gt;for&lt;/em&gt; gems, written in Ruby. How could it use gems itself? Well, it can't &lt;em&gt;really&lt;/em&gt;. But we can cheat a bit by shipping Molinillo's source files inside the &lt;code&gt;bundler&lt;/code&gt; gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of &lt;code&gt;molinillo&lt;/code&gt; (or &lt;code&gt;thor&lt;/code&gt;, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler's own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!&lt;/p&gt;
+
+&lt;h4 id="updating"&gt;Updating&lt;/h4&gt;
+
+&lt;p&gt;To install the last release of Bundler you can run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ [sudo] gem install bundler
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For all the details, don’t miss the Changelog!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T17:00:00-07:00</published>
-    <updated>2015-03-19T19:44:41-07:00</updated>
+    <published>2015-03-20T11:00:00+11:00</published>
+    <updated>2015-03-22T11:49:57+11:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -161,8 +189,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T19:56:00-07:00</published>
-    <updated>2015-03-18T21:13:53-07:00</updated>
+    <published>2015-03-19T13:56:00+11:00</published>
+    <updated>2015-03-22T11:49:57+11:00</updated>
     <author>
       <name/>
     </author>
@@ -184,8 +212,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-15T10:02:00-07:00</published>
-    <updated>2015-02-28T14:53:32-08:00</updated>
+    <published>2014-08-16T03:02:00+10:00</published>
+    <updated>2015-02-28T08:51:23+11:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -198,8 +226,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
-    <published>2014-08-13T18:22:00-07:00</published>
-    <updated>2014-11-04T15:02:16-08:00</updated>
+    <published>2014-08-14T11:22:00+10:00</published>
+    <updated>2014-08-14T15:22:59+10:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -242,8 +270,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Bundler API outages on July 15 &amp; 16, 2014</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
     <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
-    <published>2014-07-16T16:29:00-07:00</published>
-    <updated>2014-11-04T15:02:16-08:00</updated>
+    <published>2014-07-17T09:29:00+10:00</published>
+    <updated>2014-08-14T15:22:59+10:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -264,34 +292,6 @@ specify it as the only executable.&lt;/p&gt;
 &lt;p&gt;Since the API was already down, we took the opportunity to improve the API database infrastructure. With the bigger database, we were able to remove our replica setup and instead just use a single database. We were also able to upgrade from Postgres 9.2.4 to 9.3.4, with performance enhancements and automatic failover. In the future, primary database failures should now be handled automatically.&lt;/p&gt;
 
 &lt;p&gt;At this point, we have successfully upgraded to the latest version of Postgres, dramatically increased the hardware the database runs on, and increased the number of application servers from 15 to 20. We believe this fully armed and operational database will be faster and more reliable. Sorry for the downtime. Happy Bundling!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>The rumors of Bundler's death have been greatly exaggerated</title>
-    <link rel="alternate" href="http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html"/>
-    <id>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</id>
-    <published>2013-12-06T16:00:00-08:00</published>
-    <updated>2014-08-03T00:14:05-07:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;So this week there was some excitement on &lt;a href="#"&gt;Github&lt;/a&gt;, &lt;a href="#"&gt;Hacker News&lt;/a&gt;, and &lt;a href="#"&gt;Ruby Weekly&lt;/a&gt; about the news that Bundler will (eventually) be merged into Rubygems. Before that comment, which was a side point on a different topic, the idea of merging the two projects had not been announced or explained. As lead of the Bundler project, I'd like to explain the merger plan, such as it is, and the reasoning behind it.&lt;/p&gt;
-
-&lt;p&gt;The underlying motivation is simple: Rubygems and Bundler do a lot of the same things. Installing gems, downloading gems, resolving dependencies, and the like. It's a pretty long list of duplicated functionality. Since the Rubygems team now values many features that started in Bundler, they are also adding them, leading to even more duplicated functionality.&lt;/p&gt;
-
-&lt;p&gt;During RubyConf this year in Miami, the Bundler team (represented by Terence Lee and myself) and the Rubygems team (represented by Eric Hodel and Evan Phoenix) met to talk about the increasing duplication. In that meeting, we agreed it made sense to decrease the duplication by merging the Rubygems and Bundler projects into one codebase and one team. Eventually. One day.&lt;/p&gt;
-
-&lt;p&gt;But not yet! Because still there's a lot of stuff going on. Bundler and Rubygems already have separate feature road maps for the next 6 months, including things like parallel installation of gems and the new, more efficient index format that I talked about in my &lt;a href="#"&gt;talk at RubyConf&lt;/a&gt;. As a result of those plans, the merger work of combining code, tests, teams, and policies is not expected to be done for a year or even two years. At the earliest.&lt;/p&gt;
-
-&lt;p&gt;While we're talking about potential changes that are this big, I'd also like to make a point about what this means for Bundler. The Bundler team has taken great pains over the years so that Bundler can be stable, reliable, and dependable. We have also gone out of our way to conform strictly to semantic versioning. This has all been for a simple reason: trust. We want you to be able to trust Bundler. To keep that trust, we are willing to make changes much more slowly and cautiously than many other projects. While we all agree that reducing duplicate work is good, keeping Bundler trustworthy is an even higher priority than combining our work.&lt;/p&gt;
-
-&lt;p&gt;Even with the plan to eventually merge projects, Bundler will continue to adhere to semantic versioning. We will continue to run the exhaustive Bundler integration RSpec suite. We will continue working just as hard to make sure Bundler updates are reliable and useful to the entire Ruby community. While everyone involved agrees this merger seems good, it also involves a huge amount of work. At a minimum, we need a unified release process and a functional single codebase, but we haven't even started working on either of those yet!&lt;/p&gt;
-
-&lt;p&gt;In the meantime, we are enjoying higher cooperation than ever before between the Rubygems and Bundler projects. We are deliberately sharing both server-side and client-side code for the new index format. The Rubygems team has said they will begin using Bundler's integration tests along side their unit tests.&lt;/p&gt;
-
-&lt;p&gt;I'm excited about the idea of sharing work between both projects and eliminating duplicated code. We have a common goal of streamlining and simplifying the work of using gems for everyone in Ruby. Even though we aren't working on merging projects yet, keep an eye out for releases of both Bundler and Rubygems that showcase the work we are cooperating to do together.&lt;/p&gt;
-
-&lt;p&gt;And we will be happy to announce the merger once it has happened.&lt;/p&gt;
 </content>
   </entry>
 </feed>
