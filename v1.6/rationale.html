@@ -34,7 +34,7 @@
             <p>
               This <code>Gemfile</code> says a few things. First, it says that bundler should look for gems
               declared in the <code>Gemfile</code> at <code>https://rubygems.org</code>. You can declare
-              multiple Rubygems sources, and bundler will look for gems in the order you declared the
+              multiple RubyGems sources, and bundler will look for gems in the order you declared the
               sources.
             </p>
             <p>
@@ -137,7 +137,7 @@
             <p>
               If you have run <code>bundle pack</code>, the gems (although not the git gems) required
               by your bundle will be downloaded into <code>vendor/cache</code>. Bundler can run without
-              connecting to the internet (or the Rubygems server) if all the gems you need are present
+              connecting to the internet (or the RubyGems server) if all the gems you need are present
               in that folder and checked in to your source control. This is an <strong>optional</strong>
               step, and not recommended, due to the increase in size of your source control repository.
             </p>
@@ -350,7 +350,7 @@
               compatible projects. Constrain it too little (<code>rack >= 1.0</code>) and a new
               release of Rack may break your code. Using dependencies like <code>rack ~> 1.5.2</code>
               and versioning code in a SemVer compliant way mostly solves this problem, but it assumes
-              universal compliance. Since Rubygems has over 100,000 packages, this assumption simply
+              universal compliance. Since RubyGems has over 100,000 packages, this assumption simply
               doesn't hold in practice.
             </p>
           </div>
@@ -376,15 +376,8 @@
     </a>
     <div id='prod-versions'>
       Docs:
-      <a href="/v1.0/">v1.0</a>
-      <a href="/v1.1/">v1.1</a>
-      <a href="/v1.2/">v1.2</a>
-      <a href="/v1.3/">v1.3</a>
-      <a href="/v1.5/">v1.5</a>
-      <a class="current" href="/v1.6/">v1.6</a>
-      <a href="/v1.7/">v1.7</a>
-      <a href="/v1.8/">v1.8</a>
-      <a href="/">v1.9</a>
+      <a href="/v1.8/">Previous Version (v1.8)</a>
+      <a href="/">Current Version (v1.9)</a>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

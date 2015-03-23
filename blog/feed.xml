@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-03-21T11:00:00+11:00</updated>
+  <updated>2015-03-20T17:00:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-21T11:00:00+11:00</published>
-    <updated>2015-03-22T12:09:53+11:00</updated>
+    <published>2015-03-20T17:00:00-07:00</published>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -41,8 +41,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-20T11:00:00+11:00</published>
-    <updated>2015-03-22T11:49:57+11:00</updated>
+    <published>2015-03-19T17:00:00-07:00</published>
+    <updated>2015-03-19T19:44:41-07:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -189,8 +189,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-19T13:56:00+11:00</published>
-    <updated>2015-03-22T11:49:57+11:00</updated>
+    <published>2015-03-18T19:56:00-07:00</published>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name/>
     </author>
@@ -212,8 +212,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-16T03:02:00+10:00</published>
-    <updated>2015-02-28T08:51:23+11:00</updated>
+    <published>2014-08-15T10:02:00-07:00</published>
+    <updated>2015-02-28T14:53:32-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -226,8 +226,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
-    <published>2014-08-14T11:22:00+10:00</published>
-    <updated>2014-08-14T15:22:59+10:00</updated>
+    <published>2014-08-13T18:22:00-07:00</published>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -243,9 +243,9 @@ specify it as the only executable.&lt;/p&gt;
 
 &lt;p&gt;Any Gemfile with multiple top-level &lt;code&gt;source&lt;/code&gt; lines cannot reliably control the gem server that a particular gem is fetched from. As a result, Bundler might install the wrong gem if more than one source provides a gem with the same name.&lt;/p&gt;
 
-&lt;p&gt;This is especially possible in the case of Github's legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on Rubygems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
+&lt;p&gt;This is especially possible in the case of Github's legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on RubyGems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
 
-&lt;p&gt;To mitigate this, the Bundler and Rubygems.org teams worked together to copy almost every gem hosted on gems.github.com to rubygems.org, reducing the number of gems that can be used for such an attack.&lt;/p&gt;
+&lt;p&gt;To mitigate this, the Bundler and RubyGems.org teams worked together to copy almost every gem hosted on gems.github.com to rubygems.org, reducing the number of gems that can be used for such an attack.&lt;/p&gt;
 
 &lt;h3 id="resolution"&gt;Resolution&lt;/h3&gt;
 
@@ -263,15 +263,15 @@ specify it as the only executable.&lt;/p&gt;
 
 &lt;h3 id="credits"&gt;Credits&lt;/h3&gt;
 
-&lt;p&gt;Thanks to Andreas Loupasakis and Fotos Georgiadis for reporting this issue, James Tucker, Tony Arcieri, Eric Hodel, Michael Koziarski, and Kurt Seifried for assistance with the eventual solution, and David Radcliffe for importing legacy Github gems into Rubygems.org.&lt;/p&gt;
+&lt;p&gt;Thanks to Andreas Loupasakis and Fotos Georgiadis for reporting this issue, James Tucker, Tony Arcieri, Eric Hodel, Michael Koziarski, and Kurt Seifried for assistance with the eventual solution, and David Radcliffe for importing legacy Github gems into RubyGems.org.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Bundler API outages on July 15 &amp; 16, 2014</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
     <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
-    <published>2014-07-17T09:29:00+10:00</published>
-    <updated>2014-08-14T15:22:59+10:00</updated>
+    <published>2014-07-16T16:29:00-07:00</published>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -279,15 +279,15 @@ specify it as the only executable.&lt;/p&gt;
 
 &lt;p&gt;The Bundler API provides information about specific gems, allowing &lt;code&gt;bundle install&lt;/code&gt; to run more quickly. Without the API installing multiple gems is much slower, because information about every single gem has to be downloaded, instead of just information about the gems that are needed.&lt;/p&gt;
 
-&lt;p&gt;Starting with Rubygems version 2.2.0 (which is included with Ruby 2.1), the &lt;code&gt;gem install&lt;/code&gt; also uses the API to download gem metadata more quickly. As users upgraded Rubygems (or were upgraded by upgrading their Ruby version), the load on the API slowly started to increase. We are usually able to successfully handle the increased load, but only up to a point. When enough large, slow requests are made simultaneously (some of you have really big Gemfiles!), unanswered API requests started to pile up while the slow requests ran. At that point, the problem snowballs pretty naturally, and the API starts responding very sluggishly, if it even manages to respond at all inside the hard 30 second timeout imposed by Heroku.&lt;/p&gt;
+&lt;p&gt;Starting with RubyGems version 2.2.0 (which is included with Ruby 2.1), the &lt;code&gt;gem install&lt;/code&gt; also uses the API to download gem metadata more quickly. As users upgraded RubyGems (or were upgraded by upgrading their Ruby version), the load on the API slowly started to increase. We are usually able to successfully handle the increased load, but only up to a point. When enough large, slow requests are made simultaneously (some of you have really big Gemfiles!), unanswered API requests started to pile up while the slow requests ran. At that point, the problem snowballs pretty naturally, and the API starts responding very sluggishly, if it even manages to respond at all inside the hard 30 second timeout imposed by Heroku.&lt;/p&gt;
 
 &lt;p&gt;This snowball effect happens on occasion, and the solution is often as simple as dropping all the requests in the queue so that incoming requests can be served immediately. Yesterday, that wasn't enough. There were too many requests to handle even after dropping the backed up queue of waiting requests. Adding application servers is extremely straightforward, but there was a problem: the database server had reached its connection limit. If we added any more application servers, we would need additional database connections, and our current server was at the limits of its hardware.&lt;/p&gt;
 
 &lt;p&gt;To increase the number of allowed database connections, we had to upgrade to a bigger database. Fortunately, Heroku's Postgres tools make it simple to create a bigger database that follows the existing database, and then turn off replication and switch to using that bigger database as the new main database. Yesterday, I took down the API, created a new follower database that was able to support more connections, and then failed over to use it as the primary database. This resulted in roughly 53 minutes of downtime on July 15.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately, replication to the new, bigger database was only partially complete when I manually failed over to that database. The automated process that synchronizes the main Rubygems.org database to the API database wasn't able to fill in all of the missing data due to the way replication had copied only part of the information about some gems.&lt;/p&gt;
+&lt;p&gt;Unfortunately, replication to the new, bigger database was only partially complete when I manually failed over to that database. The automated process that synchronizes the main RubyGems.org database to the API database wasn't able to fill in all of the missing data due to the way replication had copied only part of the information about some gems.&lt;/p&gt;
 
-&lt;p&gt;Today, while investigating reports of failures during &lt;code&gt;bundle install&lt;/code&gt;, we discovered the missing database data, and took down the API entirely to force everyone to use the accurate (but slower) full gem index. To repair the missing data, we restored a database backup from yesterday, and then synchronized the API database with the main Rubygems.org database to catch up on new gems. This caused roughly 3 hours and 16 minutes of downtime on July 16.&lt;/p&gt;
+&lt;p&gt;Today, while investigating reports of failures during &lt;code&gt;bundle install&lt;/code&gt;, we discovered the missing database data, and took down the API entirely to force everyone to use the accurate (but slower) full gem index. To repair the missing data, we restored a database backup from yesterday, and then synchronized the API database with the main RubyGems.org database to catch up on new gems. This caused roughly 3 hours and 16 minutes of downtime on July 16.&lt;/p&gt;
 
 &lt;p&gt;Since the API was already down, we took the opportunity to improve the API database infrastructure. With the bigger database, we were able to remove our replica setup and instead just use a single database. We were also able to upgrade from Postgres 9.2.4 to 9.3.4, with performance enhancements and automatic failover. In the future, primary database failures should now be handled automatically.&lt;/p&gt;
 
