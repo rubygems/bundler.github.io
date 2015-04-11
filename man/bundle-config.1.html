@@ -155,28 +155,41 @@ the environment variable <code>BUNDLE_LOCAL__RACK</code>.</p>
 <p>The following is a list of all configuration keys and their purpose. You can
 learn more about their operation in <a href="bundle-install.1.html">bundle install(1)</a>.</p>
 
-<dl>
-<dt><code>path</code> (<code>BUNDLE_PATH</code>)</dt><dd>The location on disk to install gems. Defaults to <code>$GEM_HOME</code> in development
-and <code>vendor/bundle</code> when <code>--deployment</code> is used</dd>
-<dt><code>frozen</code> (<code>BUNDLE_FROZEN</code>)</dt><dd>Disallow changes to the <code>Gemfile</code>. Defaults to <code>true</code> when <code>--deployment</code>
-is used.</dd>
-<dt><code>without</code> (<code>BUNDLE_WITHOUT</code>)</dt><dd>A <code>:</code>-separated list of groups whose gems bundler should not install</dd>
-<dt><code>bin</code> (<code>BUNDLE_BIN</code>)</dt><dd>Install executables from gems in the bundle to the specified directory.
-Defaults to <code>false</code>.</dd>
-<dt><code>gemfile</code> (<code>BUNDLE_GEMFILE</code>)</dt><dd>The name of the file that bundler should use as the <code>Gemfile</code>. This location
+<ul>
+<li><code>path</code> (<code>BUNDLE_PATH</code>):
+The location on disk to install gems. Defaults to <code>$GEM_HOME</code> in development
+and <code>vendor/bundle</code> when <code>--deployment</code> is used</li>
+<li><code>frozen</code> (<code>BUNDLE_FROZEN</code>):
+Disallow changes to the <code>Gemfile</code>. Defaults to <code>true</code> when <code>--deployment</code>
+is used.</li>
+<li><code>without</code> (<code>BUNDLE_WITHOUT</code>):
+A <code>:</code>-separated list of groups whose gems bundler should not install</li>
+<li><code>bin</code> (<code>BUNDLE_BIN</code>):
+Install executables from gems in the bundle to the specified directory.
+Defaults to <code>false</code>.</li>
+<li><code>gemfile</code> (<code>BUNDLE_GEMFILE</code>):
+The name of the file that bundler should use as the <code>Gemfile</code>. This location
 of this file also sets the root of the project, which is used to resolve
 relative paths in the <code>Gemfile</code>, among other things. By default, bundler
 will search up from the current working directory until it finds a
-<code>Gemfile</code>.</dd>
-<dt><code>ssl_ca_cert</code> (<code>BUNDLE_SSL_CA_CERT</code>)</dt><dd>Path to a designated CA certificate file or folder containing multiple
-certificates for trusted CAs in PEM format.</dd>
-<dt><code>ssl_client_cert</code> (<code>BUNDLE_SSL_CLIENT_CERT</code>)</dt><dd>Path to a designated file containing a X.509 client certificate
-and key in PEM format.</dd>
-</dl>
+<code>Gemfile</code>.</li>
+<li><code>ssl_ca_cert</code> (<code>BUNDLE_SSL_CA_CERT</code>):
+Path to a designated CA certificate file or folder containing multiple
+certificates for trusted CAs in PEM format.</li>
+<li><code>ssl_client_cert</code> (<code>BUNDLE_SSL_CLIENT_CERT</code>):
+Path to a designated file containing a X.509 client certificate
+and key in PEM format.</li>
+<li><code>cache_path</code> (<code>BUNDLE_CACHE_PATH</code>): The directory that bundler will place
+cached gems in when running <code>bundle package</code>, and that bundler
+will look in when installing gems.</li>
+<li><code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>): When set, Gemfiles
+containing multiple sources will produce errors instead of warnings. Use
+<code>bundle config --delete disable_multisource</code> to unset.</li>
+</ul>
 
 
 <p>In general, you should set these settings per-application by using the applicable
-flag to the <a href="bundle-install.1.html">bundle install(1)</a> command.</p>
+flag to the <a href="bundle-install.1.html">bundle install(1)</a> or <a href="bundle-package.1.html">bundle package(1)</a> command.</p>
 
 <p>You can set them globally either via environment variables or <code>bundle config</code>,
 whichever is preferable for your setup. If you use both, environment variables
@@ -253,7 +266,7 @@ you to avoid putting secrets into your Gemfile.</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>March 2015</li>
+    <li class='tc'>April 2015</li>
     <li class='tr'>bundle-config(1)</li>
   </ol>
 
