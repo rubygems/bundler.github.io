@@ -23,7 +23,7 @@
               <div class='description'>
                 Update the current environment
               </div>
-              <pre class="highlight plaintext">$ bundle update [GEM] [--full-index] [--group=GROUP] [--jobs=NUMBER] [--local] [--quiet] [--source=SOURCE]</pre>
+              <pre class="highlight plaintext">$ bundle update [GEM] [--full-index] [--group=GROUP] [--jobs=NUMBER] [--local] &#x000A;                      [--quiet] [--source=SOURCE]</pre>
               <div class='notes'>
                 <p>
                   Options:
@@ -51,12 +51,16 @@
                 </p>
               </div>
               <div class='description'>
-                Update the gems specified (all gems, if none are specified), ignoring
-                the previously installed gems specified in the <code>Gemfile.lock</code>.
-                In general, you should use <code>bundle install</code> to install the same
-                exact gems and versions across machines.
-                You would use <code>bundle update</code> to explicitly update the version
-                of a gem.
+                <p>
+                  Update the gems specified (all gems, if none are specified), ignoring
+                  the previously installed gems specified in the <code>Gemfile.lock</code>.
+                  In general, you should use <code>bundle install</code> to install the
+                  same exact gems and versions across machines.
+                </p>
+                <p>
+                  You would use <code>bundle update</code> to explicitly update the
+                  version of a gem.
+                </p>
               </div>
             </div>
             <div class='bullet'>
