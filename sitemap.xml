@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2015-05-15T02:55:12Z</lastmod>
+    <lastmod>2015-06-24T07:18:33Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -32,6 +32,9 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2015/06/24/version-1-10-released.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/blog/</loc>
@@ -215,6 +218,120 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.1/sinatra.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_binstubs.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_check.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_clean.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_config.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_console.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_exec.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_gem.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_help.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_init.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_install.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_outdated.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_package.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_platform.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_show.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_update.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_version.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundle_viz.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundler_setup.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundler_sharing.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/bundler_workflow.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/commands.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/deploying.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/faq.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/gemfile_ruby.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/git.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/groups.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/rails23.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/rails3.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/rationale.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/rubygems.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/rubymotion.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/sinatra.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/updating_gems.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/whats_new.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.2/bundle_check.html</loc>
@@ -1097,6 +1214,12 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2015/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2015/06/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2015/06/24/</loc>
   </url>
   <url>
     <loc>http://bundler.io/blog/2015/03/</loc>

@@ -19,7 +19,8 @@
         <div id='contents'>
           <h1>What's New in each Release</h1>
           <div class='buttons'>
-            <a href="/v1.9/whats_new.html#version19">Latest Version v1.9</a>
+            <a href="/v1.10/whats_new.html">v1.10</a>
+            <a href="/v1.9/whats_new.html#version19">v1.9</a>
             <a href="/v1.8/whats_new.html#version18">v1.8</a>
             <a href="/v1.7/whats_new.html#version17">v1.7</a>
             <a href="/v1.6/whats_new.html#version16">v1.6</a>
@@ -29,57 +30,87 @@
             <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012">v1.1</a>
             <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010">v1.0</a>
           </div>
-          <h2 id='version19'>What's New in v1.9</h2>
+          <h2 id='version110'>What's New in v1.10</h2>
           <div class='contents'>
             <div class='bullet'>
               <div class='description'>
                 <p>
-                  Bundler 1.9 comes with a new dependency resolver, called <em>Molinillo</em>,
-                  among other changes.
+                  Bundler 1.10 comes with a new `lock` command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved `outdated` output, and the option to force installed gems to be downloaded and installed again.
                 </p>
                 <p>
-                  In this section, you’ll find the major features introduced in this release. All the changes are documented in the Bundler 1.9 changelog.
-                  <a href="https://github.com/bundler/bundler/blob/1-9-stable/CHANGELOG.md">Full 1.9 changelog</a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <h2 id='molinillo'>Using Molinillo for Dependency Resolution</h2>
-          <div class='contents'>
-            <div class='bullet'>
-              <div class='description'>
-                <p>
-                  Bundler's dependency resolver is now powered by Molinillo, the CocoaPods
-                  dependency resolution algorithm sponsored by Stripe that is fully
-                  documented, tested, and built for use across different dependency
-                  managers built in Ruby.
-                  <a href="https://github.com/CocoaPods/Molinillo">Molinillo</a>
+                  In this section, you’ll find the major features introduced in this release. All the changes are documented in the Bundler 1.10 changelog.
+                  <a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md">Full 1.10 changelog</a>
                 </p>
               </div>
             </div>
           </div>
-          <h2 id='path-gemspec-detection'>Improved gemspec detection</h2>
+          <h2 id='lock'>The `lock` command</h2>
           <div class='contents'>
             <div class='bullet'>
               <div class='description'>
                 <p>
-                  Directories are now searched resursively for gemspecs, with specs found
-                  closer to the root being preferred.
+                  Bundler now provides a <code>lock</code> command. Running <code>bundle lock</code> will resolve the Gemfile and write a Gemfile.lock, but will not download or install any gems.
                 </p>
               </div>
             </div>
           </div>
-          <h2 id='other-changes'>Other changes</h2>
+          <h2 id='inline'>Inline Gemfiles</h2>
           <div class='contents'>
             <div class='bullet'>
               <div class='description'>
-                Bundler 1.9 also includes:
+                <p>
+                  For single-file scripts that still depend on gems, a <code>gemfile</code> method is provided by <code>require "bundler/inline"</code>. This method will not generate a lock, so be careful what gem versions you allow!
+                </p>
+                <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/inline.rb">bundler/inline</a>
+              </div>
+            </div>
+          </div>
+          <h2 id='ignore-messages'>Ignore gem post-install messages</h2>
+          <div class='contents'>
+            <div class='bullet'>
+              <div class='description'>
+                <p>
+                  Are you tired of being told to HTTParty hard? This option's for you. Run <code>bundle config ignore_messages.httparty true</code> to silence HTTParty for good, or run <code>bundle config ignore_messages true</code> to turn off all messages forever.
+                </p>
+                <a href="/v1.10/man/bundle-config.1.html#LIST-OF-AVAILABLE-KEYS">config ignore_messages</a>
+              </div>
+            </div>
+          </div>
+          <h2 id='optional-groups'>Optional groups and <code>--with</code></h2>
+          <div class='contents'>
+            <div class='bullet'>
+              <div class='description'>
+                <p>
+                  Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using <code>group :name, optional: true do</code>, and then opt in to installing an optional group with <code>bundle install --with name</code>.
+                </p>
+                <a href="/v1.10/man/bundle-install.1.html#OPTIONS">install --force</a>
+              </div>
+            </div>
+          </div>
+          <h2 id='install-if'>Conditional groups via <code>install_if</code></h2>
+          <div class='contents'>
+            <div class='bullet'>
+              <div class='description'>
+                <p>
+                  At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the <code>install_if</code> group should be installed, and they will be. Or not.
+                </p>
+                <a href="/v1.10/man/bundle-gemfile.1.html#INSTALL_IF">install_if</a>
+              </div>
+            </div>
+          </div>
+          <div class='contents'>
+            <div class='bullet'>
+              <div class='description'>
+                Bundler 1.10 also includes:
                 <ul>
-                  <li>improved vendoring of <code>thor</code> that will make conflicts less common</li>
-                  <li>fixed gemspecs generated by <code>bundle gem</code> from a pre-release bundler version</li>
-                  <li><code>bundle which</code> will no longer be confused by directories</li>
+                  <li>add <code>install --force</code> to re-install installed gems</li>
+                  <li>show more information, including groups, in <code>outdated</code></li>
+                  <li>improved error reports for Gemfile errors</li>
+                  <li>improved <code>gem</code> minitest template</li>
+                  <li>glob arguments for <code>gemspec</code> in Gemfile</li>
+                  <li>timeouts and retries are now configurable</li>
                 </ul>
-                <a href="https://github.com/bundler/bundler/blob/1-9-stable/CHANGELOG.md">Full 1.9 changelog</a>
+                <a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md">Full 1.10 changelog</a>
               </div>
             </div>
           </div>
@@ -89,18 +120,18 @@
           <ul>
             <li><a href="/#getting-started">Get started</a></li>
             <li><a href="/issues.html">Report a bug</a></li>
-            <li><a href="/v1.9/whats_new.html">See what's new</a></li>
-            <li><a href="/v1.9/man/bundle.1.html">Read documentation</a></li>
+            <li><a href="/v1.10/whats_new.html">See what's new</a></li>
+            <li><a href="/v1.10/man/bundle.1.html">Read documentation</a></li>
             <li><a href="/#get-involved">Discuss and Contribute</a></li>
-            <li><a href="/v1.9/faq.html">View FAQs</a></li>
+            <li><a href="/v1.10/faq.html">View FAQs</a></li>
           </ul>
           <h2>Read the latest news</h2>
           <ul>
             <li>
-              <a href="/blog/2015/03/21/hello-bundler-19.html">Hello, Bundler 1.9!</a>
+              <a href="/blog/2015/06/24/version-1-10-released.html">Version 1.10 released</a>
             </li>
             <li>
-              <a href="/blog/2015/03/20/moving-bins-to-exe.html">Bundler template moves bins to exe</a>
+              <a href="/blog/2015/03/21/hello-bundler-19.html">Hello, Bundler 1.9!</a>
             </li>
             <div class='buttons'>
               <a href="/blog/">All posts</a>
@@ -108,31 +139,31 @@
           </ul>
           <h2>Bundler commands</h2>
           <ul>
-            <li><a href="/v1.9/bundle_install.html">bundle install</a></li>
-            <li><a href="/v1.9/bundle_update.html">bundle update</a></li>
+            <li><a href="/v1.10/bundle_install.html">bundle install</a></li>
+            <li><a href="/v1.10/bundle_update.html">bundle update</a></li>
             <div class='buttons'>
-              <a href="/v1.9/commands.html">View all commands</a>
+              <a href="/v1.10/commands.html">View all commands</a>
             </div>
           </ul>
           <h2>Help with</h2>
           <ul>
-            <li><a href="/v1.9/gemfile.html">Gemfiles</a></li>
-            <li><a href="/v1.9/groups.html">Groups</a></li>
-            <li><a href="/v1.9/git.html">Gems from git</a></li>
-            <li><a href="/v1.9/bundler_setup.html">Bundler.setup</a></li>
-            <li><a href="/v1.9/deploying.html">Deploying</a></li>
-            <li><a href="/v1.9/bundler_sharing.html">Sharing</a></li>
-            <li><a href="/v1.9/updating_gems.html">Updating Gems</a></li>
+            <li><a href="/v1.10/gemfile.html">Gemfiles</a></li>
+            <li><a href="/v1.10/groups.html">Groups</a></li>
+            <li><a href="/v1.10/git.html">Gems from git</a></li>
+            <li><a href="/v1.10/bundler_setup.html">Bundler.setup</a></li>
+            <li><a href="/v1.10/deploying.html">Deploying</a></li>
+            <li><a href="/v1.10/bundler_sharing.html">Sharing</a></li>
+            <li><a href="/v1.10/updating_gems.html">Updating Gems</a></li>
             <li><a href="/compatibility.html">Compatiblity</a></li>
             <li><a href="/older_versions.html">Older Versions</a></li>
           </ul>
           <h2>Use Bundler with</h2>
           <ul>
-            <li><a href="/v1.9/rails3.html">Rails 3</a></li>
-            <li><a href="/v1.9/rails23.html">Rails 2.3</a></li>
-            <li><a href="/v1.9/sinatra.html">Sinatra</a></li>
-            <li><a href="/v1.9/rubygems.html">RubyGems</a></li>
-            <li><a href="/v1.9/rubymotion.html">RubyMotion</a></li>
+            <li><a href="/v1.10/rails3.html">Rails 3</a></li>
+            <li><a href="/v1.10/rails23.html">Rails 2.3</a></li>
+            <li><a href="/v1.10/sinatra.html">Sinatra</a></li>
+            <li><a href="/v1.10/rubygems.html">RubyGems</a></li>
+            <li><a href="/v1.10/rubymotion.html">RubyMotion</a></li>
           </ul>
           <div class='shirts'>
             <div class='content'>
@@ -164,8 +195,8 @@
     </a>
     <div id='prod-versions'>
       Docs:
-      <a href="/v1.8/">Previous Version (v1.8)</a>
-      <a class="current" href="/">Current Version (v1.9)</a>
+      <a href="/v1.9/">Previous Version (v1.9)</a>
+      <a class="current" href="/">Current Version (v1.10)</a>
     </div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

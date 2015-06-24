@@ -5,16 +5,68 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-03-20T17:00:00-07:00</updated>
+  <updated>2015-06-23T22:36:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Version 1.10 released</title>
+    <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
+    <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
+    <published>2015-06-23T22:36:00-07:00</published>
+    <updated>2015-06-24T00:15:12-07:00</updated>
+    <author>
+      <name>André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;Bundler 1.10 is out! In fact, Bundler 1.10.5 is out today, so we thought it was high time to let everyone know about it. &lt;/p&gt;
+
+&lt;p&gt;This release comes with a bunch of new features: the &lt;code&gt;lock&lt;/code&gt; command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved &lt;code&gt;outdated&lt;/code&gt; output, and the option to force installed gems to be downloaded and installed again.&lt;/p&gt;
+
+&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
+
+&lt;p&gt;First up, the new &lt;code&gt;lock&lt;/code&gt; command. Running &lt;code&gt;bundle lock&lt;/code&gt; will resolve the Gemfile and write a Gemfile.lock, but will not download or install any gems.&lt;/p&gt;
+
+&lt;p&gt;Next, for single-file scripts that still depend on gems, a &lt;code&gt;gemfile&lt;/code&gt; method is provided by &lt;code&gt;require "bundler/inline"&lt;/code&gt;. This method will not generate a lock, so be careful what gem versions you allow! Check out the &lt;a href="https://github.com/bundler/bundler/blob/master/lib/bundler/inline.rb"&gt;inline docs&lt;/a&gt; for details and examples.&lt;/p&gt;
+
+&lt;p&gt;Are you tired of being told to HTTParty hard? This option's for you. Run &lt;code&gt;bundle config ignore_messages.httparty true&lt;/code&gt; to silence HTTParty for good, or run &lt;code&gt;bundle config ignore_messages true&lt;/code&gt; to turn off all messages forever.&lt;/p&gt;
+
+&lt;p&gt;Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using &lt;code&gt;group :name, optional: true do&lt;/code&gt;, and then opt in to installing an optional group with &lt;code&gt;bundle install --with name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/bundle-gemfile.1.html#INSTALL_IF"&gt;Gemfile&lt;/a&gt; documentation.&lt;/p&gt;
+
+&lt;p&gt;There are several more changes, so check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; to read about all of them.&lt;/p&gt;
+
+&lt;h3 id="bundled-with"&gt;BUNDLED WITH&lt;/h3&gt;
+
+&lt;p&gt;This release also contains a change that has been somewhat controversial: Bundler 1.10 will add the Bundler version to the &lt;code&gt;Gemfile.lock&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;While the intended workflow involves only one lock change per Bundler version, the results in real life have been very frustrating. The &lt;em&gt;extremely&lt;/em&gt; short explanation is that the problem will disappear once the entire team (rather than only part of the team) upgrades to Bundler 1.9.10 or higher.&lt;/p&gt;
+
+&lt;p&gt;Here's the long explanation: Bundler 1.10 adds the BUNDLED WITH section to the lock, while Bundler 1.9 removes it. When a team includes some developers on 1.9 or older, and some developers on 1.10 or higher, it's easy to end up in a situation with commits changing the lock back and forth. The simplest way to stop that problem is to upgrade to 1.10 by running &lt;code&gt;gem install bundler&lt;/code&gt;. When Bundler 1.10 or higher sees a BUNDLED WITH section, it will leave it in the file.&lt;/p&gt;
+
+&lt;p&gt;This change turned out to be a lot more problematic than we were expecting because of the way Spring works. Knowing what I know now, I would have rolled out this change completely differently to reduce this problem, but it's too late for that now. :/ We designed the change to only activate when you run an "install" command, like &lt;code&gt;bundle install&lt;/code&gt; or &lt;code&gt;bundle update&lt;/code&gt;. If you just use &lt;code&gt;bundle exec&lt;/code&gt;, the lock does not change. We didn't count on Spring, which runs &lt;code&gt;bundle install --local&lt;/code&gt; all the time in the background without notifying users. To stop that from happening, we've released a version of Bundler (1.10.4) that works around Spring.&lt;/p&gt;
+
+&lt;p&gt;The last issue is that some developers refuse to upgrade from 1.9 to 1.10, for whatever reason, keeping the problem alive. To address that, we're releasing a final update to 1.9 later today that will simply ignore the BUNDLED WITH section, rather than deleting it.&lt;/p&gt;
+
+&lt;p&gt;The reason that we made the change is pretty straightforward: It has been a long-term source of bug reports that users are often on a version of Bundler so old it won't work for a project, but they have no way to tell. We've wanted to fix this by tracking the Bunder version in the lock file since right after 1.0.0 came out. Unfortunately, there was a bug in the 1.0.x lock parser that meant we had to wait until 1.0 fell out of use. We also need to start tracking the Bundler version in the bundle now because we plan to release 2.0 (with big improvements, but breaking some backwards compatibility).&lt;/p&gt;
+
+&lt;p&gt;At this point in the explanation, several people have then asked if we could just track the minor version, without the bugfix version. What if it was just 1.10? Would that give most of the benefits without the git churn? Despite this, there are two factors that made us decide to stick with patch level.&lt;/p&gt;
+
+&lt;p&gt;First, and most importantly, as soon as everyone is on 1.10+, the churn completely disappears. Version 1.10.1 will not change a lock that says it was bundled with 1.10.3. The absolute worst case once everyone has upgraded to Bundler 1.9.10 or higher is a single commit per version of Bundler, followed by no git churn.&lt;/p&gt;
+
+&lt;p&gt;Second, Bundler patch level fixes definitely fix bugs, and oftentimes those bugs are big enough to break &lt;code&gt;bundle install&lt;/code&gt; for certain subsets of users. Only tracking minor version would be similar to only tracking the minor version of Rails—it’s not really feasible to say “oh, you can use any 4.2.x version of Rails”, because the x allows security holes, breaking bugs, and other problems.&lt;/p&gt;
+
+&lt;p&gt;So, in conclusion, the change was never intended to be this disruptive, we're doing what we can to reduce the impact, and the problem should be completely resolved by updating Bundler to 1.10 (or even the latest 1.9 release, if some of your team want to stay on 1.9).&lt;/p&gt;
+
+&lt;p&gt;Thanks for the feedback, everyone!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-20T17:00:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
+    <updated>2015-06-23T21:50:44-07:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -42,7 +94,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
     <published>2015-03-19T17:00:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
+    <updated>2015-03-19T19:44:41-07:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -190,7 +242,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
     <published>2015-03-18T19:56:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name/>
     </author>
@@ -213,7 +265,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
     <published>2014-08-15T10:02:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
+    <updated>2015-02-28T14:53:32-08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -227,7 +279,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
     <published>2014-08-13T18:22:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
+    <updated>2015-06-23T22:39:56-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -264,34 +316,6 @@ specify it as the only executable.&lt;/p&gt;
 &lt;h3 id="credits"&gt;Credits&lt;/h3&gt;
 
 &lt;p&gt;Thanks to Andreas Loupasakis and Fotos Georgiadis for reporting this issue, James Tucker, Tony Arcieri, Eric Hodel, Michael Koziarski, and Kurt Seifried for assistance with the eventual solution, and David Radcliffe for importing legacy Github gems into RubyGems.org.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler API outages on July 15 &amp; 16, 2014</title>
-    <link rel="alternate" href="http://bundler.io/blog/2014/07/16/bundler-api-outages.html"/>
-    <id>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</id>
-    <published>2014-07-16T16:29:00-07:00</published>
-    <updated>2015-05-14T18:45:36-07:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;In the last couple of days, the Bundler API has seen some downtime: 53 minutes on July 15 and 3 hours  and 16 minutes on July 16. Here's what happened, and how we're working to keep it from happening again in the future.&lt;/p&gt;
-
-&lt;p&gt;The Bundler API provides information about specific gems, allowing &lt;code&gt;bundle install&lt;/code&gt; to run more quickly. Without the API installing multiple gems is much slower, because information about every single gem has to be downloaded, instead of just information about the gems that are needed.&lt;/p&gt;
-
-&lt;p&gt;Starting with RubyGems version 2.2.0 (which is included with Ruby 2.1), the &lt;code&gt;gem install&lt;/code&gt; also uses the API to download gem metadata more quickly. As users upgraded RubyGems (or were upgraded by upgrading their Ruby version), the load on the API slowly started to increase. We are usually able to successfully handle the increased load, but only up to a point. When enough large, slow requests are made simultaneously (some of you have really big Gemfiles!), unanswered API requests started to pile up while the slow requests ran. At that point, the problem snowballs pretty naturally, and the API starts responding very sluggishly, if it even manages to respond at all inside the hard 30 second timeout imposed by Heroku.&lt;/p&gt;
-
-&lt;p&gt;This snowball effect happens on occasion, and the solution is often as simple as dropping all the requests in the queue so that incoming requests can be served immediately. Yesterday, that wasn't enough. There were too many requests to handle even after dropping the backed up queue of waiting requests. Adding application servers is extremely straightforward, but there was a problem: the database server had reached its connection limit. If we added any more application servers, we would need additional database connections, and our current server was at the limits of its hardware.&lt;/p&gt;
-
-&lt;p&gt;To increase the number of allowed database connections, we had to upgrade to a bigger database. Fortunately, Heroku's Postgres tools make it simple to create a bigger database that follows the existing database, and then turn off replication and switch to using that bigger database as the new main database. Yesterday, I took down the API, created a new follower database that was able to support more connections, and then failed over to use it as the primary database. This resulted in roughly 53 minutes of downtime on July 15.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, replication to the new, bigger database was only partially complete when I manually failed over to that database. The automated process that synchronizes the main RubyGems.org database to the API database wasn't able to fill in all of the missing data due to the way replication had copied only part of the information about some gems.&lt;/p&gt;
-
-&lt;p&gt;Today, while investigating reports of failures during &lt;code&gt;bundle install&lt;/code&gt;, we discovered the missing database data, and took down the API entirely to force everyone to use the accurate (but slower) full gem index. To repair the missing data, we restored a database backup from yesterday, and then synchronized the API database with the main RubyGems.org database to catch up on new gems. This caused roughly 3 hours and 16 minutes of downtime on July 16.&lt;/p&gt;
-
-&lt;p&gt;Since the API was already down, we took the opportunity to improve the API database infrastructure. With the bigger database, we were able to remove our replica setup and instead just use a single database. We were also able to upgrade from Postgres 9.2.4 to 9.3.4, with performance enhancements and automatic failover. In the future, primary database failures should now be handled automatically.&lt;/p&gt;
-
-&lt;p&gt;At this point, we have successfully upgraded to the latest version of Postgres, dramatically increased the hardware the database runs on, and increased the number of application servers from 15 to 20. We believe this fully armed and operational database will be faster and more reliable. Sorry for the downtime. Happy Bundling!&lt;/p&gt;
 </content>
   </entry>
 </feed>

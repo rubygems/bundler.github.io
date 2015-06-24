@@ -109,6 +109,10 @@ local and global sources. Not compatible with --global or --local flag.</p>
 <p>Executing bundle with the <code>BUNDLE_IGNORE_CONFIG</code> environment variable set will
 cause it to ignore all configuration.</p>
 
+<p>Executing <code>bundle config disable_multisource true</code> upgrades the warning about
+the Gemfile containing multiple primary sources to an error. Executing <code>bundle
+config --delete disable_multisource</code> downgrades this error to a warning.</p>
+
 <h2 id="BUILD-OPTIONS">BUILD OPTIONS</h2>
 
 <p>You can use <code>bundle config</code> to give bundler the flags to pass to the gem
@@ -185,6 +189,9 @@ will look in when installing gems.</li>
 <li><code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>): When set, Gemfiles
 containing multiple sources will produce errors instead of warnings. Use
 <code>bundle config --delete disable_multisource</code> to unset.</li>
+<li><code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>): When set, no post install
+messages will be printed. To silence a single gem, use dot notation like
+<code>ignore_messages.httparty true</code>.</li>
 </ul>
 
 
@@ -266,7 +273,7 @@ you to avoid putting secrets into your Gemfile.</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>May 2015</li>
+    <li class='tc'>June 2015</li>
     <li class='tr'>bundle-config(1)</li>
   </ol>
 

@@ -95,7 +95,8 @@
                  [--shebang]
                  [--standalone[=GROUP[ GROUP...]]]
                  [--trust-policy=POLICY]
-                 [--without=GROUP[ GROUP...]]</p>
+                 [--without=GROUP[ GROUP...]]
+                 [--with=GROUP[ GROUP...]]</p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
@@ -171,7 +172,13 @@ in the manner required.</p></dd>
 <code>NoSecurity</code>. For more details, please see the Rubygems signing documentation
 linked below in <a href="#SEE-ALSO" title="SEE ALSO" data-bare-link="true">SEE ALSO</a>.</p></dd>
 <dt><code>--without=&lt;list></code></dt><dd><p>A space-separated list of groups referencing gems to skip during installation.
+If a group is given that is in the remembered list of groups given
+to --with, it is removed from that list.
 This is a <a href="#REMEMBERED-OPTIONS" title="REMEMBERED OPTIONS" data-bare-link="true">remembered option</a>.</p></dd>
+<dt><code>--with=&lt;list></code></dt><dd><p>A space-separated list of groups referencing gems to install. If an
+optional group is given it is installed. If a group is given that is
+in the remembered list of groups given to --without, it is removed
+from that list. This is a <a href="#REMEMBERED-OPTIONS" title="REMEMBERED OPTIONS" data-bare-link="true">remembered option</a>.</p></dd>
 </dl>
 
 
@@ -437,7 +444,7 @@ does not work, run <a href="bundle-update.1.html">bundle update(1)</a>.</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>May 2015</li>
+    <li class='tc'>June 2015</li>
     <li class='tr'>bundle-install(1)</li>
   </ol>
 

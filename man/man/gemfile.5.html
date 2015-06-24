@@ -60,6 +60,7 @@
     <a href="#RUBY-ruby-">RUBY (#ruby)</a>
     <a href="#GEMS-gem-">GEMS (#gem)</a>
     <a href="#BLOCK-FORM-OF-SOURCE-GIT-PATH-GROUP-and-PLATFORMS">BLOCK FORM OF SOURCE, GIT, PATH, GROUP and PLATFORMS</a>
+    <a href="#INSTALL_IF-install_if-">INSTALL_IF (#install_if)</a>
     <a href="#GEMSPEC-gemspec-">GEMSPEC (#gemspec)</a>
     <a href="#SOURCE-PRIORITY">SOURCE PRIORITY</a>
   </div>
@@ -510,15 +511,30 @@ platforms :ruby do
   gem "sqlite3"
 end
 
-group :development do
+group :development, :optional =&gt; true do
   gem "wirble"
   gem "faker"
 end
 </code></pre>
 
+<p>In the case of the group block form the :optional option can be given
+to prevent a group from being installed unless listed in the <code>--with</code>
+option given to the <code>bundle install</code> command.</p>
+
 <p>In the case of the <code>git</code> block form, the <code>:ref</code>, <code>:branch</code>, <code>:tag</code>,
 and <code>:submodules</code> options may be passed to the <code>git</code> method, and
 all gems in the block will inherit those options.</p>
+
+<h2 id="INSTALL_IF-install_if-">INSTALL_IF (#install_if)</h2>
+
+<p>The <code>install_if</code> method allows gems to be installed based on a proc or lambda.
+This is especially useful for optional gems that can only be used if certain
+software is installed or some other conditions are met.</p>
+
+<pre><code>install_if -&gt; { RUBY_PLATFORM =~ /darwin/ } do
+  gem "pasteboard"
+end
+</code></pre>
 
 <h2 id="GEMSPEC-gemspec-">GEMSPEC (#gemspec)</h2>
 
@@ -534,10 +550,10 @@ files in your test code as you would if the project were installed as a gem; you
 need not manipulate the load path manually or require project files via relative
 paths.</p>
 
-<p>The <code>gemspec</code> method supports optional <code>:path</code>, <code>:name</code>, and <code>:development_group</code>
-options, which control where bundler looks for the <code>.gemspec</code>, what named
-<code>.gemspec</code> it uses (if more than one is present), and which group development
-dependencies are included in.</p>
+<p>The <code>gemspec</code> method supports optional <code>:path</code>, <code>:glob</code>, <code>:name</code>, and <code>:development_group</code>
+options, which control where bundler looks for the <code>.gemspec</code>, the glob it uses to look
+for the gemspec (defaults to: "{,<em>,</em>/*}.gemspec"), what named <code>.gemspec</code> it uses
+(if more than one is present), and which group development dependencies are included in.</p>
 
 <h2 id="SOURCE-PRIORITY">SOURCE PRIORITY</h2>
 
@@ -559,7 +575,7 @@ bundler uses the following priority order:</p>
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>May 2015</li>
+    <li class='tc'>June 2015</li>
     <li class='tr'>Gemfile(5)</li>
   </ol>
 
