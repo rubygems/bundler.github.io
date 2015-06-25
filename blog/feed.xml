@@ -14,13 +14,15 @@
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-23T22:36:00-07:00</published>
-    <updated>2015-06-24T00:15:12-07:00</updated>
+    <updated>2015-06-25T13:13:13-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
     <content type="html">&lt;p&gt;Bundler 1.10 is out! In fact, Bundler 1.10.5 is out today, so we thought it was high time to let everyone know about it. &lt;/p&gt;
 
 &lt;p&gt;This release comes with a bunch of new features: the &lt;code&gt;lock&lt;/code&gt; command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved &lt;code&gt;outdated&lt;/code&gt; output, and the option to force installed gems to be downloaded and installed again.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://qiita.com/jnchito/items/a9907114bc56af67d0b0"&gt;日本語訳 / Japanese translation&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
 
@@ -32,7 +34,7 @@
 
 &lt;p&gt;Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using &lt;code&gt;group :name, optional: true do&lt;/code&gt;, and then opt in to installing an optional group with &lt;code&gt;bundle install --with name&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/bundle-gemfile.1.html#INSTALL_IF"&gt;Gemfile&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation.&lt;/p&gt;
 
 &lt;p&gt;There are several more changes, so check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; to read about all of them.&lt;/p&gt;
 
@@ -265,7 +267,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
     <published>2014-08-15T10:02:00-07:00</published>
-    <updated>2015-02-28T14:53:32-08:00</updated>
+    <updated>2015-06-24T21:36:47-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -279,7 +281,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
     <published>2014-08-13T18:22:00-07:00</published>
-    <updated>2015-06-23T22:39:56-07:00</updated>
+    <updated>2015-06-24T21:36:47-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>

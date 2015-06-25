@@ -33,6 +33,8 @@
           
           <p>This release comes with a bunch of new features: the <code>lock</code> command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved <code>outdated</code> output, and the option to force installed gems to be downloaded and installed again.</p>
           
+          <p><a href="http://qiita.com/jnchito/items/a9907114bc56af67d0b0">日本語訳 / Japanese translation</a></p>
+          
           <h3 id="new-features">New features</h3>
           
           <p>First up, the new <code>lock</code> command. Running <code>bundle lock</code> will resolve the Gemfile and write a Gemfile.lock, but will not download or install any gems.</p>
@@ -43,7 +45,7 @@
           
           <p>Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using <code>group :name, optional: true do</code>, and then opt in to installing an optional group with <code>bundle install --with name</code>.</p>
           
-          <p>At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the <code>install_if</code> group should be installed, and they will be. Or not. For an example, check out the <a href="/v1.10/man/bundle-gemfile.1.html#INSTALL_IF">Gemfile</a> documentation.</p>
+          <p>At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the <code>install_if</code> group should be installed, and they will be. Or not. For an example, check out the <a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-">Gemfile</a> documentation.</p>
           
           <p>There are several more changes, so check out the full <a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md">1.10 changelog</a> to read about all of them.</p>
           
