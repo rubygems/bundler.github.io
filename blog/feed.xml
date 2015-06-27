@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-23T22:36:00-07:00</published>
-    <updated>2015-06-25T13:13:13-07:00</updated>
+    <updated>2015-06-26T19:06:17-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -34,9 +34,9 @@
 
 &lt;p&gt;Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using &lt;code&gt;group :name, optional: true do&lt;/code&gt;, and then opt in to installing an optional group with &lt;code&gt;bundle install --with name&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation. The idea for this feature came entirely from discussions with &lt;a href="https://rubytogether.org/members"&gt;Ruby Together members&lt;/a&gt;. If you'd like to see more features like this one, or even suggest some of your own, &lt;a href="https://rubytogether.org/join"&gt;join Ruby Together today&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;There are several more changes, so check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; to read about all of them.&lt;/p&gt;
+&lt;p&gt;That's not all! There are several more smaller changes, including better support for gems with native extensions on RubyGems 2.2. Check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; for the entire list.&lt;/p&gt;
 
 &lt;h3 id="bundled-with"&gt;BUNDLED WITH&lt;/h3&gt;
 
