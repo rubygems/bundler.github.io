@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
       Bundler: Hello, Bundler 1.9!
     </title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
+    
     <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
-  <body>
+  <body class=''>
     <div id='body'>
       <div id='header'>
         <a class="image" href="/"><img width="725" alt="The best way to manage your application's dependencies" src="/images/gembundler.png" /></a>
@@ -29,21 +33,22 @@
             </time>
           </h3>
           <hr>
-          <p>A mere month and a half after the release of Bundler 1.8, we're happy to announce our next act: Bundler 1.9.</p>
-          
-          <p>While the <a href="https://github.com/bundler/bundler/blob/v1.9.0/CHANGELOG.md#190-2015-03-20">CHANGELOG</a> for this version might seem rather short (and light on big new features), there is one cool thing to talk about: <a href="https://github.com/CocoaPods/Molinillo">Molinillo</a>. Molinillo is a new dependency resolution algorithm developed for <a href="http://cocoapods.org">CocoaPods</a> – the Cocoa dependency manager. Now, Bundler shares its dependency resolver – one of the most integral parts of a dependency manager – with CocoaPods, with the core logic being independently documented and tested. Molinillo was developed thanks to a <a href="https://stripe.com/blog/stripe-open-source-retreat">generous grant from Stripe</a> for the express purpose of being a generic dependency resolution algorithm that was sharable across different code bases – specifically CocoaPods and Bundler (and possibly even <a href="https://github.com/rubygems/rubygems/pull/1189">RubyGems</a>)!</p>
-          
-          <h4 id="dependencies-in-bundler">Dependencies in Bundler?</h4>
-          
-          <p>Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager <em>for</em> gems, written in Ruby. How could it use gems itself? Well, it can't <em>really</em>. But we can cheat a bit by shipping Molinillo's source files inside the <code>bundler</code> gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of <code>molinillo</code> (or <code>thor</code>, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler's own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!</p>
-          
-          <h4 id="updating">Updating</h4>
-          
-          <p>To install the last release of Bundler you can run:</p>
-          
-          <p><code>&#x000A;$ [sudo] gem install bundler</code></p>
-          
-          <p>For all the details, don’t miss the Changelog!</p>
+            <p>A mere month and a half after the release of Bundler 1.8, we’re happy to announce our next act: Bundler 1.9.</p>
+            
+            <p>While the <a href="https://github.com/bundler/bundler/blob/v1.9.0/CHANGELOG.md#190-2015-03-20">CHANGELOG</a> for this version might seem rather short (and light on big new features), there is one cool thing to talk about: <a href="https://github.com/CocoaPods/Molinillo">Molinillo</a>. Molinillo is a new dependency resolution algorithm developed for <a href="http://cocoapods.org">CocoaPods</a> – the Cocoa dependency manager. Now, Bundler shares its dependency resolver – one of the most integral parts of a dependency manager – with CocoaPods, with the core logic being independently documented and tested. Molinillo was developed thanks to a <a href="https://stripe.com/blog/stripe-open-source-retreat">generous grant from Stripe</a> for the express purpose of being a generic dependency resolution algorithm that was sharable across different code bases – specifically CocoaPods and Bundler (and possibly even <a href="https://github.com/rubygems/rubygems/pull/1189">RubyGems</a>)!</p>
+            
+            <h4 id="dependencies-in-bundler">Dependencies in Bundler?</h4>
+            
+            <p>Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager <em>for</em> gems, written in Ruby. How could it use gems itself? Well, it can’t <em>really</em>. But we can cheat a bit by shipping Molinillo’s source files inside the <code>bundler</code> gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of <code>molinillo</code> (or <code>thor</code>, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler’s own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!</p>
+            
+            <h4 id="updating">Updating</h4>
+            
+            <p>To install the last release of Bundler you can run:</p>
+            
+            <p><code>&#x000A;$ [sudo] gem install bundler</code></p>
+            
+            <p>For all the details, don’t miss the Changelog!</p>
+          </hr>
         </div>
       </div>
     </div>
@@ -76,5 +81,7 @@
       ga('create', 'UA-39559982-1', 'bundler.io');
       ga('send', 'pageview');
     </script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+    
   </body>
 </html>
