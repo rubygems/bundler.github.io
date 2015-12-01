@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
   <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
       Bundler: The best way to manage a Ruby application's gems
     </title>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
-    
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
-  <body class=''>
+  <body>
     <div id='body'>
       <div id='header'>
         <a class="image" href="/"><img width="725" alt="The best way to manage your application's dependencies" src="/images/gembundler.png" /></a>
@@ -254,18 +250,21 @@
                   </li>
                   <li>
                     <code>cache_path</code> (<code>BUNDLE_CACHE_PATH</code>): The directory
-                    that bundler will place cached gems in when running <code>bundle&#x000A;          package</code> and that bundler will look in when installing with the
+                    that bundler will place cached gems in when running <code>bundle
+                    package</code> and that bundler will look in when installing with the
                     <code>--deployment</code> option.
                   </li>
                   <li>
                     <code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>):
                     When set, Gemfiles containing multiple sources will produce an error
-                    instead of a warning. Use <code>bundle config --delete&#x000A;          disable_multisource</code> to unset.
+                    instead of a warning. Use <code>bundle config --delete
+                    disable_multisource</code> to unset.
                   </li>
                 </ul>
                 <p>
                   In general, you should set these settings per-application by using the
-                  applicable flag to the <code>bundle install</code> or <code>bundle&#x000A;        package</code> command.
+                  applicable flag to the <code>bundle install</code> or <code>bundle
+                  package</code> command.
                 </p>
                 <p>
                   You can set them globally either via environment variables or
@@ -360,7 +359,6 @@
           <ul>
             <li><a href="/v1.10/bundle_install.html">bundle install</a></li>
             <li><a href="/v1.10/bundle_update.html">bundle update</a></li>
-            <li><a href="/v1.10/bundle_gem.html">bundle gem</a></li>
             <div class='buttons'>
               <a href="/v1.10/commands.html">View all commands</a>
             </div>
@@ -426,7 +424,5 @@
       ga('create', 'UA-39559982-1', 'bundler.io');
       ga('send', 'pageview');
     </script>
-    <script src="/javascripts/application.js" type="text/javascript"></script>
-    
   </body>
 </html>

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html>
   <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
       Bundler: The best way to manage a Ruby application's gems
     </title>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
-    
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
-  <body class=''>
+  <body>
     <div id='body'>
       <div id='header'>
         <a class="image" href="/"><img width="725" alt="The best way to manage your application's dependencies" src="/images/gembundler.png" /></a>
@@ -23,7 +19,7 @@
         <div id='contents'>
           <h1 id="bundler-issues">Bundler Issues</h1>
           
-          <p>So! You’re having problems with Bundler. This file is here to help. If you’re running into an error, try reading the rest of this file for help. If you can’t figure out how to solve your problem, there are also instructions on how to report a bug.</p>
+          <p>So! You're having problems with Bundler. This file is here to help. If you're running into an error, try reading the rest of this file for help. If you can't figure out how to solve your problem, there are also instructions on how to report a bug.</p>
           
           <p><strong>Please use the <a href="https://github.com/bundler/bundler-features">Bundler
           Features</a> repo to suggest and
@@ -39,22 +35,43 @@
           
           <h3 id="heroku-errors">Heroku errors</h3>
           
-          <p>Please open a ticket with Heroku if you’re having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, Heroku support can get the exact details to us.</p>
+          <p>Please open a ticket with Heroku if you're having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, Heroku support can get the exact details to us.</p>
           
           <h3 id="other-problems">Other problems</h3>
           
-          <p>First, figure out exactly what it is that you’re trying to do. Then, go to the <a href="http://bundler.io">Bundler documentation website</a> and see if we have instructions on how to do that.</p>
+          <p>First, figure out exactly what it is that you're trying to do. Then, go to the <a href="http://bundler.io">Bundler documentation website</a> and see if we have instructions on how to do that.</p>
           
           <p>Second, check <a href="http://bundler.io/compatibility.html">the compatibility
           list</a>, and make sure that the version of Bundler that you are
           using works with the versions of Ruby and Rubygems that you are using.</p>
           
-          <p>If the instructions don’t work, or you can’t find any instructions, you can try these troubleshooting steps:</p>
+          <p>If the instructions don't work, or you can't find any instructions, you can try these troubleshooting steps:</p>
           
-          <pre class="highlight plaintext"># remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# try to install one more time&#x000A;bundle install</pre>
+          <pre class="highlight plaintext"># remove user-specific gems and git repos
+          rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/
+          
+          # remove system-wide git repos and git checkouts
+          rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/
+          
+          # remove project-specific settings
+          rm -rf .bundle/
+          
+          # remove project-specific cached gems and repos
+          rm -rf vendor/cache/
+          
+          # remove the saved resolve of the Gemfile
+          rm -rf Gemfile.lock
+          
+          # uninstall the rubygems-bundler and open_gem gems
+          rvm gemset use global # if using rvm
+          gem uninstall rubygems-bundler open_gem
+          
+          # try to install one more time
+          bundle install
+          </pre>
           <h2 id="reporting-unresolved-problems">Reporting unresolved problems</h2>
           
-          <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
+          <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren't working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you're having.</p>
           
           <p><strong>The best way to report a bug is by providing a reproduction script.</strong> See these examples:</p>
           
@@ -68,7 +85,7 @@
           <p>If you are unable to do that, please include the following information in your report:</p>
           
           <ul>
-            <li>What you’re trying to accomplish</li>
+            <li>What you're trying to accomplish</li>
             <li>The command you ran</li>
             <li>What you expected to happen</li>
             <li>What actually happened</li>
@@ -130,7 +147,6 @@
           <ul>
             <li><a href="/v1.10/bundle_install.html">bundle install</a></li>
             <li><a href="/v1.10/bundle_update.html">bundle update</a></li>
-            <li><a href="/v1.10/bundle_gem.html">bundle gem</a></li>
             <div class='buttons'>
               <a href="/v1.10/commands.html">View all commands</a>
             </div>
@@ -196,7 +212,5 @@
       ga('create', 'UA-39559982-1', 'bundler.io');
       ga('send', 'pageview');
     </script>
-    <script src="/javascripts/application.js" type="text/javascript"></script>
-    
   </body>
 </html>

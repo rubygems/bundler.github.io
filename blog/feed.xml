@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-06-24T00:36:00-05:00</updated>
+  <updated>2015-06-23T22:36:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-24T00:36:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-06-23T22:36:00-07:00</published>
+    <updated>2015-07-12T17:57:23-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -30,13 +30,13 @@
 
 &lt;p&gt;Next, for single-file scripts that still depend on gems, a &lt;code&gt;gemfile&lt;/code&gt; method is provided by &lt;code&gt;require "bundler/inline"&lt;/code&gt;. This method will not generate a lock, so be careful what gem versions you allow! Check out the &lt;a href="https://github.com/bundler/bundler/blob/master/lib/bundler/inline.rb"&gt;inline docs&lt;/a&gt; for details and examples.&lt;/p&gt;
 
-&lt;p&gt;Are you tired of being told to HTTParty hard? This option’s for you. Run &lt;code&gt;bundle config ignore_messages.httparty true&lt;/code&gt; to silence HTTParty for good, or run &lt;code&gt;bundle config ignore_messages true&lt;/code&gt; to turn off all messages forever.&lt;/p&gt;
+&lt;p&gt;Are you tired of being told to HTTParty hard? This option's for you. Run &lt;code&gt;bundle config ignore_messages.httparty true&lt;/code&gt; to silence HTTParty for good, or run &lt;code&gt;bundle config ignore_messages true&lt;/code&gt; to turn off all messages forever.&lt;/p&gt;
 
 &lt;p&gt;Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using &lt;code&gt;group :name, optional: true do&lt;/code&gt;, and then opt in to installing an optional group with &lt;code&gt;bundle install --with name&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation. The idea for this feature came entirely from discussions with &lt;a href="https://rubytogether.org/members"&gt;Ruby Together members&lt;/a&gt;. If you’d like to see more features like this one, or even suggest some of your own, &lt;a href="https://rubytogether.org/join"&gt;join Ruby Together today&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation. The idea for this feature came entirely from discussions with &lt;a href="https://rubytogether.org/members"&gt;Ruby Together members&lt;/a&gt;. If you'd like to see more features like this one, or even suggest some of your own, &lt;a href="https://rubytogether.org/join"&gt;join Ruby Together today&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;That’s not all! There are several more smaller changes, including better support for gems with native extensions on RubyGems 2.2. Check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; for the entire list.&lt;/p&gt;
+&lt;p&gt;That's not all! There are several more smaller changes, including better support for gems with native extensions on RubyGems 2.2. Check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; for the entire list.&lt;/p&gt;
 
 &lt;h3 id="bundled-with"&gt;BUNDLED WITH&lt;/h3&gt;
 
@@ -44,13 +44,13 @@
 
 &lt;p&gt;While the intended workflow involves only one lock change per Bundler version, the results in real life have been very frustrating. The &lt;em&gt;extremely&lt;/em&gt; short explanation is that the problem will disappear once the entire team (rather than only part of the team) upgrades to Bundler 1.9.10 or higher.&lt;/p&gt;
 
-&lt;p&gt;Here’s the long explanation: Bundler 1.10 adds the BUNDLED WITH section to the lock, while Bundler 1.9 removes it. When a team includes some developers on 1.9 or older, and some developers on 1.10 or higher, it’s easy to end up in a situation with commits changing the lock back and forth. The simplest way to stop that problem is to upgrade to 1.10 by running &lt;code&gt;gem install bundler&lt;/code&gt;. When Bundler 1.10 or higher sees a BUNDLED WITH section, it will leave it in the file.&lt;/p&gt;
+&lt;p&gt;Here's the long explanation: Bundler 1.10 adds the BUNDLED WITH section to the lock, while Bundler 1.9 removes it. When a team includes some developers on 1.9 or older, and some developers on 1.10 or higher, it's easy to end up in a situation with commits changing the lock back and forth. The simplest way to stop that problem is to upgrade to 1.10 by running &lt;code&gt;gem install bundler&lt;/code&gt;. When Bundler 1.10 or higher sees a BUNDLED WITH section, it will leave it in the file.&lt;/p&gt;
 
-&lt;p&gt;This change turned out to be a lot more problematic than we were expecting because of the way Spring works. Knowing what I know now, I would have rolled out this change completely differently to reduce this problem, but it’s too late for that now. :/ We designed the change to only activate when you run an “install” command, like &lt;code&gt;bundle install&lt;/code&gt; or &lt;code&gt;bundle update&lt;/code&gt;. If you just use &lt;code&gt;bundle exec&lt;/code&gt;, the lock does not change. We didn’t count on Spring, which runs &lt;code&gt;bundle install --local&lt;/code&gt; all the time in the background without notifying users. To stop that from happening, we’ve released a version of Bundler (1.10.4) that works around Spring.&lt;/p&gt;
+&lt;p&gt;This change turned out to be a lot more problematic than we were expecting because of the way Spring works. Knowing what I know now, I would have rolled out this change completely differently to reduce this problem, but it's too late for that now. :/ We designed the change to only activate when you run an "install" command, like &lt;code&gt;bundle install&lt;/code&gt; or &lt;code&gt;bundle update&lt;/code&gt;. If you just use &lt;code&gt;bundle exec&lt;/code&gt;, the lock does not change. We didn't count on Spring, which runs &lt;code&gt;bundle install --local&lt;/code&gt; all the time in the background without notifying users. To stop that from happening, we've released a version of Bundler (1.10.4) that works around Spring.&lt;/p&gt;
 
-&lt;p&gt;The last issue is that some developers refuse to upgrade from 1.9 to 1.10, for whatever reason, keeping the problem alive. To address that, we’re releasing a final update to 1.9 later today that will simply ignore the BUNDLED WITH section, rather than deleting it.&lt;/p&gt;
+&lt;p&gt;The last issue is that some developers refuse to upgrade from 1.9 to 1.10, for whatever reason, keeping the problem alive. To address that, we're releasing a final update to 1.9 later today that will simply ignore the BUNDLED WITH section, rather than deleting it.&lt;/p&gt;
 
-&lt;p&gt;The reason that we made the change is pretty straightforward: It has been a long-term source of bug reports that users are often on a version of Bundler so old it won’t work for a project, but they have no way to tell. We’ve wanted to fix this by tracking the Bunder version in the lock file since right after 1.0.0 came out. Unfortunately, there was a bug in the 1.0.x lock parser that meant we had to wait until 1.0 fell out of use. We also need to start tracking the Bundler version in the bundle now because we plan to release 2.0 (with big improvements, but breaking some backwards compatibility).&lt;/p&gt;
+&lt;p&gt;The reason that we made the change is pretty straightforward: It has been a long-term source of bug reports that users are often on a version of Bundler so old it won't work for a project, but they have no way to tell. We've wanted to fix this by tracking the Bunder version in the lock file since right after 1.0.0 came out. Unfortunately, there was a bug in the 1.0.x lock parser that meant we had to wait until 1.0 fell out of use. We also need to start tracking the Bundler version in the bundle now because we plan to release 2.0 (with big improvements, but breaking some backwards compatibility).&lt;/p&gt;
 
 &lt;p&gt;At this point in the explanation, several people have then asked if we could just track the minor version, without the bugfix version. What if it was just 1.10? Would that give most of the benefits without the git churn? Despite this, there are two factors that made us decide to stick with patch level.&lt;/p&gt;
 
@@ -58,7 +58,7 @@
 
 &lt;p&gt;Second, Bundler patch level releases definitely fix bugs, and oftentimes those bugs are big enough to break &lt;code&gt;bundle install&lt;/code&gt; for certain subsets of users. Only tracking minor version would be similar to only tracking the minor version of Rails—it’s not really feasible to say “oh, you can use any 4.2.x version of Rails”, because the x allows security holes, breaking bugs, and other problems.&lt;/p&gt;
 
-&lt;p&gt;So, in conclusion, the change was never intended to be this disruptive, we’re doing what we can to reduce the impact, and the problem should be completely resolved by updating Bundler to 1.10 (or even the latest 1.9 release, if some of your team want to stay on 1.9).&lt;/p&gt;
+&lt;p&gt;So, in conclusion, the change was never intended to be this disruptive, we're doing what we can to reduce the impact, and the problem should be completely resolved by updating Bundler to 1.10 (or even the latest 1.9 release, if some of your team want to stay on 1.9).&lt;/p&gt;
 
 &lt;p&gt;Thanks for the feedback, everyone!&lt;/p&gt;
 </content>
@@ -67,18 +67,18 @@
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-20T17:00:00-07:00</published>
+    <updated>2015-06-23T21:50:44-07:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
-    <content type="html">&lt;p&gt;A mere month and a half after the release of Bundler 1.8, we’re happy to announce our next act: Bundler 1.9.&lt;/p&gt;
+    <content type="html">&lt;p&gt;A mere month and a half after the release of Bundler 1.8, we're happy to announce our next act: Bundler 1.9.&lt;/p&gt;
 
 &lt;p&gt;While the &lt;a href="https://github.com/bundler/bundler/blob/v1.9.0/CHANGELOG.md#190-2015-03-20"&gt;CHANGELOG&lt;/a&gt; for this version might seem rather short (and light on big new features), there is one cool thing to talk about: &lt;a href="https://github.com/CocoaPods/Molinillo"&gt;Molinillo&lt;/a&gt;. Molinillo is a new dependency resolution algorithm developed for &lt;a href="http://cocoapods.org"&gt;CocoaPods&lt;/a&gt; – the Cocoa dependency manager. Now, Bundler shares its dependency resolver – one of the most integral parts of a dependency manager – with CocoaPods, with the core logic being independently documented and tested. Molinillo was developed thanks to a &lt;a href="https://stripe.com/blog/stripe-open-source-retreat"&gt;generous grant from Stripe&lt;/a&gt; for the express purpose of being a generic dependency resolution algorithm that was sharable across different code bases – specifically CocoaPods and Bundler (and possibly even &lt;a href="https://github.com/rubygems/rubygems/pull/1189"&gt;RubyGems&lt;/a&gt;)!&lt;/p&gt;
 
 &lt;h4 id="dependencies-in-bundler"&gt;Dependencies in Bundler?&lt;/h4&gt;
 
-&lt;p&gt;Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager &lt;em&gt;for&lt;/em&gt; gems, written in Ruby. How could it use gems itself? Well, it can’t &lt;em&gt;really&lt;/em&gt;. But we can cheat a bit by shipping Molinillo’s source files inside the &lt;code&gt;bundler&lt;/code&gt; gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of &lt;code&gt;molinillo&lt;/code&gt; (or &lt;code&gt;thor&lt;/code&gt;, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler’s own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!&lt;/p&gt;
+&lt;p&gt;Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager &lt;em&gt;for&lt;/em&gt; gems, written in Ruby. How could it use gems itself? Well, it can't &lt;em&gt;really&lt;/em&gt;. But we can cheat a bit by shipping Molinillo's source files inside the &lt;code&gt;bundler&lt;/code&gt; gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of &lt;code&gt;molinillo&lt;/code&gt; (or &lt;code&gt;thor&lt;/code&gt;, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler's own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!&lt;/p&gt;
 
 &lt;h4 id="updating"&gt;Updating&lt;/h4&gt;
 
@@ -95,8 +95,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-19T17:00:00-07:00</published>
+    <updated>2015-03-19T19:44:41-07:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -112,7 +112,7 @@ will be built with the gem.  Prior to this change, we would need to either not
 commit binstubs or change the gemspec not to include all files in &lt;code&gt;bin&lt;/code&gt; as
 executables.&lt;/p&gt;
 
-&lt;p&gt;There’s nothing that needs to be done for existing gems.  To modify an existing gem
+&lt;p&gt;There's nothing that needs to be done for existing gems.  To modify an existing gem
 to use this convention, we only need to move the executable(s), if any, into &lt;code&gt;exe/&lt;/code&gt;,
 and modify the gemspec &lt;code&gt;executables&lt;/code&gt; directory to &lt;code&gt;exe/&lt;/code&gt;, as above.&lt;/p&gt;
 
@@ -136,7 +136,7 @@ different directory, &lt;code&gt;exe/&lt;/code&gt;, as the &lt;code&gt;executabl
 &lt;p&gt;This change is just part of the evolving conventions in gem development.  RSpec,
 for example, has had its executable &lt;a href="https://github.com/RSpec/RSpec-core/blob/v2.7.0/RSpec-core.gemspec#L19"&gt;in &lt;code&gt;exe&lt;/code&gt; since 2011&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Here’s an example of the kind of buggy behavior you might see when binstubs are
+&lt;p&gt;Here's an example of the kind of buggy behavior you might see when binstubs are
 build with a gem as executables.&lt;/p&gt;
 
 &lt;h4 id="demo"&gt;Demo&lt;/h4&gt;
@@ -227,7 +227,7 @@ cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/
 
 &lt;pre class="highlight ruby"&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^exe/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;Or just delete the line altogether, since new_gem doesn’t have an executable.&lt;/p&gt;
+&lt;p&gt;Or just delete the line altogether, since new_gem doesn't have an executable.&lt;/p&gt;
 
 &lt;p&gt;If it did, we could continue to use &lt;code&gt;bin/&lt;/code&gt;, create the file as &lt;code&gt;bin/new_gem&lt;/code&gt; and
 specify it as the only executable.&lt;/p&gt;
@@ -243,18 +243,18 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T21:56:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-18T19:56:00-07:00</published>
+    <updated>2015-03-22T17:59:06-07:00</updated>
     <author>
       <name/>
     </author>
-    <content type="html">&lt;p&gt;All of the infrastructure used by Ruby developers today, including &lt;a href="https://bundler.io"&gt;Bundler&lt;/a&gt;, &lt;a href="https://rubygems.org/pages/download"&gt;RubyGems&lt;/a&gt;, and &lt;a href="https://rubygems.org/"&gt;RubyGems.org&lt;/a&gt; is maintained and developed by volunteers.  While it’s good that no one company controls resources shared by the community, it’s terrible that the only people who work on our shared infrastructure are doing so for free and in their spare time.&lt;/p&gt;
+    <content type="html">&lt;p&gt;All of the infrastructure used by Ruby developers today, including &lt;a href="https://bundler.io"&gt;Bundler&lt;/a&gt;, &lt;a href="https://rubygems.org/pages/download"&gt;RubyGems&lt;/a&gt;, and &lt;a href="https://rubygems.org/"&gt;RubyGems.org&lt;/a&gt; is maintained and developed by volunteers.  While it's good that no one company controls resources shared by the community, it's terrible that the only people who work on our shared infrastructure are doing so for free and in their spare time.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; was founded so the community can cooperate to solve that problem. It will fund on-call rotations, maintenance work, and improvements to the &lt;a href="https://rubytogether.org/projects"&gt;shared, public infrastructure&lt;/a&gt; used by the entire community.&lt;/p&gt;
 
-&lt;p&gt;We’ll also provide &lt;a href="https://rubytogether.org/benefits"&gt;benefits just for members&lt;/a&gt;. To begin with, opportunities to connect and exchange knowledge, turning &lt;a href="https://rubybench.org"&gt;RubyBench.org&lt;/a&gt; into a fully-fledged community performance benchmarking resource, and tracking and reporting on important deprecations and security issues for members.&lt;/p&gt;
+&lt;p&gt;We'll also provide &lt;a href="https://rubytogether.org/benefits"&gt;benefits just for members&lt;/a&gt;. To begin with, opportunities to connect and exchange knowledge, turning &lt;a href="https://rubybench.org"&gt;RubyBench.org&lt;/a&gt; into a fully-fledged community performance benchmarking resource, and tracking and reporting on important deprecations and security issues for members.&lt;/p&gt;
 
-&lt;p&gt;The community that has grown up around Ruby is amazing, and provides many fantastic (and fantastically useful) tools that any developer can use. Let’s work together to make sure those tools (and the community) are the best that they can be, for everyone.&lt;/p&gt;
+&lt;p&gt;The community that has grown up around Ruby is amazing, and provides many fantastic (and fantastically useful) tools that any developer can use. Let's work together to make sure those tools (and the community) are the best that they can be, for everyone.&lt;/p&gt;
 
 &lt;p&gt;If you or your company has benefited from the free and open-source tools available in Ruby, support those tools by becoming a member of Ruby Together. Membership dues directly fund work that benefits everyone using Ruby, and are usually tax-deductible. Both individual and corporate memberships are available. &lt;a href="https://rubytogether.org/join"&gt;Join us today&lt;/a&gt;!&lt;/p&gt;
 
@@ -266,22 +266,22 @@ specify it as the only executable.&lt;/p&gt;
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-15T12:02:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2014-08-15T10:02:00-07:00</published>
+    <updated>2015-06-24T21:36:47-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
-    <content type="html">&lt;p&gt;After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We’re understand the problem, and we’re working on a fix as fast as we can. In the meantime, it’s possible to work completely around the problem by adding the &lt;code&gt;--full-index&lt;/code&gt; option when you run &lt;code&gt;bundle install&lt;/code&gt;. I fully recognize that it sucks to have a regression in a security update, and I’m sorry that this happened. I can’t guarantee something like this well never happen again, but we’re adding tests to prevent this particular bug from recurring.&lt;/p&gt;
+    <content type="html">&lt;p&gt;After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We're understand the problem, and we're working on a fix as fast as we can. In the meantime, it's possible to work completely around the problem by adding the &lt;code&gt;--full-index&lt;/code&gt; option when you run &lt;code&gt;bundle install&lt;/code&gt;. I fully recognize that it sucks to have a regression in a security update, and I'm sorry that this happened. I can't guarantee something like this well never happen again, but we're adding tests to prevent this particular bug from recurring.&lt;/p&gt;
 
-&lt;p&gt;Sorry it’s broken; we’re working on fixing it. In the meantime, please work around the issue with &lt;code&gt;bundle install --full-index&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Sorry it's broken; we're working on fixing it. In the meantime, please work around the issue with &lt;code&gt;bundle install --full-index&lt;/code&gt;.&lt;/p&gt;
 </content>
   </entry>
   <entry>
     <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
     <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
-    <published>2014-08-13T20:22:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2014-08-13T18:22:00-07:00</published>
+    <updated>2015-06-24T21:36:47-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -297,7 +297,7 @@ specify it as the only executable.&lt;/p&gt;
 
 &lt;p&gt;Any Gemfile with multiple top-level &lt;code&gt;source&lt;/code&gt; lines cannot reliably control the gem server that a particular gem is fetched from. As a result, Bundler might install the wrong gem if more than one source provides a gem with the same name.&lt;/p&gt;
 
-&lt;p&gt;This is especially possible in the case of Github’s legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on RubyGems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
+&lt;p&gt;This is especially possible in the case of Github's legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on RubyGems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
 
 &lt;p&gt;To mitigate this, the Bundler and RubyGems.org teams worked together to copy almost every gem hosted on gems.github.com to rubygems.org, reducing the number of gems that can be used for such an attack.&lt;/p&gt;
 
