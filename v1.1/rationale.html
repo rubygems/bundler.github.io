@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
       Bundler: The best way to manage a Ruby application's gems
     </title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
+    
     <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
-  <body>
+  <body class=''>
     <div id='body'>
       <div id='header'>
         <a class="image" href="/"><img width="725" alt="The best way to manage your application's dependencies" src="/images/gembundler.png" /></a>
@@ -88,8 +92,7 @@
             <p>
               This will automatically discover your <code>Gemfile</code>, and make all of the gems in
               your <code>Gemfile</code> available to Ruby (in technical terms, it puts the gems "on the
-              load path"). You can think of it as an adding some extra powers to <code>require
-              'rubygems'</code>.
+              load path"). You can think of it as an adding some extra powers to <code>require&#x000A;    'rubygems'</code>.
             </p>
             <p>
               Now that your code is available to Ruby, you can require the gems that you need. For
@@ -131,13 +134,12 @@
             </p>
             <pre class="highlight plaintext">$ bundle install --without production&#x000A;</pre>
             <p>
-              Bundler will remember that you installed the gems using <code>--without
-              production</code>. For curious readers, bundler stores the flag in
+              Bundler will remember that you installed the gems using <code>--without&#x000A;    production</code>. For curious readers, bundler stores the flag in
               <code>APP_ROOT/.bundle/config</code>. You can see all of the settings that bundler saved
               there by running <code>bundle config</code>, which will also print out global settings
               (stored in <code>~/.bundle/config</code>), and settings set via environment variables.
               For more information on configuring bundler, please see
-              <a href="./man/bundle-config.1.html">bundle config</a>.
+              <a href="/v1.1/man/bundle-config.1.html">bundle config</a>.
             </p>
             <p>
               If you run <code>bundle install</code> later, without any flag, bundler will remember
@@ -153,8 +155,7 @@
               well as the gems in the <code>:development</code> group.
             </p>
             <p>
-              By default, a Rails generated app calls <code>Bundler.require(:default,
-              Rails.env)</code> in your <code>application.rb</code>, which links the groups in your
+              By default, a Rails generated app calls <code>Bundler.require(:default,&#x000A;    Rails.env)</code> in your <code>application.rb</code>, which links the groups in your
               <code>Gemfile</code> to the Rails environment. If you use other groups (not linked to a
               Rails environment), you can add them to the call to <code>Bundler.require</code>, if you
               want them to be automatically required.
@@ -214,8 +215,7 @@
             <p>
               In other words, you don't have to guess which versions of the dependencies you should
               install. In the example we've been using, even though <code>rack-cache</code> declares a
-              dependency on <code>rack >= 0.4</code>, we know for sure it works with <code>rack
-              1.2.1</code>. Even if the Rack team releases <code>rack 1.2.2</code>, bundler will
+              dependency on <code>rack >= 0.4</code>, we know for sure it works with <code>rack&#x000A;    1.2.1</code>. Even if the Rack team releases <code>rack 1.2.2</code>, bundler will
               always install <code>1.2.1</code>, the exact version of the gem that we know works. This
               relieves a large maintenance burden from application developers, because all machines
               always run the exact same third-party code.
@@ -232,20 +232,15 @@
               dependencies, but even in this case, updating everything can cause complications.
             </p>
             <p>
-              To illustrate, the <code>rails 3.0.0.rc</code> gem depends on <code>actionpack
-              3.0.0.rc</code> gem, which depends on <code>rack ~> 1.2.1</code> (which means <code>>=
-              1.2.1</code> and <code>< 1.3.0</code>). The <code>rack-cache</code> gem depends on
+              To illustrate, the <code>rails 3.0.0.rc</code> gem depends on <code>actionpack&#x000A;    3.0.0.rc</code> gem, which depends on <code>rack ~> 1.2.1</code> (which means <code>>=&#x000A;    1.2.1</code> and <code>< 1.3.0</code>). The <code>rack-cache</code> gem depends on
               <code>rack >= 0.4</code>. Let's assume that the <code>rails 3.0.0</code> final gem also
-              depends on <code>rack ~> 1.2.1</code>, and that since the release of <code>rails
-              3.0.0</code>, the Rack team released <code>rack 1.2.2</code>.
+              depends on <code>rack ~> 1.2.1</code>, and that since the release of <code>rails&#x000A;    3.0.0</code>, the Rack team released <code>rack 1.2.2</code>.
             </p>
             <p>
-              If we naïvely update all of our gems in order to update Rails, we'll get <code>rack
-              1.2.2</code>, which satisfies the requirements of both <code>rails 3.0.0</code> and
+              If we naïvely update all of our gems in order to update Rails, we'll get <code>rack&#x000A;    1.2.2</code>, which satisfies the requirements of both <code>rails 3.0.0</code> and
               <code>rack-cache</code>. However, we didn't specifically ask to update
               <code>rack-cache</code>, which may not be compatible with <code>rack 1.2.2</code> (for
-              whatever reason). And while an update from <code>rack 1.2.1</code> to <code>rack
-              1.2.2</code> probably won't break anything, similar scenarios can happen that involve
+              whatever reason). And while an update from <code>rack 1.2.1</code> to <code>rack&#x000A;    1.2.2</code> probably won't break anything, similar scenarios can happen that involve
               much larger jumps. (see [1] below for a larger discussion)
             </p>
             <p>
@@ -269,8 +264,7 @@
               update, refusing to update gems (or their dependencies) that you have not explicitly
               changed in the <code>Gemfile</code>. This means that if you do not modify
               <code>rack-cache</code> in your <code>Gemfile</code>, bundler will treat it **and its
-              dependencies** (<code>rack</code>) as a single, unmodifiable unit. If <code>rails
-              3.0.0</code> was incompatible with <code>rack-cache</code>, bundler will report a
+              dependencies** (<code>rack</code>) as a single, unmodifiable unit. If <code>rails&#x000A;    3.0.0</code> was incompatible with <code>rack-cache</code>, bundler will report a
               conflict between your snapshotted dependencies (<code>Gemfile.lock</code>) and your
               updated <code>Gemfile</code>.
             </p>
@@ -287,8 +281,7 @@
               drivers, <code>wirble</code>, <code>ruby-debug</code>). It will probably fail if you
               update gems with significant dependencies (<code>rails</code>), or that a lot of gems
               depend on (<code>rack</code>). If a transparent update fails, your application will fail
-              to boot, and bundler will print out an error instructing you to run <code>bundle
-              install</code>.
+              to boot, and bundler will print out an error instructing you to run <code>bundle&#x000A;    install</code>.
             </p>
             <h2 id='updating-a-gem-without-modyfying-the-gemfile'>
               Updating a Gem Without Modifying the Gemfile
@@ -309,8 +302,7 @@
             </p>
             <p>
               It will, however, update dependencies of other gems if necessary. For instance, if the
-              latest version of <code>rack-cache</code> specifies a dependency on <code>rack >=
-              1.2.2</code>, bundler will update <code>rack</code> to <code>1.2.2</code> even though
+              latest version of <code>rack-cache</code> specifies a dependency on <code>rack >=&#x000A;    1.2.2</code>, bundler will update <code>rack</code> to <code>1.2.2</code> even though
               you have not asked bundler to update <code>rack</code>. If bundler needs to update a
               gem that another gem depends on, it will let you know after the update has completed.
             </p>
@@ -330,8 +322,7 @@
             </h2>
             <p>
               When you run <code>bundle install</code>, bundler will (by default), install your gems
-              to your system repository of gems. This means that they will show up in <code>gem
-              list</code>. Additionally, if you are developing a number of applications, you will not
+              to your system repository of gems. This means that they will show up in <code>gem&#x000A;    list</code>. Additionally, if you are developing a number of applications, you will not
               need to download and install gems in common for each application. This is nice for
               development, but somewhat problematic for deployment.
             </p>
@@ -419,8 +410,7 @@
               <code>bundle update nokogiri</code>, and let bundler handle updating **only**
               <code>nokogiri</code> and its dependencies to the latest version that still
               satisfied the <code>~> 1.4.2</code> version requirement. This
-              also allows you to say "I want to use the current version of nokogiri" (<code>gem
-              'nokogiri'</code> in your <code>Gemfile</code>) without having to look up the exact
+              also allows you to say "I want to use the current version of nokogiri" (<code>gem&#x000A;    'nokogiri'</code> in your <code>Gemfile</code>) without having to look up the exact
               version number, while still getting the benefits of ensuring that your application
               always runs with exactly the same versions of all third-party code.
             </p>
@@ -475,8 +465,7 @@
             <p>
               For instance, imagine you have a production-only gem (let's call it
               <code>rack-debugging</code>) that depends on <code>rack =1.1</code>. If we did not
-              evaluate the production group when you ran <code>bundle install --without
-              production</code>, you would deploy your application, only to receive an error that
+              evaluate the production group when you ran <code>bundle install --without&#x000A;    production</code>, you would deploy your application, only to receive an error that
               <code>rack-debugging</code> conflicted with <code>rails</code> (which depends on
               <code>actionpack</code>, which depends on <code>rack ~> 1.2.1</code>).
             </p>
@@ -490,10 +479,8 @@
               tested with.
             </p>
             <p>
-              In contrast, by evaluating the gems in **all** groups when you call <code>bundle
-              install</code>, regardless of the groups you actually want to use in that environment,
-              we will discover the <code>rack-debugger</code> requirement, and install <code>rack
-              1.1</code>, which is also compatible with the <code>gem 'rack'</code> requirement in
+              In contrast, by evaluating the gems in **all** groups when you call <code>bundle&#x000A;    install</code>, regardless of the groups you actually want to use in that environment,
+              we will discover the <code>rack-debugger</code> requirement, and install <code>rack&#x000A;    1.1</code>, which is also compatible with the <code>gem 'rack'</code> requirement in
               your <code>Gemfile</code>.
             </p>
             <p>
@@ -518,8 +505,7 @@
               In general, modern C extensions properly discover the needed headers.
             </p>
             <p>
-              If you really need to pass flags to a C extension, you can use the <code>bundle
-              config</code> command:
+              If you really need to pass flags to a C extension, you can use the <code>bundle&#x000A;    config</code> command:
             </p>
             <pre class="highlight plaintext">$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</pre>
             <p>
@@ -649,5 +635,7 @@
       ga('create', 'UA-39559982-1', 'bundler.io');
       ga('send', 'pageview');
     </script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+    
   </body>
 </html>

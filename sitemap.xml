@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2015-07-13T00:57:47Z</lastmod>
+    <lastmod>2015-12-03T16:13:52Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -50,6 +50,30 @@
   </url>
   <url>
     <loc>http://bundler.io/issues.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/older_versions.html</loc>
@@ -119,6 +143,27 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.0/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.0/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.0/rails23.html</loc>
@@ -203,6 +248,27 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.1/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.1/rails23.html</loc>
@@ -310,6 +376,30 @@
     <loc>http://bundler.io/v1.10/</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.10/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/man/gemfile.5.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.10/rails23.html</loc>
   </url>
   <url>
@@ -404,6 +494,30 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.2/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.2/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.2/rails23.html</loc>
@@ -509,6 +623,30 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.3/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.3/rails23.html</loc>
@@ -617,6 +755,30 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.5/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.5/rails23.html</loc>
@@ -733,6 +895,30 @@
     <loc>http://bundler.io/v1.6/</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.6/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.6/man/gemfile.5.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.6/rails23.html</loc>
   </url>
   <url>
@@ -845,6 +1031,30 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.7/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.7/rails23.html</loc>
@@ -961,6 +1171,30 @@
     <loc>http://bundler.io/v1.8/</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.8/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.8/man/gemfile.5.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.8/rails23.html</loc>
   </url>
   <url>
@@ -1073,6 +1307,30 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.9/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.9/rails23.html</loc>

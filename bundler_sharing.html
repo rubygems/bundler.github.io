@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
       Bundler: The best way to manage a Ruby application's gems
     </title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
+    
     <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
-  <body>
+  <body class=''>
     <div id='body'>
       <div id='header'>
         <a class="image" href="/"><img width="725" alt="The best way to manage your application's dependencies" src="/images/gembundler.png" /></a>
@@ -75,8 +79,7 @@
               <p class='description'>
                 In other words, you don't have to guess which versions of the dependencies you should
                 install. In the example we've been using, even though <code>rack-cache</code> declares a
-                dependency on <code>rack >= 0.4</code>, we know for sure it works with <code>rack
-                1.2.1</code>. Even if the Rack team releases <code>rack 1.2.2</code>, bundler will
+                dependency on <code>rack >= 0.4</code>, we know for sure it works with <code>rack&#x000A;      1.2.1</code>. Even if the Rack team releases <code>rack 1.2.2</code>, bundler will
                 always install <code>1.2.1</code>, the exact version of the gem that we know works. This
                 relieves a large maintenance burden from application developers, because all machines
                 always run the exact same third-party code.
@@ -110,6 +113,7 @@
           <ul>
             <li><a href="/v1.10/bundle_install.html">bundle install</a></li>
             <li><a href="/v1.10/bundle_update.html">bundle update</a></li>
+            <li><a href="/v1.10/bundle_gem.html">bundle gem</a></li>
             <div class='buttons'>
               <a href="/v1.10/commands.html">View all commands</a>
             </div>
@@ -175,5 +179,7 @@
       ga('create', 'UA-39559982-1', 'bundler.io');
       ga('send', 'pageview');
     </script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+    
   </body>
 </html>
