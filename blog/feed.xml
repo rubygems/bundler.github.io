@@ -5,16 +5,95 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-06-24T00:36:00-05:00</updated>
+  <updated>2015-12-13T03:00:00+08:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
   <entry>
+    <title>Version 1.11 released</title>
+    <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
+    <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
+    <published>2015-12-13T03:00:00+08:00</published>
+    <updated>2015-12-13T10:19:22+08:00</updated>
+    <author>
+      <name>Samuel Giddins</name>
+    </author>
+    <content type="html">&lt;p&gt;Bundler 1.11 is here! Six and a half months after the last big release, we’re
+finally ready to ship 1.11.&lt;/p&gt;
+
+&lt;p&gt;I know it’s been a while, but there’s a pretty good reason for that. Over the
+summer, the team was busy supervising &lt;em&gt;four&lt;/em&gt; Google Summer of Code students:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We made a significant amount of progress on the new compact gem index, which
+ought to ship in 1.12 in the near future.&lt;/li&gt;
+  &lt;li&gt;We improved the Bundler website and online documentation.&lt;/li&gt;
+  &lt;li&gt;We’ve created a solid base for Bundler 2.0.&lt;/li&gt;
+  &lt;li&gt;We prototyped a new plugin system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition, the Bundler Core team has spent a lot of time focusing on the
+development experience of bundler itself. The bundler codebase is over five
+years old, and contains code from over 400 contributors. That can make it
+rather daunting to start contributing, and also makes it hard to ensure that
+all of the code in bundler is up to the same standards (and is fit to last for
+the next five years!). In order to make things more consistent, we’ve
+introduced RuboCop (and thus a style guide), we’ve instituted a build bot to
+ensure that &lt;code&gt;master&lt;/code&gt; is never failing, and have decided to subject 100% of the
+new code introduced to code review. This is a big step forward, and lets me
+confidently say that this will be our best release yet!&lt;/p&gt;
+
+&lt;p&gt;That out of the way, what’s actually in this long-awaited release?&lt;/p&gt;
+
+&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
+
+&lt;p&gt;First up, we’ve combed through a few years worth of bundler issues, and have
+improved the error messaging for every single one of them. Our goal is to never
+show an exception with a backtrace, and instead present a friendly and helpful
+error message when things go awry – and we’re now pretty close to that.&lt;/p&gt;
+
+&lt;p&gt;The dependency resolver has also seen a few updates. Continuing the theme of
+improved errors, version conflicts will now do a better job of reporting what
+versions of every gem have been activated, making it even easier to figure out
+the best way to resolve said conflict. Additionally, resolution has been sped up
+by over 25x in pathological cases. That’s a pretty nice win.&lt;/p&gt;
+
+&lt;p&gt;Finally, we’ve laid the groundwork for resolving gems based on the current
+version of Ruby.  Once the new index is rolled out, Bundler will make sure to
+choose gems whose &lt;code&gt;required_ruby_version&lt;/code&gt; matches the Ruby you are running on.&lt;/p&gt;
+
+&lt;h3 id="bugfixes"&gt;Bugfixes&lt;/h3&gt;
+
+&lt;p&gt;The real meat of this release comes in the bugfix section, however. Across
+almost four hundred commits, we’ve squashed upwards of fifty unique bugs.
+Meaning this version of bundler should be the fastest, most stable version we’ve
+ever released.&lt;/p&gt;
+
+&lt;h3 id="whats-next"&gt;What’s Next&lt;/h3&gt;
+
+&lt;p&gt;As I mentioned earlier, this long gap between releases doesn’t mean we’re
+slowing down development – quite the opposite, in fact! We’re actively working
+on bundler 1.12 and 2.0 &lt;em&gt;at this very moment&lt;/em&gt;, and are incredibly exited to get
+the new index into people’s hands as fast as we possibly can.&lt;/p&gt;
+
+&lt;h4 id="updating"&gt;Updating&lt;/h4&gt;
+
+&lt;p&gt;To install the last release of Bundler, you can run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ [sudo] gem install bundler
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For all the details, don’t miss the
+&lt;a href="https://github.com/bundler/bundler/blob/v1.11.0/CHANGELOG.md#1110-2015-12-12"&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-24T00:36:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-06-24T13:36:00+08:00</published>
+    <updated>2015-08-13T01:55:00+08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -67,8 +146,8 @@
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-21T08:00:00+08:00</published>
+    <updated>2015-08-13T01:55:00+08:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -95,8 +174,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-20T08:00:00+08:00</published>
+    <updated>2015-08-13T01:55:00+08:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -243,8 +322,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T21:56:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-19T10:56:00+08:00</published>
+    <updated>2015-08-13T01:55:00+08:00</updated>
     <author>
       <name/>
     </author>
@@ -266,58 +345,14 @@ specify it as the only executable.&lt;/p&gt;
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-15T12:02:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2014-08-16T01:02:00+08:00</published>
+    <updated>2015-08-13T01:55:00+08:00</updated>
     <author>
       <name>André Arko</name>
     </author>
     <content type="html">&lt;p&gt;After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We’re understand the problem, and we’re working on a fix as fast as we can. In the meantime, it’s possible to work completely around the problem by adding the &lt;code&gt;--full-index&lt;/code&gt; option when you run &lt;code&gt;bundle install&lt;/code&gt;. I fully recognize that it sucks to have a regression in a security update, and I’m sorry that this happened. I can’t guarantee something like this well never happen again, but we’re adding tests to prevent this particular bug from recurring.&lt;/p&gt;
 
 &lt;p&gt;Sorry it’s broken; we’re working on fixing it. In the meantime, please work around the issue with &lt;code&gt;bundle install --full-index&lt;/code&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler may install gems from a different source than expected (CVE-2013-0334)</title>
-    <link rel="alternate" href="http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html"/>
-    <id>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</id>
-    <published>2014-08-13T20:22:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Versions Affected&lt;/strong&gt;: All versions &amp;lt; 1.7.0&lt;br /&gt;
-&lt;strong&gt;Not Affected&lt;/strong&gt;: Any Gemfile with one or zero sources&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Fixed Versions&lt;/strong&gt;: 1.7.0&lt;br /&gt;
-&lt;strong&gt;Releases&lt;/strong&gt;: 1.7.0&lt;/p&gt;
-
-&lt;p&gt;Bundler 1.7 is a security-only release to address CVE-2013-0334, a vulnerability where a gem might be installed from an unintended source server, particularly while using both rubygems.org and gems.github.com.&lt;/p&gt;
-
-&lt;h3 id="impact"&gt;Impact&lt;/h3&gt;
-
-&lt;p&gt;Any Gemfile with multiple top-level &lt;code&gt;source&lt;/code&gt; lines cannot reliably control the gem server that a particular gem is fetched from. As a result, Bundler might install the wrong gem if more than one source provides a gem with the same name.&lt;/p&gt;
-
-&lt;p&gt;This is especially possible in the case of Github’s legacy gem server, hosted at gems.github.com. An attacker might create a malicious gem on RubyGems.org with the same name as a commonly-used Github gem. From that point forward, running &lt;code&gt;bundle install&lt;/code&gt; might result in the malicious gem being used instead of the expected gem.&lt;/p&gt;
-
-&lt;p&gt;To mitigate this, the Bundler and RubyGems.org teams worked together to copy almost every gem hosted on gems.github.com to rubygems.org, reducing the number of gems that can be used for such an attack.&lt;/p&gt;
-
-&lt;h3 id="resolution"&gt;Resolution&lt;/h3&gt;
-
-&lt;p&gt;To resolve this issue, upgrade to Bundler 1.7 by running &lt;code&gt;gem install bundler&lt;/code&gt;. The next time you run &lt;code&gt;bundle install&lt;/code&gt; for any Gemfile that contains multiple sources, each gem available from multiple sources will print a warning.&lt;/p&gt;
-
-&lt;p&gt;For every warning printed, edit the Gemfile to either specify a &lt;code&gt;:source&lt;/code&gt; option for that gem, or move the &lt;code&gt;gem&lt;/code&gt; line into a block that is passed to a &lt;code&gt;source&lt;/code&gt; method call.&lt;/p&gt;
-
-&lt;p&gt;For detailed information about the changes to how sources are handled in Bundler version 1.7, see the &lt;a href="http://bundler.io/v1.7/whats_new.html"&gt;release announcement&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="workarounds"&gt;Workarounds&lt;/h3&gt;
-
-&lt;p&gt;If you are unable to upgrade to Bundler 1.7, it is possible to work around the issue by removing all but one &lt;code&gt;source&lt;/code&gt; line from your Gemfile. Gems from other sources must be installed via the &lt;code&gt;:git&lt;/code&gt; option, which is not susceptible to this issue, or unpacked into the application repository and used via the &lt;code&gt;:path&lt;/code&gt;option.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, backporting a fix for this issue proved impractical, as previous versions of Bundler lacked the ability to distinguish between gem servers.&lt;/p&gt;
-
-&lt;h3 id="credits"&gt;Credits&lt;/h3&gt;
-
-&lt;p&gt;Thanks to Andreas Loupasakis and Fotos Georgiadis for reporting this issue, James Tucker, Tony Arcieri, Eric Hodel, Michael Koziarski, and Kurt Seifried for assistance with the eventual solution, and David Radcliffe for importing legacy Github gems into RubyGems.org.&lt;/p&gt;
 </content>
   </entry>
 </feed>
