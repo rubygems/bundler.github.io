@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2015-12-12T13:00:00-06:00</updated>
+  <updated>2015-12-12T14:00:00-05:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Version 1.11 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
-    <published>2015-12-12T13:00:00-06:00</published>
-    <updated>2015-12-12T20:04:53-06:00</updated>
+    <published>2015-12-12T14:00:00-05:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -92,8 +92,8 @@ $ [sudo] gem install bundler
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-24T00:36:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-06-24T01:36:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -146,8 +146,8 @@ $ [sudo] gem install bundler
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-20T20:00:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -174,8 +174,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T19:00:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-19T20:00:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -322,8 +322,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T21:56:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2015-03-18T22:56:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name/>
     </author>
@@ -345,8 +345,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Gem not found error on 1.7.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html"/>
     <id>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</id>
-    <published>2014-08-15T12:02:00-05:00</published>
-    <updated>2015-11-30T14:27:22-06:00</updated>
+    <published>2014-08-15T13:02:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>André Arko</name>
     </author>
