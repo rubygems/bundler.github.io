@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-04-29T00:53:16Z</lastmod>
+    <lastmod>2016-04-29T02:20:07Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -668,6 +668,36 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.12/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-exec.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-gem.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-install.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-lock.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-package.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-platform.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle-update.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/bundle.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/man/gemfile.5.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.12/rails23.html</loc>
