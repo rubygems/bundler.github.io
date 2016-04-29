@@ -5,16 +5,16 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-03-28T16:00:00-07:00</updated>
+  <updated>2016-04-28T16:00:00-07:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
   <entry>
     <title>The new index format, Fastly, and Bundler 1.12</title>
-    <link rel="alternate" href="http://bundler.io/blog/2016/03/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
-    <id>http://bundler.io/blog/2016/03/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-03-28T16:00:00-07:00</published>
-    <updated>2016-04-28T17:52:31-07:00</updated>
+    <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
+    <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
+    <published>2016-04-28T16:00:00-07:00</published>
+    <updated>2016-04-28T20:29:13-07:00</updated>
     <author>
       <name>André Arko</name>
     </author>
