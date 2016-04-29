@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-04-28T16:00:00-07:00</updated>
+  <updated>2016-04-28T19:00:00-04:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>The new index format, Fastly, and Bundler 1.12</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-04-28T16:00:00-07:00</published>
-    <updated>2016-04-28T20:29:13-07:00</updated>
+    <published>2016-04-28T19:00:00-04:00</published>
+    <updated>2016-04-29T00:18:34-04:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -30,7 +30,7 @@
 
 &lt;h2 id="outdated-by-version-size"&gt;&lt;code&gt;outdated&lt;/code&gt; by version size&lt;/h2&gt;
 
-&lt;p&gt;Another new feature is the ability to run &lt;code&gt;bundle outdated&lt;/code&gt; with the flags &lt;code&gt;--major&lt;/code&gt;, &lt;code&gt;--minor&lt;/code&gt;, and &lt;code&gt;--tiny&lt;/code&gt;. Using those flags, you can limit Bundler to only show you new versions that are both allowed by your &lt;code&gt;Gemfile&lt;/code&gt; and also meet the criteria of only changing the major, minor, or tiny version of the gem. You can combine them to get only minor and tiny updates, or even only major and tiny updates (but I have no idea why you would want to do that).&lt;/p&gt;
+&lt;p&gt;Another new feature is the ability to run &lt;code&gt;bundle outdated&lt;/code&gt; with the flags &lt;code&gt;--major&lt;/code&gt;, &lt;code&gt;--minor&lt;/code&gt;, and &lt;code&gt;--patch&lt;/code&gt;. Using those flags, you can limit Bundler to only show you new versions that are both allowed by your &lt;code&gt;Gemfile&lt;/code&gt; and also meet the criteria of only changing the major, minor, or patch version of the gem. You can combine them to get only minor and patch updates, or even only major and patch updates (but I have no idea why you would want to do that).&lt;/p&gt;
 
 &lt;h2 id="ruby-versions"&gt;Ruby versions&lt;/h2&gt;
 
@@ -51,8 +51,8 @@
     <title>Version 1.11 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
-    <published>2015-12-12T11:00:00-08:00</published>
-    <updated>2016-04-28T15:48:34-07:00</updated>
+    <published>2015-12-12T14:00:00-05:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -130,8 +130,8 @@ $ [sudo] gem install bundler
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-23T22:36:00-07:00</published>
-    <updated>2016-04-28T15:44:36-07:00</updated>
+    <published>2015-06-24T01:36:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -184,8 +184,8 @@ $ [sudo] gem install bundler
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T17:00:00-07:00</published>
-    <updated>2016-04-28T15:44:36-07:00</updated>
+    <published>2015-03-20T20:00:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -212,8 +212,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T17:00:00-07:00</published>
-    <updated>2016-04-28T15:44:36-07:00</updated>
+    <published>2015-03-19T20:00:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -360,8 +360,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T19:56:00-07:00</published>
-    <updated>2016-04-28T15:44:36-07:00</updated>
+    <published>2015-03-18T22:56:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name/>
     </author>
