@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -27,7 +27,7 @@
               <div class='description'>
                 Make sure all dependencies in your Gemfile are available to your application.
               </div>
-              <pre class="highlight plaintext">$ bundle install [--binstubs=PATH] [--clean] [--deployment] [--frozen]&#x000A;                 [--full-index] [--gemfile=FILE] [--local] [--no-cache]&#x000A;                 [--no-prune] [--path=PATH] [--quiet] [--shebang=STRING]&#x000A;                 [--standalone=ARRAY] [--system] [--without=GROUP GROUP]</pre>
+              <pre class="highlight plaintext"><code>$ bundle install [--binstubs=PATH] [--clean] [--deployment] [--frozen]&#x000A;                 [--full-index] [--gemfile=FILE] [--local] [--no-cache]&#x000A;                 [--no-prune] [--path=PATH] [--quiet] [--shebang=STRING]&#x000A;                 [--standalone=ARRAY] [--system] [--without=GROUP GROUP]&#x000A;</code></pre>
               <div class='notes'>
                 <p>
                   Options:
@@ -108,7 +108,7 @@
                 repository. In this case, install them to <code>vendor/bundle</code>.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install --path vendor/bundle</pre>
+                <pre class="highlight plaintext"><code>$ bundle install --path vendor/bundle&#x000A;</code></pre>
                 <div class='notes'>
                   Further <code>bundle</code> commands or calls to <code>Bundler.setup</code> or
                   <code>Bundler.require</code> will remember this location.
@@ -121,7 +121,7 @@
               <div class='description'>
                 Install all dependencies except those in groups that are explicitly excluded.
               </div>
-              <pre class="highlight plaintext">$ bundle install --without development test</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --without development test&#x000A;</code></pre>
               <a href="/v1.5/groups.html">Learn More: Groups</a>
             </div>
             <div class='bullet' id='deployment'>
@@ -129,7 +129,7 @@
                 Install all dependencies on to a production server.
                 Do <b>not</b> use this flag on a development machine.
               </div>
-              <pre class="highlight plaintext">$ bundle install --deployment</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
               <div class='notes'>
                 <p>
                   The <code>--deployment</code> flag activates a number of deployment-friendly
@@ -151,13 +151,13 @@
               <div class='description'>
                 Install gems parallely by starting the number of workers specificed.
               </div>
-              <pre class="highlight plaintext">$ bundle install --jobs 4&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --jobs 4&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet' id='retry'>
               <div class='description'>
                 Retry failed network or git requests.
               </div>
-              <pre class="highlight plaintext">$ bundle install --retry 3</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --retry 3&#x000A;</code></pre>
             </div>
           </div>
         </div>

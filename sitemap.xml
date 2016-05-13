@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-05-05T03:58:45Z</lastmod>
+    <lastmod>2016-05-13T04:59:45Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -49,13 +49,7 @@
     <loc>http://bundler.io/compatibility.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/conduct.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/contributors.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/issues.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/man/bundle-config.1.html</loc>

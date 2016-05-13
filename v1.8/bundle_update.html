@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -27,7 +27,7 @@
               <div class='description'>
                 Update the current environment
               </div>
-              <pre class="highlight plaintext">$ bundle update [GEM] [--full-index] [--group=GROUP] [--jobs=NUMBER] [--local] [--quiet] [--source=SOURCE]</pre>
+              <pre class="highlight plaintext"><code>$ bundle update [GEM] [--full-index] [--group=GROUP] [--jobs=NUMBER] [--local] [--quiet] [--source=SOURCE]&#x000A;</code></pre>
               <div class='notes'>
                 <p>
                   Options:
@@ -68,7 +68,7 @@
                 Update the current environment.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle update</pre>
+                <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
               </div>
               <div class='notes'>
                 If you run <code>bundle update</code> with no parameters, bundler will
@@ -81,7 +81,7 @@
                 Update a specific source (and all gems associated with it)
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle update --source=SOURCE</pre>
+                <pre class="highlight plaintext"><code>$ bundle update --source=SOURCE&#x000A;</code></pre>
               </div>
               <div class='notes'>
                 The name of a <code>:git</code> or <code>:path</code> source used in the
@@ -102,13 +102,13 @@
                 </p>
                 <p>
                   Consider the following <code>Gemfile</code>:
-                  <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span></pre>
+                  <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.rc'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
                 </p>
                 <p>
                   When you run <code>bundle install</code> the first time, bundler will
                   resolve all of the dependencies, all the way down, and install what you
                   need:
-                  <pre class="highlight plaintext">Fetching source index for https://rubygems.org/&#x000A;Installing rake (0.8.7)&#x000A;Installing abstract (1.0.0)&#x000A;Installing activesupport (3.0.0.rc)&#x000A;Installing builder (2.1.2)&#x000A;Installing i18n (0.4.1)&#x000A;Installing activemodel (3.0.0.rc)&#x000A;Installing erubis (2.6.6)&#x000A;Installing rack (1.2.1)&#x000A;Installing rack-mount (0.6.9)&#x000A;Installing rack-test (0.5.4)&#x000A;Installing tzinfo (0.3.22)&#x000A;Installing actionpack (3.0.0.rc)&#x000A;Installing mime-types (1.16)&#x000A;Installing polyglot (0.3.1)&#x000A;Installing treetop (1.4.8)&#x000A;Installing mail (2.2.5)&#x000A;Installing actionmailer (3.0.0.rc)&#x000A;Installing arel (0.4.0)&#x000A;Installing activerecord (3.0.0.rc)&#x000A;Installing activeresource (3.0.0.rc)&#x000A;Installing bundler (1.0.0.rc.3)&#x000A;Installing nokogiri (1.4.3.1) with native extensions&#x000A;Installing thor (0.14.0)&#x000A;Installing railties (3.0.0.rc)&#x000A;Installing rails (3.0.0.rc)&#x000A;&#x000A;Your bundle is complete! Use `bundle show [gemname]` to see where a&#x000A;bundled gem is installed.</pre>
+                  <pre class="highlight plaintext"><code>Fetching source index for https://rubygems.org/&#x000A;Installing rake (0.8.7)&#x000A;Installing abstract (1.0.0)&#x000A;Installing activesupport (3.0.0.rc)&#x000A;Installing builder (2.1.2)&#x000A;Installing i18n (0.4.1)&#x000A;Installing activemodel (3.0.0.rc)&#x000A;Installing erubis (2.6.6)&#x000A;Installing rack (1.2.1)&#x000A;Installing rack-mount (0.6.9)&#x000A;Installing rack-test (0.5.4)&#x000A;Installing tzinfo (0.3.22)&#x000A;Installing actionpack (3.0.0.rc)&#x000A;Installing mime-types (1.16)&#x000A;Installing polyglot (0.3.1)&#x000A;Installing treetop (1.4.8)&#x000A;Installing mail (2.2.5)&#x000A;Installing actionmailer (3.0.0.rc)&#x000A;Installing arel (0.4.0)&#x000A;Installing activerecord (3.0.0.rc)&#x000A;Installing activeresource (3.0.0.rc)&#x000A;Installing bundler (1.0.0.rc.3)&#x000A;Installing nokogiri (1.4.3.1) with native extensions&#x000A;Installing thor (0.14.0)&#x000A;Installing railties (3.0.0.rc)&#x000A;Installing rails (3.0.0.rc)&#x000A;&#x000A;Your bundle is complete! Use `bundle show [gemname]` to see where a&#x000A;bundled gem is installed.&#x000A;</code></pre>
                 </p>
                 <p>
                   As you can see, even though you have just two gems in the
@@ -154,7 +154,7 @@
                   <code>nokogiri</code> releases version <code>1.4.4</code>, and you want
                   to update it _without_ updating Rails and all of its dependencies. To
                   do this, run
-                  <pre class="highlight plaintext">bundle update nokogiri&#x000A;</pre>
+                  <pre class="highlight plaintext"><code>bundle update nokogiri&#x000A;&#x000A;</code></pre>
                 </p>
                 <p>
                   Bundler will update <code>nokogiri</code> and any of its dependencies,
@@ -171,13 +171,13 @@
                   Sometimes, multiple gems declared in your <code>Gemfile</code> are
                   satisfied by the same second-level dependency. For instance, consider the
                   case of <code>thin</code> and <code>rack-perftools-profiler</code>.
-                  <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'thin'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-perftools-profiler'</span>&#x000A;</pre>
+                  <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'thin'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-perftools-profiler'</span>&#x000A;&#x000A;</code></pre>
                 </p>
                 <p>
                   The <code>thin</code> gem depends on <code>rack >= 1.0</code>, while
                   <code>rack-perftools-profiler</code> depends on <code>rack ~> 1.0</code>.
                   If you run bundle install, you get:
-                  <pre class="highlight plaintext">Fetching source index for https://rubygems.org/&#x000A;Installing daemons (1.1.0)&#x000A;Installing eventmachine (0.12.10) with native extensions&#x000A;Installing open4 (1.0.1)&#x000A;Installing perftools.rb (0.4.7) with native extensions&#x000A;Installing rack (1.2.1)&#x000A;Installing rack-perftools_profiler (0.0.2)&#x000A;Installing thin (1.2.7) with native extensions&#x000A;Using bundler (1.0.0.rc.3)&#x000A;</pre>
+                  <pre class="highlight plaintext"><code>Fetching source index for https://rubygems.org/&#x000A;Installing daemons (1.1.0)&#x000A;Installing eventmachine (0.12.10) with native extensions&#x000A;Installing open4 (1.0.1)&#x000A;Installing perftools.rb (0.4.7) with native extensions&#x000A;Installing rack (1.2.1)&#x000A;Installing rack-perftools_profiler (0.0.2)&#x000A;Installing thin (1.2.7) with native extensions&#x000A;Using bundler (1.0.0.rc.3)&#x000A;&#x000A;</code></pre>
                 </p>
                 <p>
                   In this case, the two gems have their own set of dependencies, but they

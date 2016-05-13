@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -27,25 +27,25 @@
               <div class='description'>
                 Like gems, developers can setup a dependency on Ruby. This makes your app fail faster in case you depend on specific features in a Ruby VM. This way, the Ruby VM on your deployment server will match your local one. You can do this by using the <code>ruby</code> directive in the <code>Gemfile</code>:
               </div>
-              <pre class="highlight ruby"><span class="n">ruby</span> <span class="s1">'RUBY_VERSION'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'ENGINE'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'ENGINE_VERSION'</span><span class="p">,</span>&#x000A;  <span class="ss">:patchlevel</span> <span class="o">=&gt;</span> <span class="s1">'RUBY_PATCHLEVEL'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'RUBY_VERSION'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'ENGINE'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'ENGINE_VERSION'</span><span class="p">,</span>&#x000A;  <span class="ss">:patchlevel</span> <span class="o">=&gt;</span> <span class="s1">'RUBY_PATCHLEVEL'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 If you wanted to use JRuby 1.6.7 using Ruby 1.9.3, you would simply do the following:
               </div>
-              <pre class="highlight ruby"><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'jruby'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'1.6.7'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'jruby'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'1.6.7'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet' id='patchlevel'>
               <div class='description'>
                 It's also possible to restrict the patchlevel of the Ruby used by doing the following:
               </div>
-              <pre class="highlight ruby"><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:patchlevel</span> <span class="o">=&gt;</span> <span class="s1">'448'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:patchlevel</span> <span class="o">=&gt;</span> <span class="s1">'448'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Bundler will make checks against the current running Ruby VM to make sure it matches what is specified in the <code>Gemfile</code>. If things don't match, Bundler will raise an Exception explaining what doesn't match.
               </div>
-              <pre class="highlight plaintext">Your Ruby version is 1.8.7, but your Gemfile specified 1.9.3&#x000A;</pre>
+              <pre class="highlight plaintext"><code>Your Ruby version is 1.8.7, but your Gemfile specified 1.9.3&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -56,7 +56,7 @@
               <div class='description'>
                 Using the <code>platform</code> command with the <code>--ruby</code> flag, you can see what <code>ruby</code> directive is specified in the <code>Gemfile</code>.
               </div>
-              <pre class="highlight plaintext">ruby 1.9.3 (jruby 1.6.7)</pre>
+              <pre class="highlight plaintext"><code>ruby 1.9.3 (jruby 1.6.7)&#x000A;</code></pre>
               <a href="/v1.7/bundle_platform.html">Learn More: bundle platform</a>
             </div>
             <div class='bullet'>

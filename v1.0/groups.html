@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -29,14 +29,14 @@
                 to perform operations on the entire
                 group.
               </div>
-              <pre class="highlight ruby"><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span>&#x000A;<span class="n">gem</span> <span class="s2">"sinatra"</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"wirble"</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s2">"rspec"</span>&#x000A;  <span class="n">gem</span> <span class="s2">"faker"</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span>&#x000A;<span class="n">gem</span> <span class="s2">"sinatra"</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"wirble"</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s2">"rspec"</span>&#x000A;  <span class="n">gem</span> <span class="s2">"faker"</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Install all dependencies, except
                 those in specified groups
               </div>
-              <pre class="highlight plaintext">$ bundle install --without test development&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --without test development&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -44,7 +44,7 @@
                 noting that gems outside of a named group
                 are in the :default group
               </div>
-              <pre class="highlight ruby"><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -52,7 +52,7 @@
                 in a group named the same as the current
                 Rails environment
               </div>
-              <pre class="highlight ruby"><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -60,7 +60,7 @@
                 want to add to the load path. Only gems
                 in these groups will be require'able
               </div>
-              <pre class="highlight ruby"><span class="nb">require</span> <span class="s2">"rubygems"</span>&#x000A;<span class="nb">require</span> <span class="s2">"bundler"</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s2">"nokogiri"</span></pre>
+              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s2">"rubygems"</span>&#x000A;<span class="nb">require</span> <span class="s2">"bundler"</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s2">"nokogiri"</span>&#x000A;</code></pre>
               <a href="/v1.0/bundler_setup.html">Learn More: Bundler.setup</a>
             </div>
           </div>

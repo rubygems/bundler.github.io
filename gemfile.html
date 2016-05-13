@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -37,7 +37,7 @@
               <div class='description'>
                 Gemfiles require at least one gem source, in the form of the URL for a RubyGems server. Generate a Gemfile with the default rubygems.org source by running <code>bundle init</code>. If you can, use <code>https</code> so your connection to the rubygems.org server will be verified with SSL.
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;</code></pre>
               <div class='notes'>
                 It is possible, but not recommended as of Bundler 1.7, to add multiple global source lines. These are searched from last to first.
               </div>
@@ -50,12 +50,12 @@
                 will install the Gemfile, but this keeps the credentials from being stored
                 in plain text in version control.
               </div>
-              <pre class="highlight plaintext">$ bundle config https://gems.example.com/ user:password</pre>
+              <pre class="highlight plaintext"><code>$ bundle config https://gems.example.com/ user:password&#x000A;</code></pre>
               <div class='description'>
                 For some sources, like a company Gemfury account, it may be easier to
                 simply include the credentials in the Gemfile as part of the source URL.
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s2">"https://user:password@gems.example.com"</span></pre>
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://user:password@gems.example.com"</span>&#x000A;</code></pre>
               <div class='description'>
                 Credentials in the source URL will take precedence over credentials set
                 using <code>config</code>.
@@ -66,7 +66,7 @@
                 Declare the gems that you need, including version numbers. Specify versions using the same
                 syntax that RubyGems supports for dependencies.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.beta3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span>  <span class="s1">'&gt;=1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'thin'</span><span class="p">,</span>  <span class="s1">'~&gt;1.1'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.0.0.beta3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span>  <span class="s1">'&gt;=1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'thin'</span><span class="p">,</span>  <span class="s1">'~&gt;1.1'</span>&#x000A;</code></pre>
               <div class='notes'>
                 Most of the version specifiers, like <code>>= 1.0</code>, are self-explanatory.
                 The specifier <code>~></code> has a special meaning, best shown by example.
@@ -80,11 +80,11 @@
               <div class='description'>
                 If a gem's main file is different than the gem name, specify how to require it.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;</code></pre>
               <div class='description'>
                 Specify <code>:require => false</code> to prevent bundler from requiring the gem, but still install it and maintain dependencies.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="kp">false</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;</code></pre>
               <div class='notes'>
                 In order to require gems in your <code>Gemfile</code>, you will need to call
                 <code>Bundler.require</code> in your application.
@@ -96,11 +96,11 @@
                 If some of your gems need to be fetched from a private gem server, this default source can be overridden for those gems.
                 For a gem server that contains a single gem, it is easiest to use the <code>:source</code> option on that gem.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">'https://gems.example.com'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span><span class="p">,</span> <span class="ss">:source</span> <span class="o">=&gt;</span> <span class="s1">'https://gems.example.com'</span>&#x000A;</code></pre>
               <div class='description'>
                 If several gems come from the same server, you can use a <code>source</code> block to group them together.
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span></pre>
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
               <div class='description'>
                 Credentials for gem servers can be specified either in the URL or using
                 <code>bundle config</code>, as described above.
@@ -112,7 +112,7 @@
                 more valid gems. Specify what to check out with <code>:tag</code>,
                 <code>:branch</code>, or <code>:ref</code>. The default is the <code>master</code> branch.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'1.4'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'1.4'</span>&#x000A;</code></pre>
               <div class='notes'>
                 If the git repository does not contain a <code>.gemspec</code> file, bundler
                 will create a simple one, without any dependencies, executables or C extensions.
@@ -125,32 +125,32 @@
               <div class='description'>
                 If you would like to use an unpacked gem directly from the filesystem, simply set the <code>:path</code> option to the path containing the gem's files.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'extracted_library'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'./vendor/extracted_library'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'extracted_library'</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'./vendor/extracted_library'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 If you would like to use multiple local gems directly from the filesystem, you can set a global `path` option to the path containing the gem's files. This will automatically load gemspec files from subdirectories.
               </div>
-              <pre class="highlight ruby"><span class="n">path</span> <span class="s1">'components'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'admin_ui'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'public_ui'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">path</span> <span class="s1">'components'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'admin_ui'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'public_ui'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Dependencies can be placed into groups. Groups can be ignored at install-time (using <code>--without</code>) or required all at once (using <code>Bundler.require</code>).
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;<span class="n">gem</span> <span class="s1">'debugger'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span></pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;<span class="n">gem</span> <span class="s1">'debugger'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="p">]</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
               <a href="/groups.html">Learn more: Groups</a>
             </div>
             <div class='bullet'>
               <div class='description'>
                 You can specify the required version of Ruby in the <code>Gemfile</code> with <code>ruby</code>. If the <code>Gemfile</code> is loaded on a different Ruby version, Bundler will raise an exception with an explanation.
               </div>
-              <pre class="highlight ruby"><span class="n">ruby</span> <span class="s1">'1.9.3'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'1.9.3'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 What this means is that this app has a dependency to a Ruby VM that is ABI compatible with 1.9.3. If the version check does not match, Bundler will raise an exception. This will ensure the running code matches. You can be more specific with the <code>:engine</code> and <code>:engine_version</code> options.
               </div>
-              <pre class="highlight ruby"><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'jruby'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'1.6.7'</span></pre>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'jruby'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'1.6.7'</span>&#x000A;</code></pre>
               <a href="/gemfile_ruby.html">Learn More: Ruby Directive</a>
             </div>
           </div>

@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -27,14 +27,14 @@
               <div class='description'>
                 Configure the load path so all dependencies in your Gemfile can be required
               </div>
-              <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Only add gems from specified groups to the load path. If you want the gems in the default group, make sure to include it
               </div>
-              <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span></pre>
-              <a href="/v0.9/groups.html">Learn More: Groups</a>
+              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+              <a href="/groups.html">Learn More: Groups</a>
             </div>
           </div>
         </div>

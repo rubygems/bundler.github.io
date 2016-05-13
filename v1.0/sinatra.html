@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -27,25 +27,25 @@
               <div class='description'>
                 Let's say you wanted to run the following Sinatra app.
               </div>
-              <pre class="highlight ruby"><span class="k">class</span> <span class="nc">MySinatraApp</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>&#x000A;  <span class="n">get</span> <span class="s2">"/"</span> <span class="k">do</span>&#x000A;    <span class="s2">"Hello Bundler"</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">MySinatraApp</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>&#x000A;  <span class="n">get</span> <span class="s2">"/"</span> <span class="k">do</span>&#x000A;    <span class="s2">"Hello Bundler"</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 To use bundler with a Sinatra application, you only need to do two things. First, create a Gemfile.
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;<span class="n">gem</span> <span class="s2">"sinatra"</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s2">"sinatra/base"</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;<span class="n">gem</span> <span class="s2">"sinatra"</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s2">"sinatra/base"</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Then, set up your config.ru file to load the bundle before it loads your Sinatra app.
               </div>
-              <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'./my_sinatra_app'</span>&#x000A;<span class="n">run</span> <span class="no">MySinatraApp</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'./my_sinatra_app'</span>&#x000A;<span class="n">run</span> <span class="no">MySinatraApp</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Start your development server with rackup, and Sinatra will be loaded via Bundler.
               </div>
-              <pre class="highlight plaintext">$ rackup</pre>
+              <pre class="highlight plaintext"><code>$ rackup&#x000A;</code></pre>
             </div>
           </div>
         </div>

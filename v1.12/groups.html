@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -29,7 +29,7 @@
                 to perform operations on the entire
                 group.
               </div>
-              <pre class="highlight ruby"><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'capybara'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec-rails'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'cucumber'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:cucumber</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'capybara'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec-rails'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'cucumber'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:cucumber</span><span class="p">,</span> <span class="ss">:test</span><span class="p">]</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -37,7 +37,7 @@
                 listed groups. Gems in at least one
                 non-excluded group will still be installed.
               </div>
-              <pre class="highlight plaintext">$ bundle install --without test development&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --without test development&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -45,7 +45,7 @@
                 noting that gems outside of a named group
                 are in the :default group
               </div>
-              <pre class="highlight ruby"><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -53,7 +53,7 @@
                 in a group named the same as the current
                 Rails environment
               </div>
-              <pre class="highlight ruby"><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -61,7 +61,7 @@
                 want to add to the load path. Only gems
                 in these groups will be require'able
               </div>
-              <pre class="highlight ruby"><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span></pre>
+              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
               <a href="/v1.12/bundler_setup.html">Learn More: Bundler.setup</a>
             </div>
             <h2 id='grouping-your-dependencies'>
@@ -75,13 +75,13 @@
                 or Postgres installed on your development machine, and want bundler to skip it.
                 To do this, you can group your dependencies:
               </div>
-              <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Now, in development, you can instruct bundler to skip the <code>production</code> group:
               </div>
-              <pre class="highlight plaintext">$ bundle install --without production&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ bundle install --without production&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>

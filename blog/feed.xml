@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-04-28T18:00:00-05:00</updated>
+  <updated>2016-04-28T19:00:00-04:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>The new index format, Fastly, and Bundler 1.12</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-04-28T18:00:00-05:00</published>
-    <updated>2016-04-28T23:18:34-05:00</updated>
+    <published>2016-04-28T19:00:00-04:00</published>
+    <updated>2016-05-13T00:41:38-04:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -51,8 +51,8 @@
     <title>Version 1.11 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
-    <published>2015-12-12T13:00:00-06:00</published>
-    <updated>2015-12-30T11:03:15-06:00</updated>
+    <published>2015-12-12T14:00:00-05:00</published>
+    <updated>2016-05-13T00:41:38-04:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -130,12 +130,12 @@ $ [sudo] gem install bundler
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-24T00:36:00-05:00</published>
-    <updated>2015-12-30T11:03:15-06:00</updated>
+    <published>2015-06-24T01:36:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name>André Arko</name>
     </author>
-    <content type="html">&lt;p&gt;Bundler 1.10 is out! In fact, Bundler 1.10.5 is out today, so we thought it was high time to let everyone know about it. &lt;/p&gt;
+    <content type="html">&lt;p&gt;Bundler 1.10 is out! In fact, Bundler 1.10.5 is out today, so we thought it was high time to let everyone know about it.&lt;/p&gt;
 
 &lt;p&gt;This release comes with a bunch of new features: the &lt;code&gt;lock&lt;/code&gt; command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved &lt;code&gt;outdated&lt;/code&gt; output, and the option to force installed gems to be downloaded and installed again.&lt;/p&gt;
 
@@ -184,8 +184,8 @@ $ [sudo] gem install bundler
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T19:00:00-05:00</published>
-    <updated>2015-12-30T11:03:15-06:00</updated>
+    <published>2015-03-20T20:00:00-04:00</published>
+    <updated>2016-05-13T00:41:38-04:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -212,17 +212,18 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T19:00:00-05:00</published>
-    <updated>2015-12-30T11:03:15-06:00</updated>
+    <published>2015-03-19T20:00:00-04:00</published>
+    <updated>2016-05-13T00:41:38-04:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
     <content type="html">&lt;p&gt;&lt;a href="https://github.com/bundler/bundler/blob/v1.8.0/lib/bundler/templates/newgem/newgem.gemspec.tt"&gt;Bundler 1.8&lt;/a&gt;
 &lt;a href="https://github.com/bundler/bundler/commit/ab3e21784c6c18702869c771fbe7ae23c82cc7c0"&gt;moves the executables directory in generated gemspecs from &lt;code&gt;bin/&lt;/code&gt; to &lt;code&gt;exe/&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
-&lt;pre class="highlight diff"&gt;&lt;span class="gd"&gt;-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+&lt;pre class="highlight diff"&gt;&lt;code&gt;&lt;span class="gd"&gt;-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
 &lt;/span&gt;&lt;span class="gi"&gt;+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-&lt;/span&gt;&lt;/pre&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;This means that the Bundler-generated gems can use and commit binstubs,
 such as &lt;code&gt;bin/rake&lt;/code&gt;, to the &lt;code&gt;bin/&lt;/code&gt; directory.  Only files in the &lt;code&gt;exe/&lt;/code&gt; directory
 will be built with the gem.  Prior to this change, we would need to either not
@@ -258,17 +259,18 @@ build with a gem as executables.&lt;/p&gt;
 
 &lt;h4 id="demo"&gt;Demo&lt;/h4&gt;
 
-&lt;pre class="highlight shell"&gt;bundle gem new_gem
+&lt;pre class="highlight shell"&gt;&lt;code&gt;bundle gem new_gem
 git add .; git commit -am &lt;span class="s2"&gt;"Initial Commit"&lt;/span&gt;
 bundle binstub rake
 git add bin/rake; git commit -am &lt;span class="s2"&gt;"bundle binstub rake"&lt;/span&gt;
 bundle
 which rake &lt;span class="c"&gt;#=&amp;gt;  ~/.rvm/gems/ruby-2.1.5/bin/rake&lt;/span&gt;
 cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;and&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
 &lt;span class="c1"&gt;#&lt;/span&gt;
 &lt;span class="c1"&gt;# This file was generated by RubyGems.&lt;/span&gt;
 &lt;span class="c1"&gt;#&lt;/span&gt;
@@ -291,32 +293,37 @@ cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/
 
 &lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
 &lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;The problem is found in the last two lines:&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
 &lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;The rake executable no longer uses the &lt;code&gt;rake&lt;/code&gt; gem. It now requires &lt;code&gt;rake&lt;/code&gt; from &lt;code&gt;new_gem&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now, when I run rake elsewhere, I get the warning:&lt;/p&gt;
 
-&lt;pre class="highlight shell"&gt;Bundler is using a binstub that was created &lt;span class="k"&gt;for &lt;/span&gt;a different gem.
+&lt;pre class="highlight shell"&gt;&lt;code&gt;Bundler is using a binstub that was created &lt;span class="k"&gt;for &lt;/span&gt;a different gem.
 This is deprecated, &lt;span class="k"&gt;in &lt;/span&gt;future versions you may need to &lt;span class="sb"&gt;`&lt;/span&gt;bundle binstub new_gem&lt;span class="sb"&gt;`&lt;/span&gt; to work around a system/bundle conflict.
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;This happened because of the line in the gemspec that installed all git-versioned files in &lt;code&gt;bin/&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^bin/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^bin/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;To fix our rake install:&lt;/p&gt;
 
-&lt;pre class="highlight shell"&gt;gem pristine rake
+&lt;pre class="highlight shell"&gt;&lt;code&gt;gem pristine rake
 &lt;span class="c"&gt;# (In your gem folder, you may also want to run `bundle exec gem pristine rake`)&lt;/span&gt;
 cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;and&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
 &lt;span class="c1"&gt;#&lt;/span&gt;
 &lt;span class="c1"&gt;# This file was generated by RubyGems.&lt;/span&gt;
 &lt;span class="c1"&gt;#&lt;/span&gt;
@@ -339,18 +346,21 @@ cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/
 
 &lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
 &lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;To fix our gemspec:&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^exe/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^exe/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Or just delete the line altogether, since new_gem doesn’t have an executable.&lt;/p&gt;
 
 &lt;p&gt;If it did, we could continue to use &lt;code&gt;bin/&lt;/code&gt;, create the file as &lt;code&gt;bin/new_gem&lt;/code&gt; and
 specify it as the only executable.&lt;/p&gt;
 
-&lt;pre class="highlight ruby"&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"new_gem"&lt;/span&gt;
-&lt;/pre&gt;
+&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"new_gem"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;Or use the new &lt;code&gt;exe/&lt;/code&gt; convention, create a file such as &lt;code&gt;exe/new_gem&lt;/code&gt;, and not worry.&lt;/p&gt;
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
@@ -360,8 +370,8 @@ specify it as the only executable.&lt;/p&gt;
     <title>Announcing Ruby Together</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-18T21:56:00-05:00</published>
-    <updated>2015-12-30T11:03:15-06:00</updated>
+    <published>2015-03-18T22:56:00-04:00</published>
+    <updated>2015-12-30T12:03:15-05:00</updated>
     <author>
       <name/>
     </author>

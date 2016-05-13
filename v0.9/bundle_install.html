@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -29,7 +29,7 @@
                 available to your application.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install</pre>
+                <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
                 <div class='notes'>
                   Gems may be installed to system gems or <code>BUNDLE_PATH</code>
                   (which defaults to <code>~/.bundle</code>). Git repos will
@@ -44,14 +44,14 @@
                 <code>vendor/bundle</code>.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install vendor/bundle</pre>
+                <pre class="highlight plaintext"><code>$ bundle install vendor/bundle&#x000A;</code></pre>
                 <div class='notes'>
                   Further bundle commands or
                   calls to Bundler.setup or Bundler.require will
                   remember this location
                 </div>
-                <a href="/v0.9/bundler_setup.html">Learn More: Bundler.setup</a>
-                <a href="/v0.9/groups.html">Learn More: Bundler.require</a>
+                <a href="/bundler_setup.html">Learn More: Bundler.setup</a>
+                <a href="/groups.html">Learn More: Bundler.require</a>
               </div>
             </div>
             <div class='bullet'>
@@ -59,8 +59,8 @@
                 Install all dependencies except those in groups
                 that are explicitly excluded.
               </div>
-              <pre class="highlight plaintext">$ bundle install --without development test</pre>
-              <a href="/v0.9/groups.html">Learn More: Groups</a>
+              <pre class="highlight plaintext"><code>$ bundle install --without development test&#x000A;</code></pre>
+              <a href="/groups.html">Learn More: Groups</a>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -72,7 +72,7 @@
                 dependencies unpacked.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install --disable-shared-gems&#x000A;</pre>
+                <pre class="highlight plaintext"><code>$ bundle install --disable-shared-gems&#x000A;&#x000A;</code></pre>
               </div>
             </div>
             <div class='bullet'>
@@ -82,7 +82,7 @@
                 and would normally be used from there instead of installed.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install vendor/bundle --disable-shared-gems</pre>
+                <pre class="highlight plaintext"><code>$ bundle install vendor/bundle --disable-shared-gems&#x000A;</code></pre>
               </div>
             </div>
           </div>

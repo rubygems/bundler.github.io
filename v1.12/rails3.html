@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -32,7 +32,7 @@
                 if you would normally use sudo to install gems.
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ gem install rails</pre>
+                <pre class="highlight plaintext"><code>$ gem install rails&#x000A;</code></pre>
                 <div class='notes'>
                   We recommend using rvm for dependable Ruby
                   installations, especially if you are switching
@@ -44,21 +44,21 @@
               <div class='description'>
                 Generate a Rails app as usual
               </div>
-              <pre class="highlight plaintext">$ rails new myapp&#x000A;$ cd myapp&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ rails new myapp&#x000A;$ cd myapp&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Run the server. Bundler is transparently managing
                 your dependencies!
               </div>
-              <pre class="highlight plaintext">$ rails server&#x000A;</pre>
+              <pre class="highlight plaintext"><code>$ rails server&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
                 Add new dependencies to your Gemfile as you
                 need them.
               </div>
-              <pre class="highlight ruby"><span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'geokit'</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'geokit'</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet'>
               <div class='description'>
@@ -66,14 +66,14 @@
                 a certain Rails environment, place it in a group
                 named after that Rails environment
               </div>
-              <pre class="highlight ruby"><span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+              <pre class="highlight ruby"><code><span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
             </div>
             <div class='bullet' id='shared_with_23'>
               <div class='description'>
                 You can place a dependency in multiple groups
                 at once as well
               </div>
-              <pre class="highlight ruby"><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'wirble'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'ruby-debug'</span>&#x000A;<span class="k">end</span></pre>
+              <pre class="highlight ruby"><code><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'wirble'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'ruby-debug'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
               <a href="/v1.12/groups.html">Learn More: Groups</a>
             </div>
             <div class='bullet'>
@@ -82,7 +82,7 @@
                 installed, install it
               </div>
               <div class='how'>
-                <pre class="highlight plaintext">$ bundle install</pre>
+                <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
                 <div class='notes'>
                   This will update all dependencies in your
                   Gemfile to the latest versions that do not

@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -136,9 +136,9 @@
                     For each additional gem source, add a block to the <code>source</code>
                     line and move the relevant gem declarations inside it.
                     <p>For example, this <code>Gemfile</code>:</p>
-                    <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span></pre>
+                    <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;</code></pre>
                     <p>might change to this:</p>
-                    <pre class="highlight ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;</pre>
+                    <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
                   </li>
                 </ol>
               </div>

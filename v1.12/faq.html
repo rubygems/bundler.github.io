@@ -10,7 +10,7 @@
     </title>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic|Source+Code+Pro' rel='stylesheet'>
     
-    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" rel="stylesheet" />
     <link href="/images/favicon.png" rel="icon" type="image/png" />
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
   </head>
@@ -157,7 +157,7 @@
                   If you really need to pass flags to a C extension, you can use the <code>bundle config</code>
                   command:
                 </p>
-                <pre class="highlight plaintext">$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</pre>
+                <pre class="highlight plaintext"><code>$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;&#x000A;</code></pre>
                 <p>
                   Bundler will store this configuration in <code>~/.bundle/config</code>, and bundler will use
                   the configuration for any <code>bundle install</code> performed by the same user. As a result, once
@@ -175,7 +175,7 @@
                   <strong>A</strong>: Use the --local flag with bundle install. The --local flag tells bundler
                   to use the local gem cache instead of reaching out to the remote gem server.
                 </p>
-                <pre class="highlight plaintext">$ bundle install --local&#x000A;</pre>
+                <pre class="highlight plaintext"><code>$ bundle install --local&#x000A;&#x000A;</code></pre>
                 <h3>
                   Bundling From RubyGems is Really Slow
                 </h3>
@@ -186,7 +186,7 @@
                   <strong>A</strong>: Add the --full-index flag when bundling from the rubygems server. This downloads
                   the index all at once instead of making numerous small requests to the api.
                 </p>
-                <pre class="highlight plaintext">$ bundle install --full-index</pre>
+                <pre class="highlight plaintext"><code>$ bundle install --full-index&#x000A;</code></pre>
               </div>
             </div>
           </div>
