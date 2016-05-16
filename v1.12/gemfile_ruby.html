@@ -64,6 +64,13 @@
                 In the <code>ruby</code> directive, <code>:patchlevel</code> is optional, as patchlevel releases are usually compatible and include important security fixes. The patchlevel option checks the <code>RUBY_PATCHLEVEL</code> constant, and if not specified then bundler will simply ignore it.
               </div>
             </div>
+            <div class='bullet'>
+              <div class='description'>
+                Version operators for specifying a Ruby version are also available. The set of supported version operators is that of Rubygems (<code>gem</code> version operators). (ie. <code><</code>, <code>></code>, <code><=</code>, <code>>=</code>, <code>~></code>, <code>=</code>)
+              </div>
+              <pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'~&gt; 2.3.0'</span>&#x000A;</code></pre>
+              <a href="http://guides.rubygems.org/patterns/#declaring-dependencies">Learn More: Version Operators</a>
+            </div>
           </div>
         </div>
         <div id='sidebar'>
