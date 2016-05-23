@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -52,7 +52,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -131,7 +131,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -185,7 +185,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -213,7 +213,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
     <published>2015-03-20T00:00:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -371,7 +371,7 @@ specify it as the only executable.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
     <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
     <published>2015-03-19T02:56:00+00:00</published>
-    <updated>2016-05-23T20:06:29+00:00</updated>
+    <updated>2016-05-23T21:16:49+00:00</updated>
     <author>
       <name/>
     </author>
