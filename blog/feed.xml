@@ -5,42 +5,37 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-06-27T21:44:00+00:00</updated>
+  <updated>2016-07-10T21:44:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
   <entry>
-    <title>Bundler 1.13 and Redesigned bundler.io</title>
-    <link rel="alternate" href="http://bundler.io/blog/2016/06/27/bundler-1-13-and-redesigned-bundler-io.html"/>
-    <id>http://bundler.io/blog/2016/06/27/bundler-1-13-and-redesigned-bundler-io.html</id>
-    <published>2016-06-27T21:44:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <title>A New Bundler Website</title>
+    <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
+    <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
+    <published>2016-07-10T21:44:00+00:00</published>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
-      <name>xxxx</name>
+      <name>Jakub Kruczek</name>
     </author>
-    <content type="html">&lt;h2 id="bundler-v113"&gt;Bundler v1.13&lt;/h2&gt;
+    <content type="html">&lt;p&gt;Announcing… the new Bundler website! As part of Google Summer of Code 2016, Bundler has a new, prettier, and better website. The most visible changes are a completely new design and color scheme. In addition, the entire site is now responsive and easy to read on mobile devices using the &lt;a href="http://getbootstrap.com/"&gt;Bootstrap framework&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id="redesigned-bundlerio"&gt;Redesigned &lt;strong&gt;bundler.io&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;a href="/docs.html"&gt;new Docs page&lt;/a&gt; provides a table of contents for the entire site, allowing you to choose between guides, command reference pages, and changelogs for each version. On each command page (e.g. &lt;a href="/man/bundle-install.1.html"&gt;bundle install&lt;/a&gt;), there
+is a new sidebar, allowing navigation not just between commands but also to previous versions of the same command.&lt;/p&gt;
 
-&lt;p&gt;Most visible change is completely redesigned page with new styles and graphics. Now it’s responsive and adjusted also for mobile devices using &lt;a href="http://getbootstrap.com/"&gt;Bootstrap framework&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are also two new guides to go with the new website: &lt;a href="/guides/using_bundler_in_application.html"&gt;Using Bundler In Applications&lt;/a&gt; written by &lt;a href="https://github.com/kruczjak"&gt;me&lt;/a&gt;, and &lt;a href="/guides/using_bundler_in_application.html"&gt;Developing a RubyGem using Bundler&lt;/a&gt; by Ryan Bigg (&lt;a href="https://github.com/radar"&gt;@radar&lt;/a&gt;).&lt;/p&gt;
 
-&lt;p&gt;The &lt;a href="/docs.html"&gt;Docs page&lt;/a&gt; allows you to choose between guide, command reference or versions’ changelog. After choosing one of commands (e.g. &lt;a href="/man/bundle-install.1.html"&gt;bundle install&lt;/a&gt;), there
-is a new sidebar, making navigation between other commands and versions easier.&lt;/p&gt;
-
-&lt;p&gt;There are also two new guides: &lt;a href="/guides/using_bundler_in_application.html"&gt;&lt;code&gt;Using Bundler In Application&lt;/code&gt;&lt;/a&gt; written by Jakub (&lt;a href="https://github.com/kruczjak"&gt;@kruczjak&lt;/a&gt;) and &lt;a href="/guides/using_bundler_in_application.html"&gt;&lt;code&gt;Developing a RubyGem using
-Bundler&lt;/code&gt;&lt;/a&gt; by Ryan (&lt;a href="https://github.com/radar"&gt;@radar&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;More improvements:&lt;/p&gt;
+&lt;p&gt;The new site also includes some more improvements:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Man pages from Bundler repository instead of hand-written commands pages (where possible)&lt;/li&gt;
-  &lt;li&gt;Commit to master branch in &lt;a href="https://github.com/bundler/bundler-site"&gt;bundler-site repository&lt;/a&gt; causes auto-deploy of the newest page version (via Travis)&lt;/li&gt;
-  &lt;li&gt;Middleman updated to latest version&lt;/li&gt;
-  &lt;li&gt;Added anchor links in guides and commands docs for faster navigation&lt;/li&gt;
-  &lt;li&gt;[WIP] Started work on translations&lt;/li&gt;
+  &lt;li&gt;Command pages are now built from the Bundler repository instead of hand-written (where possible)&lt;/li&gt;
+  &lt;li&gt;Commits to the master branch of &lt;a href="https://github.com/bundler/bundler-site"&gt;bundler-site&lt;/a&gt; are now auto-deployed (via Travis)&lt;/li&gt;
+  &lt;li&gt;Middleman has been updated to latest version&lt;/li&gt;
+  &lt;li&gt;Every header in the guides and commands pages now has anchor links for navigation and reference&lt;/li&gt;
+  &lt;li&gt;The site now supports multiple translations (although no translations have been completed yet)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Many thanks to Amy (&lt;a href="https://github.com/sailorhg"&gt;@sailorhg&lt;/a&gt;), Andre (&lt;a href="https://github.com/indirect"&gt;@indirect&lt;/a&gt;) and Samuel (&lt;a href="https://github.com/segiddins"&gt;@segiddins&lt;/a&gt;). Without their help, it wouldn’t be
+&lt;p&gt;Many thanks to Amy (&lt;a href="https://github.com/sailorhg"&gt;@sailorhg&lt;/a&gt;), André (&lt;a href="https://github.com/indirect"&gt;@indirect&lt;/a&gt;) and Samuel (&lt;a href="https://github.com/segiddins"&gt;@segiddins&lt;/a&gt;). Without their help, it wouldn’t have been
 possible.&lt;/p&gt;
 
 &lt;p&gt;Enjoy :D&lt;/p&gt;
@@ -53,7 +48,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -91,7 +86,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -170,7 +165,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -224,7 +219,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -252,7 +247,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
     <published>2015-03-20T00:00:00+00:00</published>
-    <updated>2016-07-11T02:01:50+00:00</updated>
+    <updated>2016-07-11T03:02:18+00:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>

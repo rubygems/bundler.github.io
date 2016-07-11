@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-07-11T02:03:29Z</lastmod>
+    <lastmod>2016-07-11T03:03:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -118,13 +118,13 @@
     <loc>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/06/</loc>
+    <loc>http://bundler.io/blog/2016/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/06/27/</loc>
+    <loc>http://bundler.io/blog/2016/07/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/06/27/bundler-1-13-and-redesigned-bundler-io.html</loc>
+    <loc>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_binstubs.html</loc>
