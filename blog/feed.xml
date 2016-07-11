@@ -5,16 +5,55 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-04-28T23:00:00+00:00</updated>
+  <updated>2016-06-27T21:44:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler 1.13 and Redesigned bundler.io</title>
+    <link rel="alternate" href="http://bundler.io/blog/2016/06/27/bundler-1-13-and-redesigned-bundler-io.html"/>
+    <id>http://bundler.io/blog/2016/06/27/bundler-1-13-and-redesigned-bundler-io.html</id>
+    <published>2016-06-27T21:44:00+00:00</published>
+    <updated>2016-07-11T02:01:50+00:00</updated>
+    <author>
+      <name>xxxx</name>
+    </author>
+    <content type="html">&lt;h2 id="bundler-v113"&gt;Bundler v1.13&lt;/h2&gt;
+
+&lt;h2 id="redesigned-bundlerio"&gt;Redesigned &lt;strong&gt;bundler.io&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Most visible change is completely redesigned page with new styles and graphics. Now it’s responsive and adjusted also for mobile devices using &lt;a href="http://getbootstrap.com/"&gt;Bootstrap framework&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href="/docs.html"&gt;Docs page&lt;/a&gt; allows you to choose between guide, command reference or versions’ changelog. After choosing one of commands (e.g. &lt;a href="/man/bundle-install.1.html"&gt;bundle install&lt;/a&gt;), there
+is a new sidebar, making navigation between other commands and versions easier.&lt;/p&gt;
+
+&lt;p&gt;There are also two new guides: &lt;a href="/guides/using_bundler_in_application.html"&gt;&lt;code&gt;Using Bundler In Application&lt;/code&gt;&lt;/a&gt; written by Jakub (&lt;a href="https://github.com/kruczjak"&gt;@kruczjak&lt;/a&gt;) and &lt;a href="/guides/using_bundler_in_application.html"&gt;&lt;code&gt;Developing a RubyGem using
+Bundler&lt;/code&gt;&lt;/a&gt; by Ryan (&lt;a href="https://github.com/radar"&gt;@radar&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;More improvements:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Man pages from Bundler repository instead of hand-written commands pages (where possible)&lt;/li&gt;
+  &lt;li&gt;Commit to master branch in &lt;a href="https://github.com/bundler/bundler-site"&gt;bundler-site repository&lt;/a&gt; causes auto-deploy of the newest page version (via Travis)&lt;/li&gt;
+  &lt;li&gt;Middleman updated to latest version&lt;/li&gt;
+  &lt;li&gt;Added anchor links in guides and commands docs for faster navigation&lt;/li&gt;
+  &lt;li&gt;[WIP] Started work on translations&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many thanks to Amy (&lt;a href="https://github.com/sailorhg"&gt;@sailorhg&lt;/a&gt;), Andre (&lt;a href="https://github.com/indirect"&gt;@indirect&lt;/a&gt;) and Samuel (&lt;a href="https://github.com/segiddins"&gt;@segiddins&lt;/a&gt;). Without their help, it wouldn’t be
+possible.&lt;/p&gt;
+
+&lt;p&gt;Enjoy :D&lt;/p&gt;
+
+&lt;p&gt;~ Jakub (&lt;a href="https://github.com/kruczjak"&gt;@kruczjak&lt;/a&gt;)&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>The new index format, Fastly, and Bundler 1.12</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
+    <updated>2016-07-11T02:01:50+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -52,7 +91,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
+    <updated>2016-07-11T02:01:50+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -131,7 +170,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
+    <updated>2016-07-11T02:01:50+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -185,7 +224,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
+    <updated>2016-07-11T02:01:50+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -213,7 +252,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
     <published>2015-03-20T00:00:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
+    <updated>2016-07-11T02:01:50+00:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
@@ -364,29 +403,6 @@ specify it as the only executable.&lt;/p&gt;
 &lt;p&gt;Or use the new &lt;code&gt;exe/&lt;/code&gt; convention, create a file such as &lt;code&gt;exe/new_gem&lt;/code&gt;, and not worry.&lt;/p&gt;
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Announcing Ruby Together</title>
-    <link rel="alternate" href="http://bundler.io/blog/2015/03/19/announcing-ruby-together.html"/>
-    <id>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</id>
-    <published>2015-03-19T02:56:00+00:00</published>
-    <updated>2016-07-01T11:36:38+00:00</updated>
-    <author>
-      <name/>
-    </author>
-    <content type="html">&lt;p&gt;All of the infrastructure used by Ruby developers today, including &lt;a href="https://bundler.io"&gt;Bundler&lt;/a&gt;, &lt;a href="https://rubygems.org/pages/download"&gt;RubyGems&lt;/a&gt;, and &lt;a href="https://rubygems.org/"&gt;RubyGems.org&lt;/a&gt; is maintained and developed by volunteers.  While it’s good that no one company controls resources shared by the community, it’s terrible that the only people who work on our shared infrastructure are doing so for free and in their spare time.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; was founded so the community can cooperate to solve that problem. It will fund on-call rotations, maintenance work, and improvements to the &lt;a href="https://rubytogether.org/projects"&gt;shared, public infrastructure&lt;/a&gt; used by the entire community.&lt;/p&gt;
-
-&lt;p&gt;We’ll also provide &lt;a href="https://rubytogether.org/benefits"&gt;benefits just for members&lt;/a&gt;. To begin with, opportunities to connect and exchange knowledge, turning &lt;a href="https://rubybench.org"&gt;RubyBench.org&lt;/a&gt; into a fully-fledged community performance benchmarking resource, and tracking and reporting on important deprecations and security issues for members.&lt;/p&gt;
-
-&lt;p&gt;The community that has grown up around Ruby is amazing, and provides many fantastic (and fantastically useful) tools that any developer can use. Let’s work together to make sure those tools (and the community) are the best that they can be, for everyone.&lt;/p&gt;
-
-&lt;p&gt;If you or your company has benefited from the free and open-source tools available in Ruby, support those tools by becoming a member of Ruby Together. Membership dues directly fund work that benefits everyone using Ruby, and are usually tax-deductible. Both individual and corporate memberships are available. &lt;a href="https://rubytogether.org/join"&gt;Join us today&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;&lt;span style="font-size: 80%"&gt;This post was originally written for &lt;a href="https://rubytogether.org/news/2015-03-17-announcing-ruby-together"&gt;Ruby Together&lt;/a&gt;.&lt;/span&gt;&lt;/p&gt;
-
 </content>
   </entry>
 </feed>
