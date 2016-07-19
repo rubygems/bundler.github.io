@@ -1,1 +1,72 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: Gem not found error on 1.7.0 </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg"/> </div> <div class=container> <div class=row> <div class='col-md-12 col-lg-10 col-lg-offset-1'> <div class='contents blog'> <h2 class=title> <a href="/blog/2014/08/15/gem-not-found-error-on-1-7-0.html">Gem not found error on 1.7.0</a> </h2> <div class=subtitle> by <a href="http://arko.net" target=_blank>André Arko</a> on <time> Aug 15 2014 </time> </div> <div class=blog-content> <p>After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We’re understand the problem, and we’re working on a fix as fast as we can. In the meantime, it’s possible to work completely around the problem by adding the <code>--full-index</code> option when you run <code>bundle install</code>. I fully recognize that it sucks to have a regression in a security update, and I’m sorry that this happened. I can’t guarantee something like this well never happen again, but we’re adding tests to prevent this particular bug from recurring.</p> <p>Sorry it’s broken; we’re working on fixing it. In the meantime, please work around the issue with <code>bundle install --full-index</code>.</p> </div> </div> </div> </div> </div> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repository</a></li> </ul> </div> </div> </div> </body> </html>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: Gem not found error on 1.7.0
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Team</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
+            <div class='contents blog'>
+              <h2 class='title'>
+                <a href="/blog/2014/08/15/gem-not-found-error-on-1-7-0.html">Gem not found error on 1.7.0</a>
+              </h2>
+              <div class='subtitle'>
+                by
+                <a href="http://arko.net" target="_blank">André Arko</a>
+                on
+                <time>
+                  Aug 15 2014
+                </time>
+              </div>
+              <div class='blog-content'>
+                <p>After the release of Bundler 1.7.0 yesterday, we discovered a bug that can cause Bundler to report that a gem was not found, even though that gem is available from one of the relevant sources. We’re understand the problem, and we’re working on a fix as fast as we can. In the meantime, it’s possible to work completely around the problem by adding the <code>--full-index</code> option when you run <code>bundle install</code>. I fully recognize that it sucks to have a regression in a security update, and I’m sorry that this happened. I can’t guarantee something like this well never happen again, but we’re adding tests to prevent this particular bug from recurring.</p>
+                
+                <p>Sorry it’s broken; we’re working on fixing it. In the meantime, please work around the issue with <code>bundle install --full-index</code>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

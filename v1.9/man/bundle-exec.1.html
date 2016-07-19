@@ -1,4 +1,379 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: The best way to manage a Ruby application's gems </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg"/> </div> <div class=row> <div class=container> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-nav> <h4>Choose version</h4> <div class=form-group> <select class=form-control id=version-select> <option value='/v1.12/man/bundle-exec.1.html'> v1.12 </option> <option value='/v1.11/man/bundle-exec.1.html'> v1.11 </option> <option value='/v1.10/man/bundle-exec.1.html'> v1.10 </option> <option selected value='/v1.9/man/bundle-exec.1.html'> v1.9 </option> <option value='/v1.8/man/bundle-exec.1.html'> v1.8 </option> <option value='/v1.7/man/bundle-exec.1.html'> v1.7 </option> <option value='/v1.6/man/bundle-exec.1.html'> v1.6 </option> <option value='/v1.5/man/bundle-exec.1.html'> v1.5 </option> <option value='/v1.3/man/bundle-exec.1.html'> v1.3 </option> <option value='/v1.2/man/bundle-exec.1.html'> v1.2 </option> <option value='/v1.1/man/bundle-exec.1.html'> v1.1 </option> <option value='/v1.0/man/bundle-exec.1.html'> v1.0 </option> <option value='/v0.9/bundle_install.html'> v0.9 </option> </select> </div> <h4>Primary Commands</h4> <ul> <li class=''> <a href="/v1.9/man/bundle-install.1.html">bundle install</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/man/bundle-update.1.html">bundle update</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/man/bundle-package.1.html">bundle package</a> </li> <li class=separator> <hr> </li> <li class=active> <a href="/v1.9/man/bundle-exec.1.html">bundle exec</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/man/bundle-config.1.html">bundle config</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_help.html">bundle help</a> </li> <li class=separator> <hr> </li> </ul> <h4>Utilities</h4> <ul> <li class=''> <a href="/v1.9/man/bundle.1.html">bundle</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_binstubs.html">bundle binstubs</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_check.html">bundle check</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_clean.html">bundle clean</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_console.html">bundle console</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_gem.html">bundle gem</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_init.html">bundle init</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_inject.html">bundle inject</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_open.html">bundle open</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_outdated.html">bundle outdated</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/man/bundle-platform.1.html">bundle platform</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_show.html">bundle show</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_version.html">bundle version</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/bundle_viz.html">bundle viz</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.9/man/gemfile.5.html">gemfile</a> </li> <li class=separator> <hr> </li> </ul> </div> </div> <div class='commands contents' id=page-content-wrapper> <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id=menu-toggle> <- Toggle Menu </a> <div class=mp id=man> <h2 id=NAME>bundle exec</h2> <p class=man-name> <code>bundle-exec</code> - <span class=man-whatis>Execute a command in the context of the bundle</span> </p> <pre><code>bundle exec</code> [--keep-file-descriptors] <var>command</var></pre> <h2 id=DESCRIPTION>Description</h2> <p>This command executes the command, making all gems specified in the <code>Gemfile(5)</code> available to <code>require</code> in Ruby programs.</p> <p>Essentially, if you would normally have run something like <code>rspec spec/my_spec.rb</code>, and you want to use the gems specified in the <code>Gemfile(5)</code> and installed via <a href="bundle-install.1.html">bundle install(1)</a>, you should run <code>bundle exec rspec spec/my_spec.rb</code>.</p> <p>Note that <code>bundle exec</code> does not require that an executable is available on your shell's <code>$PATH</code>.</p> <h2 id=OPTIONS>Options</h2> <dl> <dt><code>--keep-file-descriptors</code></dt> <dd>Exec in Ruby 2.0 began discarding non-standard file descriptors. When this flag is passed, exec will revert to the 1.9 behaviour of passing all file descriptors to the new process.</dd> </dl> <h2 id=BUNDLE-INSTALL-BINSTUBS>Bundle Install --binstubs</h2> <p>If you use the <code>--binstubs</code> flag in <a href="bundle-install.1.html">bundle install(1)</a>, Bundler will automatically create a directory (which defaults to <code>app_root/bin</code>) containing all of the executables available from gems in the bundle.</p> <p>After using <code>--binstubs</code>, <code>bin/rspec spec/my_spec.rb</code> is identical to <code>bundle exec rspec spec/my_spec.rb</code>.</p> <h2 id=ENVIRONMENT-MODIFICATIONS>Environment Modifications</h2> <p><code>bundle exec</code> makes a number of changes to the shell environment, then executes the command you specify in full.</p> <ul> <li>make sure that it's still possible to shell out to <code>bundle</code> from inside a command invoked by <code>bundle exec</code> (using <code>$BUNDLE_BIN_PATH</code>)</li> <li>put the directory containing executables (like <code>rails</code>, <code>rspec</code>, <code>rackup</code>) for your bundle on <code>$PATH</code> </li> <li>make sure that if bundler is invoked in the subshell, it uses the same <code>Gemfile</code> (by setting <code>BUNDLE_GEMFILE</code>)</li> <li>add <code>-rbundler/setup</code> to <code>$RUBYOPT</code>, which makes sure that Ruby programs invoked in the subshell can see the gems in the bundle</li> </ul> <p>It also modifies Rubygems:</p> <ul> <li>disallow loading additional gems not in the bundle</li> <li>modify the <code>gem</code> method to be a no-op if a gem matching the requirements is in the bundle, and to raise a <code>Gem::LoadError</code> if it's not</li> <li>Define <code>Gem.refresh</code> to be a no-op, since the source index is always frozen when using bundler, and to prevent gems from the system leaking into the environment</li> <li>Override <code>Gem.bin_path</code> to use the gems in the bundle, making system executables work</li> <li>Add all gems in the bundle into Gem.loaded_specs</li> </ul> <h3 id=Shelling-out>Shelling Out</h3> <p>Any Ruby code that opens a subshell (like <code>system</code>, backticks, or <code>%x{}</code>) will automatically use the current Bundler environment. If you need to shell out to a Ruby command that is not part of your current bundle, use the <code>with_clean_env</code> method with a block. Any subshells created inside the block will be given the environment present before Bundler was activated. For example, Homebrew commands run Ruby, but don't work inside a bundle:</p> <pre><code>Bundler.with_clean_env do&#x000A;  `brew install wget`&#x000A;end&#x000A;</code></pre> <p>Using <code>with_clean_env</code> is also necessary if you are shelling out to a different bundle. Any Bundler commands run in a subshell will inherit the current Gemfile, so commands that need to run in the context of a different bundle also need to use <code>with_clean_env</code>.</p> <pre><code>Bundler.with_clean_env do&#x000A;  Dir.chdir "/other/bundler/project" do&#x000A;    `bundle exec ./script`&#x000A;  end&#x000A;end&#x000A;</code></pre> <p>Bundler provides convenience helpers that wrap <code>system</code> and <code>exec</code>, and they can be used like this:</p> <pre><code>Bundler.clean_system('brew install wget')&#x000A;Bundler.clean_exec('brew install wget')&#x000A;</code></pre> <h2 id=RUBYGEMS-PLUGINS>Rubygems Plugins</h2> <p>At present, the Rubygems plugin system requires all files named <code>rubygems_plugin.rb</code> on the load path of <em>any</em> installed gem when any Ruby code requires <code>rubygems.rb</code>. This includes executables installed into the system, like <code>rails</code>, <code>rackup</code>, and <code>rspec</code>.</p> <p>Since Rubygems plugins can contain arbitrary Ruby code, they commonly end up activating themselves or their dependencies.</p> <p>For instance, the <code>gemcutter 0.5</code> gem depended on <code>json_pure</code>. If you had that version of gemcutter installed (even if you <em>also</em> had a newer version without this problem), Rubygems would activate <code>gemcutter 0.5</code> and <code>json_pure &lt;latest&gt;</code>.</p> <p>If your <a class=man-ref href="gemfile.5.html">Gemfile<span class=s>(5)</span></a> also contained <code>json_pure</code> (or a gem with a dependency on <code>json_pure</code>), the latest version on your system might conflict with the version in your <a class=man-ref href="gemfile.5.html">Gemfile<span class=s>(5)</span></a>, or the snapshot version in your <code>Gemfile.lock</code>.</p> <p>If this happens, bundler will say:</p> <pre><code>You have already activated json_pure 1.4.6 but your Gemfile&#x000A;requires json_pure 1.4.3. Consider using bundle exec.&#x000A;</code></pre> <p>In this situation, you almost certainly want to remove the underlying gem with the problematic gem plugin. In general, the authors of these plugins (in this case, the <code>gemcutter</code> gem) have released newer versions that are more careful in their plugins.</p> <p>You can find a list of all the gems containing gem plugins by running</p> <pre><code>ruby -rubygems -e "puts Gem.find_files('rubygems_plugin.rb')"&#x000A;</code></pre> <p>At the very least, you should remove all but the newest version of each gem plugin, and also remove all gem plugins that you aren't using (<code>gem uninstall gem_name</code>).</p> </div> </div> <div class=clearfix></div> </div> </div> </div> <script>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: The best way to manage a Ruby application's gems
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Team</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+      </div>
+      <div class='row'>
+        <div class='container'>
+          <div id='wrapper'>
+            <div id='sidebar-wrapper'>
+              <div class='sidebar-nav'>
+                <h4>Choose version</h4>
+                <div class='form-group'>
+                  <select class='form-control' id='version-select'>
+                    <option value='/v1.12/man/bundle-exec.1.html'>
+                      v1.12
+                    </option>
+                    <option value='/v1.11/man/bundle-exec.1.html'>
+                      v1.11
+                    </option>
+                    <option value='/v1.10/man/bundle-exec.1.html'>
+                      v1.10
+                    </option>
+                    <option selected value='/v1.9/man/bundle-exec.1.html'>
+                      v1.9
+                    </option>
+                    <option value='/v1.8/man/bundle-exec.1.html'>
+                      v1.8
+                    </option>
+                    <option value='/v1.7/man/bundle-exec.1.html'>
+                      v1.7
+                    </option>
+                    <option value='/v1.6/man/bundle-exec.1.html'>
+                      v1.6
+                    </option>
+                    <option value='/v1.5/man/bundle-exec.1.html'>
+                      v1.5
+                    </option>
+                    <option value='/v1.3/man/bundle-exec.1.html'>
+                      v1.3
+                    </option>
+                    <option value='/v1.2/man/bundle-exec.1.html'>
+                      v1.2
+                    </option>
+                    <option value='/v1.1/man/bundle-exec.1.html'>
+                      v1.1
+                    </option>
+                    <option value='/v1.0/man/bundle-exec.1.html'>
+                      v1.0
+                    </option>
+                    <option value='/v0.9/bundle_install.html'>
+                      v0.9
+                    </option>
+                  </select>
+                </div>
+                <h4>Primary Commands</h4>
+                <ul>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle-install.1.html">bundle install</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle-update.1.html">bundle update</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle-package.1.html">bundle package</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class='active'>
+                    <a href="/v1.9/man/bundle-exec.1.html">bundle exec</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle-config.1.html">bundle config</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_help.html">bundle help</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                </ul>
+                <h4>Utilities</h4>
+                <ul>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle.1.html">bundle</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_binstubs.html">bundle binstubs</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_check.html">bundle check</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_clean.html">bundle clean</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_console.html">bundle console</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_gem.html">bundle gem</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_init.html">bundle init</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_inject.html">bundle inject</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_open.html">bundle open</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_outdated.html">bundle outdated</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/man/bundle-platform.1.html">bundle platform</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_show.html">bundle show</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_version.html">bundle version</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/bundle_viz.html">bundle viz</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.9/man/gemfile.5.html">gemfile</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='commands contents' id='page-content-wrapper'>
+              <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id='menu-toggle'>
+                <- Toggle Menu
+              </a>
+              
+                <div class="mp" id="man">
+              
+                
+              
+                
+              
+                <h2 id="NAME">bundle exec</h2>
+              <p class="man-name">
+                <code>bundle-exec</code> - <span class="man-whatis">Execute a command in the context of the bundle</span>
+              </p>
+              
+              
+              
+              <pre><code>bundle exec</code> [--keep-file-descriptors] <var>command</var></pre>
+              
+              <h2 id="DESCRIPTION">Description</h2>
+              
+              <p>This command executes the command, making all gems specified in the
+              <code>Gemfile(5)</code> available to <code>require</code> in Ruby programs.</p>
+              
+              <p>Essentially, if you would normally have run something like
+              <code>rspec spec/my_spec.rb</code>, and you want to use the gems specified
+              in the <code>Gemfile(5)</code> and installed via <a href="bundle-install.1.html">bundle install(1)</a>, you
+              should run <code>bundle exec rspec spec/my_spec.rb</code>.</p>
+              
+              <p>Note that <code>bundle exec</code> does not require that an executable is
+              available on your shell's <code>$PATH</code>.</p>
+              
+              <h2 id="OPTIONS">Options</h2>
+              
+              <dl>
+              <dt><code>--keep-file-descriptors</code></dt>
+              <dd>Exec in Ruby 2.0 began discarding non-standard file descriptors. When this
+              flag is passed, exec will revert to the 1.9 behaviour of passing all file
+              descriptors to the new process.</dd>
+              </dl>
+              
+              
+              <h2 id="BUNDLE-INSTALL-BINSTUBS">Bundle Install --binstubs</h2>
+              
+              <p>If you use the <code>--binstubs</code> flag in <a href="bundle-install.1.html">bundle install(1)</a>, Bundler will
+              automatically create a directory (which defaults to <code>app_root/bin</code>)
+              containing all of the executables available from gems in the bundle.</p>
+              
+              <p>After using <code>--binstubs</code>, <code>bin/rspec spec/my_spec.rb</code> is identical
+              to <code>bundle exec rspec spec/my_spec.rb</code>.</p>
+              
+              <h2 id="ENVIRONMENT-MODIFICATIONS">Environment Modifications</h2>
+              
+              <p><code>bundle exec</code> makes a number of changes to the shell environment,
+              then executes the command you specify in full.</p>
+              
+              <ul>
+              <li>make sure that it's still possible to shell out to <code>bundle</code>
+              from inside a command invoked by <code>bundle exec</code> (using
+              <code>$BUNDLE_BIN_PATH</code>)</li>
+              <li>put the directory containing executables (like <code>rails</code>, <code>rspec</code>,
+              <code>rackup</code>) for your bundle on <code>$PATH</code>
+              </li>
+              <li>make sure that if bundler is invoked in the subshell, it uses
+              the same <code>Gemfile</code> (by setting <code>BUNDLE_GEMFILE</code>)</li>
+              <li>add <code>-rbundler/setup</code> to <code>$RUBYOPT</code>, which makes sure that
+              Ruby programs invoked in the subshell can see the gems in
+              the bundle</li>
+              </ul>
+              
+              
+              <p>It also modifies Rubygems:</p>
+              
+              <ul>
+              <li>disallow loading additional gems not in the bundle</li>
+              <li>modify the <code>gem</code> method to be a no-op if a gem matching
+              the requirements is in the bundle, and to raise a
+              <code>Gem::LoadError</code> if it's not</li>
+              <li>Define <code>Gem.refresh</code> to be a no-op, since the source
+              index is always frozen when using bundler, and to
+              prevent gems from the system leaking into the environment</li>
+              <li>Override <code>Gem.bin_path</code> to use the gems in the bundle,
+              making system executables work</li>
+              <li>Add all gems in the bundle into Gem.loaded_specs</li>
+              </ul>
+              
+              
+              <h3 id="Shelling-out">Shelling Out</h3>
+              
+              <p>Any Ruby code that opens a subshell (like <code>system</code>, backticks, or <code>%x{}</code>) will
+              automatically use the current Bundler environment. If you need to shell out to
+              a Ruby command that is not part of your current bundle, use the
+              <code>with_clean_env</code> method with a block. Any subshells created inside the block
+              will be given the environment present before Bundler was activated. For
+              example, Homebrew commands run Ruby, but don't work inside a bundle:</p>
+              
+              <pre><code>Bundler.with_clean_env do&#x000A;  `brew install wget`&#x000A;end&#x000A;</code></pre>
+              
+              <p>Using <code>with_clean_env</code> is also necessary if you are shelling out to a different
+              bundle. Any Bundler commands run in a subshell will inherit the current
+              Gemfile, so commands that need to run in the context of a different bundle also
+              need to use <code>with_clean_env</code>.</p>
+              
+              <pre><code>Bundler.with_clean_env do&#x000A;  Dir.chdir "/other/bundler/project" do&#x000A;    `bundle exec ./script`&#x000A;  end&#x000A;end&#x000A;</code></pre>
+              
+              <p>Bundler provides convenience helpers that wrap <code>system</code> and <code>exec</code>, and they
+              can be used like this:</p>
+              
+              <pre><code>Bundler.clean_system('brew install wget')&#x000A;Bundler.clean_exec('brew install wget')&#x000A;</code></pre>
+              
+              <h2 id="RUBYGEMS-PLUGINS">Rubygems Plugins</h2>
+              
+              <p>At present, the Rubygems plugin system requires all files
+              named <code>rubygems_plugin.rb</code> on the load path of <em>any</em> installed
+              gem when any Ruby code requires <code>rubygems.rb</code>. This includes
+              executables installed into the system, like <code>rails</code>, <code>rackup</code>,
+              and <code>rspec</code>.</p>
+              
+              <p>Since Rubygems plugins can contain arbitrary Ruby code, they
+              commonly end up activating themselves or their dependencies.</p>
+              
+              <p>For instance, the <code>gemcutter 0.5</code> gem depended on <code>json_pure</code>.
+              If you had that version of gemcutter installed (even if
+              you <em>also</em> had a newer version without this problem), Rubygems
+              would activate <code>gemcutter 0.5</code> and <code>json_pure &lt;latest&gt;</code>.</p>
+              
+              <p>If your <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> also contained <code>json_pure</code> (or a gem
+              with a dependency on <code>json_pure</code>), the latest version on
+              your system might conflict with the version in your
+              <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, or the snapshot version in your <code>Gemfile.lock</code>.</p>
+              
+              <p>If this happens, bundler will say:</p>
+              
+              <pre><code>You have already activated json_pure 1.4.6 but your Gemfile&#x000A;requires json_pure 1.4.3. Consider using bundle exec.&#x000A;</code></pre>
+              
+              <p>In this situation, you almost certainly want to remove the
+              underlying gem with the problematic gem plugin. In general,
+              the authors of these plugins (in this case, the <code>gemcutter</code>
+              gem) have released newer versions that are more careful in
+              their plugins.</p>
+              
+              <p>You can find a list of all the gems containing gem plugins
+              by running</p>
+              
+              <pre><code>ruby -rubygems -e "puts Gem.find_files('rubygems_plugin.rb')"&#x000A;</code></pre>
+              
+              <p>At the very least, you should remove all but the newest
+              version of each gem plugin, and also remove all gem plugins
+              that you aren't using (<code>gem uninstall gem_name</code>).</p>
+              
+              
+                
+              
+                </div>
+            </div>
+            <div class='clearfix'></div>
+          </div>
+        </div>
+      </div>
+      <script>
         $('#menu-toggle').click(function(e) {
             e.preventDefault();
             $('#wrapper').toggleClass('toggled');
@@ -10,4 +385,20 @@
           anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
             '#page-content-wrapper h4, #page-content-wrapper h5');
         });
-      </script> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repository</a></li> </ul> </div> </div> </div> </body> </html>
+      </script>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

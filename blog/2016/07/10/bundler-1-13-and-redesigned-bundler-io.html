@@ -1,1 +1,92 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: A New Bundler Website </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg"/> </div> <div class=container> <div class=row> <div class='col-md-12 col-lg-10 col-lg-offset-1'> <div class='contents blog'> <h2 class=title> <a href="/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html">A New Bundler Website</a> </h2> <div class=subtitle> by <a href="https://github.com/kruczjak" target=_blank>Jakub Kruczek</a> on <time> Jul 10 2016 </time> </div> <div class=blog-content> <p>Announcing… the new Bundler website! As part of Google Summer of Code 2016, Bundler has a new, prettier, and better website. The most visible changes are a completely new design and color scheme. In addition, the entire site is now responsive and easy to read on mobile devices using the <a href="http://getbootstrap.com/">Bootstrap framework</a>.</p> <p>The <a href="/docs.html">new Docs page</a> provides a table of contents for the entire site, allowing you to choose between guides, command reference pages, and changelogs for each version. On each command page (e.g. <a href="/man/bundle-install.1.html">bundle install</a>), there is a new sidebar, allowing navigation not just between commands but also to previous versions of the same command.</p> <p>There are also two new guides to go with the new website: <a href="/guides/using_bundler_in_application.html">Using Bundler In Applications</a> written by <a href="https://github.com/kruczjak">me</a>, and <a href="/guides/using_bundler_in_application.html">Developing a RubyGem using Bundler</a> by Ryan Bigg (<a href="https://github.com/radar">@radar</a>).</p> <p>The new site also includes some more improvements:</p> <ul> <li>Command pages are now built from the Bundler repository instead of hand-written (where possible)</li> <li>Commits to the master branch of <a href="https://github.com/bundler/bundler-site">bundler-site</a> are now auto-deployed (via Travis)</li> <li>Middleman has been updated to latest version</li> <li>Every header in the guides and commands pages now has anchor links for navigation and reference</li> <li>The site now supports multiple translations (although no translations have been completed yet)</li> </ul> <p>Many thanks to Amy (<a href="https://github.com/sailorhg">@sailorhg</a>), André (<a href="https://github.com/indirect">@indirect</a>) and Samuel (<a href="https://github.com/segiddins">@segiddins</a>). Without their help, it wouldn’t have been possible.</p> <p>Enjoy :D</p> <p>~ Jakub (<a href="https://github.com/kruczjak">@kruczjak</a>)</p> </div> </div> </div> </div> </div> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repository</a></li> </ul> </div> </div> </div> </body> </html>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: A New Bundler Website
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Team</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
+            <div class='contents blog'>
+              <h2 class='title'>
+                <a href="/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html">A New Bundler Website</a>
+              </h2>
+              <div class='subtitle'>
+                by
+                <a href="https://github.com/kruczjak" target="_blank">Jakub Kruczek</a>
+                on
+                <time>
+                  Jul 10 2016
+                </time>
+              </div>
+              <div class='blog-content'>
+                <p>Announcing… the new Bundler website! As part of Google Summer of Code 2016, Bundler has a new, prettier, and better website. The most visible changes are a completely new design and color scheme. In addition, the entire site is now responsive and easy to read on mobile devices using the <a href="http://getbootstrap.com/">Bootstrap framework</a>.</p>
+                
+                <p>The <a href="/docs.html">new Docs page</a> provides a table of contents for the entire site, allowing you to choose between guides, command reference pages, and changelogs for each version. On each command page (e.g. <a href="/man/bundle-install.1.html">bundle install</a>), there
+                is a new sidebar, allowing navigation not just between commands but also to previous versions of the same command.</p>
+                
+                <p>There are also two new guides to go with the new website: <a href="/guides/using_bundler_in_application.html">Using Bundler In Applications</a> written by <a href="https://github.com/kruczjak">me</a>, and <a href="/guides/using_bundler_in_application.html">Developing a RubyGem using Bundler</a> by Ryan Bigg (<a href="https://github.com/radar">@radar</a>).</p>
+                
+                <p>The new site also includes some more improvements:</p>
+                
+                <ul>
+                  <li>Command pages are now built from the Bundler repository instead of hand-written (where possible)</li>
+                  <li>Commits to the master branch of <a href="https://github.com/bundler/bundler-site">bundler-site</a> are now auto-deployed (via Travis)</li>
+                  <li>Middleman has been updated to latest version</li>
+                  <li>Every header in the guides and commands pages now has anchor links for navigation and reference</li>
+                  <li>The site now supports multiple translations (although no translations have been completed yet)</li>
+                </ul>
+                
+                <p>Many thanks to Amy (<a href="https://github.com/sailorhg">@sailorhg</a>), André (<a href="https://github.com/indirect">@indirect</a>) and Samuel (<a href="https://github.com/segiddins">@segiddins</a>). Without their help, it wouldn’t have been
+                possible.</p>
+                
+                <p>Enjoy :D</p>
+                
+                <p>~ Jakub (<a href="https://github.com/kruczjak">@kruczjak</a>)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,4 +1,317 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: The best way to manage a Ruby application's gems </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg"/> </div> <div class=row> <div class=container> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-nav> <h4>Choose version</h4> <div class=form-group> <select class=form-control id=version-select> <option value='/v1.12/bundle_package.html'> v1.12 </option> <option value='/v1.11/bundle_package.html'> v1.11 </option> <option value='/v1.10/bundle_package.html'> v1.10 </option> <option value='/v1.9/bundle_package.html'> v1.9 </option> <option selected value='/v1.8/bundle_package.html'> v1.8 </option> <option value='/v1.7/bundle_package.html'> v1.7 </option> <option value='/v1.6/bundle_package.html'> v1.6 </option> <option value='/v1.5/bundle_package.html'> v1.5 </option> <option value='/v1.3/bundle_package.html'> v1.3 </option> <option value='/v1.2/bundle_package.html'> v1.2 </option> <option value='/v1.1/bundle_package.html'> v1.1 </option> <option value='/v1.0/bundle_package.html'> v1.0 </option> <option value='/v0.9/bundle_package.html'> v0.9 </option> </select> </div> <h4>Primary Commands</h4> <ul> <li class=''> <a href="/v1.8/man/bundle-install.1.html">bundle install</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/bundle-update.1.html">bundle update</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/bundle-package.1.html">bundle package</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/bundle-exec.1.html">bundle exec</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/bundle-config.1.html">bundle config</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_help.html">bundle help</a> </li> <li class=separator> <hr> </li> </ul> <h4>Utilities</h4> <ul> <li class=''> <a href="/v1.8/man/bundle.1.html">bundle</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_binstubs.html">bundle binstubs</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_check.html">bundle check</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_clean.html">bundle clean</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_console.html">bundle console</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_gem.html">bundle gem</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_init.html">bundle init</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_inject.html">bundle inject</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_open.html">bundle open</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_outdated.html">bundle outdated</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/bundle-platform.1.html">bundle platform</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_show.html">bundle show</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_version.html">bundle version</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/bundle_viz.html">bundle viz</a> </li> <li class=separator> <hr> </li> <li class=''> <a href="/v1.8/man/gemfile.5.html">gemfile</a> </li> <li class=separator> <hr> </li> </ul> </div> </div> <div class='commands contents' id=page-content-wrapper> <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id=menu-toggle> <- Toggle Menu </a> <h2>bundle package</h2> <div class=contents> <div class=bullet> <div class=description> Locks and then caches the gems into <code>./vendor/cache</code>. </div> <pre class="highlight plaintext"><code>$ bundle package [--all] [--all-platforms] [--gemfile=GEMFILE] [--no-prune]&#x000A;                 [--path=PATH] [--quiet]&#x000A;</code></pre> <div class=notes> <p> Options: </p> <p> <code>--all</code>: package <code>:git</code>, <code>:path</code>, and <code>.gem</code> dependencies. Once used, the <code>--all</code> option will be remembered. </p> <p> <code>--all-platforms</code>: package dependencies for all known platforms, not only the one that <code>bundle package</code> is run on. This option will be remembered in your local Bundler configuration. </p> <p> <code>--gemfile</code>: Use the specified gemfile instead of Gemfile. </p> <p> <code>--no-install</code>: Don't actually install the gems, just package. </p> <p> <code>--no-prune</code>: Don't remove stale gems from the cache. </p> <p> <code>--path</code>: Specify a different path than the system default. </p> <p> <code>--quiet</code>: Only output warnings and errors. </p> </div> <div class=description> <p> The package command will copy the <code>.gem</code> files for your gems in the bundle into <code>./vendor/cache</code>. Afterward, when you run <code>bundle install</code>, Bundler will use the gems in the cache in preference to the ones on rubygems.org. </p> <p> Additionally, if you then check that directory into your source control repository, others who check out your source will be able to install the bundle without having to download any additional gems. </p> </div> </div> <div class=bullet> <div class=description> Lock and cache gems from RubyGems into <code>./vendor/cache</code>. </div> <div class=how> <pre class="highlight plaintext"><code>$ bundle package&#x000A;&#x000A;</code></pre> </div> <div class=notes> <p> By default, if you simply run <code>bundle install</code> after running <code>bundle package</code>, Bundler will still connect to rubygems.org to check whether a platform-specific gem exists for any of the gems in <code>vendor/cache</code>. </p> <p> This behavior can be avoided by instead running <code>bundle install --local</code>. Note that this requires you to have the correctly platformed version for all of your gems already cached. The easiest way to achieve this is to run <code>bundle package</code> on an identical machine and then check in those vendored gems. </p> </div> </div> <div class=bullet id=no-prune> <div class=description> Lock and cache gems from RubyGems into <code>./vendor/cache</code>, and don't remove any stale gems from the existing cache. </div> <div class=how> <pre class="highlight plaintext"><code>$ bundle package --no-prune&#x000A;&#x000A;</code></pre> </div> </div> <div class=bullet id=all> <div class=description> Lock and cache all gems into <code>./vendor/cache</code>, including <code>:git</code>, <code>:path</code>, and <code>.gem</code> dependencies. </div> <div class=how> <pre class="highlight plaintext"><code>$ bundle package --all&#x000A;</code></pre> </div> <div class=notes> <p> Once used, the <code>--all</code> option will be remembered. </p> <p> This will be the default on Bundler 2.0. </p> </div> </div> </div> </div> <div class=clearfix></div> </div> </div> </div> <script>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: The best way to manage a Ruby application's gems
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Team</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+      </div>
+      <div class='row'>
+        <div class='container'>
+          <div id='wrapper'>
+            <div id='sidebar-wrapper'>
+              <div class='sidebar-nav'>
+                <h4>Choose version</h4>
+                <div class='form-group'>
+                  <select class='form-control' id='version-select'>
+                    <option value='/v1.12/bundle_package.html'>
+                      v1.12
+                    </option>
+                    <option value='/v1.11/bundle_package.html'>
+                      v1.11
+                    </option>
+                    <option value='/v1.10/bundle_package.html'>
+                      v1.10
+                    </option>
+                    <option value='/v1.9/bundle_package.html'>
+                      v1.9
+                    </option>
+                    <option selected value='/v1.8/bundle_package.html'>
+                      v1.8
+                    </option>
+                    <option value='/v1.7/bundle_package.html'>
+                      v1.7
+                    </option>
+                    <option value='/v1.6/bundle_package.html'>
+                      v1.6
+                    </option>
+                    <option value='/v1.5/bundle_package.html'>
+                      v1.5
+                    </option>
+                    <option value='/v1.3/bundle_package.html'>
+                      v1.3
+                    </option>
+                    <option value='/v1.2/bundle_package.html'>
+                      v1.2
+                    </option>
+                    <option value='/v1.1/bundle_package.html'>
+                      v1.1
+                    </option>
+                    <option value='/v1.0/bundle_package.html'>
+                      v1.0
+                    </option>
+                    <option value='/v0.9/bundle_package.html'>
+                      v0.9
+                    </option>
+                  </select>
+                </div>
+                <h4>Primary Commands</h4>
+                <ul>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-install.1.html">bundle install</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-update.1.html">bundle update</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-package.1.html">bundle package</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-exec.1.html">bundle exec</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-config.1.html">bundle config</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_help.html">bundle help</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                </ul>
+                <h4>Utilities</h4>
+                <ul>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle.1.html">bundle</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_binstubs.html">bundle binstubs</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_check.html">bundle check</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_clean.html">bundle clean</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_console.html">bundle console</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_gem.html">bundle gem</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_init.html">bundle init</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_inject.html">bundle inject</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_open.html">bundle open</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_outdated.html">bundle outdated</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/bundle-platform.1.html">bundle platform</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_show.html">bundle show</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_version.html">bundle version</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/bundle_viz.html">bundle viz</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.8/man/gemfile.5.html">gemfile</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='commands contents' id='page-content-wrapper'>
+              <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id='menu-toggle'>
+                <- Toggle Menu
+              </a>
+              <h2>bundle package</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    Locks and then caches the gems into <code>./vendor/cache</code>.
+                  </div>
+                  <pre class="highlight plaintext"><code>$ bundle package [--all] [--all-platforms] [--gemfile=GEMFILE] [--no-prune]&#x000A;                 [--path=PATH] [--quiet]&#x000A;</code></pre>
+                  <div class='notes'>
+                    <p>
+                      Options:
+                    </p>
+                    <p>
+                      <code>--all</code>: package <code>:git</code>, <code>:path</code>, and <code>.gem</code> dependencies. Once used, the <code>--all</code> option will be remembered.
+                    </p>
+                    <p>
+                      <code>--all-platforms</code>: package dependencies for all known platforms, not only the one that <code>bundle package</code> is run on. This option will be remembered in your local Bundler configuration.
+                    </p>
+                    <p>
+                      <code>--gemfile</code>: Use the specified gemfile instead of Gemfile.
+                    </p>
+                    <p>
+                      <code>--no-install</code>: Don't actually install the gems, just package.
+                    </p>
+                    <p>
+                      <code>--no-prune</code>: Don't remove stale gems from the cache.
+                    </p>
+                    <p>
+                      <code>--path</code>: Specify a different path than the system default.
+                    </p>
+                    <p>
+                      <code>--quiet</code>: Only output warnings and errors.
+                    </p>
+                  </div>
+                  <div class='description'>
+                    <p>
+                      The package command will copy the <code>.gem</code> files for your gems in the
+                      bundle into <code>./vendor/cache</code>. Afterward, when you run <code>bundle install</code>, Bundler will use the gems in the cache in preference to the ones on rubygems.org.
+                    </p>
+                    <p>
+                      Additionally, if you then check that directory into your source control repository, others who check out your source will be able to install the bundle without having to download any additional gems.
+                    </p>
+                  </div>
+                </div>
+                <div class='bullet'>
+                  <div class='description'>
+                    Lock and cache gems from RubyGems into <code>./vendor/cache</code>.
+                  </div>
+                  <div class='how'>
+                    <pre class="highlight plaintext"><code>$ bundle package&#x000A;&#x000A;</code></pre>
+                  </div>
+                  <div class='notes'>
+                    <p>
+                      By default, if you simply run <code>bundle install</code> after running
+                      <code>bundle package</code>, Bundler will still connect to rubygems.org to check
+                      whether a platform-specific gem exists for any of the gems in <code>vendor/cache</code>.
+                    </p>
+                    <p>
+                      This behavior can be avoided by instead running <code>bundle install --local</code>.
+                      Note that this requires you to have the correctly platformed version for all of your gems
+                      already cached. The easiest way to achieve this is to run <code>bundle package</code>
+                      on an identical machine and then check in those vendored gems.
+                    </p>
+                  </div>
+                </div>
+                <div class='bullet' id='no-prune'>
+                  <div class='description'>
+                    Lock and cache gems from RubyGems into <code>./vendor/cache</code>, and don't remove any stale gems from the existing cache.
+                  </div>
+                  <div class='how'>
+                    <pre class="highlight plaintext"><code>$ bundle package --no-prune&#x000A;&#x000A;</code></pre>
+                  </div>
+                </div>
+                <div class='bullet' id='all'>
+                  <div class='description'>
+                    Lock and cache all gems into <code>./vendor/cache</code>, including <code>:git</code>, <code>:path</code>, and <code>.gem</code> dependencies.
+                  </div>
+                  <div class='how'>
+                    <pre class="highlight plaintext"><code>$ bundle package --all&#x000A;</code></pre>
+                  </div>
+                  <div class='notes'>
+                    <p>
+                      Once used, the <code>--all</code> option will be remembered.
+                    </p>
+                    <p>
+                      This will be the default on Bundler 2.0.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='clearfix'></div>
+          </div>
+        </div>
+      </div>
+      <script>
         $('#menu-toggle').click(function(e) {
             e.preventDefault();
             $('#wrapper').toggleClass('toggled');
@@ -10,4 +323,20 @@
           anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
             '#page-content-wrapper h4, #page-content-wrapper h5');
         });
-      </script> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repository</a></li> </ul> </div> </div> </div> </body> </html>
+      </script>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

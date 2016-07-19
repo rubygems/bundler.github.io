@@ -1,5 +1,614 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: The best way to manage a Ruby application's gems </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/pl/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Zespół</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg"/> </div> <div class=row> <div class=container id=guide-container> <div class=col-md-12> <h1 id=tworzenie-rubygema-korzystajc-z-bundlera>Tworzenie RubyGem’a korzystając z Bundler’a</h1> <p>Bundler to narzędzie stworzone przez Carl’a Lerche’a, Yehuda Katz’a, André Arko i inne kontrybucje dla zarządzania zależnościami z Rubygem’ów. Bundler 1.0 został wydany w tym samym czasie co Rails 3 i w Rails’owych projektach występuje najczęściej. Lecz pamiętaj, Bundler nie jest tylko dla Rails’ów!</p> <p>Czy wiedzieliście, że można używać Bundler’a nie tylko jako manadżer zależności, lecz też do pisania własnych gem’ów? Jest to naprawdę proste, a Bundler dostarcza kilka rzeczy, które mogą pomóc.</p> <h2 id=po-pierwsze-czemu>Po pierwsze, czemu?</h2> <p>Po co tworzyć własnego gem’a? Nie można po prostu wrzucić gdziekolwiek kodu i używać? Pewnie, że można, ale co, jeśli chcielibyśmy użyć tego kodu w innym miejscu lub podzielić się z innymi? Dlatego właśnie gem’y są świetne. Można tworzyć własną bibliotekę i gem’y osobno od siebie i dodać <code>require 'gem'</code> w bibliotece. Jeśli chcesz użyć gem’a w innej bibliotece, po prostu robisz małą modyfikację, zamiast wszystko kopiować.</p> <p>Również: “Sharing is caring”.</p> <h2 id=zaczynamy>Zaczynamy</h2> <p>Ta instrukcja została stworzona używając wersji 1.9.0 Bundler’a. Możesz kontynuować z inną wersją, ale możesz nie otrzymać takiego samego wyniku. Żeby sprawdzić jaka wersja bundler’a jest aktualnie zainstalowana, uruchom poniższą komendę:</p> <pre class="highlight plaintext"><code>bundle -v&#x000A;</code></pre> <p>Jeśli to potrzebne, możesz zaktualizować Bundler’a do najnowszej wersji wpisując <code>gem install bundler</code>.</p> <p>Aby rozpocząć tworzenie nowego gem’a, użyj komendy <code>bundle gem</code> tak jak niżej:</p> <pre class="highlight plaintext"><code>bundle gem foodie&#x000A;</code></pre> <p>Nasz gem będzie się nazywał <code>foodie</code>, ponieważ będzie robił kilka rzeczy związanych z jedzeniem, np. określając je jako “Delicious!” lub “Gross!”.</p> <p>Komenda ta stworzy <a href="https://github.com/radar/guides/tree/master/gem-scaffold/foodie">wygenerowany folder</a> dla naszego nowego gem’a i, jeśli mamy zainstalowanego Git’a, inicjalizuje repozytorium Git’a w tym folderze, żebyśmy mogli rozpocząć commitować od razu. Jeśli pierwszy raz uruchamiasz <code>bundle gem</code>, zostaniesz zapytany czy chcesz dodać pliki: <code>CODE_OF_CONDUCT.md</code> i <code>LICENSE.txt</code> w Twoim projekcie. Wygenerowane pliki to:</p> <ul> <li> <p><strong>Gemfile</strong>: Używany do zarządzania zależnościami w naszej bibliotece. Folder zawiera linię <code>gemspec</code> oznaczającą, że Bundler dołączy również zależności z <em>foodie.gemspec</em>. Najlepszą praktyką jest wyspecyfikowanie wszystkich gem’ów, używanych przez bibliotekę w <em>gemspec</em>.</p> </li> <li> <p><strong>Rakefile</strong>: Inicjalizuje Bundler’a i dodaje zadania Rake: <code>build</code>, <code>install</code> i <code>release</code> poprzez wywołanie <code>Bundler::GemHelper.install_tasks</code>. Task <code>build</code> zbuduje aktualną wersję gem’a i przechowuje ją w folderze <em>pkg</em>, task <code>install</code> zbuduje <em>i</em> zainstaluje gem w naszym systemie (jakbyśmy użyli <code>gem install</code> na niej) i <code>release</code> wyśle gem’a na serwery Rubygems do użytku publicznego.</p> </li> <li> <p><strong>CODE_OF_CONDUCT.md</strong>: Zawiera “Code of Conduct”, który wszyscy powinni przestrzegać. Zostanie dołączony tylko, gdy wybierzesz odpowiednią opcję.</p> </li> <li> <p><strong>LICENSE.txt</strong>: Zawiera licencję MIT.Includes the MIT license. Zostanie dołączona tylko, gdy wybierzesz odpowiednią opcję.</p> </li> <li> <p><strong>.gitignore</strong>: (jeśli korzystasz z Git-a). Ignoruje wszystko w folderze <em>pkg</em> (miejsce, gdzie zazwyczaj trafiają wygenerowane pliki po <code>rake build</code>), wszystko z roszerzeniem <em>.gem</em> i folder <em>.bundle</em> .</p> </li> <li> <p><strong>foodie.gemspec</strong>: Plik konfiguracyjny Gem-a. Jest to miejsce gdzie podajemy wszystkie informacje dla Rubygems-ów, np. nazwę, opis, stronę główną naszego gem-a. Również tutaj dodajemy zależności, które muszą być zainstalowane, żeby uruchomić gem-a.</p> </li> <li> <p><strong>lib/foodie.rb</strong>: Plik wejściowy kodu. Ten plik jest dołączany przez Bundler-a (lub inne), kiedy gem jest ładowany. Ten plik definiuje <code>module</code>, który będzie użyty jako namespace dla kodu naszego gem-a. Najlepiej właśnie w tym module umieszczać kod…</p> </li> <li> <p><strong>lib/foodie</strong>: Ten folder powinien zawierać cały kod (klasy, etc.) naszego gem-a. Plik <em>lib/foodie.rb</em> jest po to, by ustawić środowisko gem-a, natomiast wszystkie inne części biblioteki powinny trafić to folderu <em>lib/foodie</em>. Jeśli gem będzie można używać na różne sposoby, rozdziel kod tak, by ludzie mogli załączać pojedynczą klasę/plik.</p> </li> <li> <p><strong>lib/foodie/version.rb</strong>: Definiuje <code>Foodie</code> moduł, a w nim stałą <code>VERSION</code>. Jest to plik ładowany przez <em>foodie.gemspec</em> do określenia wersji gem-a. Kiedy wypuszczamy nową wersję, będziemy zwiększać numer wersji.</p> </li> </ul> <p>Był to podstawowy opis, a teraz przejdźmy do kodzenia!</p> <h2 id=testowanie-gem-a>Testowanie gem-a</h2> <p>W tym poradniku, będziemy używać RSpec-a to testowania naszego gem-a. Piszemy testy, by zapewnić, że wszystko uruchomi sie zgodnie z planem i by przestrzec nas przed nieprzyjemnymi problemami w przyszłości.</p> <p>Aby rozpocząć pisać testy, stworzymy folder <em>spec</em> w katalogu głównym gem-a przez użycie komendy <code>mkdir spec</code>. Następnie, dodamy linijkę do <em>foodie.gemspec</em> w bloku <code>Gem::Specification</code>, aby sprawić że <code>rspec</code> będzie wymaganą zależnością przy dewelopowaniu.</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rspec"</span><span class="p">,</span> <span class="s2">"~&gt; 3.2"</span>&#x000A;</code></pre> <p>Because we have the <code>gemspec</code> method call in our <em>Gemfile</em>, Bundler will automatically add this gem to a group called “development” which then we can reference any time we want to load these gems with the following line:</p> <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;</code></pre> <p>The benefit of putting this dependency specification inside of <em>foodie.gemspec</em> rather than the <em>Gemfile</em> is that anybody who runs <code>gem install foodie --dev</code> will get these development dependencies installed too. This command is used for when people wish to test a gem without having to fork it or clone it from GitHub.</p> <p>When we run <code>bundle install</code>, rspec will be installed for this library and any other library we use with Bundler, but not for the system. This is an important distinction to make: any gem installed by Bundler will not muck about with gems installed by <code>gem install</code>. It is effectively a sandboxed environment. It is best practice to use Bundler to manage our gems so that we do not have gem version conflicts.</p> <p>By running <code>bundle install</code>, Bundler will generate the <strong>extremely important</strong> <em>Gemfile.lock</em> file. This file is responsible for ensuring that every system this library is developed on has the <em>exact same</em> gems so it should always be checked into version control. For more information on this file <a href="/man/bundle-install.1.html#THE-GEMFILE-LOCK">read “THE GEMFILE.LOCK” section of the <code>bundle install</code> manpage</a>.</p> <p>Additionally in the <code>bundle install</code> output, we will see this line:</p> <pre class="highlight plaintext"><code>Using foodie (0.1.0) from source at /path/to/foodie&#x000A;</code></pre> <p>Bundler detects our gem, loads the gemspec and bundles our gem just like every other gem.</p> <p>We can write our first test with this framework now in place. For testing, first we create a folder called <em>spec</em> to put our tests in (<code>mkdir spec</code>). We then create a new RSpec file for every class we want to test at the root of the <em>spec</em> directory. If we had multiple facets to our gem, we would group them underneath a directory such as <em>spec/facet</em>; but this is a simple gem, so we won’t. Let’s call this new file <code>spec/foodie_spec.rb</code> and fill it with the following:</p> <pre class="highlight ruby"><code><span class="n">describe</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span> <span class="k">do</span>&#x000A;  <span class="n">it</span> <span class="s2">"broccoli is gross"</span> <span class="k">do</span>&#x000A;    <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="s2">"Broccoli"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Gross!"</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="n">it</span> <span class="s2">"anything else is delicious"</span> <span class="k">do</span>&#x000A;    <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="s2">"Not Broccoli"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Delicious!"</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>When we run <code>bundle exec rspec spec</code> again, we’ll be told the <code>Foodie::Food</code> constant doesn’t exist. This is true, and we should define it in <code>lib/foodie/food.rb</code> like this:</p> <pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">Foodie</span>&#x000A;  <span class="k">class</span> <span class="nc">Food</span>&#x000A;    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">portray</span><span class="p">(</span><span class="n">food</span><span class="p">)</span>&#x000A;      <span class="k">if</span> <span class="n">food</span><span class="p">.</span><span class="nf">downcase</span> <span class="o">==</span> <span class="s2">"broccoli"</span>&#x000A;        <span class="s2">"Gross!"</span>&#x000A;      <span class="k">else</span>&#x000A;        <span class="s2">"Delicious!"</span>&#x000A;      <span class="k">end</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>To load this file, we’ll need to add a require line to <code>lib/foodie.rb</code> for it:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/food'</span>&#x000A;</code></pre> <p>We will also need to require the <code>lib/foodie.rb</code> at the top of <code>spec/foodie_spec.rb</code>:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie'</span>&#x000A;</code></pre> <p>When we run our specs with <code>bundle exec rspec spec</code> this test will pass:</p> <pre class="highlight plaintext"><code>2 example, 0 failures&#x000A;</code></pre> <p>Great success! If we’re using Git (or any other source control system), this is a great checkpoint to commit our code. Always remember to commit often!</p> <p>It’s all well and dandy that we can write our own code, but what if we want to depend on another gem? That’s easy too.</p> <h2 id=using-other-gems>Using other gems</h2> <p>We’re now going to use Active Support’s <code>pluralize</code> method by calling it using a method from our gem.</p> <p>To use another gem, we must first specify it as a dependency in our <em>foodie.gemspec</em>. We can specify the dependency on the <code>activesupport</code> gem in <em>foodie.gemspec</em> by adding this line inside the <code>Gem::Specification</code> object:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span>&#x000A;</code></pre> <p>If we wanted to specify a particular version we may use this line:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"4.2.0"</span>&#x000A;</code></pre> <p>Or specify a version constraint:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"&gt;= 4.2.0"</span>&#x000A;</code></pre> <p>However, relying on a version simply greater than the latest-at-the-time is a sure-fire way to run into problems later on down the line. Try to always use <code>~&gt;</code> for specifying dependencies:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"~&gt; 4.2.0"</span>&#x000A;</code></pre> <p>When we run <code>bundle install</code> again, the <code>activesupport</code> gem will be installed for us to use. Of course, like the diligent TDD/BDD zealots we are, we will test our <code>pluralize</code> method before we code it. Let’s add this test to <em>spec/food_spec.rb</em> now inside our <code>describe Foodie::Food</code> block:</p> <pre class="highlight ruby"><code><span class="n">it</span> <span class="s2">"pluralizes a word"</span> <span class="k">do</span>&#x000A;  <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="s2">"Tomato"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Tomatoes"</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>Of course when we run this spec with <code>bundle exec rspec spec</code> it will fail:</p> <pre class="highlight plaintext"><code>expect(Failure/Error: Foodie::Food.pluralize("Tomato")).to eql("Tomatoes")&#x000A;     undefined method `pluralize' for Foodie::Food:Class&#x000A;</code></pre> <p>We can now define this <code>pluralize</code> method in <em>lib/foodie/food.rb</em> by first off requiring the part of Active Support which contains the <code>pluralize</code> method. This line should go at the top of the file, just like all good <code>require</code>s do.</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'active_support/inflector'</span>&#x000A;</code></pre> <p>Next, we can define the <code>pluralize</code> method like this:</p> <pre class="highlight ruby"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>&#x000A;  <span class="n">word</span><span class="p">.</span><span class="nf">pluralize</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>When we run <code>bundle exec rspec spec</code> our specs will pass:</p> <pre class="highlight plaintext"><code>3 examples, 0 failures&#x000A;</code></pre> <p>This brings another checkpoint where it’d be a good idea to commit our efforts so far.</p> <p>It’s great that we’re able to call our gem’s methods now (all two of them!) and get them to return strings, but everybody knows that the best gems come with command line interfaces (hereafter, “CLI”). You can tell right now just how uncool this gem is because it doesn’t have a CLI, right? It needs one. It craves one.</p> <p>It deserves one.</p> <h2 id=testing-a-command-line-interface>Testing a command line interface</h2> <p>Before we go jumping headlong into giving our gem the best darn CLI a gem-with-only-two-methods-that-both-return-useless-strings can have, let’s consider how we’re going to test this first. We’re zealots, remember? Now if only there was a tool we could use. It would have to have a cool name, of course.</p> <p>Like “Aruba”. <a href="https://github.com/cucumber/aruba">BAM</a></p> <p>David Chelimsky and Aslak Hellesøy teamed up to create Aruba, a CLI testing tool, which they both use for RSpec and Cucumber, and now we too can use it for testing our gems. Oh hey, speaking of Cucumber that’s also what we’re going to be using to define the Aruba tests. Human-code-client-readable tests are the way of the future, man.</p> <p>We will define new development dependencies in <em>foodie.gemspec</em> now for the Cucumber things:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"cucumber"</span>&#x000A;<span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"aruba"</span>&#x000A;</code></pre> <p>Hot. Let’s run <code>bundle install</code> to get these awesome tools set up.</p> <p>Our CLI is going to have two methods, which correspond to the two methods which we have defined in <code>Foodie::Food</code>. We will now create a <em>features</em> directory where we will make sweet, sweet love to Aruba to write tests for our CLI. In this directory we’ll create a new file called <em>features/food.feature</em> and fill it with this juicy code:</p> <pre class="highlight gherkin"><code><span class="kd">Feature</span><span class="p">:</span> Food&#x000A;  In order to portray or pluralize food&#x000A;  As a CLI&#x000A;  I want to be as objective as possible&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Broccoli is gross&#x000A;    <span class="nf">When</span> I run `foodie portray broccoli`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Gross!"</span>&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Tomato, or Tomato?&#x000A;    <span class="nf">When</span> I run `foodie pluralize --word Tomato`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Tomatoes"</span>&#x000A;</code></pre> <p>These scenarios test the CLI our gem will provide. In the <code>When I run</code> steps, the first word inside the quotes is the name of our executable, the second is the task name, and any further text is arguments or options. Yes, it <em>is</em> testing what appears to be the same thing as our specs. How very observant of you. Gold star! But it’s testing it through a CLI, which makes it <em>supremely awesome</em>. Contrived examples are <em>in</em> this year.</p> <p>The first scenario ensures that we can call a specific task and pass it a single argument which then becomes the part of the text that is output. The second scenario ensures effectively the same thing, but we pass that value in as an option rather than an argument.</p> <p>To run this feature, we use the <code>cucumber</code> command, but of course because it’s available within the context of our bundle, we use <code>bundle exec cucumber</code> like this:</p> <pre class="highlight plaintext"><code>bundle exec cucumber features/&#x000A;</code></pre> <p>See those yellow things? They’re undefined steps:</p> <pre class="highlight plaintext"><code>When /^I run "([^"]*)"$/ do |arg1|&#x000A;  pending # express the regexp above with the code you wish you had&#x000A;end&#x000A;&#x000A;Then /^the output should contain "([^"]*)"$/ do |arg1|&#x000A;  pending # express the regexp above with the code you wish you had&#x000A;end&#x000A;</code></pre> <p>We can define them by requiring Aruba. In Cucumber, all <em>.rb</em> files in the <em>features/support</em> directory are automatically required. To prove this to ourselves, we can add a <em>features/support/setup.rb</em> file (create the <em>support</em> directory first) and put in this single line:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'aruba/cucumber'</span>&#x000A;</code></pre> <p>This loads the Cucumber steps provided by Aruba which are the same steps our Cucumber features need to be awesome.</p> <p>We have to re-run <code>bundle exec cucumber features</code>, just to see what happens next. We see red. Red like the blood incessantly seeping from the walls. It contains this cryptic message:</p> <pre class="highlight plaintext"><code>sh: foodie: command not found&#x000A;</code></pre> <p>OK, so it’s not <em>that</em> cryptic. It just means it can’t find the executable file for our gem. No worries, we can create a <em>exe</em> directory at the root of our gem, and put a file in it named <em>foodie</em>. This file has no extension because it’s an <em>executable</em> file rather than a script. We don’t want to go around calling <code>foodie.rb</code> everywhere, do we? No, no we don’t. We will fill this file with this content:</p> <pre class="highlight shell"><code><span class="c">#!/usr/bin/env ruby</span>&#x000A;print <span class="s2">"nothing."</span>&#x000A;</code></pre> <p>If this file was completely empty, we would run into a non-friendly <code>Errno::ENOEXEC</code> error. Hey, speaking of running, we should <code>chmod</code> this file to be an executable from our terminal:</p> <pre class="highlight plaintext"><code>chmod +x exe/foodie&#x000A;</code></pre> <p>Alright so we’ve got the executable file, now what? If we re-run our features we get <em>nothing</em> for the output. Nothing! Literally!</p> <pre class="highlight plaintext"><code>got: "nothing."&#x000A;</code></pre> <p>Our <em>exe/foodie</em> file is empty, which results in this Nothing Travesty. Get rid of the <code>print &#x000A;"nothing."</code> line and replace it with all the code required to run our CLI, which consists of two lines:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/cli'</span>&#x000A;<span class="no">Foodie</span><span class="o">::</span><span class="no">CLI</span><span class="p">.</span><span class="nf">start</span>&#x000A;</code></pre> <p>Boom! When we run <code>bundle exec cucumber features</code> again it will whinge that there’s no <em>foodie/cli</em> file to require. Before we go into what this file does, we should explain the code on the <em>other</em> line of the <em>exe/foodie</em> file. The <code>start</code> method fires up our <code>CLI</code> class and will look for a task that matches the one we ask for.</p> <p>Ok, so it’s therefore obvious that the next step is to create this file, but what does it do?</p> <p>This new <em>lib/foodie/cli.rb</em> file will define the command line interface using another gem called <code>Thor</code>. Thor was created by Yehuda Katz (&amp; collaborators) as an alternative to the Rake build tool. Thor provides us with a handy API for defining our CLI, including usage banners and help output. The syntax is very similar to Rake. Additionally, Rails and Bundler both use Thor for their CLI interface as well as their generator base. Yes, Thor even does generators!</p> <p>For now we’ll just look at how we can craft a CLI using Thor and then afterwards, if you behave, we’ll look at how to write a generator using it too.</p> <h2 id=crafting-a-cli>Crafting a CLI</h2> <p>To make this CLI work we’re going to need to create a <code>Foodie::CLI</code> class and define a <code>start</code> method on it. Or you know, there’s probably a gem out there for us to use. Like <a href="http://github.com/wycats/thor">Thor</a>. Named after the badass lightning god from Norse mythology, this gem is definitely on the fast-track to being just as badass. This gem is what we’ll be using to build our CLI interface and then later on the generator (if you behave, remember?).</p> <p>Let’s define the <code>lib/foodie/cli.rb</code> file now like this:</p> <pre class="highlight plaintext"><code>require 'thor'&#x000A;module Foodie&#x000A;  class CLI &lt; Thor&#x000A;&#x000A;  end&#x000A;end&#x000A;</code></pre> <p>The <code>Thor</code> class has a series of methods – such as the <code>start</code> method we reference back in <code>exe/foodie</code> – that we can use to create this CLI. Oh, by the way, our class doesn’t have to be called <code>CLI</code>, it’s just best practice to do so. We don’t magically get this <code>Thor</code> class; we need to tell our <em>gemspec</em> that we depend on this gem by adding this line underneath our previous <code>add_dependency</code>:</p> <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"thor"</span>&#x000A;</code></pre> <p>To install this new dependency, we use <code>bundle install</code>. When we run <code>bundle exec cucumber &#x000A;features</code> again, we’ll see that it’s now complaining that it could not find the tasks we’re calling:</p> <pre class="highlight plaintext"><code>Could not find task "portray"&#x000A;...&#x000A;Could not find task "pluralize"&#x000A;</code></pre> <p>Thor tasks are defined as plain ol’ methods, but with a slight twist. To define the <code>portray</code> task in our <code>Foodie::CLI</code> class we will write this inside the <code>Foodie::CLI</code> class:</p> <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"portray ITEM"</span><span class="p">,</span> <span class="s2">"Determines if a piece of food is gross or delicious"</span>&#x000A;<span class="k">def</span> <span class="nf">portray</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>&#x000A;  <span class="nb">puts</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>The <code>desc</code> method is the “slight twist” here. The method defined after it becomes a task with the given description. The first argument for <code>desc</code> is the usage instructions for the task whilst the second is the short description of what that task accomplishes. The <code>portray</code> method is defined with a single argument, which will be the first argument passed to this task on the command line. Inside the <code>portray</code> method we call <code>Foodie::Food.portray</code> and pass it this argument.</p> <p>In the <code>Foodie::CLI</code> class we’re referencing the <code>Foodie::Food</code> class without requiring the file that defines it. Under the <code>require 'thor'</code> at the top of this file, put this line to require the file that defines <code>Foodie::Food</code>:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie'</span>&#x000A;</code></pre> <p>When we re-run our features using <code>bundle exec cucumber features</code> our first scenario will pass:</p> <pre class="highlight plaintext"><code>2 scenarios (1 failed, 1 passed)&#x000A;4 steps (1 failed, 3 passed)&#x000A;</code></pre> <p>The second is still failing because we haven’t defined the <code>pluralize</code> task. This time rather than defining a task that takes an argument, we’ll define a task that reads in the value from an option passed to the task. To define the <code>pluralize</code> task we use this code in <code>Foodie::CLI</code>:</p> <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"pluralize"</span><span class="p">,</span> <span class="s2">"Pluralizes a word"</span>&#x000A;<span class="n">method_option</span> <span class="ss">:word</span><span class="p">,</span> <span class="ss">:aliases</span> <span class="o">=&gt;</span> <span class="s2">"-w"</span>&#x000A;<span class="k">def</span> <span class="nf">pluralize</span>&#x000A;  <span class="nb">puts</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="ss">:word</span><span class="p">])</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>Here there’s the new <code>method_option</code> method we use which defines, well, a method option. It takes a hash which indicates the details of an option how they should be returned to our task. Check out the Thor README for a full list of valid types. We can also define aliases for this method using the <code>:aliases</code> option passed to <code>method_option</code>. Inside the task we reference the value of the options through the <code>options</code> hash and we use <code>Foodie::Food.pluralize</code> to pluralize a word.</p> <p>When we run our scenarios again with <code>bundle exec cucumber features</code> both scenarios will be passing:</p> <pre class="highlight plaintext"><code>2 scenarios (2 passed)&#x000A;4 steps (4 passed)&#x000A;</code></pre> <p>We can try executing the CLI app by running <code>bundle exec exe/foodie portray broccoli</code>.</p> <p>If we want to add more options later on, we can define them by using the <code>method_options</code> helper like this:</p> <pre class="highlight ruby"><code><span class="n">method_options</span> <span class="ss">:word</span> <span class="o">=&gt;</span> <span class="ss">:string</span><span class="p">,</span> <span class="ss">:uppercase</span> <span class="o">=&gt;</span> <span class="ss">:boolean</span>&#x000A;<span class="k">def</span> <span class="nf">pluralize</span>&#x000A;  <span class="c1"># accessed as options[:word], options[:uppercase]</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>In this example, <code>options[:word]</code> will return a <code>String</code> object, whilst <code>options[:uppercase]</code> will return either <code>true</code> or <code>false</code>, depending on the value it has received.</p> <p>This introduction should have whet your appetite to learn more about Thor and it’s encouraged that you do that now. Check out <code>Bundler::CLI</code> for a great example of using Thor as a CLI tool.</p> <p>With our features and specs all passing now, we’re at a good point to commit our code.</p> <p>It was aforementioned that we could use Thor for more than just CLI. That we could use it to create a generator. This is true. We can even create generator<em>s</em>, but let’s not get too carried away right now and just focus on creating the one.</p> <h2 id=testing-a-generator>Testing a generator</h2> <p>You saw that pun coming, right? Yeah, pretty obvious.</p> <p>We’re going to mix it up a bit and add a new feature to our gem: a generator for a <em>recipes</em> directory. The idea is that we can run our generator like this:</p> <pre class="highlight plaintext"><code>foodie recipe dinner steak&#x000A;</code></pre> <p>This will generate a <em>recipes</em> directory at the current location, a <em>dinner</em> directory inside that and then a <em>steak.txt</em> file inside that. This <em>steak.txt</em> file will contain the scaffold for a recipe, such as the ingredients and the instructions.</p> <p>Thankfully for us, Aruba has ways of testing that a generator generates files and directories. Let’s create a new file called <code>features/generator.feature</code> and fill it with this content:</p> <pre class="highlight gherkin"><code><span class="kd">Feature</span><span class="p">:</span> Generating things&#x000A;  In order to generate many a thing&#x000A;  As a CLI newbie&#x000A;  I want foodie to hold my hand, tightly&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Recipes&#x000A;    <span class="nf">When</span> I run `foodie recipe dinner steak`&#x000A;    <span class="err">Then the following files should exist</span><span class="p">:</span>&#x000A;      <span class="p">|</span> <span class="nv">dinner/steak.txt</span> <span class="p">|</span>&#x000A;    <span class="n">Then</span> <span class="n">the</span> <span class="n">file</span> <span class="n">"dinner/steak.txt"</span> <span class="n">should</span> <span class="n">contain:</span>&#x000A;      <span class="s">"""&#x000A;      ##### Ingredients #####&#x000A;      Ingredients for delicious steak go here.&#x000A;&#x000A;&#x000A;      ##### Instructions #####&#x000A;      Tips on how to make delicious steak go here.&#x000A;      """</span>&#x000A;</code></pre> <p>It’s important to note that the word after “delicious” both times is “steak”, which is <em>very</em> delicious. It’s also the last argument we pass in to the command that we run, and therefore should be a dynamic variable in our template. We’ll see how to do this soon.</p> <p>When we run this feature we’ll be told that it cannot find the <em>dinner/steak.txt</em> file that we asked the generator to do. Why not?</p> <h2 id=writing-a-generator>Writing a generator</h2> <p>Well, because currently we don’t have a <code>recipe</code> task that does this for us defined in <code>Foodie::CLI</code>. We can define a generator class just like we define a CLI class:</p> <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"recipe"</span><span class="p">,</span> <span class="s2">"Generates a recipe scaffold"</span>&#x000A;<span class="k">def</span> <span class="nf">recipe</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span>&#x000A;  <span class="no">Foodie</span><span class="o">::</span><span class="no">Generators</span><span class="o">::</span><span class="no">Recipe</span><span class="p">.</span><span class="nf">start</span><span class="p">([</span><span class="n">group</span><span class="p">,</span> <span class="nb">name</span><span class="p">])</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>The first argument for this method are the arguments passed to the generator. We will need to require the file for this new class too, which we can do by putting this line at the top of <em>lib/foodie/cli.rb</em>:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/generators/recipe'</span>&#x000A;</code></pre> <p>To define this class, we inherit from <code>Thor::Group</code> rather than <code>Thor</code>. We will also need to include the <code>Thor::Actions</code> module to define helper methods for our generator which include the likes of those able to create files and directories. Because this is a generator class, we will put it in a new namespace called “generators”, making the location of this file <em>lib/foodie/generators/recipe.rb</em>:</p> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'thor/group'</span>&#x000A;<span class="k">module</span> <span class="nn">Foodie</span>&#x000A;  <span class="k">module</span> <span class="nn">Generators</span>&#x000A;    <span class="k">class</span> <span class="nc">Recipe</span> <span class="o">&lt;</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Group</span>&#x000A;      <span class="kp">include</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Actions</span>&#x000A;&#x000A;      <span class="n">argument</span> <span class="ss">:group</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:string</span>&#x000A;      <span class="n">argument</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:string</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>By inheriting from <code>Thor::Group</code>, we’re defining a generator rather than a CLI. When we call <code>argument</code>, we are defining arguments for our generator. These are the same arguments in the same order they are passed in from the <code>recipe</code> task back in <code>Foodie::CLI</code></p> <p>To make this generator, ya know, generate stuff we simply define methods in the class. All methods defined in a <code>Thor::Group</code> descendant will be run when <code>start</code> is called on it. Let’s define a <code>create_group</code> method inside this class which will create a directory using the name we have passed in.</p> <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">create_group</span>&#x000A;  <span class="n">empty_directory</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>To put the file in this directory and to save our foodie-friends some typing, we will use the <code>template</code> method. This will copy over a file from a pre-defined source location and evaluate it as if it were an ERB template. We will define a <code>copy_recipe</code> method to do this now:</p> <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">copy_recipe</span>&#x000A;  <span class="n">template</span><span class="p">(</span><span class="s2">"recipe.txt"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">group</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>If we had any ERB calls in this file, they would be evaluated and the result would be output in the new template file.</p> <p>It’s been an awful long time since we ran something. Hey, here’s an idea! Let’s run our generator! We can do this without using Cucumber by running <code>bundle exec exe/foodie recipe dinner &#x000A;steak</code>, but just this once. Generally we’d test it solely through Cucumber. When we run this command we’ll be told all of this:</p> <pre class="highlight plaintext"><code>create  dinner&#x000A;Could not find "recipe.txt" in any of your source paths. Please invoke  Foodie::Generators::Recipe.source_root(PATH) with the PATH containing your templates. Currently  you have no source paths.&#x000A;</code></pre> <p>The first line tells us that the <em>dinner</em> directory has been created. Nothing too fancy there.</p> <p>The second line is more exciting though! It’s asking us to define the <code>source_root</code> method for our generator. That’s easy! We can define it as a class method in <code>Foodie::Generators::Recipe</code> like this:</p> <pre class="highlight ruby"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">source_root</span>&#x000A;  <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/recipe"</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre> <p>This tells our generator where to find the template. Now all we need to do is to create the template, which we can put at <em>lib/foodie/generators/recipe/recipe.txt</em>:</p> <pre class="highlight plaintext"><code>##### Ingredients #####&#x000A;Ingredients for delicious &lt;%= name %&gt; go here.&#x000A;&#x000A;&#x000A;##### Instructions #####&#x000A;Tips on how to make delicious &lt;%= name %&gt; go here.&#x000A;</code></pre> <p>When we use the <code>template</code> method, the template file is treated like an ERB template which is evaluated within the current <code>binding</code> which means that it has access to the same methods and variables as the method that calls it.</p> <p>And that’s all! When we run <code>bundle exec cucumber features</code> all our features will be passing!</p> <pre class="highlight plaintext"><code>3 scenarios (3 passed)&#x000A;7 steps (7 passed)&#x000A;</code></pre> <p>Amazing stuff, hey?</p> <h2 id=releasing-the-gem>Releasing the gem</h2> <p>If we haven’t already, we should commit all the files for our repository:</p> <pre class="highlight plaintext"><code>git add .&#x000A;git commit -m "The beginnings of the foodie gem"&#x000A;</code></pre> <p>This is because the <code>foodie.gemspec</code> file uses <code>git ls-files</code> to detect which files should be added to the gem when we release it.</p> <p>The final step before releasing our gem is to give it a summary and description in the <em>foodie.gemspec</em> file.</p> <p>Now we’re going to make sure that our gem is ready to be published. To do this, we can run <code>rake &#x000A;build</code> which will build a local copy of our gem and then <code>gem install pkg/foodie-0.1.0.gem</code> to install it. Then we can try it locally by running the commands that it provides. Once we know everything’s working, then we can release the first version.</p> <p>To release the first version of our gem we can use the <code>rake release</code> command, providing we have committed everything. This command does a couple of things. First it builds the gem to the <em>pkg</em> directory in preparation for a push to Rubygems.org.</p> <p>Second, it creates a tag for the current commit reflecting the current version and pushes it to the git remote. It’s encouraged that we host the code on GitHub so that others may easily find it.</p> <p>If this push succeeds then the final step will be the push to Rubygems.org which will now allow other people to download and install the gem.</p> <p>If we want to release a second version of our gem, we should make our changes and then commit them to GitHub. Afterwards, we will bump the version number in <em>lib/foodie/version.rb</em> to whatever we see fit, make another commit to GitHub with a useful message such as “bumped to 0.0.2” and then run <code>rake release</code> again.</p> <p>If we want to make this process a little easier we could install the “gem-release” gem with:</p> <pre class="highlight plaintext"><code>gem install gem-release&#x000A;</code></pre> <p>This gem provides several methods for helping with gem development in general, but most helpful is the <code>gem bump</code> command which will bump the gem version to the next patch level. This method also takes options to do these things:</p> <pre class="highlight plaintext"><code>gem bump --version minor # bumps to the next minor version&#x000A;gem bump --version major # bumps to the next major version&#x000A;gem bump --version 1.1.1 # bumps to the specified version&#x000A;</code></pre> <p>For more information, check out the <a href="http://github.com/svenfuchs/gem-release">“gem-release” GitHub repository homepage</a>.</p> <h2 id=podsumowanie>Podsumowanie</h2> <p>Nie jest to może <em>stuprocentowa</em> instrukcja jak dewelopować gem, to jednak zawiera podstawowe elementy. Naprawdę zachęcam, żeby sprawdzić źródła Bundler-a, Rails-ów i RSpec-a. Są tam świetne przykłady pokazujące, jak pisać swojego własnego gem-a.</p> <p><strong>Kompletne źródła tego przykładu możesz znaleźć <a href="http://github.com/radar/guides/tree/master/gem-development/foodie">tutaj</a></strong></p> <hr/> <p><strong>Autor: <a href="https://github.com/radar">Ryan Bigg</a>. Możesz znaleźć więcej jego poradników <a href="https://github.com/radar/guides">tutaj</a>.</strong> <strong>Przetłumaczył: <a href="https://github.com/kruczjak">Jakub Kruczek</a></strong></p> </div> </div> </div> <script>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: The best way to manage a Ruby application's gems
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/pl/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Zespół</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+      </div>
+      <div class='row'>
+        <div class='container' id='guide-container'>
+          <div class='col-md-12'>
+            <h1 id="tworzenie-rubygema-korzystajc-z-bundlera">Tworzenie RubyGem’a korzystając z Bundler’a</h1>
+            
+            <p>Bundler to narzędzie stworzone przez Carl’a Lerche’a, Yehuda Katz’a, André Arko i inne kontrybucje
+            dla zarządzania zależnościami z Rubygem’ów. Bundler 1.0 został wydany w tym samym czasie
+            co Rails 3 i w Rails’owych projektach występuje najczęściej. Lecz pamiętaj, Bundler nie jest tylko dla Rails’ów!</p>
+            
+            <p>Czy wiedzieliście, że można używać Bundler’a nie tylko jako manadżer zależności, lecz też do pisania własnych gem’ów?
+            Jest to naprawdę proste, a Bundler dostarcza kilka rzeczy, które mogą pomóc.</p>
+            
+            <h2 id="po-pierwsze-czemu">Po pierwsze, czemu?</h2>
+            
+            <p>Po co tworzyć własnego gem’a? Nie można po prostu wrzucić gdziekolwiek kodu i używać?
+            Pewnie, że można, ale co, jeśli chcielibyśmy użyć tego kodu w innym miejscu lub podzielić się z innymi?
+            Dlatego właśnie gem’y są świetne. Można tworzyć własną bibliotekę i gem’y osobno od siebie
+            i dodać <code>require 'gem'</code> w bibliotece. Jeśli chcesz użyć gem’a w innej bibliotece,
+            po prostu robisz małą modyfikację, zamiast wszystko kopiować.</p>
+            
+            <p>Również: “Sharing is caring”.</p>
+            
+            <h2 id="zaczynamy">Zaczynamy</h2>
+            
+            <p>Ta instrukcja została stworzona używając wersji 1.9.0 Bundler’a. Możesz kontynuować z inną wersją, ale
+            możesz nie otrzymać takiego samego wyniku. Żeby sprawdzić jaka wersja bundler’a jest aktualnie zainstalowana,
+            uruchom poniższą komendę:</p>
+            
+            <pre class="highlight plaintext"><code>bundle -v&#x000A;</code></pre>
+            
+            <p>Jeśli to potrzebne, możesz zaktualizować Bundler’a do najnowszej wersji wpisując <code>gem install bundler</code>.</p>
+            
+            <p>Aby rozpocząć tworzenie nowego gem’a, użyj komendy <code>bundle gem</code> tak jak niżej:</p>
+            
+            <pre class="highlight plaintext"><code>bundle gem foodie&#x000A;</code></pre>
+            
+            <p>Nasz gem będzie się nazywał <code>foodie</code>, ponieważ będzie robił kilka rzeczy związanych z jedzeniem,
+            np. określając je jako “Delicious!” lub “Gross!”.</p>
+            
+            <p>Komenda ta stworzy <a href="https://github.com/radar/guides/tree/master/gem-scaffold/foodie">wygenerowany folder</a>
+            dla naszego nowego gem’a i, jeśli mamy zainstalowanego
+            Git’a, inicjalizuje repozytorium Git’a w tym folderze, żebyśmy mogli rozpocząć commitować od razu.
+            Jeśli pierwszy raz uruchamiasz <code>bundle gem</code>, zostaniesz zapytany czy chcesz dodać pliki:
+            <code>CODE_OF_CONDUCT.md</code> i <code>LICENSE.txt</code> w Twoim projekcie. Wygenerowane pliki to:</p>
+            
+            <ul>
+              <li>
+                <p><strong>Gemfile</strong>: Używany do zarządzania zależnościami w naszej bibliotece. Folder zawiera linię <code>gemspec</code> oznaczającą,
+            że Bundler dołączy również zależności z <em>foodie.gemspec</em>. Najlepszą praktyką jest wyspecyfikowanie wszystkich gem’ów,
+            używanych przez bibliotekę w <em>gemspec</em>.</p>
+              </li>
+              <li>
+                <p><strong>Rakefile</strong>: Inicjalizuje Bundler’a i dodaje zadania Rake: <code>build</code>, <code>install</code>
+            i <code>release</code> poprzez wywołanie <code>Bundler::GemHelper.install_tasks</code>. Task <code>build</code>
+            zbuduje aktualną wersję gem’a i przechowuje ją w folderze <em>pkg</em>, task <code>install</code>
+            zbuduje <em>i</em> zainstaluje gem w naszym systemie (jakbyśmy użyli <code>gem install</code> na niej)
+            i <code>release</code> wyśle gem’a na serwery Rubygems do użytku publicznego.</p>
+              </li>
+              <li>
+                <p><strong>CODE_OF_CONDUCT.md</strong>: Zawiera “Code of Conduct”, który wszyscy
+            powinni przestrzegać. Zostanie dołączony tylko, gdy wybierzesz odpowiednią opcję.</p>
+              </li>
+              <li>
+                <p><strong>LICENSE.txt</strong>: Zawiera licencję MIT.Includes the MIT license. Zostanie dołączona tylko, gdy wybierzesz odpowiednią opcję.</p>
+              </li>
+              <li>
+                <p><strong>.gitignore</strong>: (jeśli korzystasz z Git-a). Ignoruje wszystko w folderze <em>pkg</em>
+            (miejsce, gdzie zazwyczaj trafiają wygenerowane pliki po <code>rake build</code>), 
+            wszystko z roszerzeniem <em>.gem</em> i folder <em>.bundle</em> .</p>
+              </li>
+              <li>
+                <p><strong>foodie.gemspec</strong>: Plik konfiguracyjny Gem-a. Jest to miejsce gdzie
+            podajemy wszystkie informacje dla Rubygems-ów, np. nazwę, opis, stronę główną 
+            naszego gem-a. Również tutaj dodajemy zależności, które muszą być zainstalowane, żeby uruchomić gem-a.</p>
+              </li>
+              <li>
+                <p><strong>lib/foodie.rb</strong>: Plik wejściowy kodu. Ten plik jest dołączany przez Bundler-a (lub inne), kiedy 
+            gem jest ładowany. Ten plik definiuje <code>module</code>, który będzie użyty jako namespace dla kodu naszego gem-a.
+            Najlepiej właśnie w tym module umieszczać kod…</p>
+              </li>
+              <li>
+                <p><strong>lib/foodie</strong>: Ten folder powinien zawierać cały kod (klasy, etc.) naszego gem-a.
+            Plik <em>lib/foodie.rb</em> jest po to, by ustawić środowisko gem-a, natomiast wszystkie inne części biblioteki powinny
+            trafić to folderu <em>lib/foodie</em>. Jeśli gem będzie można używać na różne sposoby, rozdziel kod tak, by ludzie mogli załączać
+            pojedynczą klasę/plik.</p>
+              </li>
+              <li>
+                <p><strong>lib/foodie/version.rb</strong>: Definiuje <code>Foodie</code> moduł, a w nim stałą <code>VERSION</code>.
+            Jest to plik ładowany przez <em>foodie.gemspec</em> do określenia wersji gem-a.
+            Kiedy wypuszczamy nową wersję, będziemy zwiększać numer wersji.</p>
+              </li>
+            </ul>
+            
+            <p>Był to podstawowy opis, a teraz przejdźmy do kodzenia!</p>
+            
+            <h2 id="testowanie-gem-a">Testowanie gem-a</h2>
+            
+            <p>W tym poradniku, będziemy używać RSpec-a to testowania naszego gem-a. Piszemy testy, by zapewnić,
+            że wszystko uruchomi sie zgodnie z planem i by przestrzec nas przed nieprzyjemnymi problemami w przyszłości.</p>
+            
+            <p>Aby rozpocząć pisać testy, stworzymy folder <em>spec</em> w katalogu głównym gem-a przez użycie komendy
+            <code>mkdir spec</code>. Następnie, dodamy linijkę do <em>foodie.gemspec</em> w bloku <code>Gem::Specification</code>, aby sprawić że
+            <code>rspec</code> będzie wymaganą zależnością przy dewelopowaniu.</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rspec"</span><span class="p">,</span> <span class="s2">"~&gt; 3.2"</span>&#x000A;</code></pre>
+            
+            <p>Because we have the <code>gemspec</code> method call in our <em>Gemfile</em>, Bundler will automatically add this 
+            gem to a group called “development” which then we can reference any time we want to load these 
+            gems with the following line:</p>
+            
+            <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;</code></pre>
+            
+            <p>The benefit of putting this dependency specification inside of <em>foodie.gemspec</em> rather than the 
+            <em>Gemfile</em> is that anybody who runs <code>gem install foodie --dev</code> will get these development 
+            dependencies installed too. This command is used for when people wish to test a gem without 
+            having to fork it or clone it from GitHub.</p>
+            
+            <p>When we run <code>bundle install</code>, rspec will be installed for this library and any other library we 
+            use with Bundler, but not for the system. This is an important distinction to make: any gem 
+            installed by Bundler will not muck about with gems installed by <code>gem install</code>. It is effectively 
+            a sandboxed environment. It is best practice to use Bundler to manage our gems so that we do not 
+            have gem version conflicts.</p>
+            
+            <p>By running <code>bundle install</code>, Bundler will generate the <strong>extremely important</strong> <em>Gemfile.lock</em> 
+            file. This file is responsible for ensuring that every system this library is developed on has 
+            the <em>exact same</em> gems so it should always be checked into version control. For more information 
+            on this file <a href="/man/bundle-install.1.html#THE-GEMFILE-LOCK">read “THE GEMFILE.LOCK” section of the <code>bundle install</code> 
+            manpage</a>.</p>
+            
+            <p>Additionally in the <code>bundle install</code> output, we will see this line:</p>
+            
+            <pre class="highlight plaintext"><code>Using foodie (0.1.0) from source at /path/to/foodie&#x000A;</code></pre>
+            
+            <p>Bundler detects our gem, loads the gemspec and bundles our gem just like every other gem.</p>
+            
+            <p>We can write our first test with this framework now in place. For testing, first we create a 
+            folder called <em>spec</em> to put our tests in (<code>mkdir spec</code>).  We then create a new RSpec file for 
+            every class we want to test at the root of the <em>spec</em> directory. If we had multiple facets to our 
+            gem, we would group them underneath a directory such as <em>spec/facet</em>; but this is a simple gem, 
+            so we won’t. Let’s call this new file <code>spec/foodie_spec.rb</code> and fill it with the following:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">describe</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span> <span class="k">do</span>&#x000A;  <span class="n">it</span> <span class="s2">"broccoli is gross"</span> <span class="k">do</span>&#x000A;    <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="s2">"Broccoli"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Gross!"</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;&#x000A;  <span class="n">it</span> <span class="s2">"anything else is delicious"</span> <span class="k">do</span>&#x000A;    <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="s2">"Not Broccoli"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Delicious!"</span><span class="p">)</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>When we run <code>bundle exec rspec spec</code> again, we’ll be told the <code>Foodie::Food</code> constant doesn’t 
+            exist. This is true, and we should define it in <code>lib/foodie/food.rb</code> like this:</p>
+            
+            <pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">Foodie</span>&#x000A;  <span class="k">class</span> <span class="nc">Food</span>&#x000A;    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">portray</span><span class="p">(</span><span class="n">food</span><span class="p">)</span>&#x000A;      <span class="k">if</span> <span class="n">food</span><span class="p">.</span><span class="nf">downcase</span> <span class="o">==</span> <span class="s2">"broccoli"</span>&#x000A;        <span class="s2">"Gross!"</span>&#x000A;      <span class="k">else</span>&#x000A;        <span class="s2">"Delicious!"</span>&#x000A;      <span class="k">end</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>To load this file, we’ll need to add a require line to <code>lib/foodie.rb</code> for it:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/food'</span>&#x000A;</code></pre>
+            
+            <p>We will also need to require the <code>lib/foodie.rb</code> at the top of <code>spec/foodie_spec.rb</code>:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie'</span>&#x000A;</code></pre>
+            
+            <p>When we run our specs with <code>bundle exec rspec spec</code> this test will pass:</p>
+            
+            <pre class="highlight plaintext"><code>2 example, 0 failures&#x000A;</code></pre>
+            
+            <p>Great success! If we’re using Git (or any other source control system), this is a great 
+            checkpoint to commit our code. Always remember to commit often!</p>
+            
+            <p>It’s all well and dandy that we can write our own code, but what if we want to depend on another 
+            gem? That’s easy too.</p>
+            
+            <h2 id="using-other-gems">Using other gems</h2>
+            
+            <p>We’re now going to use Active Support’s <code>pluralize</code> method by calling it using a method from our 
+            gem.</p>
+            
+            <p>To use another gem, we must first specify it as a dependency in our <em>foodie.gemspec</em>. We can 
+            specify the dependency on the <code>activesupport</code> gem in <em>foodie.gemspec</em> by adding this line inside 
+            the <code>Gem::Specification</code> object:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span>&#x000A;</code></pre>
+            
+            <p>If we wanted to specify a particular version we may use this line:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"4.2.0"</span>&#x000A;</code></pre>
+            
+            <p>Or specify a version constraint:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"&gt;= 4.2.0"</span>&#x000A;</code></pre>
+            
+            <p>However, relying on a version simply greater than the latest-at-the-time is a sure-fire way to 
+            run into problems later on down the line. Try to always use <code>~&gt;</code> for specifying dependencies:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"activesupport"</span><span class="p">,</span> <span class="s2">"~&gt; 4.2.0"</span>&#x000A;</code></pre>
+            
+            <p>When we run <code>bundle install</code> again, the <code>activesupport</code> gem will be installed for us to use. Of 
+            course, like the diligent TDD/BDD zealots we are, we will test our <code>pluralize</code> method before we 
+            code it. Let’s add this test to <em>spec/food_spec.rb</em> now inside our <code>describe Foodie::Food</code> block:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">it</span> <span class="s2">"pluralizes a word"</span> <span class="k">do</span>&#x000A;  <span class="n">expect</span><span class="p">(</span><span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="s2">"Tomato"</span><span class="p">)).</span><span class="nf">to</span> <span class="n">eql</span><span class="p">(</span><span class="s2">"Tomatoes"</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>Of course when we run this spec with <code>bundle exec rspec spec</code> it will fail:</p>
+            
+            <pre class="highlight plaintext"><code>expect(Failure/Error: Foodie::Food.pluralize("Tomato")).to eql("Tomatoes")&#x000A;     undefined method `pluralize' for Foodie::Food:Class&#x000A;</code></pre>
+            
+            <p>We can now define this <code>pluralize</code> method in <em>lib/foodie/food.rb</em> by first off requiring the part 
+            of Active Support which contains the <code>pluralize</code> method. This line should go at the top of the 
+            file, just like all good <code>require</code>s do.</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'active_support/inflector'</span>&#x000A;</code></pre>
+            
+            <p>Next, we can define the <code>pluralize</code> method like this:</p>
+            
+            <pre class="highlight ruby"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>&#x000A;  <span class="n">word</span><span class="p">.</span><span class="nf">pluralize</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>When we run <code>bundle exec rspec spec</code> our specs will pass:</p>
+            
+            <pre class="highlight plaintext"><code>3 examples, 0 failures&#x000A;</code></pre>
+            
+            <p>This brings another checkpoint where it’d be a good idea to commit our efforts so far.</p>
+            
+            <p>It’s great that we’re able to call our gem’s methods now (all two of them!) and get them to 
+            return strings, but everybody knows that the best gems come with command line interfaces 
+            (hereafter, “CLI”). You can tell right now just how uncool this gem is because it doesn’t have a 
+            CLI, right? It needs one. It craves one.</p>
+            
+            <p>It deserves one.</p>
+            
+            <h2 id="testing-a-command-line-interface">Testing a command line interface</h2>
+            
+            <p>Before we go jumping headlong into giving our gem the best darn CLI a 
+            gem-with-only-two-methods-that-both-return-useless-strings can have, let’s consider how we’re 
+            going to test this first. We’re zealots, remember? Now if only there was a tool we could use. It 
+            would have to have a cool name, of course.</p>
+            
+            <p>Like “Aruba”. <a href="https://github.com/cucumber/aruba">BAM</a></p>
+            
+            <p>David Chelimsky and Aslak Hellesøy teamed up to create Aruba, a CLI testing tool, which they both 
+            use for RSpec and Cucumber, and now we too can use it for testing our gems. Oh hey, speaking of 
+            Cucumber that’s also what we’re going to be using to define the Aruba tests. 
+            Human-code-client-readable tests are the way of the future, man.</p>
+            
+            <p>We will define new development dependencies in <em>foodie.gemspec</em> now for the Cucumber things:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"cucumber"</span>&#x000A;<span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"aruba"</span>&#x000A;</code></pre>
+            
+            <p>Hot. Let’s run <code>bundle install</code> to get these awesome tools set up.</p>
+            
+            <p>Our CLI is going to have two methods, which correspond to the two methods which we have defined 
+            in <code>Foodie::Food</code>. We will now create a <em>features</em> directory where we will make sweet, sweet love 
+            to Aruba to write tests for our CLI. In this directory we’ll create a new file called 
+            <em>features/food.feature</em> and fill it with this juicy code:</p>
+            
+            <pre class="highlight gherkin"><code><span class="kd">Feature</span><span class="p">:</span> Food&#x000A;  In order to portray or pluralize food&#x000A;  As a CLI&#x000A;  I want to be as objective as possible&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Broccoli is gross&#x000A;    <span class="nf">When</span> I run `foodie portray broccoli`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Gross!"</span>&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Tomato, or Tomato?&#x000A;    <span class="nf">When</span> I run `foodie pluralize --word Tomato`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Tomatoes"</span>&#x000A;</code></pre>
+            
+            <p>These scenarios test the CLI our gem will provide. In the <code>When I run</code> steps, the first word 
+            inside the quotes is the name of our executable, the second is the task name, and any further 
+            text is arguments or options. Yes, it <em>is</em> testing what appears to be the same thing as our 
+            specs. How very observant of you. Gold star! But it’s testing it through a CLI, which makes it 
+            <em>supremely awesome</em>. Contrived examples are <em>in</em> this year.</p>
+            
+            <p>The first scenario ensures that we can call a specific task and pass it a single argument which 
+            then becomes the part of the text that is output. The second scenario ensures effectively the 
+            same thing, but we pass that value in as an option rather than an argument.</p>
+            
+            <p>To run this feature, we use the <code>cucumber</code> command, but of course because it’s available within 
+            the context of our bundle, we use <code>bundle exec cucumber</code> like this:</p>
+            
+            <pre class="highlight plaintext"><code>bundle exec cucumber features/&#x000A;</code></pre>
+            
+            <p>See those yellow things? They’re undefined steps:</p>
+            
+            <pre class="highlight plaintext"><code>When /^I run "([^"]*)"$/ do |arg1|&#x000A;  pending # express the regexp above with the code you wish you had&#x000A;end&#x000A;&#x000A;Then /^the output should contain "([^"]*)"$/ do |arg1|&#x000A;  pending # express the regexp above with the code you wish you had&#x000A;end&#x000A;</code></pre>
+            
+            <p>We can define them by requiring Aruba. In Cucumber, all <em>.rb</em> files in the <em>features/support</em> 
+            directory are automatically required. To prove this to ourselves, we can add a 
+            <em>features/support/setup.rb</em> file (create the <em>support</em> directory first) and put in this single 
+            line:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'aruba/cucumber'</span>&#x000A;</code></pre>
+            
+            <p>This loads the Cucumber steps provided by Aruba which are the same steps our Cucumber features 
+            need to be awesome.</p>
+            
+            <p>We have to re-run <code>bundle exec cucumber features</code>, just to see what happens next. We see red. Red 
+            like the blood incessantly seeping from the walls. It contains this cryptic message:</p>
+            
+            <pre class="highlight plaintext"><code>sh: foodie: command not found&#x000A;</code></pre>
+            
+            <p>OK, so it’s not <em>that</em> cryptic. It just means it can’t find the executable file for our gem. No 
+            worries, we can create a <em>exe</em> directory at the root of our gem, and put a file in it named 
+            <em>foodie</em>. This file has no extension because it’s an <em>executable</em> file rather than a script. We 
+            don’t want to go around calling <code>foodie.rb</code> everywhere, do we? No, no we don’t. We will fill this 
+            file with this content:</p>
+            
+            <pre class="highlight shell"><code><span class="c">#!/usr/bin/env ruby</span>&#x000A;print <span class="s2">"nothing."</span>&#x000A;</code></pre>
+            
+            <p>If this file was completely empty, we would run into a non-friendly <code>Errno::ENOEXEC</code> error. Hey, 
+            speaking of running, we should <code>chmod</code> this file to be an executable from our terminal:</p>
+            
+            <pre class="highlight plaintext"><code>chmod +x exe/foodie&#x000A;</code></pre>
+            
+            <p>Alright so we’ve got the executable file, now what? If we re-run our features we get <em>nothing</em> 
+            for the output. Nothing! Literally!</p>
+            
+            <pre class="highlight plaintext"><code>got: "nothing."&#x000A;</code></pre>
+            
+            <p>Our <em>exe/foodie</em> file is empty, which results in this Nothing Travesty. Get rid of the <code>print &#x000A;"nothing."</code> line and replace it with all the code required to run our CLI, which consists of two 
+            lines:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/cli'</span>&#x000A;<span class="no">Foodie</span><span class="o">::</span><span class="no">CLI</span><span class="p">.</span><span class="nf">start</span>&#x000A;</code></pre>
+            
+            <p>Boom! When we run <code>bundle exec cucumber features</code> again it will whinge that there’s no 
+            <em>foodie/cli</em> file to require. Before we go into what this file does, we should explain the code 
+            on the <em>other</em> line of the <em>exe/foodie</em> file. The <code>start</code> method fires up our <code>CLI</code> class and 
+            will look for a task that matches the one we ask for.</p>
+            
+            <p>Ok, so it’s therefore obvious that the next step is to create this file, but what does it do?</p>
+            
+            <p>This new <em>lib/foodie/cli.rb</em> file will define the command line interface using another gem called 
+            <code>Thor</code>. Thor was created by Yehuda Katz (&amp; collaborators) as an alternative to the Rake build 
+            tool. Thor provides us with a handy API for defining our CLI, including usage banners and help 
+            output. The syntax is very similar to Rake. Additionally, Rails and Bundler both use Thor for 
+            their CLI interface as well as their generator base. Yes, Thor even does generators!</p>
+            
+            <p>For now we’ll just look at how we can craft a CLI using Thor and then afterwards, if you behave, 
+            we’ll look at how to write a generator using it too.</p>
+            
+            <h2 id="crafting-a-cli">Crafting a CLI</h2>
+            
+            <p>To make this CLI work we’re going to need to create a <code>Foodie::CLI</code> class and define a <code>start</code> 
+            method on it. Or you know, there’s probably a gem out there for us to use. Like 
+            <a href="http://github.com/wycats/thor">Thor</a>. Named after the badass lightning god from Norse mythology, 
+            this gem is definitely on the fast-track to being just as badass. This gem is what we’ll be using 
+            to build our CLI interface and then later on the generator (if you behave, remember?).</p>
+            
+            <p>Let’s define the <code>lib/foodie/cli.rb</code> file now like this:</p>
+            
+            <pre class="highlight plaintext"><code>require 'thor'&#x000A;module Foodie&#x000A;  class CLI &lt; Thor&#x000A;&#x000A;  end&#x000A;end&#x000A;</code></pre>
+            
+            <p>The <code>Thor</code> class has a series of methods – such as the <code>start</code> method we reference back in 
+            <code>exe/foodie</code> – that we can use to create this CLI. Oh, by the way, our class doesn’t have to be 
+            called <code>CLI</code>, it’s just best practice to do so. We don’t magically get this <code>Thor</code> class; we need 
+            to tell our <em>gemspec</em> that we depend on this gem by adding this line underneath our previous 
+            <code>add_dependency</code>:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"thor"</span>&#x000A;</code></pre>
+            
+            <p>To install this new dependency, we use <code>bundle install</code>. When we run <code>bundle exec cucumber &#x000A;features</code> again, we’ll see that it’s now complaining that it could not find the tasks we’re 
+            calling:</p>
+            
+            <pre class="highlight plaintext"><code>Could not find task "portray"&#x000A;...&#x000A;Could not find task "pluralize"&#x000A;</code></pre>
+            
+            <p>Thor tasks are defined as plain ol’ methods, but with a slight twist. To define the <code>portray</code> 
+            task in our <code>Foodie::CLI</code> class we will write this inside the <code>Foodie::CLI</code> class:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"portray ITEM"</span><span class="p">,</span> <span class="s2">"Determines if a piece of food is gross or delicious"</span>&#x000A;<span class="k">def</span> <span class="nf">portray</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>&#x000A;  <span class="nb">puts</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">portray</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>The <code>desc</code> method is the “slight twist” here. The method defined after it becomes a task with the 
+            given description. The first argument for <code>desc</code> is the usage instructions for the task whilst 
+            the second is the short description of what that task accomplishes. The <code>portray</code> method is 
+            defined with a single argument, which will be the first argument passed to this task on the 
+            command line. Inside the <code>portray</code> method we call <code>Foodie::Food.portray</code> and pass it this 
+            argument.</p>
+            
+            <p>In the <code>Foodie::CLI</code> class we’re referencing the <code>Foodie::Food</code> class without requiring the file 
+            that defines it. Under the <code>require 'thor'</code> at the top of this file, put this line to require the 
+            file that defines <code>Foodie::Food</code>:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie'</span>&#x000A;</code></pre>
+            
+            <p>When we re-run our features using <code>bundle exec cucumber features</code> our first scenario will pass:</p>
+            
+            <pre class="highlight plaintext"><code>2 scenarios (1 failed, 1 passed)&#x000A;4 steps (1 failed, 3 passed)&#x000A;</code></pre>
+            
+            <p>The second is still failing because we haven’t defined the <code>pluralize</code> task. This time rather 
+            than defining a task that takes an argument, we’ll define a task that reads in the value from an 
+            option passed to the task. To define the <code>pluralize</code> task we use this code in <code>Foodie::CLI</code>:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"pluralize"</span><span class="p">,</span> <span class="s2">"Pluralizes a word"</span>&#x000A;<span class="n">method_option</span> <span class="ss">:word</span><span class="p">,</span> <span class="ss">:aliases</span> <span class="o">=&gt;</span> <span class="s2">"-w"</span>&#x000A;<span class="k">def</span> <span class="nf">pluralize</span>&#x000A;  <span class="nb">puts</span> <span class="no">Foodie</span><span class="o">::</span><span class="no">Food</span><span class="p">.</span><span class="nf">pluralize</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="ss">:word</span><span class="p">])</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>Here there’s the new <code>method_option</code> method we use which defines, well, a method option. It takes 
+            a hash which indicates the details of an option how they should be returned to our task. Check 
+            out the Thor README for a full list of valid types. We can also define aliases for this method 
+            using the <code>:aliases</code> option passed to <code>method_option</code>. Inside the task we reference the value of 
+            the options through the <code>options</code> hash and we use <code>Foodie::Food.pluralize</code> to pluralize a word.</p>
+            
+            <p>When we run our scenarios again with <code>bundle exec cucumber features</code> both scenarios will be 
+            passing:</p>
+            
+            <pre class="highlight plaintext"><code>2 scenarios (2 passed)&#x000A;4 steps (4 passed)&#x000A;</code></pre>
+            
+            <p>We can try executing the CLI app by running <code>bundle exec exe/foodie portray broccoli</code>.</p>
+            
+            <p>If we want to add more options later on, we can define them by using the <code>method_options</code> helper 
+            like this:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">method_options</span> <span class="ss">:word</span> <span class="o">=&gt;</span> <span class="ss">:string</span><span class="p">,</span> <span class="ss">:uppercase</span> <span class="o">=&gt;</span> <span class="ss">:boolean</span>&#x000A;<span class="k">def</span> <span class="nf">pluralize</span>&#x000A;  <span class="c1"># accessed as options[:word], options[:uppercase]</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>In this example, <code>options[:word]</code> will return a <code>String</code> object, whilst <code>options[:uppercase]</code> 
+            will return either <code>true</code> or <code>false</code>, depending on the value it has received.</p>
+            
+            <p>This introduction should have whet your appetite to learn more about Thor and it’s encouraged 
+            that you do that now. Check out <code>Bundler::CLI</code> for a great example of using Thor as a CLI tool.</p>
+            
+            <p>With our features and specs all passing now, we’re at a good point to commit our code.</p>
+            
+            <p>It was aforementioned that we could use Thor for more than just CLI. That we could use it to 
+            create a generator. This is true. We can even create generator<em>s</em>, but let’s not get too carried 
+            away right now and just focus on creating the one.</p>
+            
+            <h2 id="testing-a-generator">Testing a generator</h2>
+            
+            <p>You saw that pun coming, right? Yeah, pretty obvious.</p>
+            
+            <p>We’re going to mix it up a bit and add a new feature to our gem: a generator for a <em>recipes</em> 
+            directory. The idea is that we can run our generator like this:</p>
+            
+            <pre class="highlight plaintext"><code>foodie recipe dinner steak&#x000A;</code></pre>
+            
+            <p>This will generate a <em>recipes</em> directory at the current location, a <em>dinner</em> directory inside 
+            that and then a <em>steak.txt</em> file inside that. This <em>steak.txt</em> file will contain the scaffold for 
+            a recipe, such as the ingredients and the instructions.</p>
+            
+            <p>Thankfully for us, Aruba has ways of testing that a generator generates files and directories. 
+            Let’s create a new file called <code>features/generator.feature</code> and fill it with this content:</p>
+            
+            <pre class="highlight gherkin"><code><span class="kd">Feature</span><span class="p">:</span> Generating things&#x000A;  In order to generate many a thing&#x000A;  As a CLI newbie&#x000A;  I want foodie to hold my hand, tightly&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Recipes&#x000A;    <span class="nf">When</span> I run `foodie recipe dinner steak`&#x000A;    <span class="err">Then the following files should exist</span><span class="p">:</span>&#x000A;      <span class="p">|</span> <span class="nv">dinner/steak.txt</span> <span class="p">|</span>&#x000A;    <span class="n">Then</span> <span class="n">the</span> <span class="n">file</span> <span class="n">"dinner/steak.txt"</span> <span class="n">should</span> <span class="n">contain:</span>&#x000A;      <span class="s">"""&#x000A;      ##### Ingredients #####&#x000A;      Ingredients for delicious steak go here.&#x000A;&#x000A;&#x000A;      ##### Instructions #####&#x000A;      Tips on how to make delicious steak go here.&#x000A;      """</span>&#x000A;</code></pre>
+            
+            <p>It’s important to note that the word after “delicious” both times is “steak”, which is <em>very</em> 
+            delicious. It’s also the last argument we pass in to the command that we run, and therefore 
+            should be a dynamic variable in our template. We’ll see how to do this soon.</p>
+            
+            <p>When we run this feature we’ll be told that it cannot find the <em>dinner/steak.txt</em> file that we 
+            asked the generator to do. Why not?</p>
+            
+            <h2 id="writing-a-generator">Writing a generator</h2>
+            
+            <p>Well, because currently we don’t have a <code>recipe</code> task that does this for us defined in 
+            <code>Foodie::CLI</code>. We can define a generator class just like we define a CLI class:</p>
+            
+            <pre class="highlight ruby"><code><span class="n">desc</span> <span class="s2">"recipe"</span><span class="p">,</span> <span class="s2">"Generates a recipe scaffold"</span>&#x000A;<span class="k">def</span> <span class="nf">recipe</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span>&#x000A;  <span class="no">Foodie</span><span class="o">::</span><span class="no">Generators</span><span class="o">::</span><span class="no">Recipe</span><span class="p">.</span><span class="nf">start</span><span class="p">([</span><span class="n">group</span><span class="p">,</span> <span class="nb">name</span><span class="p">])</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>The first argument for this method are the arguments passed to the generator. We will need to 
+            require the file for this new class too, which we can do by putting this line at the top of 
+            <em>lib/foodie/cli.rb</em>:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'foodie/generators/recipe'</span>&#x000A;</code></pre>
+            
+            <p>To define this class, we inherit from <code>Thor::Group</code> rather than <code>Thor</code>. We will also need to 
+            include the <code>Thor::Actions</code> module to define helper methods for our generator which include the 
+            likes of those able to create files and directories. Because this is a generator class, we will 
+            put it in a new namespace called “generators”, making the location of this file 
+            <em>lib/foodie/generators/recipe.rb</em>:</p>
+            
+            <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'thor/group'</span>&#x000A;<span class="k">module</span> <span class="nn">Foodie</span>&#x000A;  <span class="k">module</span> <span class="nn">Generators</span>&#x000A;    <span class="k">class</span> <span class="nc">Recipe</span> <span class="o">&lt;</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Group</span>&#x000A;      <span class="kp">include</span> <span class="no">Thor</span><span class="o">::</span><span class="no">Actions</span>&#x000A;&#x000A;      <span class="n">argument</span> <span class="ss">:group</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:string</span>&#x000A;      <span class="n">argument</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:string</span>&#x000A;    <span class="k">end</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>By inheriting from <code>Thor::Group</code>, we’re defining a generator rather than a CLI. When we call 
+            <code>argument</code>, we are defining arguments for our generator. These are the same arguments in the same 
+            order they are passed in from the <code>recipe</code> task back in <code>Foodie::CLI</code></p>
+            
+            <p>To make this generator, ya know, generate stuff we simply define methods in the class. All 
+            methods defined in a <code>Thor::Group</code> descendant will be run when <code>start</code> is called on it. Let’s 
+            define a <code>create_group</code> method inside this class which will create a directory using the name we 
+            have passed in.</p>
+            
+            <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">create_group</span>&#x000A;  <span class="n">empty_directory</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>To put the file in this directory and to save our foodie-friends some typing, we will use the 
+            <code>template</code> method. This will copy over a file from a pre-defined source location and evaluate it 
+            as if it were an ERB template. We will define a <code>copy_recipe</code> method to do this now:</p>
+            
+            <pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">copy_recipe</span>&#x000A;  <span class="n">template</span><span class="p">(</span><span class="s2">"recipe.txt"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">group</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">.txt"</span><span class="p">)</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>If we had any ERB calls in this file, they would be evaluated and the result would be output in 
+            the new template file.</p>
+            
+            <p>It’s been an awful long time since we ran something. Hey, here’s an idea! Let’s run our 
+            generator! We can do this without using Cucumber by running <code>bundle exec exe/foodie recipe dinner &#x000A;steak</code>, but just this once. Generally we’d test it solely through Cucumber. When we run this 
+            command we’ll be told all of this:</p>
+            
+            <pre class="highlight plaintext"><code>create  dinner&#x000A;Could not find "recipe.txt" in any of your source paths. Please invoke  Foodie::Generators::Recipe.source_root(PATH) with the PATH containing your templates. Currently  you have no source paths.&#x000A;</code></pre>
+            
+            <p>The first line tells us that the <em>dinner</em> directory has been created. Nothing too fancy there.</p>
+            
+            <p>The second line is more exciting though! It’s asking us to define the <code>source_root</code> method for 
+            our generator. That’s easy! We can define it as a class method in <code>Foodie::Generators::Recipe</code> 
+            like this:</p>
+            
+            <pre class="highlight ruby"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">source_root</span>&#x000A;  <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/recipe"</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+            
+            <p>This tells our generator where to find the template. Now all we need to do is to create the 
+            template, which we can put at <em>lib/foodie/generators/recipe/recipe.txt</em>:</p>
+            
+            <pre class="highlight plaintext"><code>##### Ingredients #####&#x000A;Ingredients for delicious &lt;%= name %&gt; go here.&#x000A;&#x000A;&#x000A;##### Instructions #####&#x000A;Tips on how to make delicious &lt;%= name %&gt; go here.&#x000A;</code></pre>
+            
+            <p>When we use the <code>template</code> method, the template file is treated like an ERB template which is 
+            evaluated within the current <code>binding</code> which means that it has access to the same methods and 
+            variables as the method that calls it.</p>
+            
+            <p>And that’s all! When we run <code>bundle exec cucumber features</code> all our features will be passing!</p>
+            
+            <pre class="highlight plaintext"><code>3 scenarios (3 passed)&#x000A;7 steps (7 passed)&#x000A;</code></pre>
+            
+            <p>Amazing stuff, hey?</p>
+            
+            <h2 id="releasing-the-gem">Releasing the gem</h2>
+            
+            <p>If we haven’t already, we should commit all the files for our repository:</p>
+            
+            <pre class="highlight plaintext"><code>git add .&#x000A;git commit -m "The beginnings of the foodie gem"&#x000A;</code></pre>
+            
+            <p>This is because the <code>foodie.gemspec</code> file uses <code>git ls-files</code> to detect which files should be 
+            added to the gem when we release it.</p>
+            
+            <p>The final step before releasing our gem is to give it a summary and description in the 
+            <em>foodie.gemspec</em> file.</p>
+            
+            <p>Now we’re going to make sure that our gem is ready to be published. To do this, we can run <code>rake &#x000A;build</code> which will build a local copy of our gem and then <code>gem install pkg/foodie-0.1.0.gem</code> to 
+            install it. Then we can try it locally by running the commands that it provides. Once we know 
+            everything’s working, then we can release the first version.</p>
+            
+            <p>To release the first version of our gem we can use the <code>rake release</code> command, providing we have 
+            committed everything. This command does a couple of things. First it builds the gem to the <em>pkg</em> 
+            directory in preparation for a push to Rubygems.org.</p>
+            
+            <p>Second, it creates a tag for the current commit reflecting the current version and pushes it to 
+            the git remote. It’s encouraged that we host the code on GitHub so that others may easily find 
+            it.</p>
+            
+            <p>If this push succeeds then the final step will be the push to Rubygems.org which will now allow 
+            other people to download and install the gem.</p>
+            
+            <p>If we want to release a second version of our gem, we should make our changes and then commit 
+            them to GitHub. Afterwards, we will bump the version number in <em>lib/foodie/version.rb</em> to 
+            whatever we see fit, make another commit to GitHub with a useful message such as “bumped to 
+            0.0.2” and then run <code>rake release</code> again.</p>
+            
+            <p>If we want to make this process a little easier we could install the “gem-release” gem with:</p>
+            
+            <pre class="highlight plaintext"><code>gem install gem-release&#x000A;</code></pre>
+            
+            <p>This gem provides several methods for helping with gem development in general, but most helpful 
+            is the <code>gem bump</code> command which will bump the gem version to the next patch level. This method 
+            also takes options to do these things:</p>
+            
+            <pre class="highlight plaintext"><code>gem bump --version minor # bumps to the next minor version&#x000A;gem bump --version major # bumps to the next major version&#x000A;gem bump --version 1.1.1 # bumps to the specified version&#x000A;</code></pre>
+            
+            <p>For more information, check out the <a href="http://github.com/svenfuchs/gem-release">“gem-release” GitHub repository 
+            homepage</a>.</p>
+            
+            <h2 id="podsumowanie">Podsumowanie</h2>
+            
+            <p>Nie jest to może <em>stuprocentowa</em> instrukcja jak dewelopować gem, to jednak zawiera podstawowe elementy. 
+            Naprawdę zachęcam, żeby sprawdzić źródła Bundler-a, Rails-ów 
+            i RSpec-a. Są tam świetne przykłady pokazujące, jak pisać swojego własnego gem-a.</p>
+            
+            <p><strong>Kompletne źródła tego przykładu możesz znaleźć <a href="http://github.com/radar/guides/tree/master/gem-development/foodie">tutaj</a></strong></p>
+            
+            <hr />
+            
+            <p><strong>Autor: <a href="https://github.com/radar">Ryan Bigg</a>. Możesz znaleźć więcej jego poradników <a href="https://github.com/radar/guides">tutaj</a>.</strong>
+            <strong>Przetłumaczył: <a href="https://github.com/kruczjak">Jakub Kruczek</a></strong></p>
+          </div>
+        </div>
+      </div>
+      <script>
         $(document).ready(function() {
           anchors.add();
         });
-      </script> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Zespół</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repozytorium</a></li> </ul> </div> </div> </div> </body> </html>
+      </script>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Zespół</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repozytorium</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

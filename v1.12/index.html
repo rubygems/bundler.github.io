@@ -1,5 +1,189 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content='IE=edge' http-equiv=X-UA-Compatible> <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name=viewport> <meta content=276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL name=globalsign-domain-verification> <title> Bundler: The best way to manage a Ruby application's gems </title> <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js'></script> <script src="/javascripts/application.js"></script> <link href="/stylesheets/application.css" rel=stylesheet /> <link href="/images/favicon.png" rel=icon type="image/png"/> <link rel=alternate type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml"/> </head> <body class=''> <nav class='navbar navbar-default'> <div class=container> <b><a href="/" class=navbar-brand>Bundler</a></b> <ul class='nav navbar-nav navbar-right'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> </ul> </div> </nav> <div class=main-wrapper> <div class='row bg-light-blue header'> <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg"/> </div> <div class=row> <div class=container id=guide-container> <div class=col-md-12> <h2>What is Bundler?</h2> <p class=contents id=intro> Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed. <br> <br> Bundler is an exit from dependency hell, and ensures that the gems you need are present in development, staging, and production. Starting work on a project is as simple as <code>bundle install</code>. </p> <div class='buttons contents'> <a href="/v1.12/whats_new.html" class="btn btn-primary">What's new in Bundler</a> <a href="/v1.12/rationale.html" class="btn btn-primary">Why Bundler exists</a> </div> <h2 id=getting-started> Getting Started </h2> <div class=contents> <div class=bullet> <div class=description> <p> Getting started with bundler is easy! Open a terminal window and run this command: </p> </div> <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre> </div> <div class=bullet> <div class=description> <p> Specify your dependencies in a Gemfile in your project's root: </p> </div> <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre> <a href="/v1.12/gemfile.html" class="btn btn-primary">Learn More: Gemfiles</a> </div> <div class=bullet> <div class=description> <p> Install all of the required gems from your specified sources: </p> </div> <pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre> <a href="/v1.12/bundle_install.html" class="btn btn-primary">Learn More: bundle install</a> <div class=notes> <p> The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now. </p> </div> </div> <div class=bullet> <div class=description> <p> Inside your app, load up the bundled environment: </p> </div> <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre> <a href="/v1.12/bundler_setup.html" class="btn btn-primary">Learn More: Bundler.setup</a> </div> <div class=bullet> <div class=description> <p> Run an executable that comes with a gem in your bundle: </p> </div> <pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre> <div class=notes> <p> In some cases, running executables without <code>bundle exec</code> may work, if the executable happens to be installed in your system and does not pull in any gems that conflict with your bundle. </p> <p> However, this is unreliable and is the source of considerable pain. Even if it looks like it works, it may not work in the future or on another machine. </p> </div> <div class=description> <p> Finally, if you want a way to get a shortcut to gems in your bundle: </p> </div> <pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre> <div class=notes> <p> The executables installed into <code>bin</code> are scoped to the bundle, and will always work. </p> </div> <a href="/v1.12/man/bundle-exec.1.html" class="btn btn-primary">Learn More: Executables</a> </div> </div> <h2 id=create-gem>Create a rubygem with Bundler</h2> <p> Bundler is also an easy way to create new gems. Just like you might create a standard Rails project using <code>rails new</code>, you can create a standard gem project with <code>bundle gem</code>. </p> <div class=bullet> <div class=description> <p> Create a new gem with a README, .gemspec, Rakefile, directory structure, and all the basic boilerplate you need to describe, test, and publish a gem: </p> </div> <pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;Creating gem 'my_gem'...&#x000A;      create  my_gem/Gemfile&#x000A;      create  my_gem/.gitignore&#x000A;      create  my_gem/lib/my_gem.rb&#x000A;      create  my_gem/lib/my_gem/version.rb&#x000A;      create  my_gem/my_gem.gemspec&#x000A;      create  my_gem/Rakefile&#x000A;      create  my_gem/README.md&#x000A;      create  my_gem/bin/console&#x000A;      create  my_gem/bin/setup&#x000A;      create  my_gem/CODE_OF_CONDUCT.md&#x000A;      create  my_gem/LICENSE.txt&#x000A;      create  my_gem/.travis.yml&#x000A;      create  my_gem/test/test_helper.rb&#x000A;      create  my_gem/test/my_gem_test.rb&#x000A;Initializing git repo in ./my_gem&#x000A;&#x000A;</code></pre> <a href="/v1.12/bundle_gem.html" class="btn btn-primary">Learn More: bundle gem</a> </div> <h2 id=use-bundler>Use Bundler with</h2> <div class=contents> <div class=buttons> <a href="/v1.12/rails3.html" class="btn btn-primary">Rails 3</a> <a href="/v1.12/rails23.html" class="btn btn-primary">Rails 2.3</a> <a href="/v1.12/sinatra.html" class="btn btn-primary">Sinatra</a> <a href="/v1.12/rubygems.html" class="btn btn-primary">RubyGems</a> <a href="/v1.12/rubymotion.html" class="btn btn-primary">RubyMotion</a> </div> </div> <h2 id=get-involved>Get involved</h2> <p class=contents> Bundler has a lot of contributors and users, and they all talk to each other quite a bit. If you have questions, try <a href="http://webchat.freenode.net/?channels=bundler">the IRC channel</a> or <a href="http://groups.google.com/group/ruby-bundler">mailing list</a>. If you're interested in contributing to the project (no programming skills needed), read <a href="https://github.com/bundler/bundler/blob/master/CONTRIBUTING.md">the contributing guide</a> or <a href="https://github.com/bundler/bundler/blob/master/DEVELOPMENT.md">the development guide</a>. While participating in the Bundler project, please keep the <a href="/conduct.html">code of conduct</a> in mind, and be inclusive and friendly towards everyone. If you have sponsorship or security questions, please contact the core team directly. </p> <div class=contents> <div class=buttons> <a href="/conduct.html" class="btn btn-primary">Code of Conduct</a> <a href="http://webchat.freenode.net/?channels=bundler" class="btn btn-primary">#bundler on IRC</a> <a href="http://groups.google.com/group/ruby-bundler" class="btn btn-primary">Mailing list</a> <a href="https://github.com/bundler/bundler/blob/master/CONTRIBUTING.md" class="btn btn-primary">Contributing</a> <a href="mailto:team@bundler.io" class="btn btn-primary">Email core team</a> </div> </div> </div> </div> </div> <script>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: The best way to manage a Ruby application's gems
+    </title>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
+    <script src="/javascripts/application.js"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <b><a href="/" class="navbar-brand">Bundler</a></b>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><a href="/docs.html">Docs</a></li>
+          <li><a href="/contributors.html">Team</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+      </div>
+      <div class='row'>
+        <div class='container' id='guide-container'>
+          <div class='col-md-12'>
+            <h2>What is Bundler?</h2>
+            <p class='contents' id='intro'>
+              Bundler provides a consistent environment for Ruby projects by tracking
+              and installing the exact gems and versions that are needed.
+              <br>
+              <br>
+              Bundler is an exit from dependency hell, and ensures that the gems
+              you need are present in development, staging, and production.
+              Starting work on a project is as simple as <code>bundle install</code>.
+            </p>
+            <div class='buttons contents'>
+              <a href="/v1.12/whats_new.html" class="btn btn-primary">What's new in Bundler</a>
+              <a href="/v1.12/rationale.html" class="btn btn-primary">Why Bundler exists</a>
+            </div>
+            <h2 id='getting-started'>
+              Getting Started
+            </h2>
+            <div class='contents'>
+              <div class='bullet'>
+                <div class='description'>
+                  <p>
+                    Getting started with bundler is easy! Open a terminal window and run this command:
+                  </p>
+                </div>
+                <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre>
+              </div>
+              <div class='bullet'>
+                <div class='description'>
+                  <p>
+                    Specify your dependencies in a Gemfile in your project's root:
+                  </p>
+                </div>
+                <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre>
+                <a href="/v1.12/gemfile.html" class="btn btn-primary">Learn More: Gemfiles</a>
+              </div>
+              <div class='bullet'>
+                <div class='description'>
+                  <p>
+                    Install all of the required gems from your specified sources:
+                  </p>
+                </div>
+                <pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre>
+                <a href="/v1.12/bundle_install.html" class="btn btn-primary">Learn More: bundle install</a>
+                <div class='notes'>
+                  <p>
+                    The second command adds the Gemfile and Gemfile.lock to your repository. This ensures
+                    that other developers on your app, as well as your deployment environment, will all use
+                    the same third-party code that you are using now.
+                  </p>
+                </div>
+              </div>
+              <div class='bullet'>
+                <div class='description'>
+                  <p>
+                    Inside your app, load up the bundled environment:
+                  </p>
+                </div>
+                <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+                <a href="/v1.12/bundler_setup.html" class="btn btn-primary">Learn More: Bundler.setup</a>
+              </div>
+              <div class='bullet'>
+                <div class='description'>
+                  <p>
+                    Run an executable that comes with a gem in your bundle:
+                  </p>
+                </div>
+                <pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre>
+                <div class='notes'>
+                  <p>
+                    In some cases, running executables without <code>bundle exec</code>
+                    may work, if the executable happens to be installed in your system
+                    and does not pull in any gems that conflict with your bundle.
+                  </p>
+                  <p>
+                    However, this is unreliable and is the source of considerable pain.
+                    Even if it looks like it works, it may not work in the future or
+                    on another machine.
+                  </p>
+                </div>
+                <div class='description'>
+                  <p>
+                    Finally, if you want a way to get a shortcut to gems in your bundle:
+                  </p>
+                </div>
+                <pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre>
+                <div class='notes'>
+                  <p>
+                    The executables installed into <code>bin</code> are scoped to the
+                    bundle, and will always work.
+                  </p>
+                </div>
+                <a href="/v1.12/man/bundle-exec.1.html" class="btn btn-primary">Learn More: Executables</a>
+              </div>
+            </div>
+            <h2 id='create-gem'>Create a rubygem with Bundler</h2>
+            <p>
+              Bundler is also an easy way to create new gems. Just like you might create a standard Rails project using <code>rails new</code>, you can create a standard gem project with <code>bundle gem</code>.
+            </p>
+            <div class='bullet'>
+              <div class='description'>
+                <p>
+                  Create a new gem with a README, .gemspec, Rakefile, directory structure, and all the basic boilerplate you need to describe, test, and publish a gem:
+                </p>
+              </div>
+              <pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;Creating gem 'my_gem'...&#x000A;      create  my_gem/Gemfile&#x000A;      create  my_gem/.gitignore&#x000A;      create  my_gem/lib/my_gem.rb&#x000A;      create  my_gem/lib/my_gem/version.rb&#x000A;      create  my_gem/my_gem.gemspec&#x000A;      create  my_gem/Rakefile&#x000A;      create  my_gem/README.md&#x000A;      create  my_gem/bin/console&#x000A;      create  my_gem/bin/setup&#x000A;      create  my_gem/CODE_OF_CONDUCT.md&#x000A;      create  my_gem/LICENSE.txt&#x000A;      create  my_gem/.travis.yml&#x000A;      create  my_gem/test/test_helper.rb&#x000A;      create  my_gem/test/my_gem_test.rb&#x000A;Initializing git repo in ./my_gem&#x000A;&#x000A;</code></pre>
+              <a href="/v1.12/bundle_gem.html" class="btn btn-primary">Learn More: bundle gem</a>
+            </div>
+            <h2 id='use-bundler'>Use Bundler with</h2>
+            <div class='contents'>
+              <div class='buttons'>
+                <a href="/v1.12/rails3.html" class="btn btn-primary">Rails 3</a>
+                <a href="/v1.12/rails23.html" class="btn btn-primary">Rails 2.3</a>
+                <a href="/v1.12/sinatra.html" class="btn btn-primary">Sinatra</a>
+                <a href="/v1.12/rubygems.html" class="btn btn-primary">RubyGems</a>
+                <a href="/v1.12/rubymotion.html" class="btn btn-primary">RubyMotion</a>
+              </div>
+            </div>
+            <h2 id='get-involved'>Get involved</h2>
+            <p class='contents'>
+              Bundler has a lot of contributors and users, and they all talk to each other quite a bit. If you have questions, try <a href="http://webchat.freenode.net/?channels=bundler">the IRC channel</a> or <a href="http://groups.google.com/group/ruby-bundler">mailing list</a>. If you're interested in contributing to the project (no programming skills needed), read <a href="https://github.com/bundler/bundler/blob/master/CONTRIBUTING.md">the contributing guide</a> or <a href="https://github.com/bundler/bundler/blob/master/DEVELOPMENT.md">the development guide</a>. While participating in the Bundler project, please keep the <a href="/conduct.html">code of conduct</a> in mind, and be inclusive and friendly towards everyone. If you have sponsorship or security questions, please contact the core team directly.
+            </p>
+            <div class='contents'>
+              <div class='buttons'>
+                <a href="/conduct.html" class="btn btn-primary">Code of Conduct</a>
+                <a href="http://webchat.freenode.net/?channels=bundler" class="btn btn-primary">#bundler on IRC</a>
+                <a href="http://groups.google.com/group/ruby-bundler" class="btn btn-primary">Mailing list</a>
+                <a href="https://github.com/bundler/bundler/blob/master/CONTRIBUTING.md" class="btn btn-primary">Contributing</a>
+                <a href="mailto:team@bundler.io" class="btn btn-primary">Email core team</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
         $(document).ready(function() {
           anchors.add();
         });
-      </script> </div> <div class=footer> <div class=row> <div class='container text-center'> <ul class='nav navbar-nav'> <li><a href="/docs.html">Docs</a></li> <li><a href="/contributors.html">Team</a></li> <li><a href="/blog">Blog</a></li> <li><a href="https://github.com/bundler/bundler">Repository</a></li> </ul> </div> </div> </div> </body> </html>
+      </script>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
