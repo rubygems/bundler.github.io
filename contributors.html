@@ -8,12 +8,18 @@
     <title>
       Bundler: The best way to manage a Ruby application's gems
     </title>
-    
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js' type='text/javascript'></script>
     <script src="/javascripts/application.js"></script>
     <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href="/images/favicon.png" rel="icon" type="image/png" />
+    <link href='/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+    <link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+    <link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+    <link href='/manifest.json' rel='manifest'>
+    <link color='#50bced' href='/safari-pinned-tab.svg' rel='mask-icon'>
+    <meta content='bundler.io' name='apple-mobile-web-app-title'>
+    <meta content='bundler.io' name='application-name'>
+    <meta content='#ffffff' name='theme-color'>
     <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    
   </head>
   <body class=''>
     <nav class='navbar navbar-default'>
@@ -36,12 +42,22 @@
           clip-path: url(#polygon);
         }
       </style>
-      <div class='row docs'>
-        <div class='container'>
-          <div class='col-xs-6 col-md-4'>
+      <svg class='clip-svg' style='position: absolute;'>
+        <defs>
+          <clipPath clipPathUnits='objectBoundingBox' id='polygon'>
+            <polygon points='0.25 0.06, 0.75 0.06, 1 0.5, 0.75 0.94, 0.25 0.94, 0 0.5'></polygon>
+          </clipPath>
+        </defs>
+      </svg>
+      <div class='container'>
+        <div class='row'>
+          <h3>Maintainers</h3>
+        </div>
+        <div class='row team'>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
             <div class='thumbnail'>
               <div class='polygon-each-img-wrap'>
-                <img src="/images/team/andre.jpg" class="polygon-clip-hexagon" alt="Andre" />
+                <img src="/images/team/indirect.jpg" class="polygon-clip-hexagon" alt="Indirect" />
               </div>
               <div class='caption text-center'>
                 <h4>
@@ -51,33 +67,7 @@
               </div>
             </div>
           </div>
-          <div class='col-xs-6 col-md-4'>
-            <div class='thumbnail'>
-              <div class='polygon-each-img-wrap'>
-                <img src="/images/team/andremedeiros.png" class="polygon-clip-hexagon" alt="Andremedeiros" />
-              </div>
-              <div class='caption text-center'>
-                <h4>
-                  <b>André Madeiros</b>
-                </h4>
-                <h5><a href="https://github.com/andremedeiros">@andremedeiros</a></h5>
-              </div>
-            </div>
-          </div>
-          <div class='col-xs-6 col-md-4'>
-            <div class='thumbnail'>
-              <div class='polygon-each-img-wrap'>
-                <img src="/images/team/jameswen.jpg" class="polygon-clip-hexagon" alt="Jameswen" />
-              </div>
-              <div class='caption text-center'>
-                <h4>
-                  <b>James Wen</b>
-                </h4>
-                <h5><a href="https://github.com/RochesterinNYC">@RochesterinNYC</a></h5>
-              </div>
-            </div>
-          </div>
-          <div class='col-xs-6 col-md-4'>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
             <div class='thumbnail'>
               <div class='polygon-each-img-wrap'>
                 <img src="/images/team/segiddins.jpg" class="polygon-clip-hexagon" alt="Segiddins" />
@@ -90,28 +80,1791 @@
               </div>
             </div>
           </div>
-          <div class='col-xs-6 col-md-4'>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
             <div class='thumbnail'>
               <div class='polygon-each-img-wrap'>
-                <img src="/images/team/tim.jpg" class="polygon-clip-hexagon" alt="Tim" />
+                <img src="/images/team/RochesterinNYC.jpg" class="polygon-clip-hexagon" alt="Rochesterinnyc" />
               </div>
               <div class='caption text-center'>
                 <h4>
-                  <b>Tim Moore</b>
+                  <b>James Wen</b>
                 </h4>
-                <h5><a href="https://github.com/TimMoore">@TimMoore</a></h5>
+                <h5><a href="https://github.com/RochesterinNYC">@RochesterinNYC</a></h5>
+              </div>
+            </div>
+          </div>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
+            <div class='thumbnail'>
+              <div class='polygon-each-img-wrap'>
+                <img src="/images/team/andremedeiros.jpg" class="polygon-clip-hexagon" alt="Andremedeiros" />
+              </div>
+              <div class='caption text-center'>
+                <h4>
+                  <b>André Medeiros</b>
+                </h4>
+                <h5><a href="https://github.com/andremedeiros">@andremedeiros</a></h5>
               </div>
             </div>
           </div>
         </div>
+        <div class='row'>
+          <h3>Website team</h3>
+        </div>
+        <div class='row team'>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
+            <div class='thumbnail'>
+              <div class='polygon-each-img-wrap'>
+                <img src="/images/team/sailorhg.jpg" class="polygon-clip-hexagon" alt="Sailorhg" />
+              </div>
+              <div class='caption text-center'>
+                <h4>
+                  <b>Amy Wibowo</b>
+                </h4>
+                <h5><a href="https://github.com/sailorhg">@sailorhg</a></h5>
+              </div>
+            </div>
+          </div>
+          <div class='col-xs-6 col-sm-4 col-md-3'>
+            <div class='thumbnail'>
+              <div class='polygon-each-img-wrap'>
+                <img src="/images/team/kruczjak.jpg" class="polygon-clip-hexagon" alt="Kruczjak" />
+              </div>
+              <div class='caption text-center'>
+                <h4>
+                  <b>Jakub Kruczek</b>
+                </h4>
+                <h5><a href="https://github.com/kruczjak">@kruczjak</a></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <h3>And many, many thanks to all of our contributors throughout the years, including:</h3>
+          <br>
+        </div>
+        <div class='row'>
+          <span class='contributor'>
+            <a href="https://github.com/hone" title="445 commits">hone</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/josevalim" title="391 commits">josevalim</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/wycats" title="110 commits">wycats</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/asutoshpalai" title="107 commits">asutoshpalai</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Who828" title="105 commits">Who828</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nex3" title="87 commits">nex3</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sferik" title="63 commits">sferik</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/joshbuddy" title="53 commits">joshbuddy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/b-ggs" title="41 commits">b-ggs</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Koronen" title="37 commits">Koronen</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chrismo" title="33 commits">chrismo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gnufied" title="33 commits">gnufied</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/agis-" title="32 commits">agis-</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jeremy" title="29 commits">jeremy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/esasse" title="29 commits">esasse</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/radar" title="27 commits">radar</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/spastorino" title="26 commits">spastorino</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pducks32" title="24 commits">pducks32</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pcarranza" title="24 commits">pcarranza</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tenderlove" title="24 commits">tenderlove</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rohit" title="23 commits">rohit</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/joshk" title="19 commits">joshk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/smashwilson" title="18 commits">smashwilson</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/eagletmt" title="17 commits">eagletmt</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/myronmarston" title="16 commits">myronmarston</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kiela" title="15 commits">kiela</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jherdman" title="15 commits">jherdman</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/smlance" title="15 commits">smlance</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/zzak" title="14 commits">zzak</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fabien" title="13 commits">fabien</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mislav" title="13 commits">mislav</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rthbound" title="13 commits">rthbound</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cypher" title="12 commits">cypher</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mvz" title="12 commits">mvz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/joelmoss" title="12 commits">joelmoss</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/xaviershay" title="12 commits">xaviershay</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/raggi" title="11 commits">raggi</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/NickLaMuro" title="11 commits">NickLaMuro</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kirs" title="11 commits">kirs</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/luislavena" title="10 commits">luislavena</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pskocik" title="9 commits">pskocik</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/smellsblue" title="8 commits">smellsblue</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jaym" title="8 commits">jaym</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jendiamond" title="8 commits">jendiamond</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/carllerche" title="8 commits">carllerche</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/postmodern" title="8 commits">postmodern</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/zofrex" title="8 commits">zofrex</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dubek" title="8 commits">dubek</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/amatsuda" title="8 commits">amatsuda</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mobilutz" title="8 commits">mobilutz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jhhere" title="8 commits">jhhere</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/simi" title="8 commits">simi</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mavenraven" title="7 commits">mavenraven</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chastell" title="7 commits">chastell</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tricknotes" title="7 commits">tricknotes</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/JuanitoFatas" title="7 commits">JuanitoFatas</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/voxik" title="7 commits">voxik</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Elffers" title="6 commits">Elffers</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/banyan" title="6 commits">banyan</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lukaso" title="6 commits">lukaso</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/neoeno" title="6 commits">neoeno</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/skottler" title="6 commits">skottler</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/timblair" title="6 commits">timblair</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gretel" title="6 commits">gretel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/as-cii" title="6 commits">as-cii</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/allenzhao" title="6 commits">allenzhao</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/arthurnn" title="6 commits">arthurnn</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mipearson" title="6 commits">mipearson</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cowboyd" title="5 commits">cowboyd</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Zorbash" title="5 commits">Zorbash</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dougbarth" title="5 commits">dougbarth</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cldwalker" title="5 commits">cldwalker</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/BenMorganIO" title="5 commits">BenMorganIO</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jrafanie" title="5 commits">jrafanie</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lamont-granquist" title="5 commits">lamont-granquist</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/citizen428" title="5 commits">citizen428</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/koraktor" title="5 commits">koraktor</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sol" title="5 commits">sol</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/MSNexploder" title="5 commits">MSNexploder</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bronzdoc" title="5 commits">bronzdoc</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/schneems" title="5 commits">schneems</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/A5308Y" title="5 commits">A5308Y</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/larskanis" title="5 commits">larskanis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/karloxyz" title="5 commits">karloxyz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/evanphx" title="5 commits">evanphx</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jlsuttles" title="5 commits">jlsuttles</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gjaldon" title="4 commits">gjaldon</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/vassilevsky" title="4 commits">vassilevsky</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tryba" title="4 commits">tryba</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/doy" title="4 commits">doy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/josh" title="4 commits">josh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/databus23" title="4 commits">databus23</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dekellum" title="4 commits">dekellum</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/keiths-osc" title="4 commits">keiths-osc</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kevmoo" title="4 commits">kevmoo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cdwort" title="4 commits">cdwort</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/knu" title="4 commits">knu</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/MafcoCinco" title="4 commits">MafcoCinco</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/CosmicCat" title="4 commits">CosmicCat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pmahoney" title="4 commits">pmahoney</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pjvds" title="4 commits">pjvds</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/prathamesh-sonpatki" title="4 commits">prathamesh-sonpatki</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rsutphin" title="4 commits">rsutphin</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/roseweixel" title="4 commits">roseweixel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mcfiredrill" title="4 commits">mcfiredrill</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pwnall" title="4 commits">pwnall</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/danielsdeleo" title="4 commits">danielsdeleo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sanemat" title="4 commits">sanemat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mattbrictson" title="4 commits">mattbrictson</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sonalkr132" title="4 commits">sonalkr132</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ixti" title="4 commits">ixti</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tigris" title="3 commits">tigris</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dtognazzini" title="3 commits">dtognazzini</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/EduardoBautista" title="3 commits">EduardoBautista</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fotanus" title="3 commits">fotanus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/zeha" title="3 commits">zeha</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hwartig" title="3 commits">hwartig</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jisaacks" title="3 commits">jisaacks</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/wuputah" title="3 commits">wuputah</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/DevRubySlippers" title="3 commits">DevRubySlippers</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mrkn" title="3 commits">mrkn</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/LynnCo" title="3 commits">LynnCo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bowsersenior" title="3 commits">bowsersenior</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pmenglund" title="3 commits">pmenglund</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/MJIO" title="3 commits">MJIO</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/spraints" title="3 commits">spraints</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/maxjustus" title="3 commits">maxjustus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rykov" title="3 commits">rykov</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ndbroadbent" title="3 commits">ndbroadbent</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pascalh1011" title="3 commits">pascalh1011</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rkbodenner" title="3 commits">rkbodenner</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rrrene" title="3 commits">rrrene</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/QuBiT" title="3 commits">QuBiT</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rwilcox" title="3 commits">rwilcox</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cgriego" title="3 commits">cgriego</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sumbach" title="3 commits">sumbach</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/stephencelis" title="3 commits">stephencelis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sunaku" title="3 commits">sunaku</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/timfel" title="3 commits">timfel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/will-in-wi" title="3 commits">will-in-wi</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/wilson" title="3 commits">wilson</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/yuuki1224" title="3 commits">yuuki1224</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dbloete" title="3 commits">dbloete</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/deepj" title="3 commits">deepj</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/richo" title="3 commits">richo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chalkos" title="3 commits">chalkos</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tdumitrescu" title="3 commits">tdumitrescu</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/trans" title="3 commits">trans</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nubbel" title="3 commits">nubbel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/frsyuki" title="3 commits">frsyuki</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/grzuy" title="3 commits">grzuy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/akahn" title="2 commits">akahn</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/andreagoulet" title="2 commits">andreagoulet</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/aughr" title="2 commits">aughr</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/arronmabrey" title="2 commits">arronmabrey</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Empact" title="2 commits">Empact</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/BrentWheeldon" title="2 commits">BrentWheeldon</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/brettporter" title="2 commits">brettporter</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/punkle" title="2 commits">punkle</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/headius" title="2 commits">headius</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/csquared" title="2 commits">csquared</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gaffneyc" title="2 commits">gaffneyc</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cheald" title="2 commits">cheald</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/myabc" title="2 commits">myabc</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cmeiklejohn" title="2 commits">cmeiklejohn</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/netskin-ci" title="2 commits">netskin-ci</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dmcclory" title="2 commits">dmcclory</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dpiddy" title="2 commits">dpiddy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/danieltdt" title="2 commits">danieltdt</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/davidblondeau" title="2 commits">davidblondeau</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ddollar" title="2 commits">ddollar</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dhh" title="2 commits">dhh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/blackxored" title="2 commits">blackxored</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/agenteo" title="2 commits">agenteo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/eric1234" title="2 commits">eric1234</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/eric" title="2 commits">eric</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fny" title="2 commits">fny</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/felixbuenemann" title="2 commits">felixbuenemann</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fnichol" title="2 commits">fnichol</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gilesbowkett" title="2 commits">gilesbowkett</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/glennpratt" title="2 commits">glennpratt</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/stlay" title="2 commits">stlay</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/yaotti" title="2 commits">yaotti</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jackdempsey" title="2 commits">jackdempsey</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jacobo" title="2 commits">jacobo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jamesotron" title="2 commits">jamesotron</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/janlelis" title="2 commits">janlelis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jarmo" title="2 commits">jarmo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jasonrclark" title="2 commits">jasonrclark</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jetaggart" title="2 commits">jetaggart</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jredville" title="2 commits">jredville</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jdelStrother" title="2 commits">jdelStrother</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mastfissh" title="2 commits">mastfissh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kgrz" title="2 commits">kgrz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kcurtin" title="2 commits">kcurtin</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/leereilly" title="2 commits">leereilly</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/crowbot" title="2 commits">crowbot</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Nitrodist" title="2 commits">Nitrodist</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/aroben" title="2 commits">aroben</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/moeffju" title="2 commits">moeffju</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mbirk" title="2 commits">mbirk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/staugaard" title="2 commits">staugaard</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mheffner" title="2 commits">mheffner</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/olivierlacan" title="2 commits">olivierlacan</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chipiga" title="2 commits">chipiga</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/phil-monroe" title="2 commits">phil-monroe</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/njam" title="2 commits">njam</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/richardkmichael" title="2 commits">richardkmichael</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/robertwahler" title="2 commits">robertwahler</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sandlerr" title="2 commits">sandlerr</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hsbt" title="2 commits">hsbt</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/qblake" title="2 commits">qblake</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/seanlinsley" title="2 commits">seanlinsley</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Sirupsen" title="2 commits">Sirupsen</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sdhull" title="2 commits">sdhull</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/steverob" title="2 commits">steverob</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tdtds" title="2 commits">tdtds</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/coop" title="2 commits">coop</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tf" title="2 commits">tf</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/echohead" title="2 commits">echohead</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tomlea" title="2 commits">tomlea</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ogra" title="2 commits">ogra</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/utkarshkukreti" title="2 commits">utkarshkukreti</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/wfarr" title="2 commits">wfarr</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/morgoth" title="2 commits">morgoth</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/YorickPeterse" title="2 commits">YorickPeterse</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/geemus" title="2 commits">geemus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hasimo" title="2 commits">hasimo</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hirochachacha" title="2 commits">hirochachacha</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ojab" title="2 commits">ojab</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rhysd" title="2 commits">rhysd</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sealocal" title="2 commits">sealocal</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/shtirlic" title="2 commits">shtirlic</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tiredpixel" title="2 commits">tiredpixel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/matthewrudy" title="2 commits">matthewrudy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jgeiger" title="2 commits">jgeiger</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/csgui" title="2 commits">csgui</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lenary" title="2 commits">lenary</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Intrepidd" title="1 commit">Intrepidd</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/anibali" title="1 commit">anibali</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/aitor" title="1 commit">aitor</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/adilsoncarvalho" title="1 commit">adilsoncarvalho</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/apsoto" title="1 commit">apsoto</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/AlexanderPavlenko" title="1 commit">AlexanderPavlenko</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tmm1" title="1 commit">tmm1</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/alup" title="1 commit">alup</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/zmack" title="1 commit">zmack</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ardavis" title="1 commit">ardavis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/GeekOnCoffee" title="1 commit">GeekOnCoffee</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ai" title="1 commit">ai</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/korobkov" title="1 commit">korobkov</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Ptico" title="1 commit">Ptico</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/antono" title="1 commit">antono</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ariejan" title="1 commit">ariejan</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/arunagw" title="1 commit">arunagw</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/tundal45" title="1 commit">tundal45</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bak" title="1 commit">bak</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/benhamill" title="1 commit">benhamill</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/benlakey" title="1 commit">benlakey</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/benlovell" title="1 commit">benlovell</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/benmoss" title="1 commit">benmoss</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/r00k" title="1 commit">r00k</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bwillis" title="1 commit">bwillis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bgreenlee" title="1 commit">bgreenlee</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bison" title="1 commit">bison</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/brandonblack" title="1 commit">brandonblack</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bdimcheff" title="1 commit">bdimcheff</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bjfish" title="1 commit">bjfish</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bkeepers" title="1 commit">bkeepers</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bdshroyer" title="1 commit">bdshroyer</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/brixen" title="1 commit">brixen</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/BrianHawley" title="1 commit">BrianHawley</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Lytol" title="1 commit">Lytol</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nono" title="1 commit">nono</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bryanwoods" title="1 commit">bryanwoods</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/e2" title="1 commit">e2</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/yous" title="1 commit">yous</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cehoffman" title="1 commit">cehoffman</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/farski" title="1 commit">farski</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/christhekeele" title="1 commit">christhekeele</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/aprescott" title="1 commit">aprescott</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chulkilee" title="1 commit">chulkilee</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cirdes" title="1 commit">cirdes</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/claudiob" title="1 commit">claudiob</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ccutrer" title="1 commit">ccutrer</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Cohen-Carlisle" title="1 commit">Cohen-Carlisle</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/perplexes" title="1 commit">perplexes</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/CoralineAda" title="1 commit">CoralineAda</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/djanowski" title="1 commit">djanowski</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/danfinnie" title="1 commit">danfinnie</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dweinand" title="1 commit">dweinand</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dangoita" title="1 commit">dangoita</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dmueller" title="1 commit">dmueller</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/spangenberg" title="1 commit">spangenberg</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/invisiblefunnel" title="1 commit">invisiblefunnel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kodnin" title="1 commit">kodnin</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/davidcelis" title="1 commit">davidcelis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/DavidEGrayson" title="1 commit">DavidEGrayson</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kotoshenya" title="1 commit">kotoshenya</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dlee" title="1 commit">dlee</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/deivid-rodriguez" title="1 commit">deivid-rodriguez</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dholdren" title="1 commit">dholdren</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dkastner" title="1 commit">dkastner</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/derekprior" title="1 commit">derekprior</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Flameeyes" title="1 commit">Flameeyes</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/domcleal" title="1 commit">domcleal</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/d-reinhold" title="1 commit">d-reinhold</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mephux" title="1 commit">mephux</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/dylanahsmith" title="1 commit">dylanahsmith</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/skateman" title="1 commit">skateman</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ejaypcanaria" title="1 commit">ejaypcanaria</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/eloyesp" title="1 commit">eloyesp</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/EmilRehnberg" title="1 commit">EmilRehnberg</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/epall" title="1 commit">epall</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ecoleman" title="1 commit">ecoleman</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/drbrain" title="1 commit">drbrain</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/faun" title="1 commit">faun</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/obfusk" title="1 commit">obfusk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Bartuz" title="1 commit">Bartuz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/francois" title="1 commit">francois</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fredwu" title="1 commit">fredwu</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fvaleur" title="1 commit">fvaleur</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/fuadsaud" title="1 commit">fuadsaud</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gkop" title="1 commit">gkop</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/gsamokovarov" title="1 commit">gsamokovarov</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/chief" title="1 commit">chief</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/grddev" title="1 commit">grddev</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/heliocola" title="1 commit">heliocola</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/henrik" title="1 commit">henrik</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hughbien" title="1 commit">hughbien</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ivantsepp" title="1 commit">ivantsepp</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/IvanUkhov" title="1 commit">IvanUkhov</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jtarchie" title="1 commit">jtarchie</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jacquescrocker" title="1 commit">jacquescrocker</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/bensie" title="1 commit">bensie</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jgaskins" title="1 commit">jgaskins</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jamie" title="1 commit">jamie</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jamiew" title="1 commit">jamiew</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jayniz" title="1 commit">jayniz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jarl-dk" title="1 commit">jarl-dk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jasonkarns" title="1 commit">jasonkarns</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Fluxx" title="1 commit">Fluxx</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jstorimer" title="1 commit">jstorimer</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jingweno" title="1 commit">jingweno</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/seuros" title="1 commit">seuros</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/backus" title="1 commit">backus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jfirebaugh" title="1 commit">jfirebaugh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jjb" title="1 commit">jjb</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jenseng" title="1 commit">jenseng</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jmoses" title="1 commit">jmoses</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/thejonanshow" title="1 commit">thejonanshow</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/joallard" title="1 commit">joallard</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/hiukkanen" title="1 commit">hiukkanen</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jhass" title="1 commit">jhass</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jbodah" title="1 commit">jbodah</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/technicalpickles" title="1 commit">technicalpickles</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/suzukaze" title="1 commit">suzukaze</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/JMorimoto" title="1 commit">JMorimoto</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kakutani" title="1 commit">kakutani</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kml" title="1 commit">kml</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kytrinyx" title="1 commit">kytrinyx</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kmayer" title="1 commit">kmayer</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kevintpeng" title="1 commit">kevintpeng</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/vinbarnes" title="1 commit">vinbarnes</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/radsaq" title="1 commit">radsaq</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rkh" title="1 commit">rkh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mkristian" title="1 commit">mkristian</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kyleshank" title="1 commit">kyleshank</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/cainlevy" title="1 commit">cainlevy</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lgierth" title="1 commit">lgierth</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/spk" title="1 commit">spk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/leobessa" title="1 commit">leobessa</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/auxesis" title="1 commit">auxesis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lucasmazza" title="1 commit">lucasmazza</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/luismreis" title="1 commit">luismreis</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lukaszx0" title="1 commit">lukaszx0</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/krekoten" title="1 commit">krekoten</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/MasterLambaster" title="1 commit">MasterLambaster</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mattetti" title="1 commit">mattetti</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nextmat" title="1 commit">nextmat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mwrock" title="1 commit">mwrock</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mattwynne" title="1 commit">mattwynne</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mtylty" title="1 commit">mtylty</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/matthewd" title="1 commit">matthewd</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mdkent" title="1 commit">mdkent</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/aptinio" title="1 commit">aptinio</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ghedamat" title="1 commit">ghedamat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mpj" title="1 commit">mpj</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/jmmk" title="1 commit">jmmk</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mraidel" title="1 commit">mraidel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/mitchellh" title="1 commit">mitchellh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nurse" title="1 commit">nurse</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nbibler" title="1 commit">nbibler</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/neerfri" title="1 commit">neerfri</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/baroquebobcat" title="1 commit">baroquebobcat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nickpellant" title="1 commit">nickpellant</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nicksieger" title="1 commit">nicksieger</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nslocum" title="1 commit">nslocum</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/nicolasblanco" title="1 commit">nicolasblanco</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/NARKOZ" title="1 commit">NARKOZ</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/kohgpat" title="1 commit">kohgpat</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/niku4i" title="1 commit">niku4i</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/panthomakos" title="1 commit">panthomakos</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/Deradon" title="1 commit">Deradon</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/patvice" title="1 commit">patvice</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/boffbowsh" title="1 commit">boffbowsh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/pedro" title="1 commit">pedro</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/lunks" title="1 commit">lunks</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/petedmarsh" title="1 commit">petedmarsh</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/peter-mtso" title="1 commit">peter-mtso</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/philnash" title="1 commit">philnash</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/parndt" title="1 commit">parndt</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/drogus" title="1 commit">drogus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/phocke" title="1 commit">phocke</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rslifka" title="1 commit">rslifka</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/robinboening" title="1 commit">robinboening</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/repinel" title="1 commit">repinel</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/raesene" title="1 commit">raesene</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/rcarver" title="1 commit">rcarver</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ryansouza" title="1 commit">ryansouza</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/salimane" title="1 commit">salimane</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/SamSaffron" title="1 commit">SamSaffron</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/spohlenz" title="1 commit">spohlenz</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/samsm" title="1 commit">samsm</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/shwoodard" title="1 commit">shwoodard</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sj26" title="1 commit">sj26</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/narutosanjiv" title="1 commit">narutosanjiv</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/ultrasaurus" title="1 commit">ultrasaurus</a>
+            &nbsp;•&nbsp;
+          </span>
+          <span class='contributor'>
+            <a href="https://github.com/sarahduve" title="1 commit">sarahduve</a>
+            
+          </span>
+          <p>
+            <br>
+            …and everyone who has given time, effort, thought, or help, instead of git commits <3
+          </p>
+        </div>
       </div>
-      <svg class='clip-svg' style='position: absolute;'>
-        <defs>
-          <clipPath clipPathUnits='objectBoundingBox' id='polygon'>
-            <polygon points='0.25 0.06, 0.75 0.06, 1 0.5, 0.75 0.94, 0.25 0.94, 0 0.5'></polygon>
-          </clipPath>
-        </defs>
-      </svg>
       
     </div>
     <div class='footer'>
