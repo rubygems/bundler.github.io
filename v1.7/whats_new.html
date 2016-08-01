@@ -33,160 +33,162 @@
       <div class='row'>
         <div class='container' id='guide-container'>
           <div class='col-md-12'>
-            <h1>What's New in each Release</h1>
-            <div class='row'>
-              <div class='col-sm-12'>
-                <a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
-                <a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
-                <a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
-                <a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
-                <a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
-                <a href="/v1.7/whats_new.html" class="btn btn-sm btn-default">v1.7</a>
-                <a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
-                <a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
-                <a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
-                <a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
-                <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
-                <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
-              </div>
-            </div>
-            <h2 id='version17'>What's New in v1.7</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  Bundler 1.7 is a security release, addressing a vulnerability where a gem
-                  might be installed from an unintended source server. The changes are
-                  limited to fixes for this vulnerability.
-                  <a href="https://github.com/bundler/bundler/blob/1-7-stable/CHANGELOG.md">Full 1.7 changelog</a>
+            <div class='container guide contents'>
+              <h1>What's New in each Release</h1>
+              <div class='row'>
+                <div class='col-sm-12'>
+                  <a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
+                  <a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
+                  <a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
+                  <a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
+                  <a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
+                  <a href="/v1.7/whats_new.html" class="btn btn-sm btn-default">v1.7</a>
+                  <a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
+                  <a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
+                  <a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
+                  <a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
+                  <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
+                  <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
                 </div>
               </div>
-            </div>
-            <h2 id='overview'>Overview</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  <p>
-                    Bundler has always supported fetching gems from multiple gem servers,
-                    but it isn't always clear what gems come from what source. Complicating
-                    this, Bundler has not been consistent about source priority ordering
-                    from one version to another.
-                  </p>
-                  <p>
-                    Because of this, a <code>Gemfile</code> with multiple top-level
-                    <code>source</code> lines cannot reliably control the gem server that
-                    a particular gem is fetched from. This might result in installation of
-                    gem code from an unexpected source.
-                  </p>
-                  <p>
-                    Applications that only have a single <code>source</code> in their
-                    <code>Gemfile</code> are not affected.
-                  </p>
+              <h2 id='version17'>What's New in v1.7</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    Bundler 1.7 is a security release, addressing a vulnerability where a gem
+                    might be installed from an unintended source server. The changes are
+                    limited to fixes for this vulnerability.
+                    <a href="https://github.com/bundler/bundler/blob/1-7-stable/CHANGELOG.md">Full 1.7 changelog</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <h2 id='source-selection'>Source Selection</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  You can explicitly select an alternate RubyGems repository for one or more
-                  gems in your <code>Gemfile</code> using the <code>:source</code> option or
-                  a <code>source</code> block. Using multiple top-level gem sources is now
-                  deprecated.
-                </div>
-                <a href="/v1.7/gemfile.html">Learn More: Gemfiles</a>
-              </div>
-            </div>
-            <h2 id='ambiguous-source-detection'>Ambiguous Source Detection</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  If a <code>Gemfile</code> <em>does</em> have multiple top-level gem
-                  sources, <code>bundle install</code> now warns when a gem is found in more
-                  than one source. This is designed to prevent a situation where a gem that
-                  is expected to be found on one gem server is "hijacked" by another server.
-                  For backwards compatibility, the gem is still installed, but Bundler
-                  prints a warning detailing the gem server URL that was used, and listing
-                  others where a gem with the same name was found. Using explicit source
-                  selection suppresses this warning.
+              <h2 id='overview'>Overview</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    <p>
+                      Bundler has always supported fetching gems from multiple gem servers,
+                      but it isn't always clear what gems come from what source. Complicating
+                      this, Bundler has not been consistent about source priority ordering
+                      from one version to another.
+                    </p>
+                    <p>
+                      Because of this, a <code>Gemfile</code> with multiple top-level
+                      <code>source</code> lines cannot reliably control the gem server that
+                      a particular gem is fetched from. This might result in installation of
+                      gem code from an unexpected source.
+                    </p>
+                    <p>
+                      Applications that only have a single <code>source</code> in their
+                      <code>Gemfile</code> are not affected.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <h2 id='global-source-ordering'>Global Source Ordering</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  The order that top-level sources are searched is documented as last added
-                  to first added, but prior to version 1.7.0, there was not an automated
-                  test for this ordering, and it was inadvertently reversed in versions
-                  1.5.0 through 1.6.5. The documented ordering is restored in this version,
-                  and is now included in the test suite to prevent regression.
+              <h2 id='source-selection'>Source Selection</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    You can explicitly select an alternate RubyGems repository for one or more
+                    gems in your <code>Gemfile</code> using the <code>:source</code> option or
+                    a <code>source</code> block. Using multiple top-level gem sources is now
+                    deprecated.
+                  </div>
+                  <a href="/v1.7/gemfile.html">Learn More: Gemfiles</a>
                 </div>
               </div>
-            </div>
-            <h2 id='upgrading'>Upgrading</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  Bundler adheres strictly to semantic versioning, and version 1.7.0 is
-                  fully backwards compatible with any <code>Gemfile</code> that worked with
-                  earlier versions. If you have an application that uses multiple gem
-                  servers in its <code>Gemfile</code>, you may see warnings about ambiguous
-                  gem sources after upgrading. Whether or not you see these warnings, the
-                  Bundler team highly recommends that users of multiple gem servers update
-                  your <code>Gemfile</code> to use the new syntax.
-                </div>
-                <div class='note'>
-                  Use of the new <code>source</code> syntax will cause your
-                  <code>Gemfile</code> to become incompatible with Bundler versions earlier
-                  than 1.7.0. You should only perform this change after updating Bundler in
-                  all of your environments.
-                  <ol>
-                    <li>
-                      Choose your primary gem source (usually
-                      <code>https://rubygems.org</code>) and keep that at the top of the
-                      <code>Gemfile</code>
-                    </li>
-                    <li>
-                      For each additional gem source, add a block to the <code>source</code>
-                      line and move the relevant gem declarations inside it.
-                      <p>For example, this <code>Gemfile</code>:</p>
-                      <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;</code></pre>
-                      <p>might change to this:</p>
-                      <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
-                    </li>
-                  </ol>
+              <h2 id='ambiguous-source-detection'>Ambiguous Source Detection</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    If a <code>Gemfile</code> <em>does</em> have multiple top-level gem
+                    sources, <code>bundle install</code> now warns when a gem is found in more
+                    than one source. This is designed to prevent a situation where a gem that
+                    is expected to be found on one gem server is "hijacked" by another server.
+                    For backwards compatibility, the gem is still installed, but Bundler
+                    prints a warning detailing the gem server URL that was used, and listing
+                    others where a gem with the same name was found. Using explicit source
+                    selection suppresses this warning.
+                  </div>
                 </div>
               </div>
-            </div>
-            <h2 id='workarounds'>Workarounds</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  If you are unable to upgrade all of your environments to 1.7 immediately,
-                  there are other ways to mitigate this risk by changing your
-                  <code>Gemfile</code> to remove the additional sources:
-                  <ul>
-                    <li>
-                      First, re-evaluate whether the extra gem sources are even needed. If
-                      your application is using a legacy public gem server such as
-                      <code>gems.github.com</code> or <code>gems.rubyforge.org</code>, all
-                      of your required gems should now be synced to
-                      <code>rubygems.org</code>. Try removing these sources.
-                    </li>
-                    <li>
-                      If you do use gems that aren't available on <code>rubygems.org</code>,
-                      but are available from a git source, you can use the <code>:git</code>
-                      option in the gem declaration and it will be guaranteed to come from
-                      that git repository rather than a gem server.
-                    </li>
-                    <li>
-                      If neither of these situations apply, you can unpack the gem into your
-                      <code>vendor</code> directory and use the <code>:path</code> option
-                      when declaring the gem in your <code>Gemfile</code> to point it to the
-                      unpacked gem directory. In this case, you should commit the vendored
-                      gem to your source control system.
-                    </li>
-                  </ul>
+              <h2 id='global-source-ordering'>Global Source Ordering</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    The order that top-level sources are searched is documented as last added
+                    to first added, but prior to version 1.7.0, there was not an automated
+                    test for this ordering, and it was inadvertently reversed in versions
+                    1.5.0 through 1.6.5. The documented ordering is restored in this version,
+                    and is now included in the test suite to prevent regression.
+                  </div>
+                </div>
+              </div>
+              <h2 id='upgrading'>Upgrading</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    Bundler adheres strictly to semantic versioning, and version 1.7.0 is
+                    fully backwards compatible with any <code>Gemfile</code> that worked with
+                    earlier versions. If you have an application that uses multiple gem
+                    servers in its <code>Gemfile</code>, you may see warnings about ambiguous
+                    gem sources after upgrading. Whether or not you see these warnings, the
+                    Bundler team highly recommends that users of multiple gem servers update
+                    your <code>Gemfile</code> to use the new syntax.
+                  </div>
+                  <div class='note'>
+                    Use of the new <code>source</code> syntax will cause your
+                    <code>Gemfile</code> to become incompatible with Bundler versions earlier
+                    than 1.7.0. You should only perform this change after updating Bundler in
+                    all of your environments.
+                    <ol>
+                      <li>
+                        Choose your primary gem source (usually
+                        <code>https://rubygems.org</code>) and keep that at the top of the
+                        <code>Gemfile</code>
+                      </li>
+                      <li>
+                        For each additional gem source, add a block to the <code>source</code>
+                        line and move the relevant gem declarations inside it.
+                        <p>For example, this <code>Gemfile</code>:</p>
+                        <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;<span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;</code></pre>
+                        <p>might change to this:</p>
+                        <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.4'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'my_gem'</span><span class="p">,</span> <span class="s1">'1.0'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'another_gem'</span><span class="p">,</span> <span class="s1">'1.2.1'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <h2 id='workarounds'>Workarounds</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    If you are unable to upgrade all of your environments to 1.7 immediately,
+                    there are other ways to mitigate this risk by changing your
+                    <code>Gemfile</code> to remove the additional sources:
+                    <ul>
+                      <li>
+                        First, re-evaluate whether the extra gem sources are even needed. If
+                        your application is using a legacy public gem server such as
+                        <code>gems.github.com</code> or <code>gems.rubyforge.org</code>, all
+                        of your required gems should now be synced to
+                        <code>rubygems.org</code>. Try removing these sources.
+                      </li>
+                      <li>
+                        If you do use gems that aren't available on <code>rubygems.org</code>,
+                        but are available from a git source, you can use the <code>:git</code>
+                        option in the gem declaration and it will be guaranteed to come from
+                        that git repository rather than a gem server.
+                      </li>
+                      <li>
+                        If neither of these situations apply, you can unpack the gem into your
+                        <code>vendor</code> directory and use the <code>:path</code> option
+                        when declaring the gem in your <code>Gemfile</code> to point it to the
+                        unpacked gem directory. In this case, you should commit the vendored
+                        gem to your source control system.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>

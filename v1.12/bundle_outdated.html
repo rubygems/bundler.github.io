@@ -223,37 +223,25 @@
               <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id='menu-toggle'>
                 <- Toggle Menu
               </a>
-              <h2>bundle outdated</h2>
-              <div class='contents'>
-                <div class='bullet'>
-                  <div class='description'>
-                    List installed gems with newer versions available
-                  </div>
-                  <pre class="highlight plaintext"><code>$ bundle outdated [GEM] [--local] [--pre] [--source] [--strict]&#x000A;</code></pre>
-                  <div class='notes'>
-                    <p>
-                      Options:
-                    </p>
-                    <p>
-                      <code>--local</code>: Do not attempt to fetch gems remotely and use the gem cache instead
-                    </p>
-                    <p>
-                      <code>--pre</code>: Check for newer pre-release gems
-                    </p>
-                    <p>
-                      <code>--source</code>: Check against a specific source
-                    </p>
-                    <p>
-                      <code>--strict</code>: Display outdated gems that match the dependency requirements.
-                    </p>
-                  </div>
-                  <div class='description'>
-                    Outdated lists the names and versions of gems that have a newer version available
-                    in the given source. Calling outdated with [GEM [GEM]] will only check for newer
-                    versions of the given gems. By default, available prerelease gems will be ignored.
-                  </div>
-                </div>
-              </div>
+              <h2 id="bundle-outdated">bundle outdated</h2>
+              
+              <p>List installed gems with newer versions available</p>
+              
+              <pre class="highlight plaintext"><code>$ bundle outdated [GEM] [--local] [--pre] [--source] [--strict]&#x000A;</code></pre>
+              
+              <p>Options:</p>
+              
+              <p><code>--local</code>: Do not attempt to fetch gems remotely and use the gem cache instead</p>
+              
+              <p><code>--pre</code>: Check for newer pre-release gems</p>
+              
+              <p><code>--source</code>: Check against a specific source</p>
+              
+              <p><code>--strict</code>: Display outdated gems that match the dependency requirements.</p>
+              
+              <p>Outdated lists the names and versions of gems that have a newer version available
+              in the given source. Calling outdated with [GEM [GEM]] will only check for newer
+              versions of the given gems. By default, available prerelease gems will be ignored.</p>
             </div>
             <div class='clearfix'></div>
           </div>

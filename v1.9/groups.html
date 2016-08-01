@@ -33,104 +33,106 @@
       <div class='row'>
         <div class='container' id='guide-container'>
           <div class='col-md-12'>
-            <h2>Using Groups</h2>
-            <div class='contents'>
-              <div class='bullet'>
-                <div class='description'>
-                  Grouping your dependencies allows you
-                  to perform operations on the entire
-                  group.
+            <div class='container guide contents'>
+              <h2>Using Groups</h2>
+              <div class='contents'>
+                <div class='bullet'>
+                  <div class='description'>
+                    Grouping your dependencies allows you
+                    to perform operations on the entire
+                    group.
+                  </div>
+                  <pre class="highlight ruby"><code><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'capybara'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec-rails'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'cucumber'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:cucumber</span><span class="p">,</span> <span class="ss">:test</span><span class="p">]</span>&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight ruby"><code><span class="c1"># These gems are in the :default group</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span><span class="p">,</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'capybara'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec-rails'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'cucumber'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:cucumber</span><span class="p">,</span> <span class="ss">:test</span><span class="p">]</span>&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Install all gems, except those in the
-                  listed groups. Gems in at least one
-                  non-excluded group will still be installed.
+                <div class='bullet'>
+                  <div class='description'>
+                    Install all gems, except those in the
+                    listed groups. Gems in at least one
+                    non-excluded group will still be installed.
+                  </div>
+                  <pre class="highlight plaintext"><code>$ bundle install --without test development&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight plaintext"><code>$ bundle install --without test development&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Require the gems in particular groups,
-                  noting that gems outside of a named group
-                  are in the :default group
+                <div class='bullet'>
+                  <div class='description'>
+                    Require the gems in particular groups,
+                    noting that gems outside of a named group
+                    are in the :default group
+                  </div>
+                  <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:development</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Require the default gems, plus the gems
-                  in a group named the same as the current
-                  Rails environment
+                <div class='bullet'>
+                  <div class='description'>
+                    Require the default gems, plus the gems
+                    in a group named the same as the current
+                    Rails environment
+                  </div>
+                  <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">env</span><span class="p">)</span>&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Restrict the groups of gems that you
-                  want to add to the load path. Only gems
-                  in these groups will be require'able
+                <div class='bullet'>
+                  <div class='description'>
+                    Restrict the groups of gems that you
+                    want to add to the load path. Only gems
+                    in these groups will be require'able
+                  </div>
+                  <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+                  <a href="/v1.9/bundler_setup.html">Learn More: Bundler.setup</a>
                 </div>
-                <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
-                <a href="/v1.9/bundler_setup.html">Learn More: Bundler.setup</a>
-              </div>
-              <h2 id='grouping-your-dependencies'>
-                Grouping Your Dependencies
-              </h2>
-              <div class='bullet'>
-                <div class='description'>
-                  You'll sometimes have groups of gems that only make sense in particular environments.
-                  For instance, you might develop your app (at an early stage) using SQLite, but deploy it
-                  using <code>mysql2</code> or <code>pg</code>. In this example, you might not have MySQL
-                  or Postgres installed on your development machine, and want bundler to skip it.
-                  To do this, you can group your dependencies:
+                <h2 id='grouping-your-dependencies'>
+                  Grouping Your Dependencies
+                </h2>
+                <div class='bullet'>
+                  <div class='description'>
+                    You'll sometimes have groups of gems that only make sense in particular environments.
+                    For instance, you might develop your app (at an early stage) using SQLite, but deploy it
+                    using <code>mysql2</code> or <code>pg</code>. In this example, you might not have MySQL
+                    or Postgres installed on your development machine, and want bundler to skip it.
+                    To do this, you can group your dependencies:
+                  </div>
+                  <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'3.2.2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.4.2'</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'sqlite3'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:production</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'pg'</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Now, in development, you can instruct bundler to skip the <code>production</code> group:
+                <div class='bullet'>
+                  <div class='description'>
+                    Now, in development, you can instruct bundler to skip the <code>production</code> group:
+                  </div>
+                  <pre class="highlight plaintext"><code>$ bundle install --without production&#x000A;&#x000A;</code></pre>
                 </div>
-                <pre class="highlight plaintext"><code>$ bundle install --without production&#x000A;&#x000A;</code></pre>
-              </div>
-              <div class='bullet'>
-                <div class='description'>
-                  Bundler will remember that you installed the gems using <code>--without&#x000A;      production</code>. For curious readers, bundler stores the flag in
-                  <code>APP_ROOT/.bundle/config</code>. You can see all of the settings that bundler saved
-                  there by running <code>bundle config</code>, which will also print out global settings
-                  (stored in <code>~/.bundle/config</code>), and settings set via environment variables.
-                  For more information on configuring bundler, please see:
-                  <a href="/v1.9/bundle_config.html">bundle config</a>
+                <div class='bullet'>
+                  <div class='description'>
+                    Bundler will remember that you installed the gems using <code>--without&#x000A;      production</code>. For curious readers, bundler stores the flag in
+                    <code>APP_ROOT/.bundle/config</code>. You can see all of the settings that bundler saved
+                    there by running <code>bundle config</code>, which will also print out global settings
+                    (stored in <code>~/.bundle/config</code>), and settings set via environment variables.
+                    For more information on configuring bundler, please see:
+                    <a href="/v1.9/bundle_config.html">bundle config</a>
+                  </div>
                 </div>
-              </div>
-              <div class='bullet'>
-                <p class='description'>
-                  If you run <code>bundle install</code> later, without any flags, bundler will remember
-                  that you last called <code>bundle install --without production</code>, and use that flag
-                  again. When you <code>require 'bundler/setup'</code>, bundler will ignore gems in these
-                  groups.
-                </p>
-                <p class='description'>
-                  You can also specify which groups to automatically require through the parameters to
-                  <code>Bundler.require</code>. The <code>:default</code> group includes all gems not
-                  listed under any group. If you call <code>Bundler.require(:default, :development)</code>,
-                  bundler will <code>require</code> all the gems in the <code>:default</code> group, as
-                  well as the gems in the <code>:development</code> group.
-                </p>
-                <p class='description'>
-                  By default, a Rails generated app calls <code>Bundler.require(:default,&#x000A;      Rails.env)</code> in your <code>application.rb</code>, which links the groups in your
-                  <code>Gemfile</code> to the Rails environment. If you use other groups (not linked to a
-                  Rails environment), you can add them to the call to <code>Bundler.require</code>, if you
-                  want them to be automatically required.
-                </p>
-                <p class='description'>
-                  Remember that you can always leave groups of gems out of <code>Bundler.require</code>,
-                  and then require them manually using Ruby's <code>require</code> at the appropriate
-                  place in your app. You might do this because requiring a certain gem takes some time,
-                  and you don't need it every time you boot your application.
-                </p>
+                <div class='bullet'>
+                  <p class='description'>
+                    If you run <code>bundle install</code> later, without any flags, bundler will remember
+                    that you last called <code>bundle install --without production</code>, and use that flag
+                    again. When you <code>require 'bundler/setup'</code>, bundler will ignore gems in these
+                    groups.
+                  </p>
+                  <p class='description'>
+                    You can also specify which groups to automatically require through the parameters to
+                    <code>Bundler.require</code>. The <code>:default</code> group includes all gems not
+                    listed under any group. If you call <code>Bundler.require(:default, :development)</code>,
+                    bundler will <code>require</code> all the gems in the <code>:default</code> group, as
+                    well as the gems in the <code>:development</code> group.
+                  </p>
+                  <p class='description'>
+                    By default, a Rails generated app calls <code>Bundler.require(:default,&#x000A;      Rails.env)</code> in your <code>application.rb</code>, which links the groups in your
+                    <code>Gemfile</code> to the Rails environment. If you use other groups (not linked to a
+                    Rails environment), you can add them to the call to <code>Bundler.require</code>, if you
+                    want them to be automatically required.
+                  </p>
+                  <p class='description'>
+                    Remember that you can always leave groups of gems out of <code>Bundler.require</code>,
+                    and then require them manually using Ruby's <code>require</code> at the appropriate
+                    place in your app. You might do this because requiring a certain gem takes some time,
+                    and you don't need it every time you boot your application.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

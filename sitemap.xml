@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-07-19T19:52:04Z</lastmod>
+    <lastmod>2016-08-01T23:04:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -170,9 +170,6 @@
   </url>
   <url>
     <loc>http://bundler.io/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/compatibility.html</loc>
@@ -361,6 +358,9 @@
     <loc>http://bundler.io/v1.0/gemfile.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.0/gemfile_man.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.0/git.html</loc>
   </url>
   <url>
@@ -467,6 +467,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.1/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.1/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.1/git.html</loc>
@@ -593,6 +596,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.10/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.10/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.10/gemfile_ruby.html</loc>
@@ -739,6 +745,9 @@
     <loc>http://bundler.io/v1.11/gemfile.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.11/gemfile_man.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.11/gemfile_ruby.html</loc>
   </url>
   <url>
@@ -877,9 +886,6 @@
     <loc>http://bundler.io/v1.12/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/commands.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/v1.12/deploying.html</loc>
   </url>
   <url>
@@ -890,6 +896,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.12/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.12/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.12/gemfile_ruby.html</loc>
@@ -1027,6 +1036,9 @@
     <loc>http://bundler.io/v1.2/gemfile.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.2/gemfile_man.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.2/gemfile_ruby.html</loc>
   </url>
   <url>
@@ -1157,6 +1169,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.3/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.3/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.3/gemfile_ruby.html</loc>
@@ -1292,6 +1307,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.5/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.5/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.5/gemfile_ruby.html</loc>
@@ -1435,6 +1453,9 @@
     <loc>http://bundler.io/v1.6/gemfile.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.6/gemfile_man.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.6/gemfile_ruby.html</loc>
   </url>
   <url>
@@ -1574,6 +1595,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.7/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.7/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.7/gemfile_ruby.html</loc>
@@ -1717,6 +1741,9 @@
     <loc>http://bundler.io/v1.8/gemfile.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.8/gemfile_man.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.8/gemfile_ruby.html</loc>
   </url>
   <url>
@@ -1856,6 +1883,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.9/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.9/gemfile_man.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.9/gemfile_ruby.html</loc>

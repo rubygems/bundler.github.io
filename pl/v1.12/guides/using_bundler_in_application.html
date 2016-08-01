@@ -33,265 +33,267 @@
       <div class='row'>
         <div class='container' id='guide-container'>
           <div class='col-md-12'>
-            <h1 id="bundler-w-aplikacjach">Bundler w aplikacjach</h1>
-            
-            <p>Ten poradnik został oryginalnie napisany przy użyciu Bundler-a v1.12. Jeśli używasz innej wersji wyniki mogą się nieznacznie różnić.
-            Aby sprawdzić, którą wersję Bundler-a posiadasz, uruchom <code>bundler -v</code>.</p>
-            
-            <h2 id="co-w-rodku">Co w środku?</h2>
-            
-            <ol>
-              <li><a href="#getting-started---installing-bundler-and-bundle-init">Rozpoczęcie - instalacja Bundler-a i <strong>bundle init</strong></a></li>
-              <li><a href="#editing-gemfile">Edytowanie Gemfile’a</a>
-                <ol>
-                  <li><a href="#sources">Sources</a></li>
-                  <li><a href="#adding-gems">Adding Gems</a></li>
-                  <li><a href="#more-about-gemfile-syntax">More About Gemfile Syntax</a></li>
-                </ol>
-              </li>
-              <li><a href="#installing-gems---bundle-install">Installing Gems - <strong>bundle install</strong></a>
-                <ol>
-                  <li><a href="#development">Development</a></li>
-                  <li><a href="#deployment">Deployment</a></li>
-                </ol>
-              </li>
-              <li><a href="#gemfilelock">Gemfile.lock</a></li>
-              <li><a href="#executing-commands---bundle-exec">Executing Commands - <strong>bundle exec</strong></a></li>
-              <li><a href="#updating-gems---bundle-outdated-and-bundle-update">Updating Gems - <strong>bundle outdated</strong> and <strong>bundle update</strong></a></li>
-              <li><a href="#recommended-workflow">Recommended Workflow</a></li>
-            </ol>
-            
-            <h2 id="rozpoczcie---instalacja-bundler-a-i-bundle-init">Rozpoczęcie - instalacja Bundler-a i <strong>bundle init</strong></h2>
-            
-            <p><strong>Niektóre framework-i posiadają wbudowaną obsługę Bundler-a, np. kiedy uruchomisz <code>rails new app</code>
-            Bundler zostanie automatycznie zainicjalizowany</strong></p>
-            
-            <p>Po pierwsze, musimy zainstalować Bundler-a.</p>
-            
-            <pre class="highlight plaintext"><code>gem install bundler&#x000A;</code></pre>
-            
-            <p>Powyższa komenda zaktualizuje Bundler-a, jeśli był wcześniej zainstalowany. Powinniśmy dostać coś takiego, jako wynik:</p>
-            
-            <pre class="highlight shell"><code><span class="o">[</span>kruczjak:~/git] % gem install bundler&#x000A;Successfully installed bundler-1.12.5&#x000A;1 gem installed&#x000A;</code></pre>
-            
-            <p>Aby zainicjalizować Bundler-a ręcznie, wpiszmy poniższe komendy (<code>bundler_example</code> to nasz folder z aplikacją):</p>
-            
-            <pre class="highlight plaintext"><code>$ mkdir bundler_example &amp;&amp; cd bundler_example&#x000A;$ bundle init&#x000A;</code></pre>
-            
-            <p>Plik <code>Gemfile</code> powinien zostać automatycznie stworzony:</p>
-            
-            <pre class="highlight ruby"><code><span class="c1"># frozen_string_literal: true</span>&#x000A;<span class="c1"># A sample Gemfile</span>&#x000A;<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;&#x000A;<span class="c1"># gem "rails"</span>&#x000A;</code></pre>
-            
-            <h2 id="edytowanie-gemfilea">Edytowanie Gemfile’a</h2>
-            
-            <h3 id="rda-gem-w">źródła gem-ów</h3>
-            
-            <p>Automatycznie wygenerowany <code>Gemfile</code> zawiera linijkę <code>source "https://rubygems.org"</code>.
-            Znaczy to tyle, że Bundler będzie szukał gem-ów na serwerze <code>https://rubygems.org</code>.
-            Jeśli chcesz użyć własnego serwera RubyGems lub innego, po prostu zmień ją:</p>
-            
-            <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://your_ruby_gem_server.url"</span>&#x000A;</code></pre>
-            
-            <hr />
-            
-            <p>Jeśli masz więcej źródeł dla gem-ów, możesz użyć bloku lub <code>:source</code>:</p>
-            
-            <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://your_ruby_gem_server.url"</span> <span class="k">do</span>&#x000A;  <span class="c1"># gems</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"my_gem"</span><span class="p">,</span> <span class="ss">source: </span><span class="s2">"https://your_2_ruby_gem_server.url"</span>&#x000A;</code></pre>
-            
-            <p>Gem-y te będą uzyskiwane z dwóch różnych źródeł.</p>
-            
-            <hr />
-            
-            <p>Czytaj więcej o <code>source</code> <a href="/man/gemfile.5.html#GLOBAL-SOURCES">tu</a>.</p>
-            
-            <h3 id="dodawanie-gem-w">Dodawanie gem-ów</h3>
-            
-            <p>Dodajmy teraz kilka zależności do naszego projektu:</p>
-            
-            <pre class="highlight ruby"><code><span class="c1"># frozen_string_literal: true</span>&#x000A;<span class="c1"># A sample Gemfile</span>&#x000A;<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"rails"</span>&#x000A;</code></pre>
-            
-            <p>Używając powyższego Gemfile-a po uruchomieniu <code>bundler install</code> zainstalowana zostanie najnowsza wersja
-            gem-u <code>rails</code>.</p>
-            
-            <hr />
-            
-            <p>Co jeśli chcemy zainstalować wybraną wersję? Wystarczy ją wpisać po przecinku:</p>
-            
-            <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"3.0.0"</span>&#x000A;</code></pre>
-            
-            <p>lub użyć poniższej składni:</p>
-            
-            <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"~&gt; 4.0.0"</span> <span class="c1"># to jest to samo, co gem "rails", "&gt;= 4.0.0", "&lt; 4.1.0" </span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span><span class="p">,</span> <span class="s2">"&gt;= 1.4.2"</span>&#x000A;</code></pre>
-            
-            <hr />
-            
-            <p>Czytaj więcej o gem-ach w Gemfile-u <a href="/man/gemfile.5.html#GEMS">tu</a>.</p>
-            
-            <h3 id="wicej-o-gemfile-ach">Więcej o Gemfile-ach</h3>
-            
-            <p>Czytaj więcej o Gemfile-ach <a href="/man/gemfile.5.html">tu</a>.</p>
-            
-            <h2 id="instalacja-gem-w---bundle-install">Instalacja gem-ów - <strong>bundle install</strong></h2>
-            
-            <h3 id="development">Development</h3>
-            
-            <p>By zainstalować gem-y do development-u, użyjemy po prostu <code>bundle install</code>.</p>
-            
-            <p>Powinno dać nam to podobny wynik:</p>
-            
-            <pre class="highlight plaintext"><code>Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies...&#x000A;Using mini_portile2 2.1.0&#x000A;Using pkg-config 1.1.7&#x000A;Using bundler 1.12.5&#x000A;Using nokogiri 1.6.8&#x000A;Bundle complete! 1 Gemfile dependency, 4 gems now installed.&#x000A;Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
-            
-            <p>Stworzy to także <a href="/man/bundle-install.1.html#THE-GEMFILE-LOCK">plik <code>Gemfile.lock</code></a>:</p>
-            
-            <pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    mini_portile2 (2.1.0)&#x000A;    nokogiri (1.6.8)&#x000A;      mini_portile2 (~&gt; 2.1.0)&#x000A;      pkg-config (~&gt; 1.1.7)&#x000A;    pkg-config (1.1.7)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  nokogiri (&gt;= 1.4.0)&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.12.5&#x000A;</code></pre>
-            
-            <p>Ten plik będzie omawiany w <a href="#gemfilelock">następnym rozdziale</a>.</p>
-            
-            <h3 id="deployment">Deployment</h3>
-            
-            <p>Dla deployment-u powinniśmy użyć
-            <a href="/man/bundle-install.1.html#DEPLOYMENT-MODE">opcji <code>--deployment</code></a>:</p>
-            
-            <pre class="highlight plaintext"><code>bundle install --deployment&#x000A;</code></pre>
-            
-            <p>Zainstaluje nam to wszystkie zależności do folderu <code>./vendor/bundle</code>.</p>
-            
-            <p>Jednakże, by uruchomić tą komendę, są pewne wymagania:</p>
-            
-            <ol>
-              <li><code>Gemfile.lock</code> jest wymagany.</li>
-              <li><code>Gemfile.lock</code> musi być aktualny.</li>
-            </ol>
-            
-            <hr />
-            
-            <p>Czytaj więcej o komendzie <code>bundle install</code> <a href="/man/bundle-install.1.html">tu</a>.</p>
-            
-            <h2 id="gemfilelock">Gemfile.lock</h2>
-            
-            <p>Bundler używa tego pliku, by zapisać nazwy i wersje wszystkich gem-ów.
-            Gwarantuje to, że zawsze będziemy używać tych samych bibliotek, nawet jeśli będziemy się przenosić pomiędzy maszynami.
-            Po zainstalowaniu gem-a po raz pierwszy, Bundler zablokuje jego wersją.
-            Aby go zaktualizować, musimy użyć: <a href="#updating-gems---bundle-outdated-and-bundle-update"><code>bundler update</code></a>
-            lub/i zmodyfikować jego wersję w <code>Gemfile</code>-u.</p>
-            
-            <p>Ten plik jest tworzony/aktualizowany automatycznie, kiedy uruchamiasz niektóre komendy Bundler-a
-            (np. <code>bundle install</code> lub <code>bundle update</code>) i powinno się go dodać do systemu kontroli wersji.</p>
-            
-            <p>Użyjemy <code>Gemfile.lock</code>-a z poprzedniego rozdziału jako przykład.</p>
-            
-            <pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    mini_portile2 (2.1.0)&#x000A;    nokogiri (1.6.8)&#x000A;      mini_portile2 (~&gt; 2.1.0)&#x000A;      pkg-config (~&gt; 1.1.7)&#x000A;    pkg-config (1.1.7)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  nokogiri (&gt;= 1.4.0)&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.12.5&#x000A;</code></pre>
-            
-            <p>Prześledźmy jego ważniejsze elementy:</p>
-            
-            <ul>
-              <li><code>GEM</code>
-                <ul>
-                  <li><code>remote</code> - źródło gem-ów</li>
-                  <li><code>specs</code> - zainstalowany gem-y (z wersją). Widzimy tu, że przykładowo <code>mini_portile2</code> jest 
-            zależnością <code>nokogiri</code>, ponieważ jest poniżej i ma wcięcie.</li>
-                </ul>
-              </li>
-              <li><code>PLATFORMS</code> - platforma, która została użyta w aplikacji (<a href="/man/gemfile.5.html#PLATFORMS">zobacz więcej</a>).</li>
-              <li><code>DEPENDENCIES</code> - gem-y zdefiniowane w <code>Gemfile</code>-u.</li>
-              <li><code>BUNDLED WITH</code> - wersja Bundler-a, który ostatnim razem zmienił <code>Gemfile.lock</code></li>
-            </ul>
-            
-            <h2 id="wykonywanie-komend---bundle-exec">Wykonywanie komend - <strong>bundle exec</strong></h2>
-            
-            <p>Popatrzmy najpierw na przykład:</p>
-            
-            <pre class="highlight plaintext"><code>bundle exec rspec&#x000A;&#x000A;bundle exec rails s&#x000A;</code></pre>
-            
-            <p>Dzięki temu, komenda (w tym przypadku <code>rspec</code> i <code>rails s</code>) zostanie uruchomiona w aktualnym kontekście bundle-a, 
-            pozwalając dołączać i używać wszystkich gem-ów zdefiniowanych w <code>Gemfile</code>-u.</p>
-            
-            <hr />
-            
-            <p>Czytaj więcej o komendzie <code>bundle exec</code> <a href="/man/bundle-exec.1.html">tu</a>.</p>
-            
-            <h2 id="aktualizowanie-gem-w---bundle-outdated-i-bundle-update">Aktualizowanie gem-ów - <strong>bundle outdated</strong> i <strong>bundle update</strong></h2>
-            
-            <p>Now let’s update some gems. With <code>bundle outdated</code> we can list installed gems with newer versions available:</p>
-            
-            <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle outdated&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.......&#x000A;&#x000A;Outdated gems included in the bundle:&#x000A;  * nokogiri (newest 1.6.8, installed 1.6.7.2) in group "default"&#x000A;</code></pre>
-            
-            <p>You can also specify gems (<code>bundle outdated *gems</code>).</p>
-            
-            <p>We’ve got <code>nokogiri</code> locked on version 1.6.7.2. How can we update it?
-            <code>bundle install</code> won’t install newer version because it’s locked in <code>Gemfile.lock</code> file.
-            We must use <code>bundle update</code>.</p>
-            
-            <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle update&#x000A;Fetching git://github.com/middleman/middleman-syntax.git&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.....&#x000A;Installing nokogiri 1.6.8 (was 1.6.7.2) with native extensions&#x000A;Using i18n 0.7.0&#x000A;&#x000A;... (and more)&#x000A;&#x000A;Bundle updated!&#x000A;</code></pre>
-            
-            <p>Using <code>bundle update</code> without any argument will try to update every gem to newest available version
-            (restrained by <code>Gemfile</code>).</p>
-            
-            <p>To update specific gems, use <code>bundle update *gems</code></p>
-            
-            <hr />
-            
-            <p>To learn more about <code>bundle outdated</code> command click <a href="/bundle_outdated.html">here</a>.</p>
-            
-            <p>To learn more about <code>bundle update</code> command click <a href="/man/bundle-update.1.html">here</a>.</p>
-            
-            <h2 id="recommended-workflow">Recommended Workflow</h2>
-            
-            <p>In general, when working with an application managed with bundler, you should use the following workflow:</p>
-            
-            <ul>
-              <li>To init Bundler, run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle init&#x000A;</code></pre>
-            
-            <ul>
-              <li>After you create your <code>Gemfile</code> for the first time, run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
-            
-            <ul>
-              <li>Check the resulting <code>Gemfile.lock</code> into version control</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
-            
-            <ul>
-              <li>When checking out this repository on another development machine, run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
-            
-            <ul>
-              <li>When checking out this repository on a deployment machine, run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
-            
-            <ul>
-              <li>After changing the <code>Gemfile</code> to reflect a new or update dependency, run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
-            
-            <ul>
-              <li>Make sure to check the updated Gemfile.lock into version control</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
-            
-            <ul>
-              <li>If <code>bundle install</code> reports a conflict, manually update the specific gems that you changed in the <code>Gemfile</code></li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle update rails thin&#x000A;</code></pre>
-            
-            <ul>
-              <li>If you want to update all the gems to the latest possible versions that still match the gems listed in the Gemfile(5), run</li>
-            </ul>
-            
-            <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
+            <div class='container guide contents'>
+              <h1 id="bundler-w-aplikacjach">Bundler w aplikacjach</h1>
+              
+              <p>Ten poradnik został oryginalnie napisany przy użyciu Bundler-a v1.12. Jeśli używasz innej wersji wyniki mogą się nieznacznie różnić.
+              Aby sprawdzić, którą wersję Bundler-a posiadasz, uruchom <code>bundler -v</code>.</p>
+              
+              <h2 id="co-w-rodku">Co w środku?</h2>
+              
+              <ol>
+                <li><a href="#getting-started---installing-bundler-and-bundle-init">Rozpoczęcie - instalacja Bundler-a i <strong>bundle init</strong></a></li>
+                <li><a href="#editing-gemfile">Edytowanie Gemfile’a</a>
+                  <ol>
+                    <li><a href="#sources">Sources</a></li>
+                    <li><a href="#adding-gems">Adding Gems</a></li>
+                    <li><a href="#more-about-gemfile-syntax">More About Gemfile Syntax</a></li>
+                  </ol>
+                </li>
+                <li><a href="#installing-gems---bundle-install">Installing Gems - <strong>bundle install</strong></a>
+                  <ol>
+                    <li><a href="#development">Development</a></li>
+                    <li><a href="#deployment">Deployment</a></li>
+                  </ol>
+                </li>
+                <li><a href="#gemfilelock">Gemfile.lock</a></li>
+                <li><a href="#executing-commands---bundle-exec">Executing Commands - <strong>bundle exec</strong></a></li>
+                <li><a href="#updating-gems---bundle-outdated-and-bundle-update">Updating Gems - <strong>bundle outdated</strong> and <strong>bundle update</strong></a></li>
+                <li><a href="#recommended-workflow">Recommended Workflow</a></li>
+              </ol>
+              
+              <h2 id="rozpoczcie---instalacja-bundler-a-i-bundle-init">Rozpoczęcie - instalacja Bundler-a i <strong>bundle init</strong></h2>
+              
+              <p><strong>Niektóre framework-i posiadają wbudowaną obsługę Bundler-a, np. kiedy uruchomisz <code>rails new app</code>
+              Bundler zostanie automatycznie zainicjalizowany</strong></p>
+              
+              <p>Po pierwsze, musimy zainstalować Bundler-a.</p>
+              
+              <pre class="highlight plaintext"><code>gem install bundler&#x000A;</code></pre>
+              
+              <p>Powyższa komenda zaktualizuje Bundler-a, jeśli był wcześniej zainstalowany. Powinniśmy dostać coś takiego, jako wynik:</p>
+              
+              <pre class="highlight shell"><code><span class="o">[</span>kruczjak:~/git] % gem install bundler&#x000A;Successfully installed bundler-1.12.5&#x000A;1 gem installed&#x000A;</code></pre>
+              
+              <p>Aby zainicjalizować Bundler-a ręcznie, wpiszmy poniższe komendy (<code>bundler_example</code> to nasz folder z aplikacją):</p>
+              
+              <pre class="highlight plaintext"><code>$ mkdir bundler_example &amp;&amp; cd bundler_example&#x000A;$ bundle init&#x000A;</code></pre>
+              
+              <p>Plik <code>Gemfile</code> powinien zostać automatycznie stworzony:</p>
+              
+              <pre class="highlight ruby"><code><span class="c1"># frozen_string_literal: true</span>&#x000A;<span class="c1"># A sample Gemfile</span>&#x000A;<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;&#x000A;<span class="c1"># gem "rails"</span>&#x000A;</code></pre>
+              
+              <h2 id="edytowanie-gemfilea">Edytowanie Gemfile’a</h2>
+              
+              <h3 id="rda-gem-w">źródła gem-ów</h3>
+              
+              <p>Automatycznie wygenerowany <code>Gemfile</code> zawiera linijkę <code>source "https://rubygems.org"</code>.
+              Znaczy to tyle, że Bundler będzie szukał gem-ów na serwerze <code>https://rubygems.org</code>.
+              Jeśli chcesz użyć własnego serwera RubyGems lub innego, po prostu zmień ją:</p>
+              
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://your_ruby_gem_server.url"</span>&#x000A;</code></pre>
+              
+              <hr />
+              
+              <p>Jeśli masz więcej źródeł dla gem-ów, możesz użyć bloku lub <code>:source</code>:</p>
+              
+              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s2">"https://your_ruby_gem_server.url"</span> <span class="k">do</span>&#x000A;  <span class="c1"># gems</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"my_gem"</span><span class="p">,</span> <span class="ss">source: </span><span class="s2">"https://your_2_ruby_gem_server.url"</span>&#x000A;</code></pre>
+              
+              <p>Gem-y te będą uzyskiwane z dwóch różnych źródeł.</p>
+              
+              <hr />
+              
+              <p>Czytaj więcej o <code>source</code> <a href="/man/gemfile.5.html#GLOBAL-SOURCES">tu</a>.</p>
+              
+              <h3 id="dodawanie-gem-w">Dodawanie gem-ów</h3>
+              
+              <p>Dodajmy teraz kilka zależności do naszego projektu:</p>
+              
+              <pre class="highlight ruby"><code><span class="c1"># frozen_string_literal: true</span>&#x000A;<span class="c1"># A sample Gemfile</span>&#x000A;<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s2">"rails"</span>&#x000A;</code></pre>
+              
+              <p>Używając powyższego Gemfile-a po uruchomieniu <code>bundler install</code> zainstalowana zostanie najnowsza wersja
+              gem-u <code>rails</code>.</p>
+              
+              <hr />
+              
+              <p>Co jeśli chcemy zainstalować wybraną wersję? Wystarczy ją wpisać po przecinku:</p>
+              
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"3.0.0"</span>&#x000A;</code></pre>
+              
+              <p>lub użyć poniższej składni:</p>
+              
+              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"~&gt; 4.0.0"</span> <span class="c1"># to jest to samo, co gem "rails", "&gt;= 4.0.0", "&lt; 4.1.0" </span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span><span class="p">,</span> <span class="s2">"&gt;= 1.4.2"</span>&#x000A;</code></pre>
+              
+              <hr />
+              
+              <p>Czytaj więcej o gem-ach w Gemfile-u <a href="/man/gemfile.5.html#GEMS">tu</a>.</p>
+              
+              <h3 id="wicej-o-gemfile-ach">Więcej o Gemfile-ach</h3>
+              
+              <p>Czytaj więcej o Gemfile-ach <a href="/man/gemfile.5.html">tu</a>.</p>
+              
+              <h2 id="instalacja-gem-w---bundle-install">Instalacja gem-ów - <strong>bundle install</strong></h2>
+              
+              <h3 id="development">Development</h3>
+              
+              <p>By zainstalować gem-y do development-u, użyjemy po prostu <code>bundle install</code>.</p>
+              
+              <p>Powinno dać nam to podobny wynik:</p>
+              
+              <pre class="highlight plaintext"><code>Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies...&#x000A;Using mini_portile2 2.1.0&#x000A;Using pkg-config 1.1.7&#x000A;Using bundler 1.12.5&#x000A;Using nokogiri 1.6.8&#x000A;Bundle complete! 1 Gemfile dependency, 4 gems now installed.&#x000A;Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
+              
+              <p>Stworzy to także <a href="/man/bundle-install.1.html#THE-GEMFILE-LOCK">plik <code>Gemfile.lock</code></a>:</p>
+              
+              <pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    mini_portile2 (2.1.0)&#x000A;    nokogiri (1.6.8)&#x000A;      mini_portile2 (~&gt; 2.1.0)&#x000A;      pkg-config (~&gt; 1.1.7)&#x000A;    pkg-config (1.1.7)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  nokogiri (&gt;= 1.4.0)&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.12.5&#x000A;</code></pre>
+              
+              <p>Ten plik będzie omawiany w <a href="#gemfilelock">następnym rozdziale</a>.</p>
+              
+              <h3 id="deployment">Deployment</h3>
+              
+              <p>Dla deployment-u powinniśmy użyć
+              <a href="/man/bundle-install.1.html#DEPLOYMENT-MODE">opcji <code>--deployment</code></a>:</p>
+              
+              <pre class="highlight plaintext"><code>bundle install --deployment&#x000A;</code></pre>
+              
+              <p>Zainstaluje nam to wszystkie zależności do folderu <code>./vendor/bundle</code>.</p>
+              
+              <p>Jednakże, by uruchomić tą komendę, są pewne wymagania:</p>
+              
+              <ol>
+                <li><code>Gemfile.lock</code> jest wymagany.</li>
+                <li><code>Gemfile.lock</code> musi być aktualny.</li>
+              </ol>
+              
+              <hr />
+              
+              <p>Czytaj więcej o komendzie <code>bundle install</code> <a href="/man/bundle-install.1.html">tu</a>.</p>
+              
+              <h2 id="gemfilelock">Gemfile.lock</h2>
+              
+              <p>Bundler używa tego pliku, by zapisać nazwy i wersje wszystkich gem-ów.
+              Gwarantuje to, że zawsze będziemy używać tych samych bibliotek, nawet jeśli będziemy się przenosić pomiędzy maszynami.
+              Po zainstalowaniu gem-a po raz pierwszy, Bundler zablokuje jego wersją.
+              Aby go zaktualizować, musimy użyć: <a href="#updating-gems---bundle-outdated-and-bundle-update"><code>bundler update</code></a>
+              lub/i zmodyfikować jego wersję w <code>Gemfile</code>-u.</p>
+              
+              <p>Ten plik jest tworzony/aktualizowany automatycznie, kiedy uruchamiasz niektóre komendy Bundler-a
+              (np. <code>bundle install</code> lub <code>bundle update</code>) i powinno się go dodać do systemu kontroli wersji.</p>
+              
+              <p>Użyjemy <code>Gemfile.lock</code>-a z poprzedniego rozdziału jako przykład.</p>
+              
+              <pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    mini_portile2 (2.1.0)&#x000A;    nokogiri (1.6.8)&#x000A;      mini_portile2 (~&gt; 2.1.0)&#x000A;      pkg-config (~&gt; 1.1.7)&#x000A;    pkg-config (1.1.7)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  nokogiri (&gt;= 1.4.0)&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.12.5&#x000A;</code></pre>
+              
+              <p>Prześledźmy jego ważniejsze elementy:</p>
+              
+              <ul>
+                <li><code>GEM</code>
+                  <ul>
+                    <li><code>remote</code> - źródło gem-ów</li>
+                    <li><code>specs</code> - zainstalowany gem-y (z wersją). Widzimy tu, że przykładowo <code>mini_portile2</code> jest 
+              zależnością <code>nokogiri</code>, ponieważ jest poniżej i ma wcięcie.</li>
+                  </ul>
+                </li>
+                <li><code>PLATFORMS</code> - platforma, która została użyta w aplikacji (<a href="/man/gemfile.5.html#PLATFORMS">zobacz więcej</a>).</li>
+                <li><code>DEPENDENCIES</code> - gem-y zdefiniowane w <code>Gemfile</code>-u.</li>
+                <li><code>BUNDLED WITH</code> - wersja Bundler-a, który ostatnim razem zmienił <code>Gemfile.lock</code></li>
+              </ul>
+              
+              <h2 id="wykonywanie-komend---bundle-exec">Wykonywanie komend - <strong>bundle exec</strong></h2>
+              
+              <p>Popatrzmy najpierw na przykład:</p>
+              
+              <pre class="highlight plaintext"><code>bundle exec rspec&#x000A;&#x000A;bundle exec rails s&#x000A;</code></pre>
+              
+              <p>Dzięki temu, komenda (w tym przypadku <code>rspec</code> i <code>rails s</code>) zostanie uruchomiona w aktualnym kontekście bundle-a, 
+              pozwalając dołączać i używać wszystkich gem-ów zdefiniowanych w <code>Gemfile</code>-u.</p>
+              
+              <hr />
+              
+              <p>Czytaj więcej o komendzie <code>bundle exec</code> <a href="/man/bundle-exec.1.html">tu</a>.</p>
+              
+              <h2 id="aktualizowanie-gem-w---bundle-outdated-i-bundle-update">Aktualizowanie gem-ów - <strong>bundle outdated</strong> i <strong>bundle update</strong></h2>
+              
+              <p>Now let’s update some gems. With <code>bundle outdated</code> we can list installed gems with newer versions available:</p>
+              
+              <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle outdated&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.......&#x000A;&#x000A;Outdated gems included in the bundle:&#x000A;  * nokogiri (newest 1.6.8, installed 1.6.7.2) in group "default"&#x000A;</code></pre>
+              
+              <p>You can also specify gems (<code>bundle outdated *gems</code>).</p>
+              
+              <p>We’ve got <code>nokogiri</code> locked on version 1.6.7.2. How can we update it?
+              <code>bundle install</code> won’t install newer version because it’s locked in <code>Gemfile.lock</code> file.
+              We must use <code>bundle update</code>.</p>
+              
+              <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle update&#x000A;Fetching git://github.com/middleman/middleman-syntax.git&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.....&#x000A;Installing nokogiri 1.6.8 (was 1.6.7.2) with native extensions&#x000A;Using i18n 0.7.0&#x000A;&#x000A;... (and more)&#x000A;&#x000A;Bundle updated!&#x000A;</code></pre>
+              
+              <p>Using <code>bundle update</code> without any argument will try to update every gem to newest available version
+              (restrained by <code>Gemfile</code>).</p>
+              
+              <p>To update specific gems, use <code>bundle update *gems</code></p>
+              
+              <hr />
+              
+              <p>To learn more about <code>bundle outdated</code> command click <a href="/bundle_outdated.html">here</a>.</p>
+              
+              <p>To learn more about <code>bundle update</code> command click <a href="/man/bundle-update.1.html">here</a>.</p>
+              
+              <h2 id="recommended-workflow">Recommended Workflow</h2>
+              
+              <p>In general, when working with an application managed with bundler, you should use the following workflow:</p>
+              
+              <ul>
+                <li>To init Bundler, run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle init&#x000A;</code></pre>
+              
+              <ul>
+                <li>After you create your <code>Gemfile</code> for the first time, run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              
+              <ul>
+                <li>Check the resulting <code>Gemfile.lock</code> into version control</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
+              
+              <ul>
+                <li>When checking out this repository on another development machine, run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              
+              <ul>
+                <li>When checking out this repository on a deployment machine, run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
+              
+              <ul>
+                <li>After changing the <code>Gemfile</code> to reflect a new or update dependency, run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              
+              <ul>
+                <li>Make sure to check the updated Gemfile.lock into version control</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
+              
+              <ul>
+                <li>If <code>bundle install</code> reports a conflict, manually update the specific gems that you changed in the <code>Gemfile</code></li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle update rails thin&#x000A;</code></pre>
+              
+              <ul>
+                <li>If you want to update all the gems to the latest possible versions that still match the gems listed in the Gemfile(5), run</li>
+              </ul>
+              
+              <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
+            </div>
           </div>
         </div>
       </div>
