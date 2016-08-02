@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-07-10T14:44:00-07:00</updated>
+  <updated>2016-07-10T21:44:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>A New Bundler Website</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
-    <published>2016-07-10T14:44:00-07:00</published>
-    <updated>2016-07-13T22:12:40-07:00</updated>
+    <published>2016-07-10T21:44:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -47,8 +47,8 @@ possible.&lt;/p&gt;
     <title>The new index format, Fastly, and Bundler 1.12</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-04-28T16:00:00-07:00</published>
-    <updated>2016-05-12T14:46:50-07:00</updated>
+    <published>2016-04-28T23:00:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -85,8 +85,8 @@ possible.&lt;/p&gt;
     <title>Version 1.11 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
-    <published>2015-12-12T11:00:00-08:00</published>
-    <updated>2016-05-12T14:46:50-07:00</updated>
+    <published>2015-12-12T19:00:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -164,8 +164,8 @@ $ [sudo] gem install bundler
     <title>Version 1.10 released</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-23T22:36:00-07:00</published>
-    <updated>2016-04-28T15:44:36-07:00</updated>
+    <published>2015-06-24T05:36:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -218,8 +218,8 @@ $ [sudo] gem install bundler
     <title>Hello, Bundler 1.9!</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-20T17:00:00-07:00</published>
-    <updated>2016-05-12T14:46:50-07:00</updated>
+    <published>2015-03-21T00:00:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -246,8 +246,8 @@ $ [sudo] gem install bundler
     <title>Bundler template moves bins to exe</title>
     <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
     <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-19T17:00:00-07:00</published>
-    <updated>2016-05-12T14:46:50-07:00</updated>
+    <published>2015-03-20T00:00:00+00:00</published>
+    <updated>2016-08-02T22:33:19+00:00</updated>
     <author>
       <name>Benjamin Fleischer</name>
     </author>
