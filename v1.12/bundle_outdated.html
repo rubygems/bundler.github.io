@@ -253,7 +253,7 @@
               
               <p>List installed gems with newer versions available</p>
               
-              <pre class="highlight plaintext"><code>$ bundle outdated [GEM] [--local] [--pre] [--source] [--strict]&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ bundle outdated [GEM] [--local] [--pre] [--source] [--strict] [--major] [--minor] [--patch] [--parseable]&#x000A;</code></pre>
               
               <p>Options:</p>
               
@@ -264,6 +264,14 @@
               <p><code>--source</code>: Check against a specific source</p>
               
               <p><code>--strict</code>: Display outdated gems that match the dependency requirements.</p>
+              
+              <p><code>--major</code>: Display gems with a major version update</p>
+              
+              <p><code>--minor</code>: Display gems with a minor version update</p>
+              
+              <p><code>--patch</code>: Display gems with a patch version update</p>
+              
+              <p><code>--parseable</code>: Disaply the output in a machine-readable format</p>
               
               <p>Outdated lists the names and versions of gems that have a newer version available
               in the given source. Calling outdated with [GEM [GEM]] will only check for newer
