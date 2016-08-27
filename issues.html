@@ -53,87 +53,336 @@
       </div>
     </nav>
     <div class='main-wrapper'>
-      <h1 id="bundler-issues">Bundler Issues</h1>
-      
-      <p>So! You’re having problems with Bundler. This file is here to help. If you’re running into an error, try reading the rest of this file for help. If you can’t figure out how to solve your problem, there are also instructions on how to report a bug.</p>
-      
-      <h2 id="documentation">Documentation</h2>
-      
-      <p>Instructions for common Bundler uses can be found on the <a href="http://bundler.io/">Bundler documentation site</a>.</p>
-      
-      <p>Detailed information about each Bundler command, including help with common problems, can be found in the <a href="http://bundler.io/man/bundle.1.html">Bundler man pages</a> or <a href="http://bundler.io/v1.11/commands.html">Bundler Command Line Reference</a>.</p>
-      
-      <h2 id="troubleshooting">Troubleshooting</h2>
-      
-      <h3 id="heroku-errors">Heroku errors</h3>
-      
-      <p>Please open a ticket with <a href="https://www.heroku.com">Heroku</a> if you’re having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, <a href="https://www.heroku.com/support">Heroku support</a> can get the exact details to us.</p>
-      
-      <h3 id="other-problems">Other problems</h3>
-      
-      <p>First, figure out exactly what it is that you’re trying to do (see <a href="http://xyproblem.info/">XY Problem</a>). Then, go to the <a href="http://bundler.io">Bundler documentation website</a> and see if we have instructions on how to do that.</p>
-      
-      <p>Second, check <a href="http://bundler.io/compatibility.html">the compatibility
-      list</a>, and make sure that the version of Bundler that you are
-      using works with the versions of Ruby and Rubygems that you are using. To see your versions:</p>
-      
-      <pre class="highlight plaintext"><code># Bundler version&#x000A;bundle -v&#x000A;&#x000A;# Ruby version&#x000A;ruby -v&#x000A;&#x000A;# Rubygems version&#x000A;gem -v&#x000A;</code></pre>
-      
-      <p>If these instructions don’t work, or you can’t find any appropriate instructions, you can try these troubleshooting steps:</p>
-      
-      <pre class="highlight plaintext"><code># Remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# Remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# Remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# Remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# Remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# Uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# Try to install one more time&#x000A;bundle install&#x000A;</code></pre>
-      
-      <h2 id="reporting-unresolved-problems">Reporting unresolved problems</h2>
-      
-      <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
-      
-      <p><strong>The best way to report a bug is by providing a reproduction script.</strong> See these examples:</p>
-      
-      <ul>
-        <li><a href="https://gist.github.com/xaviershay/6207550">Git environment variables causing install to fail.</a></li>
-        <li><a href="https://gist.github.com/xaviershay/6295889">Multiple gems in a repository cannot be updated independently.</a></li>
-      </ul>
-      
-      <p>A half working script with comments for the parts you were unable to automate is still appreciated.</p>
-      
-      <p>If you are unable to do that, please include the following information in your report:</p>
-      
-      <ul>
-        <li>What you’re trying to accomplish</li>
-        <li>The command you ran</li>
-        <li>What you expected to happen</li>
-        <li>What actually happened</li>
-        <li>The exception backtrace(s), if any</li>
-        <li>Everything output by running <code>bundle env</code></li>
-      </ul>
-      
-      <p>If your version of Bundler does not have the <code>bundle env</code> command, then please include:</p>
-      
-      <ul>
-        <li>Your <code>Gemfile</code></li>
-        <li>Your <code>Gemfile.lock</code></li>
-        <li>Your Bundler configuration settings (run <code>bundle config</code>)</li>
-        <li>What version of bundler you are using (run <code>bundle -v</code>)</li>
-        <li>What version of Ruby you are using (run <code>ruby -v</code>)</li>
-        <li>What version of Rubygems you are using (run <code>gem -v</code>)</li>
-        <li>Whether you are using RVM, and if so what version (run <code>rvm -v</code>)</li>
-        <li>Whether you have the <code>rubygems-bundler</code> gem, which can break gem executables (run <code>gem list rubygems-bundler</code>)</li>
-        <li>Whether you have the <code>open_gem</code> gem, which can cause rake activation conflicts (run <code>gem list open_gem</code>)</li>
-      </ul>
-      
-      <p>If you are using Rails 2.3, please also include:</p>
-      
-      <ul>
-        <li>Your <code>boot.rb</code> file</li>
-        <li>Your <code>preinitializer.rb</code> file</li>
-        <li>Your <code>environment.rb</code> file</li>
-      </ul>
-      
-      <p>If you have either <code>rubygems-bundler</code> or <code>open_gem</code> installed, please try removing them and then following the troubleshooting steps above before opening a new ticket.</p>
-      
-      <p><a href="https://gist.github.com">Create a gist</a> containing all of that information, then visit the <a href="https://github.com/bundler/bundler/issues">Bundler issue tracker</a> and <a href="https://github.com/bundler/bundler/issues/new">create a ticket</a> describing your problem and linking to your gist.</p>
-      
-      <p>Thanks for reporting issues and helping make Bundler better!</p>
+      <div class='row bg-light-blue header'>
+        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+      </div>
+      <div class='row'>
+        <div class='container' id='guide-container'>
+          <div id='wrapper'>
+            <div class='hidden-xs' id='sidebar-wrapper'>
+              <div class='sidebar-nav'>
+                <h4>Guides</h4>
+                <ul>
+                  <li class=''>
+                    <a href="/v1.12/bundler_setup.html" class="truncate-text">Bundler setup</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/rationale.html" class="truncate-text">Bundler's Purpose and Rationale</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/deploying.html" class="truncate-text">Deploying bundled applications</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/faq.html" class="truncate-text">FAQ - Frequently Asked Questions</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/gemfile.html" class="truncate-text">Gemfile</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/git.html" class="truncate-text">Gems from git repositories</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/bundler_workflow.html" class="truncate-text">Recommended Workflow with Version Control</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/bundler_sharing.html" class="truncate-text">Sharing</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/gemfile_ruby.html" class="truncate-text">Specifying a Ruby Version</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/updating_gems.html" class="truncate-text">Updating Gems</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/rails3.html" class="truncate-text">Using Bundler with Rails 2.3</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/rails23.html" class="truncate-text">Using Bundler with Rails 3</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/rubymotion.html" class="truncate-text">Using Bundler with RubyMotion</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/rubygems.html" class="truncate-text">Using Bundler with Rubygem gemspecs</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/sinatra.html" class="truncate-text">Using Bundler with Sinatra</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.12/groups.html" class="truncate-text">Using Groups</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class='guide contents' id='page-content-wrapper'>
+              <h1 id="bundler-issues">Bundler Issues</h1>
+              
+              <p>So! You’re having problems with Bundler. This file is here to help. If you’re running into an error, try reading the rest of this file for help. If you can’t figure out how to solve your problem, there are also instructions on how to report a bug.</p>
+              
+              <h2 id="documentation">Documentation</h2>
+              
+              <p>Instructions for common Bundler uses can be found on the <a href="http://bundler.io/">Bundler documentation site</a>.</p>
+              
+              <p>Detailed information about each Bundler command, including help with common problems, can be found in the <a href="http://bundler.io/man/bundle.1.html">Bundler man pages</a> or <a href="http://bundler.io/v1.11/commands.html">Bundler Command Line Reference</a>.</p>
+              
+              <h2 id="troubleshooting">Troubleshooting</h2>
+              
+              <h3 id="heroku-errors">Heroku errors</h3>
+              
+              <p>Please open a ticket with <a href="https://www.heroku.com">Heroku</a> if you’re having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, <a href="https://www.heroku.com/support">Heroku support</a> can get the exact details to us.</p>
+              
+              <h3 id="other-problems">Other problems</h3>
+              
+              <p>First, figure out exactly what it is that you’re trying to do (see <a href="http://xyproblem.info/">XY Problem</a>). Then, go to the <a href="http://bundler.io">Bundler documentation website</a> and see if we have instructions on how to do that.</p>
+              
+              <p>Second, check <a href="http://bundler.io/compatibility.html">the compatibility
+              list</a>, and make sure that the version of Bundler that you are
+              using works with the versions of Ruby and Rubygems that you are using. To see your versions:</p>
+              
+              <pre class="highlight plaintext"><code># Bundler version&#x000A;bundle -v&#x000A;&#x000A;# Ruby version&#x000A;ruby -v&#x000A;&#x000A;# Rubygems version&#x000A;gem -v&#x000A;</code></pre>
+              
+              <p>If these instructions don’t work, or you can’t find any appropriate instructions, you can try these troubleshooting steps:</p>
+              
+              <pre class="highlight plaintext"><code># Remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# Remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# Remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# Remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# Remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# Uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# Try to install one more time&#x000A;bundle install&#x000A;</code></pre>
+              
+              <h2 id="reporting-unresolved-problems">Reporting unresolved problems</h2>
+              
+              <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
+              
+              <p><strong>The best way to report a bug is by providing a reproduction script.</strong> See these examples:</p>
+              
+              <ul>
+                <li><a href="https://gist.github.com/xaviershay/6207550">Git environment variables causing install to fail.</a></li>
+                <li><a href="https://gist.github.com/xaviershay/6295889">Multiple gems in a repository cannot be updated independently.</a></li>
+              </ul>
+              
+              <p>A half working script with comments for the parts you were unable to automate is still appreciated.</p>
+              
+              <p>If you are unable to do that, please include the following information in your report:</p>
+              
+              <ul>
+                <li>What you’re trying to accomplish</li>
+                <li>The command you ran</li>
+                <li>What you expected to happen</li>
+                <li>What actually happened</li>
+                <li>The exception backtrace(s), if any</li>
+                <li>Everything output by running <code>bundle env</code></li>
+              </ul>
+              
+              <p>If your version of Bundler does not have the <code>bundle env</code> command, then please include:</p>
+              
+              <ul>
+                <li>Your <code>Gemfile</code></li>
+                <li>Your <code>Gemfile.lock</code></li>
+                <li>Your Bundler configuration settings (run <code>bundle config</code>)</li>
+                <li>What version of bundler you are using (run <code>bundle -v</code>)</li>
+                <li>What version of Ruby you are using (run <code>ruby -v</code>)</li>
+                <li>What version of Rubygems you are using (run <code>gem -v</code>)</li>
+                <li>Whether you are using RVM, and if so what version (run <code>rvm -v</code>)</li>
+                <li>Whether you have the <code>rubygems-bundler</code> gem, which can break gem executables (run <code>gem list rubygems-bundler</code>)</li>
+                <li>Whether you have the <code>open_gem</code> gem, which can cause rake activation conflicts (run <code>gem list open_gem</code>)</li>
+              </ul>
+              
+              <p>If you are using Rails 2.3, please also include:</p>
+              
+              <ul>
+                <li>Your <code>boot.rb</code> file</li>
+                <li>Your <code>preinitializer.rb</code> file</li>
+                <li>Your <code>environment.rb</code> file</li>
+              </ul>
+              
+              <p>If you have either <code>rubygems-bundler</code> or <code>open_gem</code> installed, please try removing them and then following the troubleshooting steps above before opening a new ticket.</p>
+              
+              <p><a href="https://gist.github.com">Create a gist</a> containing all of that information, then visit the <a href="https://github.com/bundler/bundler/issues">Bundler issue tracker</a> and <a href="https://github.com/bundler/bundler/issues/new">create a ticket</a> describing your problem and linking to your gist.</p>
+              
+              <p>Thanks for reporting issues and helping make Bundler better!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='container'>
+          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+            <div class='bottom-sidebar-nav'>
+              <ul>
+                <li class=''>
+                  <a href="/v1.12/bundler_setup.html" class="truncate-text">Bundler setup</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/rationale.html" class="truncate-text">Bundler's Purpose and Rationale</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/deploying.html" class="truncate-text">Deploying bundled applications</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/faq.html" class="truncate-text">FAQ - Frequently Asked Questions</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/gemfile.html" class="truncate-text">Gemfile</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/git.html" class="truncate-text">Gems from git repositories</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/bundler_workflow.html" class="truncate-text">Recommended Workflow with Version Control</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/bundler_sharing.html" class="truncate-text">Sharing</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/gemfile_ruby.html" class="truncate-text">Specifying a Ruby Version</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/updating_gems.html" class="truncate-text">Updating Gems</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/rails3.html" class="truncate-text">Using Bundler with Rails 2.3</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/rails23.html" class="truncate-text">Using Bundler with Rails 3</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/rubymotion.html" class="truncate-text">Using Bundler with RubyMotion</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/rubygems.html" class="truncate-text">Using Bundler with Rubygem gemspecs</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/sinatra.html" class="truncate-text">Using Bundler with Sinatra</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.12/groups.html" class="truncate-text">Using Groups</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        $(document).ready(function() {
+          anchors.add();
+        });
+      </script>
       
     </div>
     <div class='footer'>

@@ -63,7 +63,7 @@
               <div class='sidebar-nav'>
                 <h4>Choose version</h4>
                 <div class='form-group'>
-                  <select class='form-control' id='version-select'>
+                  <select class='version-selects form-control'>
                     <option value='/v1.12/man/bundle-update.1.html'>
                       v1.12
                     </option>
@@ -222,9 +222,6 @@
               </div>
             </div>
             <div class='commands contents' id='page-content-wrapper'>
-              <a class='btn btn-primary btn-sm visible-xs-inline' href='#' id='menu-toggle'>
-                <- Toggle Menu
-              </a>
               
                 <div class="mp" id="man">
               
@@ -395,12 +392,174 @@
           </div>
         </div>
       </div>
+      <div class='row'>
+        <div class='container'>
+          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+            <div class='bottom-sidebar-nav'>
+              <h4>Choose version</h4>
+              <div class='form-group'>
+                <select class='version-selects form-control'>
+                  <option value='/v1.12/man/bundle-update.1.html'>
+                    v1.12
+                  </option>
+                  <option value='/v1.11/man/bundle-update.1.html'>
+                    v1.11
+                  </option>
+                  <option value='/v1.10/man/bundle-update.1.html'>
+                    v1.10
+                  </option>
+                  <option value='/v1.9/man/bundle-update.1.html'>
+                    v1.9
+                  </option>
+                  <option value='/v1.8/man/bundle-update.1.html'>
+                    v1.8
+                  </option>
+                  <option value='/v1.7/man/bundle-update.1.html'>
+                    v1.7
+                  </option>
+                  <option value='/v1.6/man/bundle-update.1.html'>
+                    v1.6
+                  </option>
+                  <option value='/v1.5/man/bundle-update.1.html'>
+                    v1.5
+                  </option>
+                  <option value='/v1.3/man/bundle-update.1.html'>
+                    v1.3
+                  </option>
+                  <option value='/v1.2/man/bundle-update.1.html'>
+                    v1.2
+                  </option>
+                  <option selected value='/v1.1/man/bundle-update.1.html'>
+                    v1.1
+                  </option>
+                  <option value='/v1.0/man/bundle-update.1.html'>
+                    v1.0
+                  </option>
+                  <option value='/v0.9/bundle_install.html'>
+                    v0.9
+                  </option>
+                </select>
+              </div>
+              <h4>Primary Commands</h4>
+              <ul>
+                <li class=''>
+                  <a href="/v1.1/man/bundle-install.1.html">bundle install</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class='active'>
+                  <a href="/v1.1/man/bundle-update.1.html">bundle update</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/man/bundle-package.1.html">bundle package</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/man/bundle-exec.1.html">bundle exec</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/man/bundle-config.1.html">bundle config</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+              </ul>
+              <h4>Utilities</h4>
+              <ul>
+                <li class=''>
+                  <a href="/v1.1/man/bundle.1.html">bundle</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_cache.html">bundle cache</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_check.html">bundle check</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_clean.html">bundle clean</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_console.html">bundle console</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_gem.html">bundle gem</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_init.html">bundle init</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_open.html">bundle open</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_outdated.html">bundle outdated</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_show.html">bundle show</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_version.html">bundle version</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/bundle_viz.html">bundle viz</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.1/man/gemfile.5.html">gemfile</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <script>
-        $('#menu-toggle').click(function(e) {
-            e.preventDefault();
-            $('#wrapper').toggleClass('toggled');
-        });
-        $('#version-select').change(function(e) {
+        $('.version-selects').change(function(e) {
           document.location.href = $(e.target).find(":selected").val();
         });
         $(document).ready(function() {
