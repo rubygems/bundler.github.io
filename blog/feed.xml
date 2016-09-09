@@ -5,16 +5,84 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-07-10T21:44:00+00:00</updated>
+  <updated>2016-09-08T23:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler 1.13: The one with steady improvements</title>
+    <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
+    <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
+    <published>2016-09-08T23:00:00+00:00</published>
+    <updated>2016-09-09T06:14:28+00:00</updated>
+    <author>
+      <name>André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;Bundler 1.13 is out! It’s been a steady stream of improvements over the last four months, and we’re shipping some new features, some improved features, and some experimental features. Now that we’ve shipped all of these changes, we’re starting to work at full speed on the upcoming 1.14 and 2.0 releases. While you wait, read on for the changes in 1.13 and then give it a try!&lt;/p&gt;
+
+&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
+
+&lt;h4 id="support-for-requiredrubyversion-with-declared-ruby"&gt;Support for &lt;code&gt;required_ruby_version&lt;/code&gt; (with declared &lt;code&gt;ruby&lt;/code&gt;)&lt;/h4&gt;
+
+&lt;p&gt;One very nice addition is that gems with a &lt;code&gt;required_ruby_version&lt;/code&gt; will now resolve correctly as long as your Gemfile contains a &lt;code&gt;ruby&lt;/code&gt; declaration. This change is the culmination of years worth of work, including the new compact index released in Bundler 1.12. In the future, we’re also going to support gems with required Ruby versions in Gemfiles that don’t declare a Ruby requirement. Because of existing features (like the Gemfile Ruby declaration), we’re having to do some mork work so that everything can coexist harmoniously. In the meantime, set a Ruby version and you’ll get the right gem versions to install on your Ruby.&lt;/p&gt;
+
+&lt;h4 id="the-brew-doctor-command"&gt;The &lt;code&gt;brew doctor&lt;/code&gt; command&lt;/h4&gt;
+
+&lt;p&gt;We’ve also added a &lt;code&gt;bundle doctor&lt;/code&gt; command, courtesy of [@mistydemeo]. Over time, the &lt;code&gt;doctor&lt;/code&gt; command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the &lt;code&gt;pg&lt;/code&gt; gem and then later run &lt;code&gt;brew upgrade postgres&lt;/code&gt;, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.&lt;/p&gt;
+
+&lt;h4 id="add-options---add-platform-and---remove-platform-to-the-lock-command"&gt;Add options &lt;code&gt;--add-platform&lt;/code&gt; and &lt;code&gt;--remove-platform&lt;/code&gt; to the &lt;code&gt;lock&lt;/code&gt; command&lt;/h4&gt;
+
+&lt;p&gt;In the past, the only way to resolve your Gemfile on a new platform (like &lt;code&gt;java&lt;/code&gt; or &lt;code&gt;mswin&lt;/code&gt;) was to run &lt;code&gt;bundle install&lt;/code&gt; on that platform. We’ve added explicit options to the &lt;code&gt;lock&lt;/code&gt; command to allow managing platforms. Platforms can be added using &lt;code&gt;bundle lock --add-platform NAME&lt;/code&gt;, and platforms can be removed using &lt;code&gt;bundle lock --remove-platform NAME&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This makes it possible to (for example) develop on Windows and deploy to a Unix server. However! (and this is a pretty big however), gems on different platforms can have completely different code. Run your test suite on whatever platform you will use in production—it’s the only way to be sure.&lt;/p&gt;
+
+&lt;h3 id="improved-features"&gt;Improved features&lt;/h3&gt;
+
+&lt;h4 id="auto-install-for-bundlerinline"&gt;Auto-install for &lt;code&gt;bundler/inline&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;When using &lt;code&gt;bundler/inline&lt;/code&gt;, gems are now automatically installed. This makes it ridiculously easy to create and distribute single-file scripts that depend on gems. Highly recommended.&lt;/p&gt;
+
+&lt;h4 id="dramatic-resolver-optimizations"&gt;Dramatic resolver optimizations&lt;/h4&gt;
+
+&lt;p&gt;The resolver has been fine-tuned. It allocates less objects, uses less memory, needs less GC time, and is all-around better. It is now able to find usable Gem versions noticably faster. In many cases, the improvement was about 4x. For one especially dramatic Gemfile, Bundler now runs 100x faster than it did before.&lt;/p&gt;
+
+&lt;h4 id="better-faster-exec"&gt;Better faster &lt;code&gt;exec&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;The new &lt;code&gt;exec&lt;/code&gt; command (added in v1.12) switched from always calling &lt;code&gt;exec&lt;/code&gt; to calling &lt;code&gt;load&lt;/code&gt; instead if possible. In version 1.13 we added a way to turn it off: &lt;code&gt;bundle config exec_disable_load true&lt;/code&gt;. We also dramatically improved it process, adding support for JRuby, and setting process titles the same way they used to be set.&lt;/p&gt;
+
+&lt;h4 id="improved-usage-of-the-compact-index"&gt;Improved usage of the compact index&lt;/h4&gt;
+
+&lt;p&gt;We launched &lt;a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/"&gt;the compact index&lt;/a&gt; in v1.12. In this version, we’ve sped things up by using persistent HTTP for more than one request, fixed printing dots to indicate progress, and added support for legacy gems with capitalized names and users without a home directory.&lt;/p&gt;
+
+&lt;h3 id="experimental-features"&gt;Experimental features&lt;/h3&gt;
+
+&lt;p&gt;This version also contains two experimental features, disabled by default: a plugin system, and version locking for Bundler itself.&lt;/p&gt;
+
+&lt;h4 id="experimental-plugin-system"&gt;Experimental plugin system&lt;/h4&gt;
+
+&lt;p&gt;For a long time now, we’ve supported “command” plugins the same way that &lt;code&gt;git&lt;/code&gt; does: if there is a command named &lt;code&gt;bundle-foo&lt;/code&gt;, then Bundler will run it when you execute &lt;code&gt;bundle foo&lt;/code&gt;. The experimental plugin system builds on top of that, providing a way to create new Bundler commands that hook into the Bundler CLI internals. The plugin system also supports “source” plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we’ve started adding new “lifecycle” hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.&lt;/p&gt;
+
+&lt;h4 id="experimental-bundler-version-locking"&gt;Experimental Bundler version locking&lt;/h4&gt;
+
+&lt;p&gt;Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that user Bundler 1.x to keep working. We’re also going to need a way for applications that user Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the &lt;code&gt;Gemfile.lock&lt;/code&gt;. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:&lt;/p&gt;
+
+&lt;p&gt;First, export the environment variable &lt;code&gt;BUNDLE_ENABLE_TRAMPOLINE&lt;/code&gt;. In the Bash shell, that means running &lt;code&gt;export BUNDLE_ENABLE_TRAMPOLINE=true&lt;/code&gt;. Then, run &lt;code&gt;bundle install&lt;/code&gt; and &lt;code&gt;bundle exec&lt;/code&gt; as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the &lt;code&gt;Gemfile.lock&lt;/code&gt;. To update the version of Bundler saved in the lockfile, run &lt;code&gt;bundle update --bundler&lt;/code&gt;. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.&lt;/p&gt;
+
+&lt;h4 id="feedback-for-experimental-features"&gt;Feedback for experimental features&lt;/h4&gt;
+
+&lt;p&gt;These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to &lt;a href="https://github.com/bundler/bundler/issues/new"&gt;hear your feedback&lt;/a&gt;. &amp;lt;3&lt;/p&gt;
+
+&lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>A New Bundler Website</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
+    <updated>2016-09-09T06:14:28+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -48,7 +116,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
+    <updated>2016-09-09T06:14:28+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -86,7 +154,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
+    <updated>2016-09-09T06:14:28+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -165,7 +233,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
+    <updated>2016-09-09T06:14:28+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -219,7 +287,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
+    <updated>2016-09-09T06:14:28+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -240,164 +308,6 @@ $ [sudo] gem install bundler
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;For all the details, don’t miss the Changelog!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler template moves bins to exe</title>
-    <link rel="alternate" href="http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html"/>
-    <id>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</id>
-    <published>2015-03-20T00:00:00+00:00</published>
-    <updated>2016-09-09T06:12:50+00:00</updated>
-    <author>
-      <name>Benjamin Fleischer</name>
-    </author>
-    <content type="html">&lt;p&gt;&lt;a href="https://github.com/bundler/bundler/blob/v1.8.0/lib/bundler/templates/newgem/newgem.gemspec.tt"&gt;Bundler 1.8&lt;/a&gt;
-&lt;a href="https://github.com/bundler/bundler/commit/ab3e21784c6c18702869c771fbe7ae23c82cc7c0"&gt;moves the executables directory in generated gemspecs from &lt;code&gt;bin/&lt;/code&gt; to &lt;code&gt;exe/&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre class="highlight diff"&gt;&lt;code&gt;&lt;span class="gd"&gt;-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-&lt;/span&gt;&lt;span class="gi"&gt;+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This means that the Bundler-generated gems can use and commit binstubs,
-such as &lt;code&gt;bin/rake&lt;/code&gt;, to the &lt;code&gt;bin/&lt;/code&gt; directory.  Only files in the &lt;code&gt;exe/&lt;/code&gt; directory
-will be built with the gem.  Prior to this change, we would need to either not
-commit binstubs or change the gemspec not to include all files in &lt;code&gt;bin&lt;/code&gt; as
-executables.&lt;/p&gt;
-
-&lt;p&gt;There’s nothing that needs to be done for existing gems.  To modify an existing gem
-to use this convention, we only need to move the executable(s), if any, into &lt;code&gt;exe/&lt;/code&gt;,
-and modify the gemspec &lt;code&gt;executables&lt;/code&gt; directory to &lt;code&gt;exe/&lt;/code&gt;, as above.&lt;/p&gt;
-
-&lt;p&gt;Using the &lt;code&gt;exe/&lt;/code&gt; directory for gem executables frees up &lt;code&gt;bin/&lt;/code&gt; to be used for
-&lt;code&gt;bundle binstubs rspec-core; bin/rspec&lt;/code&gt; and other libraries that have adopted this
-convention, such as Rails, which installs the scripts &lt;code&gt;bin/rails&lt;/code&gt;, &lt;code&gt;bin/rake&lt;/code&gt;, and
-&lt;code&gt;bin/setup&lt;/code&gt; with all generated apps.&lt;/p&gt;
-
-&lt;h3 id="background"&gt;Background&lt;/h3&gt;
-
-&lt;p&gt;This is a new convention.  The current practice of both specifying &lt;code&gt;bin/&lt;/code&gt; as the
-&lt;code&gt;executables&lt;/code&gt; directory and where we put binstubs and other development-only
-executables such as &lt;code&gt;bin/rails&lt;/code&gt; or &lt;code&gt;bin/setup&lt;/code&gt;, meant that Bundler-generated
-gems with executables were quite likely to have these development executables
-included in the built gem, and then installed along with the gem.&lt;/p&gt;
-
-&lt;p&gt;Rather than make the gemspec template more restrictive by only specifying one
-executable in &lt;code&gt;bin/&lt;/code&gt; as an &lt;code&gt;executable&lt;/code&gt;, the Bundler team has chosen to use a
-different directory, &lt;code&gt;exe/&lt;/code&gt;, as the &lt;code&gt;executables&lt;/code&gt; directory in the template.&lt;/p&gt;
-
-&lt;p&gt;This change is just part of the evolving conventions in gem development.  RSpec,
-for example, has had its executable &lt;a href="https://github.com/rspec/rspec-core/blob/b54e2a161b7de5e6cfdcfde9abce2ea3cec10b82/rspec-core.gemspec#L19"&gt;in &lt;code&gt;exe&lt;/code&gt; since 2011&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Here’s an example of the kind of buggy behavior you might see when binstubs are
-build with a gem as executables.&lt;/p&gt;
-
-&lt;h4 id="demo"&gt;Demo&lt;/h4&gt;
-
-&lt;pre class="highlight shell"&gt;&lt;code&gt;bundle gem new_gem
-git add .; git commit -am &lt;span class="s2"&gt;"Initial Commit"&lt;/span&gt;
-bundle binstub rake
-git add bin/rake; git commit -am &lt;span class="s2"&gt;"bundle binstub rake"&lt;/span&gt;
-bundle
-which rake &lt;span class="c"&gt;#=&amp;gt;  ~/.rvm/gems/ruby-2.1.5/bin/rake&lt;/span&gt;
-cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;span class="c1"&gt;# This file was generated by RubyGems.&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;span class="c1"&gt;# The application 'new_gem' is installed as part of a gem, and&lt;/span&gt;
-&lt;span class="c1"&gt;# this file is here to facilitate running it.&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-
-&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;'rubygems'&lt;/span&gt;
-
-&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;gt;= 0"&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;first&lt;/span&gt;
-  &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;first&lt;/span&gt;
-  &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;dup&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;force_encoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"BINARY"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;respond_to?&lt;/span&gt; &lt;span class="ss"&gt;:force_encoding&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/\A_(.*)_\z/&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Version&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;correct?&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vg"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
-    &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="vg"&gt;$1&lt;/span&gt;
-    &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;shift&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
-&lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The problem is found in the last two lines:&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
-&lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'new_gem'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The rake executable no longer uses the &lt;code&gt;rake&lt;/code&gt; gem. It now requires &lt;code&gt;rake&lt;/code&gt; from &lt;code&gt;new_gem&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now, when I run rake elsewhere, I get the warning:&lt;/p&gt;
-
-&lt;pre class="highlight shell"&gt;&lt;code&gt;Bundler is using a binstub that was created &lt;span class="k"&gt;for &lt;/span&gt;a different gem.
-This is deprecated, &lt;span class="k"&gt;in &lt;/span&gt;future versions you may need to &lt;span class="sb"&gt;`&lt;/span&gt;bundle binstub new_gem&lt;span class="sb"&gt;`&lt;/span&gt; to work around a system/bundle conflict.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This happened because of the line in the gemspec that installed all git-versioned files in &lt;code&gt;bin/&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^bin/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To fix our rake install:&lt;/p&gt;
-
-&lt;pre class="highlight shell"&gt;&lt;code&gt;gem pristine rake
-&lt;span class="c"&gt;# (In your gem folder, you may also want to run `bundle exec gem pristine rake`)&lt;/span&gt;
-cat &lt;span class="sb"&gt;`&lt;/span&gt;which rake&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;#!/usr/bin/env ruby_executable_hooks&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;span class="c1"&gt;# This file was generated by RubyGems.&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-&lt;span class="c1"&gt;# The application 'rake' is installed as part of a gem, and&lt;/span&gt;
-&lt;span class="c1"&gt;# this file is here to facilitate running it.&lt;/span&gt;
-&lt;span class="c1"&gt;#&lt;/span&gt;
-
-&lt;span class="nb"&gt;require&lt;/span&gt; &lt;span class="s1"&gt;'rubygems'&lt;/span&gt;
-
-&lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;gt;= 0"&lt;/span&gt;
-
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;first&lt;/span&gt;
-  &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;first&lt;/span&gt;
-  &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;dup&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;force_encoding&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"BINARY"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;respond_to?&lt;/span&gt; &lt;span class="ss"&gt;:force_encoding&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=~&lt;/span&gt; &lt;span class="sr"&gt;/\A_(.*)_\z/&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Version&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;correct?&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vg"&gt;$1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
-    &lt;span class="n"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="vg"&gt;$1&lt;/span&gt;
-    &lt;span class="no"&gt;ARGV&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;shift&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-
-&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;
-&lt;span class="nb"&gt;load&lt;/span&gt; &lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;bin_path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To fix our gemspec:&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;files&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;grep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sr"&gt;%r{^exe/}&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;File&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;basename&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or just delete the line altogether, since new_gem doesn’t have an executable.&lt;/p&gt;
-
-&lt;p&gt;If it did, we could continue to use &lt;code&gt;bin/&lt;/code&gt;, create the file as &lt;code&gt;bin/new_gem&lt;/code&gt; and
-specify it as the only executable.&lt;/p&gt;
-
-&lt;pre class="highlight ruby"&gt;&lt;code&gt;  &lt;span class="n"&gt;spec&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;executables&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"new_gem"&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or use the new &lt;code&gt;exe/&lt;/code&gt; convention, create a file such as &lt;code&gt;exe/new_gem&lt;/code&gt;, and not worry.&lt;/p&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;
 </content>
   </entry>
 </feed>
