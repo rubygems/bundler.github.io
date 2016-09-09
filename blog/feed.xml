@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -26,7 +26,7 @@
 
 &lt;p&gt;One very nice addition is that gems with a &lt;code&gt;required_ruby_version&lt;/code&gt; will now resolve correctly as long as your Gemfile contains a &lt;code&gt;ruby&lt;/code&gt; declaration. This change is the culmination of years worth of work, including the new compact index released in Bundler 1.12. In the future, we’re also going to support gems with required Ruby versions in Gemfiles that don’t declare a Ruby requirement. Because of existing features (like the Gemfile Ruby declaration), we’re having to do some mork work so that everything can coexist harmoniously. In the meantime, set a Ruby version and you’ll get the right gem versions to install on your Ruby.&lt;/p&gt;
 
-&lt;h4 id="the-brew-doctor-command"&gt;The &lt;code&gt;brew doctor&lt;/code&gt; command&lt;/h4&gt;
+&lt;h4 id="the-bundle-doctor-command"&gt;The &lt;code&gt;bundle doctor&lt;/code&gt; command&lt;/h4&gt;
 
 &lt;p&gt;We’ve also added a &lt;code&gt;bundle doctor&lt;/code&gt; command, courtesy of [@mistydemeo]. Over time, the &lt;code&gt;doctor&lt;/code&gt; command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the &lt;code&gt;pg&lt;/code&gt; gem and then later run &lt;code&gt;brew upgrade postgres&lt;/code&gt;, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.&lt;/p&gt;
 
@@ -64,7 +64,7 @@
 
 &lt;h4 id="experimental-bundler-version-locking"&gt;Experimental Bundler version locking&lt;/h4&gt;
 
-&lt;p&gt;Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that user Bundler 1.x to keep working. We’re also going to need a way for applications that user Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the &lt;code&gt;Gemfile.lock&lt;/code&gt;. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:&lt;/p&gt;
+&lt;p&gt;Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that use Bundler 1.x to keep working. We’re also going to need a way for applications that use Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the &lt;code&gt;Gemfile.lock&lt;/code&gt;. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:&lt;/p&gt;
 
 &lt;p&gt;First, export the environment variable &lt;code&gt;BUNDLE_ENABLE_TRAMPOLINE&lt;/code&gt;. In the Bash shell, that means running &lt;code&gt;export BUNDLE_ENABLE_TRAMPOLINE=true&lt;/code&gt;. Then, run &lt;code&gt;bundle install&lt;/code&gt; and &lt;code&gt;bundle exec&lt;/code&gt; as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the &lt;code&gt;Gemfile.lock&lt;/code&gt;. To update the version of Bundler saved in the lockfile, run &lt;code&gt;bundle update --bundler&lt;/code&gt;. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.&lt;/p&gt;
 
@@ -82,7 +82,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -116,7 +116,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -154,7 +154,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -233,7 +233,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -287,7 +287,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-09-09T06:14:28+00:00</updated>
+    <updated>2016-09-09T20:58:29+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
