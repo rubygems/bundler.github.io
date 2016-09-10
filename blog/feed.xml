@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -68,6 +68,10 @@
 
 &lt;p&gt;First, export the environment variable &lt;code&gt;BUNDLE_ENABLE_TRAMPOLINE&lt;/code&gt;. In the Bash shell, that means running &lt;code&gt;export BUNDLE_ENABLE_TRAMPOLINE=true&lt;/code&gt;. Then, run &lt;code&gt;bundle install&lt;/code&gt; and &lt;code&gt;bundle exec&lt;/code&gt; as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the &lt;code&gt;Gemfile.lock&lt;/code&gt;. To update the version of Bundler saved in the lockfile, run &lt;code&gt;bundle update --bundler&lt;/code&gt;. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.&lt;/p&gt;
 
+&lt;h4 id="experimental-conservative-updates"&gt;Experimental conservative updates&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;bundle update&lt;/code&gt; received some new options to support conservative updates: &lt;code&gt;--patch&lt;/code&gt; and &lt;code&gt;--minor&lt;/code&gt;. “Conservative” meaning it will sort all available versions to prefer the latest patch releases from the current version, then the latest minor releases and then the latest major releases. These aren’t documented or formally supported yet while we allow the community some opportunity to weigh in on how these options should work. &lt;a href="https://github.com/bundler/bundler-features/issues/122"&gt;Join the discussion and give us your 2 cents so we can lock this in for 1.14&lt;/a&gt;. There’s even some outstanding issues you can contribute to!&lt;/p&gt;
+
 &lt;h4 id="feedback-for-experimental-features"&gt;Feedback for experimental features&lt;/h4&gt;
 
 &lt;p&gt;These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to &lt;a href="https://github.com/bundler/bundler/issues/new"&gt;hear your feedback&lt;/a&gt;. &amp;lt;3&lt;/p&gt;
@@ -82,7 +86,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -116,7 +120,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -154,7 +158,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -233,7 +237,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -287,7 +291,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-09-09T20:58:29+00:00</updated>
+    <updated>2016-09-10T00:45:57+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>

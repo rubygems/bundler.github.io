@@ -122,6 +122,10 @@
                 
                 <p>First, export the environment variable <code>BUNDLE_ENABLE_TRAMPOLINE</code>. In the Bash shell, that means running <code>export BUNDLE_ENABLE_TRAMPOLINE=true</code>. Then, run <code>bundle install</code> and <code>bundle exec</code> as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the <code>Gemfile.lock</code>. To update the version of Bundler saved in the lockfile, run <code>bundle update --bundler</code>. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.</p>
                 
+                <h4 id="experimental-conservative-updates">Experimental conservative updates</h4>
+                
+                <p><code>bundle update</code> received some new options to support conservative updates: <code>--patch</code> and <code>--minor</code>. “Conservative” meaning it will sort all available versions to prefer the latest patch releases from the current version, then the latest minor releases and then the latest major releases. These aren’t documented or formally supported yet while we allow the community some opportunity to weigh in on how these options should work. <a href="https://github.com/bundler/bundler-features/issues/122">Join the discussion and give us your 2 cents so we can lock this in for 1.14</a>. There’s even some outstanding issues you can contribute to!</p>
+                
                 <h4 id="feedback-for-experimental-features">Feedback for experimental features</h4>
                 
                 <p>These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to <a href="https://github.com/bundler/bundler/issues/new">hear your feedback</a>. &lt;3</p>
