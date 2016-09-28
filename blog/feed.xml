@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -28,7 +28,7 @@
 
 &lt;h4 id="the-bundle-doctor-command"&gt;The &lt;code&gt;bundle doctor&lt;/code&gt; command&lt;/h4&gt;
 
-&lt;p&gt;We’ve also added a &lt;code&gt;bundle doctor&lt;/code&gt; command, courtesy of [@mistydemeo]. Over time, the &lt;code&gt;doctor&lt;/code&gt; command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the &lt;code&gt;pg&lt;/code&gt; gem and then later run &lt;code&gt;brew upgrade postgres&lt;/code&gt;, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.&lt;/p&gt;
+&lt;p&gt;We’ve also added a &lt;code&gt;bundle doctor&lt;/code&gt; command, courtesy of &lt;a href="https://github.com/mistydemeo"&gt;@mistydemeo&lt;/a&gt;. Over time, the &lt;code&gt;doctor&lt;/code&gt; command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the &lt;code&gt;pg&lt;/code&gt; gem and then later run &lt;code&gt;brew upgrade postgres&lt;/code&gt;, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.&lt;/p&gt;
 
 &lt;h4 id="add-options---add-platform-and---remove-platform-to-the-lock-command"&gt;Add options &lt;code&gt;--add-platform&lt;/code&gt; and &lt;code&gt;--remove-platform&lt;/code&gt; to the &lt;code&gt;lock&lt;/code&gt; command&lt;/h4&gt;
 
@@ -86,7 +86,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -120,7 +120,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -158,7 +158,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -237,7 +237,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -291,7 +291,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
     <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
     <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2016-09-27T23:58:16+00:00</updated>
+    <updated>2016-09-28T05:34:58+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
