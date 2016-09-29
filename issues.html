@@ -79,6 +79,22 @@
               
               <h2 id="troubleshooting">Troubleshooting</h2>
               
+              <h3 id="permission-denied-when-installing-bundler">Permission denied when installing bundler</h3>
+              
+              <p>Certain operating systems such as MacOS and Ubuntu have versions of Ruby that require evelated privileges to install gems.</p>
+              
+              <pre class="highlight plaintext"><code>ERROR:  While executing gem ... (Gem::FilePermissionError)&#x000A;  You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.&#x000A;</code></pre>
+              
+              <p>There are multiple ways to solve this issue. You can install bundler with elevated privilges using <code>sudo</code> or <code>su</code>.</p>
+              
+              <pre class="highlight plaintext"><code>sudo gem install bundler&#x000A;</code></pre>
+              
+              <p>If you cannot elevated your privileges or do not want to globally install Bundler, you can use the <code>--user-install</code> option.</p>
+              
+              <pre class="highlight plaintext"><code>gem install bundler --user-install&#x000A;</code></pre>
+              
+              <p>This will install Bundler into your home directory. Note that you will need to append <code>~/.gem/ruby/&lt;ruby version&gt;/bin</code> to your <code>$PATH</code> variable to use <code>bundle</code>.</p>
+              
               <h3 id="heroku-errors">Heroku errors</h3>
               
               <p>Please open a ticket with <a href="https://www.heroku.com">Heroku</a> if you’re having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, <a href="https://www.heroku.com/support">Heroku support</a> can get the exact details to us.</p>
