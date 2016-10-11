@@ -333,6 +333,15 @@
               </ul>
               
               
+              <h3 id="Loading">Loading</h3>
+              
+              <p>By default, when attempting to <code>bundle exec</code> to a file with a ruby shebang,
+              Bundler will <code>Kernel.load</code> that file instead of using <code>Kernel.exec</code>. For the
+              vast majority of cases, this is a performance improvement. In a rare few cases,
+              this could cause some subtle side-effects (such as dependence on the exact
+              contents of <code>$0</code> or <code>__FILE__</code>) and the optimization can be disabled by enabling
+              the <code>disable_exec_load</code> setting.</p>
+              
               <h3 id="Shelling-out">Shelling Out</h3>
               
               <p>Any Ruby code that opens a subshell (like <code>system</code>, backticks, or <code>%x{}</code>) will
