@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-10-11T15:33:55Z</lastmod>
+    <lastmod>2016-10-17T00:20:02Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -286,10 +286,7 @@
     <loc>http://bundler.io/pl/v1.13/guides/using_bundler_in_application.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/rails23.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/rails3.html</loc>
+    <loc>http://bundler.io/rails.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/rationale.html</loc>
@@ -1135,10 +1132,7 @@
     <loc>http://bundler.io/v1.13/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/rails23.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v1.13/rails3.html</loc>
+    <loc>http://bundler.io/v1.13/rails.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.13/rationale.html</loc>
