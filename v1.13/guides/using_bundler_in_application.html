@@ -119,11 +119,11 @@
               
               <p>Firstly, we need to install Bundler.</p>
               
-              <pre class="highlight plaintext"><code>gem install bundler&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;</code></pre>
               
               <p>This command will also update already installed bundler. You should get something similar as output:</p>
               
-              <pre class="highlight shell"><code><span class="o">[</span>kruczjak:~/git] % gem install bundler&#x000A;Successfully installed bundler-1.12.5&#x000A;1 gem installed&#x000A;</code></pre>
+              <pre class="highlight shell"><code><span class="gp">$ </span>gem install bundler&#x000A;Successfully installed bundler-1.12.5&#x000A;1 gem installed&#x000A;</code></pre>
               
               <p>To init Bundler manually, let’s do this (<code>bundler_example</code> will be folder with our app):</p>
               
@@ -204,7 +204,7 @@
               <p>For deployment you should use
               <a href="/man/bundle-install.1.html#DEPLOYMENT-MODE"><code>--deployment</code> option</a>:</p>
               
-              <pre class="highlight plaintext"><code>bundle install --deployment&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
               
               <p>This will install all dependencies to <code>./vendor/bundle</code>.</p>
               
@@ -253,7 +253,7 @@
               
               <p>Let’s see examples first:</p>
               
-              <pre class="highlight plaintext"><code>bundle exec rspec&#x000A;&#x000A;bundle exec rails s&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ bundle exec rspec&#x000A;&#x000A;$ bundle exec rails s&#x000A;</code></pre>
               
               <p>This will allow you to run command (<code>rspec</code> and <code>rails s</code> here) in current bundle context,
               making all gems in Gemfile available to <code>require</code> and use.</p>
@@ -266,7 +266,7 @@
               
               <p>Now let’s update some gems. With <code>bundle outdated</code> we can list installed gems with newer versions available:</p>
               
-              <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle outdated&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.......&#x000A;&#x000A;Outdated gems included in the bundle:&#x000A;  * nokogiri (newest 1.6.8, installed 1.6.7.2) in group "default"&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ bundle outdated&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.......&#x000A;&#x000A;Outdated gems included in the bundle:&#x000A;  * nokogiri (newest 1.6.8, installed 1.6.7.2) in group "default"&#x000A;</code></pre>
               
               <p>You can also specify gems (<code>bundle outdated *gems</code>).</p>
               
@@ -274,7 +274,7 @@
               <code>bundle install</code> won’t install newer version because it’s locked in <code>Gemfile.lock</code> file.
               We must use <code>bundle update</code>.</p>
               
-              <pre class="highlight plaintext"><code>[kruczjak:~/git] % bundle update&#x000A;Fetching git://github.com/middleman/middleman-syntax.git&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.....&#x000A;Installing nokogiri 1.6.8 (was 1.6.7.2) with native extensions&#x000A;Using i18n 0.7.0&#x000A;&#x000A;... (and more)&#x000A;&#x000A;Bundle updated!&#x000A;</code></pre>
+              <pre class="highlight plaintext"><code>$ bundle update&#x000A;Fetching git://github.com/middleman/middleman-syntax.git&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Fetching version metadata from https://rubygems.org/&#x000A;Fetching dependency metadata from https://rubygems.org/&#x000A;Resolving dependencies.....&#x000A;Installing nokogiri 1.6.8 (was 1.6.7.2) with native extensions&#x000A;Using i18n 0.7.0&#x000A;&#x000A;... (and more)&#x000A;&#x000A;Bundle updated!&#x000A;</code></pre>
               
               <p>Using <code>bundle update</code> without any argument will try to update every gem to newest available version
               (restrained by <code>Gemfile</code>).</p>
