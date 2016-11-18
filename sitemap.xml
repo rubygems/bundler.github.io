@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-11-18T03:22:58Z</lastmod>
+    <lastmod>2016-11-18T03:23:05Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -215,6 +215,9 @@
   </url>
   <url>
     <loc>http://bundler.io/git.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/git_bisect.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/groups.html</loc>
@@ -1088,6 +1091,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.13/git.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.13/git_bisect.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.13/groups.html</loc>
