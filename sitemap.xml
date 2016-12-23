@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2016-12-11T21:13:45Z</lastmod>
+    <lastmod>2016-12-23T21:59:41Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -155,6 +155,9 @@
   </url>
   <url>
     <loc>http://bundler.io/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/bundle_install.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_open.html</loc>
