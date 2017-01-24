@@ -64,19 +64,7 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
-                    <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                    <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -90,29 +78,23 @@
               <p>If you’re creating a gem from scratch, you can use bundler’s built in gem skeleton to create a base gem for you to edit.</p>
               
               <pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;</code></pre>
-              
               <p>This will create a new directory named <code>my_gem</code> with your new gem skeleton.</p>
               
               <p>If you already have a gem with a gemspec, you can generate a Gemfile for your gem.</p>
               
               <pre class="highlight plaintext"><code>$ bundle init&#x000A;</code></pre>
-              
               <p>Then, add the following to your new Gemfile</p>
               
               <pre class="highlight plaintext"><code>gemspec&#x000A;</code></pre>
-              
               <p>Runtime dependencies in your gemspec are treated like base dependencies, and development dependencies are added by default to the group, <code>:development</code>. You can change that group with the <code>:development_group</code> option</p>
               
               <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="ss">:dev</span>&#x000A;</code></pre>
-              
               <p>As well, you can point to a specific gemspec using <code>:path</code>. If your gemspec is in <code>/gemspec/path</code>, use</p>
               
               <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'/gemspec/path'</span>&#x000A;</code></pre>
-              
               <p>If you have multiple gemspecs in the same directory, specify which one you’d like to reference using <code>:name</code></p>
               
               <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'my_awesome_gem'</span>&#x000A;</code></pre>
-              
               <p>This will use <code>my_awesome_gem.gemspec</code></p>
               
               <p>That’s it! Use bundler when developing your gem, and otherwise, use gemspecs normally!</p>
@@ -128,19 +110,7 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
-                  <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                  <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                 </li>
                 <li class='separator'>
                   <hr>

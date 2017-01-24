@@ -64,19 +64,7 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
-                    <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                    <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -102,15 +90,12 @@
               <p>Certain operating systems such as MacOS and Ubuntu have versions of Ruby that require evelated privileges to install gems.</p>
               
               <pre class="highlight plaintext"><code>ERROR:  While executing gem ... (Gem::FilePermissionError)&#x000A;  You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.&#x000A;</code></pre>
-              
               <p>There are multiple ways to solve this issue. You can install bundler with elevated privilges using <code>sudo</code> or <code>su</code>.</p>
               
               <pre class="highlight plaintext"><code>sudo gem install bundler&#x000A;</code></pre>
-              
               <p>If you cannot elevated your privileges or do not want to globally install Bundler, you can use the <code>--user-install</code> option.</p>
               
               <pre class="highlight plaintext"><code>gem install bundler --user-install&#x000A;</code></pre>
-              
               <p>This will install Bundler into your home directory. Note that you will need to append <code>~/.gem/ruby/&lt;ruby version&gt;/bin</code> to your <code>$PATH</code> variable to use <code>bundle</code>.</p>
               
               <h3 id="heroku-errors">Heroku errors</h3>
@@ -126,11 +111,9 @@
               using works with the versions of Ruby and Rubygems that you are using. To see your versions:</p>
               
               <pre class="highlight plaintext"><code># Bundler version&#x000A;bundle -v&#x000A;&#x000A;# Ruby version&#x000A;ruby -v&#x000A;&#x000A;# Rubygems version&#x000A;gem -v&#x000A;</code></pre>
-              
               <p>If these instructions don’t work, or you can’t find any appropriate instructions, you can try these troubleshooting steps:</p>
               
               <pre class="highlight plaintext"><code># Remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# Remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# Remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# Remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# Remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# Uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# Try to install one more time&#x000A;bundle install&#x000A;</code></pre>
-              
               <h2 id="reporting-unresolved-problems">Reporting unresolved problems</h2>
               
               <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
@@ -192,19 +175,7 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
-                  <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                  <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                 </li>
                 <li class='separator'>
                   <hr>

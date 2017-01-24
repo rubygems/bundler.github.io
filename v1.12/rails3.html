@@ -64,19 +64,7 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
-                    <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                    <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -93,7 +81,6 @@
               if you would normally use sudo to install gems.</p>
               
               <pre class="highlight plaintext"><code>$ gem install rails&#x000A;</code></pre>
-              
               <p>We recommend using rvm for dependable Ruby
               installations, especially if you are switching
               between different versions of Ruby</p>
@@ -101,35 +88,29 @@
               <p>Generate a Rails app as usual</p>
               
               <pre class="highlight plaintext"><code>$ rails new myapp&#x000A;$ cd myapp&#x000A;</code></pre>
-              
               <p>Run the server. Bundler is transparently managing
               your dependencies!</p>
               
               <pre class="highlight plaintext"><code>$ rails server&#x000A;</code></pre>
-              
               <p>Add new dependencies to your Gemfile as you
               need them.</p>
               
               <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'geokit'</span>&#x000A;</code></pre>
-              
               <p>If you want a dependency to be loaded only in
               a certain Rails environment, place it in a group
               named after that Rails environment</p>
               
               <pre class="highlight ruby"><code><span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'faker'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
-              
               <p>You can place a dependency in multiple groups
               at once as well</p>
               
               <pre class="highlight ruby"><code><span class="n">group</span> <span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'wirble'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'ruby-debug'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
-              
               <p><a class="btn btn-primary" href="/groups.html">Learn More: Groups</a></p>
               
               <p>After adding a dependency, if it is not yet
               installed, install it</p>
               
               <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
-              
               <p>This will update all dependencies in your
               Gemfile to the latest versions that do not
               conflict with other dependencies</p>
@@ -143,19 +124,7 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
-                  <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                  <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                 </li>
                 <li class='separator'>
                   <hr>

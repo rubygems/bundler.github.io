@@ -64,19 +64,7 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
-                    <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                    <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -94,7 +82,6 @@
               <code>Gemfile</code>. It looks something like this:</p>
               
               <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.0.rc2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.6.1'</span>&#x000A;</code></pre>
-              
               <p>This <code>Gemfile</code> says a few things. First, it says that bundler should look for gems
               declared in the <code>Gemfile</code> at <code>https://rubygems.org</code> by default. If some
               of your gems need to be fetched from a private gem server, this default source can be overridden
@@ -111,7 +98,6 @@
               <p>After declaring your first set of dependencies, you tell bundler to go get them:</p>
               
               <pre class="highlight plaintext"><code>$ bundle install    # 'bundle' is a shortcut for 'bundle install'&#x000A;</code></pre>
-              
               <p>Bundler will connect to <code>rubygems.org</code> (and any other sources that you declared),
               and find a list of all of the required gems that meet the requirements you specified. Because
               all of the gems in your <code>Gemfile</code> have dependencies of their own (and some of
@@ -119,7 +105,6 @@
               <code>Gemfile</code> above will install quite a few gems.</p>
               
               <pre class="highlight plaintext"><code>$ bundle install&#x000A;Fetching gem metadata from https://rubygems.org/.........&#x000A;Fetching additional metadata from https://rubygems.org/..&#x000A;Resolving dependencies...&#x000A;Using rake 10.3.1&#x000A;Using json 1.8.1&#x000A;Installing minitest 5.3.3&#x000A;Installing i18n 0.6.9&#x000A;Installing thread_safe 0.3.3&#x000A;Installing builder 3.2.2&#x000A;Installing rack 1.5.2&#x000A;Installing erubis 2.7.0&#x000A;Installing mime-types 1.25.1&#x000A;Using bundler 1.6.2&#x000A;Installing polyglot 0.3.4&#x000A;Installing arel 5.0.1.20140414130214&#x000A;Installing hike 1.2.3&#x000A;Installing mini_portile 0.5.3&#x000A;Installing multi_json 1.9.3&#x000A;Installing thor 0.19.1&#x000A;Installing tilt 1.4.1&#x000A;Installing tzinfo 1.1.0&#x000A;Installing rack-test 0.6.2&#x000A;Installing rack-cache 1.2&#x000A;Installing treetop 1.4.15&#x000A;Installing sprockets 2.12.1&#x000A;Installing activesupport 4.1.0.rc2&#x000A;Installing mail 2.5.4&#x000A;Installing actionview 4.1.0.rc2&#x000A;Installing activemodel 4.1.0.rc2&#x000A;Installing actionpack 4.1.0.rc2&#x000A;Installing activerecord 4.1.0.rc2&#x000A;Installing actionmailer 4.1.0.rc2&#x000A;Installing sprockets-rails 2.0.1&#x000A;Installing railties 4.1.0.rc2&#x000A;Installing rails 4.1.0.rc2&#x000A;Installing nokogiri 1.6.1&#x000A;Your bundle is complete!&#x000A;Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
-              
               <p>If any of the needed gems are already installed, Bundler will use them. After installing
               any needed gems to your system, bundler writes a snapshot of all of the gems and
               versions that it installed to <code>Gemfile.lock</code>.</p>
@@ -137,7 +122,6 @@
               the following code:</p>
               
               <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;</code></pre>
-              
               <p>This will automatically discover your <code>Gemfile</code>, and make all of the gems in
               your <code>Gemfile</code> available to Ruby (in technical terms, it puts the gems “on the
               load path”). You can think of it as an adding some extra powers to <code>require&#x000A;'rubygems'</code>.</p>
@@ -148,17 +132,14 @@
               the following code immediately following <code>require 'bundler/setup'</code>:</p>
               
               <pre class="highlight ruby"><code><span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:default</span><span class="p">)</span>&#x000A;</code></pre>
-              
               <p>For our example Gemfile, this line is exactly equivalent to:</p>
               
               <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rails'</span>&#x000A;<span class="nb">require</span> <span class="s1">'rack-cache'</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
-              
               <p>Astute readers will notice that the correct way to require the <code>rack-cache</code>
               gem is <code>require 'rack/cache'</code>, not <code>require 'rack-cache'</code>. To tell
               bundler to use <code>require 'rack/cache'</code>, update your Gemfile:</p>
               
               <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="s1">'4.1.0.rc2'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack-cache'</span><span class="p">,</span> <span class="ss">require: </span><span class="s1">'rack/cache'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'~&gt; 1.6.1'</span>&#x000A;</code></pre>
-              
               <p>For such a small <code>Gemfile</code>, we’d advise you to skip
               <code>Bundler.require</code> and just require the gems by hand (especially given the
               need to put in a <code>:require</code> directive in the <code>Gemfile</code>). For much
@@ -243,7 +224,6 @@
               <code>gem 'rails', '4.1.0'</code> and run:</p>
               
               <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
-              
               <p>As described above, the <code>bundle install</code> command always does a conservative
               update, refusing to update gems (or their dependencies) that you have not explicitly
               changed in the <code>Gemfile</code>. This means that if you do not modify
@@ -275,7 +255,6 @@
               command:</p>
               
               <pre class="highlight plaintext"><code>$ bundle update rack-cache&#x000A;</code></pre>
-              
               <p>This command will update <code>rack-cache</code> and its dependencies to the latest
               version allowed by the <code>Gemfile</code> (in this case, the latest version
               available). It will not modify any other dependencies.</p>
@@ -288,7 +267,6 @@
               <p>If you want to update every gem in the Gemfile to the latest possible versions, run:</p>
               
               <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
-              
               <p>This will resolve dependencies from scratch, ignoring the <code>Gemfile.lock</code>. If
               you do this, keep <code>git reset --hard</code> and your test suite in your back pocket.
               Resolving all dependencies from scratch can have surprising results, especially if a
@@ -305,7 +283,6 @@
               <code>Gemfile</code>.  For another kind of application (such as Sinatra), run:</p>
               
               <pre class="highlight plaintext"><code>  $ bundle init&#x000A;</code></pre>
-              
                   <p>The <code>bundle init</code> command creates a simple <code>Gemfile</code> which you
               can edit.</p>
                 </li>
@@ -313,28 +290,23 @@
                   <p>Next, add any gems that your application depends on. If you care which version of a
               particular gem that you need, be sure to include an appropriate version restriction:</p>
               
-              <pre class="highlight plaintext"><code>  source 'https://rubygems.org'&#x000A;    &#x000A;  gem 'sinatra', '~&gt; 1.3.6'&#x000A;  gem 'rack-cache'&#x000A;  gem 'rack-bug'&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  source 'https://rubygems.org'&#x000A;    &#x000A;  gem 'sinatra', '~&gt; 1.3.6'&#x000A;  gem 'rack-cache'&#x000A;  gem 'rack-bug'&#x000A;</code></pre>  </li>
                 <li>
                   <p>If you don’t have the gems installed in your system yet, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle install&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  $ bundle install&#x000A;</code></pre>  </li>
                 <li>
                   <p>To update a gem’s version requirements, first modify the Gemfile:</p>
               
               <pre class="highlight plaintext"><code>  source 'https://rubygems.org'&#x000A;    &#x000A;  gem 'sinatra', '~&gt; 1.4.5'&#x000A;  gem 'rack-cache'&#x000A;  gem 'rack-bug'&#x000A;</code></pre>
-              
                   <p>and then run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle install&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  $ bundle install&#x000A;</code></pre>  </li>
                 <li>
                   <p>If <code>bundle install</code> reports a conflict between your <code>Gemfile</code>
               and <code>Gemfile.lock</code>, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle update sinatra&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  $ bundle update sinatra&#x000A;</code></pre>  </li>
               </ul>
               
               <p>This will update just the Sinatra gem, as well as any of its dependencies.</p>
@@ -344,8 +316,7 @@
                   <p>To update all of the gems in your <code>Gemfile</code> to the latest possible
               versions, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle update&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  $ bundle update&#x000A;</code></pre>  </li>
                 <li>
                   <p>Whenever your <code>Gemfile.lock</code> changes, always check it in to version
               control. It keeps a history of the exact versions of all third-party code that you
@@ -356,8 +327,7 @@
               boot your local development server), make sure you have checked in your
               <code>Gemfile.lock</code> to version control. On the remote server, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle install --deployment&#x000A;</code></pre>
-                </li>
+              <pre class="highlight plaintext"><code>  $ bundle install --deployment&#x000A;</code></pre>  </li>
               </ul>
               
               <h2 id="notes">Notes</h2>
@@ -384,19 +354,7 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
-                  <a href="/v1.13/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
+                  <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
                 </li>
                 <li class='separator'>
                   <hr>
