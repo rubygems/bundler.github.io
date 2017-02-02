@@ -64,7 +64,19 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
+                    <a href="/v1.14/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
                     <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.14/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -73,9 +85,11 @@
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
-              <h1 id="bundler-issues">Bundler Issues</h1>
+              <h1 id="filing-issues-a-guide">Filing Issues: a guide</h1>
               
               <p>So! You’re having problems with Bundler. This file is here to help. If you’re running into an error, try reading the rest of this file for help. If you can’t figure out how to solve your problem, there are also instructions on how to report a bug.</p>
+              
+              <p>Before filing an issue, check our <a href="../TROUBLESHOOTING.md">troubleshooting guide</a> for quick fixes to common issues.</p>
               
               <h2 id="documentation">Documentation</h2>
               
@@ -83,40 +97,11 @@
               
               <p>Detailed information about each Bundler command, including help with common problems, can be found in the <a href="http://bundler.io/man/bundle.1.html">Bundler man pages</a> or <a href="http://bundler.io/v1.11/commands.html">Bundler Command Line Reference</a>.</p>
               
-              <h2 id="troubleshooting">Troubleshooting</h2>
-              
-              <h3 id="permission-denied-when-installing-bundler">Permission denied when installing bundler</h3>
-              
-              <p>Certain operating systems such as MacOS and Ubuntu have versions of Ruby that require evelated privileges to install gems.</p>
-              
-              <pre class="highlight plaintext"><code>ERROR:  While executing gem ... (Gem::FilePermissionError)&#x000A;  You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.&#x000A;</code></pre>
-              <p>There are multiple ways to solve this issue. You can install bundler with elevated privilges using <code>sudo</code> or <code>su</code>.</p>
-              
-              <pre class="highlight plaintext"><code>sudo gem install bundler&#x000A;</code></pre>
-              <p>If you cannot elevated your privileges or do not want to globally install Bundler, you can use the <code>--user-install</code> option.</p>
-              
-              <pre class="highlight plaintext"><code>gem install bundler --user-install&#x000A;</code></pre>
-              <p>This will install Bundler into your home directory. Note that you will need to append <code>~/.gem/ruby/&lt;ruby version&gt;/bin</code> to your <code>$PATH</code> variable to use <code>bundle</code>.</p>
-              
-              <h3 id="heroku-errors">Heroku errors</h3>
-              
-              <p>Please open a ticket with <a href="https://www.heroku.com">Heroku</a> if you’re having trouble deploying. They have a professional support team who can help you resolve Heroku issues far better than the Bundler team can. If the problem that you are having turns out to be a bug in Bundler itself, <a href="https://www.heroku.com/support">Heroku support</a> can get the exact details to us.</p>
-              
-              <h3 id="other-problems">Other problems</h3>
-              
-              <p>First, figure out exactly what it is that you’re trying to do (see <a href="http://xyproblem.info/">XY Problem</a>). Then, go to the <a href="http://bundler.io">Bundler documentation website</a> and see if we have instructions on how to do that.</p>
-              
-              <p>Second, check <a href="http://bundler.io/compatibility.html">the compatibility
-              list</a>, and make sure that the version of Bundler that you are
-              using works with the versions of Ruby and Rubygems that you are using. To see your versions:</p>
-              
-              <pre class="highlight plaintext"><code># Bundler version&#x000A;bundle -v&#x000A;&#x000A;# Ruby version&#x000A;ruby -v&#x000A;&#x000A;# Rubygems version&#x000A;gem -v&#x000A;</code></pre>
-              <p>If these instructions don’t work, or you can’t find any appropriate instructions, you can try these troubleshooting steps:</p>
-              
-              <pre class="highlight plaintext"><code># Remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# Remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# Remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# Remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# Remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# Uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# Try to install one more time&#x000A;bundle install&#x000A;</code></pre>
               <h2 id="reporting-unresolved-problems">Reporting unresolved problems</h2>
               
-              <p>Hopefully the troubleshooting steps above resolved your problem. If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
+              <p>Check our <a href="../TROUBLESHOOTING.md">troubleshooting common issues guide</a> and see if your issues is resolved using the steps provided.</p>
+              
+              <p>Hopefully the troubleshooting steps above resolved your problem! If things still aren’t working the way you expect them to, please let us know so that we can diagnose and hopefully fix the problem you’re having.</p>
               
               <p><strong>The best way to report a bug is by providing a reproduction script.</strong> See these examples:</p>
               
@@ -175,7 +160,19 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
+                  <a href="/v1.14/guides/creating_gem.html" class="truncate-text">Developing a RubyGem using Bundler</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
                   <a href="/v1.14/git_bisect.html" class="truncate-text">How to git bisect in projects using Bundler</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.14/guides/using_bundler_in_application.html" class="truncate-text">Using Bundler In Application</a>
                 </li>
                 <li class='separator'>
                   <hr>
