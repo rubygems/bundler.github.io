@@ -5,16 +5,66 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2016-09-08T23:00:00+00:00</updated>
+  <updated>2017-03-28T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title/>
+    <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
+    <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
+    <published>2017-03-28T00:00:00+00:00</published>
+    <updated>2017-03-28T17:04:38+00:00</updated>
+    <author>
+      <name/>
+    </author>
+    <content type="html">&lt;h1 id="whats-new-in-bundler-114"&gt;What’s new in Bundler 1.14?&lt;/h1&gt;
+
+&lt;p&gt;We somehow missed writing up an announcement when Bundler 1.14 was initially released, but several people kindly pointed out the problem. Just 48 days late, here’s what’s new in Bundler 1.14! In this feature release, we added several small features, and fixed a giant pile of bugs.&lt;/p&gt;
+
+&lt;h3 id="conservative-updates"&gt;Conservative updates&lt;/h3&gt;
+
+&lt;p&gt;Building on the previous &lt;a href="http://bundler.io/v1.13/whats_new.html#fine-controls-for-the-update-command"&gt;fine controls for the update command&lt;/a&gt;, the illustrious &lt;a href="https://github.com/chrismo"&gt;@chrismo&lt;/a&gt; worked his way through many gnarly possible usage combinations to implement the &lt;code&gt;update --conservative&lt;/code&gt; flag. Using the conservative flag allows &lt;code&gt;bundle update GEM&lt;/code&gt; to update the version of GEM, but prevents Bundler from updating the versions of any of the gems that GEM depends on. For a more in-depth discussion of why this is useful, check out the  &lt;a href="http://bundler.io/v1.14/man/bundle-update.1.html#OVERLAPPING-DEPENDENCIES"&gt;discussion of overlapping dependencies&lt;/a&gt; in the &lt;a href="http://bundler.io/v1.14/man/bundle-update.1.html"&gt;&lt;code&gt;update&lt;/code&gt; command man page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="checksum-validation"&gt;Checksum validation&lt;/h3&gt;
+
+&lt;p&gt;As part of the &lt;a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/"&gt;compact index format&lt;/a&gt; provided by RubyGems.org, Bundler now has access to checksums for every .gem file. Starting with version 1.14, Bundler actively validates those checksums against downloaded .gem files before installing them. Hooray! 🎉&lt;/p&gt;
+
+&lt;h3 id="improved-platform-support"&gt;Improved platform support&lt;/h3&gt;
+
+&lt;p&gt;Courtesy of some intensive work by @segiddins, Bundler is getting better at handling applications that will be run on more than one platform, like both Unix and Windows. To start with, Bundler will now print a warning if your Gemfile includes any gems that will never be installed due to a &lt;code&gt;platform&lt;/code&gt; block. For gems that need to be compiled even though the author has uploaded a binary gem, the &lt;code&gt;force_ruby_platform&lt;/code&gt; config setting has you covered. Lastly, the new config setting &lt;code&gt;specific_platform&lt;/code&gt; tells Bundler to consider platforms during dependency resolution. This setting should significantly improve things for users installing a single bundle on more than one platform. We expect the &lt;code&gt;specific_platform&lt;/code&gt; setting to become the default behavior in Bundler 2.0.&lt;/p&gt;
+
+&lt;h3 id="improved-required-ruby-versions"&gt;Improved required Ruby versions&lt;/h3&gt;
+
+&lt;p&gt;Building on the support for Ruby and RubyGems version that was added in 1.13, Bundler 1.14 improves resolver error messages. If any gem conflicts with your Ruby or RubyGems version, the error message will now show both the conflicting dependencies and the chain of parent dependencies that led to the conflict.&lt;/p&gt;
+
+&lt;h3 id="various-improvements"&gt;Various improvements&lt;/h3&gt;
+
+&lt;p&gt;In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Installing gems using &lt;code&gt;sudo&lt;/code&gt; will now always prompt for a password, even if the sudo password is cached from an earlier command&lt;/li&gt;
+  &lt;li&gt;The Gemfile method &lt;code&gt;platform&lt;/code&gt; now supports Ruby 2.5, allowing arguments like &lt;code&gt;:ruby_25&lt;/code&gt; or &lt;code&gt;:mri_25&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The “lockfile is missing dependencies” error (triggered by certain old lock files that were missing information) is no longer fatal. We now print instructions on how to repair the Gemfile, and install using one thread.&lt;/li&gt;
+  &lt;li&gt;Running &lt;code&gt;require "bundler"&lt;/code&gt; is now about five times faster than it used to be.&lt;/li&gt;
+  &lt;li&gt;Bundler now works when run by users without a home directory.&lt;/li&gt;
+  &lt;li&gt;The output from &lt;code&gt;bundle env&lt;/code&gt; is now preformatted as Markdown for pasting into a GitHub issue.&lt;/li&gt;
+  &lt;li&gt;After Bundler 2.0 is (eventually) released, Bundler 1.14 and greater will be able to automatically switch to Bundler 2.0+ for apps that need it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also fixed over 60 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-14-stable/CHANGELOG.md"&gt;in the Bundler 1.14 changelog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler 1.13: The one with steady improvements</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
+    <updated>2017-03-28T17:04:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -86,7 +136,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
+    <updated>2017-03-28T17:04:38+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -120,7 +170,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
+    <updated>2017-03-28T17:04:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -158,7 +208,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
+    <updated>2017-03-28T17:04:38+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -237,7 +287,7 @@ $ [sudo] gem install bundler
     <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
     <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
     <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
+    <updated>2017-03-28T17:04:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -284,34 +334,6 @@ $ [sudo] gem install bundler
 &lt;p&gt;So, in conclusion, the change was never intended to be this disruptive, we’re doing what we can to reduce the impact, and the problem should be completely resolved by updating Bundler to 1.10 (or even the latest 1.9 release, if some of your team want to stay on 1.9).&lt;/p&gt;
 
 &lt;p&gt;Thanks for the feedback, everyone!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Hello, Bundler 1.9!</title>
-    <link rel="alternate" href="http://bundler.io/blog/2015/03/21/hello-bundler-19.html"/>
-    <id>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</id>
-    <published>2015-03-21T00:00:00+00:00</published>
-    <updated>2017-03-20T03:28:03+00:00</updated>
-    <author>
-      <name>Samuel Giddins</name>
-    </author>
-    <content type="html">&lt;p&gt;A mere month and a half after the release of Bundler 1.8, we’re happy to announce our next act: Bundler 1.9.&lt;/p&gt;
-
-&lt;p&gt;While the &lt;a href="https://github.com/bundler/bundler/blob/v1.9.0/CHANGELOG.md#190-2015-03-20"&gt;CHANGELOG&lt;/a&gt; for this version might seem rather short (and light on big new features), there is one cool thing to talk about: &lt;a href="https://github.com/CocoaPods/Molinillo"&gt;Molinillo&lt;/a&gt;. Molinillo is a new dependency resolution algorithm developed for &lt;a href="http://cocoapods.org"&gt;CocoaPods&lt;/a&gt; – the Cocoa dependency manager. Now, Bundler shares its dependency resolver – one of the most integral parts of a dependency manager – with CocoaPods, with the core logic being independently documented and tested. Molinillo was developed thanks to a &lt;a href="https://stripe.com/blog/stripe-open-source-retreat"&gt;generous grant from Stripe&lt;/a&gt; for the express purpose of being a generic dependency resolution algorithm that was sharable across different code bases – specifically CocoaPods and Bundler (and possibly even &lt;a href="https://github.com/rubygems/rubygems/pull/1189"&gt;RubyGems&lt;/a&gt;)!&lt;/p&gt;
-
-&lt;h4 id="dependencies-in-bundler"&gt;Dependencies in Bundler?&lt;/h4&gt;
-
-&lt;p&gt;Having dependencies inside Bundler itself is a bit crazy: Bundler is a dependency manager &lt;em&gt;for&lt;/em&gt; gems, written in Ruby. How could it use gems itself? Well, it can’t &lt;em&gt;really&lt;/em&gt;. But we can cheat a bit by shipping Molinillo’s source files inside the &lt;code&gt;bundler&lt;/code&gt; gem. This has its own challenge – what if a gem (such as CocoaPods), requires a different version of &lt;code&gt;molinillo&lt;/code&gt; (or &lt;code&gt;thor&lt;/code&gt;, which is likewise vendored in Bundler)? The solution is to prefix the top-level namespace constant in the vendored gem with Bundler’s own namespace. The upshot of this song-and-dance is that Bundler can share open source libraries just like every other gem!&lt;/p&gt;
-
-&lt;h4 id="updating"&gt;Updating&lt;/h4&gt;
-
-&lt;p&gt;To install the last release of Bundler you can run:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ [sudo] gem install bundler
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;For all the details, don’t miss the Changelog!&lt;/p&gt;
 </content>
   </entry>
 </feed>
