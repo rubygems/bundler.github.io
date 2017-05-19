@@ -5,16 +5,84 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2017-03-28T07:15:00+00:00</updated>
+  <updated>2017-05-19T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title/>
+    <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
+    <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
+    <published>2017-05-19T00:00:00+00:00</published>
+    <updated>2017-05-19T23:37:46+00:00</updated>
+    <author>
+      <name/>
+    </author>
+    <content type="html">&lt;h1 id="whats-new-in-bundler-115"&gt;What’s new in Bundler 1.15?&lt;/h1&gt;
+
+&lt;p&gt;Hot on the heels of the many small fixes in Bundler 1.14, we’re pushing out 1.15. The list of changes is much shorter, but we think you’re going to love it all the same, since this time around we’ve focused on making Bundler a whole heck of a lot faster.&lt;/p&gt;
+
+&lt;h3 id="speed"&gt;Speed&lt;/h3&gt;
+
+&lt;p&gt;Due to &lt;a href="https://github.com/jules2689"&gt;Julian Nadeau&lt;/a&gt;’s prompting, we’ve made loading up Bundler fast. Up to a half a second faster than before, on every &lt;code&gt;bundle exec&lt;/code&gt;, &lt;code&gt;require "bundler/setup"&lt;/code&gt;, &lt;code&gt;Bundler.setup&lt;/code&gt;, and &lt;code&gt;Bundler.require&lt;/code&gt;. This is going to save developers a lot of time, given how often we tend to run things!&lt;/p&gt;
+
+&lt;p&gt;The mere act of initializing a Gemfile has been sped up by turning array lookups into hash table accesses, making expensive comparisons lazy, and generally avoiding object allocation.&lt;/p&gt;
+
+&lt;p&gt;We also now only validate git gems when they are first downloaded &amp;amp; installed, meaning projects with many git gems won’t be validating each and every one of them over and over again.&lt;/p&gt;
+
+&lt;p&gt;Finally, we’ve managed to avoid evaluating the full &lt;code&gt;.gemspec&lt;/code&gt; of all the gems that are being loaded when running on RubyGems 2.5 and above. Taking advantage of a feature called stub specifications, Bundler is able to grab all of the information it needs from the first two lines of a serialized gemspec file, without evaluating the rest. This represents a massive time savings for very large Gemfiles.&lt;/p&gt;
+
+&lt;h3 id="new-commands"&gt;New Commands&lt;/h3&gt;
+
+&lt;p&gt;We’ve added 3 new commands that have been on our wish list for a long time.&lt;/p&gt;
+
+&lt;h4 id="bundle-info"&gt;&lt;code&gt;bundle info&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;This command prints out basic information about the given gem, and is intended to replace &lt;code&gt;bundle show&lt;/code&gt; once Bundler 2 rolls around.&lt;/p&gt;
+
+&lt;h4 id="bundle-issue"&gt;&lt;code&gt;bundle issue&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Have you ever been frustrated by a Bundler issue that wasn’t a crash? Have you found it difficult to figure out what information to put in a new GitHub issue? Well, no more! &lt;code&gt;bundle issue&lt;/code&gt; will gather all of the information present in the error template, on demand.&lt;/p&gt;
+
+&lt;h4 id="bundle-add"&gt;&lt;code&gt;bundle add&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Bundler has long included the &lt;code&gt;bundle inject&lt;/code&gt; command, which has been a source of some confusion. &lt;code&gt;inject&lt;/code&gt; has always been intended to serve as plumbing for other tooling, doing a whole bunch of verification along with adding a new &lt;code&gt;gem&lt;/code&gt; line to the Gemfile. Due to popular demand, we’ve extracted that latter part out into the &lt;code&gt;bundle add&lt;/code&gt; command, making it easier than ever to automate adding dependencies to your Gemfile.&lt;/p&gt;
+
+&lt;h4 id="bundle-pristine"&gt;&lt;code&gt;bundle pristine&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Have you ever accidentally edited an installed gem’s files and wished you had a way to undo that? Mirroring the &lt;code&gt;gem pristine&lt;/code&gt; command, Bundler now supports &lt;code&gt;bundle pristine&lt;/code&gt;, restoring all of the gems in your Gemfile to pristine condition.&lt;/p&gt;
+
+&lt;h3 id="more-man-pages"&gt;More Man Pages&lt;/h3&gt;
+
+&lt;p&gt;Documentation improvements are amongst my favorite contributions, and &lt;a href="https://github.com/feministy"&gt;Liz Abinate&lt;/a&gt; came through big for us this release. We now have man pages for every single Bundler command. This means that bundler.io will &lt;em&gt;also&lt;/em&gt; have documentation for all of the Bundler commands. We hope to do a better job of keeping our documentation up-to-date in the future, and this release is a great starting point for that effort.&lt;/p&gt;
+
+&lt;h3 id="various-improvements"&gt;Various improvements&lt;/h3&gt;
+
+&lt;p&gt;In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;bundle update&lt;/code&gt; will now print gems whose versions are regressing in yellow.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bundle inject&lt;/code&gt; has gained &lt;code&gt;--source&lt;/code&gt; and &lt;code&gt;--group&lt;/code&gt; options.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bundle config&lt;/code&gt; has a &lt;code&gt;--parseable&lt;/code&gt; option, suitable for use in scripts.&lt;/li&gt;
+  &lt;li&gt;Resolver version conflicts will only list relevant dependencies.&lt;/li&gt;
+  &lt;li&gt;When installing a gem fails, Bundler will print out the reason why that gem was being installed in the first place.&lt;/li&gt;
+  &lt;li&gt;Bundler will let you know when a new version of itself is available. How meta.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;bundle update&lt;/code&gt; works a lot better now when only unlocking a single gem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also fixed over 20 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-15-stable/CHANGELOG.md"&gt;in the Bundler 1.15 changelog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler 1.14: So many fixes</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
     <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
+    <updated>2017-05-19T23:37:46+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -64,7 +132,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
+    <updated>2017-05-19T23:37:46+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -136,7 +204,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
+    <updated>2017-05-19T23:37:46+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -170,7 +238,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
+    <updated>2017-05-19T23:37:46+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -208,7 +276,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
     <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
     <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
+    <updated>2017-05-19T23:37:46+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -280,60 +348,6 @@ $ [sudo] gem install bundler
 
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href="https://github.com/bundler/bundler/blob/v1.11.0/CHANGELOG.md#1110-2015-12-12"&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Version 1.10 released</title>
-    <link rel="alternate" href="http://bundler.io/blog/2015/06/24/version-1-10-released.html"/>
-    <id>http://bundler.io/blog/2015/06/24/version-1-10-released.html</id>
-    <published>2015-06-24T05:36:00+00:00</published>
-    <updated>2017-05-19T18:57:50+00:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;Bundler 1.10 is out! In fact, Bundler 1.10.5 is out today, so we thought it was high time to let everyone know about it.&lt;/p&gt;
-
-&lt;p&gt;This release comes with a bunch of new features: the &lt;code&gt;lock&lt;/code&gt; command, support for inline gemfiles in scripts, the ability to disable post-install messages, optional groups, conditional gem installation, dramatically improved &lt;code&gt;outdated&lt;/code&gt; output, and the option to force installed gems to be downloaded and installed again.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://qiita.com/jnchito/items/a9907114bc56af67d0b0"&gt;日本語訳 / Japanese translation&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
-
-&lt;p&gt;First up, the new &lt;code&gt;lock&lt;/code&gt; command. Running &lt;code&gt;bundle lock&lt;/code&gt; will resolve the Gemfile and write a Gemfile.lock, but will not download or install any gems.&lt;/p&gt;
-
-&lt;p&gt;Next, for single-file scripts that still depend on gems, a &lt;code&gt;gemfile&lt;/code&gt; method is provided by &lt;code&gt;require "bundler/inline"&lt;/code&gt;. This method will not generate a lock, so be careful what gem versions you allow! Check out the &lt;a href="https://github.com/bundler/bundler/blob/master/lib/bundler/inline.rb"&gt;inline docs&lt;/a&gt; for details and examples.&lt;/p&gt;
-
-&lt;p&gt;Are you tired of being told to HTTParty hard? This option’s for you. Run &lt;code&gt;bundle config ignore_messages.httparty true&lt;/code&gt; to silence HTTParty for good, or run &lt;code&gt;bundle config ignore_messages true&lt;/code&gt; to turn off all messages forever.&lt;/p&gt;
-
-&lt;p&gt;Who needs a jetpack future when you can have optional groups? The long-requested ability to create groups of gems that are not installed by default is finally here. Mark a group as optional using &lt;code&gt;group :name, optional: true do&lt;/code&gt;, and then opt in to installing an optional group with &lt;code&gt;bundle install --with name&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;At the same time as adding the long-awaited optional groups, we added groups that can be installed (or not) completely automatically! Provide a lambda or proc to determine if gems in the &lt;code&gt;install_if&lt;/code&gt; group should be installed, and they will be. Or not. For an example, check out the &lt;a href="/v1.10/man/gemfile.5.html#INSTALL_IF-install_if-"&gt;Gemfile&lt;/a&gt; documentation. The idea for this feature came entirely from discussions with &lt;a href="https://rubytogether.org/members"&gt;Ruby Together members&lt;/a&gt;. If you’d like to see more features like this one, or even suggest some of your own, &lt;a href="https://rubytogether.org/join"&gt;join Ruby Together today&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;That’s not all! There are several more smaller changes, including better support for gems with native extensions on RubyGems 2.2. Check out the full &lt;a href="https://github.com/bundler/bundler/blob/1-10-stable/CHANGELOG.md"&gt;1.10 changelog&lt;/a&gt; for the entire list.&lt;/p&gt;
-
-&lt;h3 id="bundled-with"&gt;BUNDLED WITH&lt;/h3&gt;
-
-&lt;p&gt;This release also contains a change that has been somewhat controversial: Bundler 1.10 will add the Bundler version to the &lt;code&gt;Gemfile.lock&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;While the intended workflow involves only one lock change per Bundler version, the results in real life have been very frustrating. The &lt;em&gt;extremely&lt;/em&gt; short explanation is that the problem will disappear once the entire team (rather than only part of the team) upgrades to Bundler 1.9.10 or higher.&lt;/p&gt;
-
-&lt;p&gt;Here’s the long explanation: Bundler 1.10 adds the BUNDLED WITH section to the lock, while Bundler 1.9 removes it. When a team includes some developers on 1.9 or older, and some developers on 1.10 or higher, it’s easy to end up in a situation with commits changing the lock back and forth. The simplest way to stop that problem is to upgrade to 1.10 by running &lt;code&gt;gem install bundler&lt;/code&gt;. When Bundler 1.10 or higher sees a BUNDLED WITH section, it will leave it in the file.&lt;/p&gt;
-
-&lt;p&gt;This change turned out to be a lot more problematic than we were expecting because of the way Spring works. Knowing what I know now, I would have rolled out this change completely differently to reduce this problem, but it’s too late for that now. :/ We designed the change to only activate when you run an “install” command, like &lt;code&gt;bundle install&lt;/code&gt; or &lt;code&gt;bundle update&lt;/code&gt;. If you just use &lt;code&gt;bundle exec&lt;/code&gt;, the lock does not change. We didn’t count on Spring, which runs &lt;code&gt;bundle install --local&lt;/code&gt; all the time in the background without notifying users. To stop that from happening, we’ve released a version of Bundler (1.10.4) that works around Spring.&lt;/p&gt;
-
-&lt;p&gt;The last issue is that some developers refuse to upgrade from 1.9 to 1.10, for whatever reason, keeping the problem alive. To address that, we’re releasing a final update to 1.9 later today that will simply ignore the BUNDLED WITH section, rather than deleting it.&lt;/p&gt;
-
-&lt;p&gt;The reason that we made the change is pretty straightforward: It has been a long-term source of bug reports that users are often on a version of Bundler so old it won’t work for a project, but they have no way to tell. We’ve wanted to fix this by tracking the Bunder version in the lock file since right after 1.0.0 came out. Unfortunately, there was a bug in the 1.0.x lock parser that meant we had to wait until 1.0 fell out of use. We also need to start tracking the Bundler version in the bundle now because we plan to release 2.0 (with big improvements, but breaking some backwards compatibility).&lt;/p&gt;
-
-&lt;p&gt;At this point in the explanation, several people have then asked if we could just track the minor version, without the bugfix version. What if it was just 1.10? Would that give most of the benefits without the git churn? Despite this, there are two factors that made us decide to stick with patch level.&lt;/p&gt;
-
-&lt;p&gt;First, and most importantly, as soon as everyone is on 1.10+, the churn completely disappears. Version 1.10.1 will not change a lock that says it was bundled with 1.10.3. The absolute worst case once everyone has upgraded to Bundler 1.9.10 or higher is a single commit per version of Bundler, followed by no git churn.&lt;/p&gt;
-
-&lt;p&gt;Second, Bundler patch level releases definitely fix bugs, and oftentimes those bugs are big enough to break &lt;code&gt;bundle install&lt;/code&gt; for certain subsets of users. Only tracking minor version would be similar to only tracking the minor version of Rails—it’s not really feasible to say “oh, you can use any 4.2.x version of Rails”, because the x allows security holes, breaking bugs, and other problems.&lt;/p&gt;
-
-&lt;p&gt;So, in conclusion, the change was never intended to be this disruptive, we’re doing what we can to reduce the impact, and the problem should be completely resolved by updating Bundler to 1.10 (or even the latest 1.9 release, if some of your team want to stay on 1.9).&lt;/p&gt;
-
-&lt;p&gt;Thanks for the feedback, everyone!&lt;/p&gt;
 </content>
   </entry>
 </feed>
