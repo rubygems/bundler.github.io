@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2017-06-09T15:05:56Z</lastmod>
+    <lastmod>2017-06-20T20:00:38Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -226,7 +226,7 @@
     <loc>http://bundler.io/en/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/en/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/en/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/faq.html</loc>
@@ -250,7 +250,7 @@
     <loc>http://bundler.io/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/issues.html</loc>
@@ -331,31 +331,31 @@
     <loc>http://bundler.io/pl/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/pl/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/pl/v1.12/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.12/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/pl/v1.12/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/pl/v1.13/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.13/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/pl/v1.13/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/pl/v1.14/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.14/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/pl/v1.14/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/pl/v1.15/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.15/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/pl/v1.15/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/rails.html</loc>
@@ -1006,7 +1006,7 @@
     <loc>http://bundler.io/v1.12/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/v1.12/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.12/man/bundle-config.1.html</loc>
@@ -1171,7 +1171,7 @@
     <loc>http://bundler.io/v1.13/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/v1.13/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.13/man/bundle-binstubs.1.html</loc>
@@ -1336,7 +1336,7 @@
     <loc>http://bundler.io/v1.14/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/v1.14/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.14/man/bundle-binstubs.1.html</loc>
@@ -1513,7 +1513,7 @@
     <loc>http://bundler.io/v1.15/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/using_bundler_in_application.html</loc>
+    <loc>http://bundler.io/v1.15/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.15/man/bundle-add.1.html</loc>
