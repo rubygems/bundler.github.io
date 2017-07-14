@@ -107,19 +107,19 @@
                     <div class='notes'>
                       Then, add the following to your new Gemfile
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span>&#x000A;&#x000A;</code></pre>
+                    <pre class="highlight ruby"><code><span class="n">gemspec</span>&#x000A;</code></pre>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       Runtime dependencies in your gemspec are treated like base dependencies, and development dependencies are added by default to the group, <code>:development</code>. You can change that group with the <code>:development_group</code> option
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="ss">:dev</span>&#x000A;&#x000A;</code></pre>
+                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="ss">:dev</span>&#x000A;</code></pre>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       As well, you can point to a specific gemspec using <code>:path</code>. If your gemspec is in <code>/gemspec/path</code>, use
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'/gemspec/path'</span>&#x000A;&#x000A;</code></pre>
+                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'/gemspec/path'</span>&#x000A;</code></pre>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
