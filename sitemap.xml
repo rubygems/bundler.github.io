@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2017-07-14T10:05:15Z</lastmod>
+    <lastmod>2017-07-25T18:14:55Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -218,6 +218,54 @@
   </url>
   <url>
     <loc>http://bundler.io/deploying.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/bug_triage.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/community.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/getting_help.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/how_you_can_help.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/issues.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/contributing/readme.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/development/new_features.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/development/pull_requests.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/development/readme.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/development/releasing.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/development/setup.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/documentation/readme.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/documentation/vision.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/documentation/writing.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/readme.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/troubleshooting.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/docs.html</loc>

@@ -6,7 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
-      Bundler: bundle
+      Bundler: The best way to manage a Ruby application's gems
     </title>
     
     <script src="/javascripts/application.js"></script>
@@ -85,118 +85,19 @@
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
+              <h1 id="community">Community</h1>
               
-                <div class="mp" id="man">
+              <p>Community is an important part of all we do. If you’d like to be part of the Bundler community, you can jump right in and start helping make Bundler better for everyone who uses it.</p>
               
-                
+              <p>It would be tremendously helpful to have more people answering questions about Bundler (and often simply about <a href="https://github.com/rubygems/rubygems">RubyGems</a> or Ruby itself) in our <a href="https://github.com/bundler/bundler/issues">issue tracker</a> or on <a href="http://stackoverflow.com/questions/tagged/bundler">Stack Overflow</a>.</p>
               
-                
+              <p>Additional documentation and explanation is always helpful, too. If you have any suggestions for the Bundler website <a href="http://bundler.io">bundler.io</a>, we would absolutely love it if you opened an issue or pull request on the <a href="https://github.com/bundler/bundler-site">bundler-site</a> repository.</p>
               
-                <h2 id="NAME">bundle</h2>
-              <p class="man-name">
-                <code>bundle</code> - <span class="man-whatis">Ruby Dependency Management</span>
-              </p>
+              <p>Sharing your experiences and discoveries by writing them up is a valuable way to help others who have similar problems or experiences in the future. You can write a blog post, create an example and commit it to GitHub, take screenshots, or make videos.</p>
               
+              <p>Publishing examples of how Bundler is used helps everyone, and we’ve discovered that people already use it in ways that we never imagined when we were writing it. If you’re still not sure what to write about, there are also several projects doing interesting things based on Bundler. They could probably use publicity too.</p>
               
-              
-              <pre><code>bundle</code> COMMAND [--no-color] [--verbose] [ARGS]</pre>
-              
-              <h2 id="DESCRIPTION">Description</h2>
-              
-              <p>Bundler manages an <code>application's dependencies</code> through its entire life
-              across many machines systematically and repeatably.</p>
-              
-              <p>See <a href="http://bundler.io">the bundler website</a> for information on getting
-              started, and <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> for more information on the <code>Gemfile</code> format.</p>
-              
-              <h2 id="OPTIONS">Options</h2>
-              
-              <dl>
-              <dt><code>--no-color</code></dt>
-              <dd><p>Print all output without color</p></dd>
-              <dt><code>--verbose</code></dt>
-              <dd><p>Print out additional logging information</p></dd>
-              </dl>
-              
-              
-              <h2 id="BUNDLE-COMMANDS">Bundle Commands</h2>
-              
-              <p>We divide <code>bundle</code> subcommands into primary commands and utilities.</p>
-              
-              <h2 id="PRIMARY-COMMANDS">Primary Commands</h2>
-              
-              <dl>
-              <dt><a href="bundle-install.1.html"><code>bundle install(1)</code></a></dt>
-              <dd><p>Install the gems specified by the <code>Gemfile</code> or <code>Gemfile.lock</code></p></dd>
-              <dt><a href="bundle-update.1.html"><code>bundle update(1)</code></a></dt>
-              <dd><p>Update dependencies to their latest versions</p></dd>
-              <dt><a href="bundle-package.1.html"><code>bundle package(1)</code></a></dt>
-              <dd><p>Package the .gem files required by your application into the
-              <code>vendor/cache</code> directory</p></dd>
-              <dt><a href="bundle-exec.1.html"><code>bundle exec(1)</code></a></dt>
-              <dd><p>Execute a script in the context of the current bundle</p></dd>
-              <dt><a href="bundle-config.1.html"><code>bundle config(1)</code></a></dt>
-              <dd><p>Specify and read configuration options for bundler</p></dd>
-              <dt><code>bundle help(1)</code></dt>
-              <dd><p>Display detailed help for each subcommand</p></dd>
-              </dl>
-              
-              
-              <h2 id="UTILITIES">Utilities</h2>
-              
-              <dl>
-              <dt><code>bundle add(1)</code></dt>
-              <dd><p>Add the named gem to the Gemfile and run <code>bundle install</code></p></dd>
-              <dt><code>bundle binstubs(1)</code></dt>
-              <dd><p>Generate binstubs for executables in a gem</p></dd>
-              <dt><code>bundle check(1)</code></dt>
-              <dd><p>Determine whether the requirements for your application are installed
-              and available to bundler</p></dd>
-              <dt><code>bundle show(1)</code></dt>
-              <dd><p>Show the source location of a particular gem in the bundle</p></dd>
-              <dt>[<code>bundle outdated(1)</code>][bundle-outdated]</dt>
-              <dd><p>Show all of the outdated gems in the current bundle</p></dd>
-              <dt><code>bundle console(1)</code></dt>
-              <dd><p>Start an IRB session in the context of the current bundle</p></dd>
-              <dt><code>bundle open(1)</code></dt>
-              <dd><p>Open an installed gem in the editor</p></dd>
-              <dt>[<code>bundle lock(1)</code>][bundle-lock]</dt>
-              <dd><p>Generate a lockfile for your dependencies</p></dd>
-              <dt><code>bundle viz(1)</code></dt>
-              <dd><p>Generate a visual representation of your dependencies</p></dd>
-              <dt><code>bundle init(1)</code></dt>
-              <dd><p>Generate a simple <code>Gemfile</code>, placed in the current directory</p></dd>
-              <dt><a href="bundle-gem.1.html"><code>bundle gem(1)</code></a></dt>
-              <dd><p>Create a simple gem, suitable for development with bundler</p></dd>
-              <dt><a href="bundle-platform.1.html"><code>bundle platform(1)</code></a></dt>
-              <dd><p>Display platform compatibility information</p></dd>
-              <dt><code>bundle clean(1)</code></dt>
-              <dd><p>Clean up unused gems in your bundler directory</p></dd>
-              <dt><code>bundle doctor(1)</code></dt>
-              <dd><p>Display warnings about common potential problems</p></dd>
-              </dl>
-              
-              
-              <h2 id="PLUGINS">Plugins</h2>
-              
-              <p>When running a command that isn't listed in PRIMARY COMMANDS or UTILITIES,
-              Bundler will try to find an executable on your path named <code>bundler-&lt;command&gt;</code>
-              and execute it, passing down any extra arguments to it.</p>
-              
-              <h2 id="OBSOLETE">Obsolete</h2>
-              
-              <p>These commands are obsolete and should no longer be used</p>
-              
-              <ul>
-              <li><code>bundle cache(1)</code></li>
-              <li><code>bundle list(1)</code></li>
-              </ul>
-              
-              
-              
-                
-              
-                </div>
+              <p>Finally, all contributors to the Bundler project must agree to the contributor <a href="http://bundler.io/conduct.html">code of conduct</a>. By participating in this project you agree to abide by its terms.</p>
             </div>
           </div>
         </div>

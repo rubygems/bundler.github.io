@@ -371,24 +371,6 @@
               Bundler will try to find an executable on your path named <code>bundler-&lt;command&gt;</code>
               and execute it, passing down any extra arguments to it.</p>
               
-              <h2 id="BUNDLER-TRAMPOLINING">Bundler Trampolining</h2>
-              
-              <p>Bundler includes a feature called trampolining, designed to allow a single
-              developer to work on multiple projects, each on different Bundler versions.
-              The trampoline will infer the correct version of Bundler to use for each project
-              and load that version instead of the version directly invoked (which is almost
-              always the newest version installed locally).</p>
-              
-              <p>Bundler by default will use the Bundler version in the current directory to
-              determine the version to trampoline to, reading from the <code>BUNDLED WITH</code> section.
-              However, if the <code>BUNDLER_VERSION</code> environment variable is set, that version will
-              override the lockfile inference and can be used in directories without a
-              lockfile.</p>
-              
-              <p>Until the target version is Bundler 2 or later, <code>BUNDLE_TRAMPOLINE_FORCE</code> must
-              be set for the trampoline to be used. Additionally, <code>BUNDLE_TRAMPOLINE_DISABLE</code> can
-              be set to completely disable the trampoline.</p>
-              
               <h2 id="OBSOLETE">Obsolete</h2>
               
               <p>These commands are obsolete and should no longer be used</p>

@@ -6,7 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
-      Bundler: bundle
+      Bundler: The best way to manage a Ruby application's gems
     </title>
     
     <script src="/javascripts/application.js"></script>
@@ -85,118 +85,46 @@
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
+              <h1 id="bug-triage">Bug triage</h1>
               
-                <div class="mp" id="man">
+              <p>Triaging is the work of processing tickets that have been opened by users. Common tasks include verifying bugs, categorizing tickets, and ensuring there’s enough information to reproduce the bug for anyone who wants to try to fix it.</p>
               
-                
+              <p>We’ve created an <a href="ISSUES.md">issues guide</a> to walk users through the process of how to report an issue with the Bundler project. We also have a <a href="/doc/troubleshooting.html">troubleshooting guide</a> to diagnose common problems.</p>
               
-                
+              <p>Not every ticket will be a bug in Bundler’s code, but open tickets usually mean that there is something we could improve to help that user. Sometimes that means writing additional documentation or making error messages clearer.</p>
               
-                <h2 id="NAME">bundle</h2>
-              <p class="man-name">
-                <code>bundle</code> - <span class="man-whatis">Ruby Dependency Management</span>
-              </p>
+              <h2 id="triaging-existing-issues">Triaging existing issues</h2>
               
-              
-              
-              <pre><code>bundle</code> COMMAND [--no-color] [--verbose] [ARGS]</pre>
-              
-              <h2 id="DESCRIPTION">Description</h2>
-              
-              <p>Bundler manages an <code>application's dependencies</code> through its entire life
-              across many machines systematically and repeatably.</p>
-              
-              <p>See <a href="http://bundler.io">the bundler website</a> for information on getting
-              started, and <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> for more information on the <code>Gemfile</code> format.</p>
-              
-              <h2 id="OPTIONS">Options</h2>
-              
-              <dl>
-              <dt><code>--no-color</code></dt>
-              <dd><p>Print all output without color</p></dd>
-              <dt><code>--verbose</code></dt>
-              <dd><p>Print out additional logging information</p></dd>
-              </dl>
-              
-              
-              <h2 id="BUNDLE-COMMANDS">Bundle Commands</h2>
-              
-              <p>We divide <code>bundle</code> subcommands into primary commands and utilities.</p>
-              
-              <h2 id="PRIMARY-COMMANDS">Primary Commands</h2>
-              
-              <dl>
-              <dt><a href="bundle-install.1.html"><code>bundle install(1)</code></a></dt>
-              <dd><p>Install the gems specified by the <code>Gemfile</code> or <code>Gemfile.lock</code></p></dd>
-              <dt><a href="bundle-update.1.html"><code>bundle update(1)</code></a></dt>
-              <dd><p>Update dependencies to their latest versions</p></dd>
-              <dt><a href="bundle-package.1.html"><code>bundle package(1)</code></a></dt>
-              <dd><p>Package the .gem files required by your application into the
-              <code>vendor/cache</code> directory</p></dd>
-              <dt><a href="bundle-exec.1.html"><code>bundle exec(1)</code></a></dt>
-              <dd><p>Execute a script in the context of the current bundle</p></dd>
-              <dt><a href="bundle-config.1.html"><code>bundle config(1)</code></a></dt>
-              <dd><p>Specify and read configuration options for bundler</p></dd>
-              <dt><code>bundle help(1)</code></dt>
-              <dd><p>Display detailed help for each subcommand</p></dd>
-              </dl>
-              
-              
-              <h2 id="UTILITIES">Utilities</h2>
-              
-              <dl>
-              <dt><code>bundle add(1)</code></dt>
-              <dd><p>Add the named gem to the Gemfile and run <code>bundle install</code></p></dd>
-              <dt><code>bundle binstubs(1)</code></dt>
-              <dd><p>Generate binstubs for executables in a gem</p></dd>
-              <dt><code>bundle check(1)</code></dt>
-              <dd><p>Determine whether the requirements for your application are installed
-              and available to bundler</p></dd>
-              <dt><code>bundle show(1)</code></dt>
-              <dd><p>Show the source location of a particular gem in the bundle</p></dd>
-              <dt>[<code>bundle outdated(1)</code>][bundle-outdated]</dt>
-              <dd><p>Show all of the outdated gems in the current bundle</p></dd>
-              <dt><code>bundle console(1)</code></dt>
-              <dd><p>Start an IRB session in the context of the current bundle</p></dd>
-              <dt><code>bundle open(1)</code></dt>
-              <dd><p>Open an installed gem in the editor</p></dd>
-              <dt>[<code>bundle lock(1)</code>][bundle-lock]</dt>
-              <dd><p>Generate a lockfile for your dependencies</p></dd>
-              <dt><code>bundle viz(1)</code></dt>
-              <dd><p>Generate a visual representation of your dependencies</p></dd>
-              <dt><code>bundle init(1)</code></dt>
-              <dd><p>Generate a simple <code>Gemfile</code>, placed in the current directory</p></dd>
-              <dt><a href="bundle-gem.1.html"><code>bundle gem(1)</code></a></dt>
-              <dd><p>Create a simple gem, suitable for development with bundler</p></dd>
-              <dt><a href="bundle-platform.1.html"><code>bundle platform(1)</code></a></dt>
-              <dd><p>Display platform compatibility information</p></dd>
-              <dt><code>bundle clean(1)</code></dt>
-              <dd><p>Clean up unused gems in your bundler directory</p></dd>
-              <dt><code>bundle doctor(1)</code></dt>
-              <dd><p>Display warnings about common potential problems</p></dd>
-              </dl>
-              
-              
-              <h2 id="PLUGINS">Plugins</h2>
-              
-              <p>When running a command that isn't listed in PRIMARY COMMANDS or UTILITIES,
-              Bundler will try to find an executable on your path named <code>bundler-&lt;command&gt;</code>
-              and execute it, passing down any extra arguments to it.</p>
-              
-              <h2 id="OBSOLETE">Obsolete</h2>
-              
-              <p>These commands are obsolete and should no longer be used</p>
+              <p>When you’re looking at a ticket, here are the main questions to ask:</p>
               
               <ul>
-              <li><code>bundle cache(1)</code></li>
-              <li><code>bundle list(1)</code></li>
+                <li>Can I reproduce this bug myself?</li>
+                <li>Are the steps to reproduce the bug clearly documented in the ticket?</li>
+                <li>Which versions of Bundler (1.1.x, 1.2.x, git, etc.) manifest this bug?</li>
+                <li>Which operating systems (OS X, Windows, Ubuntu, CentOS, etc.) manifest this bug?</li>
+                <li>Which rubies (MRI, JRuby, Rubinius, etc.) and which versions (1.8.7, 1.9.3, etc.) have this bug?</li>
               </ul>
               
+              <p>If you can’t reproduce the issue, chances are good that the bug has been fixed already (hurrah!). That’s a good time to post to the ticket explaining what you did and how it worked.</p>
               
+              <p>If you can reproduce an issue, you’re well on your way to fixing it. :)</p>
               
-                
+              <h2 id="fixing-your-triaged-bug">Fixing your triaged bug</h2>
               
-                </div>
+              <p>Everyone is welcome and encouraged to fix any open bug, improve an error message or add documentation. If you have a fix or an improvement to a ticket that you would like to contribute, we have a small guide to help:</p>
+              
+              <ol>
+                <li>Discuss the fix on the existing issue. Coordinating with everyone else saves duplicate work and serves as a great way to get suggestions and ideas if you need any.</li>
+                <li>Base your commits on the correct branch. Bugfixes for 1.x versions of Bundler should be based on the matching 1-x-stable branch.</li>
+                <li>Review the <a href="/doc/development/pull_requests.html">pull request guide</a>.</li>
+                <li>Commit the code with at least one test covering your changes to a named branch in your fork.</li>
+                <li>Put a line in the <a href="/changelog.html">CHANGELOG</a> summarizing your changes under the next release under the “Bugfixes” heading.</li>
+                <li>Send us a <a href="https://help.github.com/articles/using-pull-requests">pull request</a> from your bugfix branch.</li>
+              </ol>
+              
+              <h2 id="duplicates">Duplicates!</h2>
+              
+              <p>Finally, the ticket may be a duplicate of another older ticket. If you notice a ticket is a duplicate, simply comment on the ticket noting the original ticket’s number. For example, you could say “This is a duplicate of issue #42, and can be closed”.</p>
             </div>
           </div>
         </div>
