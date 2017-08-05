@@ -122,6 +122,17 @@
               <h2 id="debugging-with-pry">Debugging with <code>pry</code></h2>
               
               <p>To dive into the code with Pry: <code>RUBYOPT=-rpry dbundle</code> to require pry and then run commands.</p>
+              
+              <p>For background context: you can manipulate environment variables in Ruby to control the Ruby interpreter’s behavior. Ruby uses the <code>RUBYOPT</code> environment variable to specify options to launch Ruby with.</p>
+              
+              <p>The arguments of <code>RUBYOPT</code> are applied as if you had typed them as flags after <code>ruby</code>. The <code>-r</code> flag means ‘require’. So saying <code>-rpry</code> means <code>require 'pry'</code>. To illustrate, <code>ruby -rpry /path/to/bundle</code> is the same as <code>RUBYOPT=-rpry ruby /path/to/bundle</code>.</p>
+              
+              <p>So, <code>RUBYOPT=-rpry dbundle</code> is saying “require pry and require this path to Bundler”, which means that you will start your development environment with <code>pry</code> and your local bundler.</p>
+              
+              <p><em>Why is this necessary?</em> Why isn’t <code>require 'pry'; binding.pry</code> enough?</p>
+              
+              <p>The reason for combining <code>RUBYOPT</code> with <code>dbundle</code> is because Bundler takes over what gems are available. If you have <code>pry</code> installed on your machine but not included in the Gemfile, Bundler itself will remove <code>pry</code> from the list of gems you can require. Setting <code>RUBYOPT=-rpry</code> is a way to require <code>pry</code> before Bundler takes over and removes it from the list of gems that can be required. That way, later, you can take advantage of <code>binding.pry</code> and have it work.
+              Unfortunately, if you waited until the point of <code>binding.pry</code> to <code>require 'pry'</code>, it would fail anytime <code>pry</code> is not in the Gemfile.</p>
             </div>
           </div>
         </div>
