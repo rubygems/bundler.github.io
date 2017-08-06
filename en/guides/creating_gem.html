@@ -325,11 +325,10 @@
               <p>We will define new development dependencies in <em>foodie.gemspec</em> now for the Cucumber things:</p>
               
               <pre class="highlight ruby"><code><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"cucumber"</span>&#x000A;<span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"aruba"</span>&#x000A;</code></pre>
-              <p>Hot. Let’s run <code>bundle install</code> to get these awesome tools set up.</p>
+              <p>Cool. Let’s run <code>bundle install</code> to get these awesome tools set up.</p>
               
               <p>Our CLI is going to have two methods, which correspond to the two methods which we have defined
-              in <code>Foodie::Food</code>. We will now create a <em>features</em> directory where we will make sweet, sweet love
-              to Aruba to write tests for our CLI. In this directory we’ll create a new file called
+              in <code>Foodie::Food</code>. We will now create a <em>features</em> directory where we will use Aruba to write tests for our CLI. In this directory we’ll create a new file called
               <em>features/food.feature</em> and fill it with this juicy code:</p>
               
               <pre class="highlight gherkin"><code><span class="kd">Feature</span><span class="p">:</span> Food&#x000A;  In order to portray or pluralize food&#x000A;  As a CLI&#x000A;  I want to be as objective as possible&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Broccoli is gross&#x000A;    <span class="nf">When</span> I run `foodie portray broccoli`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Gross!"</span>&#x000A;&#x000A;  <span class="kn">Scenario</span><span class="p">:</span> Tomato, or Tomato?&#x000A;    <span class="nf">When</span> I run `foodie pluralize --word Tomato`&#x000A;    <span class="nf">Then</span> the output should contain <span class="s">"Tomatoes"</span>&#x000A;</code></pre>
