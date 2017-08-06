@@ -85,6 +85,12 @@
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
+              <h2 id="how-to-use-git-bisect">How to use git bisect</h2>
+              
+              <p><a href="https://git-scm.com/docs/git-bisect"><code>git bisect</code></a> is a useful debugging tool. For context, <code>git bisect</code> is a git command that can be used to track down the specific commit which a bug was introduced into the codebase.</p>
+              
+              <p>If you can find a commit where the code works properly and a commit with the offending bug, you don’t have to trace down the buggy commit by hand. The <code>git bisect</code> command, via binary search, will help you find the offending commit. For example, the Git documentation has <a href="https://git-scm.com/book/en/v2/Git-Tools-Debugging-with-Git">a handy <code>git bisect</code> guide</a> that shows two ways to use it.</p>
+              
               <h2 id="how-to-git-bisect-in-projects-using-bundler">How to git bisect in projects using Bundler</h2>
               
               <p>A few things that may not be obvious are needed for <code>git bisect</code> to work
