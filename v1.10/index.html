@@ -92,7 +92,7 @@
                       Getting started with bundler is easy! Open a terminal window and run this command:
                     </p>
                   </div>
-                  <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre></div>
                 </div>
                 <div class='bullet'>
                   <div class='description'>
@@ -100,7 +100,7 @@
                       Specify your dependencies in a Gemfile in your project's root:
                     </p>
                   </div>
-                  <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre></div>
                   <a href="/v1.10/gemfile.html">Learn More: Gemfiles</a>
                 </div>
                 <div class='bullet'>
@@ -109,7 +109,7 @@
                       Install all of the required gems from your specified sources:
                     </p>
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre></div>
                   <a href="/v1.10/bundle_install.html">Learn More: bundle install</a>
                   <div class='notes'>
                     <p>
@@ -125,7 +125,7 @@
                       Inside your app, load up the bundled environment:
                     </p>
                   </div>
-                  <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre></div>
                   <a href="/v1.10/bundler_setup.html">Learn More: Bundler.setup</a>
                 </div>
                 <div class='bullet'>
@@ -134,7 +134,7 @@
                       Run an executable that comes with a gem in your bundle:
                     </p>
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre></div>
                   <div class='notes'>
                     <p>
                       In some cases, running executables without <code>bundle exec</code>
@@ -152,7 +152,7 @@
                       Finally, if you want a way to get a shortcut to gems in your bundle:
                     </p>
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre></div>
                   <div class='notes'>
                     <p>
                       The executables installed into <code>bin</code> are scoped to the
@@ -172,7 +172,7 @@
                     Create a new gem with a README, .gemspec, Rakefile, directory structure, and all the basic boilerplate you need to describe, test, and publish a gem:
                   </p>
                 </div>
-                <pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;Creating gem 'my_gem'...&#x000A;      create  my_gem/Gemfile&#x000A;      create  my_gem/.gitignore&#x000A;      create  my_gem/lib/my_gem.rb&#x000A;      create  my_gem/lib/my_gem/version.rb&#x000A;      create  my_gem/my_gem.gemspec&#x000A;      create  my_gem/Rakefile&#x000A;      create  my_gem/README.md&#x000A;      create  my_gem/bin/console&#x000A;      create  my_gem/bin/setup&#x000A;      create  my_gem/CODE_OF_CONDUCT.md&#x000A;      create  my_gem/LICENSE.txt&#x000A;      create  my_gem/.travis.yml&#x000A;      create  my_gem/test/test_helper.rb&#x000A;      create  my_gem/test/my_gem_test.rb&#x000A;Initializing git repo in ./my_gem&#x000A;&#x000A;</code></pre>
+                <div class="highlight"><pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;Creating gem 'my_gem'...&#x000A;      create  my_gem/Gemfile&#x000A;      create  my_gem/.gitignore&#x000A;      create  my_gem/lib/my_gem.rb&#x000A;      create  my_gem/lib/my_gem/version.rb&#x000A;      create  my_gem/my_gem.gemspec&#x000A;      create  my_gem/Rakefile&#x000A;      create  my_gem/README.md&#x000A;      create  my_gem/bin/console&#x000A;      create  my_gem/bin/setup&#x000A;      create  my_gem/CODE_OF_CONDUCT.md&#x000A;      create  my_gem/LICENSE.txt&#x000A;      create  my_gem/.travis.yml&#x000A;      create  my_gem/test/test_helper.rb&#x000A;      create  my_gem/test/my_gem_test.rb&#x000A;Initializing git repo in ./my_gem&#x000A;&#x000A;</code></pre></div>
                 <a href="/v1.10/bundle_gem.html">Learn More: bundle gem</a>
               </div>
               <h2 id='use-bundler'>Use Bundler with</h2>

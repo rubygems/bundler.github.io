@@ -87,7 +87,7 @@
               and <code>Gemfile.lock</code> to source control, but ignore the
               <code>.bundle</code> folder, which is specific to each machine.</p>
               
-              <pre class="highlight plaintext"><code>$ echo ".bundle" &gt;&gt; .gitignore&#x000A;$ git add Gemfile Gemfile.lock .gitignore&#x000A;$ git commit -m "Add Bundler support"&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ echo ".bundle" &gt;&gt; .gitignore&#x000A;$ git add Gemfile Gemfile.lock .gitignore&#x000A;$ git commit -m "Add Bundler support"&#x000A;</code></pre></div>
               <p>Once you have done that, there are two ways to deploy using Bundler:
               manually or automatically.</p>
               
@@ -97,7 +97,7 @@
               code, install your bundle to the <code>vendor/bundle</code>
               directory, ensuring all your dependencies are met.</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre></div>
               <p>Start your application servers as usual, and your
               application will use your bundled environment
               with the exact same gems you use in development.</p>
@@ -112,7 +112,7 @@
               <p>To pull in the Bundler Cap task, just add this to your
               <code>deploy.rb</code> file:</p>
               
-              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'bundler/capistrano'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'bundler/capistrano'</span>&#x000A;</code></pre></div>
               <p>That’s it! Running <code>cap deploy</code> will now automatically run
               <code>bundle install</code> on the remote server with deployment-friendly
               options. A list of options that can be changed is available in the help
@@ -123,17 +123,17 @@
               <p>There is a default Vlad task available. To make it available, add this line
               to the Vlad <code>deploy.rb</code>.</p>
               
-              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'bundler/vlad'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'bundler/vlad'</span>&#x000A;</code></pre></div>
               <p>Once you have done that, the <code>vlad:bundle:install</code> task will be
               available for use. Make sure it is run as part of your deploy. For example:</p>
               
-              <pre class="highlight ruby"><code><span class="n">task</span> <span class="s2">"vlad:deploy"</span> <span class="o">=&gt;</span> <span class="sx">%w[&#x000A;  vlad:update vlad:bundle:install vlad:start_app vlad:cleanup&#x000A;]</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">task</span> <span class="s2">"vlad:deploy"</span> <span class="o">=&gt;</span> <span class="sx">%w[&#x000A;  vlad:update vlad:bundle:install vlad:start_app vlad:cleanup&#x000A;]</span>&#x000A;</code></pre></div>
               <h3 id="after-deploying">After deploying</h3>
               
               <p>Make sure to use <code>bundle exec</code> to run any executables
               from gems in the bundle</p>
               
-              <pre class="highlight plaintext"><code>$ bundle exec rake db:setup&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle exec rake db:setup&#x000A;</code></pre></div>
               <p>Alternatively, you can use the <code>--binstubs</code> option on the
               install command to generate executable binaries that can be used instead of
               <code>bundle exec</code>.</p>
@@ -144,7 +144,7 @@
               
               <p>When you deploy to Heroku, Bundler will be run automatically as long as a Gemfile is present. If you check in your Gemfile.lock, Heroku will run <code>`bundle install --deployment`</code>. If you want to exclude certain groups using the <code>--without</code> option, you need to use <code>`heroku config`</code>.</p>
               
-              <pre class="highlight plaintext"><code>$ heroku config:add BUNDLE_WITHOUT="test development" --app app_name&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ heroku config:add BUNDLE_WITHOUT="test development" --app app_name&#x000A;</code></pre></div>
               <p><a href="http://docs.heroku.com/bundler" class="btn btn-primary">Heroku Bundler Documentation</a></p>
               
               <h2 id="deploying-your-application">Deploying Your Application</h2>

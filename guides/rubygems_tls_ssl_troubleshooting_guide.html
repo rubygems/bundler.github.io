@@ -154,10 +154,10 @@
               
               <p>When using Bundler an error such as</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;&#x000A;Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=error: certificate verify failed&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;&#x000A;Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=error: certificate verify failed&#x000A;</code></pre></div>
               <p>Or</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;&#x000A;Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv2/v3 read server&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;&#x000A;Gem::RemoteFetcher::FetchError: SSL_connect returned=1 errno=0 state=SSLv2/v3 read server&#x000A;</code></pre></div>
               <p>mean that Bundler was unable to establish a SSL/TLS connection to the RubyGems.org servers which is required to let Bundler download gems.</p>
               
               <h2 id="why-does-this-error-occur">Why Does This Error Occur?</h2>
@@ -180,10 +180,10 @@
               
               <p>You can check if your current ruby environment supports TLS 1.2. Execute the following command in your terminal:</p>
               
-              <pre class="highlight plaintext"><code>ruby -ropenssl -e 'puts "TLS v1.2 support: #{OpenSSL::SSL::SSLContext::METHODS.include?(:TLSv1_2)}"'&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>ruby -ropenssl -e 'puts "TLS v1.2 support: #{OpenSSL::SSL::SSLContext::METHODS.include?(:TLSv1_2)}"'&#x000A;</code></pre></div>
               <p>This will print a result saying if ruby supports TLS 1.2</p>
               
-              <pre class="highlight plaintext"><code>TLS v1.2 support: true&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>TLS v1.2 support: true&#x000A;</code></pre></div>
               <p>If the result is <code>false</code> then you will need to update both Ruby and OpenSSL.</p>
               
               <h3 id="solutions">Solutions</h3>
@@ -206,10 +206,10 @@
               <h4 id="macos-upgrading-ruby-with-homebrew">macOS: Upgrading Ruby with Homebrew</h4>
               <p>To install a newer version of Ruby with Homebrew, first make sure Homebrew is installed. If the brew command is not present, follow the installation instructions at <a href="https://brew.sh">https://brew.sh</a> and then come back to these steps.</p>
               
-              <pre class="highlight plaintext"><code>$ brew install ruby&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ brew install ruby&#x000A;</code></pre></div>
               <p>If Ruby is already installed</p>
               
-              <pre class="highlight plaintext"><code>$ brew upgrade ruby&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ brew upgrade ruby&#x000A;</code></pre></div>
               <p>to upgrade to the latest version.</p>
               
               <h4 id="debianubuntu-upgrading-ruby-with-apt">Debian/Ubuntu: Upgrading Ruby with apt</h4>
@@ -220,16 +220,16 @@
               
               <p>Once you’ve successfully uninstalled Ruby, reinstall it by running:</p>
               
-              <pre class="highlight plaintext"><code>$ sudo apt-get install ruby&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ sudo apt-get install ruby&#x000A;</code></pre></div>
               <h4 id="fedora-upgrading-ruby-with-dnf">Fedora: Upgrading Ruby with dnf</h4>
               <p>The newest versions of Fedora use <code>dnf</code> as its package manager, but older versions use <code>yum</code> instead. If you see the error message <code>dnf: command not found</code>, replace the dnf in these instructions with <code>yum</code>.</p>
               
               <p>First, uninstall Ruby by running:</p>
               
-              <pre class="highlight plaintext"><code>$ dnf remove ruby&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ dnf remove ruby&#x000A;</code></pre></div>
               <p>And then reinstall (this command will install Ruby 2.3):</p>
               
-              <pre class="highlight plaintext"><code>$ dnf install ruby&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ dnf install ruby&#x000A;</code></pre></div>
               <h4 id="rhelcentos-upgrading-ruby-with-yum">RHEL/CentOS: Upgrading Ruby with yum</h4>
               <p>Follow these directions for <a href="http://ask.xmodulo.com/upgrade-ruby-centos.html">upgrading Ruby on CentOS</a> (They also include instructions for troubleshooting OpenSSL).</p>
               
@@ -272,7 +272,7 @@
               <h5 id="update-rubygems">Update RubyGems</h5>
               <p>RubyGems ships with a set of certificates that lets Bundler download gems from RubyGems.org even without the certificate authority bundle. Overtime these certificates do expire so we recommend to keep RubyGems up to date.</p>
               
-              <pre class="highlight plaintext"><code>$ gem update --system&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ gem update --system&#x000A;</code></pre></div>
               <h5 id="manually-installing-the-trust-certificate">Manually installing the trust certificate</h5>
               
               <p>If you’re unable to update RubyGems, you can manually add the certificate RubyGems needs. If you have a version of RubyGems new enough (version 2.1.x and above) that can use those “vendored” certificates—and you install the certificate successfully—it will work without upgrading the RubyGems version.</p>
@@ -293,26 +293,26 @@
               
               <p>Open your command line and type in:</p>
               
-              <pre class="highlight plaintext"><code>C:\&gt;gem which rubygems&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>C:\&gt;gem which rubygems&#x000A;</code></pre></div>
               <p>You’ll see output like this:</p>
               
-              <pre class="highlight plaintext"><code>C:/Ruby21/lib/ruby/2.1.0/rubygems.rb &#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>C:/Ruby21/lib/ruby/2.1.0/rubygems.rb &#x000A;</code></pre></div>
               <p>To  open a window showing the directory we need to find, enter the path part up to the file extension in the same window (but using backslashes instead). For example, based on the output above, you would run this command.</p>
               
-              <pre class="highlight plaintext"><code>C:\&gt;start C:\Ruby21\lib\ruby\2.1.0\rubygems&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>C:\&gt;start C:\Ruby21\lib\ruby\2.1.0\rubygems&#x000A;</code></pre></div>
               <p>This will open an Explorer window, showing the directory RubyGems is installed into. .</p>
               
               <p><strong>On macOS</strong></p>
               
               <p>Open Terminal and run this command:</p>
               
-              <pre class="highlight plaintext"><code>$ gem which rubygems&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ gem which rubygems&#x000A;</code></pre></div>
               <p>You’ll see output like this:</p>
               
-              <pre class="highlight plaintext"><code>/opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems.rb&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>/opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems.rb&#x000A;</code></pre></div>
               <p>To open a window showing the directory we need to find, use the <code>open</code> command on that output without the “.rb” on the end, like this:</p>
               
-              <pre class="highlight plaintext"><code>$ open /opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ open /opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems&#x000A;</code></pre></div>
               <p>A Finder window will open showing the directory that RubyGems is installed into.</p>
               
               <p><strong>Step 3: Copy new trust certificate</strong></p>
@@ -329,20 +329,20 @@
               
               <p>Run these commands to remove RVM and reinstall it:</p>
               
-              <pre class="highlight plaintext"><code>$ rvm implode&#x000A;&#x000A;$ \curl -sSL https://get.rvm.io | bash -s stable&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ rvm implode&#x000A;&#x000A;$ \curl -sSL https://get.rvm.io | bash -s stable&#x000A;</code></pre></div>
               <p>Then, reinstall Ruby while telling RVM that you don’t want to use precompiled binaries. (Unfortunately, this will take longer, but it will hopefully fix the SSL problem.) This command will install Ruby 2.2.3. Adjust the command to install the version(s) of Ruby that you need.</p>
               
-              <pre class="highlight plaintext"><code>$ rvm install 2.2.3 --disable-binary&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ rvm install 2.2.3 --disable-binary&#x000A;</code></pre></div>
               <p>**macOS: Reinstalling RVM with OpenSSL from Homebrew **</p>
               
               <p>This solution might work when the version of OpenSSL installed with Homebrew interferes with Ruby’s ability to find the correct certificates. Sometimes, uninstalling everything and starting again from scratch is enough to fix things.</p>
               
               <p>First, you’ll want to remove RVM. You can do that by running this command:</p>
               
-              <pre class="highlight plaintext"><code>$ rvm implode&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ rvm implode&#x000A;</code></pre></div>
               <p>Next, you’ll want to remove OpenSSL from Homebrew. (Using –force ensures that you remove all versions of OpenSSL you might have):</p>
               
-              <pre class="highlight plaintext"><code>$ brew uninstall openssl --force&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ brew uninstall openssl --force&#x000A;</code></pre></div>
               <p>Now, you can reinstall RVM, following the instructions from the previous step.</p>
               
               <p><strong>macOS: Updating SSL certs using RVM</strong></p>
@@ -351,7 +351,7 @@
               
               <p>Run the following in your command line to update all of your SSL certs:</p>
               
-              <pre class="highlight plaintext"><code>$ rvm osx-ssl-certs update all&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ rvm osx-ssl-certs update all&#x000A;</code></pre></div>
               <hr />
               
               <p>Hopefully, these troubleshooting steps were able to help you resolve your problems with installing gems.</p>

@@ -94,51 +94,51 @@
               <p>Specify that a gem should come from a git
               repository with a .gemspec at its root</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span>&#x000A;</code></pre></div>
               <p>If there is no .gemspec at the root of
               a git repository, you must specify a version
               that bundler should use when resolving
               dependencies</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'deep_merge'</span><span class="p">,</span> <span class="s1">'1.0'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/peritor/deep_merge.git'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'deep_merge'</span><span class="p">,</span> <span class="s1">'1.0'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/peritor/deep_merge.git'</span>&#x000A;</code></pre></div>
               <p>Specify that a git repository containing
               multiple .gemspec files should be treated
               as a gem source</p>
               
-              <pre class="highlight ruby"><code><span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'railties'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'action_pack'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'active_model'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'railties'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'action_pack'</span>&#x000A;  <span class="n">gem</span> <span class="s1">'active_model'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
               <p>Specify that a git repository should use
               a particular ref, branch, or tag</p>
               
-              <pre class="highlight ruby"><code><span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'4aded'</span>&#x000A;<span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'2-3-stable'</span>&#x000A;<span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'v2.3.5'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'4aded'</span>&#x000A;<span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'2-3-stable'</span>&#x000A;<span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'v2.3.5'</span>&#x000A;</code></pre></div>
               <p>Specifying a ref, branch, or tag for a
               git repository specified inline works
               exactly the same way</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'0eec4'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'0eec4'</span>&#x000A;</code></pre></div>
               <p>Bundler can use HTTP(S), SSH, or git</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git@github.com:tenderlove/nokogiri.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/tenderlove/nokogiri.git'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git@github.com:tenderlove/nokogiri.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/tenderlove/nokogiri.git'</span>&#x000A;</code></pre></div>
               <p>Specify that the submodules from a git repository
               also should be expanded by bundler</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rugged'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/libgit2/rugged.git'</span><span class="p">,</span> <span class="ss">:submodules</span> <span class="o">=&gt;</span> <span class="kp">true</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rugged'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/libgit2/rugged.git'</span><span class="p">,</span> <span class="ss">:submodules</span> <span class="o">=&gt;</span> <span class="kp">true</span>&#x000A;</code></pre></div>
               <p>If you are getting your gems from a public GitHub repository,
               you can use the shorthand</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'tenderlove/nokogiri'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'tenderlove/nokogiri'</span>&#x000A;</code></pre></div>
               <p>If the repository name is the same as the GitHub account hosting it,
               you can omit it</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span>&#x000A;</code></pre></div>
               <p><b>NB:</b> This shorthand can only be used for public repos in Bundler version 1.x. Use HTTPS for read and write:</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails'</span>&#x000A;</code></pre></div>
               <p>All of the usual <code>:git</code> options apply, like <code>:branch</code> and <code>:ref</code>.</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'a9752dcfd15bcddfe7b6f7126f3a6e0ba5927c56'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'a9752dcfd15bcddfe7b6f7126f3a6e0ba5927c56'</span>&#x000A;</code></pre></div>
               <p>There are analogous shortcuts for Bitbucket (<code>:bitbucket</code>) and GitHub Gists (<code>:gist</code>).</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'capistrano-sidekiq'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'seuros/capistrano-sidekiq'</span>&#x000A;<span class="n">gem</span> <span class="s1">'keystone'</span><span class="p">,</span> <span class="ss">:bitbucket</span> <span class="o">=&gt;</span> <span class="s1">'musicone/keystone'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'capistrano-sidekiq'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'seuros/capistrano-sidekiq'</span>&#x000A;<span class="n">gem</span> <span class="s1">'keystone'</span><span class="p">,</span> <span class="ss">:bitbucket</span> <span class="o">=&gt;</span> <span class="s1">'musicone/keystone'</span>&#x000A;</code></pre></div>
               <h2 id="custom-git-sources">Custom git sources</h2>
               
               <p>The <code>:github</code> shortcut used above is one of Bundler’s built in git sources. Bundler comes
@@ -148,7 +148,7 @@
               <p>If you’re using Github Enterprise, Stash, or just have a custom git setup, create your own shortcuts
               by calling <code>git_source</code> before you use your custom option. Here’s an example for Stash:</p>
               
-              <pre class="highlight ruby"><code><span class="n">git_source</span><span class="p">(</span><span class="ss">:stash</span><span class="p">){</span> <span class="o">|</span><span class="n">repo_name</span><span class="o">|</span> <span class="s2">"https://stash.corp.acme.pl/</span><span class="se">\#</span><span class="s2">{repo_name}.git"</span> <span class="p">}</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:stash</span> <span class="o">=&gt;</span> <span class="s1">'forks/rails'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">git_source</span><span class="p">(</span><span class="ss">:stash</span><span class="p">){</span> <span class="o">|</span><span class="n">repo_name</span><span class="o">|</span> <span class="s2">"https://stash.corp.acme.pl/</span><span class="se">\#</span><span class="s2">{repo_name}.git"</span> <span class="p">}</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:stash</span> <span class="o">=&gt;</span> <span class="s1">'forks/rails'</span>&#x000A;</code></pre></div>
               <h2 id="security">Security</h2>
               
               <p><code>http://</code> and <code>git://</code> URLs are insecure. A
@@ -164,13 +164,13 @@
               instead of using the remote version. This can be achieved by setting
               up a local override:</p>
               
-              <pre class="highlight plaintext"><code>bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre></div>
               <p>For example, in order to use a local Rack repository, a developer could call:</p>
               
-              <pre class="highlight plaintext"><code>bundle config local.rack ~/Work/git/rack&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>bundle config local.rack ~/Work/git/rack&#x000A;</code></pre></div>
               <p>and setup the git repo pointing to a branch:</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rack/rack'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'master'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rack/rack'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'master'</span>&#x000A;</code></pre></div>
               <p>Now instead of checking out the remote git repository, the local
               override will be used. Similar to a path source, every time the local
               git repository change, changes will be automatically picked up by
@@ -194,7 +194,7 @@
               
               <p>If you do not want bundler to make these branch checks, you can override it by setting this option:</p>
               
-              <pre class="highlight plaintext"><code>bundle config disable_local_branch_check true&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>bundle config disable_local_branch_check true&#x000A;</code></pre></div>
             </div>
           </div>
         </div>

@@ -244,7 +244,7 @@
                   <div class='description'>
                     Retrieve or set a configuration value
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle config [NAME [VALUE]] [--local] [--global] [--delete]&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config [NAME [VALUE]] [--local] [--global] [--delete]&#x000A;</code></pre></div>
                   <div class='notes'>
                     <p>
                       Options:
@@ -281,7 +281,7 @@
                     Get your bundle configuration.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config&#x000A;</code></pre></div>
                     <div class='notes'>
                       Executing <code>bundle config</code> with no parameters will print a
                       list of all bundler configuration for the current bundle, and where
@@ -294,7 +294,7 @@
                     Get your bundle configuration for <code>NAME</code> variable.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config NAME&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config NAME&#x000A;</code></pre></div>
                     <div class='notes'>
                       Will print the value of that configuration setting for
                       <code>NAME</code>, and where it was set. Will print both local and
@@ -308,7 +308,7 @@
                     <code>VALUE</code>.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config NAME VALUE&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config NAME VALUE&#x000A;</code></pre></div>
                     <div class='notes'>
                       Will set <code>NAME</code> to <code>VALUE</code> for all bundles
                       executed as the current user (i.e. global setting). The configuration
@@ -324,7 +324,7 @@
                     to <code>VALUE</code>.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config --global NAME VALUE &#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config --global NAME VALUE &#x000A;</code></pre></div>
                     <div class='notes'>
                       Works the same as the command above.
                     </div>
@@ -336,7 +336,7 @@
                     <code>VALUE</code>.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config --local NAME VALUE &#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config --local NAME VALUE &#x000A;</code></pre></div>
                     <div class='notes'>
                       Works the same as the two command above but for the local application.
                       The configuration will be stored in <code>app/.bundle/config</code>.
@@ -348,7 +348,7 @@
                     Delete the configuration for <code>NAME</code> in both local and global sources.
                   </div>
                   <div class='how'>
-                    <pre class="highlight plaintext"><code>$ bundle config --delete NAME&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config --delete NAME&#x000A;</code></pre></div>
                     <div class='notes'>
                       Will delete the configuration for <code>NAME</code> variable in both local and global sources. Not compatible with --global or --local flag.
                     </div>
@@ -370,14 +370,14 @@
                       to specify where to find the <code>mysql_config</code> executable.
                     </p>
                     <div class='how'>
-                      <pre class="highlight plaintext"><code>$ gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;&#x000A;</code></pre>
+                      <div class="highlight"><pre class="highlight plaintext"><code>$ gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;&#x000A;</code></pre></div>
                     </div>
                     <p>
                       Since the specific location of that executable can change from machine
                       to machine, you can specify these flags on a per-machine basis.
                     </p>
                     <div class='how'>
-                      <pre class="highlight plaintext"><code>$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
+                      <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre></div>
                     </div>
                     <p>
                       After running this command, every time bundler needs to install the
@@ -474,12 +474,12 @@
                       instead of using the remote version. This can be achieved by setting
                       up a local override:
                     </p>
-                    <pre class="highlight plaintext"><code>$ bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;&#x000A;</code></pre></div>
                     <p>
                       For example, in order to use a local Rack repository, a developer
                       could call:
                     </p>
-                    <pre class="highlight plaintext"><code>$ bundle config local.rack ~/Work/git/rack&#x000A;&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config local.rack ~/Work/git/rack&#x000A;&#x000A;</code></pre></div>
                     <p>
                       Now instead of checking out the remote git repository, the local
                       override will be used. Similar to a path source, every time the local

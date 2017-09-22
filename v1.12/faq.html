@@ -186,7 +186,7 @@
               <p>If you really need to pass flags to a C extension, you can use the <code>bundle config</code>
               command:</p>
               
-              <pre class="highlight plaintext"><code>$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre></div>
               <p>Bundler will store this configuration in <code>~/.bundle/config</code>, and bundler will use
               the configuration for any <code>bundle install</code> performed by the same user. As a result, once
               you specify the necessary build flags for a gem, you can successfully install that gem as many times
@@ -200,7 +200,7 @@
               <p><strong>A</strong>: Use the –local flag with bundle install. The –local flag tells bundler
               to use the local gem cache instead of reaching out to the remote gem server.</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install --local&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --local&#x000A;</code></pre></div>
               <h3 id="bundling-from-rubygems-is-really-slow">Bundling From RubyGems is Really Slow</h3>
               
               <p><strong>Q</strong>: When I bundle from rubygems it is really slow. Is there anything I can do to make it faster?</p>
@@ -208,7 +208,7 @@
               <p><strong>A</strong>: Add the –full-index flag when bundling from the rubygems server. This downloads
               the index all at once instead of making numerous small requests to the api.</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install --full-index&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --full-index&#x000A;</code></pre></div>
               <h3 id="gemfilelock-breaks-git-bisect"><code>Gemfile.lock</code> Breaks <code>git bisect</code></h3>
               
               <p><strong>Q</strong>: How to run <code>git bisect</code> correctly?</p>

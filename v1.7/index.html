@@ -90,20 +90,20 @@
                   <div class='description'>
                     Getting started with bundler is easy! Open a terminal window and run this command:
                   </div>
-                  <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ gem install bundler&#x000A;&#x000A;</code></pre></div>
                 </div>
                 <div class='bullet'>
                   <div class='description'>
                     Specify your dependencies in a Gemfile in your project's root:
                   </div>
-                  <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre></div>
                   <a href="/v1.7/gemfile.html">Learn More: Gemfiles</a>
                 </div>
                 <div class='bullet'>
                   <div class='description'>
                     Install all of the required gems from your specified sources:
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre></div>
                   <a href="/v1.7/bundle_install.html">Learn More: bundle install</a>
                   <div class='notes'>
                     The second command adds the Gemfile and Gemfile.lock to your repository. This ensures
@@ -115,14 +115,14 @@
                   <div class='description'>
                     Inside your app, load up the bundled environment:
                   </div>
-                  <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre></div>
                   <a href="/v1.7/bundler_setup.html">Learn More: Bundler.setup</a>
                 </div>
                 <div class='bullet'>
                   <div class='description'>
                     Run an executable that comes with a gem in your bundle:
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre></div>
                   <div class='notes'>
                     <p>
                       In some cases, running executables without <code>bundle exec</code>
@@ -138,7 +138,7 @@
                   <div class='description'>
                     Finally, if you want a way to get a shortcut to gems in your bundle:
                   </div>
-                  <pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre></div>
                   <div class='notes'>
                     The executables installed into <code>bin</code> are scoped to the
                     bundle, and will always work.

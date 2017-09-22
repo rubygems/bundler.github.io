@@ -87,43 +87,43 @@
               
               <p>After you create your <code>Gemfile</code> for the first time, run</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre></div>
               <p>Check the resulting <code>Gemfile.lock</code> into version control</p>
               
-              <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre></div>
               <p>When checking out this repository on another development machine, run</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre></div>
               <p>When checking out this repository on a deployment machine, run</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --deployment&#x000A;</code></pre></div>
               <p>After changing the <code>Gemfile</code> to reflect a new or update
               dependency, run</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre></div>
               <p>Make sure to check the updated <code>Gemfile.lock</code> into version
               control</p>
               
-              <pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ git add Gemfile.lock&#x000A;</code></pre></div>
               <p>If <code>bundle install</code> reports a conflict, manually update the
               specific gems that you changed in the <code>Gemfile</code></p>
               
-              <pre class="highlight plaintext"><code>$ bundle update rails thin&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle update rails thin&#x000A;</code></pre></div>
               <p>If you want to update all the gems to the latest possible versions that
               still match the gems listed in the <code>Gemfile</code>, run</p>
               
-              <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre></div>
               <h2 id="a-thorough-bundler-workflow">A Thorough Bundler Workflow</h2>
               
               <p>Getting started with bundler is easy! Open a terminal window and run this command:</p>
               
-              <pre class="highlight plaintext"><code>$ gem install bundler&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ gem install bundler&#x000A;</code></pre></div>
               <ul>
                 <li>
                   <p>When you first create a Rails application, it already comes with a
               <code>Gemfile</code>.  For another kind of application (such as Sinatra), run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle init&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bundle init&#x000A;</code></pre></div>
                   <ul>
                     <li>The <code>bundle init</code> command creates a simple <code>Gemfile</code> which you
               can edit.</li>
@@ -134,7 +134,7 @@
               <p>Specify your dependencies in the root of your application, called the <code>Gemfile</code>.
               It looks something like this:</p>
               
-              <pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt;1.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span><span class="p">,</span> <span class="ss">:require</span> <span class="o">=&gt;</span> <span class="s1">'spec'</span>&#x000A;</code></pre></div>
               <p>This <code>Gemfile</code> says a few things. First, it says that bundler should
               look for gems declared in the <code>Gemfile</code> at <code>https://rubygems.org</code> by default.</p>
               
@@ -142,14 +142,14 @@
               
               <p>After declaring your first set of dependencies, you tell bundler to go get them:</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install    # &lt;code&gt;bundle&lt;/code&gt; is a shortcut for &lt;code&gt;bundle install&lt;/code&gt;&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install    # &lt;code&gt;bundle&lt;/code&gt; is a shortcut for &lt;code&gt;bundle install&lt;/code&gt;&#x000A;</code></pre></div>
               <p>Bundler will connect to <code>rubygems.org</code> (and any other sources that you declared),
               and find a list of all of the required gems that meet the requirements you specified.
               Because all of the gems in your <code>Gemfile</code> have dependencies of their own
               (and some of those have their own dependencies), running <code>bundle install</code> on the
               <code>Gemfile</code> above will install quite a few gems.</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Resolving dependencies...&#x000A;Using rake (0.8.7)&#x000A;Using abstract (1.0.0)&#x000A;Installing activesupport (3.0.0.rc)&#x000A;Using builder (2.1.2)&#x000A;Using i18n (0.4.1)&#x000A;Installing activemodel (3.0.0.rc)&#x000A;Using erubis (2.6.6)&#x000A;Using rack (1.2.1)&#x000A;Installing rack-mount (0.6.9)&#x000A;Using rack-test (0.5.4)&#x000A;Using tzinfo (0.3.22)&#x000A;Installing actionpack (3.0.0.rc)&#x000A;Using mime-types (1.16)&#x000A;Using polyglot (0.3.1)&#x000A;Using treetop (1.4.8)&#x000A;Using mail (2.2.5)&#x000A;Installing actionmailer (3.0.0.rc)&#x000A;Using arel (0.4.0)&#x000A;Installing activerecord (3.0.0.rc)&#x000A;Installing activeresource (3.0.0.rc)&#x000A;Using bundler (1.0.0.rc.3)&#x000A;Installing nokogiri (1.4.3.1) with native extensions&#x000A;Installing rack-cache (0.5.2)&#x000A;Installing thor (0.14.0)&#x000A;Installing railties (3.0.0.rc)&#x000A;Installing rails (3.0.0.rc)&#x000A;Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;Fetching gem metadata from https://rubygems.org/&#x000A;Resolving dependencies...&#x000A;Using rake (0.8.7)&#x000A;Using abstract (1.0.0)&#x000A;Installing activesupport (3.0.0.rc)&#x000A;Using builder (2.1.2)&#x000A;Using i18n (0.4.1)&#x000A;Installing activemodel (3.0.0.rc)&#x000A;Using erubis (2.6.6)&#x000A;Using rack (1.2.1)&#x000A;Installing rack-mount (0.6.9)&#x000A;Using rack-test (0.5.4)&#x000A;Using tzinfo (0.3.22)&#x000A;Installing actionpack (3.0.0.rc)&#x000A;Using mime-types (1.16)&#x000A;Using polyglot (0.3.1)&#x000A;Using treetop (1.4.8)&#x000A;Using mail (2.2.5)&#x000A;Installing actionmailer (3.0.0.rc)&#x000A;Using arel (0.4.0)&#x000A;Installing activerecord (3.0.0.rc)&#x000A;Installing activeresource (3.0.0.rc)&#x000A;Using bundler (1.0.0.rc.3)&#x000A;Installing nokogiri (1.4.3.1) with native extensions&#x000A;Installing rack-cache (0.5.2)&#x000A;Installing thor (0.14.0)&#x000A;Installing railties (3.0.0.rc)&#x000A;Installing rails (3.0.0.rc)&#x000A;Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre></div>
               <p>If any of the needed gems are already installed, Bundler will use them. After installing
               any needed gems to your system, bundler writes a snapshot of all of the gems and
               versions that it installed to <code>Gemfile.lock</code>.</p>
@@ -159,14 +159,14 @@
                   <p>If <code>bundle install</code> reports a conflict between your <code>Gemfile</code> and
               <code>Gemfile.lock</code>, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle update sinatra&#x000A;</code></pre>  </li>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bundle update sinatra&#x000A;</code></pre></div>  </li>
                 <li>
                   <p>This will update just the Sinatra gem, as well as any of its dependencies.</p>
                 </li>
                 <li>
                   <p>To update all of the gems in your <code>Gemfile</code> to the latest possible versions, run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bundle update&#x000A;</code></pre>  </li>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bundle update&#x000A;</code></pre></div>  </li>
                 <li>
                   <p>Whenever your <code>Gemfile.lock</code> changes, always check it in to version control.
               It keeps a history of the exact versions of all third-party code that you used to successfully
@@ -184,12 +184,12 @@
               
               <p>Inside your app, load up the bundled environment:</p>
               
-              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;&#x000A;<span class="c1"># require your gems as usual</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre></div>
               <p><a href="/bundler_setup.html" class="btn btn-primary">Learn More: Bundler.setup</a></p>
               
               <p>Run an executable that comes with a gem in your bundle:</p>
               
-              <pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle exec rspec spec/models&#x000A;</code></pre></div>
               <p>In some cases, running executables without <code>bundle exec</code>
               may work, if the executable happens to be installed in your system
               and does not pull in any gems that conflict with your bundle.</p>
@@ -200,7 +200,7 @@
               
               <p>Finally, if you want a way to get a shortcut to gems in your bundle:</p>
               
-              <pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install --binstubs&#x000A;$ bin/rspec spec/models&#x000A;</code></pre></div>
               <p>The executables installed into <code>bin</code> are scoped to the
               bundle, and will always work.</p>
               

@@ -88,7 +88,7 @@
                       If you're creating a gem from scratch, you can use bundler's built in gem skeleton to create a base gem for you to edit.
                     </div>
                     <div class='how'>
-                      <pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;</code></pre>
+                      <div class="highlight"><pre class="highlight plaintext"><code>$ bundle gem my_gem&#x000A;</code></pre></div>
                       <div class='notes'>
                         This will create a new directory named <code>my_gem</code> with your new gem skeleton.
                       </div>
@@ -98,29 +98,29 @@
                     <div class='description'>
                       If you already have a gem with a gemspec, you can generate a Gemfile for your gem.
                     </div>
-                    <pre class="highlight plaintext"><code>$ bundle init&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle init&#x000A;</code></pre></div>
                     <div class='notes'>
                       Then, add the following to your new Gemfile
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span>&#x000A;&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gemspec</span>&#x000A;&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       Runtime dependencies in your gemspec are treated like base dependencies, and development dependencies are added by default to the group, <code>:development</code>. You can change that group with the <code>:development_group</code> option
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="ss">:dev</span>&#x000A;&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:development_group</span> <span class="o">=&gt;</span> <span class="ss">:dev</span>&#x000A;&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       As well, you can point to a specific gemspec using <code>:path</code>. If your gemspec is in <code>/gemspec/path</code>, use
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'/gemspec/path'</span>&#x000A;&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">'/gemspec/path'</span>&#x000A;&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       If you have multiple gemspecs in the same directory, specify which one you'd like to reference using <code>:name</code>
                     </div>
-                    <pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'my_awesome_gem'</span>&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gemspec</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'my_awesome_gem'</span>&#x000A;</code></pre></div>
                     <div class='notes'>
                       This will use <code>my_awesome_gem.gemspec</code>
                     </div>
@@ -129,7 +129,7 @@
                     <div class='description'>
                       That's it! Use bundler when developing your gem, and otherwise, use gemspecs normally!
                     </div>
-                    <pre class="highlight plaintext"><code>$ gem build my_gem.gemspec&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ gem build my_gem.gemspec&#x000A;</code></pre></div>
                   </div>
                 </div>
               </div>

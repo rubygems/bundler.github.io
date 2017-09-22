@@ -74,14 +74,14 @@
                   <div class='description'>
                     Configure the load path so all dependencies in your Gemfile can be required
                   </div>
-                  <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler/setup'</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;&#x000A;</code></pre></div>
                 </div>
                 <div class='bullet'>
                   <div class='description'>
                     Only add gems from specified groups to the load path. If you want the gems
                     in the default group, make sure to include it
                   </div>
-                  <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre>
+                  <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span><span class="ss">:default</span><span class="p">,</span> <span class="ss">:ci</span><span class="p">)</span>&#x000A;<span class="nb">require</span> <span class="s1">'nokogiri'</span>&#x000A;</code></pre></div>
                   <a href="/v1.1/groups.html">Learn More: Groups</a>
                 </div>
               </div>

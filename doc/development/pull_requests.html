@@ -160,17 +160,17 @@
               
               <p>Make sure the code formatting and styling adheres to the guidelines. We use RuboCop for this. Lack of formatting adherence will result in automatic Travis build failures.</p>
               
-              <pre class="highlight plaintext"><code>  $ bin/rubocop -a&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bin/rubocop -a&#x000A;</code></pre></div>
               <h2 id="tests">Tests</h2>
               
               <p>Prior to submitting your PR, please run the test suite:</p>
               
-              <pre class="highlight plaintext"><code>  $ bin/rspec&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bin/rspec&#x000A;</code></pre></div>
               <p>If you are unable to run the entire test suite, please run the unit test suite and at least the integration specs related to the command or domain of Bundler that your code changes relate to.</p>
               
               <p>Ex. For a pull request that changes something with <code>bundle update</code>, you might run:</p>
               
-              <pre class="highlight plaintext"><code>  $ bin/rspec spec/bundler&#x000A;  $ bin/rspec spec/commands/update_spec.rb&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>  $ bin/rspec spec/bundler&#x000A;  $ bin/rspec spec/commands/update_spec.rb&#x000A;</code></pre></div>
               <h2 id="commit-messages">Commit messages</h2>
               
               <p>Please ensure that the commit messages included in the pull request <strong>do not</strong> have the following:

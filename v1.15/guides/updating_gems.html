@@ -190,7 +190,7 @@
                       to update to <code>rails 3.0.0</code>, simply update your <code>Gemfile</code> to
                       <code>gem 'rails', '3.0.0'</code> and run:
                     </p>
-                    <pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre>
+                    <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;</code></pre></div>
                     <p class='description'>
                       As described above, the <code>bundle install</code> command always does a conservative
                       update, refusing to update gems (or their dependencies) that you have not explicitly
@@ -229,7 +229,7 @@
                         <code>rack-cache</code>. To do this, you want to use the <code>bundle update</code>
                         command:
                       </p>
-                      <pre class="highlight plaintext"><code>$ bundle update rack-cache&#x000A;</code></pre>
+                      <div class="highlight"><pre class="highlight plaintext"><code>$ bundle update rack-cache&#x000A;</code></pre></div>
                       <p>
                         This command will update <code>rack-cache</code> and its dependencies to the latest
                         version allowed by the <code>Gemfile</code> (in this case, the latest version
@@ -244,7 +244,7 @@
                       <p>
                         If you want to update every gem in the Gemfile to the latest possible versions, run:
                       </p>
-                      <pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre>
+                      <div class="highlight"><pre class="highlight plaintext"><code>$ bundle update&#x000A;</code></pre></div>
                       <p>
                         This will resolve dependencies from scratch, ignoring the <code>Gemfile.lock</code>. If
                         you do this, keep <code>git reset --hard</code> and your test suite in your back pocket.

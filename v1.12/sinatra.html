@@ -84,13 +84,13 @@
               
               <p>To use bundler with a Sinatra application, you only need to do two things. First, create a Gemfile.</p>
               
-              <pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'sinatra'</span>&#x000A;</code></pre></div>
               <p>Then, set up your config.ru file to load the bundle before it loads your Sinatra app.</p>
               
-              <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'./my_sinatra_app'</span>&#x000A;<span class="n">run</span> <span class="no">MySinatraApp</span>&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;<span class="nb">require</span> <span class="s1">'bundler'</span>&#x000A;&#x000A;<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'./my_sinatra_app'</span>&#x000A;<span class="n">run</span> <span class="no">MySinatraApp</span>&#x000A;</code></pre></div>
               <p>Start your development server with rackup, and Sinatra will be loaded via Bundler.</p>
               
-              <pre class="highlight plaintext"><code>$ bundle exec rackup&#x000A;</code></pre>
+              <div class="highlight"><pre class="highlight plaintext"><code>$ bundle exec rackup&#x000A;</code></pre></div>
             </div>
           </div>
         </div>
