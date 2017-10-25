@@ -155,29 +155,28 @@
                   <p><a href="https://github.com/bundler/bundler">Fork the Bundler repo</a>, and clone the fork onto your machine. (<a href="https://help.github.com/articles/fork-a-repo/">Follow this tutorial</a> for instructions on forking a repo.)</p>
                 </li>
                 <li>
-                  <p>Install <code>groff-base</code> and <code>graphviz</code> packages using your package manager, e.g for Ubuntu:</p>
+                  <p>Install <code>groff-base</code> and <code>graphviz</code> packages using your package manager:</p>
               
-                  <p><code>$ sudo apt-get install graphviz groff-base -y</code></p>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ sudo apt-get install graphviz groff-base -y&#x000A;</code></pre></div>
+                  <p>And for OS X (with brew installed):</p>
               
-                  <p>and for OS X (with brew installed):</p>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ brew install graphviz homebrew/dupes/groff&#x000A;</code></pre></div>  </li>
+                <li>
+                  <p>You may also have to install the <code>bsdmainutils</code> package on linux if your distribution does not include the <code>col</code> command.</p>
               
-                  <p><code>$ brew install graphviz homebrew/dupes/groff</code></p>
-                </li>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ sudo apt-get install bsdmainutils -y&#x000A;</code></pre></div>  </li>
                 <li>
                   <p>Install Bundler’s development dependencies:</p>
               
-                  <p><code>$ bin/rake spec:deps</code></p>
-                </li>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ bin/rake spec:deps&#x000A;</code></pre></div>  </li>
                 <li>
                   <p>Run the test suite, to make sure things are working:</p>
               
-                  <p><code>$ bin/rake spec</code></p>
-                </li>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ bin/rake spec&#x000A;</code></pre></div>  </li>
                 <li>
                   <p>Set up a shell alias to run Bundler from your clone, e.g. a Bash alias (<a href="https://www.moncefbelyamani.com/create-aliases-in-bash-profile-to-assign-shortcuts-for-common-terminal-commands/">follow these instructions</a> for adding aliases to your <code>~/.bashrc</code> profile):</p>
               
-                  <p><code>$ alias dbundle='/path/to/bundler/repo/bin/bundle'</code></p>
-                </li>
+              <div class="highlight"><pre class="highlight plaintext"><code> $ alias dbundle='/path/to/bundler/repo/bin/bundle&#x000A;</code></pre></div>  </li>
               </ol>
               
               <h2 id="debugging-with-pry">Debugging with <code>pry</code></h2>
