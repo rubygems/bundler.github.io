@@ -62,72 +62,49 @@
           <div class='col-md-12 col-lg-10 col-lg-offset-1'>
             <div class='contents blog'>
               <h2 class='title'>
-                <a href="/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html">Bundler 1.15: Bundle Oh So Fast</a>
+                <a href="/blog/2017/10/31/bundler-1-16.html">Bundler 1.16: 2.0 Is So Close!</a>
               </h2>
               <div class='subtitle'>
                 by
                 <a href="http://segiddins.me" target="_blank">Samuel Giddins</a>
                 on
                 <time>
-                  May 19 2017
+                  Oct 31 2017
                 </time>
               </div>
               <div class='blog-content'>
-                <h1 id="whats-new-in-bundler-115">What’s new in Bundler 1.15?</h1>
+                <h1 id="whats-new-in-bundler-116">What’s new in Bundler 1.16?</h1>
                 
-                <p>Hot on the heels of the many small fixes in Bundler 1.14, we’re pushing out 1.15. The list of changes is much shorter, but we think you’re going to love it all the same, since this time around we’ve focused on making Bundler a whole heck of a lot faster.</p>
+                <p>A short summer after the performance-focused Bundler 1.15 release, we’ve shipped 1.16. Before we get to the list of changes, we want to share a very exciting announcement: Bundler 2.0 is right around the corner! We anticipate that v1.16 will be the last 1.x release, and details about the transition to 2.0 can be found below.</p>
+                
+                <h3 id="improved-resolver">Improved Resolver</h3>
+                
+                <p>Thanks to the heroic efforts of <a href="https://github.com/greysteil">Grey Baker</a>, the Molinillo library Bundler uses for dependency resolution has once again been overhauled. By replacing the heuristic-focused “swapping” algorithm with one that can consider groups of gems at once, Grey managed to eliminate many bugs around dependency resolution, all while making resolution faster than ever before.</p>
                 
                 <h3 id="speed">Speed</h3>
                 
-                <p>Due to <a href="https://github.com/jules2689">Julian Nadeau</a>’s prompting, we’ve made loading up Bundler fast. Up to a half a second faster than before, on every <code>bundle exec</code>, <code>require "bundler/setup"</code>, <code>Bundler.setup</code>, and <code>Bundler.require</code>. This is going to save developers a lot of time, given how often we tend to run things!</p>
-                
-                <p>The mere act of initializing a Gemfile has been sped up by turning array lookups into hash table accesses, making expensive comparisons lazy, and generally avoiding object allocation.</p>
-                
-                <p>We also now only validate git gems when they are first downloaded &amp; installed, meaning projects with many git gems won’t be validating each and every one of them over and over again.</p>
-                
-                <p>Finally, we’ve managed to avoid evaluating the full <code>.gemspec</code> of all the gems that are being loaded when running on RubyGems 2.5 and above. Taking advantage of a feature called stub specifications, Bundler is able to grab all of the information it needs from the first two lines of a serialized gemspec file, without evaluating the rest. This represents a massive time savings for very large Gemfiles.</p>
-                
-                <h3 id="new-commands">New Commands</h3>
-                
-                <p>We’ve added 4 new commands that have been on our wish list for a long time.</p>
-                
-                <h4 id="bundle-info"><code>bundle info</code></h4>
-                
-                <p>This command prints out basic information about the given gem, and is intended to replace <code>bundle show</code> once Bundler 2 rolls around.</p>
-                
-                <h4 id="bundle-issue"><code>bundle issue</code></h4>
-                
-                <p>Have you ever been frustrated by a Bundler issue that wasn’t a crash? Have you found it difficult to figure out what information to put in a new GitHub issue? Well, no more! <code>bundle issue</code> will gather all of the information present in the error template, on demand.</p>
-                
-                <h4 id="bundle-add"><code>bundle add</code></h4>
-                
-                <p>Bundler has long included the <code>bundle inject</code> command, which has been a source of some confusion. <code>inject</code> has always been intended to serve as plumbing for other tooling, doing a whole bunch of verification along with adding a new <code>gem</code> line to the Gemfile. Due to popular demand, we’ve extracted that latter part out into the <code>bundle add</code> command, making it easier than ever to automate adding dependencies to your Gemfile.</p>
-                
-                <h4 id="bundle-pristine"><code>bundle pristine</code></h4>
-                
-                <p>Have you ever accidentally edited an installed gem’s files and wished you had a way to undo that? Mirroring the <code>gem pristine</code> command, Bundler now supports <code>bundle pristine</code>, restoring all of the gems in your Gemfile to pristine condition.</p>
-                
-                <h3 id="more-man-pages">More Man Pages</h3>
-                
-                <p>Documentation improvements are amongst my favorite contributions, and <a href="https://github.com/feministy">Liz Abinate</a> came through big for us this release. We now have man pages for every single Bundler command. This means that bundler.io will <em>also</em> have documentation for all of the Bundler commands. We hope to do a better job of keeping our documentation up-to-date in the future, and this release is a great starting point for that effort.</p>
+                <p>Following on the heels of the speed boosts in 1.15, we’ve continued to make the performance of Bundler a top priority. We’ve managed to reduce the number of times a Gemfile needs to be <code>eval</code>ed when running <code>bundle install</code>. Additionally, running <code>bundle install</code> when no installation needs to be done is several times faster, bringing it within a few hundred ms of <code>bundle check</code>.</p>
                 
                 <h3 id="various-improvements">Various improvements</h3>
                 
                 <p>In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:</p>
                 
                 <ul>
-                  <li><code>bundle update</code> will now print gems whose versions are regressing in yellow.</li>
-                  <li><code>bundle inject</code> has gained <code>--source</code> and <code>--group</code> options.</li>
-                  <li><code>bundle config</code> has a <code>--parseable</code> option, suitable for use in scripts.</li>
-                  <li>Resolver version conflicts will only list relevant dependencies.</li>
-                  <li>When installing a gem fails, Bundler will print out the reason why that gem was being installed in the first place.</li>
-                  <li>Bundler will let you know when a new version of itself is available. How meta.</li>
-                  <li><code>bundle update</code> works a lot better now when only unlocking a single gem.</li>
+                  <li><code>bundle pristine</code> will now allow passing a list of gems to pristine</li>
+                  <li>gemfiles are evaluated one fewer time when running <code>bundle install</code></li>
                 </ul>
                 
-                <p>We also fixed over 20 separate bugs, and you can read about every single one of them <a href="https://github.com/bundler/bundler/blob/1-15-stable/CHANGELOG.md">in the Bundler 1.15 changelog</a>.</p>
+                <p>We also fixed over 20 separate bugs, and you can read about every single one of them <a href="https://github.com/bundler/bundler/blob/1-16-stable/CHANGELOG.md">in the Bundler 1.16 changelog</a>.</p>
                 
-                <h3 id="how-to-upgrade">How To Upgrade</h3>
+                <h3 id="kicking-off-the-transition-to-bundler-2">Kicking off the transition to Bundler 2</h3>
+                
+                <p>As this announcement is being written, Bundler 2 has landed on the <code>master</code> branch. We anticipate having the first pre-release of 2.0 available on RubyGems soon. However! (and this is a big however), the Bundler team is committed to making the transition from Bundler 1 to Bundler 2 as smooth as possible. No one will be forced to upgrade to Bundler 2, and existing projects will be able to continue using Bundler 1 until they decide that switching to Bundler 2 is worth it.</p>
+                
+                <p>On the other hand, for those of you chomping at the bit to get ready, we have good news. Bundler 1.16 contains our current slate of changes for 2.0, but disabled behind feature flags. This also means that 1.16 has intimate knowledge of the parts of Bundler that will be changing, and by setting the <code>BUNDLE_MAJOR_DEPRECATIONS</code> environment variable (or the <code>major_deprecations</code> config setting), Bundler 1.16 will let you know if you’re relying on behavior that will change in Bundler 2. If you want to try it out, you can enable the changes that will ship in 2.0, and follow the deprecation guides to migrate to the future behavior today.</p>
+                
+                <p>In future blog posts, we’ll introduce the philosophy of Bundler 2, explain the reasons behind each of the breaking changes we made, and provide a detailed migration guide for those of you who prefer stable, documented releases. :)</p>
+                
+                <h3 id="how-to-upgrade-to-116">How To Upgrade To 1.16</h3>
                 
                 <p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
               </div>
@@ -141,6 +118,10 @@
             <div class='contents blog'>
               <h1>Previous Posts</h1>
               <ul class='posts'>
+                <li>
+                  <div class='date'>May 19, 2017</div>
+                  <a href="/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html">Bundler 1.15: Bundle Oh So Fast</a>
+                </li>
                 <li>
                   <div class='date'>Mar 28, 2017</div>
                   <a href="/blog/2017/03/28/bundler-1-14-so-many-fixes.html">Bundler 1.14: So many fixes</a>

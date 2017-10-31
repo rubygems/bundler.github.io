@@ -5,16 +5,61 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2017-05-19T12:00:00+00:00</updated>
+  <updated>2017-10-31T19:50:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler 1.16: 2.0 Is So Close!</title>
+    <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
+    <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
+    <published>2017-10-31T19:50:00+00:00</published>
+    <updated>2017-10-31T20:14:38+00:00</updated>
+    <author>
+      <name>Samuel Giddins</name>
+    </author>
+    <content type="html">&lt;h1 id="whats-new-in-bundler-116"&gt;What’s new in Bundler 1.16?&lt;/h1&gt;
+
+&lt;p&gt;A short summer after the performance-focused Bundler 1.15 release, we’ve shipped 1.16. Before we get to the list of changes, we want to share a very exciting announcement: Bundler 2.0 is right around the corner! We anticipate that v1.16 will be the last 1.x release, and details about the transition to 2.0 can be found below.&lt;/p&gt;
+
+&lt;h3 id="improved-resolver"&gt;Improved Resolver&lt;/h3&gt;
+
+&lt;p&gt;Thanks to the heroic efforts of &lt;a href="https://github.com/greysteil"&gt;Grey Baker&lt;/a&gt;, the Molinillo library Bundler uses for dependency resolution has once again been overhauled. By replacing the heuristic-focused “swapping” algorithm with one that can consider groups of gems at once, Grey managed to eliminate many bugs around dependency resolution, all while making resolution faster than ever before.&lt;/p&gt;
+
+&lt;h3 id="speed"&gt;Speed&lt;/h3&gt;
+
+&lt;p&gt;Following on the heels of the speed boosts in 1.15, we’ve continued to make the performance of Bundler a top priority. We’ve managed to reduce the number of times a Gemfile needs to be &lt;code&gt;eval&lt;/code&gt;ed when running &lt;code&gt;bundle install&lt;/code&gt;. Additionally, running &lt;code&gt;bundle install&lt;/code&gt; when no installation needs to be done is several times faster, bringing it within a few hundred ms of &lt;code&gt;bundle check&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id="various-improvements"&gt;Various improvements&lt;/h3&gt;
+
+&lt;p&gt;In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;bundle pristine&lt;/code&gt; will now allow passing a list of gems to pristine&lt;/li&gt;
+  &lt;li&gt;gemfiles are evaluated one fewer time when running &lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We also fixed over 20 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-16-stable/CHANGELOG.md"&gt;in the Bundler 1.16 changelog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="kicking-off-the-transition-to-bundler-2"&gt;Kicking off the transition to Bundler 2&lt;/h3&gt;
+
+&lt;p&gt;As this announcement is being written, Bundler 2 has landed on the &lt;code&gt;master&lt;/code&gt; branch. We anticipate having the first pre-release of 2.0 available on RubyGems soon. However! (and this is a big however), the Bundler team is committed to making the transition from Bundler 1 to Bundler 2 as smooth as possible. No one will be forced to upgrade to Bundler 2, and existing projects will be able to continue using Bundler 1 until they decide that switching to Bundler 2 is worth it.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, for those of you chomping at the bit to get ready, we have good news. Bundler 1.16 contains our current slate of changes for 2.0, but disabled behind feature flags. This also means that 1.16 has intimate knowledge of the parts of Bundler that will be changing, and by setting the &lt;code&gt;BUNDLE_MAJOR_DEPRECATIONS&lt;/code&gt; environment variable (or the &lt;code&gt;major_deprecations&lt;/code&gt; config setting), Bundler 1.16 will let you know if you’re relying on behavior that will change in Bundler 2. If you want to try it out, you can enable the changes that will ship in 2.0, and follow the deprecation guides to migrate to the future behavior today.&lt;/p&gt;
+
+&lt;p&gt;In future blog posts, we’ll introduce the philosophy of Bundler 2, explain the reasons behind each of the breaking changes we made, and provide a detailed migration guide for those of you who prefer stable, documented releases. :)&lt;/p&gt;
+
+&lt;h3 id="how-to-upgrade-to-116"&gt;How To Upgrade To 1.16&lt;/h3&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler 1.15: Bundle Oh So Fast</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
     <published>2017-05-19T12:00:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
+    <updated>2017-10-31T20:14:38+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -82,7 +127,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
     <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
+    <updated>2017-10-31T20:14:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -132,7 +177,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
+    <updated>2017-10-31T20:14:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -204,7 +249,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
+    <updated>2017-10-31T20:14:38+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -238,7 +283,7 @@ possible.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
     <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
+    <updated>2017-10-31T20:14:38+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -269,85 +314,6 @@ possible.&lt;/p&gt;
 &lt;h2 id="updating"&gt;Updating&lt;/h2&gt;
 
 &lt;p&gt;To get the newest version of Bundler, run &lt;code&gt;gem install bundler&lt;/code&gt;. If you have any issues, please check out our &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;issues guide&lt;/a&gt; and let us know!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Version 1.11 released</title>
-    <link rel="alternate" href="http://bundler.io/blog/2015/12/12/version-1-11-released.html"/>
-    <id>http://bundler.io/blog/2015/12/12/version-1-11-released.html</id>
-    <published>2015-12-12T19:00:00+00:00</published>
-    <updated>2017-10-25T00:48:17+00:00</updated>
-    <author>
-      <name>Samuel Giddins</name>
-    </author>
-    <content type="html">&lt;p&gt;Bundler 1.11 is here! Six and a half months after the last big release, we’re
-finally ready to ship 1.11.&lt;/p&gt;
-
-&lt;p&gt;I know it’s been a while, but there’s a pretty good reason for that. Over the
-summer, the team was busy supervising &lt;em&gt;four&lt;/em&gt; Google Summer of Code students:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We made a significant amount of progress on the new compact gem index, which
-ought to ship in 1.12 in the near future.&lt;/li&gt;
-  &lt;li&gt;We improved the Bundler website and online documentation.&lt;/li&gt;
-  &lt;li&gt;We’ve created a solid base for Bundler 2.0.&lt;/li&gt;
-  &lt;li&gt;We prototyped a new plugin system.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In addition, the Bundler Core team has spent a lot of time focusing on the
-development experience of bundler itself. The bundler codebase is over five
-years old, and contains code from over 400 contributors. That can make it
-rather daunting to start contributing, and also makes it hard to ensure that
-all of the code in bundler is up to the same standards (and is fit to last for
-the next five years!). In order to make things more consistent, we’ve
-introduced RuboCop (and thus a style guide), we’ve instituted a build bot to
-ensure that &lt;code&gt;master&lt;/code&gt; is never failing, and have decided to subject 100% of the
-new code introduced to code review. This is a big step forward, and lets me
-confidently say that this will be our best release yet!&lt;/p&gt;
-
-&lt;p&gt;That out of the way, what’s actually in this long-awaited release?&lt;/p&gt;
-
-&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
-
-&lt;p&gt;First up, we’ve combed through a few years worth of bundler issues, and have
-improved the error messaging for every single one of them. Our goal is to never
-show an exception with a backtrace, and instead present a friendly and helpful
-error message when things go awry – and we’re now pretty close to that.&lt;/p&gt;
-
-&lt;p&gt;The dependency resolver has also seen a few updates. Continuing the theme of
-improved errors, version conflicts will now do a better job of reporting what
-versions of every gem have been activated, making it even easier to figure out
-the best way to resolve said conflict. Additionally, resolution has been sped up
-by over 25x in pathological cases. That’s a pretty nice win.&lt;/p&gt;
-
-&lt;p&gt;Finally, we’ve laid the groundwork for resolving gems based on the current
-version of Ruby.  Once the new index is rolled out, Bundler will make sure to
-choose gems whose &lt;code&gt;required_ruby_version&lt;/code&gt; matches the Ruby you are running on.&lt;/p&gt;
-
-&lt;h3 id="bugfixes"&gt;Bugfixes&lt;/h3&gt;
-
-&lt;p&gt;The real meat of this release comes in the bugfix section, however. Across
-almost four hundred commits, we’ve squashed upwards of fifty unique bugs.
-Meaning this version of bundler should be the fastest, most stable version we’ve
-ever released.&lt;/p&gt;
-
-&lt;h3 id="whats-next"&gt;What’s Next&lt;/h3&gt;
-
-&lt;p&gt;As I mentioned earlier, this long gap between releases doesn’t mean we’re
-slowing down development – quite the opposite, in fact! We’re actively working
-on bundler 1.12 and 2.0 &lt;em&gt;at this very moment&lt;/em&gt;, and are incredibly exited to get
-the new index into people’s hands as fast as we possibly can.&lt;/p&gt;
-
-&lt;h4 id="updating"&gt;Updating&lt;/h4&gt;
-
-&lt;p&gt;To install the last release of Bundler, you can run:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ [sudo] gem install bundler
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;For all the details, don’t miss the
-&lt;a href="https://github.com/bundler/bundler/blob/v1.11.0/CHANGELOG.md#1110-2015-12-12"&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </content>
   </entry>
 </feed>
