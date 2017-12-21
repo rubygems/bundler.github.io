@@ -5,7 +5,7 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2017-10-31T12:50:00-07:00</updated>
+  <updated>2017-10-31T19:50:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
@@ -13,8 +13,8 @@
     <title>Bundler 1.16: 2.0 Is So Close!</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
     <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
-    <published>2017-10-31T12:50:00-07:00</published>
-    <updated>2017-12-20T23:13:43-08:00</updated>
+    <published>2017-10-31T19:50:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -58,8 +58,8 @@
     <title>Bundler 1.15: Bundle Oh So Fast</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
-    <published>2017-05-19T05:00:00-07:00</published>
-    <updated>2017-08-05T21:50:51-07:00</updated>
+    <published>2017-05-19T12:00:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -126,8 +126,8 @@
     <title>Bundler 1.14: So many fixes</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
-    <published>2017-03-28T00:15:00-07:00</published>
-    <updated>2017-05-19T09:17:53-07:00</updated>
+    <published>2017-03-28T07:15:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -176,8 +176,8 @@
     <title>Bundler 1.13: The one with steady improvements</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
-    <published>2016-09-08T16:00:00-07:00</published>
-    <updated>2017-03-28T00:33:05-07:00</updated>
+    <published>2016-09-08T23:00:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -248,8 +248,8 @@
     <title>A New Bundler Website</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
-    <published>2016-07-10T14:44:00-07:00</published>
-    <updated>2017-08-05T21:40:14-07:00</updated>
+    <published>2016-07-10T21:44:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -282,8 +282,8 @@ possible.&lt;/p&gt;
     <title>The new index format, Fastly, and Bundler 1.12</title>
     <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
     <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-04-28T16:00:00-07:00</published>
-    <updated>2017-03-27T23:36:05-07:00</updated>
+    <published>2016-04-28T23:00:00+00:00</published>
+    <updated>2017-12-21T08:07:00+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
