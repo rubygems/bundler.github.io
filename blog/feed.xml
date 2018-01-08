@@ -5,16 +5,41 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2017-10-31T19:50:00+00:00</updated>
+  <updated>2018-01-08T17:09:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Monthly update for December and yearly update for 2017</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
+    <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
+    <published>2018-01-08T17:09:00+00:00</published>
+    <updated>2018-01-08T18:26:43+00:00</updated>
+    <author>
+      <name>André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the Bundler monthly (and yearly) update! We’ve been writing monthly updates about Bundler for several years as part of the &lt;a href="https://rubytogether.org/news"&gt;Ruby Together monthly updates&lt;/a&gt;, and finally realized that we should be posting those monthly updates here, as well. Here’s to many more monthly updates to come!&lt;/p&gt;
+
+&lt;p&gt;As you may have noticed, &lt;a href="https://www.ruby-lang.org/en/news/2017/12/25/ruby-2-5-0-released/"&gt;Bundler didn’t end up shipping with Ruby 2.5&lt;/a&gt;. The Ruby language core team has yet to announce why they decided to remove Bundler a few hours before Ruby 2.5 was released on Christmas Day. Hopefully, we’ll find out the story there soon.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, Bundler 1.16.1 has been released, with fixes or workarounds for all known issues. If you were waiting to upgrade to version 1.16, give it a try now! If you’re still seeing issues on version 1.16.1, please &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;let us know!&lt;/a&gt; We care a lot about fixing bugs and maintaining backwards compatibility, but we need to hear from users in order to know when bugs have crept in. &amp;lt;3&lt;/p&gt;
+
+&lt;p&gt;In December, Bundler gained 59 new commits, contributed by 8 authors. There were 419 additions and 301 deletions across 36 files.&lt;/p&gt;
+
+&lt;p&gt;In 2017, Bundler gained two new maintainers, &lt;a href="https://twitter.com/0xcolby"&gt;Colby Swandale&lt;/a&gt; and &lt;a href="https://twitter.com/hsbt"&gt;hsbt&lt;/a&gt;. We shipped 21 releases total, which included 3 feature releases. Those releases included 1,392 commits, by 31 authors, with 21,892 additions and 5,860 deletions across 1,140 changed files.&lt;/p&gt;
+
+&lt;p&gt;Thanks especially to Bundler’s new contributors in 2017: Abu Nashir, Adam Wanninger, Adrian Gomez, Alessandro Dal Grande, Alex Taylor, Artyom Khramov, Ashish Sehra, Atsushi Yamamoto, Brian Christian, Daniel P. Clark, Daniel Ritz, Daniel Trierweiler, David Radcliffe, Dennis Suratna, Elia Schito, emsk, Eric Boehs, Erik Johnson, fotanus, Frederico, Frederico Bittencourt, Glenn Espinosa, Greg Werbin, Grey Baker, HippoDippo, Igor Bozato, Ivan Kuchin, Jack LaBarba, Jan Krutisch, Jared Kauppila, Jonathan Pike, Juan Barreneche, Julian Nadeau, Justin Myers, Kaycee, Keiji Yoshimi, Kerri Miller, leslie.wen, Mal Graty, Michael Deering, Michael Pitman, mpd, Noah Kantrowitz, Nobuyoshi Nakada, okkez, Olle Jonsson, Patricia Arbona, Paul Nikitochkin, Piotr Kuczynski, robcole, Robert Soly, Sebastian Nowak, Shayon Mukherjee, Stefan Sedich, Stephanie Morillo, Tejas Bubane, Tristan Hill, Urabe, Shyouhei, Wade Tandy, Will Jordan, and Zach Ahn.&lt;/p&gt;
+
+&lt;p&gt;Until next month,&lt;br /&gt;
+André and the Bundler team&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler 1.16: 2.0 Is So Close!</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
     <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
     <published>2017-10-31T19:50:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
+    <updated>2018-01-08T18:26:43+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -59,7 +84,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
     <published>2017-05-19T12:00:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
+    <updated>2018-01-08T18:26:43+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -127,7 +152,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
     <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
+    <updated>2018-01-08T18:26:43+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -177,7 +202,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
+    <updated>2018-01-08T18:26:43+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -249,7 +274,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
     <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
     <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
+    <updated>2018-01-08T18:26:43+00:00</updated>
     <author>
       <name>Jakub Kruczek</name>
     </author>
@@ -276,44 +301,6 @@ possible.&lt;/p&gt;
 &lt;p&gt;Enjoy :D&lt;/p&gt;
 
 &lt;p&gt;~ Jakub (&lt;a href="https://github.com/kruczjak"&gt;@kruczjak&lt;/a&gt;)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>The new index format, Fastly, and Bundler 1.12</title>
-    <link rel="alternate" href="http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html"/>
-    <id>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</id>
-    <published>2016-04-28T23:00:00+00:00</published>
-    <updated>2018-01-04T12:47:43+00:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;A new version of Bundler has arrived! With 1.12, we’re shipping one huge change and several smaller changes—the short version is that Bundler is getting faster and more capable.&lt;/p&gt;
-
-&lt;h2 id="the-new-index-format"&gt;The new index format&lt;/h2&gt;
-
-&lt;p&gt;The biggest change landing in this release is &lt;a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/"&gt;the fabled new index format&lt;/a&gt;, which has been in development for over two years. It has required significant work on Bundler and the Bundler API webapp, but it also lays the foundation for years of speed, stability, and security. In addition to the speed increases provided by the format itself, we’re also serving the new index directly from the Fastly CDN. That means Bundler will be able to talk to a server located nearby, no matter where you are in the world. We expect that to make a huge difference, especially in Oceania and Africa. 🎉&lt;/p&gt;
-
-&lt;h2 id="exec-performance"&gt;&lt;code&gt;exec&lt;/code&gt; performance&lt;/h2&gt;
-
-&lt;p&gt;On top of the new index, we also made specific improvements to the performance of &lt;code&gt;bundle exec&lt;/code&gt;. It now avoids running &lt;code&gt;Kernel.exec&lt;/code&gt; if possible, and only evaluates the &lt;code&gt;Gemfile&lt;/code&gt; one time, instead of twice. Added together, these changes should speed up any &lt;code&gt;bundle exec&lt;/code&gt; command by around 0.25 seconds!&lt;/p&gt;
-
-&lt;h2 id="outdated-by-version-size"&gt;&lt;code&gt;outdated&lt;/code&gt; by version size&lt;/h2&gt;
-
-&lt;p&gt;Another new feature is the ability to run &lt;code&gt;bundle outdated&lt;/code&gt; with the flags &lt;code&gt;--major&lt;/code&gt;, &lt;code&gt;--minor&lt;/code&gt;, and &lt;code&gt;--patch&lt;/code&gt;. Using those flags, you can limit Bundler to only show you new versions that are both allowed by your &lt;code&gt;Gemfile&lt;/code&gt; and also meet the criteria of only changing the major, minor, or patch version of the gem. You can combine them to get only minor and patch updates, or even only major and patch updates (but I have no idea why you would want to do that).&lt;/p&gt;
-
-&lt;h2 id="ruby-versions"&gt;Ruby versions&lt;/h2&gt;
-
-&lt;p&gt;Our final big feature is support for locking Ruby versions! That means that you can put &lt;code&gt;ruby "~&amp;gt; 2.3"&lt;/code&gt; in your &lt;code&gt;Gemfile&lt;/code&gt;, and Bundler will save your exact Ruby version (say, 2.3.1) into your &lt;code&gt;Gemfile.lock&lt;/code&gt;. You can update the ruby version by running &lt;code&gt;bundle update --ruby&lt;/code&gt;, and that will update the lock to match your current version of Ruby the same way Bundler currently updates gem versions.&lt;/p&gt;
-
-&lt;p&gt;Minor changes include adding support for Ruby 2.4, RubyGems 2.6.3, and support for the Ruby 2.3 feature of freezing all string literals.&lt;/p&gt;
-
-&lt;h2 id="changelog"&gt;Changelog&lt;/h2&gt;
-
-&lt;p&gt;We added a bunch of other small tweaks, features, and bugfixes, so be sure to check out &lt;a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md"&gt;the changelog&lt;/a&gt; for the entire list!&lt;/p&gt;
-
-&lt;h2 id="updating"&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;To get the newest version of Bundler, run &lt;code&gt;gem install bundler&lt;/code&gt;. If you have any issues, please check out our &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;issues guide&lt;/a&gt; and let us know!&lt;/p&gt;
 </content>
   </entry>
 </feed>
