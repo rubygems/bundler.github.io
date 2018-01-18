@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: Making gem development a little better
+    </title>
+    
+    <script src="/javascripts/application.js"></script>
+    <script src="/javascripts/analytics.js" async="true"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+    <link href='/manifest.json' rel='manifest'>
+    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+    <meta content='bundler.io' name='apple-mobile-web-app-title'>
+    <meta content='bundler.io' name='application-name'>
+    <meta content='#ffffff' name='theme-color'>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <b><a href="/" class="navbar-brand">Bundler</a></b>
+        </div>
+        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+          <ul class='nav navbar-nav navbar-right'>
+            <li>
+              <div class='search-wrapper'>
+                <div class='form-group has-feedback'>
+                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
+                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+                </div>
+              </div>
+            </li>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
+            <div class='contents blog'>
+              <h2 class='title'>
+                <a href="/blog/2017/09/13/making-gem-development-a-little-better.html">Making gem development a little better</a>
+              </h2>
+              <div class='subtitle'>
+                by
+                <a href="http://github.com/hmistry" target="_blank">Hiren Mistry</a>
+                on
+                <time>
+                  Sep 13 2017
+                </time>
+              </div>
+              <div class='blog-content'>
+                <p>You may have experienced this before: you’re excited about a gem, and want to contribute to its development. You clone the gem repo and run <code>bundle install</code> only to see the horror of installation issues or a failing test suite. What to do? Do you debug this unsure of how deep the rabbit hole goes, or perhaps leave it for another day as you’re short on time?</p>
+                
+                <p>Recently <a href="https://github.com/deivid-rodriguez">David Rodriguez</a> brought up the issue and explained one way to prevent this: by having gem repositories lock versions of gem dependencies like we do in app development. The team listened to his proposal and reconsidered the original motivation behind not locking versions of gem dependencies, the impact to gem developers, and whether those reasons were still valid today.</p>
+                
+                <p>Starting with Bundler 1.16, the default for a new gem template created by Bundler no longer adds <code>Gemfile.lock</code> to <code>.gitignore</code>, thereby allowing the lock file to be committed into the Git repository. Locking the versions of gem dependencies lets gem developers install a known working setup across different systems for development and save time by not having to debug broken installations. With a little CI configuration, gems can still be tested against new version dependencies (see the recommended CI flow below). We believe gem developers and the OSS community can benefit more by reducing hurdles for contributors. Some gem authors like Rails and Devise have been checking in the lock file into Git for some time now.</p>
+                
+                <p>The change only applies to new gems created using Bundler by running <code>bundle gem</code> to create a new gem skeleton. Bundler will not change the lock file’s presence in <code>.gitignore</code> for existing gems.</p>
+                
+                <p>We’d like to thank David for bringing this issue to our attention and implementing the changes to Bundler!</p>
+                
+                <h3 id="recommended-ci-flow">Recommended CI Flow</h3>
+                <p>There are two different CI flows gem authors can implement if they choose to check the <code>Gemfile.lock</code> into the Git repository:</p>
+                
+                <h4 id="delete-the-lock-file">1. Delete the lock file</h4>
+                <p>Delete the <code>Gemfile.lock</code> file before the CI installs the dependencies using <code>bundle install</code>. This will test the build against the latest version of the gem dependencies but has the disadvantage of not testing the build against the locked versions of the dependencies. Add the following step in the CI script:</p>
+                
+                <p>Here’s an example to configure TravisCI to delete <code>Gemfile</code> (<code>travis.yml</code>):</p>
+                
+                <div class="highlight"><pre class="highlight ruby"><code><span class="ss">before_install: </span><span class="s2">"rm ${BUNDLE_GEMFILE}.lock"</span>&#x000A;</code></pre></div>
+                <h4 id="or-add-a-duplicate-gemfile">2. Or add a duplicate Gemfile</h4>
+                <p>Create a duplicate of the <code>Gemfile</code> and call it <code>Gemfile.no_lock</code> (can use any name). The advantage with this flow is both cases are covered. The <code>Gemfile</code> will have a lock file to use the locked versions of the dependencies. The <code>Gemfile.no_lock</code> will not have an associated lock file so it’ll use the latest acceptable versions of the dependencies. Check all three files into the Git repo - <code>Gemfile</code>, <code>Gemfile.lock</code>, and <code>Gemfile.no_lock</code>. Next configure TravisCI to use a build matrix as shown in the example below:</p>
+                
+                <p>Here’s an example to configure TravisCI build matrix (<code>travis.yml</code>):</p>
+                
+                <div class="highlight"><pre class="highlight yaml"><code><span class="na">sudo</span><span class="pi">:</span> <span class="no">false</span>&#x000A;<span class="na">language</span><span class="pi">:</span> <span class="s">ruby</span>&#x000A;&#x000A;<span class="c1"># specify your ruby versions</span>&#x000A;<span class="na">rvm</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">2.4.2</span>&#x000A;&#x000A;<span class="c1"># tell TravisCI to run with Gemfile and then with Gemfile.no_lock</span>&#x000A;<span class="na">gemfile</span><span class="pi">:</span>&#x000A;  <span class="pi">-</span> <span class="s">Gemfile</span>&#x000A;  <span class="pi">-</span> <span class="s">Gemfile.no_lock</span>&#x000A;</code></pre></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

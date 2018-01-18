@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
     <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
     <published>2018-01-08T17:09:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
+    <updated>2018-01-18T07:26:12+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -39,7 +39,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
     <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
     <published>2017-10-31T19:50:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
+    <updated>2018-01-18T07:26:12+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -80,11 +80,58 @@ André and the Bundler team&lt;/p&gt;
 </content>
   </entry>
   <entry>
+    <title>Making gem development a little better</title>
+    <link rel="alternate" href="http://bundler.io/blog/2017/09/13/making-gem-development-a-little-better.html"/>
+    <id>http://bundler.io/blog/2017/09/13/making-gem-development-a-little-better.html</id>
+    <published>2017-09-13T15:01:00+00:00</published>
+    <updated>2018-01-18T07:26:12+00:00</updated>
+    <author>
+      <name>Hiren Mistry</name>
+    </author>
+    <content type="html">&lt;p&gt;You may have experienced this before: you’re excited about a gem, and want to contribute to its development. You clone the gem repo and run &lt;code&gt;bundle install&lt;/code&gt; only to see the horror of installation issues or a failing test suite. What to do? Do you debug this unsure of how deep the rabbit hole goes, or perhaps leave it for another day as you’re short on time?&lt;/p&gt;
+
+&lt;p&gt;Recently &lt;a href="https://github.com/deivid-rodriguez"&gt;David Rodriguez&lt;/a&gt; brought up the issue and explained one way to prevent this: by having gem repositories lock versions of gem dependencies like we do in app development. The team listened to his proposal and reconsidered the original motivation behind not locking versions of gem dependencies, the impact to gem developers, and whether those reasons were still valid today.&lt;/p&gt;
+
+&lt;p&gt;Starting with Bundler 1.16, the default for a new gem template created by Bundler no longer adds &lt;code&gt;Gemfile.lock&lt;/code&gt; to &lt;code&gt;.gitignore&lt;/code&gt;, thereby allowing the lock file to be committed into the Git repository. Locking the versions of gem dependencies lets gem developers install a known working setup across different systems for development and save time by not having to debug broken installations. With a little CI configuration, gems can still be tested against new version dependencies (see the recommended CI flow below). We believe gem developers and the OSS community can benefit more by reducing hurdles for contributors. Some gem authors like Rails and Devise have been checking in the lock file into Git for some time now.&lt;/p&gt;
+
+&lt;p&gt;The change only applies to new gems created using Bundler by running &lt;code&gt;bundle gem&lt;/code&gt; to create a new gem skeleton. Bundler will not change the lock file’s presence in &lt;code&gt;.gitignore&lt;/code&gt; for existing gems.&lt;/p&gt;
+
+&lt;p&gt;We’d like to thank David for bringing this issue to our attention and implementing the changes to Bundler!&lt;/p&gt;
+
+&lt;h3 id="recommended-ci-flow"&gt;Recommended CI Flow&lt;/h3&gt;
+&lt;p&gt;There are two different CI flows gem authors can implement if they choose to check the &lt;code&gt;Gemfile.lock&lt;/code&gt; into the Git repository:&lt;/p&gt;
+
+&lt;h4 id="delete-the-lock-file"&gt;1. Delete the lock file&lt;/h4&gt;
+&lt;p&gt;Delete the &lt;code&gt;Gemfile.lock&lt;/code&gt; file before the CI installs the dependencies using &lt;code&gt;bundle install&lt;/code&gt;. This will test the build against the latest version of the gem dependencies but has the disadvantage of not testing the build against the locked versions of the dependencies. Add the following step in the CI script:&lt;/p&gt;
+
+&lt;p&gt;Here’s an example to configure TravisCI to delete &lt;code&gt;Gemfile&lt;/code&gt; (&lt;code&gt;travis.yml&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="ss"&gt;before_install: &lt;/span&gt;&lt;span class="s2"&gt;"rm ${BUNDLE_GEMFILE}.lock"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id="or-add-a-duplicate-gemfile"&gt;2. Or add a duplicate Gemfile&lt;/h4&gt;
+&lt;p&gt;Create a duplicate of the &lt;code&gt;Gemfile&lt;/code&gt; and call it &lt;code&gt;Gemfile.no_lock&lt;/code&gt; (can use any name). The advantage with this flow is both cases are covered. The &lt;code&gt;Gemfile&lt;/code&gt; will have a lock file to use the locked versions of the dependencies. The &lt;code&gt;Gemfile.no_lock&lt;/code&gt; will not have an associated lock file so it’ll use the latest acceptable versions of the dependencies. Check all three files into the Git repo - &lt;code&gt;Gemfile&lt;/code&gt;, &lt;code&gt;Gemfile.lock&lt;/code&gt;, and &lt;code&gt;Gemfile.no_lock&lt;/code&gt;. Next configure TravisCI to use a build matrix as shown in the example below:&lt;/p&gt;
+
+&lt;p&gt;Here’s an example to configure TravisCI build matrix (&lt;code&gt;travis.yml&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight yaml"&gt;&lt;code&gt;&lt;span class="na"&gt;sudo&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="no"&gt;false&lt;/span&gt;
+&lt;span class="na"&gt;language&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt; &lt;span class="s"&gt;ruby&lt;/span&gt;
+
+&lt;span class="c1"&gt;# specify your ruby versions&lt;/span&gt;
+&lt;span class="na"&gt;rvm&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
+  &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="s"&gt;2.4.2&lt;/span&gt;
+
+&lt;span class="c1"&gt;# tell TravisCI to run with Gemfile and then with Gemfile.no_lock&lt;/span&gt;
+&lt;span class="na"&gt;gemfile&lt;/span&gt;&lt;span class="pi"&gt;:&lt;/span&gt;
+  &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="s"&gt;Gemfile&lt;/span&gt;
+  &lt;span class="pi"&gt;-&lt;/span&gt; &lt;span class="s"&gt;Gemfile.no_lock&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
     <title>Bundler 1.15: Bundle Oh So Fast</title>
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
     <published>2017-05-19T12:00:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
+    <updated>2018-01-18T07:26:12+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -152,7 +199,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
     <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
+    <updated>2018-01-18T07:26:12+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -202,7 +249,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
     <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
     <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
+    <updated>2018-01-18T07:26:12+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -267,40 +314,6 @@ André and the Bundler team&lt;/p&gt;
 &lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
 
 &lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>A New Bundler Website</title>
-    <link rel="alternate" href="http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html"/>
-    <id>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</id>
-    <published>2016-07-10T21:44:00+00:00</published>
-    <updated>2018-01-18T06:41:41+00:00</updated>
-    <author>
-      <name>Jakub Kruczek</name>
-    </author>
-    <content type="html">&lt;p&gt;Announcing… the new Bundler website! As part of Google Summer of Code 2016, Bundler has a new, prettier, and better website. The most visible changes are a completely new design and color scheme. In addition, the entire site is now responsive and easy to read on mobile devices using the &lt;a href="http://getbootstrap.com/"&gt;Bootstrap framework&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href="/docs.html"&gt;new Docs page&lt;/a&gt; provides a table of contents for the entire site, allowing you to choose between guides, command reference pages, and changelogs for each version. On each command page (e.g. &lt;a href="/man/bundle-install.1.html"&gt;bundle install&lt;/a&gt;), there
-is a new sidebar, allowing navigation not just between commands but also to previous versions of the same command.&lt;/p&gt;
-
-&lt;p&gt;There are also two new guides to go with the new website: &lt;a href="/guides/using_bundler_in_applications.html"&gt;Using Bundler In Applications&lt;/a&gt; written by &lt;a href="https://github.com/kruczjak"&gt;me&lt;/a&gt;, and &lt;a href="/guides/using_bundler_in_applications.html"&gt;Developing a RubyGem using Bundler&lt;/a&gt; by Ryan Bigg (&lt;a href="https://github.com/radar"&gt;@radar&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;The new site also includes some more improvements:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Command pages are now built from the Bundler repository instead of hand-written (where possible)&lt;/li&gt;
-  &lt;li&gt;Commits to the master branch of &lt;a href="https://github.com/bundler/bundler-site"&gt;bundler-site&lt;/a&gt; are now auto-deployed (via Travis)&lt;/li&gt;
-  &lt;li&gt;Middleman has been updated to latest version&lt;/li&gt;
-  &lt;li&gt;Every header in the guides and commands pages now has anchor links for navigation and reference&lt;/li&gt;
-  &lt;li&gt;The site now supports multiple translations (although no translations have been completed yet)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Many thanks to Amy (&lt;a href="https://github.com/sailorhg"&gt;@sailorhg&lt;/a&gt;), André (&lt;a href="https://github.com/indirect"&gt;@indirect&lt;/a&gt;) and Samuel (&lt;a href="https://github.com/segiddins"&gt;@segiddins&lt;/a&gt;). Without their help, it wouldn’t have been
-possible.&lt;/p&gt;
-
-&lt;p&gt;Enjoy :D&lt;/p&gt;
-
-&lt;p&gt;~ Jakub (&lt;a href="https://github.com/kruczjak"&gt;@kruczjak&lt;/a&gt;)&lt;/p&gt;
 </content>
   </entry>
 </feed>
