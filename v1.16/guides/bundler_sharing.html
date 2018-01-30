@@ -6,7 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
-      Bundler: Sharing your code
+      Bundler: How to package and share code using a Gemfile
     </title>
     
     <script src="/javascripts/application.js"></script>
@@ -65,12 +65,6 @@
                 <h4>Guides</h4>
                 <ul>
                   <li class=''>
-                    <a href="/v1.16/guides/deploying.html">Deploying with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
                     <a href="/v1.16/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
                   </li>
                   <li class='separator'>
@@ -83,37 +77,61 @@
                     <hr>
                   </li>
                   <li class=''>
-                    <a href="/v1.16/guides/git.html">Gems from git repositories</a>
+                    <a href="/v1.16/guides/deploying.html">How to deploy bundled applications</a>
                   </li>
                   <li class='separator'>
                     <hr>
                   </li>
                   <li class=''>
-                    <a href="/v1.16/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+                    <a href="/v1.16/guides/git.html">How to install gems from git repositories</a>
                   </li>
                   <li class='separator'>
                     <hr>
                   </li>
                   <li class=''>
-                    <a href="/v1.16/guides/groups.html">Managing groups of gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL Troubleshooting Guide</a>
+                    <a href="/v1.16/guides/groups.html">How to manage groups of gems</a>
                   </li>
                   <li class='separator'>
                     <hr>
                   </li>
                   <li class='active'>
-                    <a href="/v1.16/guides/bundler_sharing.html">Sharing your code</a>
+                    <a href="/v1.16/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
                   </li>
                   <li class='separator'>
                     <hr>
                   </li>
                   <li class=''>
-                    <a href="/v1.16/guides/updating_gems.html">Updating Gems</a>
+                    <a href="/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.16/guides/updating_gems.html">How to update gems with Bundler</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.16/guides/rails.html">How to use Bundler with Rails</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.16/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.16/guides/sinatra.html">How to use Bundler with Sinatra</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
+                    <a href="/v1.16/guides/git_bisect.html">How to use git bisect with Bundler</a>
                   </li>
                   <li class='separator'>
                     <hr>
@@ -124,31 +142,13 @@
                   <li class='separator'>
                     <hr>
                   </li>
-                  <li class=''>
-                    <a href="/v1.16/guides/rails.html">Using Bundler with Rails</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.16/guides/sinatra.html">Using Bundler with Sinatra</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.16/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
                 </ul>
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
               <div class='container guide'>
                 <h2 id='sharing'>
-                  Sharing your code
+                  How to package and share code using a Gemfile
                 </h2>
                 <div class='contents'>
                   <div class='bullet'>
@@ -223,12 +223,6 @@
             <div class='bottom-sidebar-nav'>
               <ul>
                 <li class=''>
-                  <a href="/v1.16/guides/deploying.html">Deploying with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
                   <a href="/v1.16/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
                 </li>
                 <li class='separator'>
@@ -241,61 +235,67 @@
                   <hr>
                 </li>
                 <li class=''>
-                  <a href="/v1.16/guides/git.html">Gems from git repositories</a>
+                  <a href="/v1.16/guides/deploying.html">How to deploy bundled applications</a>
                 </li>
                 <li class='separator'>
                   <hr>
                 </li>
                 <li class=''>
-                  <a href="/v1.16/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+                  <a href="/v1.16/guides/git.html">How to install gems from git repositories</a>
                 </li>
                 <li class='separator'>
                   <hr>
                 </li>
                 <li class=''>
-                  <a href="/v1.16/guides/groups.html">Managing groups of gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL Troubleshooting Guide</a>
+                  <a href="/v1.16/guides/groups.html">How to manage groups of gems</a>
                 </li>
                 <li class='separator'>
                   <hr>
                 </li>
                 <li class='active'>
-                  <a href="/v1.16/guides/bundler_sharing.html">Sharing your code</a>
+                  <a href="/v1.16/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
                 </li>
                 <li class='separator'>
                   <hr>
                 </li>
                 <li class=''>
-                  <a href="/v1.16/guides/updating_gems.html">Updating Gems</a>
+                  <a href="/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/updating_gems.html">How to update gems with Bundler</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/rails.html">How to use Bundler with Rails</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/sinatra.html">How to use Bundler with Sinatra</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/git_bisect.html">How to use git bisect with Bundler</a>
                 </li>
                 <li class='separator'>
                   <hr>
                 </li>
                 <li class=''>
                   <a href="/v1.16/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.16/guides/rails.html">Using Bundler with Rails</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.16/guides/sinatra.html">Using Bundler with Sinatra</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.16/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
                 </li>
                 <li class='separator'>
                   <hr>
