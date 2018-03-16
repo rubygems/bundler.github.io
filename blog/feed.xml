@@ -5,16 +5,34 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-01-17T15:01:00+00:00</updated>
+  <updated>2018-03-09T15:01:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>February 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
+    <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
+    <published>2018-03-09T15:01:00+00:00</published>
+    <updated>2018-03-16T19:08:04+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
+
+&lt;p&gt;Bundler saw some fixes in February thanks to contributors &lt;a href="https://github.com/nholden"&gt;@nholden&lt;/a&gt;, &lt;a href="https://github.com/voxik"&gt;@voxik&lt;/a&gt;, &lt;a href="https://github.com/cpgo"&gt;@cpgo&lt;/a&gt;,  &lt;a href="https://github.com/deivid-rodriguez"&gt;@deivid-rodriguez&lt;/a&gt;, and &lt;a href="https://github.com/alyssais"&gt;@alyssais&lt;/a&gt;. Fixes this month included &lt;a href="https://github.com/bundler/bundler/pull/6288"&gt;a fix for certain instances of the “perhaps the lockfile is corrupted?” error&lt;/a&gt;, as well as &lt;a href="https://github.com/bundler/bundler/pull/6283"&gt;clear enforcement steps for the code of conduct&lt;/a&gt;. We also received &lt;a href="https://github.com/bundler/rfcs/pull/10"&gt;an awesome proposal&lt;/a&gt; to give the &lt;code&gt;add&lt;/code&gt; command superpowers, and add a &lt;code&gt;remove&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;This month, Bundler gained 23 new commits, contributed by 8 authors. There were 291 additions and 59 deletions across 50 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Making gem development a little better</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html"/>
     <id>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</id>
     <published>2018-01-17T15:01:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
+    <updated>2018-03-16T19:08:04+00:00</updated>
     <author>
       <name>Hiren Mistry</name>
     </author>
@@ -50,7 +68,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
     <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
     <published>2018-01-08T17:09:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
+    <updated>2018-03-16T19:08:04+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -75,7 +93,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
     <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
     <published>2017-10-31T19:50:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
+    <updated>2018-03-16T19:08:04+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -120,7 +138,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
     <published>2017-05-19T12:00:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
+    <updated>2018-03-16T19:08:04+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -188,7 +206,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
     <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
     <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
+    <updated>2018-03-16T19:08:04+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -227,78 +245,6 @@ André and the Bundler team&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;We also fixed over 60 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-14-stable/CHANGELOG.md"&gt;in the Bundler 1.14 changelog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
-
-&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler 1.13: The one with steady improvements</title>
-    <link rel="alternate" href="http://bundler.io/blog/2016/09/08/bundler-1-13.html"/>
-    <id>http://bundler.io/blog/2016/09/08/bundler-1-13.html</id>
-    <published>2016-09-08T23:00:00+00:00</published>
-    <updated>2018-02-21T20:18:59+00:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;Bundler 1.13 is out! It’s been a steady stream of improvements over the last four months, and we’re shipping some new features, some improved features, and some experimental features. Now that we’ve shipped all of these changes, we’re starting to work at full speed on the upcoming 1.14 and 2.0 releases. While you wait, read on for the changes in 1.13 and then give it a try!&lt;/p&gt;
-
-&lt;h3 id="new-features"&gt;New features&lt;/h3&gt;
-
-&lt;h4 id="support-for-requiredrubyversion-with-declared-ruby"&gt;Support for &lt;code&gt;required_ruby_version&lt;/code&gt; (with declared &lt;code&gt;ruby&lt;/code&gt;)&lt;/h4&gt;
-
-&lt;p&gt;One very nice addition is that gems with a &lt;code&gt;required_ruby_version&lt;/code&gt; will now resolve correctly as long as your Gemfile contains a &lt;code&gt;ruby&lt;/code&gt; declaration. This change is the culmination of years worth of work, including the new compact index released in Bundler 1.12. In the future, we’re also going to support gems with required Ruby versions in Gemfiles that don’t declare a Ruby requirement. Because of existing features (like the Gemfile Ruby declaration), we’re having to do some mork work so that everything can coexist harmoniously. In the meantime, set a Ruby version and you’ll get the right gem versions to install on your Ruby.&lt;/p&gt;
-
-&lt;h4 id="the-bundle-doctor-command"&gt;The &lt;code&gt;bundle doctor&lt;/code&gt; command&lt;/h4&gt;
-
-&lt;p&gt;We’ve also added a &lt;code&gt;bundle doctor&lt;/code&gt; command, courtesy of &lt;a href="https://github.com/mistydemeo"&gt;@mistydemeo&lt;/a&gt;. Over time, the &lt;code&gt;doctor&lt;/code&gt; command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the &lt;code&gt;pg&lt;/code&gt; gem and then later run &lt;code&gt;brew upgrade postgres&lt;/code&gt;, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.&lt;/p&gt;
-
-&lt;h4 id="add-options---add-platform-and---remove-platform-to-the-lock-command"&gt;Add options &lt;code&gt;--add-platform&lt;/code&gt; and &lt;code&gt;--remove-platform&lt;/code&gt; to the &lt;code&gt;lock&lt;/code&gt; command&lt;/h4&gt;
-
-&lt;p&gt;In the past, the only way to resolve your Gemfile on a new platform (like &lt;code&gt;java&lt;/code&gt; or &lt;code&gt;mswin&lt;/code&gt;) was to run &lt;code&gt;bundle install&lt;/code&gt; on that platform. We’ve added explicit options to the &lt;code&gt;lock&lt;/code&gt; command to allow managing platforms. Platforms can be added using &lt;code&gt;bundle lock --add-platform NAME&lt;/code&gt;, and platforms can be removed using &lt;code&gt;bundle lock --remove-platform NAME&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This makes it possible to (for example) develop on Windows and deploy to a Unix server. However! (and this is a pretty big however), gems on different platforms can have completely different code. Run your test suite on whatever platform you will use in production—it’s the only way to be sure.&lt;/p&gt;
-
-&lt;h3 id="improved-features"&gt;Improved features&lt;/h3&gt;
-
-&lt;h4 id="auto-install-for-bundlerinline"&gt;Auto-install for &lt;code&gt;bundler/inline&lt;/code&gt;&lt;/h4&gt;
-
-&lt;p&gt;When using &lt;code&gt;bundler/inline&lt;/code&gt;, gems are now automatically installed. This makes it ridiculously easy to create and distribute single-file scripts that depend on gems. Highly recommended.&lt;/p&gt;
-
-&lt;h4 id="dramatic-resolver-optimizations"&gt;Dramatic resolver optimizations&lt;/h4&gt;
-
-&lt;p&gt;The resolver has been fine-tuned. It allocates less objects, uses less memory, needs less GC time, and is all-around better. It is now able to find usable Gem versions noticably faster. In many cases, the improvement was about 4x. For one especially dramatic Gemfile, Bundler now runs 100x faster than it did before.&lt;/p&gt;
-
-&lt;h4 id="better-faster-exec"&gt;Better faster &lt;code&gt;exec&lt;/code&gt;&lt;/h4&gt;
-
-&lt;p&gt;The new &lt;code&gt;exec&lt;/code&gt; command (added in v1.12) switched from always calling &lt;code&gt;exec&lt;/code&gt; to calling &lt;code&gt;load&lt;/code&gt; instead if possible. In version 1.13 we added a way to turn it off: &lt;code&gt;bundle config exec_disable_load true&lt;/code&gt;. We also dramatically improved it process, adding support for JRuby, and setting process titles the same way they used to be set.&lt;/p&gt;
-
-&lt;h4 id="improved-usage-of-the-compact-index"&gt;Improved usage of the compact index&lt;/h4&gt;
-
-&lt;p&gt;We launched &lt;a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/"&gt;the compact index&lt;/a&gt; in v1.12. In this version, we’ve sped things up by using persistent HTTP for more than one request, fixed printing dots to indicate progress, and added support for legacy gems with capitalized names and users without a home directory.&lt;/p&gt;
-
-&lt;h3 id="experimental-features"&gt;Experimental features&lt;/h3&gt;
-
-&lt;p&gt;This version also contains three experimental features, disabled by default: a plugin system, and version locking for Bundler itself.&lt;/p&gt;
-
-&lt;h4 id="experimental-plugin-system"&gt;Experimental plugin system&lt;/h4&gt;
-
-&lt;p&gt;For a long time now, we’ve supported “command” plugins the same way that &lt;code&gt;git&lt;/code&gt; does: if there is a command named &lt;code&gt;bundle-foo&lt;/code&gt;, then Bundler will run it when you execute &lt;code&gt;bundle foo&lt;/code&gt;. The experimental plugin system builds on top of that, providing a way to create new Bundler commands that hook into the Bundler CLI internals. The plugin system also supports “source” plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we’ve started adding new “lifecycle” hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.&lt;/p&gt;
-
-&lt;h4 id="experimental-bundler-version-locking"&gt;Experimental Bundler version locking&lt;/h4&gt;
-
-&lt;p&gt;Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that use Bundler 1.x to keep working. We’re also going to need a way for applications that use Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the &lt;code&gt;Gemfile.lock&lt;/code&gt;. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:&lt;/p&gt;
-
-&lt;p&gt;First, export the environment variable &lt;code&gt;BUNDLE_ENABLE_TRAMPOLINE&lt;/code&gt;. In the Bash shell, that means running &lt;code&gt;export BUNDLE_ENABLE_TRAMPOLINE=true&lt;/code&gt;. Then, run &lt;code&gt;bundle install&lt;/code&gt; and &lt;code&gt;bundle exec&lt;/code&gt; as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the &lt;code&gt;Gemfile.lock&lt;/code&gt;. To update the version of Bundler saved in the lockfile, run &lt;code&gt;bundle update --bundler&lt;/code&gt;. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.&lt;/p&gt;
-
-&lt;h4 id="experimental-conservative-updates"&gt;Experimental conservative updates&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;bundle update&lt;/code&gt; received some new options to support conservative updates: &lt;code&gt;--patch&lt;/code&gt; and &lt;code&gt;--minor&lt;/code&gt;. “Conservative” meaning it will sort all available versions to prefer the latest patch releases from the current version, then the latest minor releases and then the latest major releases. These aren’t documented or formally supported yet while we allow the community some opportunity to weigh in on how these options should work. &lt;a href="https://github.com/bundler/bundler-features/issues/122"&gt;Join the discussion and give us your 2 cents so we can lock this in for 1.14&lt;/a&gt;. There’s even some outstanding issues you can contribute to!&lt;/p&gt;
-
-&lt;h4 id="feedback-for-experimental-features"&gt;Feedback for experimental features&lt;/h4&gt;
-
-&lt;p&gt;These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to &lt;a href="https://github.com/bundler/bundler/issues/new"&gt;hear your feedback&lt;/a&gt;. &amp;lt;3&lt;/p&gt;
 
 &lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
 

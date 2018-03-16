@@ -119,6 +119,12 @@
                     <hr>
                   </li>
                   <li class=''>
+                    <a href="/v1.16/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
                     <a href="/v1.16/guides/rails.html">How to use Bundler with Rails</a>
                   </li>
                   <li class='separator'>
@@ -180,37 +186,38 @@
                 <li><strong>The Solutions</strong>
                   <ul>
                     <li><a href="#automated-ssl-check">Automated SSL check</a></li>
-                    <li><a href="#update-bundler">Updating Bundler</a></li>
-                    <li><a href="#update-rubygems">Updating RubyGems</a></li>
+                    <li><a href="#updating-bundler">Updating Bundler</a></li>
+                    <li><a href="#updating-rubygems">Updating RubyGems</a></li>
+                    <li><a href="#updating-system-clock">Updating System Clock</a></li>
                     <li><a href="#updating-ca-certificates">Updating CA certificates</a>
                       <ul>
                         <li><a href="#installing-new-rubygems-certificates">Installing new RubyGems certificates</a></li>
                         <li><a href="#installing-new-os-certificates">Installing new OS certificates</a></li>
                       </ul>
                     </li>
-                    <li><a href="#installing-from-version-managers">Reinstalling Ruby from version managers</a>
+                    <li><a href="#reinstalling-ruby-from-version-managers">Reinstalling Ruby from version managers</a>
                       <ul>
                         <li><a href="#installed-with-rvm">Installed with <code>rvm</code></a></li>
-                        <li><a href="#installed-with-ruby-build">Installed with <code>ruby-build</code> or <code>rbenv install</code></a></li>
+                        <li><a href="#installed-with-ruby-build-or-rbenv-install">Installed with <code>ruby-build</code> or <code>rbenv install</code></a></li>
                       </ul>
                     </li>
-                    <li><a href="#installing-from-package-managers">Reinstalling Ruby from OS package managers</a>
+                    <li><a href="#reinstalling-ruby-from-os-package-managers">Reinstalling Ruby from OS package managers</a>
                       <ul>
                         <li><a href="#macos-built-in-ruby">macOS: Built-in Ruby</a></li>
-                        <li><a href="#installed-with-homebrew">macOS: Installed with Homebrew</a></li>
-                        <li><a href="#installed-with-apt-get">Debian or Ubuntu: Installed with <code>apt-get</code></a></li>
-                        <li><a href="#installed-with-dnf">Fedora: Installed with <code>dnf</code></a></li>
-                        <li><a href="#installed-with-yum">RHEL or CentOS: Installed with <code>yum</code></a></li>
-                        <li><a href="#windows-ruby-installer">Windows: Installed with Ruby Installer</a></li>
+                        <li><a href="#macos-installed-with-homebrew">macOS: Installed with Homebrew</a></li>
+                        <li><a href="#debian-or-ubuntu-installed-with-apt-get">Debian or Ubuntu: Installed with <code>apt-get</code></a></li>
+                        <li><a href="#fedora-installed-with-dnf">Fedora: Installed with <code>dnf</code></a></li>
+                        <li><a href="#rhel-or-centos-installed-with-yum">RHEL or CentOS: Installed with <code>yum</code></a></li>
+                        <li><a href="#windows-installed-with-ruby-installer">Windows: Installed with Ruby Installer</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
                 <li><strong>Additional Help</strong>
                   <ul>
-                    <li><a href="#another-automated-ssl-check">Another automated SSL check</a></li>
+                    <li><a href="#running-another-automated-ssl-check">Another automated SSL check</a></li>
                     <li><a href="#creating-an-issue">Creating an issue</a></li>
-                    <li><a href="#contributing-to-guide">Contributing to this guide</a></li>
+                    <li><a href="#contributing-to-this-guide">Contributing to this guide</a></li>
                   </ul>
                 </li>
               </ul>
@@ -274,7 +281,7 @@
               <h4 id="troubleshooting-certificate-errors">Troubleshooting certificate errors</h4>
               
               <p>Start by <a href="#automated-ssl-check">running the automatic SSL check</a>, and follow the instructions. You might need
-              to <a href="#update-bundler">update Bundler</a>, <a href="#update-rubygems">update RubyGems</a>,
+              to <a href="#updating-bundler">update Bundler</a>, <a href="#updating-rubygems">update RubyGems</a>,
               <a href="#installing-new-rubygems-certificates">manually update RubyGems certificates</a>, or perhaps
               even <a href="#installing-new-os-certificates">install new OS certificates</a>.</p>
               
@@ -319,10 +326,10 @@
               <h4 id="troubleshooting-protocol-errors">Troubleshooting protocol errors</h4>
               
               <p>To troubleshoot protocol connection errors, start by <a href="#automated-ssl-check">running the automatic SSL check</a>,
-              and follow the instructions. You might need to <a href="#update-bundler">update Bundler</a>,
-              <a href="#update-rubygems">update RubyGems</a>, or even reinstall Ruby (you can find reinstallation
-              instructions by <a href="#installing-from-version-managers">version manager</a>
-              or <a href="#installing-from-package-managers">package manager</a>.)</p>
+              and follow the instructions. You might need to <a href="#updating-bundler">update Bundler</a>,
+              <a href="#updating-rubygems">update RubyGems</a>, or even reinstall Ruby (you can find reinstallation
+              instructions by <a href="#reinstalling-ruby-from-version-managers">version manager</a>
+              or <a href="#reinstalling-ruby-from-os-package-managers">package manager</a>.)</p>
               
               <h2 id="the-solutions">The Solutions</h2>
               
@@ -365,6 +372,19 @@
               <code>&#x000A;  $ gem install --local rubygems-update-2.6.10.gem&#x000A;  $ update_rubygems</code></p>
               
               <p>Running <code>gem --version</code> should display the updated version.</p>
+              
+              <h3 id="updating-system-clock">Updating System Clock</h3>
+              
+              <p>If your system clock is set to a time in the past or future, your machine will not be able to establish a secure connection to RubyGems.org. To resolve the issue, you will need to set your system clock to the current time. In Linux, you can update the system clock by running <code>sudo ntpdate ntp.ubuntu.com</code>.</p>
+              
+              <p>Here are other possible solutions for updating a system clock:</p>
+              
+              <ul>
+                <li>macOS: <a href="https://support.apple.com/kb/PH25523?locale=en_US">Set the time and date on your Mac</a></li>
+                <li>Ubuntu: <a href="https://help.ubuntu.com/community/UbuntuTime">Ubuntu Time Management</a></li>
+                <li>Windows: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-other_settings-winpc/how-to-force-windows-10-time-to-synch-with-a-time/20f3b546-af38-42fb-a2d0-d4df13cc8f43">Getting Windows 10 time to sync with a time server</a></li>
+                <li>Vagrant: <a href="https://stackoverflow.com/questions/33939834/how-to-correct-system-clock-in-vagrant-automatically">Correcting the system clock in Vagrant</a></li>
+              </ul>
               
               <h3 id="updating-ca-certificates">Updating CA certificates</h3>
               
@@ -432,7 +452,7 @@
               file into it. It will be listed with other files like <code>AddTrustExternalCARoot.pem</code>.</p>
               
               <p>Once you’ve done this, it should be possible to follow the directions at the very top to
-              automatically update RubyGems. Visit the <a href="#update-rubygems">Update RubyGems</a> section for
+              automatically update RubyGems. Visit the <a href="#updating-rubygems">Update RubyGems</a> section for
               step-by-step instructions. If that doesn’t work, keep following this guide.</p>
               
               <h4 id="installing-new-os-certificates">Installing new OS certificates</h4>
@@ -638,6 +658,12 @@
                 </li>
                 <li class=''>
                   <a href="/v1.16/guides/updating_gems.html">How to update gems with Bundler</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
                 </li>
                 <li class='separator'>
                   <hr>
