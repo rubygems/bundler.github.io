@@ -197,6 +197,12 @@
                     <hr>
                   </li>
                   <li class=''>
+                    <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
                     <a href="/v1.16/man/bundle-gem.1.html">bundle gem</a>
                   </li>
                   <li class='separator'>
@@ -302,19 +308,30 @@
               
               <h2 id="DESCRIPTION">Description</h2>
               
-              <p>Init generates a default <code>Gemfile(5)</code> in the current working directory. When
-              adding a <code>Gemfile(5)</code> to a gem with a gemspec, the <code>--gemspec</code> option will
+              <p>Init generates a default <a href="gemfile.5.html"><code>Gemfile(5)</code></a> in the current working directory. When
+              adding a <a href="gemfile.5.html"><code>Gemfile(5)</code></a> to a gem with a gemspec, the <code>--gemspec</code> option will
               automatically add each dependency listed in the gemspec file to the newly
-              created <code>Gemfile(5)</code>.</p>
+              created <a href="gemfile.5.html"><code>Gemfile(5)</code></a>.</p>
               
               <h2 id="OPTIONS">Options</h2>
               
               <dl>
               <dt><code>--gemspec</code></dt>
-              <dd>Use the specified .gemspec to create the <code>Gemfile(5)</code>
+              <dd>Use the specified .gemspec to create the <a href="gemfile.5.html"><code>Gemfile(5)</code></a>
               </dd>
               </dl>
               
+              
+              <h2 id="FILES">Files</h2>
+              
+              <p>Included in the default <a href="gemfile.5.html"><code>Gemfile(5)</code></a>
+              generated is the line <code># frozen_string_literal: true</code>. This is a magic comment
+              supported for the first time in Ruby 2.3. The presence of this line
+              results in all string literals in the file being implicitly frozen.</p>
+              
+              <h2 id="SEE-ALSO">See Also</h2>
+              
+              <p><a href="http://bundler.io/man/gemfile.5.html">Gemfile(5)</a></p>
               
               
                 
@@ -458,6 +475,12 @@
                 </li>
                 <li class=''>
                   <a href="/v1.16/bundle_console.html">bundle console</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
                 </li>
                 <li class='separator'>
                   <hr>

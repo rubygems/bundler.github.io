@@ -5,16 +5,34 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-03-09T15:01:00+00:00</updated>
+  <updated>2018-04-09T15:01:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>March 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
+    <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
+    <published>2018-04-09T15:01:00+00:00</published>
+    <updated>2018-05-06T22:38:18+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
+
+&lt;p&gt;Bundler saw a variety of bug fixes in March thanks to our contributors, including &lt;a href="https://github.com/alyssais"&gt;@alyssais&lt;/a&gt;, &lt;a href="https://github.com/koic"&gt;@koic&lt;/a&gt;, &lt;a href="https://github.com/MSP-Greg"&gt;@MSP-Greg&lt;/a&gt;, &lt;a href="https://github.com/nesaulov"&gt;@nesaulov&lt;/a&gt;, &lt;a href="https://github.com/kunruh9"&gt;@kunruh9&lt;/a&gt;, &lt;a href="https://github.com/shime"&gt;@shime&lt;/a&gt;, and &lt;a href="https://github.com/greysteil"&gt;@greysteil&lt;/a&gt;. Fixes included &lt;a href="https://github.com/bundler/bundler/pull/6464"&gt;documenting the order Bundler loads config settings&lt;/a&gt; as well as fixing some &lt;a href="https://github.com/bundler/bundler/pull/6310"&gt;rescue calls that hadn’t specified error type&lt;/a&gt;. Additionally, we published a &lt;a href="https://github.com/bundler/bundler/blob/2053d65c974f55fc15196b3ad82d7749750b2a3e/doc/POLICIES.md"&gt;Bundler Policies&lt;/a&gt; doc to supplement Bundler’s existing Code of Conduct.&lt;/p&gt;
+
+&lt;p&gt;Coming up next, we expect to ship bug fixes, push out a small feature release, and begin public testing on Bundler 2.0. In total, Bundler gained 60 new commits, contributed by 13 authors. There were 353 additions and 97 deletions across 47 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>February 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
     <published>2018-03-09T15:01:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
+    <updated>2018-05-06T22:38:18+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -32,7 +50,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html"/>
     <id>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</id>
     <published>2018-01-17T15:01:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
+    <updated>2018-05-06T22:38:18+00:00</updated>
     <author>
       <name>Hiren Mistry</name>
     </author>
@@ -68,7 +86,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
     <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
     <published>2018-01-08T17:09:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
+    <updated>2018-05-06T22:38:18+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -93,7 +111,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
     <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
     <published>2017-10-31T19:50:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
+    <updated>2018-05-06T22:38:18+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -138,7 +156,7 @@ André and the Bundler team&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html"/>
     <id>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</id>
     <published>2017-05-19T12:00:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
+    <updated>2018-05-06T22:38:18+00:00</updated>
     <author>
       <name>Samuel Giddins</name>
     </author>
@@ -195,56 +213,6 @@ André and the Bundler team&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;We also fixed over 20 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-15-stable/CHANGELOG.md"&gt;in the Bundler 1.15 changelog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
-
-&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler 1.14: So many fixes</title>
-    <link rel="alternate" href="http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html"/>
-    <id>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</id>
-    <published>2017-03-28T07:15:00+00:00</published>
-    <updated>2018-04-08T05:13:32+00:00</updated>
-    <author>
-      <name>André Arko</name>
-    </author>
-    <content type="html">&lt;h1 id="whats-new-in-bundler-114"&gt;What’s new in Bundler 1.14?&lt;/h1&gt;
-
-&lt;p&gt;We somehow missed writing up an announcement when Bundler 1.14 was initially released, but several people kindly pointed out the problem. Just 48 days late, here’s what’s new in Bundler 1.14! In this feature release, we added several small features, and fixed a giant pile of bugs.&lt;/p&gt;
-
-&lt;h3 id="conservative-updates"&gt;Conservative updates&lt;/h3&gt;
-
-&lt;p&gt;Building on the previous &lt;a href="http://bundler.io/v1.13/whats_new.html#fine-controls-for-the-update-command"&gt;fine controls for the update command&lt;/a&gt;, the illustrious &lt;a href="https://github.com/chrismo"&gt;@chrismo&lt;/a&gt; worked his way through many gnarly possible usage combinations to implement the &lt;code&gt;update --conservative&lt;/code&gt; flag. Using the conservative flag allows &lt;code&gt;bundle update GEM&lt;/code&gt; to update the version of GEM, but prevents Bundler from updating the versions of any of the gems that GEM depends on. For a more in-depth discussion of why this is useful, check out the  &lt;a href="http://bundler.io/v1.14/man/bundle-update.1.html#OVERLAPPING-DEPENDENCIES"&gt;discussion of overlapping dependencies&lt;/a&gt; in the &lt;a href="http://bundler.io/v1.14/man/bundle-update.1.html"&gt;&lt;code&gt;update&lt;/code&gt; command man page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="checksum-validation"&gt;Checksum validation&lt;/h3&gt;
-
-&lt;p&gt;As part of the &lt;a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/"&gt;compact index format&lt;/a&gt; provided by RubyGems.org, Bundler now has access to checksums for every .gem file. Starting with version 1.14, Bundler actively validates those checksums against downloaded .gem files before installing them. Hooray! 🎉&lt;/p&gt;
-
-&lt;h3 id="improved-platform-support"&gt;Improved platform support&lt;/h3&gt;
-
-&lt;p&gt;Courtesy of some intensive work by @segiddins, Bundler is getting better at handling applications that will be run on more than one platform, like both Unix and Windows. To start with, Bundler will now print a warning if your Gemfile includes any gems that will never be installed due to a &lt;code&gt;platform&lt;/code&gt; block. For gems that need to be compiled even though the author has uploaded a binary gem, the &lt;code&gt;force_ruby_platform&lt;/code&gt; config setting has you covered. Lastly, the new config setting &lt;code&gt;specific_platform&lt;/code&gt; tells Bundler to consider platforms during dependency resolution. This setting should significantly improve things for users installing a single bundle on more than one platform. We expect the &lt;code&gt;specific_platform&lt;/code&gt; setting to become the default behavior in Bundler 2.0.&lt;/p&gt;
-
-&lt;h3 id="improved-required-ruby-versions"&gt;Improved required Ruby versions&lt;/h3&gt;
-
-&lt;p&gt;Building on the support for Ruby and RubyGems version that was added in 1.13, Bundler 1.14 improves resolver error messages. If any gem conflicts with your Ruby or RubyGems version, the error message will now show both the conflicting dependencies and the chain of parent dependencies that led to the conflict.&lt;/p&gt;
-
-&lt;h3 id="various-improvements"&gt;Various improvements&lt;/h3&gt;
-
-&lt;p&gt;In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Installing gems using &lt;code&gt;sudo&lt;/code&gt; will now always prompt for a password, even if the sudo password is cached from an earlier command&lt;/li&gt;
-  &lt;li&gt;The Gemfile method &lt;code&gt;platform&lt;/code&gt; now supports Ruby 2.5, allowing arguments like &lt;code&gt;:ruby_25&lt;/code&gt; or &lt;code&gt;:mri_25&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;The “lockfile is missing dependencies” error (triggered by certain old lock files that were missing information) is no longer fatal. We now print instructions on how to repair the Gemfile, and install using one thread.&lt;/li&gt;
-  &lt;li&gt;Running &lt;code&gt;require "bundler"&lt;/code&gt; is now about five times faster than it used to be.&lt;/li&gt;
-  &lt;li&gt;Bundler now works when run by users without a home directory.&lt;/li&gt;
-  &lt;li&gt;The output from &lt;code&gt;bundle env&lt;/code&gt; is now preformatted as Markdown for pasting into a GitHub issue.&lt;/li&gt;
-  &lt;li&gt;After Bundler 2.0 is (eventually) released, Bundler 1.14 and greater will be able to automatically switch to Bundler 2.0+ for apps that need it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We also fixed over 60 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-14-stable/CHANGELOG.md"&gt;in the Bundler 1.14 changelog&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="how-to-upgrade"&gt;How To Upgrade&lt;/h3&gt;
 

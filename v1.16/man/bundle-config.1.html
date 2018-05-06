@@ -197,6 +197,12 @@
                     <hr>
                   </li>
                   <li class=''>
+                    <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
                     <a href="/v1.16/man/bundle-gem.1.html">bundle gem</a>
                   </li>
                   <li class='separator'>
@@ -302,10 +308,17 @@
               
               <h2 id="DESCRIPTION">Description</h2>
               
-              <p>This command allows you to interact with bundler's configuration system.
-              Bundler retrieves its configuration from the local application (<code>app/.bundle/config</code>),
-              environment variables, and the user's home directory (<code>~/.bundle/config</code>),
-              in that order of priority.</p>
+              <p>This command allows you to interact with Bundler's configuration system.</p>
+              
+              <p>Bundler loads configuration settings in this order:</p>
+              
+              <ol>
+              <li>Local config (<code>app/.bundle/config</code>)</li>
+              <li>Environmental variables (<code>ENV</code>)</li>
+              <li>Global config (<code>~/.bundle/config</code>)</li>
+              <li>Bundler default config</li>
+              </ol>
+              
               
               <p>Executing <code>bundle config</code> with no parameters will print a list of all
               bundler configuration for the current bundle, and where that configuration
@@ -369,7 +382,7 @@
               
               <h2 id="BUILD-OPTIONS">Build Options</h2>
               
-              <p>You can use <code>bundle config</code> to give bundler the flags to pass to the gem
+              <p>You can use <code>bundle config</code> to give Bundler the flags to pass to the gem
               installer every time bundler tries to install a particular gem.</p>
               
               <p>A very common example, the <code>mysql</code> gem, requires Snow Leopard users to
@@ -391,11 +404,11 @@
               <p>Configuration keys in bundler have two forms: the canonical form and the
               environment variable form.</p>
               
-              <p>For instance, passing the <code>--without</code> flag to [bundle <span class="man-ref">install<span class="s">(1)</span></span>][bundle-install]
+              <p>For instance, passing the <code>--without</code> flag to <a href="bundle-install.html">bundle install(1)</a>
               prevents Bundler from installing certain groups specified in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. Bundler
               persists this value in <code>app/.bundle/config</code> so that calls to <code>Bundler.setup</code>
               do not try to find gems from the <code>Gemfile</code> that you didn't install. Additionally,
-              subsequent calls to [bundle <span class="man-ref">install<span class="s">(1)</span></span>][bundle-install] remember this setting
+              subsequent calls to <a href="bundle-install.html">bundle install(1)</a> remember this setting
               and skip those groups.</p>
               
               <p>The canonical form of this configuration is <code>"without"</code>. To convert the canonical
@@ -409,7 +422,7 @@
               <h2 id="LIST-OF-AVAILABLE-KEYS">List Of Available Keys</h2>
               
               <p>The following is a list of all configuration keys and their purpose. You can
-              learn more about their operation in [bundle <span class="man-ref">install<span class="s">(1)</span></span>][bundle-install].</p>
+              learn more about their operation in <a href="bundle-install.html">bundle install(1)</a>.</p>
               
               <ul>
               <li>
@@ -630,7 +643,7 @@
               
               
               <p>In general, you should set these settings per-application by using the applicable
-              flag to the [bundle <span class="man-ref">install<span class="s">(1)</span></span>][bundle-install] or [bundle <span class="man-ref">package<span class="s">(1)</span></span>][bundle-package] command.</p>
+              flag to the <a href="bundle-install.html">bundle install(1)</a> or <a href="bundle-package.html">bundle package(1)</a> command.</p>
               
               <p>You can set them globally either via environment variables or <code>bundle config</code>,
               whichever is preferable for your setup. If you use both, environment variables
@@ -866,6 +879,12 @@
                 </li>
                 <li class=''>
                   <a href="/v1.16/bundle_console.html">bundle console</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
                 </li>
                 <li class='separator'>
                   <hr>

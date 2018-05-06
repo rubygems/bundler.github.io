@@ -196,6 +196,12 @@
                     <hr>
                   </li>
                   <li class=''>
+                    <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
+                  </li>
+                  <li class='separator'>
+                    <hr>
+                  </li>
+                  <li class=''>
                     <a href="/v1.16/man/bundle-gem.1.html">bundle gem</a>
                   </li>
                   <li class='separator'>
@@ -328,7 +334,7 @@
               
               <h3 id="CREDENTIALS">Credentials</h3>
               
-              <p>Some gem sources require a username and password. Use [bundle <span class="man-ref">config<span class="s">(1)</span></span>][bundle-config] to set
+              <p>Some gem sources require a username and password. Use <a href="bundle-config.html">bundle config(1)</a> to set
               the username and password for any of the sources that need it. The command must
               be run once on each computer that will install the Gemfile, but this keeps the
               credentials from being stored in plain text in version control.</p>
@@ -509,7 +515,7 @@
               
               <pre><code>gem "weakling",   :platforms =&gt; :jruby&#x000A;gem "ruby-debug", :platforms =&gt; :mri_18&#x000A;gem "nokogiri",   :platforms =&gt; [:mri_18, :jruby]&#x000A;</code></pre>
               
-              <p>All operations involving groups (<code>bundle install</code>, <code>Bundler.setup</code>,
+              <p>All operations involving groups (<a href="bundle-install.html"><code>bundle install</code></a>, <code>Bundler.setup</code>,
               <code>Bundler.require</code>) behave exactly the same as if any groups not
               matching the current platform were explicitly excluded.</p>
               
@@ -723,7 +729,7 @@
               
               <h2 id="GEMSPEC">Gemspec</h2>
               
-              <p>The <a href="http://guides.rubygems.org/specification-reference/">.gemspec</a> file is where
+              <p>The <a href="http://guides.rubygems.org/specification-reference/"><code>.gemspec</code></a> file is where
                you provide metadata about your gem to Rubygems. Some required Gemspec
                attributes include the name, description, and homepage of your gem. This is
                also where you specify the dependencies your gem needs to run.</p>
@@ -908,6 +914,12 @@
                 </li>
                 <li class=''>
                   <a href="/v1.16/bundle_console.html">bundle console</a>
+                </li>
+                <li class='separator'>
+                  <hr>
+                </li>
+                <li class=''>
+                  <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
                 </li>
                 <li class='separator'>
                   <hr>

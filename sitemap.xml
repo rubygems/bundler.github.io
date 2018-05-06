@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2018-04-08T05:15:32Z</lastmod>
+    <lastmod>2018-05-06T22:41:53Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -193,6 +193,15 @@
     <loc>http://bundler.io/blog/2018/03/09/february-bundler-update.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/blog/2018/04/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/04/09/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/04/09/march-bundler-update.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/bundle_binstubs.html</loc>
   </url>
   <url>
@@ -380,6 +389,9 @@
   </url>
   <url>
     <loc>http://bundler.io/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/man/bundle-doctor.1.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/man/bundle-exec.1.html</loc>
@@ -1741,6 +1753,9 @@
     <loc>http://bundler.io/v1.16/bundle_console.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v1.16/bundle_doctor.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v1.16/bundle_exec.html</loc>
   </url>
   <url>
@@ -1868,6 +1883,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.16/man/bundle-config.1.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.16/man/bundle-doctor.1.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.16/man/bundle-exec.1.html</loc>

@@ -6,7 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
-      Bundler: bundle package
+      Bundler: bundle doctor
     </title>
     
     <script src="/javascripts/application.js"></script>
@@ -132,7 +132,7 @@
                   <li class='separator'>
                     <hr>
                   </li>
-                  <li class='active'>
+                  <li class=''>
                     <a href="/v1.16/man/bundle-package.1.html">bundle package</a>
                   </li>
                   <li class='separator'>
@@ -195,7 +195,7 @@
                   <li class='separator'>
                     <hr>
                   </li>
-                  <li class=''>
+                  <li class='active'>
                     <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
                   </li>
                   <li class='separator'>
@@ -296,78 +296,45 @@
               
                 
               
-                <h2 id="NAME">bundle package</h2>
+                <h2 id="NAME">bundle doctor</h2>
               <p class="man-name">
-                <code>bundle-package</code> - <span class="man-whatis">Package your needed <code>.gem</code> files into your application</span>
+                <code>bundle-doctor</code> - <span class="man-whatis">Checks the bundle for common problems</span>
               </p>
               
               
               
-              <pre><code>bundle package</code></pre>
+              <pre><code>bundle doctor</code> [--quiet]&#x000A;                [--gemfile=GEMFILE]</pre>
               
               <h2 id="DESCRIPTION">Description</h2>
               
-              <p>Copy all of the <code>.gem</code> files needed to run the application into the
-              <code>vendor/cache</code> directory. In the future, when running [bundle <span class="man-ref">install<span class="s">(1)</span></span>][bundle-install],
-              use the gems in the cache in preference to the ones on <code>rubygems.org</code>.</p>
+              <p>Checks your Gemfile and gem environment for common problems. If issues
+              are detected, Bundler prints them and exits status 1. Otherwise,
+              Bundler prints a success message and exits status 0.</p>
               
-              <h2 id="GIT-AND-PATH-GEMS">Git And Path Gems</h2>
+              <p>Examples of common problems caught by bundle-doctor include:</p>
               
-              <p>Since Bundler 1.2, the <code>bundle package</code> command can also package <code>:git</code> and
-              <code>:path</code> dependencies besides .gem files. This needs to be explicitly enabled
-              via the <code>--all</code> option. Once used, the <code>--all</code> option will be remembered.</p>
+              <ul>
+              <li>Invalid Bundler settings</li>
+              <li>Mismatched Ruby versions</li>
+              <li>Mismatched platforms</li>
+              <li>Uninstalled gems</li>
+              <li>Missing dependencies</li>
+              </ul>
               
-              <h2 id="SUPPORT-FOR-MULTIPLE-PLATFORMS">Support For Multiple Platforms</h2>
               
-              <p>When using gems that have different packages for different platforms, Bundler
-              1.8 and newer support caching of gems for other platforms where the Gemfile
-              has been resolved (i.e. present in the lockfile) in <code>vendor/cache</code>.  This needs
-              to be enabled via the <code>--all-platforms</code> option. This setting will be remembered
-              in your local bundler configuration.</p>
+              <h2 id="OPTIONS">Options</h2>
               
-              <h2 id="REMOTE-FETCHING">Remote Fetching</h2>
+              <dl>
+              <dt class="flush"><code>--quiet</code></dt>
+              <dd><p>Only output warnings and errors.</p></dd>
+              <dt><code>--gemfile=&lt;gemfile&gt;</code></dt>
+              <dd><p>The location of the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> which Bundler should use. This defaults
+              to a <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> in the current working directory. In general, Bundler
+              will assume that the location of the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> is also the project's
+              root and will try to find <code>Gemfile.lock</code> and <code>vendor/cache</code> relative
+              to this location.</p></dd>
+              </dl>
               
-              <p>By default, if you run <code>bundle install(1)</code>]<a href="bundle-install.html">bundle-install(1)</a> after running
-              <a href="bundle-package.html">bundle package(1)</a>, bundler will still connect to <code>rubygems.org</code>
-              to check whether a platform-specific gem exists for any of the gems
-              in <code>vendor/cache</code>.</p>
-              
-              <p>For instance, consider this <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>:</p>
-              
-              <pre><code>source "https://rubygems.org"&#x000A;&#x000A;gem "nokogiri"&#x000A;</code></pre>
-              
-              <p>If you run <code>bundle package</code> under C Ruby, bundler will retrieve
-              the version of <code>nokogiri</code> for the <code>"ruby"</code> platform. If you deploy
-              to JRuby and run <code>bundle install</code>, bundler is forced to check to
-              see whether a <code>"java"</code> platformed <code>nokogiri</code> exists.</p>
-              
-              <p>Even though the <code>nokogiri</code> gem for the Ruby platform is
-              <em>technically</em> acceptable on JRuby, it has a C extension
-              that does not run on JRuby. As a result, bundler will, by default,
-              still connect to <code>rubygems.org</code> to check whether it has a version
-              of one of your gems more specific to your platform.</p>
-              
-              <p>This problem is also not limited to the <code>"java"</code> platform.
-              A similar (common) problem can happen when developing on Windows
-              and deploying to Linux, or even when developing on OSX and
-              deploying to Linux.</p>
-              
-              <p>If you know for sure that the gems packaged in <code>vendor/cache</code>
-              are appropriate for the platform you are on, you can run
-              <code>bundle install --local</code> to skip checking for more appropriate
-              gems, and use the ones in <code>vendor/cache</code>.</p>
-              
-              <p>One way to be sure that you have the right platformed versions
-              of all your gems is to run <code>bundle package</code> on an identical
-              machine and check in the gems. For instance, you can run
-              <code>bundle package</code> on an identical staging box during your
-              staging process, and check in the <code>vendor/cache</code> before
-              deploying to production.</p>
-              
-              <p>By default, <a href="bundle-package.html">bundle package(1)</a> fetches and also
-              installs the gems to the default location. To package the
-              dependencies to <code>vendor/cache</code> without installing them to the
-              local install location, you can run <code>bundle package --no-install</code>.</p>
               
               
                 
@@ -452,7 +419,7 @@
                 <li class='separator'>
                   <hr>
                 </li>
-                <li class='active'>
+                <li class=''>
                   <a href="/v1.16/man/bundle-package.1.html">bundle package</a>
                 </li>
                 <li class='separator'>
@@ -515,7 +482,7 @@
                 <li class='separator'>
                   <hr>
                 </li>
-                <li class=''>
+                <li class='active'>
                   <a href="/v1.16/man/bundle-doctor.1.html">bundle doctor</a>
                 </li>
                 <li class='separator'>
