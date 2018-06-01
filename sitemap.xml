@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2018-05-06T22:41:53Z</lastmod>
+    <lastmod>2018-06-01T19:27:50Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -332,6 +332,9 @@
   </url>
   <url>
     <loc>http://bundler.io/guides/bundler_in_a_single_file_ruby_script.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/guides/bundler_plugins.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/guides/bundler_setup.html</loc>
@@ -1829,6 +1832,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.16/guides/bundler_in_a_single_file_ruby_script.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.16/guides/bundler_plugins.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.16/guides/bundler_setup.html</loc>
