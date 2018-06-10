@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
+    <updated>2018-06-10T03:57:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -28,11 +28,27 @@
 </content>
   </entry>
   <entry>
+    <title>April 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
+    <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
+    <published>2018-05-07T00:00:00+00:00</published>
+    <updated>2018-06-10T03:57:06+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
+
+&lt;p&gt;This month, we fixed various bugs, worked towards releasing 1.16.2 with more bug fixes, and improved the way we hide Git URL usernames and passwords for the future. Bundler gained 28 new commits, contributed by 15 authors. There were 204 additions and 35 deletions across 22 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>March 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
     <published>2018-04-09T15:01:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
+    <updated>2018-06-10T03:57:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -50,7 +66,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
     <published>2018-03-09T15:01:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
+    <updated>2018-06-10T03:57:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -68,7 +84,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html"/>
     <id>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</id>
     <published>2018-01-17T15:01:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
+    <updated>2018-06-10T03:57:06+00:00</updated>
     <author>
       <name>Hiren Mistry</name>
     </author>
@@ -104,7 +120,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
     <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
     <published>2018-01-08T17:09:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
+    <updated>2018-06-10T03:57:06+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -122,51 +138,6 @@
 
 &lt;p&gt;Until next month,&lt;br /&gt;
 André and the Bundler team&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Bundler 1.16: 2.0 Is So Close!</title>
-    <link rel="alternate" href="http://bundler.io/blog/2017/10/31/bundler-1-16.html"/>
-    <id>http://bundler.io/blog/2017/10/31/bundler-1-16.html</id>
-    <published>2017-10-31T19:50:00+00:00</published>
-    <updated>2018-06-09T01:48:35+00:00</updated>
-    <author>
-      <name>Samuel Giddins</name>
-    </author>
-    <content type="html">&lt;h1 id="whats-new-in-bundler-116"&gt;What’s new in Bundler 1.16?&lt;/h1&gt;
-
-&lt;p&gt;A short summer after the performance-focused Bundler 1.15 release, we’ve shipped 1.16. Before we get to the list of changes, we want to share a very exciting announcement: Bundler 2.0 is right around the corner! We anticipate that v1.16 will be the last 1.x release, and details about the transition to 2.0 can be found below.&lt;/p&gt;
-
-&lt;h3 id="improved-resolver"&gt;Improved Resolver&lt;/h3&gt;
-
-&lt;p&gt;Thanks to the heroic efforts of &lt;a href="https://github.com/greysteil"&gt;Grey Baker&lt;/a&gt;, the Molinillo library Bundler uses for dependency resolution has once again been overhauled. By replacing the heuristic-focused “swapping” algorithm with one that can consider groups of gems at once, Grey managed to eliminate many bugs around dependency resolution, all while making resolution faster than ever before.&lt;/p&gt;
-
-&lt;h3 id="speed"&gt;Speed&lt;/h3&gt;
-
-&lt;p&gt;Following on the heels of the speed boosts in 1.15, we’ve continued to make the performance of Bundler a top priority. We’ve managed to reduce the number of times a Gemfile needs to be &lt;code&gt;eval&lt;/code&gt;ed when running &lt;code&gt;bundle install&lt;/code&gt;. Additionally, running &lt;code&gt;bundle install&lt;/code&gt; when no installation needs to be done is several times faster, bringing it within a few hundred ms of &lt;code&gt;bundle check&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id="various-improvements"&gt;Various improvements&lt;/h3&gt;
-
-&lt;p&gt;In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;bundle pristine&lt;/code&gt; will now allow passing a list of gems to pristine&lt;/li&gt;
-  &lt;li&gt;gemfiles are evaluated one fewer time when running &lt;code&gt;bundle install&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;We also fixed over 20 separate bugs, and you can read about every single one of them &lt;a href="https://github.com/bundler/bundler/blob/1-16-stable/CHANGELOG.md"&gt;in the Bundler 1.16 changelog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id="kicking-off-the-transition-to-bundler-2"&gt;Kicking off the transition to Bundler 2&lt;/h3&gt;
-
-&lt;p&gt;As this announcement is being written, Bundler 2 has landed on the &lt;code&gt;master&lt;/code&gt; branch. We anticipate having the first pre-release of 2.0 available on RubyGems soon. However! (and this is a big however), the Bundler team is committed to making the transition from Bundler 1 to Bundler 2 as smooth as possible. No one will be forced to upgrade to Bundler 2, and existing projects will be able to continue using Bundler 1 until they decide that switching to Bundler 2 is worth it.&lt;/p&gt;
-
-&lt;p&gt;On the other hand, for those of you chomping at the bit to get ready, we have good news. Bundler 1.16 contains our current slate of changes for 2.0, but disabled behind feature flags. This also means that 1.16 has intimate knowledge of the parts of Bundler that will be changing, and by setting the &lt;code&gt;BUNDLE_MAJOR_DEPRECATIONS&lt;/code&gt; environment variable (or the &lt;code&gt;major_deprecations&lt;/code&gt; config setting), Bundler 1.16 will let you know if you’re relying on behavior that will change in Bundler 2. If you want to try it out, you can enable the changes that will ship in 2.0, and follow the deprecation guides to migrate to the future behavior today.&lt;/p&gt;
-
-&lt;p&gt;In future blog posts, we’ll introduce the philosophy of Bundler 2, explain the reasons behind each of the breaking changes we made, and provide a detailed migration guide for those of you who prefer stable, documented releases. :)&lt;/p&gt;
-
-&lt;h3 id="how-to-upgrade-to-116"&gt;How To Upgrade To 1.16&lt;/h3&gt;
-
-&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
 </content>
   </entry>
 </feed>
