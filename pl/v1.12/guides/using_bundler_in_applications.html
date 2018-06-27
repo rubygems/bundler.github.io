@@ -160,7 +160,7 @@
               <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"3.0.0"</span>&#x000A;</code></pre></div>
               <p>lub użyć poniższej składni:</p>
               
-              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"~&gt; 4.0.0"</span> <span class="c1"># to jest to samo, co gem "rails", "&gt;= 4.0.0", "&lt; 4.1.0" </span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span><span class="p">,</span> <span class="s2">"&gt;= 1.4.2"</span>&#x000A;</code></pre></div>
+              <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s2">"rails"</span><span class="p">,</span> <span class="s2">"~&gt; 4.0.0"</span> <span class="c1"># to jest to samo, co gem "rails", "&gt;= 4.0.0", "&lt; 4.1.0"</span>&#x000A;<span class="n">gem</span> <span class="s2">"nokogiri"</span><span class="p">,</span> <span class="s2">"&gt;= 1.4.2"</span>&#x000A;</code></pre></div>
               <hr />
               
               <p>Czytaj więcej o gem-ach w Gemfile-u <a href="/man/gemfile.5.html#GEMS">tu</a>.</p>
@@ -222,7 +222,7 @@
                 <li><code>GEM</code>
                   <ul>
                     <li><code>remote</code> - źródło gem-ów</li>
-                    <li><code>specs</code> - zainstalowany gem-y (z wersją). Widzimy tu, że przykładowo <code>mini_portile2</code> jest 
+                    <li><code>specs</code> - zainstalowany gem-y (z wersją). Widzimy tu, że przykładowo <code>mini_portile2</code> jest
               zależnością <code>nokogiri</code>, ponieważ jest poniżej i ma wcięcie.</li>
                   </ul>
                 </li>
@@ -236,7 +236,7 @@
               <p>Popatrzmy najpierw na przykład:</p>
               
               <div class="highlight"><pre class="highlight plaintext"><code>bundle exec rspec&#x000A;&#x000A;bundle exec rails s&#x000A;</code></pre></div>
-              <p>Dzięki temu, komenda (w tym przypadku <code>rspec</code> i <code>rails s</code>) zostanie uruchomiona w aktualnym kontekście bundle-a, 
+              <p>Dzięki temu, komenda (w tym przypadku <code>rspec</code> i <code>rails s</code>) zostanie uruchomiona w aktualnym kontekście bundle-a,
               pozwalając dołączać i używać wszystkich gem-ów zdefiniowanych w <code>Gemfile</code>-u.</p>
               
               <hr />

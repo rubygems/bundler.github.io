@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -32,7 +32,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
     <published>2018-05-07T00:00:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -48,7 +48,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
     <published>2018-04-09T15:01:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -66,7 +66,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
     <published>2018-03-09T15:01:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -84,7 +84,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html"/>
     <id>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</id>
     <published>2018-01-17T15:01:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>Hiren Mistry</name>
     </author>
@@ -120,7 +120,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html"/>
     <id>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</id>
     <published>2018-01-08T17:09:00+00:00</published>
-    <updated>2018-06-17T04:37:10+00:00</updated>
+    <updated>2018-06-27T04:14:53+00:00</updated>
     <author>
       <name>André Arko</name>
     </author>
@@ -128,7 +128,7 @@
 
 &lt;p&gt;As you may have noticed, &lt;a href="https://www.ruby-lang.org/en/news/2017/12/25/ruby-2-5-0-released/"&gt;Bundler didn’t end up shipping with Ruby 2.5&lt;/a&gt;. The Ruby language core team has yet to announce why they decided to remove Bundler a few hours before Ruby 2.5 was released on Christmas Day. Hopefully, we’ll find out the story there soon.&lt;/p&gt;
 
-&lt;p&gt;In the meantime, Bundler 1.16.1 has been released, with fixes or workarounds for all known issues. If you were waiting to upgrade to version 1.16, give it a try now! If you’re still seeing issues on version 1.16.1, please &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;let us know!&lt;/a&gt; We care a lot about fixing bugs and maintaining backwards compatibility, but we need to hear from users in order to know when bugs have crept in. &amp;lt;3&lt;/p&gt;
+&lt;p&gt;In the meantime, Bundler 1.16.1 has been released, with fixes or workarounds for all known issues. If you were waiting to upgrade to version 1.16, give it a try now! If you’re still seeing issues on version 1.16.1, please &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/ISSUES.md"&gt;let us know!&lt;/a&gt; We care a lot about fixing bugs and maintaining backwards compatibility, but we need to hear from users in order to know when bugs have crept in. &amp;lt;3&lt;/p&gt;
 
 &lt;p&gt;In December, Bundler gained 59 new commits, contributed by 8 authors. There were 419 additions and 301 deletions across 36 files.&lt;/p&gt;
 

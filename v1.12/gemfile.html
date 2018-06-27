@@ -129,7 +129,7 @@
               <p>In order to require gems in your <code>Gemfile</code>, you will need to call
               <code>Bundler.require</code> in your application.</p>
               
-              <p><a href="/groups.html" class="btn btn-primary">Learn More: Bundler.require</a></p>
+              <p><a href="./groups.html" class="btn btn-primary">Learn More: Bundler.require</a></p>
               
               <p>If some of your gems need to be fetched from a private gem server, this default source can be overridden for those gems.</p>
               
@@ -152,7 +152,7 @@
               This may work for simple gems, but not work for others. If there is no .gemspec,
               you probably shouldn’t use the gem from git.</p>
               
-              <p><a href="/git.html" class="btn btn-primary">Learn More: Git</a></p>
+              <p><a href="./git.html" class="btn btn-primary">Learn More: Git</a></p>
               
               <p>If you would like to use an unpacked gem directly from the filesystem, simply set the <code>:path</code> option to the path containing the gem’s files.</p>
               
@@ -163,7 +163,7 @@
               <p>Dependencies can be placed into groups. Groups can be ignored at install-time (using <code>--without</code>) or required all at once (using <code>Bundler.require</code>).</p>
               
               <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'wirble'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>&#x000A;<span class="n">gem</span> <span class="s1">'debugger'</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="p">]</span>&#x000A;&#x000A;<span class="n">group</span> <span class="ss">:test</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
-              <p><a href="/groups.html" class="btn btn-primary">Learn More: Groups</a></p>
+              <p><a href="./groups.html" class="btn btn-primary">Learn More: Groups</a></p>
               
               <p>You can specify the required version of Ruby in the <code>Gemfile</code> with <code>ruby</code>. If the <code>Gemfile</code> is loaded on a different Ruby version, Bundler will raise an exception with an explanation.</p>
               
@@ -171,7 +171,7 @@
               <p>What this means is that this app has a dependency to a Ruby VM that is ABI compatible with 1.9.3. If the version check does not match, Bundler will raise an exception. This will ensure the running code matches. You can be more specific with the <code>:engine</code> and <code>:engine_version</code> options.</p>
               
               <div class="highlight"><pre class="highlight ruby"><code><span class="n">ruby</span> <span class="s1">'1.9.3'</span><span class="p">,</span> <span class="ss">:engine</span> <span class="o">=&gt;</span> <span class="s1">'jruby'</span><span class="p">,</span> <span class="ss">:engine_version</span> <span class="o">=&gt;</span> <span class="s1">'1.6.7'</span>&#x000A;</code></pre></div>
-              <p><a href="/gemfile_ruby.html" class="btn btn-primary">Learn More: Ruby Directive</a></p>
+              <p><a href="./gemfile_ruby.html" class="btn btn-primary">Learn More: Ruby Directive</a></p>
             </div>
           </div>
         </div>
