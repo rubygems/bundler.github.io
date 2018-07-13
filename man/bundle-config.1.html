@@ -403,11 +403,11 @@
               <p>Configuration keys in bundler have two forms: the canonical form and the
               environment variable form.</p>
               
-              <p>For instance, passing the <code>--without</code> flag to <a href="bundle-install.html">bundle install(1)</a>
+              <p>For instance, passing the <code>--without</code> flag to <a href="bundle-install.1.html">bundle install(1)</a>
               prevents Bundler from installing certain groups specified in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. Bundler
               persists this value in <code>app/.bundle/config</code> so that calls to <code>Bundler.setup</code>
               do not try to find gems from the <code>Gemfile</code> that you didn't install. Additionally,
-              subsequent calls to <a href="bundle-install.html">bundle install(1)</a> remember this setting
+              subsequent calls to <a href="bundle-install.1.html">bundle install(1)</a> remember this setting
               and skip those groups.</p>
               
               <p>The canonical form of this configuration is <code>"without"</code>. To convert the canonical
@@ -421,7 +421,7 @@
               <h2 id="LIST-OF-AVAILABLE-KEYS">List Of Available Keys</h2>
               
               <p>The following is a list of all configuration keys and their purpose. You can
-              learn more about their operation in <a href="bundle-install.html">bundle install(1)</a>.</p>
+              learn more about their operation in <a href="bundle-install.1.html">bundle install(1)</a>.</p>
               
               <ul>
               <li>
@@ -642,7 +642,7 @@
               
               
               <p>In general, you should set these settings per-application by using the applicable
-              flag to the <a href="bundle-install.html">bundle install(1)</a> or <a href="bundle-package.html">bundle package(1)</a> command.</p>
+              flag to the <a href="bundle-install.1.html">bundle install(1)</a> or <a href="bundle-package.1.html">bundle package(1)</a> command.</p>
               
               <p>You can set them globally either via environment variables or <code>bundle config</code>,
               whichever is preferable for your setup. If you use both, environment variables

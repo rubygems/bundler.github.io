@@ -334,7 +334,7 @@
               
               <h3 id="CREDENTIALS">Credentials</h3>
               
-              <p>Some gem sources require a username and password. Use <a href="bundle-config.html">bundle config(1)</a> to set
+              <p>Some gem sources require a username and password. Use <a href="bundle-config.1.html">bundle config(1)</a> to set
               the username and password for any of the sources that need it. The command must
               be run once on each computer that will install the Gemfile, but this keeps the
               credentials from being stored in plain text in version control.</p>
@@ -515,7 +515,7 @@
               
               <pre><code>gem "weakling",   :platforms =&gt; :jruby&#x000A;gem "ruby-debug", :platforms =&gt; :mri_18&#x000A;gem "nokogiri",   :platforms =&gt; [:mri_18, :jruby]&#x000A;</code></pre>
               
-              <p>All operations involving groups (<a href="bundle-install.html"><code>bundle install</code></a>, <code>Bundler.setup</code>,
+              <p>All operations involving groups (<a href="bundle-install.1.html"><code>bundle install</code></a>, <code>Bundler.setup</code>,
               <code>Bundler.require</code>) behave exactly the same as if any groups not
               matching the current platform were explicitly excluded.</p>
               
@@ -537,6 +537,12 @@
               <p>Selecting a specific source repository this way also suppresses the ambiguous
               gem warning described above in
               <a href="#GLOBAL-SOURCES" data-bare-link="true">GLOBAL SOURCES (#source)</a>.</p>
+              
+              <p>Using the <code>:source</code> option for an individual gem will also make that source
+              available as a possible global source for any other gems which do not specify
+              explicit sources. Thus, when adding gems with explicit sources, it is
+              recommended that you also ensure all other gems in the Gemfile are using
+              explicit sources.</p>
               
               <h3 id="GIT">Git</h3>
               
@@ -718,6 +724,13 @@
               <p>In the case of the <code>git</code> block form, the <code>:ref</code>, <code>:branch</code>, <code>:tag</code>,
               and <code>:submodules</code> options may be passed to the <code>git</code> method, and
               all gems in the block will inherit those options.</p>
+              
+              <p>The presence of a <code>source</code> block in a Gemfile also makes that source
+              available as a possible global source for any other gems which do not specify
+              explicit sources. Thus, when defining source blocks, it is
+              recommended that you also ensure all other gems in the Gemfile are using
+              explicit sources, either via source blocks or <code>:source</code> directives on
+              individual gems.</p>
               
               <h2 id="INSTALL_IF">Install_if</h2>
               

@@ -310,7 +310,7 @@
               
               <p>Update the gems specified (all gems, if none are specified), ignoring
               the previously installed gems specified in the <code>Gemfile.lock</code>. In
-              general, you should use <a href="bundle-install.html">bundle install(1)</a> to install the same exact
+              general, you should use <a href="bundle-install.1.html">bundle install(1)</a> to install the same exact
               gems and versions across machines.</p>
               
               <p>You would use <code>bundle update</code> to explicitly update the version of a
@@ -371,18 +371,18 @@
               
               <pre><code>source "https://rubygems.org"&#x000A;&#x000A;gem "rails", "3.0.0.rc"&#x000A;gem "nokogiri"&#x000A;</code></pre>
               
-              <p>When you run <a href="bundle-install.html">bundle install(1)</a> the first time, bundler will resolve
+              <p>When you run <a href="bundle-install.1.html">bundle install(1)</a> the first time, bundler will resolve
               all of the dependencies, all the way down, and install what you need:</p>
               
               <pre><code>Fetching gem metadata from https://rubygems.org/.........&#x000A;Resolving dependencies...&#x000A;Installing builder 2.1.2&#x000A;Installing abstract 1.0.0&#x000A;Installing rack 1.2.8&#x000A;Using bundler 1.7.6&#x000A;Installing rake 10.4.0&#x000A;Installing polyglot 0.3.5&#x000A;Installing mime-types 1.25.1&#x000A;Installing i18n 0.4.2&#x000A;Installing mini_portile 0.6.1&#x000A;Installing tzinfo 0.3.42&#x000A;Installing rack-mount 0.6.14&#x000A;Installing rack-test 0.5.7&#x000A;Installing treetop 1.4.15&#x000A;Installing thor 0.14.6&#x000A;Installing activesupport 3.0.0.rc&#x000A;Installing erubis 2.6.6&#x000A;Installing activemodel 3.0.0.rc&#x000A;Installing arel 0.4.0&#x000A;Installing mail 2.2.20&#x000A;Installing activeresource 3.0.0.rc&#x000A;Installing actionpack 3.0.0.rc&#x000A;Installing activerecord 3.0.0.rc&#x000A;Installing actionmailer 3.0.0.rc&#x000A;Installing railties 3.0.0.rc&#x000A;Installing rails 3.0.0.rc&#x000A;Installing nokogiri 1.6.5&#x000A;&#x000A;Bundle complete! 2 Gemfile dependencies, 26 gems total.&#x000A;Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
               
               <p>As you can see, even though you have two gems in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, your application
               needs 26 different gems in order to run. Bundler remembers the exact versions
-              it installed in <code>Gemfile.lock</code>. The next time you run <a href="bundle-install.html">bundle install(1)</a>, bundler skips
+              it installed in <code>Gemfile.lock</code>. The next time you run <a href="bundle-install.1.html">bundle install(1)</a>, bundler skips
               the dependency resolution and installs the same gems as it installed last time.</p>
               
               <p>After checking in the <code>Gemfile.lock</code> into version control and cloning it on another
-              machine, running <a href="bundle-install.html">bundle install(1)</a> will <em>still</em> install the gems that you installed
+              machine, running <a href="bundle-install.1.html">bundle install(1)</a> will <em>still</em> install the gems that you installed
               last time. You don't need to worry that a new release of <code>erubis</code> or <code>mail</code> changes
               the gems you use.</p>
               
@@ -431,12 +431,12 @@
               of another gem.</p>
               
               <p>To prevent updating shared dependencies, prior to version 1.14 the only option
-              was the <code>CONSERVATIVE UPDATING</code> behavior in <a href="bundle-install.html">bundle install(1)</a>:</p>
+              was the <code>CONSERVATIVE UPDATING</code> behavior in <a href="bundle-install.1.html">bundle install(1)</a>:</p>
               
               <p>In this scenario, updating the <code>thin</code> version manually in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>,
-              and then running <a href="bundle-install.html">bundle install(1)</a> will only update <code>daemons</code> and <code>eventmachine</code>,
+              and then running <a href="bundle-install.1.html">bundle install(1)</a> will only update <code>daemons</code> and <code>eventmachine</code>,
               but not <code>rack</code>. For more information, see the <code>CONSERVATIVE UPDATING</code> section
-              of <a href="bundle-install.html">bundle install(1)</a>.</p>
+              of <a href="bundle-install.1.html">bundle install(1)</a>.</p>
               
               <p>Starting with 1.14, specifying the <code>--conservative</code> option will also prevent shared
               dependencies from being updated.</p>
@@ -569,7 +569,7 @@
               <p>  $ git add Gemfile.lock</p>
               </li>
               <li>
-              <p>If <a href="bundle-install.html">bundle install(1)</a> reports a conflict, manually update the specific
+              <p>If <a href="bundle-install.1.html">bundle install(1)</a> reports a conflict, manually update the specific
               gems that you changed in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a></p>
               
               <p>  $ bundle update rails thin</p>

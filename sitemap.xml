@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2018-06-27T04:16:43Z</lastmod>
+    <lastmod>2018-07-13T05:35:02Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -218,6 +218,15 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2018/06/07/may-bundler-update.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/07/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/07/12/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/07/12/june-bundler-update.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_binstubs.html</loc>
