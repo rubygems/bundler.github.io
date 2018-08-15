@@ -5,16 +5,38 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-07-12T09:01:00+00:00</updated>
+  <updated>2018-08-10T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>July 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
+    <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
+    <published>2018-08-10T00:00:00+00:00</published>
+    <updated>2018-08-15T12:10:05+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the July Bundler update!&lt;/p&gt;
+
+&lt;p&gt;We released Bundler 1.16.3 on July 17. The new release includes support for the upcoming Ruby 2.6, and fixes several bugs including symlink handling, temporary file handling, and improving error messages around filesystem access and installation errors.&lt;/p&gt;
+
+&lt;p&gt;Since we announced the new RFC process last month, we’ve seen new comments and new proposals in the &lt;a href="https://github.com/bundler/rfcs/pulls"&gt;Bundler RFC repo&lt;/a&gt;. If you’re interested in ideas for the future of Bundler, definitely take a look. Keep the comments and suggestions coming!&lt;/p&gt;
+
+&lt;p&gt;In other exciting news, we added a new contributor to the core team. Welcome &lt;a href="https://github.com/deivid-rodriguez"&gt;David Rodríguez&lt;/a&gt; to Bundler! Probably best known for his work on the &lt;code&gt;byebug&lt;/code&gt; debugger gem, David was the driver behind updating gem templates to check in lockfiles, as well as work around ensuring that Bundler 2 will work on existing applications when it is released.&lt;/p&gt;
+
+&lt;p&gt;This month, Bundler gained 63 new commits, contributed by 8 authors. There were 1,442 additions and 72 deletions across 33 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>June 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
     <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
+    <updated>2018-08-15T12:10:05+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -36,7 +58,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
+    <updated>2018-08-15T12:10:05+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -54,7 +76,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
     <published>2018-05-07T00:00:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
+    <updated>2018-08-15T12:10:05+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -70,7 +92,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
     <published>2018-04-09T15:01:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
+    <updated>2018-08-15T12:10:05+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -88,7 +110,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
     <published>2018-03-09T15:01:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
+    <updated>2018-08-15T12:10:05+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -99,42 +121,6 @@
 &lt;p&gt;This month, Bundler gained 23 new commits, contributed by 8 authors. There were 291 additions and 59 deletions across 50 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Making gem development a little better</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html"/>
-    <id>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</id>
-    <published>2018-01-17T15:01:00+00:00</published>
-    <updated>2018-08-05T20:00:00+00:00</updated>
-    <author>
-      <name>Hiren Mistry</name>
-    </author>
-    <content type="html">&lt;p&gt;You may have experienced this before: you’re excited about a gem, and want to contribute to its development. You clone the gem repo and run &lt;code&gt;bundle install&lt;/code&gt; only to see the horror of installation issues or a failing test suite. What to do? Do you debug this unsure of how deep the rabbit hole goes, or perhaps leave it for another day as you’re short on time?&lt;/p&gt;
-
-&lt;p&gt;Recently &lt;a href="https://github.com/deivid-rodriguez"&gt;David Rodriguez&lt;/a&gt; brought up the issue and explained one way to prevent this: by having gem repositories lock versions of gem dependencies like we do in app development. The team listened to his proposal and reconsidered the original motivation behind not locking versions of gem dependencies, the impact to gem developers, and whether those reasons were still valid today.&lt;/p&gt;
-
-&lt;p&gt;Starting with Bundler 1.16, the default for a new gem template created by Bundler no longer adds &lt;code&gt;Gemfile.lock&lt;/code&gt; to &lt;code&gt;.gitignore&lt;/code&gt;, thereby allowing the lock file to be committed into the Git repository. Locking the versions of gem dependencies lets gem developers install a known working setup across different systems for development and save time by not having to debug broken installations. With a little CI configuration, gems can still be tested against new version dependencies (see CI recommendations below). We believe gem developers and the OSS community can benefit more by reducing hurdles for contributors. Some gem authors like Rails and Devise have been checking in the lock file into Git for some time now.&lt;/p&gt;
-
-&lt;p&gt;The change only applies to new gems created using Bundler by running &lt;code&gt;bundle gem&lt;/code&gt; to create a new gem skeleton. Bundler will not change the lock file’s presence in &lt;code&gt;.gitignore&lt;/code&gt; for existing gems.&lt;/p&gt;
-
-&lt;p&gt;We’d like to thank David for bringing this issue to our attention and implementing the changes to Bundler!&lt;/p&gt;
-
-&lt;h3 id="ci-recommendations"&gt;CI recommendations&lt;/h3&gt;
-
-&lt;p&gt;There are (at least) two ways to ensure the gem is still tested against the latest versions of dependencies in the CI, even after the &lt;code&gt;Gemfile.lock&lt;/code&gt; is checked in to the gem repo.&lt;/p&gt;
-
-&lt;h4 id="option-1-delete-the-lockfile-when-testing"&gt;Option 1: Delete the lockfile when testing&lt;/h4&gt;
-
-&lt;p&gt;One way is to delete the lockfile before running the test suite. This will test the build against the latest version of the gem dependencies, giving you a preview of what your users will experience when they install the gem. The easiest way to do this is to add one line to &lt;code&gt;travis.yml&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="ss"&gt;before_install: &lt;/span&gt;&lt;span class="s2"&gt;"rm Gemfile.lock"&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This means the CI only runs with the latest dependencies, and so the results may not match what gem developers see on their local machines. You can work around this problem by running the tests twice or setting up a Travis build matrix, to see test results for both, with and without a lockfile.&lt;/p&gt;
-
-&lt;h4 id="option-2-let-a-bot-handle-it"&gt;Option 2: Let a bot handle it&lt;/h4&gt;
-
-&lt;p&gt;The easiest way to make sure new versions are tested with the gem is to ask a friendly bot to update the &lt;code&gt;Gemfile.lock&lt;/code&gt; and open a PR anytime one of the dependencies release a new version. Friendly bot options include &lt;a href="https://dependabot.com"&gt;Dependabot&lt;/a&gt; (by Bundler contributor &lt;a href="https://github.com/greysteil"&gt;@greysteil&lt;/a&gt;), &lt;a href="https://depfu.com"&gt;Depfu&lt;/a&gt;, and others. Having a separate PR for every version bump makes it easy to tell which gems and versions caused failures, if any. They also make it easy to update a version in the lockfile, secure in the knowledge that the tests have already passed with the new version.&lt;/p&gt;
 </content>
   </entry>
 </feed>

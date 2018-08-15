@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2018-08-05T20:01:39Z</lastmod>
+    <lastmod>2018-08-15T12:13:13Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -229,6 +229,15 @@
     <loc>http://bundler.io/blog/2018/07/12/june-bundler-update.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/blog/2018/08/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/08/10/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2018/08/10/july-bundler-update.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/bundle_binstubs.html</loc>
   </url>
   <url>
@@ -310,9 +319,6 @@
     <loc>http://bundler.io/doc/development/readme.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/development/releasing.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/doc/development/setup.html</loc>
   </url>
   <url>
@@ -323,6 +329,12 @@
   </url>
   <url>
     <loc>http://bundler.io/doc/documentation/writing.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/playbooks/releasing.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/doc/playbooks/team_changes.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/doc/policies.html</loc>
