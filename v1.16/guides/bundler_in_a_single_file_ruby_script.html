@@ -162,7 +162,7 @@
               
               <p>To use Bundler in a single-file script, add <code>require 'bundler/inline' </code> at the top of your Ruby file. Then, use the <code>gemfile</code> method to declare any gem sources and gems that you need. Here’s an example:</p>
               
-              <div class="highlight"><pre class="highlight plaintext"><code>require 'bundler/inline'&#x000A;&#x000A;gemfile do&#x000A; 	  source 'https://rubygems.org'&#x000A; 	  gem 'json', require: false&#x000A;  	  gem 'nap', require: 'rest'&#x000A;  	  gem 'cocoapods', '~&gt; 0.34.1'&#x000A;end&#x000A;&#x000A;puts 'Gems installed and loaded!'&#x000A;puts "The nap gem is at version #{Nap::VERSION}"&#x000A;</code></pre></div>
+              <div class="highlight"><pre class="highlight plaintext"><code>require 'bundler/inline'&#x000A;&#x000A;gemfile do&#x000A; 	  source 'https://rubygems.org'&#x000A; 	  gem 'json', require: false&#x000A;  	  gem 'nap', require: 'rest'&#x000A;  	  gem 'cocoapods', '~&gt; 0.34.1'&#x000A;end&#x000A;&#x000A;puts 'Gems installed and loaded!'&#x000A;puts "The nap gem is at version #{REST::VERSION}"&#x000A;</code></pre></div>
               <p>To run this script, including installing any missing gems, save the script into a file (for example, <code>bundler_inline_example.rb</code>) and then run the file with the command <code>ruby bundler_inline_example.rb</code>.</p>
               
               <p>Running the script will automatically install any missing gems, require the gems you listed, and then run your code.</p>
