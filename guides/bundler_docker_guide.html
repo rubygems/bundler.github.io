@@ -6,7 +6,7 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
     <title>
-      Bundler: The best way to manage a Ruby application's gems
+      Bundler: How to use Bundler with Docker
     </title>
     
     <script src="/javascripts/application.js"></script>
@@ -164,22 +164,36 @@
               </div>
             </div>
             <div class='guide contents' id='page-content-wrapper'>
-              <h1 id="getting-help">Getting help</h1>
+              <h1 id="how-to-use-bundler-with-docker">How to use Bundler with Docker</h1>
               
-              <p>If you have any questions after reading the documentation for contributing, please feel free to contact either <a href="https://github.com/indirect">@indirect</a>, <a href="https://github.com/segiddins">@segiddins</a>, or <a href="https://github.com/RochesterinNYC">@RochesterinNYC</a>. They are all happy to provide help working through your first bug fix or thinking through the problem you’re trying to resolve.</p>
+              <h2 id="introduction">Introduction</h2>
               
-              <p>The best ways to get in touch are:</p>
+              <p>The official Docker images for Ruby assume that you will use only one application, with one Gemfile, and no other gems or Ruby applications will be installed or run in your container.</p>
               
-              <ul>
-                <li><a href="https://bundler.slack.com">Bundler Slack</a>.
-                  <ul>
-                    <li>Not a member of the Slack? Join the Bundler team slack <a href="http://slack.bundler.io/">here</a>!</li>
-                  </ul>
-                </li>
-                <li><a href="http://groups.google.com/group/ruby-bundler">Bundler mailing list</a></li>
-              </ul>
+              <p>If you want to install more than one Gemfile in your container, or simply install gems via RubyGems and use them as system gems, this situation is confusing, and has historically led to many confusing errors that appear to be bugs in Bundler.</p>
               
-              <p>You may also find our guide on <a href="/doc/contributing/issues.html">filing issues</a> to be helpful as well!</p>
+              <p>However, these errors ultimately come from the way the Dockerfile tells Bundler to create <a href="https://bundler.io/v1.16/man/bundle-binstubs.1.html">binstubs</a> (which are linked to one application and Gemfile) in a single global place for the entire container. If you install two Gemfiles with <code>rake</code>, for example, running the <code>rake</code> command will always load the last Gemfile that was installed, and never any others.</p>
+              
+              <h2 id="dockerfiles-for-multiple-ruby-applications-and-gems">Dockerfiles for multiple Ruby applications and gems</h2>
+              
+              <p>To build a Docker container that can run more than one Ruby application or global commands installed with <code>gem install</code>, you will need to change some environment variables from the defaults set in the official Docker image for Ruby.</p>
+              
+              <p>In your Dockerfile, change the <code>PATH</code> and <code>GEM_HOME</code> so that Bundler will install all gems to the same location, and running commands will use the RubyGems binstubs instead of Bundler’s application-locked binstubs:</p>
+              
+              <p><code>&#x000A;ENV GEM_HOME="/usr/local/bundle"&#x000A;ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH</code></p>
+              
+              <p>You will also need to unset <code>BUNDLE_PATH</code> and <code>BUNDLE_BIN</code>. Unsetting environment variables can be somewhat tricky in Docker, but the most common way is at the beginning of your <code>ENTRYPOINT</code> script:</p>
+              
+              <p>```bash
+              #!/bin/bash</p>
+              
+              <p>unset BUNDLE_PATH
+              unset BUNDLE_BIN</p>
+              
+              <h1 id="your-script-goes-here">your script goes here</h1>
+              <p>```</p>
+              
+              <p>Once you’ve done that, you’ll be able to run commands without a bundle by calling them directly, like <code>rake</code>. You’ll be able to run commands in a specific bundle by <code>cd</code>ing to that bundle’s directory and then using <code>bundle exec</code>. For example, to run rake inside your application bundle, you would use <code>bundle exec rake</code>.</p>
             </div>
           </div>
         </div>
@@ -299,7 +313,7 @@
         <div class='container'>
           <div class='contents'>
             <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler/blob/master/doc/contributing/getting_help.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+              <a href="https://github.com/bundler/bundler-site/blob/master/source/v1.16/guides/bundler_docker_guide.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
             </div>
           </div>
         </div>

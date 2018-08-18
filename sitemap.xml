@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2018-08-16T19:15:53Z</lastmod>
+    <lastmod>2018-08-18T18:58:26Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -368,6 +368,9 @@
   </url>
   <url>
     <loc>http://bundler.io/gemfile_ruby.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/guides/bundler_in_a_single_file_ruby_script.html</loc>
@@ -1868,6 +1871,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.16/gemfile_ruby.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v1.16/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.16/guides/bundler_in_a_single_file_ruby_script.html</loc>
