@@ -180,19 +180,10 @@
               
               <p>In your Dockerfile, change the <code>PATH</code> and <code>GEM_HOME</code> so that Bundler will install all gems to the same location, and running commands will use the RubyGems binstubs instead of Bundler’s application-locked binstubs:</p>
               
-              <p><code>&#x000A;ENV GEM_HOME="/usr/local/bundle"&#x000A;ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH</code></p>
-              
+              <div class="highlight"><pre class="highlight plaintext"><code>ENV GEM_HOME="/usr/local/bundle"&#x000A;ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH&#x000A;</code></pre></div>
               <p>You will also need to unset <code>BUNDLE_PATH</code> and <code>BUNDLE_BIN</code>. Unsetting environment variables can be somewhat tricky in Docker, but the most common way is at the beginning of your <code>ENTRYPOINT</code> script:</p>
               
-              <p>```bash
-              #!/bin/bash</p>
-              
-              <p>unset BUNDLE_PATH
-              unset BUNDLE_BIN</p>
-              
-              <h1 id="your-script-goes-here">your script goes here</h1>
-              <p>```</p>
-              
+              <div class="highlight"><pre class="highlight shell"><code><span class="c">#!/bin/bash</span>&#x000A;&#x000A;<span class="nb">unset </span>BUNDLE_PATH&#x000A;<span class="nb">unset </span>BUNDLE_BIN&#x000A;&#x000A;<span class="c"># your script goes here</span>&#x000A;</code></pre></div>
               <p>Once you’ve done that, you’ll be able to run commands without a bundle by calling them directly, like <code>rake</code>. You’ll be able to run commands in a specific bundle by <code>cd</code>ing to that bundle’s directory and then using <code>bundle exec</code>. For example, to run rake inside your application bundle, you would use <code>bundle exec rake</code>.</p>
             </div>
           </div>
