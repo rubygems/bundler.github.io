@@ -233,8 +233,8 @@
               <h3 id="VERSION-required-">Version (required)</h3>
               
               <p>The version of Ruby that your application requires. If your application
-              requires an alternate Ruby engine, such as JRuby or Rubinius, this should be
-              the Ruby version that the engine is compatible with.</p>
+              requires an alternate Ruby engine, such as JRuby, Rubinius or TruffleRuby, this
+              should be the Ruby version that the engine is compatible with.</p>
               
               <pre><code>ruby "1.9.3"&#x000A;</code></pre>
               
@@ -347,24 +347,26 @@
               
               <dl>
               <dt class="flush"><code>ruby</code></dt>
-              <dd>C Ruby (MRI) or Rubinius, but <code>NOT</code> Windows</dd>
+              <dd>C Ruby (MRI), Rubinius or TruffleRuby, but <code>NOT</code> Windows</dd>
               <dt class="flush"><code>mri</code></dt>
-              <dd>Same as <em>ruby</em>, but not Rubinius</dd>
+              <dd>Same as <em>ruby</em>, but only C Ruby (MRI)</dd>
               <dt class="flush"><code>mingw</code></dt>
               <dd>Windows 32 bit 'mingw32' platform (aka RubyInstaller)</dd>
               <dt><code>x64_mingw</code></dt>
               <dd>Windows 64 bit 'mingw32' platform (aka RubyInstaller x64)</dd>
               <dt class="flush"><code>rbx</code></dt>
-              <dd>Same as <em>ruby</em>, but only Rubinius (not MRI)</dd>
+              <dd>Rubinius</dd>
               <dt class="flush"><code>jruby</code></dt>
               <dd>JRuby</dd>
+              <dt><code>truffleruby</code></dt>
+              <dd>TruffleRuby</dd>
               <dt class="flush"><code>mswin</code></dt>
               <dd>Windows</dd>
               </dl>
               
               
               <p>You can restrict further by platform and version for all platforms <em>except</em> for
-              <code>rbx</code>, <code>jruby</code>, and <code>mswin</code>.</p>
+              <code>rbx</code>, <code>jruby</code>, <code>truffleruby</code> and <code>mswin</code>.</p>
               
               <p>To specify a version in addition to a platform, append the version number without
               the delimiter to the platform. For example, to specify that a gem should only be

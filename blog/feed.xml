@@ -5,16 +5,40 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-08-10T00:00:00+00:00</updated>
+  <updated>2018-09-10T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>August 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
+    <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
+    <published>2018-09-10T00:00:00+00:00</published>
+    <updated>2018-09-15T15:04:59+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the August monthly update!&lt;/p&gt;
+
+&lt;p&gt;With the help of &lt;a href="http://github.com/eanlain"&gt;@eanlain&lt;/a&gt;, we shipped a new guide: &lt;a href="https://bundler.io/v1.16/guides/bundler_docker_guide.html"&gt;“How to use Bundler with Docker”&lt;/a&gt;. We also dramatically improved error messages when version requirements conflict, shipped a playbook for adding or removing core team members, and fixed some issues handling gemspecs with non-ASCII characters. We also merged a fix that could cause Bundler to &lt;a href="https://github.com/bundler/bundler/pull/6675"&gt;fail when trying to install a gem that has had a version yanked recently&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;On top of that code work, we also added two new contributors to &lt;a href="https://bundler.io/contributors.html"&gt;the Bundler team&lt;/a&gt;! Welcome to &lt;a href="https://www.twitter.com/radiomorillo"&gt;Stephanie Morillo&lt;/a&gt; and &lt;a href="https://twitter.com/greybaker"&gt;Grey Baker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Stephanie has helped create new Bundler docs (like the troubleshooting RubyGems and Bundler TLS/SSL issues guide), and update existing ones. She’s also responsible for updating the Bundler contributor guidelines and trying to make Bundler docs more accessible to new contributors. We’re excited to have her on board, and looking forward to working with her more in the future.&lt;/p&gt;
+
+&lt;p&gt;Grey is the author of &lt;a href="https://dependabot.com"&gt;Dependabot&lt;/a&gt;, and has regularly contributed to &lt;a href="https://github.com/cocoapods/molinillo"&gt;Molinillo&lt;/a&gt;, the core resolver library that powers Bundler, RubyGems, and Cocoapods.&lt;/p&gt;
+
+&lt;p&gt;In total this month, Bundler gained 58 new commits, contributed by 10 authors. There were 334 additions and 54 deletions across 30 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>July 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
     <published>2018-08-10T00:00:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
+    <updated>2018-09-15T15:04:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -36,7 +60,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
     <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
+    <updated>2018-09-15T15:04:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -58,7 +82,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
+    <updated>2018-09-15T15:04:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -76,7 +100,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
     <published>2018-05-07T00:00:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
+    <updated>2018-09-15T15:04:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -92,7 +116,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
     <published>2018-04-09T15:01:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
+    <updated>2018-09-15T15:04:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -103,24 +127,6 @@
 &lt;p&gt;Coming up next, we expect to ship bug fixes, push out a small feature release, and begin public testing on Bundler 2.0. In total, Bundler gained 60 new commits, contributed by 13 authors. There were 353 additions and 97 deletions across 47 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>February 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/03/09/february-bundler-update.html"/>
-    <id>http://bundler.io/blog/2018/03/09/february-bundler-update.html</id>
-    <published>2018-03-09T15:01:00+00:00</published>
-    <updated>2018-09-07T22:45:59+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
-
-&lt;p&gt;Bundler saw some fixes in February thanks to contributors &lt;a href="https://github.com/nholden"&gt;@nholden&lt;/a&gt;, &lt;a href="https://github.com/voxik"&gt;@voxik&lt;/a&gt;, &lt;a href="https://github.com/cpgo"&gt;@cpgo&lt;/a&gt;,  &lt;a href="https://github.com/deivid-rodriguez"&gt;@deivid-rodriguez&lt;/a&gt;, and &lt;a href="https://github.com/alyssais"&gt;@alyssais&lt;/a&gt;. Fixes this month included &lt;a href="https://github.com/bundler/bundler/pull/6288"&gt;a fix for certain instances of the “perhaps the lockfile is corrupted?” error&lt;/a&gt;, as well as &lt;a href="https://github.com/bundler/bundler/pull/6283"&gt;clear enforcement steps for the code of conduct&lt;/a&gt;. We also received &lt;a href="https://github.com/bundler/rfcs/pull/10"&gt;an awesome proposal&lt;/a&gt; to give the &lt;code&gt;add&lt;/code&gt; command superpowers, and add a &lt;code&gt;remove&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;This month, Bundler gained 23 new commits, contributed by 8 authors. There were 291 additions and 59 deletions across 50 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started.&lt;/p&gt;
 </content>
   </entry>
 </feed>

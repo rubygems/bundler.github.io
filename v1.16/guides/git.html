@@ -185,7 +185,7 @@
                       Specify that a gem should come from a git
                       repository with a .gemspec at its root
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rack/rack'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rack/rack'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
@@ -194,7 +194,7 @@
                       that bundler should use when resolving
                       dependencies
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'1.7.0.1'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/sparklemotion/nokogiri'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="s1">'1.7.0.1'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/sparklemotion/nokogiri'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
@@ -202,7 +202,7 @@
                       a git repository, you can use the <code>:glob</code> option
                       to specify the location of its .gemspec
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'cf-copilot'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/cloudfoundry/copilot'</span><span class="p">,</span> <span class="ss">:glob</span> <span class="o">=&gt;</span> <span class="s1">'sdk/ruby/*.gemspec'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'cf-copilot'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/cloudfoundry/copilot'</span><span class="p">,</span> <span class="ss">glob: </span><span class="s1">'sdk/ruby/*.gemspec'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
@@ -216,7 +216,7 @@
                     <div class='description'>
                       From the previous example, you may specify a particular ref, branch or tag
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'4aded'</span> <span class="k">do</span>&#x000A;<span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'5-0-stable'</span> <span class="k">do</span>&#x000A;<span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'v5.0.0'</span> <span class="k">do</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">ref: </span><span class="s1">'4aded'</span> <span class="k">do</span>&#x000A;<span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">branch: </span><span class="s1">'5-0-stable'</span> <span class="k">do</span>&#x000A;<span class="n">git</span> <span class="s1">'https://github.com/rails/rails.git'</span><span class="p">,</span> <span class="ss">tag: </span><span class="s1">'v5.0.0'</span> <span class="k">do</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
@@ -224,44 +224,44 @@
                       git repository specified inline works
                       exactly the same way
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'0bd839d'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">'2.0.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'rack-1.5'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">ref: </span><span class="s1">'0bd839d'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">tag: </span><span class="s1">'2.0.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rack/rack.git'</span><span class="p">,</span> <span class="ss">branch: </span><span class="s1">'rack-1.5'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       Bundler can use HTTP(S), SSH, or git
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rack/rack.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git@github.com:rack/rack.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/rack/rack.git'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rack/rack.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'git@github.com:rack/rack.git'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'git://github.com/rack/rack.git'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       Specify that the submodules from a git repository
                       also should be expanded by bundler
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rugged'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git://github.com/libgit2/rugged.git'</span><span class="p">,</span> <span class="ss">:submodules</span> <span class="o">=&gt;</span> <span class="kp">true</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rugged'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'git://github.com/libgit2/rugged.git'</span><span class="p">,</span> <span class="ss">submodules: </span><span class="kp">true</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
                       If you are getting your gems from a public GitHub repository,
                       you can use the shorthand
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rack/rack'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">github: </span><span class="s1">'rack/rack'</span>&#x000A;</code></pre></div>
                     <div class='description'>
                       If the repository name is the same as the GitHub account hosting it,
                       you can omit it
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">github: </span><span class="s1">'rails'</span>&#x000A;</code></pre></div>
                     <div class='description'>
                       <b>NB:</b> This shorthand can only be used for public repos in Bundler version 1.x. Use HTTPS for read and write:
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/rails/rails'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/rails/rails'</span>&#x000A;</code></pre></div>
                     <div class='description'>
                       All of the usual <code>:git</code> options apply, like <code>:branch</code> and <code>:ref</code>.
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:ref</span> <span class="o">=&gt;</span> <span class="s1">'a9752dcfd15bcddfe7b6f7126f3a6e0ba5927c56'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">github: </span><span class="s1">'rails'</span><span class="p">,</span> <span class="ss">ref: </span><span class="s1">'a9752dcfd15bcddfe7b6f7126f3a6e0ba5927c56'</span>&#x000A;</code></pre></div>
                     <div class='description'>
                       There are analogous shortcuts for Bitbucket (<code>:bitbucket</code>) and GitHub Gists (<code>:gist</code>).
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'capistrano-sidekiq'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'seuros/capistrano-sidekiq'</span>&#x000A;<span class="n">gem</span> <span class="s1">'keystone'</span><span class="p">,</span> <span class="ss">:bitbucket</span> <span class="o">=&gt;</span> <span class="s1">'musicone/keystone'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'capistrano-sidekiq'</span><span class="p">,</span> <span class="ss">github: </span><span class="s1">'seuros/capistrano-sidekiq'</span>&#x000A;<span class="n">gem</span> <span class="s1">'keystone'</span><span class="p">,</span> <span class="ss">bitbucket: </span><span class="s1">'musicone/keystone'</span>&#x000A;</code></pre></div>
                   </div>
                 </div>
                 <h2>Custom git sources</h2>
@@ -276,7 +276,7 @@
                       If you're using Github Enterprise, Stash, or just have a custom git setup, create your own shortcuts
                       by calling <code>git_source</code> before you use your custom option. Here's an example for Stash:
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">git_source</span><span class="p">(</span><span class="ss">:stash</span><span class="p">){</span> <span class="o">|</span><span class="n">repo_name</span><span class="o">|</span> <span class="s2">"https://stash.corp.acme.pl/</span><span class="si">#{</span><span class="n">repo_name</span><span class="si">}</span><span class="s2">.git"</span> <span class="p">}</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">:stash</span> <span class="o">=&gt;</span> <span class="s1">'forks/rails'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">git_source</span><span class="p">(</span><span class="ss">:stash</span><span class="p">){</span> <span class="o">|</span><span class="n">repo_name</span><span class="o">|</span> <span class="s2">"https://stash.corp.acme.pl/</span><span class="si">#{</span><span class="n">repo_name</span><span class="si">}</span><span class="s2">.git"</span> <span class="p">}</span>&#x000A;<span class="n">gem</span> <span class="s1">'rails'</span><span class="p">,</span> <span class="ss">stash: </span><span class="s1">'forks/rails'</span>&#x000A;</code></pre></div>
                   </div>
                 </div>
                 <h2>Security</h2>
@@ -310,7 +310,7 @@
                     <div class='description'>
                       and setup the git repo pointing to a branch:
                     </div>
-                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">:github</span> <span class="o">=&gt;</span> <span class="s1">'rack/rack'</span><span class="p">,</span> <span class="ss">:branch</span> <span class="o">=&gt;</span> <span class="s1">'master'</span>&#x000A;</code></pre></div>
+                    <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="ss">github: </span><span class="s1">'rack/rack'</span><span class="p">,</span> <span class="ss">branch: </span><span class="s1">'master'</span>&#x000A;</code></pre></div>
                   </div>
                   <div class='bullet'>
                     <div class='description'>
