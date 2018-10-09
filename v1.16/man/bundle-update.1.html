@@ -304,11 +304,11 @@
               
               
               
-              <pre><code>bundle update</code> <var>*gems</var> [--group=NAME]&#x000A;                        [--source=NAME]&#x000A;                        [--local]&#x000A;                        [--ruby]&#x000A;                        [--bundler[=VERSION]]&#x000A;                        [--full-index]&#x000A;                        [--jobs=JOBS]&#x000A;                        [--quiet]&#x000A;                        [--force]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--strict]&#x000A;                        [--conservative]</pre>
+              <pre><code>bundle update</code> <var>*gems</var> [--all]&#x000A;                        [--group=NAME]&#x000A;                        [--source=NAME]&#x000A;                        [--local]&#x000A;                        [--ruby]&#x000A;                        [--bundler[=VERSION]]&#x000A;                        [--full-index]&#x000A;                        [--jobs=JOBS]&#x000A;                        [--quiet]&#x000A;                        [--force]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--strict]&#x000A;                        [--conservative]</pre>
               
               <h2 id="DESCRIPTION">Description</h2>
               
-              <p>Update the gems specified (all gems, if none are specified), ignoring
+              <p>Update the gems specified (all gems, if <code>--all</code> flag is used), ignoring
               the previously installed gems specified in the <code>Gemfile.lock</code>. In
               general, you should use <a href="bundle-install.1.html">bundle install(1)</a> to install the same exact
               gems and versions across machines.</p>
@@ -319,6 +319,8 @@
               <h2 id="OPTIONS">Options</h2>
               
               <dl>
+              <dt class="flush"><code>--all</code></dt>
+              <dd><p>Update all gems specified in Gemfile.</p></dd>
               <dt>
               <code>--group=&lt;name&gt;</code>, <code>-g=[&lt;name&gt;]</code>
               </dt>
@@ -363,7 +365,7 @@
               
               <h2 id="UPDATING-ALL-GEMS">Updating All Gems</h2>
               
-              <p>If you run <code>bundle update</code> with no parameters, bundler will ignore
+              <p>If you run <code>bundle update --all</code>, bundler will ignore
               any previously installed gems and resolve all dependencies again
               based on the latest versions of all gems available in the sources.</p>
               
@@ -389,10 +391,10 @@
               <p>However, from time to time, you might want to update the gems you are using to the
               newest versions that still match the gems in your <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>.</p>
               
-              <p>To do this, run <code>bundle update</code>, which will ignore the <code>Gemfile.lock</code>, and resolve
+              <p>To do this, run <code>bundle update --all</code>, which will ignore the <code>Gemfile.lock</code>, and resolve
               all the dependencies again. Keep in mind that this process can result in a significantly
               different set of the 25 gems, based on the requirements of new gems that the gem
-              authors released since the last time you ran <code>bundle update</code>.</p>
+              authors released since the last time you ran <code>bundle update --all</code>.</p>
               
               <h2 id="UPDATING-A-LIST-OF-GEMS">Updating A List Of Gems</h2>
               
@@ -578,7 +580,7 @@
               <p>If you want to update all the gems to the latest possible versions that
               still match the gems listed in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, run</p>
               
-              <p>  $ bundle update</p>
+              <p>  $ bundle update --all</p>
               </li>
               </ul>
               

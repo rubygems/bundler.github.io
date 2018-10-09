@@ -557,11 +557,20 @@
               different gems being needed to satisfy all dependencies.</p>
               
               <p>As a result, you <code>SHOULD</code> check your <code>Gemfile.lock</code> into version
-              control. If you do not, every machine that checks out your
-              repository (including your production server) will resolve all
+              control, in both applications and gems. If you do not, every machine that
+              checks out your repository (including your production server) will resolve all
               dependencies again, which will result in different versions of
               third-party code being used if <code>any</code> of the gems in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>
               or any of their dependencies have been updated.</p>
+              
+              <p>When Bundler first shipped, the <code>Gemfile.lock</code> was included in the <code>.gitignore</code>
+              file included with generated gems.  Over time, however, it became clear that
+              this practice forces the pain of broken dependencies onto new contributors,
+              while leaving existing contributors potentially unaware of the problem. Since
+              <code>bundle install</code> is usually the first step towards a contribution, the pain of
+              broken dependencies would discourage new contributors from contributing. As a
+              result, we have revised our guidance for gem authors to now recommend checking
+              in the lock for gems.</p>
               
               <h2 id="CONSERVATIVE-UPDATING">Conservative Updating</h2>
               
