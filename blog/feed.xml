@@ -5,16 +5,36 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-09-10T00:00:00+00:00</updated>
+  <updated>2018-10-15T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>September 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
+    <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
+    <published>2018-10-15T00:00:00+00:00</published>
+    <updated>2018-10-23T08:14:49+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the September monthly update!&lt;/p&gt;
+
+&lt;p&gt;The Bundler team merged 29 pull requests, including fixes for nested &lt;code&gt;bundle exec&lt;/code&gt;, various bugs around choosing and updating gem versions, documentation improvements, and full compatibility with TruffleRuby. We also released versions 1.16.5 and 1.17.0.pre.&lt;/p&gt;
+
+&lt;p&gt;We also decided how to drop backwards compatibility with old Ruby versions, allowing us to resume work to merge Bundler into Ruby 2.6. We may or may not complete everything in time for the Ruby 2.6 release at Christmas, but we’re still working towards it!&lt;/p&gt;
+
+&lt;p&gt;In September, Bundler gained 73 new commits, contributed by 12 authors. There were 419 additions and 151 deletions across 40 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>August 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
     <published>2018-09-10T00:00:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
+    <updated>2018-10-23T08:14:49+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -38,7 +58,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
     <published>2018-08-10T00:00:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
+    <updated>2018-10-23T08:14:49+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -60,7 +80,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
     <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
+    <updated>2018-10-23T08:14:49+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -82,7 +102,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
+    <updated>2018-10-23T08:14:49+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -100,31 +120,13 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
     <published>2018-05-07T00:00:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
+    <updated>2018-10-23T08:14:49+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
     <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
 
 &lt;p&gt;This month, we fixed various bugs, worked towards releasing 1.16.2 with more bug fixes, and improved the way we hide Git URL usernames and passwords for the future. Bundler gained 28 new commits, contributed by 15 authors. There were 204 additions and 35 deletions across 22 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>March 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/04/09/march-bundler-update.html"/>
-    <id>http://bundler.io/blog/2018/04/09/march-bundler-update.html</id>
-    <published>2018-04-09T15:01:00+00:00</published>
-    <updated>2018-10-23T07:46:43+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
-
-&lt;p&gt;Bundler saw a variety of bug fixes in March thanks to our contributors, including &lt;a href="https://github.com/alyssais"&gt;@alyssais&lt;/a&gt;, &lt;a href="https://github.com/koic"&gt;@koic&lt;/a&gt;, &lt;a href="https://github.com/MSP-Greg"&gt;@MSP-Greg&lt;/a&gt;, &lt;a href="https://github.com/nesaulov"&gt;@nesaulov&lt;/a&gt;, &lt;a href="https://github.com/kunruh9"&gt;@kunruh9&lt;/a&gt;, &lt;a href="https://github.com/shime"&gt;@shime&lt;/a&gt;, and &lt;a href="https://github.com/greysteil"&gt;@greysteil&lt;/a&gt;. Fixes included &lt;a href="https://github.com/bundler/bundler/pull/6464"&gt;documenting the order Bundler loads config settings&lt;/a&gt; as well as fixing some &lt;a href="https://github.com/bundler/bundler/pull/6310"&gt;rescue calls that hadn’t specified error type&lt;/a&gt;. Additionally, we published a &lt;a href="https://github.com/bundler/bundler/blob/2053d65c974f55fc15196b3ad82d7749750b2a3e/doc/POLICIES.md"&gt;Bundler Policies&lt;/a&gt; doc to supplement Bundler’s existing Code of Conduct.&lt;/p&gt;
-
-&lt;p&gt;Coming up next, we expect to ship bug fixes, push out a small feature release, and begin public testing on Bundler 2.0. In total, Bundler gained 60 new commits, contributed by 13 authors. There were 353 additions and 97 deletions across 47 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
