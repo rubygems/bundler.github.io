@@ -5,16 +5,87 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-10-15T00:00:00+00:00</updated>
+  <updated>2018-10-25T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Announcing Bundler 1.17.0</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
+    <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
+    <published>2018-10-25T00:00:00+00:00</published>
+    <updated>2018-10-25T01:36:51+00:00</updated>
+    <author>
+      <name>Colby Swandale</name>
+    </author>
+    <content type="html">&lt;p&gt;The Bundler team is excited to announce Bundler v1.17.0, our next feature-packed release! Most of the changes in this release are the result of the work from our wonderful contributors whom we would like to thank. ❤️&lt;/p&gt;
+
+&lt;p&gt;Here are a few features we want to highlight:&lt;/p&gt;
+
+&lt;h3 id="remove-gems-from-the-cli"&gt;Remove gems from the CLI&lt;/h3&gt;
+
+&lt;p&gt;We’ve added a new command called &lt;code&gt;remove&lt;/code&gt; that allows you to remove gems from the command line. Here’s a quick example:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;# Gemfile&lt;/span&gt;
+&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="s1"&gt;'https://rubygems.org'&lt;/span&gt;
+
+&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'rake'&lt;/span&gt;
+&lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s1"&gt;'json'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We can now remove a gem using &lt;code&gt;bundle remove&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight shell"&gt;&lt;code&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;bundle remove json
+Removing gems from Gemfile
+json was removed.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bundler will then remove the &lt;code&gt;json&lt;/code&gt; gem from the Gemfile. There also is an  &lt;code&gt;--install&lt;/code&gt; option that will run &lt;code&gt;bundle install&lt;/code&gt; after the gem has been removed.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href="https://github.com/agrim123"&gt;agrim123 (Agrim Mittal)&lt;/a&gt; for developing this feature.&lt;/p&gt;
+
+&lt;h3 id="new-command-options"&gt;New command options&lt;/h3&gt;
+
+&lt;p&gt;We’ve added a few options that extend existing features and improve the overall user experience:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add &lt;code&gt;--optimistic&lt;/code&gt; and &lt;code&gt;--strict&lt;/code&gt; options to &lt;code&gt;bundle add&lt;/code&gt;  that will add a version constraint to new gems&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;--gemfile&lt;/code&gt; option to  &lt;code&gt;bundle exec&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;--skip-install&lt;/code&gt; option to &lt;code&gt;bundle add&lt;/code&gt;  to skip running &lt;code&gt;bundle install&lt;/code&gt; when adding a new gem&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;--only-explicit&lt;/code&gt; option to &lt;code&gt;bundle outdated&lt;/code&gt; to only show outdated gems that are listed directly in the Gemfile&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="new-plugin-events"&gt;New plugin events&lt;/h3&gt;
+
+&lt;p&gt;We’ve added new events into Bundler for plugins. Libraries are now able to perform an action before and after each gem is installed.&lt;/p&gt;
+
+&lt;p&gt;We are excited to see plugins take advantage of these events, and enhance the user experience on top of Bundler.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href="https://github.com/jules2689"&gt;jules2689 (Julian Nadeau)&lt;/a&gt; for working on this!&lt;/p&gt;
+
+&lt;h3 id="bundler-home-plugin-cache-and-config-environment-variables"&gt;Bundler home, plugin, cache and config environment variables&lt;/h3&gt;
+
+&lt;p&gt;Users have been asking for a feature that will allow them to specify a location for Bundler to place any files/folders that it creates or downloads, but until now Bundler has been hardcoded to place all of its files into &lt;code&gt;~/.bundle&lt;/code&gt;.  To solve this issue, we’ve added some environment variables that (optionally) let you tell Bundler exactly where to put its files.&lt;/p&gt;
+
+&lt;p&gt;To change the directory where Bundler will store all user-level files (which is &lt;code&gt;~/.bundle&lt;/code&gt; by default), set &lt;code&gt;BUNDLE_USER_HOME&lt;/code&gt;. To change the directory where Bundler caches downloaded gems and gem metadata (which is &lt;code&gt;~/.bundle/cache&lt;/code&gt; by default), set &lt;code&gt;BUNDLE_USER_CACHE&lt;/code&gt;. To change the location of the user-level configuration file (which is &lt;code&gt;~/.bundle/config&lt;/code&gt; by default), set &lt;code&gt;BUNDLE_USER_CONFIG&lt;/code&gt;. Finally, to set the location that Bundler will look for plugin files (which is &lt;code&gt;~/.bundle/plugins&lt;/code&gt; by default), set &lt;code&gt;BUNDLE_USER_PLUGIN&lt;/code&gt;. To see a more detailed description of the change and the reasons behind it, check out &lt;a href="https://github.com/bundler/bundler/pull/6024"&gt;the awesome pull request from @gwerbin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="and-a-whole-lot-more"&gt;And a whole lot more!&lt;/h3&gt;
+
+&lt;p&gt;There is a lot more that we’ve added into this release. For a more detailed list of changes, check out the &lt;a href="https://github.com/bundler/bundler/tree/1-17-stable/CHANGELOG.md"&gt;CHANGELOG&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="upgrading-from-bundler-116"&gt;Upgrading from Bundler 1.16&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt;  to upgrade to the newest release of Bundler.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We hope you enjoy this release. Happy Bundling!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>September 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
     <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
+    <updated>2018-10-25T01:36:51+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -34,7 +105,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
     <published>2018-09-10T00:00:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
+    <updated>2018-10-25T01:36:51+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -58,7 +129,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
     <published>2018-08-10T00:00:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
+    <updated>2018-10-25T01:36:51+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -80,7 +151,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
     <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
+    <updated>2018-10-25T01:36:51+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -102,7 +173,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
     <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
+    <updated>2018-10-25T01:36:51+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -111,22 +182,6 @@
 &lt;p&gt;Last month, Bundler saw some bug fixes, &lt;a href="https://github.com/bundler/bundler/commit/9e87a1ca4b0c3002ac2774e4837234cef7e3ce08"&gt;a new &lt;code&gt;--skip-install&lt;/code&gt; flag&lt;/a&gt; for &lt;code&gt;bundler add&lt;/code&gt;, and a &lt;a href="https://bundler.io/v1.16/guides/bundler_plugins.html"&gt;new guide on writing Bundler plugins&lt;/a&gt;. (Thank you &lt;a href="https://github.com/jules2689"&gt;@jules2689&lt;/a&gt; for producing this guide!)&lt;/p&gt;
 
 &lt;p&gt;Bundler gained 9 new commits, contributed by 3 authors. There were 66 additions and 48 deletions across 17 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>April 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html"/>
-    <id>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</id>
-    <published>2018-05-07T00:00:00+00:00</published>
-    <updated>2018-10-23T08:14:49+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update!&lt;/p&gt;
-
-&lt;p&gt;This month, we fixed various bugs, worked towards releasing 1.16.2 with more bug fixes, and improved the way we hide Git URL usernames and passwords for the future. Bundler gained 28 new commits, contributed by 15 authors. There were 204 additions and 35 deletions across 22 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>

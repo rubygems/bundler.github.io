@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+    <title>
+      Bundler: Announcing Bundler 1.17.0
+    </title>
+    
+    <script src="/javascripts/application.js"></script>
+    <script src="/javascripts/analytics.js" async="true"></script>
+    <link href="/stylesheets/application.css" rel="stylesheet" />
+    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+    <link href='/manifest.json' rel='manifest'>
+    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+    <meta content='bundler.io' name='apple-mobile-web-app-title'>
+    <meta content='bundler.io' name='application-name'>
+    <meta content='#ffffff' name='theme-color'>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    
+  </head>
+  <body class=''>
+    <nav class='navbar navbar-default'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <b><a href="/" class="navbar-brand">Bundler</a></b>
+        </div>
+        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+          <ul class='nav navbar-nav navbar-right'>
+            <li>
+              <div class='search-wrapper'>
+                <div class='form-group has-feedback'>
+                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
+                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+                </div>
+              </div>
+            </li>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='main-wrapper'>
+      <div class='row bg-light-blue header'>
+        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
+            <div class='contents blog'>
+              <h2 class='title'>
+                <a href="/blog/2018/10/25/announcing-bundler-1-17-0.html">Announcing Bundler 1.17.0</a>
+              </h2>
+              <div class='subtitle'>
+                by
+                <a href="#" target="_blank">Colby Swandale</a>
+                on
+                <time>
+                  Oct 25 2018
+                </time>
+              </div>
+              <div class='blog-content'>
+                <p>The Bundler team is excited to announce Bundler v1.17.0, our next feature-packed release! Most of the changes in this release are the result of the work from our wonderful contributors whom we would like to thank. ❤️</p>
+                
+                <p>Here are a few features we want to highlight:</p>
+                
+                <h3 id="remove-gems-from-the-cli">Remove gems from the CLI</h3>
+                
+                <p>We’ve added a new command called <code>remove</code> that allows you to remove gems from the command line. Here’s a quick example:</p>
+                
+                <div class="highlight"><pre class="highlight ruby"><code><span class="c1"># Gemfile</span>&#x000A;<span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rake'</span>&#x000A;<span class="n">gem</span> <span class="s1">'json'</span>&#x000A;</code></pre></div>
+                <p>We can now remove a gem using <code>bundle remove</code>:</p>
+                
+                <div class="highlight"><pre class="highlight shell"><code><span class="nv">$ </span>bundle remove json&#x000A;Removing gems from Gemfile&#x000A;json was removed.&#x000A;</code></pre></div>
+                <p>Bundler will then remove the <code>json</code> gem from the Gemfile. There also is an  <code>--install</code> option that will run <code>bundle install</code> after the gem has been removed.</p>
+                
+                <p>Thanks to <a href="https://github.com/agrim123">agrim123 (Agrim Mittal)</a> for developing this feature.</p>
+                
+                <h3 id="new-command-options">New command options</h3>
+                
+                <p>We’ve added a few options that extend existing features and improve the overall user experience:</p>
+                
+                <ul>
+                  <li>Add <code>--optimistic</code> and <code>--strict</code> options to <code>bundle add</code>  that will add a version constraint to new gems</li>
+                  <li>Add <code>--gemfile</code> option to  <code>bundle exec</code></li>
+                  <li>Add <code>--skip-install</code> option to <code>bundle add</code>  to skip running <code>bundle install</code> when adding a new gem</li>
+                  <li>Add <code>--only-explicit</code> option to <code>bundle outdated</code> to only show outdated gems that are listed directly in the Gemfile</li>
+                </ul>
+                
+                <h3 id="new-plugin-events">New plugin events</h3>
+                
+                <p>We’ve added new events into Bundler for plugins. Libraries are now able to perform an action before and after each gem is installed.</p>
+                
+                <p>We are excited to see plugins take advantage of these events, and enhance the user experience on top of Bundler.</p>
+                
+                <p>Thanks to <a href="https://github.com/jules2689">jules2689 (Julian Nadeau)</a> for working on this!</p>
+                
+                <h3 id="bundler-home-plugin-cache-and-config-environment-variables">Bundler home, plugin, cache and config environment variables</h3>
+                
+                <p>Users have been asking for a feature that will allow them to specify a location for Bundler to place any files/folders that it creates or downloads, but until now Bundler has been hardcoded to place all of its files into <code>~/.bundle</code>.  To solve this issue, we’ve added some environment variables that (optionally) let you tell Bundler exactly where to put its files.</p>
+                
+                <p>To change the directory where Bundler will store all user-level files (which is <code>~/.bundle</code> by default), set <code>BUNDLE_USER_HOME</code>. To change the directory where Bundler caches downloaded gems and gem metadata (which is <code>~/.bundle/cache</code> by default), set <code>BUNDLE_USER_CACHE</code>. To change the location of the user-level configuration file (which is <code>~/.bundle/config</code> by default), set <code>BUNDLE_USER_CONFIG</code>. Finally, to set the location that Bundler will look for plugin files (which is <code>~/.bundle/plugins</code> by default), set <code>BUNDLE_USER_PLUGIN</code>. To see a more detailed description of the change and the reasons behind it, check out <a href="https://github.com/bundler/bundler/pull/6024">the awesome pull request from @gwerbin</a>.</p>
+                
+                <h3 id="and-a-whole-lot-more">And a whole lot more!</h3>
+                
+                <p>There is a lot more that we’ve added into this release. For a more detailed list of changes, check out the <a href="https://github.com/bundler/bundler/tree/1-17-stable/CHANGELOG.md">CHANGELOG</a>.</p>
+                
+                <h2 id="upgrading-from-bundler-116">Upgrading from Bundler 1.16</h2>
+                
+                <p>Run <code>gem install bundler</code>  to upgrade to the newest release of Bundler.</p>
+                
+                <hr />
+                
+                <p>We hope you enjoy this release. Happy Bundling!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class='footer'>
+      <div class='row'>
+        <div class='container text-center'>
+          <ul class='nav navbar-nav'>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/contributors.html">Team</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
