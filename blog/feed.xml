@@ -5,16 +5,46 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-10-25T00:00:00+00:00</updated>
+  <updated>2018-11-04T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>An Update on Bundler 2.0</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
+    <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
+    <published>2018-11-04T00:00:00+00:00</published>
+    <updated>2018-11-04T00:29:01+00:00</updated>
+    <author>
+      <name>Colby Swandale &amp; André Arko</name>
+    </author>
+    <content type="html">&lt;p&gt;For the past few years the Bundler core team has been working hard on a major release of Bundler. We’ve been solving problems that users have seen since Bundler 1.0 first came out, but weren’t able to release without breaking changes. At the same time, we’ve spent a lot of time thinking about how to release a new major version with as little breakage and as few surprises as possible. We’ve come up with a system that allows everyone to use multiple major versions of Bundler at the same time, and we think that system will make future breaking changes much easier to handle.&lt;/p&gt;
+
+&lt;p&gt;However, this post isn’t about that system. This post is about a new plan for Bundler releases, dropping support for old Rubies, and how long we will support old Rubies and RubyGems in the future. Every version of Bundler in existence fully supports Ruby 1.8.6+ and RubyGems 1.3.6+. Maintaining that support is a burden not just on the Bundler team, but has become a blocker for the ruby-core team to accept Bundler into Ruby itself. The ruby-core team only has the resources to maintain three minor versions at a time: the current release, the previous release, and security patches for the next oldest release.&lt;/p&gt;
+
+&lt;p&gt;To refocus the efforts of the Bundler team on useful work, and make it easier to integrate Bundler into Ruby itself, we are adopting a similar support policy to Ruby: each year, we plan to release a new version of Bundler that drops support for any Ruby that is no longer supported. We plan to issue bugfixes as needed for each previous major version of Bundler, and if security patches are needed we will try to issue releases for the previous two major versions.&lt;/p&gt;
+
+&lt;p&gt;With that in mind, today we are announcing a new Bundler 2.0.0 release. It should not break anyone’s workflows, and only contains changes that are “breaking” in a very strict and technical sense of the word. This is an exhaustive list of the changes from Bundler 1.17 to Bundler 2.0:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dropped support for end of lifed Ruby versions 1.8.7 through 2.2&lt;/li&gt;
+  &lt;li&gt;Dropped support for end of lifed RubyGems versions 1.3.6 through 2.5&lt;/li&gt;
+  &lt;li&gt;Moved error messages from STDOUT to STDERR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To be extremely clear: &lt;strong&gt;all applications and Gemfiles that currently work with Bundler 1 will continue to work with Bundler 2&lt;/strong&gt;. You will not be able to upgrade to Bundler 2 if you are using an older version of Ruby or RubyGems that has been end-of-lifed and is no longer supported. We will support Bundler 1.17 with bugfixes for about one year, and stop supporting Bundler 1.17 when we release Bundler 3.&lt;/p&gt;
+
+&lt;p&gt;In future releases of Bundler, we hope to schedule future breaking changes with a one-year deprecation warning period, while listening to user feedback and doing everything that we can to keep existing applications from breaking. Keep an eye on &lt;a href="https://twitter.com/bundlerio"&gt;@bundlerio&lt;/a&gt; or &lt;a href="https://bundler.io/blog"&gt;the Bundler blog&lt;/a&gt; to hear more about the future of Bundler as we figure things out.&lt;/p&gt;
+
+&lt;p&gt;As always, if you have problems or feedback, we want to hear from you! Head over to the &lt;a href="https://github.com/bundler/bundler/issues"&gt;Bundler issue tracker&lt;/a&gt; and let us know.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Announcing Bundler 1.17.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
     <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
     <published>2018-10-25T00:00:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
+    <updated>2018-11-04T00:29:01+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -85,7 +115,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
     <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
+    <updated>2018-11-04T00:29:01+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -105,7 +135,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
     <published>2018-09-10T00:00:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
+    <updated>2018-11-04T00:29:01+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -129,7 +159,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
     <published>2018-08-10T00:00:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
+    <updated>2018-11-04T00:29:01+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -151,7 +181,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
     <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
+    <updated>2018-11-04T00:29:01+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -164,24 +194,6 @@ json was removed.
 &lt;p&gt;We published a new zine called &lt;a href="https://shop.rubytogether.org/products/the-evolution-of-bundler-zine"&gt;“The Evolution of Bundler”&lt;/a&gt; in partnership with &lt;a href="https://www.twitter.com/sailorhg"&gt;@sailorhg&lt;/a&gt; of Bubblesort Zines. It’s now available for sale in the Ruby Together store.&lt;/p&gt;
 
 &lt;p&gt;This month, Bundler gained 63 new commits, contributed by 12 authors. There were 738 additions and 102 deletions across 48 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>May 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/06/07/may-bundler-update.html"/>
-    <id>http://bundler.io/blog/2018/06/07/may-bundler-update.html</id>
-    <published>2018-06-07T09:01:00+00:00</published>
-    <updated>2018-10-25T01:36:51+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the May Bundler update!&lt;/p&gt;
-
-&lt;p&gt;Last month, Bundler saw some bug fixes, &lt;a href="https://github.com/bundler/bundler/commit/9e87a1ca4b0c3002ac2774e4837234cef7e3ce08"&gt;a new &lt;code&gt;--skip-install&lt;/code&gt; flag&lt;/a&gt; for &lt;code&gt;bundler add&lt;/code&gt;, and a &lt;a href="https://bundler.io/v1.16/guides/bundler_plugins.html"&gt;new guide on writing Bundler plugins&lt;/a&gt;. (Thank you &lt;a href="https://github.com/jules2689"&gt;@jules2689&lt;/a&gt; for producing this guide!)&lt;/p&gt;
-
-&lt;p&gt;Bundler gained 9 new commits, contributed by 3 authors. There were 66 additions and 48 deletions across 17 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
