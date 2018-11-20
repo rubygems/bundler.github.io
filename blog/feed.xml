@@ -5,16 +5,36 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-11-04T00:00:00+00:00</updated>
+  <updated>2018-11-05T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>October 2018 Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
+    <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
+    <published>2018-11-05T00:00:00+00:00</published>
+    <updated>2018-11-20T22:51:53+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the October monthly update!&lt;/p&gt;
+
+&lt;p&gt;We released &lt;a href="https://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"&gt;Bundler 1.17&lt;/a&gt;, which ships a new &lt;code&gt;remove&lt;/code&gt; command (for removing gems from the command line), new command options, new events for Bundler plugins, and new environment variables. For a complete list of changes, check out the &lt;a href="https://bundler.io/v1.17/whats_new.html"&gt;v1.17 release notes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We also announced our &lt;a href="https://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"&gt;new plan for Bundler 2.0&lt;/a&gt;, a new approach that we think the Bundler team and Bundler users will both be excited about. We’re planning to write more blog posts and documentation about Bundler 2, and push a prerelease preview for interested beta testers in the next week or two.&lt;/p&gt;
+
+&lt;p&gt;This month, Bundler gained 107 new commits, contributed by 10 authors. There were 473 additions and 156 deletions across 35 files.&lt;/p&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>An Update on Bundler 2.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
     <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
     <published>2018-11-04T00:00:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
+    <updated>2018-11-20T22:51:53+00:00</updated>
     <author>
       <name>Colby Swandale &amp; André Arko</name>
     </author>
@@ -44,7 +64,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
     <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
     <published>2018-10-25T00:00:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
+    <updated>2018-11-20T22:51:53+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -115,7 +135,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
     <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
+    <updated>2018-11-20T22:51:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -135,7 +155,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
     <published>2018-09-10T00:00:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
+    <updated>2018-11-20T22:51:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -159,7 +179,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/08/10/july-bundler-update.html"/>
     <id>http://bundler.io/blog/2018/08/10/july-bundler-update.html</id>
     <published>2018-08-10T00:00:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
+    <updated>2018-11-20T22:51:53+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -172,28 +192,6 @@ json was removed.
 &lt;p&gt;In other exciting news, we added a new contributor to the core team. Welcome &lt;a href="https://github.com/deivid-rodriguez"&gt;David Rodríguez&lt;/a&gt; to Bundler! Probably best known for his work on the &lt;code&gt;byebug&lt;/code&gt; debugger gem, David was the driver behind updating gem templates to check in lockfiles, as well as work around ensuring that Bundler 2 will work on existing applications when it is released.&lt;/p&gt;
 
 &lt;p&gt;This month, Bundler gained 63 new commits, contributed by 8 authors. There were 1,442 additions and 72 deletions across 33 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>June 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/07/12/june-bundler-update.html"/>
-    <id>http://bundler.io/blog/2018/07/12/june-bundler-update.html</id>
-    <published>2018-07-12T09:01:00+00:00</published>
-    <updated>2018-11-20T22:24:00+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the June Bundler update!&lt;/p&gt;
-
-&lt;p&gt;Last month, we fixed some bugs and our Google Summer of Code (GSoC) students finished work on the &lt;code&gt;bundle remove&lt;/code&gt; feature. We also created a &lt;a href="https://github.com/bundler/bundler/issues/6582"&gt;checklist for the Bundler 2 release&lt;/a&gt;, and finished documentation for the &lt;a href="https://github.com/bundler/bundler/pull/5252"&gt;Bundler release process&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;After that, we published a &lt;a href="https://github.com/bundler/rfcs/pull/12"&gt;public request for comments&lt;/a&gt; on the idea of Bundler release channels. Just this week, we learned a lot about &lt;a href="https://github.com/bundler/bundler/pull/6524"&gt;how Docker and Bundler can work better together&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We published a new zine called &lt;a href="https://shop.rubytogether.org/products/the-evolution-of-bundler-zine"&gt;“The Evolution of Bundler”&lt;/a&gt; in partnership with &lt;a href="https://www.twitter.com/sailorhg"&gt;@sailorhg&lt;/a&gt; of Bubblesort Zines. It’s now available for sale in the Ruby Together store.&lt;/p&gt;
-
-&lt;p&gt;This month, Bundler gained 63 new commits, contributed by 12 authors. There were 738 additions and 102 deletions across 48 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
