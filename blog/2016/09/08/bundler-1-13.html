@@ -1,157 +1,163 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: Bundler 1.13: The one with steady improvements
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
-            <div class='contents blog'>
-              <h2 class='title'>
-                <a href="/blog/2016/09/08/bundler-1-13.html">Bundler 1.13: The one with steady improvements</a>
-              </h2>
-              <div class='subtitle'>
-                by
-                <a href="http://arko.net" target="_blank">André Arko</a>
-                on
-                <time>
-                  Sep  8 2016
-                </time>
-              </div>
-              <div class='blog-content'>
-                <p>Bundler 1.13 is out! It’s been a steady stream of improvements over the last four months, and we’re shipping some new features, some improved features, and some experimental features. Now that we’ve shipped all of these changes, we’re starting to work at full speed on the upcoming 1.14 and 2.0 releases. While you wait, read on for the changes in 1.13 and then give it a try!</p>
-                
-                <h3 id="new-features">New features</h3>
-                
-                <h4 id="support-for-requiredrubyversion-with-declared-ruby">Support for <code>required_ruby_version</code> (with declared <code>ruby</code>)</h4>
-                
-                <p>One very nice addition is that gems with a <code>required_ruby_version</code> will now resolve correctly as long as your Gemfile contains a <code>ruby</code> declaration. This change is the culmination of years worth of work, including the new compact index released in Bundler 1.12. In the future, we’re also going to support gems with required Ruby versions in Gemfiles that don’t declare a Ruby requirement. Because of existing features (like the Gemfile Ruby declaration), we’re having to do some mork work so that everything can coexist harmoniously. In the meantime, set a Ruby version and you’ll get the right gem versions to install on your Ruby.</p>
-                
-                <h4 id="the-bundle-doctor-command">The <code>bundle doctor</code> command</h4>
-                
-                <p>We’ve also added a <code>bundle doctor</code> command, courtesy of <a href="https://github.com/mistydemeo">@mistydemeo</a>. Over time, the <code>doctor</code> command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the <code>pg</code> gem and then later run <code>brew upgrade postgres</code>, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.</p>
-                
-                <h4 id="add-options---add-platform-and---remove-platform-to-the-lock-command">Add options <code>--add-platform</code> and <code>--remove-platform</code> to the <code>lock</code> command</h4>
-                
-                <p>In the past, the only way to resolve your Gemfile on a new platform (like <code>java</code> or <code>mswin</code>) was to run <code>bundle install</code> on that platform. We’ve added explicit options to the <code>lock</code> command to allow managing platforms. Platforms can be added using <code>bundle lock --add-platform NAME</code>, and platforms can be removed using <code>bundle lock --remove-platform NAME</code>.</p>
-                
-                <p>This makes it possible to (for example) develop on Windows and deploy to a Unix server. However! (and this is a pretty big however), gems on different platforms can have completely different code. Run your test suite on whatever platform you will use in production—it’s the only way to be sure.</p>
-                
-                <h3 id="improved-features">Improved features</h3>
-                
-                <h4 id="auto-install-for-bundlerinline">Auto-install for <code>bundler/inline</code></h4>
-                
-                <p>When using <code>bundler/inline</code>, gems are now automatically installed. This makes it ridiculously easy to create and distribute single-file scripts that depend on gems. Highly recommended.</p>
-                
-                <h4 id="dramatic-resolver-optimizations">Dramatic resolver optimizations</h4>
-                
-                <p>The resolver has been fine-tuned. It allocates less objects, uses less memory, needs less GC time, and is all-around better. It is now able to find usable Gem versions noticably faster. In many cases, the improvement was about 4x. For one especially dramatic Gemfile, Bundler now runs 100x faster than it did before.</p>
-                
-                <h4 id="better-faster-exec">Better faster <code>exec</code></h4>
-                
-                <p>The new <code>exec</code> command (added in v1.12) switched from always calling <code>exec</code> to calling <code>load</code> instead if possible. In version 1.13 we added a way to turn it off: <code>bundle config exec_disable_load true</code>. We also dramatically improved it process, adding support for JRuby, and setting process titles the same way they used to be set.</p>
-                
-                <h4 id="improved-usage-of-the-compact-index">Improved usage of the compact index</h4>
-                
-                <p>We launched <a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/">the compact index</a> in v1.12. In this version, we’ve sped things up by using persistent HTTP for more than one request, fixed printing dots to indicate progress, and added support for legacy gems with capitalized names and users without a home directory.</p>
-                
-                <h3 id="experimental-features">Experimental features</h3>
-                
-                <p>This version also contains three experimental features, disabled by default: a plugin system, and version locking for Bundler itself.</p>
-                
-                <h4 id="experimental-plugin-system">Experimental plugin system</h4>
-                
-                <p>For a long time now, we’ve supported “command” plugins the same way that <code>git</code> does: if there is a command named <code>bundle-foo</code>, then Bundler will run it when you execute <code>bundle foo</code>. The experimental plugin system builds on top of that, providing a way to create new Bundler commands that hook into the Bundler CLI internals. The plugin system also supports “source” plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we’ve started adding new “lifecycle” hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.</p>
-                
-                <h4 id="experimental-bundler-version-locking">Experimental Bundler version locking</h4>
-                
-                <p>Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that use Bundler 1.x to keep working. We’re also going to need a way for applications that use Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the <code>Gemfile.lock</code>. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:</p>
-                
-                <p>First, export the environment variable <code>BUNDLE_ENABLE_TRAMPOLINE</code>. In the Bash shell, that means running <code>export BUNDLE_ENABLE_TRAMPOLINE=true</code>. Then, run <code>bundle install</code> and <code>bundle exec</code> as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the <code>Gemfile.lock</code>. To update the version of Bundler saved in the lockfile, run <code>bundle update --bundler</code>. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.</p>
-                
-                <h4 id="experimental-conservative-updates">Experimental conservative updates</h4>
-                
-                <p><code>bundle update</code> received some new options to support conservative updates: <code>--patch</code> and <code>--minor</code>. “Conservative” meaning it will sort all available versions to prefer the latest patch releases from the current version, then the latest minor releases and then the latest major releases. These aren’t documented or formally supported yet while we allow the community some opportunity to weigh in on how these options should work. <a href="https://github.com/bundler/bundler-features/issues/122">Join the discussion and give us your 2 cents so we can lock this in for 1.14</a>. There’s even some outstanding issues you can contribute to!</p>
-                
-                <h4 id="feedback-for-experimental-features">Feedback for experimental features</h4>
-                
-                <p>These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to <a href="https://github.com/bundler/bundler/issues/new">hear your feedback</a>. &lt;3</p>
-                
-                <h3 id="how-to-upgrade">How To Upgrade</h3>
-                
-                <p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Bundler 1.13: The one with steady improvements
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2016/09/08/bundler-1-13.html">Bundler 1.13: The one with steady improvements</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="http://arko.net" target="_blank">André Arko</a>
+on
+<time>
+Sep  8 2016
+</time>
+</div>
+<div class='blog-content'>
+<p>Bundler 1.13 is out! It’s been a steady stream of improvements over the last four months, and we’re shipping some new features, some improved features, and some experimental features. Now that we’ve shipped all of these changes, we’re starting to work at full speed on the upcoming 1.14 and 2.0 releases. While you wait, read on for the changes in 1.13 and then give it a try!</p>
+
+<h3 id="new-features">New features</h3>
+
+<h4 id="support-for-requiredrubyversion-with-declared-ruby">Support for <code>required_ruby_version</code> (with declared <code>ruby</code>)</h4>
+
+<p>One very nice addition is that gems with a <code>required_ruby_version</code> will now resolve correctly as long as your Gemfile contains a <code>ruby</code> declaration. This change is the culmination of years worth of work, including the new compact index released in Bundler 1.12. In the future, we’re also going to support gems with required Ruby versions in Gemfiles that don’t declare a Ruby requirement. Because of existing features (like the Gemfile Ruby declaration), we’re having to do some mork work so that everything can coexist harmoniously. In the meantime, set a Ruby version and you’ll get the right gem versions to install on your Ruby.</p>
+
+<h4 id="the-bundle-doctor-command">The <code>bundle doctor</code> command</h4>
+
+<p>We’ve also added a <code>bundle doctor</code> command, courtesy of <a href="https://github.com/mistydemeo">@mistydemeo</a>. Over time, the <code>doctor</code> command will try to solve common problems. Today, it is capable of detecting gems that have been compiled against libraries that no longer exist. For example, if you use Bundler to install the <code>pg</code> gem and then later run <code>brew upgrade postgres</code>, the gem will stop working. We’ve never had a good way to explain (or even detect) this kind of problem before, and now we’re able to fix it for you automatically.</p>
+
+<h4 id="add-options---add-platform-and---remove-platform-to-the-lock-command">Add options <code>--add-platform</code> and <code>--remove-platform</code> to the <code>lock</code> command</h4>
+
+<p>In the past, the only way to resolve your Gemfile on a new platform (like <code>java</code> or <code>mswin</code>) was to run <code>bundle install</code> on that platform. We’ve added explicit options to the <code>lock</code> command to allow managing platforms. Platforms can be added using <code>bundle lock --add-platform NAME</code>, and platforms can be removed using <code>bundle lock --remove-platform NAME</code>.</p>
+
+<p>This makes it possible to (for example) develop on Windows and deploy to a Unix server. However! (and this is a pretty big however), gems on different platforms can have completely different code. Run your test suite on whatever platform you will use in production—it’s the only way to be sure.</p>
+
+<h3 id="improved-features">Improved features</h3>
+
+<h4 id="auto-install-for-bundlerinline">Auto-install for <code>bundler/inline</code></h4>
+
+<p>When using <code>bundler/inline</code>, gems are now automatically installed. This makes it ridiculously easy to create and distribute single-file scripts that depend on gems. Highly recommended.</p>
+
+<h4 id="dramatic-resolver-optimizations">Dramatic resolver optimizations</h4>
+
+<p>The resolver has been fine-tuned. It allocates less objects, uses less memory, needs less GC time, and is all-around better. It is now able to find usable Gem versions noticably faster. In many cases, the improvement was about 4x. For one especially dramatic Gemfile, Bundler now runs 100x faster than it did before.</p>
+
+<h4 id="better-faster-exec">Better faster <code>exec</code></h4>
+
+<p>The new <code>exec</code> command (added in v1.12) switched from always calling <code>exec</code> to calling <code>load</code> instead if possible. In version 1.13 we added a way to turn it off: <code>bundle config exec_disable_load true</code>. We also dramatically improved it process, adding support for JRuby, and setting process titles the same way they used to be set.</p>
+
+<h4 id="improved-usage-of-the-compact-index">Improved usage of the compact index</h4>
+
+<p>We launched <a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/">the compact index</a> in v1.12. In this version, we’ve sped things up by using persistent HTTP for more than one request, fixed printing dots to indicate progress, and added support for legacy gems with capitalized names and users without a home directory.</p>
+
+<h3 id="experimental-features">Experimental features</h3>
+
+<p>This version also contains three experimental features, disabled by default: a plugin system, and version locking for Bundler itself.</p>
+
+<h4 id="experimental-plugin-system">Experimental plugin system</h4>
+
+<p>For a long time now, we’ve supported “command” plugins the same way that <code>git</code> does: if there is a command named <code>bundle-foo</code>, then Bundler will run it when you execute <code>bundle foo</code>. The experimental plugin system builds on top of that, providing a way to create new Bundler commands that hook into the Bundler CLI internals. The plugin system also supports “source” plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we’ve started adding new “lifecycle” hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.</p>
+
+<h4 id="experimental-bundler-version-locking">Experimental Bundler version locking</h4>
+
+<p>Someday, Bundler 2.0 is going to break backwards compatibility. When that happens, we’re going to need a way for applications that use Bundler 1.x to keep working. We’re also going to need a way for applications that use Bundler 2.x to work in the first place. As a first step towards that glorious future, we’ve built a feature that allows Bundler to automatically run the version of Bundler locked in the <code>Gemfile.lock</code>. It adds an additional level of complexity, though, so we’ve disabling it by default in this version of Bundler. If you want to opt in, and have Bundler 1.13 automatically download, install, and run an older version of Bundler, here’s how it works:</p>
+
+<p>First, export the environment variable <code>BUNDLE_ENABLE_TRAMPOLINE</code>. In the Bash shell, that means running <code>export BUNDLE_ENABLE_TRAMPOLINE=true</code>. Then, run <code>bundle install</code> and <code>bundle exec</code> as usual. You should notice that Bundler will automatically switch to the version of Bundler that is saved into the <code>Gemfile.lock</code>. To update the version of Bundler saved in the lockfile, run <code>bundle update --bundler</code>. That will overwrite the Bundler version in the lock with the newest version of Bundler installed on your machine.</p>
+
+<h4 id="experimental-conservative-updates">Experimental conservative updates</h4>
+
+<p><code>bundle update</code> received some new options to support conservative updates: <code>--patch</code> and <code>--minor</code>. “Conservative” meaning it will sort all available versions to prefer the latest patch releases from the current version, then the latest minor releases and then the latest major releases. These aren’t documented or formally supported yet while we allow the community some opportunity to weigh in on how these options should work. <a href="https://github.com/bundler/bundler-features/issues/122">Join the discussion and give us your 2 cents so we can lock this in for 1.14</a>. There’s even some outstanding issues you can contribute to!</p>
+
+<h4 id="feedback-for-experimental-features">Feedback for experimental features</h4>
+
+<p>These features are a really big deal, and we want to launch them at the same level of polish and stability that you’re used to getting from Bundler. We’ll get there, and when we do these features will be turned on by default. In the meantime, if you’d like to try them out, that would be awesome. We’d love to <a href="https://github.com/bundler/bundler/issues/new">hear your feedback</a>. &lt;3</p>
+
+<h3 id="how-to-upgrade">How To Upgrade</h3>
+
+<p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>

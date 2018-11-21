@@ -1,162 +1,168 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: Version 1.11 released
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
-            <div class='contents blog'>
-              <h2 class='title'>
-                <a href="/blog/2015/12/12/version-1-11-released.html">Version 1.11 released</a>
-              </h2>
-              <div class='subtitle'>
-                by
-                <a href="http://segiddins.me" target="_blank">Samuel Giddins</a>
-                on
-                <time>
-                  Dec 12 2015
-                </time>
-              </div>
-              <div class='blog-content'>
-                <p>Bundler 1.11 is here! Six and a half months after the last big release, we’re
-                finally ready to ship 1.11.</p>
-                
-                <p>I know it’s been a while, but there’s a pretty good reason for that. Over the
-                summer, the team was busy supervising <em>four</em> Google Summer of Code students:</p>
-                
-                <ul>
-                  <li>We made a significant amount of progress on the new compact gem index, which
-                ought to ship in 1.12 in the near future.</li>
-                  <li>We improved the Bundler website and online documentation.</li>
-                  <li>We’ve created a solid base for Bundler 2.0.</li>
-                  <li>We prototyped a new plugin system.</li>
-                </ul>
-                
-                <p>In addition, the Bundler Core team has spent a lot of time focusing on the
-                development experience of bundler itself. The bundler codebase is over five
-                years old, and contains code from over 400 contributors. That can make it
-                rather daunting to start contributing, and also makes it hard to ensure that
-                all of the code in bundler is up to the same standards (and is fit to last for
-                the next five years!). In order to make things more consistent, we’ve
-                introduced RuboCop (and thus a style guide), we’ve instituted a build bot to
-                ensure that <code>master</code> is never failing, and have decided to subject 100% of the
-                new code introduced to code review. This is a big step forward, and lets me
-                confidently say that this will be our best release yet!</p>
-                
-                <p>That out of the way, what’s actually in this long-awaited release?</p>
-                
-                <h3 id="new-features">New features</h3>
-                
-                <p>First up, we’ve combed through a few years worth of bundler issues, and have
-                improved the error messaging for every single one of them. Our goal is to never
-                show an exception with a backtrace, and instead present a friendly and helpful
-                error message when things go awry – and we’re now pretty close to that.</p>
-                
-                <p>The dependency resolver has also seen a few updates. Continuing the theme of
-                improved errors, version conflicts will now do a better job of reporting what
-                versions of every gem have been activated, making it even easier to figure out
-                the best way to resolve said conflict. Additionally, resolution has been sped up
-                by over 25x in pathological cases. That’s a pretty nice win.</p>
-                
-                <p>Finally, we’ve laid the groundwork for resolving gems based on the current
-                version of Ruby.  Once the new index is rolled out, Bundler will make sure to
-                choose gems whose <code>required_ruby_version</code> matches the Ruby you are running on.</p>
-                
-                <h3 id="bugfixes">Bugfixes</h3>
-                
-                <p>The real meat of this release comes in the bugfix section, however. Across
-                almost four hundred commits, we’ve squashed upwards of fifty unique bugs.
-                Meaning this version of bundler should be the fastest, most stable version we’ve
-                ever released.</p>
-                
-                <h3 id="whats-next">What’s Next</h3>
-                
-                <p>As I mentioned earlier, this long gap between releases doesn’t mean we’re
-                slowing down development – quite the opposite, in fact! We’re actively working
-                on bundler 1.12 and 2.0 <em>at this very moment</em>, and are incredibly exited to get
-                the new index into people’s hands as fast as we possibly can.</p>
-                
-                <h4 id="updating">Updating</h4>
-                
-                <p>To install the last release of Bundler, you can run:</p>
-                
-                <p><code>&#x000A;$ [sudo] gem install bundler</code></p>
-                
-                <p>For all the details, don’t miss the
-                <a href="https://github.com/bundler/bundler/blob/v1.11.0/CHANGELOG.md#1110-2015-12-12">Changelog</a>!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Version 1.11 released
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2015/12/12/version-1-11-released.html">Version 1.11 released</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="http://segiddins.me" target="_blank">Samuel Giddins</a>
+on
+<time>
+Dec 12 2015
+</time>
+</div>
+<div class='blog-content'>
+<p>Bundler 1.11 is here! Six and a half months after the last big release, we’re
+finally ready to ship 1.11.</p>
+
+<p>I know it’s been a while, but there’s a pretty good reason for that. Over the
+summer, the team was busy supervising <em>four</em> Google Summer of Code students:</p>
+
+<ul>
+  <li>We made a significant amount of progress on the new compact gem index, which
+ought to ship in 1.12 in the near future.</li>
+  <li>We improved the Bundler website and online documentation.</li>
+  <li>We’ve created a solid base for Bundler 2.0.</li>
+  <li>We prototyped a new plugin system.</li>
+</ul>
+
+<p>In addition, the Bundler Core team has spent a lot of time focusing on the
+development experience of bundler itself. The bundler codebase is over five
+years old, and contains code from over 400 contributors. That can make it
+rather daunting to start contributing, and also makes it hard to ensure that
+all of the code in bundler is up to the same standards (and is fit to last for
+the next five years!). In order to make things more consistent, we’ve
+introduced RuboCop (and thus a style guide), we’ve instituted a build bot to
+ensure that <code>master</code> is never failing, and have decided to subject 100% of the
+new code introduced to code review. This is a big step forward, and lets me
+confidently say that this will be our best release yet!</p>
+
+<p>That out of the way, what’s actually in this long-awaited release?</p>
+
+<h3 id="new-features">New features</h3>
+
+<p>First up, we’ve combed through a few years worth of bundler issues, and have
+improved the error messaging for every single one of them. Our goal is to never
+show an exception with a backtrace, and instead present a friendly and helpful
+error message when things go awry – and we’re now pretty close to that.</p>
+
+<p>The dependency resolver has also seen a few updates. Continuing the theme of
+improved errors, version conflicts will now do a better job of reporting what
+versions of every gem have been activated, making it even easier to figure out
+the best way to resolve said conflict. Additionally, resolution has been sped up
+by over 25x in pathological cases. That’s a pretty nice win.</p>
+
+<p>Finally, we’ve laid the groundwork for resolving gems based on the current
+version of Ruby.  Once the new index is rolled out, Bundler will make sure to
+choose gems whose <code>required_ruby_version</code> matches the Ruby you are running on.</p>
+
+<h3 id="bugfixes">Bugfixes</h3>
+
+<p>The real meat of this release comes in the bugfix section, however. Across
+almost four hundred commits, we’ve squashed upwards of fifty unique bugs.
+Meaning this version of bundler should be the fastest, most stable version we’ve
+ever released.</p>
+
+<h3 id="whats-next">What’s Next</h3>
+
+<p>As I mentioned earlier, this long gap between releases doesn’t mean we’re
+slowing down development – quite the opposite, in fact! We’re actively working
+on bundler 1.12 and 2.0 <em>at this very moment</em>, and are incredibly exited to get
+the new index into people’s hands as fast as we possibly can.</p>
+
+<h4 id="updating">Updating</h4>
+
+<p>To install the last release of Bundler, you can run:</p>
+
+<p><code>&#x000A;$ [sudo] gem install bundler</code></p>
+
+<p>For all the details, don’t miss the
+<a href="https://github.com/bundler/bundler/blob/v1.11.0/CHANGELOG.md#1110-2015-12-12">Changelog</a>!</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>

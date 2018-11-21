@@ -1,918 +1,926 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: bundle config
-    </title>
-    
-    <link href='/man/bundle-config.1.html' rel='canonical'>
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div id='wrapper'>
-            <div id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Choose version</h4>
-                <div class='form-group'>
-                  <select class='version-selects form-control'>
-                    <option value='/v1.17/man/bundle-config.1.html'>
-                      v1.17
-                    </option>
-                    <option value='/v1.16/man/bundle-config.1.html'>
-                      v1.16
-                    </option>
-                    <option selected value='/v1.15/man/bundle-config.1.html'>
-                      v1.15
-                    </option>
-                    <option value='/v1.14/man/bundle-config.1.html'>
-                      v1.14
-                    </option>
-                    <option value='/v1.13/man/bundle-config.1.html'>
-                      v1.13
-                    </option>
-                    <option value='/v1.12/man/bundle-config.1.html'>
-                      v1.12
-                    </option>
-                    <option value='/v1.11/man/bundle-config.1.html'>
-                      v1.11
-                    </option>
-                    <option value='/v1.10/man/bundle-config.1.html'>
-                      v1.10
-                    </option>
-                    <option value='/v1.9/man/bundle-config.1.html'>
-                      v1.9
-                    </option>
-                    <option value='/v1.8/man/bundle-config.1.html'>
-                      v1.8
-                    </option>
-                    <option value='/v1.7/man/bundle-config.1.html'>
-                      v1.7
-                    </option>
-                    <option value='/v1.6/man/bundle-config.1.html'>
-                      v1.6
-                    </option>
-                    <option value='/v1.5/man/bundle-config.1.html'>
-                      v1.5
-                    </option>
-                    <option value='/v1.3/man/bundle-config.1.html'>
-                      v1.3
-                    </option>
-                    <option value='/v1.2/man/bundle-config.1.html'>
-                      v1.2
-                    </option>
-                    <option value='/v1.1/man/bundle-config.1.html'>
-                      v1.1
-                    </option>
-                    <option value='/v1.0/man/bundle-config.1.html'>
-                      v1.0
-                    </option>
-                    <option value='/v0.9/bundle_install.html'>
-                      v0.9
-                    </option>
-                  </select>
-                </div>
-                <h4>Primary Commands</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-install.1.html">bundle install</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-update.1.html">bundle update</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-package.1.html">bundle package</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-exec.1.html">bundle exec</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class='active'>
-                    <a href="/v1.15/man/bundle-config.1.html">bundle config</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/bundle_help.html">bundle help</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-                <h4>Utilities</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle.1.html">bundle</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-add.1.html">bundle add</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-binstubs.1.html">bundle binstubs</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-check.1.html">bundle check</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-clean.1.html">bundle clean</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/bundle_console.html">bundle console</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-gem.1.html">bundle gem</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-info.1.html">bundle info</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-init.1.html">bundle init</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-inject.1.html">bundle inject</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-lock.1.html">bundle lock</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-open.1.html">bundle open</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-outdated.1.html">bundle outdated</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-platform.1.html">bundle platform</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-pristine.1.html">bundle pristine</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-show.1.html">bundle show</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/bundle_version.html">bundle version</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/bundle-viz.1.html">bundle viz</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/man/gemfile.5.html">gemfile</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='commands contents' id='page-content-wrapper'>
-              
-                <div class="mp" id="man">
-              
-                
-              
-                
-              
-                <h2 id="NAME">bundle config</h2>
-              <p class="man-name">
-                <code>bundle-config</code> - <span class="man-whatis">Set bundler configuration options</span>
-              </p>
-              
-              
-              
-              <pre><code>bundle config</code> [<var>name</var> [<var>value</var>]]</pre>
-              
-              <h2 id="DESCRIPTION">Description</h2>
-              
-              <p>This command allows you to interact with bundler's configuration system.
-              Bundler retrieves its configuration from the local application (<code>app/.bundle/config</code>),
-              environment variables, and the user's home directory (<code>~/.bundle/config</code>),
-              in that order of priority.</p>
-              
-              <p>Executing <code>bundle config</code> with no parameters will print a list of all
-              bundler configuration for the current bundle, and where that configuration
-              was set.</p>
-              
-              <p>Executing <code>bundle config &lt;name&gt;</code> will print the value of that configuration
-              setting, and where it was set.</p>
-              
-              <p>Executing <code>bundle config &lt;name&gt; &lt;value&gt;</code> will set that configuration to the
-              value specified for all bundles executed as the current user. The configuration
-              will be stored in <code>~/.bundle/config</code>. If <var>name</var> already is set, <var>name</var> will be
-              overridden and user will be warned.</p>
-              
-              <p>Executing <code>bundle config --global &lt;name&gt; &lt;value&gt;</code> works the same as above.</p>
-              
-              <p>Executing <code>bundle config --local &lt;name&gt; &lt;value&gt;</code> will set that configuration to
-              the local application. The configuration will be stored in <code>app/.bundle/config</code>.</p>
-              
-              <p>Executing <code>bundle config --delete &lt;name&gt;</code> will delete the configuration in both
-              local and global sources. Not compatible with --global or --local flag.</p>
-              
-              <p>Executing bundle with the <code>BUNDLE_IGNORE_CONFIG</code> environment variable set will
-              cause it to ignore all configuration.</p>
-              
-              <p>Executing <code>bundle config disable_multisource true</code> upgrades the warning about
-              the Gemfile containing multiple primary sources to an error. Executing <code>bundle&#x000A;config --delete disable_multisource</code> downgrades this error to a warning.</p>
-              
-              <h2 id="REMEMBERING-OPTIONS">Remembering Options</h2>
-              
-              <p>Flags passed to <code>bundle install</code> or the Bundler runtime,
-              such as <code>--path foo</code> or <code>--without production</code>, are not remembered between commands.
-              If these options must be remembered,they must be set using <code>bundle config</code>
-              (e.g., <code>bundle config path foo</code>).</p>
-              
-              <p>The options that can be configured are:</p>
-              
-              <dl>
-              <dt class="flush"><code>bin</code></dt>
-              <dd><p>Creates a directory (defaults to <code>~/bin</code>) and place any executables from the
-              gem there. These executables run in Bundler's context. If used, you might add
-              this directory to your environment's <code>PATH</code> variable. For instance, if the
-              <code>rails</code> gem comes with a <code>rails</code> executable, this flag will create a
-              <code>bin/rails</code> executable that ensures that all referred dependencies will be
-              resolved using the bundled gems.</p></dd>
-              <dt><code>deployment</code></dt>
-              <dd><p>In deployment mode, Bundler will 'roll-out' the bundle for
-              <code>production</code> use. Please check carefully if you want to have this option
-              enabled in <code>development</code> or <code>test</code> environments.</p></dd>
-              <dt class="flush"><code>path</code></dt>
-              <dd><p>The location to install the specified gems to. This defaults to Rubygems'
-              setting. Bundler shares this location with Rubygems, <code>gem install ...</code> will
-              have gem installed there, too. Therefore, gems installed without a
-              <code>--path ...</code> setting will show up by calling <code>gem list</code>. Accordingly, gems
-              installed to other locations will not get listed.</p></dd>
-              <dt class="flush"><code>without</code></dt>
-              <dd><p>A space-separated list of groups referencing gems to skip during installation.</p></dd>
-              </dl>
-              
-              
-              <h2 id="BUILD-OPTIONS">Build Options</h2>
-              
-              <p>You can use <code>bundle config</code> to give bundler the flags to pass to the gem
-              installer every time bundler tries to install a particular gem.</p>
-              
-              <p>A very common example, the <code>mysql</code> gem, requires Snow Leopard users to
-              pass configuration flags to <code>gem install</code> to specify where to find the
-              <code>mysql_config</code> executable.</p>
-              
-              <pre><code>gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
-              
-              <p>Since the specific location of that executable can change from machine
-              to machine, you can specify these flags on a per-machine basis.</p>
-              
-              <pre><code>bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
-              
-              <p>After running this command, every time bundler needs to install the
-              <code>mysql</code> gem, it will pass along the flags you specified.</p>
-              
-              <h2 id="CONFIGURATION-KEYS">Configuration Keys</h2>
-              
-              <p>Configuration keys in bundler have two forms: the canonical form and the
-              environment variable form.</p>
-              
-              <p>For instance, passing the <code>--without</code> flag to <a href="bundle-install.1.html">bundle install(1)</a>
-              prevents Bundler from installing certain groups specified in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. Bundler
-              persists this value in <code>app/.bundle/config</code> so that calls to <code>Bundler.setup</code>
-              do not try to find gems from the <code>Gemfile</code> that you didn't install. Additionally,
-              subsequent calls to <a href="bundle-install.1.html">bundle install(1)</a> remember this setting and skip those
-              groups.</p>
-              
-              <p>The canonical form of this configuration is <code>"without"</code>. To convert the canonical
-              form to the environment variable form, capitalize it, and prepend <code>BUNDLE_</code>. The
-              environment variable form of <code>"without"</code> is <code>BUNDLE_WITHOUT</code>.</p>
-              
-              <p>Any periods in the configuration keys must be replaced with two underscores when
-              setting it via environment variables. The configuration key <code>local.rack</code> becomes
-              the environment variable <code>BUNDLE_LOCAL__RACK</code>.</p>
-              
-              <h2 id="LIST-OF-AVAILABLE-KEYS">List Of Available Keys</h2>
-              
-              <p>The following is a list of all configuration keys and their purpose. You can
-              learn more about their operation in <a href="bundle-install.1.html">bundle install(1)</a>.</p>
-              
-              <ul>
-              <li>
-              <code>path</code> (<code>BUNDLE_PATH</code>):
-              The location on disk where all gems in your bundle will be located regardless
-              of <code>$GEM_HOME</code> or <code>$GEM_PATH</code> values. Bundle gems not found in this location
-              will be installed by <code>bundle install</code>. Defaults to <code>Gem.dir</code>. When --deployment is
-              used, defaults to vendor/bundle.</li>
-              <li>
-              <code>frozen</code> (<code>BUNDLE_FROZEN</code>):
-              Disallow changes to the <code>Gemfile</code>. Defaults to <code>true</code> when <code>--deployment</code>
-              is used.</li>
-              <li>
-              <code>without</code> (<code>BUNDLE_WITHOUT</code>):
-              A <code>:</code>-separated list of groups whose gems bundler should not install</li>
-              <li>
-              <code>bin</code> (<code>BUNDLE_BIN</code>):
-              Install executables from gems in the bundle to the specified directory.
-              Defaults to <code>false</code>.</li>
-              <li>
-              <code>gemfile</code> (<code>BUNDLE_GEMFILE</code>):
-              The name of the file that bundler should use as the <code>Gemfile</code>. This location
-              of this file also sets the root of the project, which is used to resolve
-              relative paths in the <code>Gemfile</code>, among other things. By default, bundler
-              will search up from the current working directory until it finds a
-              <code>Gemfile</code>.</li>
-              <li>
-              <code>ssl_ca_cert</code> (<code>BUNDLE_SSL_CA_CERT</code>):
-              Path to a designated CA certificate file or folder containing multiple
-              certificates for trusted CAs in PEM format.</li>
-              <li>
-              <code>ssl_client_cert</code> (<code>BUNDLE_SSL_CLIENT_CERT</code>):
-              Path to a designated file containing a X.509 client certificate
-              and key in PEM format.</li>
-              <li>
-              <code>cache_path</code> (<code>BUNDLE_CACHE_PATH</code>): The directory that bundler will place
-              cached gems in when running <code>bundle package</code>, and that bundler
-              will look in when installing gems. Defaults to <code>vendor/bundle</code>.</li>
-              <li>
-              <code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>): When set, Gemfiles
-              containing multiple sources will produce errors instead of warnings. Use
-              <code>bundle config --delete disable_multisource</code> to unset.</li>
-              <li>
-              <code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>): When set, no post install
-              messages will be printed. To silence a single gem, use dot notation like
-              <code>ignore_messages.httparty true</code>.</li>
-              <li>
-              <code>retry</code> (<code>BUNDLE_RETRY</code>):
-               The number of times to retry failed network requests. Defaults to <code>3</code>.</li>
-              <li>
-              <code>redirect</code> (<code>BUNDLE_REDIRECT</code>):
-               The number of redirects allowed for network requests. Defaults to <code>5</code>.</li>
-              <li>
-              <code>timeout</code> (<code>BUNDLE_TIMEOUT</code>):
-               The seconds allowed before timing out for network requests. Defaults to <code>10</code>.</li>
-              <li>
-              <code>force_ruby_platform</code> (<code>BUNDLE_FORCE_RUBY_PLATFORM</code>):
-               Ignore the current machine's platform and install only <code>ruby</code> platform gems.
-               As a result, gems with native extensions will be compiled from source.</li>
-              <li>
-              <code>specific_platform</code> (<code>BUNDLE_SPECIFIC_PLATFORM</code>):
-               Allow bundler to resolve for the specific running platform and store it in
-               the lockfile, instead of only using a generic platform.
-               A specific platform is the exact platform triple reported by
-               <code>Gem::Platform.local</code>, such as <code>x86_64-darwin-16</code> or <code>universal-java-1.8</code>.
-               On the other hand, generic platforms are those such as <code>ruby</code>, <code>mswin</code>, or
-               <code>java</code>. In this example, <code>x86_64-darwin-16</code> would map to <code>ruby</code> and
-               <code>universal-java-1.8</code> to <code>java</code>.</li>
-              <li>
-              <code>disable_checksum_validation</code> (<code>BUNDLE_DISABLE_CHECKSUM_VALIDATION</code>):
-               Allow installing gems even if they do not match the checksum provided by
-               RubyGems.</li>
-              <li>
-              <code>disable_version_check</code> (<code>BUNDLE_DISABLE_VERSION_CHECK</code>):
-               Stop Bundler from checking if a newer Bundler version is available on
-               rubygems.org.</li>
-              <li>
-              <code>allow_offline_install</code> (<code>BUNDLE_ALLOW_OFFLINE_INSTALL</code>):
-               Allow Bundler to use cached data when installing without network access.</li>
-              <li>
-              <code>auto_install</code> (<code>BUNDLE_AUTO_INSTALL</code>):
-               Automatically run <code>bundle install</code> when gems are missing.</li>
-              <li>
-              <code>cache_all_platforms</code> (<code>BUNDLE_CACHE_ALL_PLATFORMS</code>):
-               Cache gems for all platforms.</li>
-              <li>
-              <code>cache_all</code> (<code>BUNDLE_CACHE_ALL</code>):
-               Cache all gems, including path and git gems.</li>
-              <li>
-              <code>clean</code> (<code>BUNDLE_CLEAN</code>):
-               Whether Bundler should run <code>bundle clean</code> automatically after
-               <code>bundle install</code>.</li>
-              <li>
-              <code>console</code> (<code>BUNDLE_CONSOLE</code>):
-               The console that <code>bundle console</code> starts. Defaults to <code>irb</code>.</li>
-              <li>
-              <code>disable_exec_load</code> (<code>BUNDLE_DISABLE_EXEC_LOAD</code>):
-               Stop Bundler from using <code>load</code> to launch an executable in-process in
-               <code>bundle exec</code>.</li>
-              <li>
-              <code>disable_local_branch_check</code> (<code>BUNDLE_DISABLE_LOCAL_BRANCH_CHECK</code>):
-               Allow Bundler to use a local git override without a branch specified in the
-               Gemfile.</li>
-              <li>
-              <code>disable_shared_gems</code> (<code>BUNDLE_DISABLE_SHARED_GEMS</code>):
-               Stop Bundler from accessing gems installed to RubyGems' normal location.</li>
-              <li>
-              <code>jobs</code> (<code>BUNDLE_JOBS</code>):
-               The number of gems Bundler can install in parallel. Defaults to 1.</li>
-              <li>
-              <code>major_deprecations</code> (<code>BUNDLE_MAJOR_DEPRECATIONS</code>):
-               Whether Bundler should print deprecation warnings for behavior that will
-               be changed in the next major version.</li>
-              <li>
-              <code>no_install</code> (<code>BUNDLE_NO_INSTALL</code>):
-               Whether <code>bundle package</code> should skip installing gems.</li>
-              <li>
-              <code>no_prune</code> (<code>BUNDLE_NO_PRUNE</code>):
-               Whether Bundler should leave outdated gems unpruned when caching.</li>
-              <li>
-              <code>only_update_to_newer_versions</code> (<code>BUNDLE_ONLY_UPDATE_TO_NEWER_VERSIONS</code>):
-               During <code>bundle update</code>, only resolve to newer versions of the gems in the
-               lockfile.</li>
-              <li>
-              <code>plugins</code> (<code>BUNDLE_PLUGINS</code>):
-               Enable Bundler's experimental plugin system.</li>
-              <li>
-              <code>shebang</code> (<code>BUNDLE_SHEBANG</code>):
-               The program name that should be invoked for generated binstubs. Defaults to
-               the ruby install name used to generate the binstub.</li>
-              <li>
-              <code>silence_root_warning</code> (<code>BUNDLE_SILENCE_ROOT_WARNING</code>):
-               Silence the warning Bundler prints when installing gems as root.</li>
-              <li>
-              <code>ssl_verify_mode</code> (<code>BUNDLE_SSL_VERIFY_MODE</code>):
-               The SSL verification mode Bundler uses when making HTTPS requests.
-               Defaults to verify peer.</li>
-              <li>
-              <code>system_bindir</code> (<code>BUNDLE_SYSTEM_BINDIR</code>):
-               The location where RubyGems installs binstubs. Defaults to <code>Gem.bindir</code>.</li>
-              <li>
-              <code>user_agent</code> (<code>BUNDLE_USER_AGENT</code>):
-               The custom user agent fragment Bundler includes in API requests.</li>
-              <li>
-              <code>gem.push_key</code> (<code>BUNDLE_GEM__PUSH_KEY</code>):
-               Sets the <code>--key</code> paramter for <code>gem push</code> when using the <code>rake release</code>
-               command with a private gemstash server.</li>
-              </ul>
-              
-              
-              <p>In general, you should set these settings per-application by using the applicable
-              flag to the <a href="bundle-install.1.html">bundle install(1)</a> or <a href="bundle-package.1.html">bundle package(1)</a> command.</p>
-              
-              <p>You can set them globally either via environment variables or <code>bundle config</code>,
-              whichever is preferable for your setup. If you use both, environment variables
-              will take preference over global settings.</p>
-              
-              <h2 id="LOCAL-GIT-REPOS">Local Git Repos</h2>
-              
-              <p>Bundler also allows you to work against a git repository locally
-              instead of using the remote version. This can be achieved by setting
-              up a local override:</p>
-              
-              <pre><code>bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre>
-              
-              <p>For example, in order to use a local Rack repository, a developer could call:</p>
-              
-              <pre><code>bundle config local.rack ~/Work/git/rack&#x000A;</code></pre>
-              
-              <p>Now instead of checking out the remote git repository, the local
-              override will be used. Similar to a path source, every time the local
-              git repository change, changes will be automatically picked up by
-              Bundler. This means a commit in the local git repo will update the
-              revision in the <code>Gemfile.lock</code> to the local git repo revision. This
-              requires the same attention as git submodules. Before pushing to
-              the remote, you need to ensure the local override was pushed, otherwise
-              you may point to a commit that only exists in your local machine.</p>
-              
-              <p>Bundler does many checks to ensure a developer won't work with
-              invalid references. Particularly, we force a developer to specify
-              a branch in the <code>Gemfile</code> in order to use this feature. If the branch
-              specified in the <code>Gemfile</code> and the current branch in the local git
-              repository do not match, Bundler will abort. This ensures that
-              a developer is always working against the correct branches, and prevents
-              accidental locking to a different branch.</p>
-              
-              <p>Finally, Bundler also ensures that the current revision in the
-              <code>Gemfile.lock</code> exists in the local git repository. By doing this, Bundler
-              forces you to fetch the latest changes in the remotes.</p>
-              
-              <h2 id="MIRRORS-OF-GEM-SOURCES">Mirrors Of Gem Sources</h2>
-              
-              <p>Bundler supports overriding gem sources with mirrors. This allows you to
-              configure rubygems.org as the gem source in your Gemfile while still using your
-              mirror to fetch gems.</p>
-              
-              <pre><code>bundle config mirror.SOURCE_URL MIRROR_URL&#x000A;</code></pre>
-              
-              <p>For example, to use a mirror of rubygems.org hosted at rubygems-mirror.org:</p>
-              
-              <pre><code>bundle config mirror.http://rubygems.org http://rubygems-mirror.org&#x000A;</code></pre>
-              
-              <p>Each mirror also provides a fallback timeout setting. If the mirror does not
-              respond within the fallback timeout, Bundler will try to use the original
-              server instead of the mirror.</p>
-              
-              <pre><code>bundle config mirror.SOURCE_URL.fallback_timeout TIMEOUT&#x000A;</code></pre>
-              
-              <p>For example, to fall back to rubygems.org after 3 seconds:</p>
-              
-              <pre><code>bundle config mirror.https://rubygems.org.fallback_timeout 3&#x000A;</code></pre>
-              
-              <p>The default fallback timeout is 0.1 seconds, but the setting can currently
-              only accept whole seconds (for example, 1, 15, or 30).</p>
-              
-              <h2 id="CREDENTIALS-FOR-GEM-SOURCES">Credentials For Gem Sources</h2>
-              
-              <p>Bundler allows you to configure credentials for any gem source, which allows
-              you to avoid putting secrets into your Gemfile.</p>
-              
-              <pre><code>bundle config SOURCE_HOSTNAME USERNAME:PASSWORD&#x000A;</code></pre>
-              
-              <p>For example, to save the credentials of user <code>claudette</code> for the gem source at
-              <code>gems.longerous.com</code>, you would run:</p>
-              
-              <pre><code>bundle config gems.longerous.com claudette:s00pers3krit&#x000A;</code></pre>
-              
-              <p>Or you can set the credentials as an environment variable like this:</p>
-              
-              <pre><code>export BUNDLE_GEMS__LONGEROUS__COM="claudette:s00pers3krit"&#x000A;</code></pre>
-              
-              <p>For gems with a git source with HTTP(S) URL you can specify credentials like so:</p>
-              
-              <pre><code>bundle config https://github.com/bundler/bundler.git username:password&#x000A;</code></pre>
-              
-              <p>Or you can set the credentials as an environment variable like so:</p>
-              
-              <pre><code>export BUNDLE_GITHUB__COM=username:password&#x000A;</code></pre>
-              
-              <p>This is especially useful for private repositories on hosts such as Github,
-              where you can use personal OAuth tokens:</p>
-              
-              <pre><code>export BUNDLE_GITHUB__COM=abcd0123generatedtoken:x-oauth-basic&#x000A;</code></pre>
-              
-              
-                
-              
-                </div>
-            </div>
-            <div class='clearfix'></div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <h4>Choose version</h4>
-              <div class='form-group'>
-                <select class='version-selects form-control'>
-                  <option value='/v1.17/man/bundle-config.1.html'>
-                    v1.17
-                  </option>
-                  <option value='/v1.16/man/bundle-config.1.html'>
-                    v1.16
-                  </option>
-                  <option selected value='/v1.15/man/bundle-config.1.html'>
-                    v1.15
-                  </option>
-                  <option value='/v1.14/man/bundle-config.1.html'>
-                    v1.14
-                  </option>
-                  <option value='/v1.13/man/bundle-config.1.html'>
-                    v1.13
-                  </option>
-                  <option value='/v1.12/man/bundle-config.1.html'>
-                    v1.12
-                  </option>
-                  <option value='/v1.11/man/bundle-config.1.html'>
-                    v1.11
-                  </option>
-                  <option value='/v1.10/man/bundle-config.1.html'>
-                    v1.10
-                  </option>
-                  <option value='/v1.9/man/bundle-config.1.html'>
-                    v1.9
-                  </option>
-                  <option value='/v1.8/man/bundle-config.1.html'>
-                    v1.8
-                  </option>
-                  <option value='/v1.7/man/bundle-config.1.html'>
-                    v1.7
-                  </option>
-                  <option value='/v1.6/man/bundle-config.1.html'>
-                    v1.6
-                  </option>
-                  <option value='/v1.5/man/bundle-config.1.html'>
-                    v1.5
-                  </option>
-                  <option value='/v1.3/man/bundle-config.1.html'>
-                    v1.3
-                  </option>
-                  <option value='/v1.2/man/bundle-config.1.html'>
-                    v1.2
-                  </option>
-                  <option value='/v1.1/man/bundle-config.1.html'>
-                    v1.1
-                  </option>
-                  <option value='/v1.0/man/bundle-config.1.html'>
-                    v1.0
-                  </option>
-                  <option value='/v0.9/bundle_install.html'>
-                    v0.9
-                  </option>
-                </select>
-              </div>
-              <h4>Primary Commands</h4>
-              <ul>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-install.1.html">bundle install</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-update.1.html">bundle update</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-package.1.html">bundle package</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-exec.1.html">bundle exec</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class='active'>
-                  <a href="/v1.15/man/bundle-config.1.html">bundle config</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/bundle_help.html">bundle help</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-              <h4>Utilities</h4>
-              <ul>
-                <li class=''>
-                  <a href="/v1.15/man/bundle.1.html">bundle</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-add.1.html">bundle add</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-binstubs.1.html">bundle binstubs</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-check.1.html">bundle check</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-clean.1.html">bundle clean</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/bundle_console.html">bundle console</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-gem.1.html">bundle gem</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-info.1.html">bundle info</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-init.1.html">bundle init</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-inject.1.html">bundle inject</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-lock.1.html">bundle lock</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-open.1.html">bundle open</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-outdated.1.html">bundle outdated</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-platform.1.html">bundle platform</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-pristine.1.html">bundle pristine</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-show.1.html">bundle show</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/bundle_version.html">bundle version</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/bundle-viz.1.html">bundle viz</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/man/gemfile.5.html">gemfile</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $('.version-selects').change(function(e) {
-          document.location.href = $(e.target).find(":selected").val();
-        });
-        $(document).ready(function() {
-          anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
-            '#page-content-wrapper h4, #page-content-wrapper h5');
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler/blob/master/man/bundle-config.ronn">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: bundle config
+</title>
+
+<link href='/man/bundle-config.1.html' rel='canonical'>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container'>
+<div id='wrapper'>
+<div id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option value='/v1.17/man/bundle-config.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle-config.1.html'>
+v1.16
+</option>
+<option selected value='/v1.15/man/bundle-config.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle-config.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle-config.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle-config.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle-config.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle-config.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle-config.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle-config.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle-config.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle-config.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle-config.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle-config.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle-config.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle-config.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle-config.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v1.15/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='commands contents' id='page-content-wrapper'>
+
+  <div class="mp" id="man">
+
+  
+
+  
+
+  <h2 id="NAME">bundle config</h2>
+<p class="man-name">
+  <code>bundle-config</code> - <span class="man-whatis">Set bundler configuration options</span>
+</p>
+
+
+
+<pre><code>bundle config</code> [<var>name</var> [<var>value</var>]]</pre>
+
+<h2 id="DESCRIPTION">Description</h2>
+
+<p>This command allows you to interact with bundler's configuration system.
+Bundler retrieves its configuration from the local application (<code>app/.bundle/config</code>),
+environment variables, and the user's home directory (<code>~/.bundle/config</code>),
+in that order of priority.</p>
+
+<p>Executing <code>bundle config</code> with no parameters will print a list of all
+bundler configuration for the current bundle, and where that configuration
+was set.</p>
+
+<p>Executing <code>bundle config &lt;name&gt;</code> will print the value of that configuration
+setting, and where it was set.</p>
+
+<p>Executing <code>bundle config &lt;name&gt; &lt;value&gt;</code> will set that configuration to the
+value specified for all bundles executed as the current user. The configuration
+will be stored in <code>~/.bundle/config</code>. If <var>name</var> already is set, <var>name</var> will be
+overridden and user will be warned.</p>
+
+<p>Executing <code>bundle config --global &lt;name&gt; &lt;value&gt;</code> works the same as above.</p>
+
+<p>Executing <code>bundle config --local &lt;name&gt; &lt;value&gt;</code> will set that configuration to
+the local application. The configuration will be stored in <code>app/.bundle/config</code>.</p>
+
+<p>Executing <code>bundle config --delete &lt;name&gt;</code> will delete the configuration in both
+local and global sources. Not compatible with --global or --local flag.</p>
+
+<p>Executing bundle with the <code>BUNDLE_IGNORE_CONFIG</code> environment variable set will
+cause it to ignore all configuration.</p>
+
+<p>Executing <code>bundle config disable_multisource true</code> upgrades the warning about
+the Gemfile containing multiple primary sources to an error. Executing <code>bundle&#x000A;config --delete disable_multisource</code> downgrades this error to a warning.</p>
+
+<h2 id="REMEMBERING-OPTIONS">Remembering Options</h2>
+
+<p>Flags passed to <code>bundle install</code> or the Bundler runtime,
+such as <code>--path foo</code> or <code>--without production</code>, are not remembered between commands.
+If these options must be remembered,they must be set using <code>bundle config</code>
+(e.g., <code>bundle config path foo</code>).</p>
+
+<p>The options that can be configured are:</p>
+
+<dl>
+<dt class="flush"><code>bin</code></dt>
+<dd><p>Creates a directory (defaults to <code>~/bin</code>) and place any executables from the
+gem there. These executables run in Bundler's context. If used, you might add
+this directory to your environment's <code>PATH</code> variable. For instance, if the
+<code>rails</code> gem comes with a <code>rails</code> executable, this flag will create a
+<code>bin/rails</code> executable that ensures that all referred dependencies will be
+resolved using the bundled gems.</p></dd>
+<dt><code>deployment</code></dt>
+<dd><p>In deployment mode, Bundler will 'roll-out' the bundle for
+<code>production</code> use. Please check carefully if you want to have this option
+enabled in <code>development</code> or <code>test</code> environments.</p></dd>
+<dt class="flush"><code>path</code></dt>
+<dd><p>The location to install the specified gems to. This defaults to Rubygems'
+setting. Bundler shares this location with Rubygems, <code>gem install ...</code> will
+have gem installed there, too. Therefore, gems installed without a
+<code>--path ...</code> setting will show up by calling <code>gem list</code>. Accordingly, gems
+installed to other locations will not get listed.</p></dd>
+<dt class="flush"><code>without</code></dt>
+<dd><p>A space-separated list of groups referencing gems to skip during installation.</p></dd>
+</dl>
+
+
+<h2 id="BUILD-OPTIONS">Build Options</h2>
+
+<p>You can use <code>bundle config</code> to give bundler the flags to pass to the gem
+installer every time bundler tries to install a particular gem.</p>
+
+<p>A very common example, the <code>mysql</code> gem, requires Snow Leopard users to
+pass configuration flags to <code>gem install</code> to specify where to find the
+<code>mysql_config</code> executable.</p>
+
+<pre><code>gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
+
+<p>Since the specific location of that executable can change from machine
+to machine, you can specify these flags on a per-machine basis.</p>
+
+<pre><code>bundle config build.mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config&#x000A;</code></pre>
+
+<p>After running this command, every time bundler needs to install the
+<code>mysql</code> gem, it will pass along the flags you specified.</p>
+
+<h2 id="CONFIGURATION-KEYS">Configuration Keys</h2>
+
+<p>Configuration keys in bundler have two forms: the canonical form and the
+environment variable form.</p>
+
+<p>For instance, passing the <code>--without</code> flag to <a href="bundle-install.1.html">bundle install(1)</a>
+prevents Bundler from installing certain groups specified in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. Bundler
+persists this value in <code>app/.bundle/config</code> so that calls to <code>Bundler.setup</code>
+do not try to find gems from the <code>Gemfile</code> that you didn't install. Additionally,
+subsequent calls to <a href="bundle-install.1.html">bundle install(1)</a> remember this setting and skip those
+groups.</p>
+
+<p>The canonical form of this configuration is <code>"without"</code>. To convert the canonical
+form to the environment variable form, capitalize it, and prepend <code>BUNDLE_</code>. The
+environment variable form of <code>"without"</code> is <code>BUNDLE_WITHOUT</code>.</p>
+
+<p>Any periods in the configuration keys must be replaced with two underscores when
+setting it via environment variables. The configuration key <code>local.rack</code> becomes
+the environment variable <code>BUNDLE_LOCAL__RACK</code>.</p>
+
+<h2 id="LIST-OF-AVAILABLE-KEYS">List Of Available Keys</h2>
+
+<p>The following is a list of all configuration keys and their purpose. You can
+learn more about their operation in <a href="bundle-install.1.html">bundle install(1)</a>.</p>
+
+<ul>
+<li>
+<code>path</code> (<code>BUNDLE_PATH</code>):
+The location on disk where all gems in your bundle will be located regardless
+of <code>$GEM_HOME</code> or <code>$GEM_PATH</code> values. Bundle gems not found in this location
+will be installed by <code>bundle install</code>. Defaults to <code>Gem.dir</code>. When --deployment is
+used, defaults to vendor/bundle.</li>
+<li>
+<code>frozen</code> (<code>BUNDLE_FROZEN</code>):
+Disallow changes to the <code>Gemfile</code>. Defaults to <code>true</code> when <code>--deployment</code>
+is used.</li>
+<li>
+<code>without</code> (<code>BUNDLE_WITHOUT</code>):
+A <code>:</code>-separated list of groups whose gems bundler should not install</li>
+<li>
+<code>bin</code> (<code>BUNDLE_BIN</code>):
+Install executables from gems in the bundle to the specified directory.
+Defaults to <code>false</code>.</li>
+<li>
+<code>gemfile</code> (<code>BUNDLE_GEMFILE</code>):
+The name of the file that bundler should use as the <code>Gemfile</code>. This location
+of this file also sets the root of the project, which is used to resolve
+relative paths in the <code>Gemfile</code>, among other things. By default, bundler
+will search up from the current working directory until it finds a
+<code>Gemfile</code>.</li>
+<li>
+<code>ssl_ca_cert</code> (<code>BUNDLE_SSL_CA_CERT</code>):
+Path to a designated CA certificate file or folder containing multiple
+certificates for trusted CAs in PEM format.</li>
+<li>
+<code>ssl_client_cert</code> (<code>BUNDLE_SSL_CLIENT_CERT</code>):
+Path to a designated file containing a X.509 client certificate
+and key in PEM format.</li>
+<li>
+<code>cache_path</code> (<code>BUNDLE_CACHE_PATH</code>): The directory that bundler will place
+cached gems in when running <code>bundle package</code>, and that bundler
+will look in when installing gems. Defaults to <code>vendor/bundle</code>.</li>
+<li>
+<code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>): When set, Gemfiles
+containing multiple sources will produce errors instead of warnings. Use
+<code>bundle config --delete disable_multisource</code> to unset.</li>
+<li>
+<code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>): When set, no post install
+messages will be printed. To silence a single gem, use dot notation like
+<code>ignore_messages.httparty true</code>.</li>
+<li>
+<code>retry</code> (<code>BUNDLE_RETRY</code>):
+ The number of times to retry failed network requests. Defaults to <code>3</code>.</li>
+<li>
+<code>redirect</code> (<code>BUNDLE_REDIRECT</code>):
+ The number of redirects allowed for network requests. Defaults to <code>5</code>.</li>
+<li>
+<code>timeout</code> (<code>BUNDLE_TIMEOUT</code>):
+ The seconds allowed before timing out for network requests. Defaults to <code>10</code>.</li>
+<li>
+<code>force_ruby_platform</code> (<code>BUNDLE_FORCE_RUBY_PLATFORM</code>):
+ Ignore the current machine's platform and install only <code>ruby</code> platform gems.
+ As a result, gems with native extensions will be compiled from source.</li>
+<li>
+<code>specific_platform</code> (<code>BUNDLE_SPECIFIC_PLATFORM</code>):
+ Allow bundler to resolve for the specific running platform and store it in
+ the lockfile, instead of only using a generic platform.
+ A specific platform is the exact platform triple reported by
+ <code>Gem::Platform.local</code>, such as <code>x86_64-darwin-16</code> or <code>universal-java-1.8</code>.
+ On the other hand, generic platforms are those such as <code>ruby</code>, <code>mswin</code>, or
+ <code>java</code>. In this example, <code>x86_64-darwin-16</code> would map to <code>ruby</code> and
+ <code>universal-java-1.8</code> to <code>java</code>.</li>
+<li>
+<code>disable_checksum_validation</code> (<code>BUNDLE_DISABLE_CHECKSUM_VALIDATION</code>):
+ Allow installing gems even if they do not match the checksum provided by
+ RubyGems.</li>
+<li>
+<code>disable_version_check</code> (<code>BUNDLE_DISABLE_VERSION_CHECK</code>):
+ Stop Bundler from checking if a newer Bundler version is available on
+ rubygems.org.</li>
+<li>
+<code>allow_offline_install</code> (<code>BUNDLE_ALLOW_OFFLINE_INSTALL</code>):
+ Allow Bundler to use cached data when installing without network access.</li>
+<li>
+<code>auto_install</code> (<code>BUNDLE_AUTO_INSTALL</code>):
+ Automatically run <code>bundle install</code> when gems are missing.</li>
+<li>
+<code>cache_all_platforms</code> (<code>BUNDLE_CACHE_ALL_PLATFORMS</code>):
+ Cache gems for all platforms.</li>
+<li>
+<code>cache_all</code> (<code>BUNDLE_CACHE_ALL</code>):
+ Cache all gems, including path and git gems.</li>
+<li>
+<code>clean</code> (<code>BUNDLE_CLEAN</code>):
+ Whether Bundler should run <code>bundle clean</code> automatically after
+ <code>bundle install</code>.</li>
+<li>
+<code>console</code> (<code>BUNDLE_CONSOLE</code>):
+ The console that <code>bundle console</code> starts. Defaults to <code>irb</code>.</li>
+<li>
+<code>disable_exec_load</code> (<code>BUNDLE_DISABLE_EXEC_LOAD</code>):
+ Stop Bundler from using <code>load</code> to launch an executable in-process in
+ <code>bundle exec</code>.</li>
+<li>
+<code>disable_local_branch_check</code> (<code>BUNDLE_DISABLE_LOCAL_BRANCH_CHECK</code>):
+ Allow Bundler to use a local git override without a branch specified in the
+ Gemfile.</li>
+<li>
+<code>disable_shared_gems</code> (<code>BUNDLE_DISABLE_SHARED_GEMS</code>):
+ Stop Bundler from accessing gems installed to RubyGems' normal location.</li>
+<li>
+<code>jobs</code> (<code>BUNDLE_JOBS</code>):
+ The number of gems Bundler can install in parallel. Defaults to 1.</li>
+<li>
+<code>major_deprecations</code> (<code>BUNDLE_MAJOR_DEPRECATIONS</code>):
+ Whether Bundler should print deprecation warnings for behavior that will
+ be changed in the next major version.</li>
+<li>
+<code>no_install</code> (<code>BUNDLE_NO_INSTALL</code>):
+ Whether <code>bundle package</code> should skip installing gems.</li>
+<li>
+<code>no_prune</code> (<code>BUNDLE_NO_PRUNE</code>):
+ Whether Bundler should leave outdated gems unpruned when caching.</li>
+<li>
+<code>only_update_to_newer_versions</code> (<code>BUNDLE_ONLY_UPDATE_TO_NEWER_VERSIONS</code>):
+ During <code>bundle update</code>, only resolve to newer versions of the gems in the
+ lockfile.</li>
+<li>
+<code>plugins</code> (<code>BUNDLE_PLUGINS</code>):
+ Enable Bundler's experimental plugin system.</li>
+<li>
+<code>shebang</code> (<code>BUNDLE_SHEBANG</code>):
+ The program name that should be invoked for generated binstubs. Defaults to
+ the ruby install name used to generate the binstub.</li>
+<li>
+<code>silence_root_warning</code> (<code>BUNDLE_SILENCE_ROOT_WARNING</code>):
+ Silence the warning Bundler prints when installing gems as root.</li>
+<li>
+<code>ssl_verify_mode</code> (<code>BUNDLE_SSL_VERIFY_MODE</code>):
+ The SSL verification mode Bundler uses when making HTTPS requests.
+ Defaults to verify peer.</li>
+<li>
+<code>system_bindir</code> (<code>BUNDLE_SYSTEM_BINDIR</code>):
+ The location where RubyGems installs binstubs. Defaults to <code>Gem.bindir</code>.</li>
+<li>
+<code>user_agent</code> (<code>BUNDLE_USER_AGENT</code>):
+ The custom user agent fragment Bundler includes in API requests.</li>
+<li>
+<code>gem.push_key</code> (<code>BUNDLE_GEM__PUSH_KEY</code>):
+ Sets the <code>--key</code> paramter for <code>gem push</code> when using the <code>rake release</code>
+ command with a private gemstash server.</li>
+</ul>
+
+
+<p>In general, you should set these settings per-application by using the applicable
+flag to the <a href="bundle-install.1.html">bundle install(1)</a> or <a href="bundle-package.1.html">bundle package(1)</a> command.</p>
+
+<p>You can set them globally either via environment variables or <code>bundle config</code>,
+whichever is preferable for your setup. If you use both, environment variables
+will take preference over global settings.</p>
+
+<h2 id="LOCAL-GIT-REPOS">Local Git Repos</h2>
+
+<p>Bundler also allows you to work against a git repository locally
+instead of using the remote version. This can be achieved by setting
+up a local override:</p>
+
+<pre><code>bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre>
+
+<p>For example, in order to use a local Rack repository, a developer could call:</p>
+
+<pre><code>bundle config local.rack ~/Work/git/rack&#x000A;</code></pre>
+
+<p>Now instead of checking out the remote git repository, the local
+override will be used. Similar to a path source, every time the local
+git repository change, changes will be automatically picked up by
+Bundler. This means a commit in the local git repo will update the
+revision in the <code>Gemfile.lock</code> to the local git repo revision. This
+requires the same attention as git submodules. Before pushing to
+the remote, you need to ensure the local override was pushed, otherwise
+you may point to a commit that only exists in your local machine.</p>
+
+<p>Bundler does many checks to ensure a developer won't work with
+invalid references. Particularly, we force a developer to specify
+a branch in the <code>Gemfile</code> in order to use this feature. If the branch
+specified in the <code>Gemfile</code> and the current branch in the local git
+repository do not match, Bundler will abort. This ensures that
+a developer is always working against the correct branches, and prevents
+accidental locking to a different branch.</p>
+
+<p>Finally, Bundler also ensures that the current revision in the
+<code>Gemfile.lock</code> exists in the local git repository. By doing this, Bundler
+forces you to fetch the latest changes in the remotes.</p>
+
+<h2 id="MIRRORS-OF-GEM-SOURCES">Mirrors Of Gem Sources</h2>
+
+<p>Bundler supports overriding gem sources with mirrors. This allows you to
+configure rubygems.org as the gem source in your Gemfile while still using your
+mirror to fetch gems.</p>
+
+<pre><code>bundle config mirror.SOURCE_URL MIRROR_URL&#x000A;</code></pre>
+
+<p>For example, to use a mirror of rubygems.org hosted at rubygems-mirror.org:</p>
+
+<pre><code>bundle config mirror.http://rubygems.org http://rubygems-mirror.org&#x000A;</code></pre>
+
+<p>Each mirror also provides a fallback timeout setting. If the mirror does not
+respond within the fallback timeout, Bundler will try to use the original
+server instead of the mirror.</p>
+
+<pre><code>bundle config mirror.SOURCE_URL.fallback_timeout TIMEOUT&#x000A;</code></pre>
+
+<p>For example, to fall back to rubygems.org after 3 seconds:</p>
+
+<pre><code>bundle config mirror.https://rubygems.org.fallback_timeout 3&#x000A;</code></pre>
+
+<p>The default fallback timeout is 0.1 seconds, but the setting can currently
+only accept whole seconds (for example, 1, 15, or 30).</p>
+
+<h2 id="CREDENTIALS-FOR-GEM-SOURCES">Credentials For Gem Sources</h2>
+
+<p>Bundler allows you to configure credentials for any gem source, which allows
+you to avoid putting secrets into your Gemfile.</p>
+
+<pre><code>bundle config SOURCE_HOSTNAME USERNAME:PASSWORD&#x000A;</code></pre>
+
+<p>For example, to save the credentials of user <code>claudette</code> for the gem source at
+<code>gems.longerous.com</code>, you would run:</p>
+
+<pre><code>bundle config gems.longerous.com claudette:s00pers3krit&#x000A;</code></pre>
+
+<p>Or you can set the credentials as an environment variable like this:</p>
+
+<pre><code>export BUNDLE_GEMS__LONGEROUS__COM="claudette:s00pers3krit"&#x000A;</code></pre>
+
+<p>For gems with a git source with HTTP(S) URL you can specify credentials like so:</p>
+
+<pre><code>bundle config https://github.com/bundler/bundler.git username:password&#x000A;</code></pre>
+
+<p>Or you can set the credentials as an environment variable like so:</p>
+
+<pre><code>export BUNDLE_GITHUB__COM=username:password&#x000A;</code></pre>
+
+<p>This is especially useful for private repositories on hosts such as Github,
+where you can use personal OAuth tokens:</p>
+
+<pre><code>export BUNDLE_GITHUB__COM=abcd0123generatedtoken:x-oauth-basic&#x000A;</code></pre>
+
+
+  
+
+  </div>
+
+</div>
+<div class='clearfix'></div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option value='/v1.17/man/bundle-config.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle-config.1.html'>
+v1.16
+</option>
+<option selected value='/v1.15/man/bundle-config.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle-config.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle-config.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle-config.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle-config.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle-config.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle-config.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle-config.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle-config.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle-config.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle-config.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle-config.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle-config.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle-config.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle-config.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v1.15/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $('.version-selects').change(function(e) {
+    document.location.href = $(e.target).find(":selected").val();
+  });
+  $(document).ready(function() {
+    anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
+      '#page-content-wrapper h4, #page-content-wrapper h5');
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler/blob/master/man/bundle-config.ronn">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

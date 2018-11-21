@@ -1,362 +1,370 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: The best way to manage a Ruby application's gems
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div id='wrapper'>
-            <div class='hidden-xs' id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Guides</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='guide contents' id='page-content-wrapper'>
-              <h1 id="writing-docs-for-man-pages">Writing docs for man pages</h1>
-              
-              <p>A primary source of help for Bundler users are the man pages: the output printed when you run <code>bundle help</code> (or <code>bundler help</code>). These pages can be a little tricky to format and preview, but are pretty straightforward once you get the hang of it.</p>
-              
-              <p><em>Note: <code>bundler</code> and <code>bundle</code> may be used interchangeably in the CLI. This guide uses <code>bundle</code> because it’s cuter.</em></p>
-              
-              <h2 id="what-goes-in-man-pages">What goes in man pages?</h2>
-              
-              <p>We use man pages for Bundler commands used in the CLI (command line interface). They can vary in length from large (see <code>bundle install</code>) to very short (see <code>bundle clean</code>).</p>
-              
-              <p>To see a list of commands available in the Bundler CLI, type:</p>
-              
-              <div class="highlight"><pre class="highlight plaintext"><code>  $ bundle help&#x000A;</code></pre></div>
-              <p>Our goal is to have a man page for every command.</p>
-              
-              <p>Don’t see a man page for a command? Make a new page and send us a PR! We also welcome edits to existing pages.</p>
-              
-              <h2 id="creating-a-new-man-page">Creating a new man page</h2>
-              
-              <p>To create a new man page, simply create a new <code>.ronn</code> file in the <code>man/</code> directory.</p>
-              
-              <p>For example: to create a man page for the command <code>bundle cookies</code> (not a real command, sadly), I would create a file <code>man/bundle-cookies.ronn</code> and add my documentation there.</p>
-              
-              <h2 id="formatting">Formatting</h2>
-              
-              <p>Our man pages use ronn formatting, a combination of Markdown and standard man page conventions. It can be a little weird getting used to it at first, especially if you’ve used Markdown a lot.</p>
-              
-              <p><a href="https://rtomayko.github.io/ronn/ronn.7.html">The ronn guide formatting guide</a> provides a good overview of the common types of formatting.</p>
-              
-              <p>In general, make your page look like the other pages: utilize sections like <code>##OPTIONS</code> and formatting like code blocks and definition lists where appropriate.</p>
-              
-              <p>If you’re not sure if the formatting looks right, that’s ok! Make a pull request with what you’ve got and we’ll take a peek.</p>
-              
-              <h2 id="previewing">Previewing</h2>
-              
-              <p>To preview your changes as they will print out for Bundler users, you’ll need to run a series of commands:</p>
-              
-              <p><code>&#x000A;$ rake spec:deps&#x000A;$ rake man:build&#x000A;$ man man/bundle-cookies.1</code></p>
-              
-              <p>If you make more changes to <code>bundle-cookies.ronn</code>, you’ll need to run the <code>rake man:build</code> again before previewing.</p>
-              
-              <h2 id="testing">Testing</h2>
-              
-              <p>We have tests for our documentation! The most important test file to run before you make your pull request is the one for the <code>help</code> command and another for documentation quality.</p>
-              
-              <p><code>&#x000A;$ bin/rspec ./spec/commands/help_spec.rb&#x000A;$ bin/rspec ./spec/quality_spec.rb</code></p>
-              
-              <h1 id="writing-docs-for-the-bundler-documentation-sitehttpwwwbundlerio">Writing docs for <a href="http://www.bundler.io">the Bundler documentation site</a></h1>
-              
-              <p>If you’d like to submit a pull request for any of the primary commands or utilities on <a href="http://www.bundler.io">the Bundler documentation site</a>, please follow the instructions above for writing documentation for man pages from the <code>bundler/bundler</code> repository. They are the same in each case.</p>
-              
-              <p>Note: Editing <code>.ronn</code> files from the <code>bundler/bundler</code> repository for the primary commands and utilities documentation is all you need 🎉. There is no need to manually change anything in the <code>bundler/bundler-site</code> repository, because the man pages and the docs for primary commands and utilities on <a href="http://www.bundler.io">the Bundler documentation site</a> are one in the same. They are generated automatically from the <code>bundler/bundler</code> repository’s <code>.ronn</code> files from the <code>rake man/build</code> command. In other words, after updating <code>.ronn</code> file and running <code>rake man/build</code> in <code>bundler</code>, <code>.ronn</code> files map to the auto-generated files in the <code>source/man</code> directory of <code>bundler-site</code>.</p>
-              
-              <p>Additionally, if you’d like to add a guide or tutorial: in the <code>bundler/bundler-site</code> repository, go to <code>/bundler-site/source/current_version_of_bundler/guides</code> and add <a href="https://guides.github.com/features/mastering-markdown/">a new Markdown file</a> (with an extension ending in <code>.md</code>). Be sure to correctly format the title of your new guide, like so:
-              <code>&#x000A;---&#x000A;title: RubyGems.org SSL/TLS Troubleshooting Guide&#x000A;---</code></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <ul>
-                <li class=''>
-                  <a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler/blob/master/doc/documentation/writing.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: The best way to manage a Ruby application's gems
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<h1 id="writing-docs-for-man-pages">Writing docs for man pages</h1>
+
+<p>A primary source of help for Bundler users are the man pages: the output printed when you run <code>bundle help</code> (or <code>bundler help</code>). These pages can be a little tricky to format and preview, but are pretty straightforward once you get the hang of it.</p>
+
+<p><em>Note: <code>bundler</code> and <code>bundle</code> may be used interchangeably in the CLI. This guide uses <code>bundle</code> because it’s cuter.</em></p>
+
+<h2 id="what-goes-in-man-pages">What goes in man pages?</h2>
+
+<p>We use man pages for Bundler commands used in the CLI (command line interface). They can vary in length from large (see <code>bundle install</code>) to very short (see <code>bundle clean</code>).</p>
+
+<p>To see a list of commands available in the Bundler CLI, type:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>  $ bundle help&#x000A;</code></pre></div>
+<p>Our goal is to have a man page for every command.</p>
+
+<p>Don’t see a man page for a command? Make a new page and send us a PR! We also welcome edits to existing pages.</p>
+
+<h2 id="creating-a-new-man-page">Creating a new man page</h2>
+
+<p>To create a new man page, simply create a new <code>.ronn</code> file in the <code>man/</code> directory.</p>
+
+<p>For example: to create a man page for the command <code>bundle cookies</code> (not a real command, sadly), I would create a file <code>man/bundle-cookies.ronn</code> and add my documentation there.</p>
+
+<h2 id="formatting">Formatting</h2>
+
+<p>Our man pages use ronn formatting, a combination of Markdown and standard man page conventions. It can be a little weird getting used to it at first, especially if you’ve used Markdown a lot.</p>
+
+<p><a href="https://rtomayko.github.io/ronn/ronn.7.html">The ronn guide formatting guide</a> provides a good overview of the common types of formatting.</p>
+
+<p>In general, make your page look like the other pages: utilize sections like <code>##OPTIONS</code> and formatting like code blocks and definition lists where appropriate.</p>
+
+<p>If you’re not sure if the formatting looks right, that’s ok! Make a pull request with what you’ve got and we’ll take a peek.</p>
+
+<h2 id="previewing">Previewing</h2>
+
+<p>To preview your changes as they will print out for Bundler users, you’ll need to run a series of commands:</p>
+
+<p><code>&#x000A;$ rake spec:deps&#x000A;$ rake man:build&#x000A;$ man man/bundle-cookies.1</code></p>
+
+<p>If you make more changes to <code>bundle-cookies.ronn</code>, you’ll need to run the <code>rake man:build</code> again before previewing.</p>
+
+<h2 id="testing">Testing</h2>
+
+<p>We have tests for our documentation! The most important test file to run before you make your pull request is the one for the <code>help</code> command and another for documentation quality.</p>
+
+<p><code>&#x000A;$ bin/rspec ./spec/commands/help_spec.rb&#x000A;$ bin/rspec ./spec/quality_spec.rb</code></p>
+
+<h1 id="writing-docs-for-the-bundler-documentation-sitehttpwwwbundlerio">Writing docs for <a href="http://www.bundler.io">the Bundler documentation site</a></h1>
+
+<p>If you’d like to submit a pull request for any of the primary commands or utilities on <a href="http://www.bundler.io">the Bundler documentation site</a>, please follow the instructions above for writing documentation for man pages from the <code>bundler/bundler</code> repository. They are the same in each case.</p>
+
+<p>Note: Editing <code>.ronn</code> files from the <code>bundler/bundler</code> repository for the primary commands and utilities documentation is all you need 🎉. There is no need to manually change anything in the <code>bundler/bundler-site</code> repository, because the man pages and the docs for primary commands and utilities on <a href="http://www.bundler.io">the Bundler documentation site</a> are one in the same. They are generated automatically from the <code>bundler/bundler</code> repository’s <code>.ronn</code> files from the <code>rake man/build</code> command. In other words, after updating <code>.ronn</code> file and running <code>rake man/build</code> in <code>bundler</code>, <code>.ronn</code> files map to the auto-generated files in the <code>source/man</code> directory of <code>bundler-site</code>.</p>
+
+<p>Additionally, if you’d like to add a guide or tutorial: in the <code>bundler/bundler-site</code> repository, go to <code>/bundler-site/source/current_version_of_bundler/guides</code> and add <a href="https://guides.github.com/features/mastering-markdown/">a new Markdown file</a> (with an extension ending in <code>.md</code>). Be sure to correctly format the title of your new guide, like so:
+<code>&#x000A;---&#x000A;title: RubyGems.org SSL/TLS Troubleshooting Guide&#x000A;---</code></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler/blob/master/doc/documentation/writing.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

@@ -1,244 +1,253 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: The best way to manage a Ruby application's gems
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div id='wrapper'>
-            <div class='hidden-xs' id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Guides</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.13/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.13/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='guide contents' id='page-content-wrapper'>
-              <div class='container guide'>
-                <h1>What's New in each Release</h1>
-                <div class='row'>
-                  <div class='col-sm-12'>
-                    <a href="/v1.17/whats_new.html" class="btn btn-sm btn-primary">v1.17</a>
-                    <a href="/v1.16/whats_new.html" class="btn btn-sm btn-primary">v1.16</a>
-                    <a href="/v1.15/whats_new.html" class="btn btn-sm btn-primary">v1.15</a>
-                    <a href="/v1.14/whats_new.html" class="btn btn-sm btn-primary">v1.14</a>
-                    <a href="/v1.13/whats_new.html" class="btn btn-sm btn-default">v1.13</a>
-                    <a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
-                    <a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
-                    <a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
-                    <a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
-                    <a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
-                    <a href="/v1.7/whats_new.html" class="btn btn-sm btn-primary">v1.7</a>
-                    <a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
-                    <a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
-                    <a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
-                    <a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
-                    <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
-                    <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
-                  </div>
-                </div>
-                <p>
-                  The
-                  <a href="/blog/2016/09/08/bundler-1-13.html">Bundler 1.13 announcement</a>
-                  includes context and a more detailed explanation of the changes in this version. This is a summary of the biggest changes. As always, a detailed list of every change is provided in
-                  <a href="https://github.com/bundler/bundler/blob/1-13-stable/CHANGELOG.md">the changelog</a>.
-                </p>
-                <h3>New <code>doctor</code> command</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        Add the <code>doctor</code> command for automated troubleshooting. So far, it can automatically detect gems that have been compiled against libraries that no longer exist, and compile them again to fix them.
-                        (Thanks <a href="https://github.com/mistydemeo">@mistydemeo</a>!)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>Support for <code>required_ruby_version</code></h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        Gems that declare a <code>required_ruby_version</code> will now resolve correctly as long as your Gemfile contains a <code>ruby</code> declaration. If a gem cannot be resolved because of your Ruby version, the error will correctly indicate that your Ruby version conflicts with your other gem version requirements.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>Manage locked platforms</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        In the past, the only way to resolve your Gemfile on a new platform (like <code>java</code> or <code>mswin</code>) was to run <code>bundle install</code> on that platform. We've added explicit options to the <code>lock</code> command to allow managing platforms. Platforms can be added using <code>bundle lock --add-platform NAME</code>, and platforms can be removed using <code>bundle lock --remove-platform NAME</code>.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>Fine controls for the <code>update</code> command</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p></p>
-                      The <code>update</code> command now has several options to enable users to fine-tune exactly what it is that they will get, using the new flags <code>--major</code>, <code>--minor</code>, <code>--patch</code>, and <code>--strict</code>. It was also recently pointed out to us that running <code>update</code> could even result in some locked gems being changed to an older version! We can’t change the default behavior to avoid that until version 2.0, but for now we’ve added a config setting. To prevent the <code>update</code> command from ever “upgrading” you to an older version, run <code>bundle config only_update_to_newer_versions true</code>.
-                    </div>
-                  </div>
-                </div>
-                <h3>Experimental plugin system</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        The plugin system also supports "source" plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we've started adding new "lifecycle" hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>Experimental Bundler version locking</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        automatically trampoline to the bundler version locked in the lockfile, only updating to the running version on <code>bundle update --bundler</code> (@segiddins)
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'></div>
-                    Bundler 1.13 also includes:
-                    <ul>
-                      <li>Support for RubyGems 2.6.4</li>
-                      <li>Automatic gem installation for <code>bundler/inline</code></li>
-                      <li>Dramatic resolver optimizations</li>
-                      <li>Better load-based <code>exec</code> command</li>
-                      <li>Support for setting "mirror" servers by hostname</li>
-                      <li>Automatic retrying for gem downloads</li>
-                    </ul>
-                    <a href="https://github.com/bundler/bundler/blob/1-13-stable/CHANGELOG.md" class="btn btn-primary">Full 1.13 changelog</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <ul>
-                <li class=''>
-                  <a href="/v1.13/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.13/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler-site/blob/master/source/v1.13/whats_new.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: The best way to manage a Ruby application's gems
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v1.13/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.13/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<div class='container guide'>
+<h1>What's New in each Release</h1>
+<div class='row'>
+<div class='col-sm-12'>
+<a href="/v1.17/whats_new.html" class="btn btn-sm btn-primary">v1.17</a>
+<a href="/v1.16/whats_new.html" class="btn btn-sm btn-primary">v1.16</a>
+<a href="/v1.15/whats_new.html" class="btn btn-sm btn-primary">v1.15</a>
+<a href="/v1.14/whats_new.html" class="btn btn-sm btn-primary">v1.14</a>
+<a href="/v1.13/whats_new.html" class="btn btn-sm btn-default">v1.13</a>
+<a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
+<a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
+<a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
+<a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
+<a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
+<a href="/v1.7/whats_new.html" class="btn btn-sm btn-primary">v1.7</a>
+<a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
+<a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
+<a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
+<a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
+<a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
+<a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
+</div>
+</div>
+
+<p>
+The
+<a href="/blog/2016/09/08/bundler-1-13.html">Bundler 1.13 announcement</a>
+includes context and a more detailed explanation of the changes in this version. This is a summary of the biggest changes. As always, a detailed list of every change is provided in
+<a href="https://github.com/bundler/bundler/blob/1-13-stable/CHANGELOG.md">the changelog</a>.
+</p>
+<h3>New <code>doctor</code> command</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+Add the <code>doctor</code> command for automated troubleshooting. So far, it can automatically detect gems that have been compiled against libraries that no longer exist, and compile them again to fix them.
+(Thanks <a href="https://github.com/mistydemeo">@mistydemeo</a>!)
+</p>
+</div>
+</div>
+</div>
+<h3>Support for <code>required_ruby_version</code></h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+Gems that declare a <code>required_ruby_version</code> will now resolve correctly as long as your Gemfile contains a <code>ruby</code> declaration. If a gem cannot be resolved because of your Ruby version, the error will correctly indicate that your Ruby version conflicts with your other gem version requirements.
+</p>
+</div>
+</div>
+</div>
+<h3>Manage locked platforms</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+In the past, the only way to resolve your Gemfile on a new platform (like <code>java</code> or <code>mswin</code>) was to run <code>bundle install</code> on that platform. We've added explicit options to the <code>lock</code> command to allow managing platforms. Platforms can be added using <code>bundle lock --add-platform NAME</code>, and platforms can be removed using <code>bundle lock --remove-platform NAME</code>.
+</p>
+</div>
+</div>
+</div>
+<h3>Fine controls for the <code>update</code> command</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p></p>
+The <code>update</code> command now has several options to enable users to fine-tune exactly what it is that they will get, using the new flags <code>--major</code>, <code>--minor</code>, <code>--patch</code>, and <code>--strict</code>. It was also recently pointed out to us that running <code>update</code> could even result in some locked gems being changed to an older version! We can’t change the default behavior to avoid that until version 2.0, but for now we’ve added a config setting. To prevent the <code>update</code> command from ever “upgrading” you to an older version, run <code>bundle config only_update_to_newer_versions true</code>.
+</div>
+</div>
+</div>
+<h3>Experimental plugin system</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+The plugin system also supports "source" plugins, which means it should be possible to use gems from Subversion, Mercurial, S3, or anything else you can think of. In addition to source plugins, we've started adding new "lifecycle" hooks. That means plugins will be able to hook in and run their own code before, during, or after the install or update process.
+</p>
+</div>
+</div>
+</div>
+<h3>Experimental Bundler version locking</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+automatically trampoline to the bundler version locked in the lockfile, only updating to the running version on <code>bundle update --bundler</code> (@segiddins)
+</p>
+</div>
+</div>
+</div>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'></div>
+Bundler 1.13 also includes:
+<ul>
+<li>Support for RubyGems 2.6.4</li>
+<li>Automatic gem installation for <code>bundler/inline</code></li>
+<li>Dramatic resolver optimizations</li>
+<li>Better load-based <code>exec</code> command</li>
+<li>Support for setting "mirror" servers by hostname</li>
+<li>Automatic retrying for gem downloads</li>
+</ul>
+<a href="https://github.com/bundler/bundler/blob/1-13-stable/CHANGELOG.md" class="btn btn-primary">Full 1.13 changelog</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v1.13/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.13/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/v1.13/whats_new.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

@@ -1,168 +1,174 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: Bundler template moves bins to exe
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
-            <div class='contents blog'>
-              <h2 class='title'>
-                <a href="/blog/2015/03/20/moving-bins-to-exe.html">Bundler template moves bins to exe</a>
-              </h2>
-              <div class='subtitle'>
-                by
-                <a href="http://www.benjaminfleischer.com/2015/02/18/til-rubygem-executables-now-go-in-exe/" target="_blank">Benjamin Fleischer</a>
-                on
-                <time>
-                  Mar 20 2015
-                </time>
-              </div>
-              <div class='blog-content'>
-                <p><a href="https://github.com/bundler/bundler/blob/v1.8.0/lib/bundler/templates/newgem/newgem.gemspec.tt">Bundler 1.8</a>
-                <a href="https://github.com/bundler/bundler/commit/ab3e21784c6c18702869c771fbe7ae23c82cc7c0">moves the executables directory in generated gemspecs from <code>bin/</code> to <code>exe/</code></a>.</p>
-                
-                <div class="highlight"><pre class="highlight diff"><code><span class="gd">-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }&#x000A;</span><span class="gi">+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }&#x000A;</span></code></pre></div>
-                <p>This means that the Bundler-generated gems can use and commit binstubs,
-                such as <code>bin/rake</code>, to the <code>bin/</code> directory.  Only files in the <code>exe/</code> directory
-                will be built with the gem.  Prior to this change, we would need to either not
-                commit binstubs or change the gemspec not to include all files in <code>bin</code> as
-                executables.</p>
-                
-                <p>There’s nothing that needs to be done for existing gems.  To modify an existing gem
-                to use this convention, we only need to move the executable(s), if any, into <code>exe/</code>,
-                and modify the gemspec <code>executables</code> directory to <code>exe/</code>, as above.</p>
-                
-                <p>Using the <code>exe/</code> directory for gem executables frees up <code>bin/</code> to be used for
-                <code>bundle binstubs rspec-core; bin/rspec</code> and other libraries that have adopted this
-                convention, such as Rails, which installs the scripts <code>bin/rails</code>, <code>bin/rake</code>, and
-                <code>bin/setup</code> with all generated apps.</p>
-                
-                <h3 id="background">Background</h3>
-                
-                <p>This is a new convention.  The current practice of both specifying <code>bin/</code> as the
-                <code>executables</code> directory and where we put binstubs and other development-only
-                executables such as <code>bin/rails</code> or <code>bin/setup</code>, meant that Bundler-generated
-                gems with executables were quite likely to have these development executables
-                included in the built gem, and then installed along with the gem.</p>
-                
-                <p>Rather than make the gemspec template more restrictive by only specifying one
-                executable in <code>bin/</code> as an <code>executable</code>, the Bundler team has chosen to use a
-                different directory, <code>exe/</code>, as the <code>executables</code> directory in the template.</p>
-                
-                <p>This change is just part of the evolving conventions in gem development.  RSpec,
-                for example, has had its executable <a href="https://github.com/rspec/rspec-core/blob/b54e2a161b7de5e6cfdcfde9abce2ea3cec10b82/rspec-core.gemspec#L19">in <code>exe</code> since 2011</a>.</p>
-                
-                <p>Here’s an example of the kind of buggy behavior you might see when binstubs are
-                build with a gem as executables.</p>
-                
-                <h4 id="demo">Demo</h4>
-                
-                <div class="highlight"><pre class="highlight shell"><code>bundle gem new_gem&#x000A;git add .<span class="p">;</span> git commit <span class="nt">-am</span> <span class="s2">"Initial Commit"</span>&#x000A;bundle binstub rake&#x000A;git add bin/rake<span class="p">;</span> git commit <span class="nt">-am</span> <span class="s2">"bundle binstub rake"</span>&#x000A;bundle&#x000A;which rake <span class="c">#=&gt;  ~/.rvm/gems/ruby-2.1.5/bin/rake</span>&#x000A;<span class="nb">cat</span> <span class="sb">`</span>which rake<span class="sb">`</span>&#x000A;</code></pre></div>
-                <p>and</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby_executable_hooks</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># This file was generated by RubyGems.</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># The application 'new_gem' is installed as part of a gem, and</span>&#x000A;<span class="c1"># this file is here to facilitate running it.</span>&#x000A;<span class="c1">#</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;&#x000A;<span class="n">version</span> <span class="o">=</span> <span class="s2">"&gt;= 0"</span>&#x000A;&#x000A;<span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"BINARY"</span><span class="p">)</span> <span class="k">if</span> <span class="n">str</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="ss">:force_encoding</span>&#x000A;  <span class="k">if</span> <span class="n">str</span> <span class="o">=~</span> <span class="sr">/\A_(.*)_\z/</span> <span class="n">and</span> <span class="no">Gem</span><span class="o">::</span><span class="no">Version</span><span class="p">.</span><span class="nf">correct?</span><span class="p">(</span><span class="vg">$1</span><span class="p">)</span> <span class="k">then</span>&#x000A;    <span class="n">version</span> <span class="o">=</span> <span class="vg">$1</span>&#x000A;    <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'new_gem'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'new_gem'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
-                <p>The problem is found in the last two lines:</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'new_gem'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'new_gem'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
-                <p>The rake executable no longer uses the <code>rake</code> gem. It now requires <code>rake</code> from <code>new_gem</code>.</p>
-                
-                <p>Now, when I run rake elsewhere, I get the warning:</p>
-                
-                <div class="highlight"><pre class="highlight shell"><code>Bundler is using a binstub that was created <span class="k">for </span>a different gem.&#x000A;This is deprecated, <span class="k">in </span>future versions you may need to <span class="sb">`</span>bundle binstub new_gem<span class="sb">`</span> to work around a system/bundle conflict.&#x000A;</code></pre></div>
-                <p>This happened because of the line in the gemspec that installed all git-versioned files in <code>bin/</code>:</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^bin/}</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>&#x000A;</code></pre></div>
-                <p>To fix our rake install:</p>
-                
-                <div class="highlight"><pre class="highlight shell"><code>gem pristine rake&#x000A;<span class="c"># (In your gem folder, you may also want to run `bundle exec gem pristine rake`)</span>&#x000A;<span class="nb">cat</span> <span class="sb">`</span>which rake<span class="sb">`</span>&#x000A;</code></pre></div>
-                <p>and</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby_executable_hooks</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># This file was generated by RubyGems.</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># The application 'rake' is installed as part of a gem, and</span>&#x000A;<span class="c1"># this file is here to facilitate running it.</span>&#x000A;<span class="c1">#</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;&#x000A;<span class="n">version</span> <span class="o">=</span> <span class="s2">"&gt;= 0"</span>&#x000A;&#x000A;<span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"BINARY"</span><span class="p">)</span> <span class="k">if</span> <span class="n">str</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="ss">:force_encoding</span>&#x000A;  <span class="k">if</span> <span class="n">str</span> <span class="o">=~</span> <span class="sr">/\A_(.*)_\z/</span> <span class="n">and</span> <span class="no">Gem</span><span class="o">::</span><span class="no">Version</span><span class="p">.</span><span class="nf">correct?</span><span class="p">(</span><span class="vg">$1</span><span class="p">)</span> <span class="k">then</span>&#x000A;    <span class="n">version</span> <span class="o">=</span> <span class="vg">$1</span>&#x000A;    <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'rake'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
-                <p>To fix our gemspec:</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^exe/}</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>&#x000A;</code></pre></div>
-                <p>Or just delete the line altogether, since new_gem doesn’t have an executable.</p>
-                
-                <p>If it did, we could continue to use <code>bin/</code>, create the file as <code>bin/new_gem</code> and
-                specify it as the only executable.</p>
-                
-                <div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="s2">"new_gem"</span>&#x000A;</code></pre></div>
-                <p>Or use the new <code>exe/</code> convention, create a file such as <code>exe/new_gem</code>, and not worry.</p>
-                
-                <p>Enjoy!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Bundler template moves bins to exe
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2015/03/20/moving-bins-to-exe.html">Bundler template moves bins to exe</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="http://www.benjaminfleischer.com/2015/02/18/til-rubygem-executables-now-go-in-exe/" target="_blank">Benjamin Fleischer</a>
+on
+<time>
+Mar 20 2015
+</time>
+</div>
+<div class='blog-content'>
+<p><a href="https://github.com/bundler/bundler/blob/v1.8.0/lib/bundler/templates/newgem/newgem.gemspec.tt">Bundler 1.8</a>
+<a href="https://github.com/bundler/bundler/commit/ab3e21784c6c18702869c771fbe7ae23c82cc7c0">moves the executables directory in generated gemspecs from <code>bin/</code> to <code>exe/</code></a>.</p>
+
+<div class="highlight"><pre class="highlight diff"><code><span class="gd">-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }&#x000A;</span><span class="gi">+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }&#x000A;</span></code></pre></div>
+<p>This means that the Bundler-generated gems can use and commit binstubs,
+such as <code>bin/rake</code>, to the <code>bin/</code> directory.  Only files in the <code>exe/</code> directory
+will be built with the gem.  Prior to this change, we would need to either not
+commit binstubs or change the gemspec not to include all files in <code>bin</code> as
+executables.</p>
+
+<p>There’s nothing that needs to be done for existing gems.  To modify an existing gem
+to use this convention, we only need to move the executable(s), if any, into <code>exe/</code>,
+and modify the gemspec <code>executables</code> directory to <code>exe/</code>, as above.</p>
+
+<p>Using the <code>exe/</code> directory for gem executables frees up <code>bin/</code> to be used for
+<code>bundle binstubs rspec-core; bin/rspec</code> and other libraries that have adopted this
+convention, such as Rails, which installs the scripts <code>bin/rails</code>, <code>bin/rake</code>, and
+<code>bin/setup</code> with all generated apps.</p>
+
+<h3 id="background">Background</h3>
+
+<p>This is a new convention.  The current practice of both specifying <code>bin/</code> as the
+<code>executables</code> directory and where we put binstubs and other development-only
+executables such as <code>bin/rails</code> or <code>bin/setup</code>, meant that Bundler-generated
+gems with executables were quite likely to have these development executables
+included in the built gem, and then installed along with the gem.</p>
+
+<p>Rather than make the gemspec template more restrictive by only specifying one
+executable in <code>bin/</code> as an <code>executable</code>, the Bundler team has chosen to use a
+different directory, <code>exe/</code>, as the <code>executables</code> directory in the template.</p>
+
+<p>This change is just part of the evolving conventions in gem development.  RSpec,
+for example, has had its executable <a href="https://github.com/rspec/rspec-core/blob/b54e2a161b7de5e6cfdcfde9abce2ea3cec10b82/rspec-core.gemspec#L19">in <code>exe</code> since 2011</a>.</p>
+
+<p>Here’s an example of the kind of buggy behavior you might see when binstubs are
+build with a gem as executables.</p>
+
+<h4 id="demo">Demo</h4>
+
+<div class="highlight"><pre class="highlight shell"><code>bundle gem new_gem&#x000A;git add .<span class="p">;</span> git commit <span class="nt">-am</span> <span class="s2">"Initial Commit"</span>&#x000A;bundle binstub rake&#x000A;git add bin/rake<span class="p">;</span> git commit <span class="nt">-am</span> <span class="s2">"bundle binstub rake"</span>&#x000A;bundle&#x000A;which rake <span class="c">#=&gt;  ~/.rvm/gems/ruby-2.1.5/bin/rake</span>&#x000A;<span class="nb">cat</span> <span class="sb">`</span>which rake<span class="sb">`</span>&#x000A;</code></pre></div>
+<p>and</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby_executable_hooks</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># This file was generated by RubyGems.</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># The application 'new_gem' is installed as part of a gem, and</span>&#x000A;<span class="c1"># this file is here to facilitate running it.</span>&#x000A;<span class="c1">#</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;&#x000A;<span class="n">version</span> <span class="o">=</span> <span class="s2">"&gt;= 0"</span>&#x000A;&#x000A;<span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"BINARY"</span><span class="p">)</span> <span class="k">if</span> <span class="n">str</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="ss">:force_encoding</span>&#x000A;  <span class="k">if</span> <span class="n">str</span> <span class="o">=~</span> <span class="sr">/\A_(.*)_\z/</span> <span class="n">and</span> <span class="no">Gem</span><span class="o">::</span><span class="no">Version</span><span class="p">.</span><span class="nf">correct?</span><span class="p">(</span><span class="vg">$1</span><span class="p">)</span> <span class="k">then</span>&#x000A;    <span class="n">version</span> <span class="o">=</span> <span class="vg">$1</span>&#x000A;    <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'new_gem'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'new_gem'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
+<p>The problem is found in the last two lines:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'new_gem'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'new_gem'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
+<p>The rake executable no longer uses the <code>rake</code> gem. It now requires <code>rake</code> from <code>new_gem</code>.</p>
+
+<p>Now, when I run rake elsewhere, I get the warning:</p>
+
+<div class="highlight"><pre class="highlight shell"><code>Bundler is using a binstub that was created <span class="k">for </span>a different gem.&#x000A;This is deprecated, <span class="k">in </span>future versions you may need to <span class="sb">`</span>bundle binstub new_gem<span class="sb">`</span> to work around a system/bundle conflict.&#x000A;</code></pre></div>
+<p>This happened because of the line in the gemspec that installed all git-versioned files in <code>bin/</code>:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^bin/}</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>&#x000A;</code></pre></div>
+<p>To fix our rake install:</p>
+
+<div class="highlight"><pre class="highlight shell"><code>gem pristine rake&#x000A;<span class="c"># (In your gem folder, you may also want to run `bundle exec gem pristine rake`)</span>&#x000A;<span class="nb">cat</span> <span class="sb">`</span>which rake<span class="sb">`</span>&#x000A;</code></pre></div>
+<p>and</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="c1">#!/usr/bin/env ruby_executable_hooks</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># This file was generated by RubyGems.</span>&#x000A;<span class="c1">#</span>&#x000A;<span class="c1"># The application 'rake' is installed as part of a gem, and</span>&#x000A;<span class="c1"># this file is here to facilitate running it.</span>&#x000A;<span class="c1">#</span>&#x000A;&#x000A;<span class="nb">require</span> <span class="s1">'rubygems'</span>&#x000A;&#x000A;<span class="n">version</span> <span class="o">=</span> <span class="s2">"&gt;= 0"</span>&#x000A;&#x000A;<span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span>&#x000A;  <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s2">"BINARY"</span><span class="p">)</span> <span class="k">if</span> <span class="n">str</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="ss">:force_encoding</span>&#x000A;  <span class="k">if</span> <span class="n">str</span> <span class="o">=~</span> <span class="sr">/\A_(.*)_\z/</span> <span class="n">and</span> <span class="no">Gem</span><span class="o">::</span><span class="no">Version</span><span class="p">.</span><span class="nf">correct?</span><span class="p">(</span><span class="vg">$1</span><span class="p">)</span> <span class="k">then</span>&#x000A;    <span class="n">version</span> <span class="o">=</span> <span class="vg">$1</span>&#x000A;    <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;<span class="n">gem</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span>&#x000A;<span class="nb">load</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">bin_path</span><span class="p">(</span><span class="s1">'rake'</span><span class="p">,</span> <span class="s1">'rake'</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>&#x000A;</code></pre></div>
+<p>To fix our gemspec:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^exe/}</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>&#x000A;</code></pre></div>
+<p>Or just delete the line altogether, since new_gem doesn’t have an executable.</p>
+
+<p>If it did, we could continue to use <code>bin/</code>, create the file as <code>bin/new_gem</code> and
+specify it as the only executable.</p>
+
+<div class="highlight"><pre class="highlight ruby"><code>  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="s2">"new_gem"</span>&#x000A;</code></pre></div>
+<p>Or use the new <code>exe/</code> convention, create a file such as <code>exe/new_gem</code>, and not worry.</p>
+
+<p>Enjoy!</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>

@@ -1,341 +1,350 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: The best way to manage a Ruby application's gems
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div id='wrapper'>
-            <div class='hidden-xs' id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Guides</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/git.html">Gems from git repositories</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/groups.html">Managing groups of gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='guide contents' id='page-content-wrapper'>
-              <div class='container guide'>
-                <h1>What's New in each Release</h1>
-                <div class='row'>
-                  <div class='col-sm-12'>
-                    <a href="/v1.17/whats_new.html" class="btn btn-sm btn-primary">v1.17</a>
-                    <a href="/v1.16/whats_new.html" class="btn btn-sm btn-primary">v1.16</a>
-                    <a href="/v1.15/whats_new.html" class="btn btn-sm btn-default">v1.15</a>
-                    <a href="/v1.14/whats_new.html" class="btn btn-sm btn-primary">v1.14</a>
-                    <a href="/v1.13/whats_new.html" class="btn btn-sm btn-primary">v1.13</a>
-                    <a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
-                    <a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
-                    <a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
-                    <a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
-                    <a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
-                    <a href="/v1.7/whats_new.html" class="btn btn-sm btn-primary">v1.7</a>
-                    <a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
-                    <a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
-                    <a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
-                    <a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
-                    <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
-                    <a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
-                  </div>
-                </div>
-                <p>
-                  The
-                  <a href="/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html">Bundler 1.15 announcement</a>
-                  includes context and a more detailed explanation of the changes in this version. This is a summary of the biggest changes. As always, a detailed list of every change is provided in
-                  <a href="https://github.com/bundler/bundler/blob/1-15-stable/CHANGELOG.md">the changelog</a>.
-                </p>
-                <h3>Exec optimization</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        We've made `bundle exec` faster by reducing the impact of each additional gem in your application. In applications with hundreds of gems, this change made `exec` half a second (!) faster.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>`bundle issue`</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        The `issue` command provides troubleshooting help. If the problem persists, this command will help you open an issue in the Bundler issue tracker with all of the information that we need to help.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>`bundle add`</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        Finally, you can add gems to your Gemfile directly from the command line, without having to edit your Gemfile first. We've got plans to make this command even better, but this is a good start.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <h3>`bundle pristine`</h3>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <p>
-                        Just like the `gem pristine` command, the `bundle pristine` command wipes out any changes you have made to the gems installed locally, for testing or debugging reasons, and restores them to a freshly-installed state.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <ul>
-                <li class=''>
-                  <a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/git.html">Gems from git repositories</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/groups.html">Managing groups of gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler-site/blob/master/source/v1.15/whats_new.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: The best way to manage a Ruby application's gems
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git.html">Gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/groups.html">Managing groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<div class='container guide'>
+<h1>What's New in each Release</h1>
+<div class='row'>
+<div class='col-sm-12'>
+<a href="/v1.17/whats_new.html" class="btn btn-sm btn-primary">v1.17</a>
+<a href="/v1.16/whats_new.html" class="btn btn-sm btn-primary">v1.16</a>
+<a href="/v1.15/whats_new.html" class="btn btn-sm btn-default">v1.15</a>
+<a href="/v1.14/whats_new.html" class="btn btn-sm btn-primary">v1.14</a>
+<a href="/v1.13/whats_new.html" class="btn btn-sm btn-primary">v1.13</a>
+<a href="/v1.12/whats_new.html" class="btn btn-sm btn-primary">v1.12</a>
+<a href="/v1.11/whats_new.html" class="btn btn-sm btn-primary">v1.11</a>
+<a href="/v1.10/whats_new.html" class="btn btn-sm btn-primary">v1.10</a>
+<a href="/v1.9/whats_new.html" class="btn btn-sm btn-primary">v1.9</a>
+<a href="/v1.8/whats_new.html" class="btn btn-sm btn-primary">v1.8</a>
+<a href="/v1.7/whats_new.html" class="btn btn-sm btn-primary">v1.7</a>
+<a href="/v1.6/whats_new.html" class="btn btn-sm btn-primary">v1.6</a>
+<a href="/v1.5/whats_new.html" class="btn btn-sm btn-primary">v1.5</a>
+<a href="/v1.3/whats_new.html" class="btn btn-sm btn-primary">v1.3</a>
+<a href="/v1.2/whats_new.html" class="btn btn-sm btn-primary">v1.2</a>
+<a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#110-mar-7-2012" class="btn btn-sm btn-primary">v1.1</a>
+<a href="https://github.com/bundler/bundler/blob/master/CHANGELOG.md#100-august-29-2010" class="btn btn-sm btn-primary">v1.0</a>
+</div>
+</div>
+
+<p>
+The
+<a href="/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html">Bundler 1.15 announcement</a>
+includes context and a more detailed explanation of the changes in this version. This is a summary of the biggest changes. As always, a detailed list of every change is provided in
+<a href="https://github.com/bundler/bundler/blob/1-15-stable/CHANGELOG.md">the changelog</a>.
+</p>
+<h3>Exec optimization</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+We've made `bundle exec` faster by reducing the impact of each additional gem in your application. In applications with hundreds of gems, this change made `exec` half a second (!) faster.
+</p>
+</div>
+</div>
+</div>
+<h3>`bundle issue`</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+The `issue` command provides troubleshooting help. If the problem persists, this command will help you open an issue in the Bundler issue tracker with all of the information that we need to help.
+</p>
+</div>
+</div>
+</div>
+<h3>`bundle add`</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+Finally, you can add gems to your Gemfile directly from the command line, without having to edit your Gemfile first. We've got plans to make this command even better, but this is a good start.
+</p>
+</div>
+</div>
+</div>
+<h3>`bundle pristine`</h3>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<p>
+Just like the `gem pristine` command, the `bundle pristine` command wipes out any changes you have made to the gems installed locally, for testing or debugging reasons, and restores them to a freshly-installed state.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git.html">Gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/groups.html">Managing groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/v1.15/whats_new.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

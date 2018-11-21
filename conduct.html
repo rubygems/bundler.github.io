@@ -1,276 +1,282 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: The best way to manage a Ruby application's gems
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div class='col-md-12'>
-            <h1 id="bundler-code-of-conduct">Bundler Code of Conduct</h1>
-            
-            <h2 id="when-something-happens">When Something Happens</h2>
-            
-            <p>If you see a Code of Conduct violation, follow these steps:</p>
-            
-            <ol>
-              <li>Let the person know that what they did is not appropriate and ask them to stop and/or edit their message(s).</li>
-              <li>That person should immediately stop the behavior and correct the issue.</li>
-              <li>If this doesn’t happen, or if you’re uncomfortable speaking up, <a href="/#contacting-admins">contact admins</a>.</li>
-              <li>As soon as available, an admin will join, identify themselves, and take <a href="/#further-enforcement">further action (see below)</a>, starting with a warning, then temporary deactivation, then long-term deactivation.</li>
-            </ol>
-            
-            <p>When reporting, please include any relevant details, links, screenshots, context, or other information that may be used to better understand and resolve the situation.</p>
-            
-            <p><strong>The admin team will prioritize the well-being and comfort of the recipients of the violation over the comfort of the violator.</strong> See <a href="/#enforcement-examples">some examples below</a>.</p>
-            
-            <h2 id="our-pledge">Our Pledge</h2>
-            
-            <p>In the interest of fostering an open and welcoming environment, we as members of the Bundler community pledge to making participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, technical preferences, nationality, personal appearance, race, religion, or sexual identity and orientation.</p>
-            
-            <h2 id="our-standards">Our Standards</h2>
-            
-            <p>Examples of behavior that contributes to creating a positive environment include:</p>
-            
-            <ul>
-              <li>Using welcoming and inclusive language.</li>
-              <li>Being respectful of differing viewpoints and experiences.</li>
-              <li>Gracefully accepting constructive feedback.</li>
-              <li>Focusing on what is best for the community.</li>
-              <li>Showing empathy and kindness towards other community members.</li>
-            </ul>
-            
-            <p>Examples of unacceptable behavior by participants include:</p>
-            
-            <ul>
-              <li>The use of sexualized language or imagery and unwelcome sexual attention or advances, including when simulated online. The only exception to sexual topics is channels/spaces specifically for topics of sexual identity.</li>
-              <li>Trolling, insulting/derogatory comments, and personal or political attacks.</li>
-              <li>Casual mention of slavery or indentured servitude and/or false comparisons of one’s occupation or situation to slavery. Please consider using or asking about alternate terminology when referring to such metaphors in technology.</li>
-              <li>Making light of/making mocking comments about trigger warnings and content warnings.</li>
-              <li>Public or private harassment, deliberate intimidation, or threats.</li>
-              <li>Publishing others’ private information, such as a physical or electronic address, without explicit permission. This includes any sort of “outing” of any aspect of someone’s identity without their consent.</li>
-              <li>Publishing screenshots or quotes, especially from identity channels, without all quoted users’ <em>explicit</em> consent.</li>
-              <li>Publishing or telling others that a member belongs to a particular identity channel without asking their consent first.</li>
-              <li>Publishing of non-harassing private communication.</li>
-              <li>Any of the above even when <a href="https://en.wikipedia.org/wiki/Hipster_racism">presented as “ironic” or “joking”</a>.</li>
-              <li>Any attempt to present “reverse-ism” versions of the above as violations. Examples of reverse-isms are “reverse racism”, “reverse sexism”, “heterophobia”, and “cisphobia”.</li>
-              <li>Unsolicited explanations under the assumption that someone doesn’t already know it. Ask before you teach! Don’t assume what people’s knowledge gaps are.</li>
-              <li><a href="https://www.recurse.com/manual#no-feigned-surprise">Feigning or exaggerating surprise</a> when someone admits to not knowing something.</li>
-              <li>“<a href="https://www.recurse.com/manual#no-well-actuallys">Well-actuallies</a>”</li>
-              <li>Other conduct which could reasonably be considered inappropriate in a professional or community setting.</li>
-            </ul>
-            
-            <h2 id="scope">Scope</h2>
-            
-            <p>This Code of Conduct applies both within community spaces and in other spaces involving the community. This includes the GitHub repository, the Bundler Slack instance, the Bundler Twitter community, private email communications in the context of the community, and any events where members of the community are participating, as well as adjacent communities and venues affecting the community’s members.</p>
-            
-            <p>Depending on the violation, the admins may decide that violations of this code of conduct that have happened outside of the scope of the community may deem an individual unwelcome, and take appropriate action to maintain the comfort and safety of its members.</p>
-            
-            <p>This Code of Conduct is detailed for the purpose of removing ambiguity, not for the sake of strictness. It is the sincere hope of admins that it helps foster mutual understanding, and the creation of a space where everyone can participate in a way relevant to the project itself, without things going horribly due to accidental/well-intentioned toe stepping. Please be kind to one another!</p>
-            
-            <h2 id="admin-enforcement-process">Admin Enforcement Process</h2>
-            
-            <p>Once the admins get involved, they will follow a documented series of steps and do their best to preserve the well-being of community members. This section covers actual concrete steps.</p>
-            
-            <h3 id="contacting-admins">Contacting Admins</h3>
-            
-            <p>You may get in touch with the Bundler admin team through any of the following methods:</p>
-            
-            <ul>
-              <li>Email <a href="http://bundler.io/contributors.html">the Bundler maintainers</a> as a group at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#101;&#097;&#109;&#064;&#098;&#117;&#110;&#100;&#108;&#101;&#114;&#046;&#105;&#111;">&#116;&#101;&#097;&#109;&#064;&#098;&#117;&#110;&#100;&#108;&#101;&#114;&#046;&#105;&#111;</a>.</li>
-              <li>Directly message any maintainer in private (through Slack, Twitter, email, or other available option) if that is more comfortable</li>
-            </ul>
-            
-            <h3 id="further-enforcement">Further Enforcement</h3>
-            
-            <p>If you’ve already followed the <a href="/#enforcement">initial enforcement steps</a>, these are the steps admins will take for further enforcement, as needed:</p>
-            
-            <ol>
-              <li>Repeat the request to stop.</li>
-              <li>If the person doubles down, they will be removed from the discussion (where possible), and given an official warning.</li>
-              <li>If the behavior continues or is repeated later, the person will be blocked/deactivated for 24 hours.</li>
-              <li>If the behavior continues or is repeated after the temporary deactivation, a long-term (6-12mo) deactivation will be used.</li>
-            </ol>
-            
-            <p>On top of this, admins may remove any offending messages, images, contributions, etc, as they deem necessary.</p>
-            
-            <p>Admins reserve full rights to skip any of these steps, at their discretion, if the violation is considered to be a serious and/or immediate threat to the health and well-being of members of the community. These include any threats, serious physical or verbal attacks, and other such behavior that would be completely unacceptable in any social setting that puts our members at risk.</p>
-            
-            <p>Members expelled from events or venues with any sort of paid attendance will not be refunded.</p>
-            
-            <h3 id="who-watches-the-watchers">Who Watches the Watchers?</h3>
-            
-            <p>Admins and other leaders who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the community’s leadership. These may include anything from removal from the admin team to a permanent ban from the community.</p>
-            
-            <h3 id="enforcement-examples">Enforcement Examples</h3>
-            
-            <h4 id="the-best-case">The Best Case</h4>
-            
-            <p>The vast majority of situations work out like this, in our experience. This interaction is common, and generally positive.</p>
-            
-            <blockquote>
-              <p>Alex: “Yeah I used X and it was really crazy!”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Patt: “Hey, could you not use that word? What about ‘ridiculous’ instead?”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Alex: “oh sorry, sure.” -&gt; edits old message to say “it was really confusing!”</p>
-            </blockquote>
-            
-            <h4 id="the-admin-case">The Admin Case</h4>
-            
-            <p>Sometimes, though, you need to get admins involved. Admins will do their best to resolve conflicts, but people who were harmed by something <strong>will take priority</strong>.</p>
-            
-            <blockquote>
-              <p>Patt: “Honestly, sometimes I just really hate using $language and anyone who uses it probably sucks at their job.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Alex: “Whoa there, could you dial it back a bit? There’s a CoC thing about attacking folks’ tech use like that.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Patt: “I’m not attacking anyone, are you deaf?”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Alex: <em>DMs admin</em> “hey uh. Can someone look at #general? Patt is getting a bit aggro. I tried to nudge them about it, but nope.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>MxAdmin1: &lt;joins #general&gt; “Hey Patt, admin here. Could you tone it down? This sort of attack is really not okay in this space.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Patt: “Leave me alone I haven’t said anything bad wtf is wrong with you.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>MxAdmin1: <em>removes patt</em> <em>DMs patt</em> “I mean it. Please refer to the CoC over at bundler.io/conduct.html if you have questions, but you can consider this an actual warning. I’d appreciate it if you reworded your messages in #general, since they made folks there uncomfortable. Let’s try and be kind, yeah?”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Patt: <em>Replies to DM</em> “@mxadmin1 Okay sorry. I’m just frustrated and I’m kinda burnt out and I guess I got carried away. I’ll DM Alex a note apologizing and edit my messages. Sorry for the trouble.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>MxAdmin1: <em>Replies to DM</em> “@patt Thanks for that. I hear you on the stress. Burnout sucks :/. Have a good one!”</p>
-            </blockquote>
-            
-            <h4 id="the-nope-case">The Nope Case</h4>
-            
-            <blockquote>
-              <p>PepeTheFrog🐸: “Hi, I am a literal actual nazi and I think white supremacists are quite fashionable.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Patt: “NOOOOPE. OH NOPE NOPE.”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>Alex: “JFC NO. NOPE. <code>/admin nope nope nope @ #javascript</code>”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>MxAdmin1: “👀 Nope. NOPE NOPE NOPE. 🔥”</p>
-            </blockquote>
-            
-            <blockquote>
-              <p>PepeTheFrog🐸 has been deactivated.</p>
-            </blockquote>
-            
-            <h2 id="attribution">Attribution</h2>
-            
-            <p>This Code of Conduct is adapted from the [package.community Code of Conduct], adapted from the <a href="https://wealljs.org/code-of-conduct">WeAllJS Code of Conduct</a>, itself adapted from <a href="http://contributor-covenant.org">Contributor Covenant</a> version 1.4, available at <a href="http://contributor-covenant.org/version/1/4">http://contributor-covenant.org/version/1/4</a>, as well as the LGBTQ in Technology Slack <a href="http://lgbtq.technology/coc.html">Code of Conduct</a>.</p>
-            
-            <p>Additional thanks to <a href="http://contributor-covenant.org">Contributor Covenant</a> for the <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/templates/newgem/CODE_OF_CONDUCT.md.tt">default code of conduct</a> included in generated gems.</p>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler-site/blob/master/source/conduct.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: The best way to manage a Ruby application's gems
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div class='col-md-12'>
+<h1 id="bundler-code-of-conduct">Bundler Code of Conduct</h1>
+
+<h2 id="when-something-happens">When Something Happens</h2>
+
+<p>If you see a Code of Conduct violation, follow these steps:</p>
+
+<ol>
+  <li>Let the person know that what they did is not appropriate and ask them to stop and/or edit their message(s).</li>
+  <li>That person should immediately stop the behavior and correct the issue.</li>
+  <li>If this doesn’t happen, or if you’re uncomfortable speaking up, <a href="/#contacting-admins">contact admins</a>.</li>
+  <li>As soon as available, an admin will join, identify themselves, and take <a href="/#further-enforcement">further action (see below)</a>, starting with a warning, then temporary deactivation, then long-term deactivation.</li>
+</ol>
+
+<p>When reporting, please include any relevant details, links, screenshots, context, or other information that may be used to better understand and resolve the situation.</p>
+
+<p><strong>The admin team will prioritize the well-being and comfort of the recipients of the violation over the comfort of the violator.</strong> See <a href="/#enforcement-examples">some examples below</a>.</p>
+
+<h2 id="our-pledge">Our Pledge</h2>
+
+<p>In the interest of fostering an open and welcoming environment, we as members of the Bundler community pledge to making participation in our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, technical preferences, nationality, personal appearance, race, religion, or sexual identity and orientation.</p>
+
+<h2 id="our-standards">Our Standards</h2>
+
+<p>Examples of behavior that contributes to creating a positive environment include:</p>
+
+<ul>
+  <li>Using welcoming and inclusive language.</li>
+  <li>Being respectful of differing viewpoints and experiences.</li>
+  <li>Gracefully accepting constructive feedback.</li>
+  <li>Focusing on what is best for the community.</li>
+  <li>Showing empathy and kindness towards other community members.</li>
+</ul>
+
+<p>Examples of unacceptable behavior by participants include:</p>
+
+<ul>
+  <li>The use of sexualized language or imagery and unwelcome sexual attention or advances, including when simulated online. The only exception to sexual topics is channels/spaces specifically for topics of sexual identity.</li>
+  <li>Trolling, insulting/derogatory comments, and personal or political attacks.</li>
+  <li>Casual mention of slavery or indentured servitude and/or false comparisons of one’s occupation or situation to slavery. Please consider using or asking about alternate terminology when referring to such metaphors in technology.</li>
+  <li>Making light of/making mocking comments about trigger warnings and content warnings.</li>
+  <li>Public or private harassment, deliberate intimidation, or threats.</li>
+  <li>Publishing others’ private information, such as a physical or electronic address, without explicit permission. This includes any sort of “outing” of any aspect of someone’s identity without their consent.</li>
+  <li>Publishing screenshots or quotes, especially from identity channels, without all quoted users’ <em>explicit</em> consent.</li>
+  <li>Publishing or telling others that a member belongs to a particular identity channel without asking their consent first.</li>
+  <li>Publishing of non-harassing private communication.</li>
+  <li>Any of the above even when <a href="https://en.wikipedia.org/wiki/Hipster_racism">presented as “ironic” or “joking”</a>.</li>
+  <li>Any attempt to present “reverse-ism” versions of the above as violations. Examples of reverse-isms are “reverse racism”, “reverse sexism”, “heterophobia”, and “cisphobia”.</li>
+  <li>Unsolicited explanations under the assumption that someone doesn’t already know it. Ask before you teach! Don’t assume what people’s knowledge gaps are.</li>
+  <li><a href="https://www.recurse.com/manual#no-feigned-surprise">Feigning or exaggerating surprise</a> when someone admits to not knowing something.</li>
+  <li>“<a href="https://www.recurse.com/manual#no-well-actuallys">Well-actuallies</a>”</li>
+  <li>Other conduct which could reasonably be considered inappropriate in a professional or community setting.</li>
+</ul>
+
+<h2 id="scope">Scope</h2>
+
+<p>This Code of Conduct applies both within community spaces and in other spaces involving the community. This includes the GitHub repository, the Bundler Slack instance, the Bundler Twitter community, private email communications in the context of the community, and any events where members of the community are participating, as well as adjacent communities and venues affecting the community’s members.</p>
+
+<p>Depending on the violation, the admins may decide that violations of this code of conduct that have happened outside of the scope of the community may deem an individual unwelcome, and take appropriate action to maintain the comfort and safety of its members.</p>
+
+<p>This Code of Conduct is detailed for the purpose of removing ambiguity, not for the sake of strictness. It is the sincere hope of admins that it helps foster mutual understanding, and the creation of a space where everyone can participate in a way relevant to the project itself, without things going horribly due to accidental/well-intentioned toe stepping. Please be kind to one another!</p>
+
+<h2 id="admin-enforcement-process">Admin Enforcement Process</h2>
+
+<p>Once the admins get involved, they will follow a documented series of steps and do their best to preserve the well-being of community members. This section covers actual concrete steps.</p>
+
+<h3 id="contacting-admins">Contacting Admins</h3>
+
+<p>You may get in touch with the Bundler admin team through any of the following methods:</p>
+
+<ul>
+  <li>Email <a href="http://bundler.io/contributors.html">the Bundler maintainers</a> as a group at <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#116;&#101;&#097;&#109;&#064;&#098;&#117;&#110;&#100;&#108;&#101;&#114;&#046;&#105;&#111;">&#116;&#101;&#097;&#109;&#064;&#098;&#117;&#110;&#100;&#108;&#101;&#114;&#046;&#105;&#111;</a>.</li>
+  <li>Directly message any maintainer in private (through Slack, Twitter, email, or other available option) if that is more comfortable</li>
+</ul>
+
+<h3 id="further-enforcement">Further Enforcement</h3>
+
+<p>If you’ve already followed the <a href="/#enforcement">initial enforcement steps</a>, these are the steps admins will take for further enforcement, as needed:</p>
+
+<ol>
+  <li>Repeat the request to stop.</li>
+  <li>If the person doubles down, they will be removed from the discussion (where possible), and given an official warning.</li>
+  <li>If the behavior continues or is repeated later, the person will be blocked/deactivated for 24 hours.</li>
+  <li>If the behavior continues or is repeated after the temporary deactivation, a long-term (6-12mo) deactivation will be used.</li>
+</ol>
+
+<p>On top of this, admins may remove any offending messages, images, contributions, etc, as they deem necessary.</p>
+
+<p>Admins reserve full rights to skip any of these steps, at their discretion, if the violation is considered to be a serious and/or immediate threat to the health and well-being of members of the community. These include any threats, serious physical or verbal attacks, and other such behavior that would be completely unacceptable in any social setting that puts our members at risk.</p>
+
+<p>Members expelled from events or venues with any sort of paid attendance will not be refunded.</p>
+
+<h3 id="who-watches-the-watchers">Who Watches the Watchers?</h3>
+
+<p>Admins and other leaders who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the community’s leadership. These may include anything from removal from the admin team to a permanent ban from the community.</p>
+
+<h3 id="enforcement-examples">Enforcement Examples</h3>
+
+<h4 id="the-best-case">The Best Case</h4>
+
+<p>The vast majority of situations work out like this, in our experience. This interaction is common, and generally positive.</p>
+
+<blockquote>
+  <p>Alex: “Yeah I used X and it was really crazy!”</p>
+</blockquote>
+
+<blockquote>
+  <p>Patt: “Hey, could you not use that word? What about ‘ridiculous’ instead?”</p>
+</blockquote>
+
+<blockquote>
+  <p>Alex: “oh sorry, sure.” -&gt; edits old message to say “it was really confusing!”</p>
+</blockquote>
+
+<h4 id="the-admin-case">The Admin Case</h4>
+
+<p>Sometimes, though, you need to get admins involved. Admins will do their best to resolve conflicts, but people who were harmed by something <strong>will take priority</strong>.</p>
+
+<blockquote>
+  <p>Patt: “Honestly, sometimes I just really hate using $language and anyone who uses it probably sucks at their job.”</p>
+</blockquote>
+
+<blockquote>
+  <p>Alex: “Whoa there, could you dial it back a bit? There’s a CoC thing about attacking folks’ tech use like that.”</p>
+</blockquote>
+
+<blockquote>
+  <p>Patt: “I’m not attacking anyone, are you deaf?”</p>
+</blockquote>
+
+<blockquote>
+  <p>Alex: <em>DMs admin</em> “hey uh. Can someone look at #general? Patt is getting a bit aggro. I tried to nudge them about it, but nope.”</p>
+</blockquote>
+
+<blockquote>
+  <p>MxAdmin1: &lt;joins #general&gt; “Hey Patt, admin here. Could you tone it down? This sort of attack is really not okay in this space.”</p>
+</blockquote>
+
+<blockquote>
+  <p>Patt: “Leave me alone I haven’t said anything bad wtf is wrong with you.”</p>
+</blockquote>
+
+<blockquote>
+  <p>MxAdmin1: <em>removes patt</em> <em>DMs patt</em> “I mean it. Please refer to the CoC over at bundler.io/conduct.html if you have questions, but you can consider this an actual warning. I’d appreciate it if you reworded your messages in #general, since they made folks there uncomfortable. Let’s try and be kind, yeah?”</p>
+</blockquote>
+
+<blockquote>
+  <p>Patt: <em>Replies to DM</em> “@mxadmin1 Okay sorry. I’m just frustrated and I’m kinda burnt out and I guess I got carried away. I’ll DM Alex a note apologizing and edit my messages. Sorry for the trouble.”</p>
+</blockquote>
+
+<blockquote>
+  <p>MxAdmin1: <em>Replies to DM</em> “@patt Thanks for that. I hear you on the stress. Burnout sucks :/. Have a good one!”</p>
+</blockquote>
+
+<h4 id="the-nope-case">The Nope Case</h4>
+
+<blockquote>
+  <p>PepeTheFrog🐸: “Hi, I am a literal actual nazi and I think white supremacists are quite fashionable.”</p>
+</blockquote>
+
+<blockquote>
+  <p>Patt: “NOOOOPE. OH NOPE NOPE.”</p>
+</blockquote>
+
+<blockquote>
+  <p>Alex: “JFC NO. NOPE. <code>/admin nope nope nope @ #javascript</code>”</p>
+</blockquote>
+
+<blockquote>
+  <p>MxAdmin1: “👀 Nope. NOPE NOPE NOPE. 🔥”</p>
+</blockquote>
+
+<blockquote>
+  <p>PepeTheFrog🐸 has been deactivated.</p>
+</blockquote>
+
+<h2 id="attribution">Attribution</h2>
+
+<p>This Code of Conduct is adapted from the [package.community Code of Conduct], adapted from the <a href="https://wealljs.org/code-of-conduct">WeAllJS Code of Conduct</a>, itself adapted from <a href="http://contributor-covenant.org">Contributor Covenant</a> version 1.4, available at <a href="http://contributor-covenant.org/version/1/4">http://contributor-covenant.org/version/1/4</a>, as well as the LGBTQ in Technology Slack <a href="http://lgbtq.technology/coc.html">Code of Conduct</a>.</p>
+
+<p>Additional thanks to <a href="http://contributor-covenant.org">Contributor Covenant</a> for the <a href="https://github.com/bundler/bundler/blob/master/lib/bundler/templates/newgem/CODE_OF_CONDUCT.md.tt">default code of conduct</a> included in generated gems.</p>
+
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/conduct.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

@@ -1,353 +1,361 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: The best way to manage a Ruby application's gems
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div id='wrapper'>
-            <div class='hidden-xs' id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Guides</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='guide contents' id='page-content-wrapper'>
-              <h1 id="bug-triage">Bug triage</h1>
-              
-              <p>Triaging is the work of processing tickets that have been opened by users. Common tasks include verifying bugs, categorizing tickets, and ensuring there’s enough information to reproduce the bug for anyone who wants to try to fix it.</p>
-              
-              <p>We’ve created an <a href="ISSUES.md">issues guide</a> to walk users through the process of how to report an issue with the Bundler project. We also have a <a href="/doc/troubleshooting.html">troubleshooting guide</a> to diagnose common problems.</p>
-              
-              <p>Not every ticket will be a bug in Bundler’s code, but open tickets usually mean that there is something we could improve to help that user. Sometimes that means writing additional documentation or making error messages clearer.</p>
-              
-              <h2 id="triaging-existing-issues">Triaging existing issues</h2>
-              
-              <p>When you’re looking at a ticket, here are the main questions to ask:</p>
-              
-              <ul>
-                <li>Can I reproduce this bug myself?</li>
-                <li>Are the steps to reproduce the bug clearly documented in the ticket?</li>
-                <li>Which versions of Bundler (1.1.x, 1.2.x, git, etc.) manifest this bug?</li>
-                <li>Which operating systems (OS X, Windows, Ubuntu, CentOS, etc.) manifest this bug?</li>
-                <li>Which rubies (MRI, JRuby, Rubinius, etc.) and which versions (1.8.7, 1.9.3, etc.) have this bug?</li>
-              </ul>
-              
-              <p>Strategies for triaging a ticket:
-                * Be sure to ask the user to output the entirety of their <code>bundle env</code>. Sometimes users forget to post all of their <code>bundle env</code> output in the issue.
-                * After seeing the output of the user’s <code>bundle env</code>, try to replicate the user’s problem in your current environment. Only portions of the code base is changed in each release, so there’s a good chance your version of bundler might have the same bug.
-                * If you’re having trouble replicating their issue with your current environment, slowly try to incorporate the user’s environment setup. As in, this is where you begin matching their environment. For example, try switching to the user’s version of Ruby, RubyGems, RVM, et cetera, step by step.
-                * Is the user running the latest version of bundler? If not, ask them to update by running <code>gem install bundler</code>. There’s a chance that the newest version of bundler has already solved their problem.</p>
-              
-              <p>If you can’t reproduce the issue, chances are good that the bug has been fixed already (hurrah!). That’s a good time to post to the ticket explaining what you did and how it worked.</p>
-              
-              <p>If you can reproduce an issue, you’re well on your way to fixing it. :)</p>
-              
-              <h2 id="fixing-your-triaged-bug">Fixing your triaged bug</h2>
-              
-              <p>Everyone is welcome and encouraged to fix any open bug, improve an error message or add documentation. If you have a fix or an improvement to a ticket that you would like to contribute, we have a small guide to help:</p>
-              
-              <ol>
-                <li>Discuss the fix on the existing issue. Coordinating with everyone else saves duplicate work and serves as a great way to get suggestions and ideas if you need any.</li>
-                <li>Base your commits on the correct branch. Bugfixes for 1.x versions of Bundler should be based on the matching 1-x-stable branch.</li>
-                <li>Review the <a href="/doc/development/pull_requests.html">pull request guide</a>.</li>
-                <li>Commit the code with at least one test covering your changes to a named branch in your fork.</li>
-                <li>Put a line in the <a href="/changelog.html">CHANGELOG</a> summarizing your changes under the next release under the “Bugfixes” heading.</li>
-                <li>Send us a <a href="https://help.github.com/articles/using-pull-requests">pull request</a> from your bugfix branch.</li>
-              </ol>
-              
-              <h2 id="duplicates">Duplicates!</h2>
-              
-              <p>Finally, the ticket may be a duplicate of another older ticket. If you notice a ticket is a duplicate, simply comment on the ticket noting the original ticket’s number. For example, you could say “This is a duplicate of issue #42, and can be closed”.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <ul>
-                <li class=''>
-                  <a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler/blob/master/doc/contributing/bug_triage.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: The best way to manage a Ruby application's gems
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<h1 id="bug-triage">Bug triage</h1>
+
+<p>Triaging is the work of processing tickets that have been opened by users. Common tasks include verifying bugs, categorizing tickets, and ensuring there’s enough information to reproduce the bug for anyone who wants to try to fix it.</p>
+
+<p>We’ve created an <a href="ISSUES.md">issues guide</a> to walk users through the process of how to report an issue with the Bundler project. We also have a <a href="/doc/troubleshooting.html">troubleshooting guide</a> to diagnose common problems.</p>
+
+<p>Not every ticket will be a bug in Bundler’s code, but open tickets usually mean that there is something we could improve to help that user. Sometimes that means writing additional documentation or making error messages clearer.</p>
+
+<h2 id="triaging-existing-issues">Triaging existing issues</h2>
+
+<p>When you’re looking at a ticket, here are the main questions to ask:</p>
+
+<ul>
+  <li>Can I reproduce this bug myself?</li>
+  <li>Are the steps to reproduce the bug clearly documented in the ticket?</li>
+  <li>Which versions of Bundler (1.1.x, 1.2.x, git, etc.) manifest this bug?</li>
+  <li>Which operating systems (OS X, Windows, Ubuntu, CentOS, etc.) manifest this bug?</li>
+  <li>Which rubies (MRI, JRuby, Rubinius, etc.) and which versions (1.8.7, 1.9.3, etc.) have this bug?</li>
+</ul>
+
+<p>Strategies for triaging a ticket:
+  * Be sure to ask the user to output the entirety of their <code>bundle env</code>. Sometimes users forget to post all of their <code>bundle env</code> output in the issue.
+  * After seeing the output of the user’s <code>bundle env</code>, try to replicate the user’s problem in your current environment. Only portions of the code base is changed in each release, so there’s a good chance your version of bundler might have the same bug.
+  * If you’re having trouble replicating their issue with your current environment, slowly try to incorporate the user’s environment setup. As in, this is where you begin matching their environment. For example, try switching to the user’s version of Ruby, RubyGems, RVM, et cetera, step by step.
+  * Is the user running the latest version of bundler? If not, ask them to update by running <code>gem install bundler</code>. There’s a chance that the newest version of bundler has already solved their problem.</p>
+
+<p>If you can’t reproduce the issue, chances are good that the bug has been fixed already (hurrah!). That’s a good time to post to the ticket explaining what you did and how it worked.</p>
+
+<p>If you can reproduce an issue, you’re well on your way to fixing it. :)</p>
+
+<h2 id="fixing-your-triaged-bug">Fixing your triaged bug</h2>
+
+<p>Everyone is welcome and encouraged to fix any open bug, improve an error message or add documentation. If you have a fix or an improvement to a ticket that you would like to contribute, we have a small guide to help:</p>
+
+<ol>
+  <li>Discuss the fix on the existing issue. Coordinating with everyone else saves duplicate work and serves as a great way to get suggestions and ideas if you need any.</li>
+  <li>Base your commits on the correct branch. Bugfixes for 1.x versions of Bundler should be based on the matching 1-x-stable branch.</li>
+  <li>Review the <a href="/doc/development/pull_requests.html">pull request guide</a>.</li>
+  <li>Commit the code with at least one test covering your changes to a named branch in your fork.</li>
+  <li>Put a line in the <a href="/changelog.html">CHANGELOG</a> summarizing your changes under the next release under the “Bugfixes” heading.</li>
+  <li>Send us a <a href="https://help.github.com/articles/using-pull-requests">pull request</a> from your bugfix branch.</li>
+</ol>
+
+<h2 id="duplicates">Duplicates!</h2>
+
+<p>Finally, the ticket may be a duplicate of another older ticket. If you notice a ticket is a duplicate, simply comment on the ticket noting the original ticket’s number. For example, you could say “This is a duplicate of issue #42, and can be closed”.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v1.17/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler/blob/master/doc/contributing/bug_triage.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

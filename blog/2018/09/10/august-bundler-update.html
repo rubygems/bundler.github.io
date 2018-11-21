@@ -1,109 +1,115 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: August 2018 Bundler Update
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
-            <div class='contents blog'>
-              <h2 class='title'>
-                <a href="/blog/2018/09/10/august-bundler-update.html">August 2018 Bundler Update</a>
-              </h2>
-              <div class='subtitle'>
-                by
-                <a href="http://www.stephaniemorillo.co" target="_blank">Stephanie Morillo</a>
-                on
-                <time>
-                  Sep 10 2018
-                </time>
-              </div>
-              <div class='blog-content'>
-                <p>Welcome to the August monthly update!</p>
-                
-                <p>With the help of <a href="http://github.com/eanlain">@eanlain</a>, we shipped a new guide: <a href="https://bundler.io/v1.16/guides/bundler_docker_guide.html">“How to use Bundler with Docker”</a>. We also dramatically improved error messages when version requirements conflict, shipped a playbook for adding or removing core team members, and fixed some issues handling gemspecs with non-ASCII characters. We also merged a fix that could cause Bundler to <a href="https://github.com/bundler/bundler/pull/6675">fail when trying to install a gem that has had a version yanked recently</a>.</p>
-                
-                <p>On top of that code work, we also added two new contributors to <a href="https://bundler.io/contributors.html">the Bundler team</a>! Welcome to <a href="https://www.twitter.com/radiomorillo">Stephanie Morillo</a> and <a href="https://twitter.com/greybaker">Grey Baker</a>.</p>
-                
-                <p>Stephanie has helped create new Bundler docs (like the troubleshooting RubyGems and Bundler TLS/SSL issues guide), and update existing ones. She’s also responsible for updating the Bundler contributor guidelines and trying to make Bundler docs more accessible to new contributors. We’re excited to have her on board, and looking forward to working with her more in the future.</p>
-                
-                <p>Grey is the author of <a href="https://dependabot.com">Dependabot</a>, and has regularly contributed to <a href="https://github.com/cocoapods/molinillo">Molinillo</a>, the core resolver library that powers Bundler, RubyGems, and Cocoapods.</p>
-                
-                <p>In total this month, Bundler gained 58 new commits, contributed by 10 authors. There were 334 additions and 54 deletions across 30 files.</p>
-                
-                <p>Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the <a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md">Bundler Contributor Guidelines</a> on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of <a href="https://rubytogether.org">Ruby Together</a> to help fund our work to keep Bundler working for everyone.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: August 2018 Bundler Update
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2018/09/10/august-bundler-update.html">August 2018 Bundler Update</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="http://www.stephaniemorillo.co" target="_blank">Stephanie Morillo</a>
+on
+<time>
+Sep 10 2018
+</time>
+</div>
+<div class='blog-content'>
+<p>Welcome to the August monthly update!</p>
+
+<p>With the help of <a href="http://github.com/eanlain">@eanlain</a>, we shipped a new guide: <a href="https://bundler.io/v1.16/guides/bundler_docker_guide.html">“How to use Bundler with Docker”</a>. We also dramatically improved error messages when version requirements conflict, shipped a playbook for adding or removing core team members, and fixed some issues handling gemspecs with non-ASCII characters. We also merged a fix that could cause Bundler to <a href="https://github.com/bundler/bundler/pull/6675">fail when trying to install a gem that has had a version yanked recently</a>.</p>
+
+<p>On top of that code work, we also added two new contributors to <a href="https://bundler.io/contributors.html">the Bundler team</a>! Welcome to <a href="https://www.twitter.com/radiomorillo">Stephanie Morillo</a> and <a href="https://twitter.com/greybaker">Grey Baker</a>.</p>
+
+<p>Stephanie has helped create new Bundler docs (like the troubleshooting RubyGems and Bundler TLS/SSL issues guide), and update existing ones. She’s also responsible for updating the Bundler contributor guidelines and trying to make Bundler docs more accessible to new contributors. We’re excited to have her on board, and looking forward to working with her more in the future.</p>
+
+<p>Grey is the author of <a href="https://dependabot.com">Dependabot</a>, and has regularly contributed to <a href="https://github.com/cocoapods/molinillo">Molinillo</a>, the core resolver library that powers Bundler, RubyGems, and Cocoapods.</p>
+
+<p>In total this month, Bundler gained 58 new commits, contributed by 10 authors. There were 334 additions and 54 deletions across 30 files.</p>
+
+<p>Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the <a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md">Bundler Contributor Guidelines</a> on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of <a href="https://rubytogether.org">Ruby Together</a> to help fund our work to keep Bundler working for everyone.</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>

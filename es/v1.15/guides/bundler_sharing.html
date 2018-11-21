@@ -1,337 +1,345 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: Compartiendo su código
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Cambiar navigación</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/es/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Haga búsqueda...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Equipo</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repositorio</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container' id='guide-container'>
-          <div id='wrapper'>
-            <div class='hidden-xs' id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Guides</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/git.html">Gems from git repositories</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/groups.html">Managing groups of gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='guide contents' id='page-content-wrapper'>
-              <div class='container guide'>
-                <h2 id='sharing'>
-                  Compartiendo su código
-                </h2>
-                <div class='contents'>
-                  <div class='bullet'>
-                    <div class='description'>
-                      <h3 id='checking-your-code-into-version-control'>
-                        Chequeando su código en su sistema de control de versiones
-                      </h3>
-                      <p>
-                        Después de desarrollar su aplicación por un tiempo, chequee su código en su sistema de
-                        control de versiones con el <code>Gemfile</code> y el <code>Gemfile.lock</code>.
-                        Ahora, su repositorio tiene un registro de las versiones exactas de todas las gemas que usó la
-                        última vez que usted sabe que la aplicación sirvió. Tenga en mente que mientras su <code>Gemfile</code>
-                        lista solamente tres gemas (con diferente grados de rigor de versión), su aplicación
-                        depende de muchas gemas cuando se considera todos los requisitos implícitos de todas las gemas
-                        que dependen en unas de otras.
-                      </p>
-                    </div>
-                    <p class='description'>
-                      Esto es importante: <strong>el <code>Gemfile.lock</code></strong> contiene su código y también código de terceros.
-                      El<strong><code>Gemfile.lock</code></strong> hace que su aplicación sea un paquete singular
-                      que asegura que su aplicación ejecutó con éxito la última vez que corrió el código.
-                      Especificando versiones exáctas del código de terceros que uno depende de su
-                      <code>Gemfile</code> no proveería la misma garantía, porque gemas usualmente declaran
-                      un rango de versiones para sus dependencias.
-                    </p>
-                    <p class='description'>
-                      La próxima vez que ejecuta <code>bundle install</code> en la misma máquina, bundler va a ver
-                      que ya tiene todas las dependencias necesarias, y va a omitir el proceso de instalación.
-                    </p>
-                    <p class='description'>
-                      No chequee el directorio <code>.bundle</code>, o ningunos de los archivos dentro de él.
-                      Esos archivos son específicos para cada máquina, y se usan para persistir opciones de
-                      instalación entre diferentes instancias de ejecutación del comando <code>bundle install</code>.
-                    </p>
-                    <p class='description'>
-                      Si ha ejecutado <code>bundle pack</code>, las gemas (pero no las gemas de git) necesitadas
-                      por su bundle van a estar descargadas en <code>vendor/cache</code>. Bundler puede correr sin
-                      conectarse al internet (o al servidor RubyGems) si todas las gemas que necesita ya están presentes
-                      en ese directorio y están chequeadas en su sistema de control de versiones.
-                    </p>
-                  </div>
-                  <div class='bullet'>
-                    <h3 id='sharing-your-application-with-other-developers'>
-                      Compartiendo su aplicación con otros desarrolladores
-                    </h3>
-                    <p class='description'>
-                      Cuando otros desarrolladores (o usted mismo en otra máquina) chequean su código,
-                      va a venir con las versiones exáctas de todo el código de terceros que su aplicación
-                      usó en la máquina que usó más reciéntemente para desarrollar (en el <code>Gemfile.lock</code>).
-                      Cuando <em>otros</em> ejecuten <code>bundle install</code>, bundler va a encontrar el
-                      <code>Gemfile.lock</code> y va a omitir el paso de resolver dependencias.
-                    </p>
-                    <p class='description'>
-                      En otras palabras, no va a adivinar cuales versiones de las dependencias debería
-                      instalar. En los ejemplos que hemos usado, aunque <code>rack-cache</code> declara una
-                      dependencia en <code>rack >= 0.4</code>, sabemos que definitivamente trabaja con <code>rack&#x000A;        1.2.1</code>. Aunque Rack lanzaría <code>rack 1.2.2</code>, bundler va a siempre instalar
-                      <code>1.2.1</code>, la version exácta de la gema que sabemos que funciona. Esto
-                      alivia una gran parte de la carga de mantenimiento de desarrolladores de aplicación, porque
-                      todas las máquinas siempre ejecutarán el mismo código de terceros.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <ul>
-                <li class=''>
-                  <a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/git.html">Gems from git repositories</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/groups.html">Managing groups of gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $(document).ready(function() {
-          anchors.add();
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler-site/blob/master/source/localizable/v1.15/guides/bundler_sharing.es.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Equipo</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repositorio</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Compartiendo su código
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Cambiar navigación</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/es/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Haga búsqueda...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Equipo</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repositorio</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git.html">Gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/groups.html">Managing groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<div class='container guide'>
+<h2 id='sharing'>
+Compartiendo su código
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+<h3 id='checking-your-code-into-version-control'>
+Chequeando su código en su sistema de control de versiones
+</h3>
+<p>
+Después de desarrollar su aplicación por un tiempo, chequee su código en su sistema de
+control de versiones con el <code>Gemfile</code> y el <code>Gemfile.lock</code>.
+Ahora, su repositorio tiene un registro de las versiones exactas de todas las gemas que usó la
+última vez que usted sabe que la aplicación sirvió. Tenga en mente que mientras su <code>Gemfile</code>
+lista solamente tres gemas (con diferente grados de rigor de versión), su aplicación
+depende de muchas gemas cuando se considera todos los requisitos implícitos de todas las gemas
+que dependen en unas de otras.
+</p>
+</div>
+<p class='description'>
+Esto es importante: <strong>el <code>Gemfile.lock</code></strong> contiene su código y también código de terceros.
+El<strong><code>Gemfile.lock</code></strong> hace que su aplicación sea un paquete singular
+que asegura que su aplicación ejecutó con éxito la última vez que corrió el código.
+Especificando versiones exáctas del código de terceros que uno depende de su
+<code>Gemfile</code> no proveería la misma garantía, porque gemas usualmente declaran
+un rango de versiones para sus dependencias.
+</p>
+<p class='description'>
+La próxima vez que ejecuta <code>bundle install</code> en la misma máquina, bundler va a ver
+que ya tiene todas las dependencias necesarias, y va a omitir el proceso de instalación.
+</p>
+<p class='description'>
+No chequee el directorio <code>.bundle</code>, o ningunos de los archivos dentro de él.
+Esos archivos son específicos para cada máquina, y se usan para persistir opciones de
+instalación entre diferentes instancias de ejecutación del comando <code>bundle install</code>.
+</p>
+<p class='description'>
+Si ha ejecutado <code>bundle pack</code>, las gemas (pero no las gemas de git) necesitadas
+por su bundle van a estar descargadas en <code>vendor/cache</code>. Bundler puede correr sin
+conectarse al internet (o al servidor RubyGems) si todas las gemas que necesita ya están presentes
+en ese directorio y están chequeadas en su sistema de control de versiones.
+</p>
+</div>
+<div class='bullet'>
+<h3 id='sharing-your-application-with-other-developers'>
+Compartiendo su aplicación con otros desarrolladores
+</h3>
+<p class='description'>
+Cuando otros desarrolladores (o usted mismo en otra máquina) chequean su código,
+va a venir con las versiones exáctas de todo el código de terceros que su aplicación
+usó en la máquina que usó más reciéntemente para desarrollar (en el <code>Gemfile.lock</code>).
+Cuando <em>otros</em> ejecuten <code>bundle install</code>, bundler va a encontrar el
+<code>Gemfile.lock</code> y va a omitir el paso de resolver dependencias.
+</p>
+<p class='description'>
+En otras palabras, no va a adivinar cuales versiones de las dependencias debería
+instalar. En los ejemplos que hemos usado, aunque <code>rack-cache</code> declara una
+dependencia en <code>rack >= 0.4</code>, sabemos que definitivamente trabaja con <code>rack&#x000A;1.2.1</code>. Aunque Rack lanzaría <code>rack 1.2.2</code>, bundler va a siempre instalar
+<code>1.2.1</code>, la version exácta de la gema que sabemos que funciona. Esto
+alivia una gran parte de la carga de mantenimiento de desarrolladores de aplicación, porque
+todas las máquinas siempre ejecutarán el mismo código de terceros.
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v1.15/guides/deploying.html">Deploying with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git.html">Gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/git_bisect.html">How to git bisect in projects using Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/groups.html">Managing groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html">RubyGems.org SSL/TLS Troubleshooting Guide</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_sharing.html">Sharing your code</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/updating_gems.html">Updating Gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/rails.html">Using Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/sinatra.html">Using Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.15/guides/bundler_setup.html">Using Bundler with plain Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/localizable/v1.15/guides/bundler_sharing.es.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Equipo</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repositorio</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {

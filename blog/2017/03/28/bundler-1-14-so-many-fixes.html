@@ -1,135 +1,141 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: Bundler 1.14: So many fixes
-    </title>
-    
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class='col-md-12 col-lg-10 col-lg-offset-1'>
-            <div class='contents blog'>
-              <h2 class='title'>
-                <a href="/blog/2017/03/28/bundler-1-14-so-many-fixes.html">Bundler 1.14: So many fixes</a>
-              </h2>
-              <div class='subtitle'>
-                by
-                <a href="http://github.com/indirect" target="_blank">André Arko</a>
-                on
-                <time>
-                  Mar 28 2017
-                </time>
-              </div>
-              <div class='blog-content'>
-                <h1 id="whats-new-in-bundler-114">What’s new in Bundler 1.14?</h1>
-                
-                <p>We somehow missed writing up an announcement when Bundler 1.14 was initially released, but several people kindly pointed out the problem. Just 48 days late, here’s what’s new in Bundler 1.14! In this feature release, we added several small features, and fixed a giant pile of bugs.</p>
-                
-                <h3 id="conservative-updates">Conservative updates</h3>
-                
-                <p>Building on the previous <a href="http://bundler.io/v1.13/whats_new.html#fine-controls-for-the-update-command">fine controls for the update command</a>, the illustrious <a href="https://github.com/chrismo">@chrismo</a> worked his way through many gnarly possible usage combinations to implement the <code>update --conservative</code> flag. Using the conservative flag allows <code>bundle update GEM</code> to update the version of GEM, but prevents Bundler from updating the versions of any of the gems that GEM depends on. For a more in-depth discussion of why this is useful, check out the  <a href="http://bundler.io/v1.14/man/bundle-update.1.html#OVERLAPPING-DEPENDENCIES">discussion of overlapping dependencies</a> in the <a href="http://bundler.io/v1.14/man/bundle-update.1.html"><code>update</code> command man page</a>.</p>
-                
-                <h3 id="checksum-validation">Checksum validation</h3>
-                
-                <p>As part of the <a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/">compact index format</a> provided by RubyGems.org, Bundler now has access to checksums for every .gem file. Starting with version 1.14, Bundler actively validates those checksums against downloaded .gem files before installing them. Hooray! 🎉</p>
-                
-                <h3 id="improved-platform-support">Improved platform support</h3>
-                
-                <p>Courtesy of some intensive work by @segiddins, Bundler is getting better at handling applications that will be run on more than one platform, like both Unix and Windows. To start with, Bundler will now print a warning if your Gemfile includes any gems that will never be installed due to a <code>platform</code> block. For gems that need to be compiled even though the author has uploaded a binary gem, the <code>force_ruby_platform</code> config setting has you covered. Lastly, the new config setting <code>specific_platform</code> tells Bundler to consider platforms during dependency resolution. This setting should significantly improve things for users installing a single bundle on more than one platform. We expect the <code>specific_platform</code> setting to become the default behavior in Bundler 2.0.</p>
-                
-                <h3 id="improved-required-ruby-versions">Improved required Ruby versions</h3>
-                
-                <p>Building on the support for Ruby and RubyGems version that was added in 1.13, Bundler 1.14 improves resolver error messages. If any gem conflicts with your Ruby or RubyGems version, the error message will now show both the conflicting dependencies and the chain of parent dependencies that led to the conflict.</p>
-                
-                <h3 id="various-improvements">Various improvements</h3>
-                
-                <p>In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:</p>
-                
-                <ul>
-                  <li>Installing gems using <code>sudo</code> will now always prompt for a password, even if the sudo password is cached from an earlier command</li>
-                  <li>The Gemfile method <code>platform</code> now supports Ruby 2.5, allowing arguments like <code>:ruby_25</code> or <code>:mri_25</code>.</li>
-                  <li>The “lockfile is missing dependencies” error (triggered by certain old lock files that were missing information) is no longer fatal. We now print instructions on how to repair the Gemfile, and install using one thread.</li>
-                  <li>Running <code>require "bundler"</code> is now about five times faster than it used to be.</li>
-                  <li>Bundler now works when run by users without a home directory.</li>
-                  <li>The output from <code>bundle env</code> is now preformatted as Markdown for pasting into a GitHub issue.</li>
-                  <li>After Bundler 2.0 is (eventually) released, Bundler 1.14 and greater will be able to automatically switch to Bundler 2.0+ for apps that need it.</li>
-                </ul>
-                
-                <p>We also fixed over 60 separate bugs, and you can read about every single one of them <a href="https://github.com/bundler/bundler/blob/1-14-stable/CHANGELOG.md">in the Bundler 1.14 changelog</a>.</p>
-                
-                <h3 id="how-to-upgrade">How To Upgrade</h3>
-                
-                <p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Bundler 1.14: So many fixes
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2017/03/28/bundler-1-14-so-many-fixes.html">Bundler 1.14: So many fixes</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="http://github.com/indirect" target="_blank">André Arko</a>
+on
+<time>
+Mar 28 2017
+</time>
+</div>
+<div class='blog-content'>
+<h1 id="whats-new-in-bundler-114">What’s new in Bundler 1.14?</h1>
+
+<p>We somehow missed writing up an announcement when Bundler 1.14 was initially released, but several people kindly pointed out the problem. Just 48 days late, here’s what’s new in Bundler 1.14! In this feature release, we added several small features, and fixed a giant pile of bugs.</p>
+
+<h3 id="conservative-updates">Conservative updates</h3>
+
+<p>Building on the previous <a href="http://bundler.io/v1.13/whats_new.html#fine-controls-for-the-update-command">fine controls for the update command</a>, the illustrious <a href="https://github.com/chrismo">@chrismo</a> worked his way through many gnarly possible usage combinations to implement the <code>update --conservative</code> flag. Using the conservative flag allows <code>bundle update GEM</code> to update the version of GEM, but prevents Bundler from updating the versions of any of the gems that GEM depends on. For a more in-depth discussion of why this is useful, check out the  <a href="http://bundler.io/v1.14/man/bundle-update.1.html#OVERLAPPING-DEPENDENCIES">discussion of overlapping dependencies</a> in the <a href="http://bundler.io/v1.14/man/bundle-update.1.html"><code>update</code> command man page</a>.</p>
+
+<h3 id="checksum-validation">Checksum validation</h3>
+
+<p>As part of the <a href="http://andre.arko.net/2014/03/28/the-new-rubygems-index-format/">compact index format</a> provided by RubyGems.org, Bundler now has access to checksums for every .gem file. Starting with version 1.14, Bundler actively validates those checksums against downloaded .gem files before installing them. Hooray! 🎉</p>
+
+<h3 id="improved-platform-support">Improved platform support</h3>
+
+<p>Courtesy of some intensive work by @segiddins, Bundler is getting better at handling applications that will be run on more than one platform, like both Unix and Windows. To start with, Bundler will now print a warning if your Gemfile includes any gems that will never be installed due to a <code>platform</code> block. For gems that need to be compiled even though the author has uploaded a binary gem, the <code>force_ruby_platform</code> config setting has you covered. Lastly, the new config setting <code>specific_platform</code> tells Bundler to consider platforms during dependency resolution. This setting should significantly improve things for users installing a single bundle on more than one platform. We expect the <code>specific_platform</code> setting to become the default behavior in Bundler 2.0.</p>
+
+<h3 id="improved-required-ruby-versions">Improved required Ruby versions</h3>
+
+<p>Building on the support for Ruby and RubyGems version that was added in 1.13, Bundler 1.14 improves resolver error messages. If any gem conflicts with your Ruby or RubyGems version, the error message will now show both the conflicting dependencies and the chain of parent dependencies that led to the conflict.</p>
+
+<h3 id="various-improvements">Various improvements</h3>
+
+<p>In addition to those larger additions, we made some smaller tweaks with the aim of smoothing and improving the overall experience of using Bundler:</p>
+
+<ul>
+  <li>Installing gems using <code>sudo</code> will now always prompt for a password, even if the sudo password is cached from an earlier command</li>
+  <li>The Gemfile method <code>platform</code> now supports Ruby 2.5, allowing arguments like <code>:ruby_25</code> or <code>:mri_25</code>.</li>
+  <li>The “lockfile is missing dependencies” error (triggered by certain old lock files that were missing information) is no longer fatal. We now print instructions on how to repair the Gemfile, and install using one thread.</li>
+  <li>Running <code>require "bundler"</code> is now about five times faster than it used to be.</li>
+  <li>Bundler now works when run by users without a home directory.</li>
+  <li>The output from <code>bundle env</code> is now preformatted as Markdown for pasting into a GitHub issue.</li>
+  <li>After Bundler 2.0 is (eventually) released, Bundler 1.14 and greater will be able to automatically switch to Bundler 2.0+ for apps that need it.</li>
+</ul>
+
+<p>We also fixed over 60 separate bugs, and you can read about every single one of them <a href="https://github.com/bundler/bundler/blob/1-14-stable/CHANGELOG.md">in the Bundler 1.14 changelog</a>.</p>
+
+<h3 id="how-to-upgrade">How To Upgrade</h3>
+
+<p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>

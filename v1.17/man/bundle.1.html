@@ -1,700 +1,708 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
-    <title>
-      Bundler: bundle
-    </title>
-    
-    <link href='/man/bundle.1.html' rel='canonical'>
-    <script src="/javascripts/application.js"></script>
-    <script src="/javascripts/analytics.js" async="true"></script>
-    <link href="/stylesheets/application.css" rel="stylesheet" />
-    <link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
-    <link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
-    <link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
-    <link href='/manifest.json' rel='manifest'>
-    <link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
-    <meta content='bundler.io' name='apple-mobile-web-app-title'>
-    <meta content='bundler.io' name='application-name'>
-    <meta content='#ffffff' name='theme-color'>
-    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
-    
-  </head>
-  <body class=''>
-    <nav class='navbar navbar-default'>
-      <div class='container'>
-        <div class='navbar-header'>
-          <button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-            <span class='sr-only'>Toggle navigation</span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-          </button>
-          <b><a href="/" class="navbar-brand">Bundler</a></b>
-        </div>
-        <div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-          <ul class='nav navbar-nav navbar-right'>
-            <li>
-              <div class='search-wrapper'>
-                <div class='form-group has-feedback'>
-                  <i class='glyphicon glyphicon-search form-control-feedback'></i>
-                  <input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-                </div>
-              </div>
-            </li>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class='main-wrapper'>
-      <div class='row bg-light-blue header'>
-        <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div id='wrapper'>
-            <div id='sidebar-wrapper'>
-              <div class='sidebar-nav'>
-                <h4>Choose version</h4>
-                <div class='form-group'>
-                  <select class='version-selects form-control'>
-                    <option selected value='/v1.17/man/bundle.1.html'>
-                      v1.17
-                    </option>
-                    <option value='/v1.16/man/bundle.1.html'>
-                      v1.16
-                    </option>
-                    <option value='/v1.15/man/bundle.1.html'>
-                      v1.15
-                    </option>
-                    <option value='/v1.14/man/bundle.1.html'>
-                      v1.14
-                    </option>
-                    <option value='/v1.13/man/bundle.1.html'>
-                      v1.13
-                    </option>
-                    <option value='/v1.12/man/bundle.1.html'>
-                      v1.12
-                    </option>
-                    <option value='/v1.11/man/bundle.1.html'>
-                      v1.11
-                    </option>
-                    <option value='/v1.10/man/bundle.1.html'>
-                      v1.10
-                    </option>
-                    <option value='/v1.9/man/bundle.1.html'>
-                      v1.9
-                    </option>
-                    <option value='/v1.8/man/bundle.1.html'>
-                      v1.8
-                    </option>
-                    <option value='/v1.7/man/bundle.1.html'>
-                      v1.7
-                    </option>
-                    <option value='/v1.6/man/bundle.1.html'>
-                      v1.6
-                    </option>
-                    <option value='/v1.5/man/bundle.1.html'>
-                      v1.5
-                    </option>
-                    <option value='/v1.3/man/bundle.1.html'>
-                      v1.3
-                    </option>
-                    <option value='/v1.2/man/bundle.1.html'>
-                      v1.2
-                    </option>
-                    <option value='/v1.1/man/bundle.1.html'>
-                      v1.1
-                    </option>
-                    <option value='/v1.0/man/bundle.1.html'>
-                      v1.0
-                    </option>
-                    <option value='/v0.9/bundle_install.html'>
-                      v0.9
-                    </option>
-                  </select>
-                </div>
-                <h4>Primary Commands</h4>
-                <ul>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-install.1.html">bundle install</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-update.1.html">bundle update</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-package.1.html">bundle package</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-exec.1.html">bundle exec</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-config.1.html">bundle config</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/bundle_help.html">bundle help</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-                <h4>Utilities</h4>
-                <ul>
-                  <li class='active'>
-                    <a href="/v1.17/man/bundle.1.html">bundle</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-add.1.html">bundle add</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-binstubs.1.html">bundle binstubs</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-check.1.html">bundle check</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-clean.1.html">bundle clean</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/bundle_console.html">bundle console</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-doctor.1.html">bundle doctor</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-gem.1.html">bundle gem</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-info.1.html">bundle info</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-init.1.html">bundle init</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-inject.1.html">bundle inject</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-list.1.html">bundle list</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-lock.1.html">bundle lock</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-open.1.html">bundle open</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-outdated.1.html">bundle outdated</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-platform.1.html">bundle platform</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-pristine.1.html">bundle pristine</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-remove.1.html">bundle remove</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-show.1.html">bundle show</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/bundle_version.html">bundle version</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/bundle-viz.1.html">bundle viz</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                  <li class=''>
-                    <a href="/v1.17/man/gemfile.5.html">gemfile</a>
-                  </li>
-                  <li class='separator'>
-                    <hr>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class='commands contents' id='page-content-wrapper'>
-              
-                <div class="mp" id="man">
-              
-                
-              
-                
-              
-                <h2 id="NAME">bundle</h2>
-              <p class="man-name">
-                <code>bundle</code> - <span class="man-whatis">Ruby Dependency Management</span>
-              </p>
-              
-              
-              
-              <pre><code>bundle</code> COMMAND [--no-color] [--verbose] [ARGS]</pre>
-              
-              <h2 id="DESCRIPTION">Description</h2>
-              
-              <p>Bundler manages an <code>application's dependencies</code> through its entire life
-              across many machines systematically and repeatably.</p>
-              
-              <p>See <a href="http://bundler.io">the bundler website</a> for information on getting
-              started, and <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> for more information on the <code>Gemfile</code> format.</p>
-              
-              <h2 id="OPTIONS">Options</h2>
-              
-              <dl>
-              <dt><code>--no-color</code></dt>
-              <dd><p>Print all output without color</p></dd>
-              <dt>
-              <code>--retry</code>, <code>-r</code>
-              </dt>
-              <dd><p>Specify the number of times you wish to attempt network commands</p></dd>
-              <dt>
-              <code>--verbose</code>, <code>-V</code>
-              </dt>
-              <dd><p>Print out additional logging information</p></dd>
-              </dl>
-              
-              
-              <h2 id="BUNDLE-COMMANDS">Bundle Commands</h2>
-              
-              <p>We divide <code>bundle</code> subcommands into primary commands and utilities:</p>
-              
-              <h2 id="PRIMARY-COMMANDS">Primary Commands</h2>
-              
-              <dl>
-              <dt><a href="bundle-install.1.html"><code>bundle install(1)</code></a></dt>
-              <dd><p>Install the gems specified by the <code>Gemfile</code> or <code>Gemfile.lock</code></p></dd>
-              <dt><a href="bundle-update.1.html"><code>bundle update(1)</code></a></dt>
-              <dd><p>Update dependencies to their latest versions</p></dd>
-              <dt><a href="bundle-package.1.html"><code>bundle package(1)</code></a></dt>
-              <dd><p>Package the .gem files required by your application into the
-              <code>vendor/cache</code> directory</p></dd>
-              <dt><a href="bundle-exec.1.html"><code>bundle exec(1)</code></a></dt>
-              <dd><p>Execute a script in the current bundle</p></dd>
-              <dt><a href="bundle-config.1.html"><code>bundle config(1)</code></a></dt>
-              <dd><p>Specify and read configuration options for Bundler</p></dd>
-              <dt><code>bundle help(1)</code></dt>
-              <dd><p>Display detailed help for each subcommand</p></dd>
-              </dl>
-              
-              
-              <h2 id="UTILITIES">Utilities</h2>
-              
-              <dl>
-              <dt><a href="bundle-add.1.html"><code>bundle add(1)</code></a></dt>
-              <dd><p>Add the named gem to the Gemfile and run <code>bundle install</code></p></dd>
-              <dt><a href="bundle-binstubs.1.html"><code>bundle binstubs(1)</code></a></dt>
-              <dd><p>Generate binstubs for executables in a gem</p></dd>
-              <dt><a href="bundle-check.1.html"><code>bundle check(1)</code></a></dt>
-              <dd><p>Determine whether the requirements for your application are installed
-              and available to Bundler</p></dd>
-              <dt><a href="bundle-show.1.html"><code>bundle show(1)</code></a></dt>
-              <dd><p>Show the source location of a particular gem in the bundle</p></dd>
-              <dt><a href="bundle-outdated.1.html"><code>bundle outdated(1)</code></a></dt>
-              <dd><p>Show all of the outdated gems in the current bundle</p></dd>
-              <dt><code>bundle console(1)</code></dt>
-              <dd><p>Start an IRB session in the current bundle</p></dd>
-              <dt><a href="bundle-open.1.html"><code>bundle open(1)</code></a></dt>
-              <dd><p>Open an installed gem in the editor</p></dd>
-              <dt><a href="bundle-lock.1.hmtl"><code>bundle lock(1)</code></a></dt>
-              <dd><p>Generate a lockfile for your dependencies</p></dd>
-              <dt><a href="bundle-viz.1.html"><code>bundle viz(1)</code></a></dt>
-              <dd><p>Generate a visual representation of your dependencies</p></dd>
-              <dt><a href="bundle-init.1.html"><code>bundle init(1)</code></a></dt>
-              <dd><p>Generate a simple <code>Gemfile</code>, placed in the current directory</p></dd>
-              <dt><a href="bundle-gem.1.html"><code>bundle gem(1)</code></a></dt>
-              <dd><p>Create a simple gem, suitable for development with Bundler</p></dd>
-              <dt><a href="bundle-platform.1.html"><code>bundle platform(1)</code></a></dt>
-              <dd><p>Display platform compatibility information</p></dd>
-              <dt><a href="bundle-clean.1.html"><code>bundle clean(1)</code></a></dt>
-              <dd><p>Clean up unused gems in your Bundler directory</p></dd>
-              <dt><a href="bundle-doctor.1.html"><code>bundle doctor(1)</code></a></dt>
-              <dd><p>Display warnings about common problems</p></dd>
-              </dl>
-              
-              
-              <h2 id="PLUGINS">Plugins</h2>
-              
-              <p>When running a command that isn't listed in PRIMARY COMMANDS or UTILITIES,
-              Bundler will try to find an executable on your path named <code>bundler-&lt;command&gt;</code>
-              and execute it, passing down any extra arguments to it.</p>
-              
-              <h2 id="OBSOLETE">Obsolete</h2>
-              
-              <p>These commands are obsolete and should no longer be used:</p>
-              
-              <ul>
-              <li><code>bundle cache(1)</code></li>
-              <li><code>bundle show(1)</code></li>
-              </ul>
-              
-              
-              
-                
-              
-                </div>
-            </div>
-            <div class='clearfix'></div>
-          </div>
-        </div>
-      </div>
-      <div class='row'>
-        <div class='container'>
-          <div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
-            <div class='bottom-sidebar-nav'>
-              <h4>Choose version</h4>
-              <div class='form-group'>
-                <select class='version-selects form-control'>
-                  <option selected value='/v1.17/man/bundle.1.html'>
-                    v1.17
-                  </option>
-                  <option value='/v1.16/man/bundle.1.html'>
-                    v1.16
-                  </option>
-                  <option value='/v1.15/man/bundle.1.html'>
-                    v1.15
-                  </option>
-                  <option value='/v1.14/man/bundle.1.html'>
-                    v1.14
-                  </option>
-                  <option value='/v1.13/man/bundle.1.html'>
-                    v1.13
-                  </option>
-                  <option value='/v1.12/man/bundle.1.html'>
-                    v1.12
-                  </option>
-                  <option value='/v1.11/man/bundle.1.html'>
-                    v1.11
-                  </option>
-                  <option value='/v1.10/man/bundle.1.html'>
-                    v1.10
-                  </option>
-                  <option value='/v1.9/man/bundle.1.html'>
-                    v1.9
-                  </option>
-                  <option value='/v1.8/man/bundle.1.html'>
-                    v1.8
-                  </option>
-                  <option value='/v1.7/man/bundle.1.html'>
-                    v1.7
-                  </option>
-                  <option value='/v1.6/man/bundle.1.html'>
-                    v1.6
-                  </option>
-                  <option value='/v1.5/man/bundle.1.html'>
-                    v1.5
-                  </option>
-                  <option value='/v1.3/man/bundle.1.html'>
-                    v1.3
-                  </option>
-                  <option value='/v1.2/man/bundle.1.html'>
-                    v1.2
-                  </option>
-                  <option value='/v1.1/man/bundle.1.html'>
-                    v1.1
-                  </option>
-                  <option value='/v1.0/man/bundle.1.html'>
-                    v1.0
-                  </option>
-                  <option value='/v0.9/bundle_install.html'>
-                    v0.9
-                  </option>
-                </select>
-              </div>
-              <h4>Primary Commands</h4>
-              <ul>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-install.1.html">bundle install</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-update.1.html">bundle update</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-package.1.html">bundle package</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-exec.1.html">bundle exec</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-config.1.html">bundle config</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/bundle_help.html">bundle help</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-              <h4>Utilities</h4>
-              <ul>
-                <li class='active'>
-                  <a href="/v1.17/man/bundle.1.html">bundle</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-add.1.html">bundle add</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-binstubs.1.html">bundle binstubs</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-check.1.html">bundle check</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-clean.1.html">bundle clean</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/bundle_console.html">bundle console</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-doctor.1.html">bundle doctor</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-gem.1.html">bundle gem</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-info.1.html">bundle info</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-init.1.html">bundle init</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-inject.1.html">bundle inject</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-list.1.html">bundle list</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-lock.1.html">bundle lock</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-open.1.html">bundle open</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-outdated.1.html">bundle outdated</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-platform.1.html">bundle platform</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-pristine.1.html">bundle pristine</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-remove.1.html">bundle remove</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-show.1.html">bundle show</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/bundle_version.html">bundle version</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/bundle-viz.1.html">bundle viz</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-                <li class=''>
-                  <a href="/v1.17/man/gemfile.5.html">gemfile</a>
-                </li>
-                <li class='separator'>
-                  <hr>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
-        $('.version-selects').change(function(e) {
-          document.location.href = $(e.target).find(":selected").val();
-        });
-        $(document).ready(function() {
-          anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
-            '#page-content-wrapper h4, #page-content-wrapper h5');
-        });
-      </script>
-      <div class='row bg-light-blue'>
-        <div class='container'>
-          <div class='contents'>
-            <div class='edit-on-github text-center'>
-              <a href="https://github.com/bundler/bundler-site/blob/master/source/v1.17/man/bundle.1.html.erb">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='footer'>
-      <div class='row'>
-        <div class='container text-center'>
-          <ul class='nav navbar-nav'>
-            <li><a href="/docs.html">Docs</a></li>
-            <li><a href="/contributors.html">Team</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="https://github.com/bundler/bundler">Repository</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: bundle
+</title>
+
+<link href='/man/bundle.1.html' rel='canonical'>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container'>
+<div id='wrapper'>
+<div id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v1.17/man/bundle.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle.1.html'>
+v1.16
+</option>
+<option value='/v1.15/man/bundle.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v1.17/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class='active'>
+<a href="/v1.17/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='commands contents' id='page-content-wrapper'>
+
+  <div class="mp" id="man">
+
+  
+
+  
+
+  <h2 id="NAME">bundle</h2>
+<p class="man-name">
+  <code>bundle</code> - <span class="man-whatis">Ruby Dependency Management</span>
+</p>
+
+
+
+<pre><code>bundle</code> COMMAND [--no-color] [--verbose] [ARGS]</pre>
+
+<h2 id="DESCRIPTION">Description</h2>
+
+<p>Bundler manages an <code>application's dependencies</code> through its entire life
+across many machines systematically and repeatably.</p>
+
+<p>See <a href="http://bundler.io">the bundler website</a> for information on getting
+started, and <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> for more information on the <code>Gemfile</code> format.</p>
+
+<h2 id="OPTIONS">Options</h2>
+
+<dl>
+<dt><code>--no-color</code></dt>
+<dd><p>Print all output without color</p></dd>
+<dt>
+<code>--retry</code>, <code>-r</code>
+</dt>
+<dd><p>Specify the number of times you wish to attempt network commands</p></dd>
+<dt>
+<code>--verbose</code>, <code>-V</code>
+</dt>
+<dd><p>Print out additional logging information</p></dd>
+</dl>
+
+
+<h2 id="BUNDLE-COMMANDS">Bundle Commands</h2>
+
+<p>We divide <code>bundle</code> subcommands into primary commands and utilities:</p>
+
+<h2 id="PRIMARY-COMMANDS">Primary Commands</h2>
+
+<dl>
+<dt><a href="bundle-install.1.html"><code>bundle install(1)</code></a></dt>
+<dd><p>Install the gems specified by the <code>Gemfile</code> or <code>Gemfile.lock</code></p></dd>
+<dt><a href="bundle-update.1.html"><code>bundle update(1)</code></a></dt>
+<dd><p>Update dependencies to their latest versions</p></dd>
+<dt><a href="bundle-package.1.html"><code>bundle package(1)</code></a></dt>
+<dd><p>Package the .gem files required by your application into the
+<code>vendor/cache</code> directory</p></dd>
+<dt><a href="bundle-exec.1.html"><code>bundle exec(1)</code></a></dt>
+<dd><p>Execute a script in the current bundle</p></dd>
+<dt><a href="bundle-config.1.html"><code>bundle config(1)</code></a></dt>
+<dd><p>Specify and read configuration options for Bundler</p></dd>
+<dt><code>bundle help(1)</code></dt>
+<dd><p>Display detailed help for each subcommand</p></dd>
+</dl>
+
+
+<h2 id="UTILITIES">Utilities</h2>
+
+<dl>
+<dt><a href="bundle-add.1.html"><code>bundle add(1)</code></a></dt>
+<dd><p>Add the named gem to the Gemfile and run <code>bundle install</code></p></dd>
+<dt><a href="bundle-binstubs.1.html"><code>bundle binstubs(1)</code></a></dt>
+<dd><p>Generate binstubs for executables in a gem</p></dd>
+<dt><a href="bundle-check.1.html"><code>bundle check(1)</code></a></dt>
+<dd><p>Determine whether the requirements for your application are installed
+and available to Bundler</p></dd>
+<dt><a href="bundle-show.1.html"><code>bundle show(1)</code></a></dt>
+<dd><p>Show the source location of a particular gem in the bundle</p></dd>
+<dt><a href="bundle-outdated.1.html"><code>bundle outdated(1)</code></a></dt>
+<dd><p>Show all of the outdated gems in the current bundle</p></dd>
+<dt><code>bundle console(1)</code></dt>
+<dd><p>Start an IRB session in the current bundle</p></dd>
+<dt><a href="bundle-open.1.html"><code>bundle open(1)</code></a></dt>
+<dd><p>Open an installed gem in the editor</p></dd>
+<dt><a href="bundle-lock.1.hmtl"><code>bundle lock(1)</code></a></dt>
+<dd><p>Generate a lockfile for your dependencies</p></dd>
+<dt><a href="bundle-viz.1.html"><code>bundle viz(1)</code></a></dt>
+<dd><p>Generate a visual representation of your dependencies</p></dd>
+<dt><a href="bundle-init.1.html"><code>bundle init(1)</code></a></dt>
+<dd><p>Generate a simple <code>Gemfile</code>, placed in the current directory</p></dd>
+<dt><a href="bundle-gem.1.html"><code>bundle gem(1)</code></a></dt>
+<dd><p>Create a simple gem, suitable for development with Bundler</p></dd>
+<dt><a href="bundle-platform.1.html"><code>bundle platform(1)</code></a></dt>
+<dd><p>Display platform compatibility information</p></dd>
+<dt><a href="bundle-clean.1.html"><code>bundle clean(1)</code></a></dt>
+<dd><p>Clean up unused gems in your Bundler directory</p></dd>
+<dt><a href="bundle-doctor.1.html"><code>bundle doctor(1)</code></a></dt>
+<dd><p>Display warnings about common problems</p></dd>
+</dl>
+
+
+<h2 id="PLUGINS">Plugins</h2>
+
+<p>When running a command that isn't listed in PRIMARY COMMANDS or UTILITIES,
+Bundler will try to find an executable on your path named <code>bundler-&lt;command&gt;</code>
+and execute it, passing down any extra arguments to it.</p>
+
+<h2 id="OBSOLETE">Obsolete</h2>
+
+<p>These commands are obsolete and should no longer be used:</p>
+
+<ul>
+<li><code>bundle cache(1)</code></li>
+<li><code>bundle show(1)</code></li>
+</ul>
+
+
+
+  
+
+  </div>
+
+</div>
+<div class='clearfix'></div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v1.17/man/bundle.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle.1.html'>
+v1.16
+</option>
+<option value='/v1.15/man/bundle.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v1.17/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class='active'>
+<a href="/v1.17/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v1.17/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $('.version-selects').change(function(e) {
+    document.location.href = $(e.target).find(":selected").val();
+  });
+  $(document).ready(function() {
+    anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
+      '#page-content-wrapper h4, #page-content-wrapper h5');
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/v1.17/man/bundle.1.html.erb">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
 </html>
 <style>
   .main-wrapper {
