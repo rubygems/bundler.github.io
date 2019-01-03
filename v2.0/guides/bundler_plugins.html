@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: How to write a Bundler plugin
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.0/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<div class='container guide'>
+<h1 id='how-to-write-a-bundler-plugin'>
+How to write a Bundler plugin
+</h1>
+<h2 id='what-is-a-plugin'>
+What is a plugin?
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'>
+Bundler plugins are specialized gems that are aimed at integrating and extending Bundler's functionality.
+This guide will help you start writing your own Bundler plugins.
+</div>
+</div>
+</div>
+<h2 id='why-would-i-use-a-plugin'>
+Why would I use a plugin?
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'></div>
+Plugins are able to integrate with and extend Bundler.
+<p>
+Currently, a plugin is able to:
+</p>
+<ul>
+<li>
+Add commands to Bundler (e.g. <code>bundle my_command</code>)
+</li>
+<li>
+Add a special handler to install a gem (e.g. Mercurial or SVN)
+</li>
+<li>
+Add functionality to specific hook points:
+<ul>
+<li>
+A list of all available hooks, their descriptions, and their block arguments are available
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/plugin/events.rb">in the plugin/events.rb file.</a>
+</li>
+<li>
+Note: Make sure to check out the <code>events.rb</code> file in the version of Bundler you are using.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<h2 id='using-a-plugin'>
+Using a plugin
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'></div>
+<h4 id='install_from_command'>
+Install a plugin from a command
+</h4>
+<p>
+Plugins can be installed from RubyGems (default) or from a Git server. To use a gem on your machine, you can run <code>bundler plugin install <gem_name></code>. Once the plugin is installed, the commands will be available for use and the hooks will be automatically registered with Bundler.
+</p>
+<p>
+Run <code>bundler plugin help install</code> for more details help and instructions on installing from Git.
+</p>
+<h4 id='install_from_command'>
+Install a plugin from your Gemfile
+</h4>
+<p>
+You can also specify a plugin in your Gemfile:
+</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">plugin</span> <span class="s1">'my_plugin'</span> <span class="c1"># Installs from Rubygems</span>&#x000A;<span class="n">plugin</span> <span class="s1">'my_plugin'</span><span class="p">,</span> <span class="ss">path: </span><span class="s1">'/path/to/plugin'</span> <span class="c1"># Installs from a path</span>&#x000A;<span class="n">plugin</span> <span class="s1">'my_plugin'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com:repo/my_plugin.git'</span> <span class="c1"># Installs from Git</span>&#x000A;</code></pre></div>
+</div>
+</div>
+<h2 id='getting-started-with-development'>
+Getting started with development
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'></div>
+<h3 id='create-a-gem'>
+1. Create a gem
+</h3>
+<p>
+You'll first need to create a specialized gem before you can make a Bundler plugin.
+</p>
+<p>
+<a href="/v2.0/guides/creating_gem.html">Create a gem using this guide.</a>
+When you're done, come back to this guide and move onto step two.
+</p>
+<h3 id='plugins_rb'>
+2. Create a plugins.rb file
+</h3>
+<p>
+A <code>plugins.rb</code> file is located at the top level of your gem's folder and is the entry point Bundler will use to call your plugin. This is a Ruby file that defines your commands, hooks, and other code. Often, you may just require the gem's upper-most lib file.
+</p>
+<p>
+For example, if your gem is called "my_plugin", you might have a file at <code>lib/my_plugin.rb</code> which contains the highest level namespace for your gem. Your <code>plugins.rb</code> file might be:
+<div class="highlight"><pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'my_plugin'</span>&#x000A;</code></pre></div>
+</p>
+<p>
+The <code>lib/my_plugin.rb</code> file would include other require statements, hooks, and commands similar to a normal gem.
+</p>
+<h3 id='developing_your_plugin_commands'>
+3. Making Bundler commands
+</h3>
+<p>
+Bundler commands allow you to extend the Bundler interface with additional functionality.
+</p>
+<p>
+To add a Bundler command, you need to make a class that registers itself (or another class) as a command. For example, to add support for a <code>bundler my_command</code> command, you might create a class like so:
+</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">MyCommand</span> <span class="o">&lt;</span> <span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="o">::</span><span class="no">API</span>&#x000A;  <span class="c1"># Register this class as a handler for the `my_command` command</span>&#x000A;  <span class="n">command</span> <span class="s2">"my_command"</span>&#x000A;&#x000A;  <span class="c1"># The exec method will be called with the `command` and the `args`.</span>&#x000A;  <span class="c1"># This is where you should handle all logic and functionality</span>&#x000A;  <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>&#x000A;    <span class="nb">puts</span> <span class="s2">"You called "</span> <span class="o">+</span> <span class="n">command</span> <span class="o">+</span> <span class="s2">" with args: "</span> <span class="o">+</span> <span class="n">args</span><span class="p">.</span><span class="nf">inspect</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+or
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">MyCommand</span>&#x000A;  <span class="c1"># Register this class as a handler for the `my_command` command</span>&#x000A;  <span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">command</span><span class="p">(</span><span class="s1">'my_command'</span><span class="p">,</span> <span class="nb">self</span><span class="p">)</span>&#x000A;&#x000A;  <span class="c1"># The exec method will be called with the `command_name` and the `args`.</span>&#x000A;  <span class="c1"># This is where you should handle all logic and functionality</span>&#x000A;  <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">command_name</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>&#x000A;    <span class="nb">puts</span> <span class="s2">"You called "</span> <span class="o">+</span> <span class="n">command_name</span> <span class="o">+</span> <span class="s2">" with args: "</span> <span class="o">+</span> <span class="n">args</span><span class="p">.</span><span class="nf">inspect</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<p>
+These two elements are important in order for a command to register in Bundler:
+</p>
+<ol>
+<li>
+<code>Bundler::Plugin::API.command(COMMAND_NAME, CLASS)</code> or <code>command 'COMMAND_NAME'</code> is called, depending on the method used (see examples above)
+</li>
+<li>
+The class defines the instance method <code>exec(command_name, args)</code>
+</li>
+</ol>
+<h3 id='developing_your_plugin_hooks'>
+4. Using Bundler hooks
+</h3>
+<p>
+To interface with various parts of Bundler, you can use a hook. Hooks will let you inject some functionality at specific events by registering to listen for specific things to happen. To listen to an event, you need to add a hook for it and provide a block.
+</p>
+<p>
+For example, for a <code>Bundler::Plugin::Events::GEM_BEFORE_INSTALL_ALL</code> hook you must give a block that has an argument for an Array of <code>Bundler::Dependency</code> objects:
+</p>
+<div class="highlight"><pre class="highlight ruby"><code><span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="p">.</span><span class="nf">add_hook</span><span class="p">(</span><span class="s1">'before-install-all'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">dependencies</span><span class="o">|</span>&#x000A;  <span class="c1"># Do something with the dependencies</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<h3 id='developing_your_plugin_sources'>
+5. Developing a source plugin
+</h3>
+<p>
+A source plugin allows you to specify more possible installation sources to use within Bundler. For example, let's say you want to install gems from Amazon S3. This can be done by building a plugin.
+</p>
+<p>
+It is recommended to get familiar with the API for <code>Bundler::Plugin::API::Source</code> which is available
+<a href="https://www.rubydoc.info/github/bundler/bundler/Bundler/Plugin/API/Source">on rubydoc.info</a>
+or
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/plugin/api/source.rb">in the source code.</a>
+</p>
+<p>
+The basic overview of the source plugin is that you must subclass <code>Bundler::Plugin::API::Source</code> and override a number of methods. Those methods are indicated in the docs/source code linked above.
+</p>
+<p>
+Bundler uses the source plugin API to provide interfaces for RubyGems, Git, and path-based gems. The source code for these pieces may prove useful in understanding the API:
+</p>
+<ul>
+<li>
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/rubygems.rb">RubyGems source</a>
+</li>
+<li>
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/git.rb">git source</a>
+</li>
+<li>
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/path.rb">path source</a>
+</li>
+</ul>
+<h3 id='running_your_plugin_locally'>
+6. Running your plugin locally
+</h3>
+<p>
+To install and run your plugin locally, you can run <code>bundler plugin install copycat --source file://PATH_TO_GEM</code>
+</p>
+<h3 id='deploying_your_plugin'>
+7. Deploying your plugin
+</h3>
+<p>
+Deploy your plugin to RubyGems so others can install it. For instructions on deploying to RubyGems, visit
+<a href="/v2.0/guides/creating_gem.html#releasing-the-gem">this guide.</a>
+</p>
+<p>
+Although plugins can be installed from a git branch, it's recommended to install plugins directly from RubyGems.
+</p>
+</div>
+<h2 id='examples'>
+Example Plugins
+</h2>
+<div class='contents'>
+<div class='bullet'>
+<div class='description'></div>
+Here are a few plugins that you can use as examples and inspiration:
+<ul>
+<li>
+For a plugin that adds a command, take a look at
+<a href="https://github.com/kddeisz/bundler-console">kddeisz/bundler-console</a>
+</li>
+<li>
+For a plugin that makes use of hooks, take a look at
+<a href="https://github.com/jules2689/extended_bundler-errors">jules2689/extended_bundler-errors</a>
+</li>
+<li>
+For an example of source plugin, take a look at Bundler's implementations for
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/rubygems.rb">the RubyGems source,</a>
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/git.rb">the git source,</a>
+and
+<a href="https://github.com/bundler/bundler/blob/master/lib/bundler/source/path.rb">the path source</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v2.0/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.0/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler-site/blob/master/source/v2.0/guides/bundler_plugins.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<style>
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+</style>

@@ -5,16 +5,96 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2018-12-08T00:00:00+00:00</updated>
+  <updated>2019-01-03T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Announcing Bundler 2.0</title>
+    <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
+    <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
+    <published>2019-01-03T00:00:00+00:00</published>
+    <updated>2019-01-03T05:40:06+00:00</updated>
+    <author>
+      <name>Colby Swandale</name>
+    </author>
+    <content type="html">&lt;p&gt;The Bundler team is excited to announce the release of Bundler 2.0 🎉!&lt;/p&gt;
+
+&lt;p&gt;This release focuses on removing offical support of versions of Ruby and RubyGems that have reached their end of life, with a few other small breaking changes.&lt;/p&gt;
+
+&lt;p&gt;The following is the full list of changes to Bundler 2:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Removed support for Ruby &amp;lt; 2.3&lt;/li&gt;
+  &lt;li&gt;Removed support for RubyGems &amp;lt; 3.0.0&lt;/li&gt;
+  &lt;li&gt;Changed the &lt;code&gt;github: 'some/repo'&lt;/code&gt; gem source to use the  &lt;code&gt;https&lt;/code&gt; schema by default&lt;/li&gt;
+  &lt;li&gt;Errors/warnings will now print to &lt;code&gt;STDERR&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Bundler now auto-switches between version 1 and 2 based on the Lockfile&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="what-is-version-autoswitching"&gt;What is version autoswitching?&lt;/h3&gt;
+
+&lt;p&gt;Version autoswitching means that Bundler will automatically run the correct 1.x or 2.x version based on your lockfile. This means you can have both Bundler 1.17.3 and Bundler 2.0.0 installed at the same time, and each application will use the version saved in your lockfile when you run &lt;code&gt;bundle install&lt;/code&gt;. Every existing application should continue to work using Bundler 1, even after you have installed Bundler 2 (or even Bundler 3 or 4, later on).&lt;/p&gt;
+
+&lt;h3 id="installing-bundler-2"&gt;Installing Bundler 2&lt;/h3&gt;
+
+&lt;p&gt;Bundler 2 requires RubyGems 3.0, so install that first by running:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gem update --system
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, install Bundler 2 by running:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gem install bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="why-does-bundler-depend-on-rubygems-30"&gt;Why does Bundler depend on RubyGems 3.0?&lt;/h3&gt;
+
+&lt;p&gt;To make Bundler’s user experience when it auto-switches between versions as smooth as possible, Bundler depends on particular features in RubyGems that were publicly introduced in RubyGems v3.0.&lt;/p&gt;
+
+&lt;p&gt;RubyGems is able to be upgraded to newest release using the &lt;code&gt;gem update --system&lt;/code&gt; command. See &lt;a href="https://guides.rubygems.org/command-reference/#gem-update"&gt;RubyGems Guides&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h3 id="upgrading-existing-applications-to-use-bundler-2"&gt;Upgrading existing applications to use Bundler 2&lt;/h3&gt;
+
+&lt;p&gt;Bundler will never automatically upgrade an application to Bundler 2 without your explicit permission. If you are ready to upgrade an existing application to use Bundler 2, you can run this command and then commit your lockfile:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bundle update --bundler
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="upgrading-new-applications-to-use-bundler-2"&gt;Upgrading new applications to use Bundler 2&lt;/h3&gt;
+
+&lt;p&gt;If you have Bundler 2 installed, new applications will use Bundler 2 automatically. After you run &lt;code&gt;bundle install&lt;/code&gt;, you can check the lockfile to see which version of Bundler your application will use.&lt;/p&gt;
+
+&lt;h3 id="can-i-use-bundler-2-on-heroku"&gt;Can I use Bundler 2 on Heroku?&lt;/h3&gt;
+
+&lt;p&gt;Yes you can! The Heroku team has said they plan to upgrade the official Ruby buildpack to Bundler 2, but it will take some time. They have a zillion users, so that totally makes sense.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, you can use our &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;buildpack&lt;/a&gt;, which is exactly the same as Heroku’s but with Bundler 2, by running:&lt;/p&gt;
+
+&lt;p&gt;Note: Support for the Bundler 2 buildpack is limited. You are welcome to report issues at the &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;bundler/heroku-buildpack-bundler2&lt;/a&gt; repository, but we can’t guarantee solutions.&lt;/p&gt;
+
+&lt;h3 id="major-releases-going-forward"&gt;Major releases going forward&lt;/h3&gt;
+
+&lt;p&gt;With the release of Bundler 2, the core team now kicks off a new release schedule for Bundler: we’re going to aim for one major version release per year, so we can drop support for older Ruby and RubyGems versions around the same time that the Ruby core team does. Being able to stop supporting Ruby 1.8.7 is a huge relief!&lt;/p&gt;
+
+&lt;h3 id="more-information"&gt;More Information&lt;/h3&gt;
+
+&lt;p&gt;If you have more questions, or want more information about Bundler 2, read our &lt;a href="https://bundler.io/guides/bundler_2_upgrade.html"&gt;detailed Bundler 2 guide&lt;/a&gt; for the full scoop.&lt;/p&gt;
+
+&lt;h3 id="i-tried-to-upgrade-but-something-is-broken"&gt;I tried to upgrade but something is broken!&lt;/h3&gt;
+
+&lt;p&gt;Oh no! Sorry about that. Please head over to our &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;troubleshooting guide&lt;/a&gt; and open a ticket so that we can try to fix your problem ASAP.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;We hope you enjoy this release. Happy Bundling!&lt;/p&gt;
+
+&lt;p&gt;— Colby and the Bundler team&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>November 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
+    <updated>2019-01-03T05:40:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -36,7 +116,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
     <published>2018-11-05T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
+    <updated>2019-01-03T05:40:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -56,7 +136,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
     <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
     <published>2018-11-04T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
+    <updated>2019-01-03T05:40:06+00:00</updated>
     <author>
       <name>Colby Swandale &amp; André Arko</name>
     </author>
@@ -86,7 +166,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
     <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
     <published>2018-10-25T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
+    <updated>2019-01-03T05:40:06+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -157,7 +237,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
     <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
+    <updated>2019-01-03T05:40:06+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -168,30 +248,6 @@ json was removed.
 &lt;p&gt;We also decided how to drop backwards compatibility with old Ruby versions, allowing us to resume work to merge Bundler into Ruby 2.6. We may or may not complete everything in time for the Ruby 2.6 release at Christmas, but we’re still working towards it!&lt;/p&gt;
 
 &lt;p&gt;In September, Bundler gained 73 new commits, contributed by 12 authors. There were 419 additions and 151 deletions across 40 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>August 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/09/10/august-bundler-update.html"/>
-    <id>http://bundler.io/blog/2018/09/10/august-bundler-update.html</id>
-    <published>2018-09-10T00:00:00+00:00</published>
-    <updated>2018-12-18T06:36:30+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the August monthly update!&lt;/p&gt;
-
-&lt;p&gt;With the help of &lt;a href="http://github.com/eanlain"&gt;@eanlain&lt;/a&gt;, we shipped a new guide: &lt;a href="https://bundler.io/v1.16/guides/bundler_docker_guide.html"&gt;“How to use Bundler with Docker”&lt;/a&gt;. We also dramatically improved error messages when version requirements conflict, shipped a playbook for adding or removing core team members, and fixed some issues handling gemspecs with non-ASCII characters. We also merged a fix that could cause Bundler to &lt;a href="https://github.com/bundler/bundler/pull/6675"&gt;fail when trying to install a gem that has had a version yanked recently&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;On top of that code work, we also added two new contributors to &lt;a href="https://bundler.io/contributors.html"&gt;the Bundler team&lt;/a&gt;! Welcome to &lt;a href="https://www.twitter.com/radiomorillo"&gt;Stephanie Morillo&lt;/a&gt; and &lt;a href="https://twitter.com/greybaker"&gt;Grey Baker&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Stephanie has helped create new Bundler docs (like the troubleshooting RubyGems and Bundler TLS/SSL issues guide), and update existing ones. She’s also responsible for updating the Bundler contributor guidelines and trying to make Bundler docs more accessible to new contributors. We’re excited to have her on board, and looking forward to working with her more in the future.&lt;/p&gt;
-
-&lt;p&gt;Grey is the author of &lt;a href="https://dependabot.com"&gt;Dependabot&lt;/a&gt;, and has regularly contributed to &lt;a href="https://github.com/cocoapods/molinillo"&gt;Molinillo&lt;/a&gt;, the core resolver library that powers Bundler, RubyGems, and Cocoapods.&lt;/p&gt;
-
-&lt;p&gt;In total this month, Bundler gained 58 new commits, contributed by 10 authors. There were 334 additions and 54 deletions across 30 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>

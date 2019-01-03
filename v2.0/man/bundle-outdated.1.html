@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: bundle outdated
+</title>
+
+<link href='/man/bundle-outdated.1.html' rel='canonical'>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container'>
+<div id='wrapper'>
+<div id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v2.0/man/bundle-outdated.1.html'>
+v2.0
+</option>
+<option value='/v1.17/man/bundle-outdated.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle-outdated.1.html'>
+v1.16
+</option>
+<option value='/v1.15/man/bundle-outdated.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle-outdated.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle-install.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle-install.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle-install.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle-install.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle-install.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle-install.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle-install.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle-install.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle-install.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle-install.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle-install.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle-install.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle-install.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.0/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='commands contents' id='page-content-wrapper'>
+
+  <div class="mp" id="man">
+
+  
+
+  
+
+  <h2 id="NAME">bundle outdated</h2>
+<p class="man-name">
+  <code>bundle-outdated</code> - <span class="man-whatis">List installed gems with newer versions available</span>
+</p>
+
+
+
+<pre><code>bundle outdated</code> [GEM] [--local]&#x000A;                        [--pre]&#x000A;                        [--source]&#x000A;                        [--strict]&#x000A;                        [--parseable | --porcelain]&#x000A;                        [--group=GROUP]&#x000A;                        [--groups]&#x000A;                        [--update-strict]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--filter-major]&#x000A;                        [--filter-minor]&#x000A;                        [--filter-patch]&#x000A;                        [--only-explicit]</pre>
+
+<h2 id="DESCRIPTION">Description</h2>
+
+<p>Outdated lists the names and versions of gems that have a newer version available
+in the given source. Calling outdated with [GEM [GEM]] will only check for newer
+versions of the given gems. Prerelease gems are ignored by default. If your gems
+are up to date, Bundler will exit with a status of 0. Otherwise, it will exit 1.</p>
+
+<h2 id="OPTIONS">Options</h2>
+
+<dl>
+<dt class="flush"><code>--local</code></dt>
+<dd><p>Do not attempt to fetch gems remotely and use the gem cache instead.</p></dd>
+<dt class="flush"><code>--pre</code></dt>
+<dd><p>Check for newer pre-release gems.</p></dd>
+<dt><code>--source</code></dt>
+<dd><p>Check against a specific source.</p></dd>
+<dt><code>--strict</code></dt>
+<dd><p>Only list newer versions allowed by your Gemfile requirements.</p></dd>
+<dt>
+<code>--parseable</code>, <code>--porcelain</code>
+</dt>
+<dd><p> Use minimal formatting for more parseable output.</p></dd>
+<dt class="flush"><code>--group</code></dt>
+<dd><p>List gems from a specific group.</p></dd>
+<dt><code>--groups</code></dt>
+<dd><p>List gems organized by groups.</p></dd>
+<dt><code>--update-strict</code></dt>
+<dd><p>Strict conservative resolution, do not allow any gem to be updated past latest --patch | --minor| --major.</p></dd>
+<dt class="flush"><code>--minor</code></dt>
+<dd><p>Prefer updating only to next minor version.</p></dd>
+<dt class="flush"><code>--major</code></dt>
+<dd><p>Prefer updating to next major version (default).</p></dd>
+<dt class="flush"><code>--patch</code></dt>
+<dd><p>Prefer updating only to next patch version.</p></dd>
+<dt><code>--filter-major</code></dt>
+<dd><p>Only list major newer versions.</p></dd>
+<dt><code>--filter-minor</code></dt>
+<dd><p>Only list minor newer versions.</p></dd>
+<dt><code>--filter-patch</code></dt>
+<dd><p>Only list patch newer versions.</p></dd>
+<dt><code>--only-explicit</code></dt>
+<dd><p>Only list gems specified in your Gemfile, not their dependencies.</p></dd>
+</dl>
+
+
+<h2 id="PATCH-LEVEL-OPTIONS">Patch Level Options</h2>
+
+<p>See <a href="bundle-update.1.html">bundle update(1)</a> for details.</p>
+
+<p>One difference between the patch level options in <code>bundle update</code> and here is the <code>--strict</code> option.
+<code>--strict</code> was already an option on outdated before the patch level options were added. <code>--strict</code>
+wasn't altered, and the <code>--update-strict</code> option on <code>outdated</code> reflects what <code>--strict</code> does on
+<code>bundle update</code>.</p>
+
+<h2 id="FILTERING-OUTPUT">Filtering Output</h2>
+
+<p>The 3 filtering options do not affect the resolution of versions, merely what versions are shown
+in the output.</p>
+
+<p>If the regular output shows the following:</p>
+
+<pre><code>* faker (newest 1.6.6, installed 1.6.5, requested ~&gt; 1.4) in groups "development, test"&#x000A;* hashie (newest 3.4.6, installed 1.2.0, requested = 1.2.0) in groups "default"&#x000A;* headless (newest 2.3.1, installed 2.2.3) in groups "test"&#x000A;</code></pre>
+
+<p><code>--filter-major</code> would only show:</p>
+
+<pre><code>* hashie (newest 3.4.6, installed 1.2.0, requested = 1.2.0) in groups "default"&#x000A;</code></pre>
+
+<p><code>--filter-minor</code> would only show:</p>
+
+<pre><code>* headless (newest 2.3.1, installed 2.2.3) in groups "test"&#x000A;</code></pre>
+
+<p><code>--filter-patch</code> would only show:</p>
+
+<pre><code>* faker (newest 1.6.6, installed 1.6.5, requested ~&gt; 1.4) in groups "development, test"&#x000A;</code></pre>
+
+<p>Filter options can be combined. <code>--filter-minor</code> and <code>--filter-patch</code> would show:</p>
+
+<pre><code>* faker (newest 1.6.6, installed 1.6.5, requested ~&gt; 1.4) in groups "development, test"&#x000A;* headless (newest 2.3.1, installed 2.2.3) in groups "test"&#x000A;</code></pre>
+
+<p>Combining all three <code>filter</code> options would be the same result as providing none of them.</p>
+
+
+  
+
+  </div>
+
+</div>
+<div class='clearfix'></div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v2.0/man/bundle-outdated.1.html'>
+v2.0
+</option>
+<option value='/v1.17/man/bundle-outdated.1.html'>
+v1.17
+</option>
+<option value='/v1.16/man/bundle-outdated.1.html'>
+v1.16
+</option>
+<option value='/v1.15/man/bundle-outdated.1.html'>
+v1.15
+</option>
+<option value='/v1.14/man/bundle-outdated.1.html'>
+v1.14
+</option>
+<option value='/v1.13/man/bundle-install.1.html'>
+v1.13
+</option>
+<option value='/v1.12/man/bundle-install.1.html'>
+v1.12
+</option>
+<option value='/v1.11/man/bundle-install.1.html'>
+v1.11
+</option>
+<option value='/v1.10/man/bundle-install.1.html'>
+v1.10
+</option>
+<option value='/v1.9/man/bundle-install.1.html'>
+v1.9
+</option>
+<option value='/v1.8/man/bundle-install.1.html'>
+v1.8
+</option>
+<option value='/v1.7/man/bundle-install.1.html'>
+v1.7
+</option>
+<option value='/v1.6/man/bundle-install.1.html'>
+v1.6
+</option>
+<option value='/v1.5/man/bundle-install.1.html'>
+v1.5
+</option>
+<option value='/v1.3/man/bundle-install.1.html'>
+v1.3
+</option>
+<option value='/v1.2/man/bundle-install.1.html'>
+v1.2
+</option>
+<option value='/v1.1/man/bundle-install.1.html'>
+v1.1
+</option>
+<option value='/v1.0/man/bundle-install.1.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.0/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $('.version-selects').change(function(e) {
+    document.location.href = $(e.target).find(":selected").val();
+  });
+  $(document).ready(function() {
+    anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
+      '#page-content-wrapper h4, #page-content-wrapper h5');
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler/blob/master/man/bundle-outdated.ronn">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<style>
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+</style>

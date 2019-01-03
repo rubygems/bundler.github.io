@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: bundle update
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container'>
+<div id='wrapper'>
+<div id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v2.0/bundle_update.html'>
+v2.0
+</option>
+<option value='/v1.17/bundle_update.html'>
+v1.17
+</option>
+<option value='/v1.16/bundle_update.html'>
+v1.16
+</option>
+<option value='/v1.15/bundle_update.html'>
+v1.15
+</option>
+<option value='/v1.14/bundle_update.html'>
+v1.14
+</option>
+<option value='/v1.13/bundle_update.html'>
+v1.13
+</option>
+<option value='/v1.12/bundle_update.html'>
+v1.12
+</option>
+<option value='/v1.11/bundle_update.html'>
+v1.11
+</option>
+<option value='/v1.10/bundle_update.html'>
+v1.10
+</option>
+<option value='/v1.9/bundle_update.html'>
+v1.9
+</option>
+<option value='/v1.8/bundle_update.html'>
+v1.8
+</option>
+<option value='/v1.7/bundle_update.html'>
+v1.7
+</option>
+<option value='/v1.6/bundle_update.html'>
+v1.6
+</option>
+<option value='/v1.5/bundle_update.html'>
+v1.5
+</option>
+<option value='/v1.3/bundle_update.html'>
+v1.3
+</option>
+<option value='/v1.2/bundle_update.html'>
+v1.2
+</option>
+<option value='/v1.1/bundle_update.html'>
+v1.1
+</option>
+<option value='/v1.0/bundle_update.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='commands contents' id='page-content-wrapper'>
+
+  <div class="mp" id="man">
+
+  
+
+  
+
+  <h2 id="NAME">bundle update</h2>
+<p class="man-name">
+  <code>bundle-update</code> - <span class="man-whatis">Update your gems to the latest available versions</span>
+</p>
+
+
+
+<pre><code>bundle update</code> <var>*gems</var> [--all]&#x000A;                        [--group=NAME]&#x000A;                        [--source=NAME]&#x000A;                        [--local]&#x000A;                        [--ruby]&#x000A;                        [--bundler[=VERSION]]&#x000A;                        [--full-index]&#x000A;                        [--jobs=JOBS]&#x000A;                        [--quiet]&#x000A;                        [--force]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--strict]&#x000A;                        [--conservative]</pre>
+
+<h2 id="DESCRIPTION">Description</h2>
+
+<p>Update the gems specified (all gems, if <code>--all</code> flag is used), ignoring
+the previously installed gems specified in the <code>Gemfile.lock</code>. In
+general, you should use <a href="bundle-install.1.html">bundle install(1)</a> to install the same exact
+gems and versions across machines.</p>
+
+<p>You would use <code>bundle update</code> to explicitly update the version of a
+gem.</p>
+
+<h2 id="OPTIONS">Options</h2>
+
+<dl>
+<dt class="flush"><code>--all</code></dt>
+<dd><p>Update all gems specified in Gemfile.</p></dd>
+<dt>
+<code>--group=&lt;name&gt;</code>, <code>-g=[&lt;name&gt;]</code>
+</dt>
+<dd><p>Only update the gems in the specified group. For instance, you can update all gems
+in the development group with <code>bundle update --group development</code>. You can also
+call <code>bundle update rails --group test</code> to update the rails gem and all gems in
+the test group, for example.</p></dd>
+<dt><code>--source=&lt;name&gt;</code></dt>
+<dd><p>The name of a <code>:git</code> or <code>:path</code> source used in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>. For
+instance, with a <code>:git</code> source of <code>http://github.com/rails/rails.git</code>,
+you would call <code>bundle update --source rails</code></p></dd>
+<dt class="flush"><code>--local</code></dt>
+<dd><p>Do not attempt to fetch gems remotely and use the gem cache instead.</p></dd>
+<dt class="flush"><code>--ruby</code></dt>
+<dd><p>Update the locked version of Ruby to the current version of Ruby.</p></dd>
+<dt><code>--bundler</code></dt>
+<dd><p>Update the locked version of bundler to the invoked bundler version.</p></dd>
+<dt><code>--full-index</code></dt>
+<dd><p>Fall back to using the single-file index of all gems.</p></dd>
+<dt>
+<code>--jobs=[&lt;number&gt;]</code>, <code>-j[&lt;number&gt;]</code>
+</dt>
+<dd><p>Specify the number of jobs to run in parallel. The default is <code>1</code>.</p></dd>
+<dt><code>--retry=[&lt;number&gt;]</code></dt>
+<dd><p>Retry failed network or git requests for <var>number</var> times.</p></dd>
+<dt class="flush"><code>--quiet</code></dt>
+<dd><p>Only output warnings and errors.</p></dd>
+<dt class="flush"><code>--force</code></dt>
+<dd><p>Force downloading every gem. <code>--redownload</code> is an alias of this option.</p></dd>
+<dt class="flush"><code>--patch</code></dt>
+<dd><p>Prefer updating only to next patch version.</p></dd>
+<dt class="flush"><code>--minor</code></dt>
+<dd><p>Prefer updating only to next minor version.</p></dd>
+<dt class="flush"><code>--major</code></dt>
+<dd><p>Prefer updating to next major version (default).</p></dd>
+<dt><code>--strict</code></dt>
+<dd><p>Do not allow any gem to be updated past latest <code>--patch</code> | <code>--minor</code> | <code>--major</code>.</p></dd>
+<dt><code>--conservative</code></dt>
+<dd><p>Use bundle install conservative update behavior and do not allow shared dependencies to be updated.</p></dd>
+</dl>
+
+
+<h2 id="UPDATING-ALL-GEMS">Updating All Gems</h2>
+
+<p>If you run <code>bundle update --all</code>, bundler will ignore
+any previously installed gems and resolve all dependencies again
+based on the latest versions of all gems available in the sources.</p>
+
+<p>Consider the following <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>:</p>
+
+<pre><code>source "https://rubygems.org"&#x000A;&#x000A;gem "rails", "3.0.0.rc"&#x000A;gem "nokogiri"&#x000A;</code></pre>
+
+<p>When you run <a href="bundle-install.1.html">bundle install(1)</a> the first time, bundler will resolve
+all of the dependencies, all the way down, and install what you need:</p>
+
+<pre><code>Fetching gem metadata from https://rubygems.org/.........&#x000A;Resolving dependencies...&#x000A;Installing builder 2.1.2&#x000A;Installing abstract 1.0.0&#x000A;Installing rack 1.2.8&#x000A;Using bundler 1.7.6&#x000A;Installing rake 10.4.0&#x000A;Installing polyglot 0.3.5&#x000A;Installing mime-types 1.25.1&#x000A;Installing i18n 0.4.2&#x000A;Installing mini_portile 0.6.1&#x000A;Installing tzinfo 0.3.42&#x000A;Installing rack-mount 0.6.14&#x000A;Installing rack-test 0.5.7&#x000A;Installing treetop 1.4.15&#x000A;Installing thor 0.14.6&#x000A;Installing activesupport 3.0.0.rc&#x000A;Installing erubis 2.6.6&#x000A;Installing activemodel 3.0.0.rc&#x000A;Installing arel 0.4.0&#x000A;Installing mail 2.2.20&#x000A;Installing activeresource 3.0.0.rc&#x000A;Installing actionpack 3.0.0.rc&#x000A;Installing activerecord 3.0.0.rc&#x000A;Installing actionmailer 3.0.0.rc&#x000A;Installing railties 3.0.0.rc&#x000A;Installing rails 3.0.0.rc&#x000A;Installing nokogiri 1.6.5&#x000A;&#x000A;Bundle complete! 2 Gemfile dependencies, 26 gems total.&#x000A;Use `bundle show [gemname]` to see where a bundled gem is installed.&#x000A;</code></pre>
+
+<p>As you can see, even though you have two gems in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, your application
+needs 26 different gems in order to run. Bundler remembers the exact versions
+it installed in <code>Gemfile.lock</code>. The next time you run <a href="bundle-install.1.html">bundle install(1)</a>, bundler skips
+the dependency resolution and installs the same gems as it installed last time.</p>
+
+<p>After checking in the <code>Gemfile.lock</code> into version control and cloning it on another
+machine, running <a href="bundle-install.1.html">bundle install(1)</a> will <em>still</em> install the gems that you installed
+last time. You don't need to worry that a new release of <code>erubis</code> or <code>mail</code> changes
+the gems you use.</p>
+
+<p>However, from time to time, you might want to update the gems you are using to the
+newest versions that still match the gems in your <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>.</p>
+
+<p>To do this, run <code>bundle update --all</code>, which will ignore the <code>Gemfile.lock</code>, and resolve
+all the dependencies again. Keep in mind that this process can result in a significantly
+different set of the 25 gems, based on the requirements of new gems that the gem
+authors released since the last time you ran <code>bundle update --all</code>.</p>
+
+<h2 id="UPDATING-A-LIST-OF-GEMS">Updating A List Of Gems</h2>
+
+<p>Sometimes, you want to update a single gem in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, and leave the rest of the
+gems that you specified locked to the versions in the <code>Gemfile.lock</code>.</p>
+
+<p>For instance, in the scenario above, imagine that <code>nokogiri</code> releases version <code>1.4.4</code>, and
+you want to update it <em>without</em> updating Rails and all of its dependencies. To do this,
+run <code>bundle update nokogiri</code>.</p>
+
+<p>Bundler will update <code>nokogiri</code> and any of its dependencies, but leave alone Rails and
+its dependencies.</p>
+
+<h2 id="OVERLAPPING-DEPENDENCIES">Overlapping Dependencies</h2>
+
+<p>Sometimes, multiple gems declared in your <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> are satisfied by the same
+second-level dependency. For instance, consider the case of <code>thin</code> and
+<code>rack-perftools-profiler</code>.</p>
+
+<pre><code>source "https://rubygems.org"&#x000A;&#x000A;gem "thin"&#x000A;gem "rack-perftools-profiler"&#x000A;</code></pre>
+
+<p>The <code>thin</code> gem depends on <code>rack &gt;= 1.0</code>, while <code>rack-perftools-profiler</code> depends
+on <code>rack ~&gt; 1.0</code>. If you run bundle install, you get:</p>
+
+<pre><code>Fetching source index for https://rubygems.org/&#x000A;Installing daemons (1.1.0)&#x000A;Installing eventmachine (0.12.10) with native extensions&#x000A;Installing open4 (1.0.1)&#x000A;Installing perftools.rb (0.4.7) with native extensions&#x000A;Installing rack (1.2.1)&#x000A;Installing rack-perftools_profiler (0.0.2)&#x000A;Installing thin (1.2.7) with native extensions&#x000A;Using bundler (1.0.0.rc.3)&#x000A;</code></pre>
+
+<p>In this case, the two gems have their own set of dependencies, but they share
+<code>rack</code> in common. If you run <code>bundle update thin</code>, bundler will update <code>daemons</code>,
+<code>eventmachine</code> and <code>rack</code>, which are dependencies of <code>thin</code>, but not <code>open4</code> or
+<code>perftools.rb</code>, which are dependencies of <code>rack-perftools_profiler</code>. Note that
+<code>bundle update thin</code> will update <code>rack</code> even though it's <em>also</em> a dependency of
+<code>rack-perftools_profiler</code>.</p>
+
+<p>In short, by default, when you update a gem using <code>bundle update</code>, bundler will
+update all dependencies of that gem, including those that are also dependencies
+of another gem.</p>
+
+<p>To prevent updating shared dependencies, prior to version 1.14 the only option
+was the <code>CONSERVATIVE UPDATING</code> behavior in <a href="bundle-install.1.html">bundle install(1)</a>:</p>
+
+<p>In this scenario, updating the <code>thin</code> version manually in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>,
+and then running <a href="bundle-install.1.html">bundle install(1)</a> will only update <code>daemons</code> and <code>eventmachine</code>,
+but not <code>rack</code>. For more information, see the <code>CONSERVATIVE UPDATING</code> section
+of <a href="bundle-install.1.html">bundle install(1)</a>.</p>
+
+<p>Starting with 1.14, specifying the <code>--conservative</code> option will also prevent shared
+dependencies from being updated.</p>
+
+<h2 id="PATCH-LEVEL-OPTIONS">Patch Level Options</h2>
+
+<p>Version 1.14 introduced 4 patch-level options that will influence how gem
+versions are resolved. One of the following options can be used: <code>--patch</code>,
+<code>--minor</code> or <code>--major</code>. <code>--strict</code> can be added to further influence resolution.</p>
+
+<dl>
+<dt class="flush"><code>--patch</code></dt>
+<dd><p>Prefer updating only to next patch version.</p></dd>
+<dt class="flush"><code>--minor</code></dt>
+<dd><p>Prefer updating only to next minor version.</p></dd>
+<dt class="flush"><code>--major</code></dt>
+<dd><p>Prefer updating to next major version (default).</p></dd>
+<dt><code>--strict</code></dt>
+<dd><p>Do not allow any gem to be updated past latest <code>--patch</code> | <code>--minor</code> | <code>--major</code>.</p></dd>
+</dl>
+
+
+<p>When Bundler is resolving what versions to use to satisfy declared
+requirements in the Gemfile or in parent gems, it looks up all
+available versions, filters out any versions that don't satisfy
+the requirement, and then, by default, sorts them from newest to
+oldest, considering them in that order.</p>
+
+<p>Providing one of the patch level options (e.g. <code>--patch</code>) changes the
+sort order of the satisfying versions, causing Bundler to consider the
+latest <code>--patch</code> or <code>--minor</code> version available before other versions.
+Note that versions outside the stated patch level could still be
+resolved to if necessary to find a suitable dependency graph.</p>
+
+<p>For example, if gem 'foo' is locked at 1.0.2, with no gem requirement
+defined in the Gemfile, and versions 1.0.3, 1.0.4, 1.1.0, 1.1.1, 2.0.0
+all exist, the default order of preference by default (<code>--major</code>) will
+be "2.0.0, 1.1.1, 1.1.0, 1.0.4, 1.0.3, 1.0.2".</p>
+
+<p>If the <code>--patch</code> option is used, the order of preference will change to
+"1.0.4, 1.0.3, 1.0.2, 1.1.1, 1.1.0, 2.0.0".</p>
+
+<p>If the <code>--minor</code> option is used, the order of preference will change to
+"1.1.1, 1.1.0, 1.0.4, 1.0.3, 1.0.2, 2.0.0".</p>
+
+<p>Combining the <code>--strict</code> option with any of the patch level options
+will remove any versions beyond the scope of the patch level option,
+to ensure that no gem is updated that far.</p>
+
+<p>To continue the previous example, if both <code>--patch</code> and <code>--strict</code>
+options are used, the available versions for resolution would be
+"1.0.4, 1.0.3, 1.0.2". If <code>--minor</code> and <code>--strict</code> are used, it would
+be "1.1.1, 1.1.0, 1.0.4, 1.0.3, 1.0.2".</p>
+
+<p>Gem requirements as defined in the Gemfile will still be the first
+determining factor for what versions are available. If the gem
+requirement for <code>foo</code> in the Gemfile is '~&gt; 1.0', that will accomplish
+the same thing as providing the <code>--minor</code> and <code>--strict</code> options.</p>
+
+<h2 id="PATCH-LEVEL-EXAMPLES">Patch Level Examples</h2>
+
+<p>Given the following gem specifications:</p>
+
+<pre><code>foo 1.4.3, requires: ~&gt; bar 2.0&#x000A;foo 1.4.4, requires: ~&gt; bar 2.0&#x000A;foo 1.4.5, requires: ~&gt; bar 2.1&#x000A;foo 1.5.0, requires: ~&gt; bar 2.1&#x000A;foo 1.5.1, requires: ~&gt; bar 3.0&#x000A;bar with versions 2.0.3, 2.0.4, 2.1.0, 2.1.1, 3.0.0&#x000A;</code></pre>
+
+<p>Gemfile:</p>
+
+<pre><code>gem 'foo'&#x000A;</code></pre>
+
+<p>Gemfile.lock:</p>
+
+<pre><code>foo (1.4.3)&#x000A;  bar (~&gt; 2.0)&#x000A;bar (2.0.3)&#x000A;</code></pre>
+
+<p>Cases:</p>
+
+<pre><code>#  Command Line                     Result&#x000A;------------------------------------------------------------&#x000A;1  bundle update --patch            'foo 1.4.5', 'bar 2.1.1'&#x000A;2  bundle update --patch foo        'foo 1.4.5', 'bar 2.1.1'&#x000A;3  bundle update --minor            'foo 1.5.1', 'bar 3.0.0'&#x000A;4  bundle update --minor --strict   'foo 1.5.0', 'bar 2.1.1'&#x000A;5  bundle update --patch --strict   'foo 1.4.4', 'bar 2.0.4'&#x000A;</code></pre>
+
+<p>In case 1, bar is upgraded to 2.1.1, a minor version increase, because
+the dependency from foo 1.4.5 required it.</p>
+
+<p>In case 2, only foo is requested to be unlocked, but bar is also
+allowed to move because it's not a declared dependency in the Gemfile.</p>
+
+<p>In case 3, bar goes up a whole major release, because a minor increase
+is preferred now for foo, and when it goes to 1.5.1, it requires 3.0.0
+of bar.</p>
+
+<p>In case 4, foo is preferred up to a minor version, but 1.5.1 won't work
+because the --strict flag removes bar 3.0.0 from consideration since
+it's a major increment.</p>
+
+<p>In case 5, both foo and bar have any minor or major increments removed
+from consideration because of the --strict flag, so the most they can
+move is up to 1.4.4 and 2.0.4.</p>
+
+<h2 id="RECOMMENDED-WORKFLOW">Recommended Workflow</h2>
+
+<p>In general, when working with an application managed with bundler, you should
+use the following workflow:</p>
+
+<ul>
+<li>
+<p>After you create your <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> for the first time, run</p>
+
+<p>  $ bundle install</p>
+</li>
+<li>
+<p>Check the resulting <code>Gemfile.lock</code> into version control</p>
+
+<p>  $ git add Gemfile.lock</p>
+</li>
+<li>
+<p>When checking out this repository on another development machine, run</p>
+
+<p>  $ bundle install</p>
+</li>
+<li>
+<p>When checking out this repository on a deployment machine, run</p>
+
+<p>  $ bundle install --deployment</p>
+</li>
+<li>
+<p>After changing the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a> to reflect a new or update dependency, run</p>
+
+<p>  $ bundle install</p>
+</li>
+<li>
+<p>Make sure to check the updated <code>Gemfile.lock</code> into version control</p>
+
+<p>  $ git add Gemfile.lock</p>
+</li>
+<li>
+<p>If <a href="bundle-install.1.html">bundle install(1)</a> reports a conflict, manually update the specific
+gems that you changed in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a></p>
+
+<p>  $ bundle update rails thin</p>
+</li>
+<li>
+<p>If you want to update all the gems to the latest possible versions that
+still match the gems listed in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>, run</p>
+
+<p>  $ bundle update --all</p>
+</li>
+</ul>
+
+
+
+  
+
+  </div>
+
+</div>
+<div class='clearfix'></div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<h4>Choose version</h4>
+<div class='form-group'>
+<select class='version-selects form-control'>
+<option selected value='/v2.0/bundle_update.html'>
+v2.0
+</option>
+<option value='/v1.17/bundle_update.html'>
+v1.17
+</option>
+<option value='/v1.16/bundle_update.html'>
+v1.16
+</option>
+<option value='/v1.15/bundle_update.html'>
+v1.15
+</option>
+<option value='/v1.14/bundle_update.html'>
+v1.14
+</option>
+<option value='/v1.13/bundle_update.html'>
+v1.13
+</option>
+<option value='/v1.12/bundle_update.html'>
+v1.12
+</option>
+<option value='/v1.11/bundle_update.html'>
+v1.11
+</option>
+<option value='/v1.10/bundle_update.html'>
+v1.10
+</option>
+<option value='/v1.9/bundle_update.html'>
+v1.9
+</option>
+<option value='/v1.8/bundle_update.html'>
+v1.8
+</option>
+<option value='/v1.7/bundle_update.html'>
+v1.7
+</option>
+<option value='/v1.6/bundle_update.html'>
+v1.6
+</option>
+<option value='/v1.5/bundle_update.html'>
+v1.5
+</option>
+<option value='/v1.3/bundle_update.html'>
+v1.3
+</option>
+<option value='/v1.2/bundle_update.html'>
+v1.2
+</option>
+<option value='/v1.1/bundle_update.html'>
+v1.1
+</option>
+<option value='/v1.0/bundle_update.html'>
+v1.0
+</option>
+<option value='/v0.9/bundle_install.html'>
+v0.9
+</option>
+</select>
+</div>
+<h4>Primary Commands</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle-install.1.html">bundle install</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-update.1.html">bundle update</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-package.1.html">bundle package</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-exec.1.html">bundle exec</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-config.1.html">bundle config</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_help.html">bundle help</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+<h4>Utilities</h4>
+<ul>
+<li class=''>
+<a href="/v2.0/man/bundle.1.html">bundle</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-add.1.html">bundle add</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-binstubs.1.html">bundle binstubs</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-check.1.html">bundle check</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-clean.1.html">bundle clean</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_console.html">bundle console</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-doctor.1.html">bundle doctor</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-gem.1.html">bundle gem</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-info.1.html">bundle info</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-init.1.html">bundle init</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-inject.1.html">bundle inject</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-list.1.html">bundle list</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-lock.1.html">bundle lock</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-open.1.html">bundle open</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-outdated.1.html">bundle outdated</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-platform.1.html">bundle platform</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-pristine.1.html">bundle pristine</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-remove.1.html">bundle remove</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-show.1.html">bundle show</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/bundle_version.html">bundle version</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/bundle-viz.1.html">bundle viz</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.0/man/gemfile.5.html">gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $('.version-selects').change(function(e) {
+    document.location.href = $(e.target).find(":selected").val();
+  });
+  $(document).ready(function() {
+    anchors.add('#page-content-wrapper h1, #page-content-wrapper h2, #page-content-wrapper h3, ' +
+      '#page-content-wrapper h4, #page-content-wrapper h5');
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/bundler/bundler/blob/master/man/bundle-update.ronn">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/bundler/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<style>
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+</style>
