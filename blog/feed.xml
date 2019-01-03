@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -66,7 +66,7 @@
 
 &lt;p&gt;Yes you can! The Heroku team has said they plan to upgrade the official Ruby buildpack to Bundler 2, but it will take some time. They have a zillion users, so that totally makes sense.&lt;/p&gt;
 
-&lt;p&gt;In the meantime, you can use our &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;buildpack&lt;/a&gt;, which is exactly the same as Heroku’s but with Bundler 2, by running:&lt;/p&gt;
+&lt;p&gt;In the meantime, you can use our &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;buildpack&lt;/a&gt;, which is exactly the same as Heroku’s but with Bundler 2.&lt;/p&gt;
 
 &lt;p&gt;Note: Support for the Bundler 2 buildpack is limited. You are welcome to report issues at the &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;bundler/heroku-buildpack-bundler2&lt;/a&gt; repository, but we can’t guarantee solutions.&lt;/p&gt;
 
@@ -80,7 +80,7 @@
 
 &lt;h3 id="i-tried-to-upgrade-but-something-is-broken"&gt;I tried to upgrade but something is broken!&lt;/h3&gt;
 
-&lt;p&gt;Oh no! Sorry about that. Please head over to our &lt;a href="https://github.com/bundler/bundler/blob/master/ISSUES.md"&gt;troubleshooting guide&lt;/a&gt; and open a ticket so that we can try to fix your problem ASAP.&lt;/p&gt;
+&lt;p&gt;Oh no! Sorry about that. Please head over to our &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/ISSUES.md"&gt;troubleshooting guide&lt;/a&gt; and open a ticket so that we can try to fix your problem ASAP.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -94,7 +94,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -116,7 +116,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
     <published>2018-11-05T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -136,7 +136,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
     <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
     <published>2018-11-04T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Colby Swandale &amp; André Arko</name>
     </author>
@@ -166,7 +166,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
     <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
     <published>2018-10-25T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -237,7 +237,7 @@ json was removed.
     <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
     <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2019-01-03T05:40:06+00:00</updated>
+    <updated>2019-01-03T10:56:59+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
