@@ -90,6 +90,10 @@ Jan  3 2019
   <li>Bundler now auto-switches between version 1 and 2 based on the Lockfile</li>
 </ul>
 
+<h3 id="update">Update</h3>
+
+<p>We’ve posted an update on the <a href="/blog/2019/01/04/an-update-on-the-bundler-2-release.html">release of Bundler 2</a></p>
+
 <h3 id="what-is-version-autoswitching">What is version autoswitching?</h3>
 
 <p>Version autoswitching means that Bundler will automatically run the correct 1.x or 2.x version based on your lockfile. This means you can have both Bundler 1.17.3 and Bundler 2.0.0 installed at the same time, and each application will use the version saved in your lockfile when you run <code>bundle install</code>. Every existing application should continue to work using Bundler 1, even after you have installed Bundler 2 (or even Bundler 3 or 4, later on).</p>

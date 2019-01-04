@@ -5,16 +5,54 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2019-01-03T00:00:00+00:00</updated>
+  <updated>2019-01-04T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>An update on the Bundler 2 release</title>
+    <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
+    <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
+    <published>2019-01-04T00:00:00+00:00</published>
+    <updated>2019-01-04T01:38:43+00:00</updated>
+    <author>
+      <name>Colby Swandale</name>
+    </author>
+    <content type="html">&lt;p&gt;Yesterday I released Bundler 2.0 that introduced a number of breaking changes. One of the those changes was setting Bundler to require RubyGems v3.0.0. After making the release, it has become clear that lots of our users are running into issues with Bundler 2 requiring a really new version of RubyGems.&lt;/p&gt;
+
+&lt;p&gt;We have been listening closely to feedback from users and have decided to relax the RubyGems requirement to v2.5.0 at minimum. We have released a new Bundler version, v2.0.1, that adjusts this requirement.&lt;/p&gt;
+
+&lt;p&gt;I apologise to our users for the disruption this has caused.&lt;/p&gt;
+
+&lt;h3 id="important-note"&gt;Important Note&lt;/h3&gt;
+
+&lt;p&gt;Bundler 2 introduced a new feature that will automatically switch between Bundler v1 and v2 based on the lockfile. This feature is enabled by RubyGems (only on versions 2.7.0+) which unfortunately has a bug when you run Bundler without the appropriate version installed. You may encounter an error message like:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Can't find gem bundler (&amp;gt;= 0.a) with executable bundle (Gem::GemNotFoundException)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you do, it can be fixed by installing the version of Bundler that is declared in the lockfile.&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
+BUNDLED WITH
+   1.17.3
+
+$ gem install bundler -v '1.17.3'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This bug was fixed in RubyGems 3.0.0 but backports are now being prepared for previous major versions of RubyGems. We’ll let you know when they become available.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Colby and the Bundler team&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Announcing Bundler 2.0</title>
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
+    <updated>2019-01-04T01:38:43+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -31,6 +69,10 @@
   &lt;li&gt;Errors/warnings will now print to &lt;code&gt;STDERR&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;Bundler now auto-switches between version 1 and 2 based on the Lockfile&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id="update"&gt;Update&lt;/h3&gt;
+
+&lt;p&gt;We’ve posted an update on the &lt;a href="/blog/2019/01/04/an-update-on-the-bundler-2-release.html"&gt;release of Bundler 2&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id="what-is-version-autoswitching"&gt;What is version autoswitching?&lt;/h3&gt;
 
@@ -94,7 +136,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
+    <updated>2019-01-04T01:38:43+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -116,7 +158,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
     <published>2018-11-05T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
+    <updated>2019-01-04T01:38:43+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -136,7 +178,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
     <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
     <published>2018-11-04T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
+    <updated>2019-01-04T01:38:43+00:00</updated>
     <author>
       <name>Colby Swandale &amp; André Arko</name>
     </author>
@@ -166,7 +208,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"/>
     <id>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</id>
     <published>2018-10-25T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
+    <updated>2019-01-04T01:38:43+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -230,26 +272,6 @@ json was removed.
 &lt;hr /&gt;
 
 &lt;p&gt;We hope you enjoy this release. Happy Bundling!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>September 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/10/15/september-monthly-update.html"/>
-    <id>http://bundler.io/blog/2018/10/15/september-monthly-update.html</id>
-    <published>2018-10-15T00:00:00+00:00</published>
-    <updated>2019-01-03T10:56:59+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the September monthly update!&lt;/p&gt;
-
-&lt;p&gt;The Bundler team merged 29 pull requests, including fixes for nested &lt;code&gt;bundle exec&lt;/code&gt;, various bugs around choosing and updating gem versions, documentation improvements, and full compatibility with TruffleRuby. We also released versions 1.16.5 and 1.17.0.pre.&lt;/p&gt;
-
-&lt;p&gt;We also decided how to drop backwards compatibility with old Ruby versions, allowing us to resume work to merge Bundler into Ruby 2.6. We may or may not complete everything in time for the Ruby 2.6 release at Christmas, but we’re still working towards it!&lt;/p&gt;
-
-&lt;p&gt;In September, Bundler gained 73 new commits, contributed by 12 authors. There were 419 additions and 151 deletions across 40 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
   </entry>
 </feed>

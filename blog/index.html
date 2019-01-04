@@ -65,83 +65,38 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='col-md-12 col-lg-10 col-lg-offset-1'>
 <div class='contents blog'>
 <h2 class='title'>
-<a href="/blog/2019/01/03/announcing-bundler-2.html">Announcing Bundler 2.0</a>
+<a href="/blog/2019/01/04/an-update-on-the-bundler-2-release.html">An update on the Bundler 2 release</a>
 </h2>
 <div class='subtitle'>
 by
 <a href="#" target="_blank">Colby Swandale</a>
 on
 <time>
-Jan  3 2019
+Jan  4 2019
 </time>
 </div>
 <div class='blog-content'>
-<p>The Bundler team is excited to announce the release of Bundler 2.0 🎉!</p>
+<p>Yesterday I released Bundler 2.0 that introduced a number of breaking changes. One of the those changes was setting Bundler to require RubyGems v3.0.0. After making the release, it has become clear that lots of our users are running into issues with Bundler 2 requiring a really new version of RubyGems.</p>
 
-<p>This release focuses on removing offical support of versions of Ruby and RubyGems that have reached their end of life, with a few other small breaking changes.</p>
+<p>We have been listening closely to feedback from users and have decided to relax the RubyGems requirement to v2.5.0 at minimum. We have released a new Bundler version, v2.0.1, that adjusts this requirement.</p>
 
-<p>The following is the full list of changes to Bundler 2:</p>
+<p>I apologise to our users for the disruption this has caused.</p>
 
-<ul>
-  <li>Removed support for Ruby &lt; 2.3</li>
-  <li>Removed support for RubyGems &lt; 3.0.0</li>
-  <li>Changed the <code>github: 'some/repo'</code> gem source to use the  <code>https</code> schema by default</li>
-  <li>Errors/warnings will now print to <code>STDERR</code></li>
-  <li>Bundler now auto-switches between version 1 and 2 based on the Lockfile</li>
-</ul>
+<h3 id="important-note">Important Note</h3>
 
-<h3 id="what-is-version-autoswitching">What is version autoswitching?</h3>
+<p>Bundler 2 introduced a new feature that will automatically switch between Bundler v1 and v2 based on the lockfile. This feature is enabled by RubyGems (only on versions 2.7.0+) which unfortunately has a bug when you run Bundler without the appropriate version installed. You may encounter an error message like:</p>
 
-<p>Version autoswitching means that Bundler will automatically run the correct 1.x or 2.x version based on your lockfile. This means you can have both Bundler 1.17.3 and Bundler 2.0.0 installed at the same time, and each application will use the version saved in your lockfile when you run <code>bundle install</code>. Every existing application should continue to work using Bundler 1, even after you have installed Bundler 2 (or even Bundler 3 or 4, later on).</p>
+<div class="highlight"><pre class="highlight plaintext"><code>Can't find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)&#x000A;</code></pre></div>
+<p>If you do, it can be fixed by installing the version of Bundler that is declared in the lockfile.</p>
 
-<h3 id="installing-bundler-2">Installing Bundler 2</h3>
-
-<p>Bundler 2 requires RubyGems 3.0, so install that first by running:</p>
-
-<div class="highlight"><pre class="highlight plaintext"><code>$ gem update --system&#x000A;</code></pre></div>
-<p>Then, install Bundler 2 by running:</p>
-
-<div class="highlight"><pre class="highlight plaintext"><code>$ gem install bundler&#x000A;</code></pre></div>
-<h3 id="why-does-bundler-depend-on-rubygems-30">Why does Bundler depend on RubyGems 3.0?</h3>
-
-<p>To make Bundler’s user experience when it auto-switches between versions as smooth as possible, Bundler depends on particular features in RubyGems that were publicly introduced in RubyGems v3.0.</p>
-
-<p>RubyGems is able to be upgraded to newest release using the <code>gem update --system</code> command. See <a href="https://guides.rubygems.org/command-reference/#gem-update">RubyGems Guides</a> for more information.</p>
-
-<h3 id="upgrading-existing-applications-to-use-bundler-2">Upgrading existing applications to use Bundler 2</h3>
-
-<p>Bundler will never automatically upgrade an application to Bundler 2 without your explicit permission. If you are ready to upgrade an existing application to use Bundler 2, you can run this command and then commit your lockfile:</p>
-
-<div class="highlight"><pre class="highlight plaintext"><code>$ bundle update --bundler&#x000A;</code></pre></div>
-<h3 id="upgrading-new-applications-to-use-bundler-2">Upgrading new applications to use Bundler 2</h3>
-
-<p>If you have Bundler 2 installed, new applications will use Bundler 2 automatically. After you run <code>bundle install</code>, you can check the lockfile to see which version of Bundler your application will use.</p>
-
-<h3 id="can-i-use-bundler-2-on-heroku">Can I use Bundler 2 on Heroku?</h3>
-
-<p>Yes you can! The Heroku team has said they plan to upgrade the official Ruby buildpack to Bundler 2, but it will take some time. They have a zillion users, so that totally makes sense.</p>
-
-<p>In the meantime, you can use our <a href="https://github.com/bundler/heroku-buildpack-bundler2">buildpack</a>, which is exactly the same as Heroku’s but with Bundler 2.</p>
-
-<p>Note: Support for the Bundler 2 buildpack is limited. You are welcome to report issues at the <a href="https://github.com/bundler/heroku-buildpack-bundler2">bundler/heroku-buildpack-bundler2</a> repository, but we can’t guarantee solutions.</p>
-
-<h3 id="major-releases-going-forward">Major releases going forward</h3>
-
-<p>With the release of Bundler 2, the core team now kicks off a new release schedule for Bundler: we’re going to aim for one major version release per year, so we can drop support for older Ruby and RubyGems versions around the same time that the Ruby core team does. Being able to stop supporting Ruby 1.8.7 is a huge relief!</p>
-
-<h3 id="more-information">More Information</h3>
-
-<p>If you have more questions, or want more information about Bundler 2, read our <a href="https://bundler.io/guides/bundler_2_upgrade.html">detailed Bundler 2 guide</a> for the full scoop.</p>
-
-<h3 id="i-tried-to-upgrade-but-something-is-broken">I tried to upgrade but something is broken!</h3>
-
-<p>Oh no! Sorry about that. Please head over to our <a href="https://github.com/bundler/bundler/blob/master/doc/contributing/ISSUES.md">troubleshooting guide</a> and open a ticket so that we can try to fix your problem ASAP.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"&#x000A;BUNDLED WITH&#x000A;   1.17.3&#x000A;&#x000A;$ gem install bundler -v '1.17.3'&#x000A;</code></pre></div>
+<p>This bug was fixed in RubyGems 3.0.0 but backports are now being prepared for previous major versions of RubyGems. We’ll let you know when they become available.</p>
 
 <hr />
 
-<p>We hope you enjoy this release. Happy Bundling!</p>
-
-<p>— Colby and the Bundler team</p>
+<ul>
+  <li>Colby and the Bundler team</li>
+</ul>
 
 </div>
 </div>
@@ -154,6 +109,10 @@ Jan  3 2019
 <div class='contents blog'>
 <h1>Previous Posts</h1>
 <ul class='posts'>
+<li>
+<div class='date'>Jan  3, 2019</div>
+<a href="/blog/2019/01/03/announcing-bundler-2.html">Announcing Bundler 2.0</a>
+</li>
 <li>
 <div class='date'>Dec  8, 2018</div>
 <a href="/blog/2018/12/08/november-monthly-update.html">November 2018 Bundler Update</a>

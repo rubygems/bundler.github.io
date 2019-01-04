@@ -6,7 +6,7 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
 <title>
-Bundler: The best way to manage a Ruby application's gems
+Bundler: An update on the Bundler 2 release
 </title>
 
 <script src="/javascripts/application.js"></script>
@@ -56,21 +56,53 @@ Bundler: The best way to manage a Ruby application's gems
 </nav>
 
 <div class='main-wrapper'>
-<h2>
-Bundler news and updates from
-2019
-</h2>
-<ul class='posts'>
-<li>
-<div class='date'>Jan  4, 2019</div>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
 <a href="/blog/2019/01/04/an-update-on-the-bundler-2-release.html">An update on the Bundler 2 release</a>
-</li>
-<li>
-<div class='date'>Jan  3, 2019</div>
-<a href="/blog/2019/01/03/announcing-bundler-2.html">Announcing Bundler 2.0</a>
-</li>
+</h2>
+<div class='subtitle'>
+by
+<a href="#" target="_blank">Colby Swandale</a>
+on
+<time>
+Jan  4 2019
+</time>
+</div>
+<div class='blog-content'>
+<p>Yesterday I released Bundler 2.0 that introduced a number of breaking changes. One of the those changes was setting Bundler to require RubyGems v3.0.0. After making the release, it has become clear that lots of our users are running into issues with Bundler 2 requiring a really new version of RubyGems.</p>
+
+<p>We have been listening closely to feedback from users and have decided to relax the RubyGems requirement to v2.5.0 at minimum. We have released a new Bundler version, v2.0.1, that adjusts this requirement.</p>
+
+<p>I apologise to our users for the disruption this has caused.</p>
+
+<h3 id="important-note">Important Note</h3>
+
+<p>Bundler 2 introduced a new feature that will automatically switch between Bundler v1 and v2 based on the lockfile. This feature is enabled by RubyGems (only on versions 2.7.0+) which unfortunately has a bug when you run Bundler without the appropriate version installed. You may encounter an error message like:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>Can't find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)&#x000A;</code></pre></div>
+<p>If you do, it can be fixed by installing the version of Bundler that is declared in the lockfile.</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"&#x000A;BUNDLED WITH&#x000A;   1.17.3&#x000A;&#x000A;$ gem install bundler -v '1.17.3'&#x000A;</code></pre></div>
+<p>This bug was fixed in RubyGems 3.0.0 but backports are now being prepared for previous major versions of RubyGems. We’ll let you know when they become available.</p>
+
+<hr />
+
+<ul>
+  <li>Colby and the Bundler team</li>
 </ul>
 
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </div>
