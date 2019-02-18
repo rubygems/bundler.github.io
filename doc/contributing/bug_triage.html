@@ -199,6 +199,8 @@ Bundler: The best way to manage a Ruby application's gems
   * If you’re having trouble replicating their issue with your current environment, slowly try to incorporate the user’s environment setup. As in, this is where you begin matching their environment. For example, try switching to the user’s version of Ruby, RubyGems, RVM, et cetera, step by step.
   * Is the user running the latest version of bundler? If not, ask them to update by running <code>gem install bundler</code>. There’s a chance that the newest version of bundler has already solved their problem.</p>
 
+<p>If the issue still requires user information, apply the label “user feedback required”. This will help identify stale issues in the future.</p>
+
 <p>If you can’t reproduce the issue, chances are good that the bug has been fixed already (hurrah!). That’s a good time to post to the ticket explaining what you did and how it worked.</p>
 
 <p>If you can reproduce an issue, you’re well on your way to fixing it. :)</p>
@@ -219,6 +221,17 @@ Bundler: The best way to manage a Ruby application's gems
 <h2 id="duplicates">Duplicates!</h2>
 
 <p>Finally, the ticket may be a duplicate of another older ticket. If you notice a ticket is a duplicate, simply comment on the ticket noting the original ticket’s number. For example, you could say “This is a duplicate of issue #42, and can be closed”.</p>
+
+<h2 id="stale-issues">Stale issues</h2>
+
+<p>Any issue that is waiting for more information is what we could consider “stale”. And the process is:</p>
+
+<ol>
+  <li>If the issue is not updated in a while (2-4 weeks), we usually leave a comment saying “Hey :wave:, is this still a problem for you?”.</li>
+  <li>If they don’t respond within a week or two, then we will close the ticket.</li>
+  <li>If they do respond and they say it’s still an issue, then we’ll remind we are waiting for more information.</li>
+  <li>If the user doesn’t provide the required information after being reminded, the ticket will be closed.</li>
+</ol>
 
 </div>
 </div>
