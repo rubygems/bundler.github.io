@@ -5,16 +5,73 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2019-02-02T00:00:00+00:00</updated>
+  <updated>2019-03-12T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>January and February Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
+    <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
+    <published>2019-03-12T00:00:00+00:00</published>
+    <updated>2019-03-12T20:24:37+00:00</updated>
+    <author>
+      <name>Stephanie Morillo</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the December 2018 monthly update!&lt;/p&gt;
+
+&lt;p&gt;In January, we awarded our &lt;a href="https://rubytogether.org/projects"&gt;first three-month long project grant&lt;/a&gt; to David Rodriguez for his work on Bundler and RubyGems. Here’s his first update:&lt;/p&gt;
+
+&lt;p&gt;Hello everyone!&lt;/p&gt;
+
+&lt;p&gt;This is my first progress report about my collaboration with Ruby Together to improve Bundler’s release process and deprecation management. I feel really proud that I’ve been given this opportunity, and I will do my best to improve the core of the Ruby ecosystem!&lt;/p&gt;
+
+&lt;p&gt;I have focused on several things these first two weeks:&lt;/p&gt;
+
+&lt;p&gt;I stabilized the builds of both Bundler and RubyGems, by fixing skipped tests and flaky failures to get both CIs consistently green. This should make subsequent improvements easier. In RubyGems, I landed several bug fixes in the install and update commands. With the release of Bundler 2 supporting only RubyGems 3.0, the basic command, “gem install rails”, started failing. We reverted the RubyGems 3.0 requirement in Bundler 2.0.1 to workaround this, but I intend to make &lt;code&gt;gem install&lt;/code&gt; properly fallback to installing an older version when the &lt;code&gt;required_rubygems_version&lt;/code&gt; requirement of the latest version is not satisfied. However, I decided to initially focus on some misc bug fixes in the install and update commands, to familiarize with the RubyGems code base and to be able to tackle this improvement with more confidence in the upcoming weeks. Big kudos to RubyGems contributor @MSP-Greg for providing the initial work for some of these fixes!&lt;/p&gt;
+
+&lt;p&gt;In Bundler, I started moving forward a new approach for deprecations, which will be enabled by default in the next release. We have a lot of improvements in Bundler’s master, but we haven’t released them for a long time, because they imply breaking changes. By starting to display deprecations for these changes, we’ll be closer to actually being able to release them. I also started addressing some issues surfaced by the Bundler 2 release, specifically about being too picky about the Bundler version a specific application should run. Currently, Bundler will raise if the version in the BUNDLED WITH section of the lock file doesn’t match the running version. We feel it’s premature to do this now, so I’m looking into downgrading this to a warning for the time being. I also coordinated with @colby-swandale the merge of Bundler 2 back into master, which hasn’t yet happened since the Bundler 2 release.&lt;/p&gt;
+
+&lt;p&gt;Finally, I’ve dedicated a fair amount of time to review the integration of Bundler into ruby-core since the 2.6 release, and the “gemification” of the standard library. Thanks to @hsbt, this is now a reality, but it comes with its own set of difficulties. I’ve been studying these difficulties and creating some fixes and workarounds for them. I plan to keep working on making this transition as smooth as possible for everyone.&lt;/p&gt;
+
+&lt;p&gt;I really hope my work is appreciated by the community and I expect to deliver better and bigger improvements in the upcoming weeks!&lt;/p&gt;
+
+&lt;p&gt;Best regards,
+David&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is a combined update for January and February, so here is David’s second update as well:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Hello everyone!&lt;/p&gt;
+
+&lt;p&gt;This is my second report about my collaboration with Rubytogether to improve bundler’s release process and deprecation management. They were a couple of exciting weeks, because I now feel I’m closer to being ready to release some of the work I’ve been doing.&lt;/p&gt;
+
+&lt;p&gt;The following is a non extensive list of the stuff I’ve been focusing on:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I continued the work on bundler’s deprecations. I reviewed each deprecation and made sure the messages are actionable, they show up when they should, and they have passing specs. In particular, I made a plan for the deprecation of the changes that are most likely to be controversial and require special care. For example, I proposed to deprecate sticky options, and custom gemfile sources (such as :github, :gist, or :bitbucket), in a smoother process that should be more friendly to our users because it happens in several steps across multiple major versions. Finally, I made sure that we use non-deprecated features in our own specs, in order to set a good example :)&lt;/li&gt;
+  &lt;li&gt;In addition to deprecations, I also finished the work that I mentioned in &lt;a href=""&gt;the previous report&lt;/a&gt; about only reporting warnings and not hard errors when we find a mismatch between the running bundler version and the version the Gemfile was created with. I hope to release these changes in both rubygems and bundler soon.&lt;/li&gt;
+  &lt;li&gt;I also continued to improve the integration of bundler into ruby-core. I proposed to &lt;a href="https://github.com/bundler/bundler/pull/6985"&gt;eliminate the &lt;code&gt;git&lt;/code&gt; dependency from bundler’s gemspec&lt;/a&gt; (which has caused problems with the integration), and raised &lt;a href="https://bugs.ruby-lang.org/issues/15610"&gt;an issue&lt;/a&gt; with ruby-core about where the default copies of bundler &amp;amp; rubygems should live, and how they should get updated. I’m in touch with hsbt and we plan to discuss the future of this integration some time in the near future.&lt;/li&gt;
+  &lt;li&gt;Finally, I’ve been working on making our specs “docker friendly”, and making bundler testable under bare docker images of ruby and rvm. My understanding is that this should make it much easier to reproduce CI failures (or user reported bugs), and to detect version manager specific regressions (or ruby-core integration bugs). Besides that, testing on top of custom docker images is something provided built-in by Azure pipelines, so it’s a good opportunity to try it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As I mentioned in the previous report, I’m very glad to be working on bundler during these weeks. Any suggestions or feedback you may have, feel free to share them through Github, Slack or whatever means you like!&lt;/p&gt;
+
+&lt;p&gt;See you again soon,
+David&lt;/p&gt;
+
+&lt;p&gt;In January and February, Bundler gained 110 new commits, contributed by 11 authors. There were 1,401 additions and 1,503 deletions across 849 files.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>December 2018 Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
+    <updated>2019-03-12T20:24:37+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -34,7 +91,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
+    <updated>2019-03-12T20:24:37+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -72,7 +129,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
+    <updated>2019-03-12T20:24:37+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -156,7 +213,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
+    <updated>2019-03-12T20:24:37+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -178,7 +235,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
     <published>2018-11-05T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
+    <updated>2019-03-12T20:24:37+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -191,36 +248,6 @@ $ gem install bundler -v '1.17.3'
 &lt;p&gt;This month, Bundler gained 107 new commits, contributed by 10 authors. There were 473 additions and 156 deletions across 35 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>An Update on Bundler 2.0</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"/>
-    <id>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</id>
-    <published>2018-11-04T00:00:00+00:00</published>
-    <updated>2019-03-12T11:39:17+00:00</updated>
-    <author>
-      <name>Colby Swandale &amp; André Arko</name>
-    </author>
-    <content type="html">&lt;p&gt;For the past few years the Bundler core team has been working hard on a major release of Bundler. We’ve been solving problems that users have seen since Bundler 1.0 first came out, but weren’t able to release without breaking changes. At the same time, we’ve spent a lot of time thinking about how to release a new major version with as little breakage and as few surprises as possible. We’ve come up with a system that allows everyone to use multiple major versions of Bundler at the same time, and we think that system will make future breaking changes much easier to handle.&lt;/p&gt;
-
-&lt;p&gt;However, this post isn’t about that system. This post is about a new plan for Bundler releases, dropping support for old Rubies, and how long we will support old Rubies and RubyGems in the future. Every version of Bundler in existence fully supports Ruby 1.8.6+ and RubyGems 1.3.6+. Maintaining that support is a burden not just on the Bundler team, but has become a blocker for the ruby-core team to accept Bundler into Ruby itself. The ruby-core team only has the resources to maintain three minor versions at a time: the current release, the previous release, and security patches for the next oldest release.&lt;/p&gt;
-
-&lt;p&gt;To refocus the efforts of the Bundler team on useful work, and make it easier to integrate Bundler into Ruby itself, we are adopting a similar support policy to Ruby: each year, we plan to release a new version of Bundler that drops support for any Ruby that is no longer supported. We plan to issue bugfixes as needed for each previous major version of Bundler, and if security patches are needed we will try to issue releases for the previous two major versions.&lt;/p&gt;
-
-&lt;p&gt;With that in mind, today we are announcing a new Bundler 2.0.0 release. It should not break anyone’s workflows, and only contains changes that are “breaking” in a very strict and technical sense of the word. This is an exhaustive list of the changes from Bundler 1.17 to Bundler 2.0:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Dropped support for end of lifed Ruby versions 1.8.7 through 2.2&lt;/li&gt;
-  &lt;li&gt;Dropped support for end of lifed RubyGems versions 1.3.6 through 2.5&lt;/li&gt;
-  &lt;li&gt;Moved error messages from STDOUT to STDERR&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To be extremely clear: &lt;strong&gt;all applications and Gemfiles that currently work with Bundler 1 will continue to work with Bundler 2&lt;/strong&gt;. You will not be able to upgrade to Bundler 2 if you are using an older version of Ruby or RubyGems that has been end-of-lifed and is no longer supported. We will support Bundler 1.17 with bugfixes for about one year, and stop supporting Bundler 1.17 when we release Bundler 3.&lt;/p&gt;
-
-&lt;p&gt;In future releases of Bundler, we hope to schedule future breaking changes with a one-year deprecation warning period, while listening to user feedback and doing everything that we can to keep existing applications from breaking. Keep an eye on &lt;a href="https://twitter.com/bundlerio"&gt;@bundlerio&lt;/a&gt; or &lt;a href="https://bundler.io/blog"&gt;the Bundler blog&lt;/a&gt; to hear more about the future of Bundler as we figure things out.&lt;/p&gt;
-
-&lt;p&gt;As always, if you have problems or feedback, we want to hear from you! Head over to the &lt;a href="https://github.com/bundler/bundler/issues"&gt;Bundler issue tracker&lt;/a&gt; and let us know.&lt;/p&gt;
 </content>
   </entry>
 </feed>
