@@ -197,10 +197,10 @@ Bundler: How to Upgrade to Bundler 2
 <div class="highlight"><pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    rack (2.0.6)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  rack&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.17.1&#x000A;</code></pre></div>
 <p>The version of Bundler in the <code>BUNDLED WITH</code> section is read by Bundler to determine which version of Bundler should run. Using the example lock above, Bundler 1 will be used, as you can see here:</p>
 
-<div class="highlight"><pre class="highlight plaintext"><code>$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"&#x000A;BUNDLED WITH&#x000A;   1.17.1&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 1.17.1&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>$ grep -A 1 "BUNDLED WITH" Gemfile.lock&#x000A;BUNDLED WITH&#x000A;   1.17.1&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 1.17.1&#x000A;</code></pre></div>
 <p>When a Gemfile has been created by Bundler 2, or manually upgraded by a developer from Bundler 1 to Bundler 2, then commands will be run by the latest installed Bundler 2. Here’s an example of what that looks like:</p>
 
-<div class="highlight"><pre class="highlight plaintext"><code>$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"&#x000A;BUNDLED WITH&#x000A;   2.0.0&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 2.0.0&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>$ grep -A 1 "BUNDLED WITH" Gemfile.lock&#x000A;BUNDLED WITH&#x000A;   2.0.0&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 2.0.0&#x000A;</code></pre></div>
 <p>When Bundler is used outside of an application, the latest version that is installed will always be used.</p>
 
 <div class="highlight"><pre class="highlight plaintext"><code>$ ls -a&#x000A;.	..&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 2.0.0&#x000A;</code></pre></div>
