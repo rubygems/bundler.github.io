@@ -92,9 +92,9 @@ May 14 2019
 
 <h2 id="why-does-this-bug-exist">Why does this bug exist?</h2>
 
-<p>Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to automatically run Bundler 1 or Bundler 2 on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the <code>BUNDLED WITH</code> section.</p>
+<p>Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to lock Bundler’s version on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the <code>BUNDLED WITH</code> section.</p>
 
-<p>After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too magical and too surprising.</p>
+<p>After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too surprising and the user experience did not meet expectations.</p>
 
 <p>Unfortunately, the code in RubyGems that looked for an exact version of the Bundler gem based on <code>BUNDLED WITH</code> was already out there. We didn’t realize it in advance, but that code causes this error anytime the <code>BUNDLED WITH</code> version is even slightly different from the exact Bundler gem you have installed. (For example, you might have only Bundler 2.0.3, while <code>BUNDLED WITH</code> calls for 2.0.2. In that case, RubyGems will unfortunately raise this error.)</p>
 

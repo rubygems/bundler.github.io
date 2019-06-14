@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -36,9 +36,9 @@ Can't find gem bundler (&amp;gt;= 0.a) with executable bundle (Gem::GemNotFoundE
 
 &lt;h2 id="why-does-this-bug-exist"&gt;Why does this bug exist?&lt;/h2&gt;
 
-&lt;p&gt;Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to automatically run Bundler 1 or Bundler 2 on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the &lt;code&gt;BUNDLED WITH&lt;/code&gt; section.&lt;/p&gt;
+&lt;p&gt;Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to lock Bundler’s version on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the &lt;code&gt;BUNDLED WITH&lt;/code&gt; section.&lt;/p&gt;
 
-&lt;p&gt;After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too magical and too surprising.&lt;/p&gt;
+&lt;p&gt;After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too surprising and the user experience did not meet expectations.&lt;/p&gt;
 
 &lt;p&gt;Unfortunately, the code in RubyGems that looked for an exact version of the Bundler gem based on &lt;code&gt;BUNDLED WITH&lt;/code&gt; was already out there. We didn’t realize it in advance, but that code causes this error anytime the &lt;code&gt;BUNDLED WITH&lt;/code&gt; version is even slightly different from the exact Bundler gem you have installed. (For example, you might have only Bundler 2.0.3, while &lt;code&gt;BUNDLED WITH&lt;/code&gt; calls for 2.0.2. In that case, RubyGems will unfortunately raise this error.)&lt;/p&gt;
 
@@ -78,7 +78,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -135,7 +135,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -155,7 +155,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -193,7 +193,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -277,7 +277,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2019-06-14T05:35:57+00:00</updated>
+    <updated>2019-06-14T07:52:15+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
