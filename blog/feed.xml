@@ -5,16 +5,80 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2019-03-12T00:00:00+00:00</updated>
+  <updated>2019-05-14T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Solutions for 'Cant find gem bundler (&gt;= 0.a) with executable bundle'</title>
+    <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
+    <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
+    <published>2019-05-14T00:00:00+00:00</published>
+    <updated>2019-06-14T05:35:57+00:00</updated>
+    <author>
+      <name>Colby Swandale</name>
+    </author>
+    <content type="html">&lt;p&gt;TL;DR: &lt;code&gt;run gem update --system&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="what-is-this-bug"&gt;What is this bug?&lt;/h2&gt;
+
+&lt;p&gt;Some versions of RubyGems try to use the exact version of Bundler listed in your Gemfile.lock anytime you run the bundle command. If you are using one of those versions of RubyGems, but do not have that exact version of Bundler installed, you will run into this error:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Can't find gem bundler (&amp;gt;= 0.a) with executable bundle (Gem::GemNotFoundException)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This error is saying (in a very particular way) that RubyGems was unable to find the exact version of Bundler that is in your Gemfile.lock.&lt;/p&gt;
+
+&lt;p&gt;This is a bug, and RubyGems should be willing to use the version of Bundler that you have installed. The bug is fixed in RubyGems 2.7.10 or 3.0.0 and above, which you can install by running &lt;code&gt;gem update --system&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to know more about how this happened, keep reading!&lt;/p&gt;
+
+&lt;h2 id="why-does-this-bug-exist"&gt;Why does this bug exist?&lt;/h2&gt;
+
+&lt;p&gt;Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to automatically run Bundler 1 or Bundler 2 on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the &lt;code&gt;BUNDLED WITH&lt;/code&gt; section.&lt;/p&gt;
+
+&lt;p&gt;After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too magical and too surprising.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, the code in RubyGems that looked for an exact version of the Bundler gem based on &lt;code&gt;BUNDLED WITH&lt;/code&gt; was already out there. We didn’t realize it in advance, but that code causes this error anytime the &lt;code&gt;BUNDLED WITH&lt;/code&gt; version is even slightly different from the exact Bundler gem you have installed. (For example, you might have only Bundler 2.0.3, while &lt;code&gt;BUNDLED WITH&lt;/code&gt; calls for 2.0.2. In that case, RubyGems will unfortunately raise this error.)&lt;/p&gt;
+
+&lt;h2 id="what-are-the-possible-solutions"&gt;What are the possible solutions?&lt;/h2&gt;
+
+&lt;p&gt;There are a few options, depending on what you are able to update to newer versions.&lt;/p&gt;
+
+&lt;h2 id="update-rubygems"&gt;Update RubyGems&lt;/h2&gt;
+
+&lt;p&gt;The easiest way is to update to the latest RubyGems (2.7.10 and 3.0.4) or higher. You can do that by running &lt;code&gt;gem update --system&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="update-ruby"&gt;Update Ruby&lt;/h2&gt;
+
+&lt;p&gt;Ruby 2.6.3 includes a version of RubyGems with the fix for this issue.&lt;/p&gt;
+
+&lt;h2 id="install-the-exact-bundler"&gt;Install the exact Bundler&lt;/h2&gt;
+
+&lt;p&gt;If updating Ruby or RubyGems is not an available option, you install the exact version of Bundler that RubyGems is looking for by running:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you’ve installed the exact version that RubyGems will try to load, future bundle commands should work.&lt;/p&gt;
+
+&lt;h2 id="im-still-having-this-problem-after-trying-everything-else"&gt;I’m still having this problem after trying everything else&lt;/h2&gt;
+
+&lt;p&gt;Oh no! We’d like to help you figure it out. Head over to the GitHub issue tracker and open a new issue, and we’ll do what we can to help.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;— Colby and the Bundler team&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>January and February Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
+    <updated>2019-06-14T05:35:57+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -71,7 +135,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
+    <updated>2019-06-14T05:35:57+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -91,7 +155,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
+    <updated>2019-06-14T05:35:57+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -129,7 +193,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
+    <updated>2019-06-14T05:35:57+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -213,7 +277,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
+    <updated>2019-06-14T05:35:57+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -226,26 +290,6 @@ $ gem install bundler -v '1.17.3'
 &lt;p&gt;For the less adventurous, we’re writing documentation furiously, and we will post a full Bundler 2 upgrade guide along with the final 2.0.0 release.&lt;/p&gt;
 
 &lt;p&gt;This month, Bundler gained 44 new commits, contributed by 10 authors. There were 331 additions and 150 deletions across 51 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>October 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/11/05/october-monthly-update.html"/>
-    <id>http://bundler.io/blog/2018/11/05/october-monthly-update.html</id>
-    <published>2018-11-05T00:00:00+00:00</published>
-    <updated>2019-05-13T19:52:35+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the October monthly update!&lt;/p&gt;
-
-&lt;p&gt;We released &lt;a href="https://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html"&gt;Bundler 1.17&lt;/a&gt;, which ships a new &lt;code&gt;remove&lt;/code&gt; command (for removing gems from the command line), new command options, new events for Bundler plugins, and new environment variables. For a complete list of changes, check out the &lt;a href="https://bundler.io/v1.17/whats_new.html"&gt;v1.17 release notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We also announced our &lt;a href="https://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"&gt;new plan for Bundler 2.0&lt;/a&gt;, a new approach that we think the Bundler team and Bundler users will both be excited about. We’re planning to write more blog posts and documentation about Bundler 2, and push a prerelease preview for interested beta testers in the next week or two.&lt;/p&gt;
-
-&lt;p&gt;This month, Bundler gained 107 new commits, contributed by 10 authors. There were 473 additions and 156 deletions across 35 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
