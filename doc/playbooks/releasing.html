@@ -221,18 +221,23 @@ using:</p>
 
 <p><code>bash&#x000A;$ git cherry-pick -m 1 dd6aef9</code></p>
 
-<p>The <code>rake release:patch</code> command will automatically handle cherry-picking, and is further detailed below.</p>
+<p>The <code>rake release:prepare_patch</code> command will automatically handle
+cherry-picking, and is further detailed below.</p>
 
 <h2 id="changelog">Changelog</h2>
 
 <p>Bundler maintains a list of changes present in each version in the <code>CHANGELOG.md</code> file.
 Entries should not be added in pull requests, but are rather written by the Bundler
-maintainers in the <a href="https://github.com/bundler/bundler-changelog">bundler-changelog repo</a>.
-That repository tracks changes by pull requests, with each entry having an associated version,
-PR, section, author(s), issue(s) closed, and message.</p>
+maintainers before the release.</p>
 
-<p>Ensure that repo has been updated with all new PRs before releasing a new version,
-and copy over the new sections to the <code>CHANGELOG.md</code> in the Bundler repo.</p>
+<p>To fill in the changelog, maintainers can go through the relevant PRs using the
+<code>rake release:open_unreleased_prs</code> and manually add a changelog entry for each
+PR that it’s about to be released.</p>
+
+<p>If you’re releasing a patch level version, you can use <code>rake&#x000A;release:open_unreleased_prs</code> to instead label each relevant PR with the proper
+milestone of the version to be release. Then the <code>rake release:patch</code> task will
+go <em>only</em> through those PRs, and prompt you to add a changelog entry for each of
+them.</p>
 
 <h2 id="releases">Releases</h2>
 
@@ -253,8 +258,7 @@ should <em>never break backwards compatibility</em></li>
   <li>[ ] Create a new stable branch from master (see <strong>Branching</strong> below)</li>
   <li>[ ] Update <code>version.rb</code> to a prerelease number, e.g. <code>1.12.pre.1</code></li>
   <li>[ ] Update <code>CHANGELOG.md</code> to include all of the features, bugfixes, etc for that
-version, from the <a href="https://github.com/bundler/bundler-changelog">bundler-changelog</a>
-repo.</li>
+version.</li>
   <li>[ ] Run <code>rake release</code>, tweet, blog, let people know about the prerelease!</li>
   <li>[ ] Wait a <strong>minimum of 7 days</strong></li>
   <li>[ ] If significant problems are found, increment the prerelease (i.e. 1.12.pre.2)
@@ -285,7 +289,7 @@ series can often yield a lot of bug reports. This is normal, and doesn’t mean 
 <h4 id="branching">Branching</h4>
 
 <p>Minor releases of the next version start with a new release branch from the
-current state of master: <code>1-12-stable</code>, and are immediately followed by a <code>.pre.0</code> release.</p>
+current state of master: <code>1-12-stable</code>, and are immediately followed by a <code>.pre.1</code> release.</p>
 
 <p>Once that <code>-stable</code> branch has been cut from <code>master</code>, changes for that minor
 release series (1.12) will only be made <em>intentionally</em>, via patch releases.
@@ -301,16 +305,22 @@ per bug fixed. Then run <code>rake release</code> from the <code>-stable</code> 
 and pour yourself a tasty drink!</p>
 
 <p>PRs containing regression fixes for a patch release of the current minor version
-are merged to master. These commits are then cherry-picked from master onto the
-minor branch (<code>1-12-stable</code>).</p>
+are merged to master. These commits need to be cherry-picked from master onto
+the minor branch (<code>1-12-stable</code>).</p>
 
-<p>There is a <code>rake release:patch</code> rake task that automates creating a patch release.
-It takes a single argument, the <em>exact</em> patch release being made (e.g. <code>1.12.3</code>),
-and checks out the appropriate stable branch (<code>1-12-stable</code>), grabs the <code>1.12.3</code>
-milestone from GitHub, ensures all PRs are closed, and then cherry-picks those changes
-(and only those changes) to the stable branch. The task then bumps the version in the
-version file, prompts you to update the <code>CHANGELOG.md</code>, then will commit those changes
-and run <code>rake release</code>!</p>
+<p>There is a <code>rake release:prepare_patch</code> rake task that helps with creating a patch
+release. It takes a single argument, the <em>exact</em> patch release being made (e.g.
+<code>1.12.3</code>), but if not given it will bump the tiny version number by one. This
+task checks out the appropriate stable branch (<code>1-12-stable</code>), grabs the
+<code>1.12.3</code> milestone from GitHub, ensures all PRs are closed, and then
+cherry-picks those changes (and only those changes) to a new branch based off
+the stable branch. Then bumps the version in the version file and commits that
+change on top of the cherry-picks.</p>
+
+<p>Now you have a release branch ready to be merged into the stable branch. You’ll
+want to open a PR from this branch into the stable branch and provided CI is
+green, you can go ahead, merge the PR and run <code>rake release</code> from the updated
+stable branch.</p>
 
 <h2 id="beta-testing">Beta testing</h2>
 
@@ -319,7 +329,7 @@ We :heart: testers, and are big fans of anyone who can run <code>gem install bun
 and try out upcoming releases in their development and staging environments.</p>
 
 <p>There may not always be prereleases or beta versions of Bundler.
-The Bundler team will tweet from the <a href="http://twitter.com/bundlerio">@bundlerio account</a>
+The Bundler team will tweet from the <a href="https://twitter.com/bundlerio">@bundlerio account</a>
 when a prerelease or beta version becomes available. You are also always welcome to try
 checking out master and building a gem yourself if you want to try out the latest changes.</p>
 
