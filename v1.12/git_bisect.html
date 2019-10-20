@@ -101,7 +101,7 @@ to test if they are not reset.</li>
 
 <p>Here’s a minimal example script that runs the rake task <code>spec</code>:</p>
 
-<div class="highlight"><pre class="highlight shell"><code><span class="c">#!/usr/bin/env bash</span>&#x000A;bundle install&#x000A;bin/rake spec&#x000A;<span class="nv">status</span><span class="o">=</span><span class="nv">$?</span>&#x000A;git reset <span class="nt">--hard</span> HEAD&#x000A;<span class="nb">exit</span> <span class="nv">$status</span>&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight shell"><code><span class="c">#!/usr/bin/env bash</span>&#x000A;bundle <span class="nb">install&#x000A;</span>bin/rake spec&#x000A;<span class="nv">status</span><span class="o">=</span><span class="nv">$?</span>&#x000A;git reset <span class="nt">--hard</span> HEAD&#x000A;<span class="nb">exit</span> <span class="nv">$status</span>&#x000A;</code></pre></div>
 <p>See also the discussion at <a href="https://github.com/bundler/bundler/issues/3726">bundler/bundler#3726</a>.</p>
 
 </div>
