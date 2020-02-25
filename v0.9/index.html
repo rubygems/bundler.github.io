@@ -123,7 +123,7 @@ Run a script provided by a bundled gem
 When you're ready to share your application or deploy it, lock down all the versions of the gems you're using
 </div>
 <div class="highlight"><pre class="highlight plaintext"><code>$ bundle lock&#x000A;$ git add Gemfile.lock&#x000A;</code></pre></div>
-<a href="/v0.9/bundle_lock.html">Learn more: bundle lock</a>
+<a href="/v0.9/bundle_lock.html">Learn More: bundle lock</a>
 </div>
 </div>
 <h2>Using Bundler with Frameworks</h2>
@@ -169,14 +169,14 @@ Store all of the required gems in your application. All future installs will get
 Put dependencies in a group, so they can be ignored at install time or required together in your application
 </div>
 <div class="highlight"><pre class="highlight ruby"><code><span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s1">'wirble'</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
-<a href="/v0.9/groups.html">Learn more: Groups</a>
+<a href="/v0.9/groups.html">Learn More: Groups</a>
 </div>
 <div class='bullet'>
 <div class='description'>
 Use a gem that is stored in git and has a .gemspec at its root. Gemspecs with bins or C extensions are supported
 </div>
 <div class="highlight"><pre class="highlight ruby"><code><span class="n">gem</span> <span class="s1">'nokogiri'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/tenderlove/nokogiri.git'</span>&#x000A;</code></pre></div>
-<a href="/v0.9/git.html">Learn more: Git</a>
+<a href="/v0.9/git.html">Learn More: Git</a>
 </div>
 <div class='bullet'>
 <div class='description'>
