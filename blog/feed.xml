@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -78,7 +78,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -135,7 +135,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -155,7 +155,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -193,7 +193,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -277,7 +277,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
     <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
     <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2020-02-25T12:16:16+00:00</updated>
+    <updated>2020-03-05T23:04:10+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
