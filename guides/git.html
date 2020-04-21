@@ -309,13 +309,13 @@ Bundler also allows you to work against a git repository locally
 instead of using the remote version. This can be achieved by setting
 up a local override:
 </div>
-<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config set local.GEM_NAME /path/to/local/git/repository&#x000A;</code></pre></div>
 </div>
 <div class='bullet'>
 <div class='description'>
 For example, in order to use a local Rack repository, a developer could call:
 </div>
-<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config local.rack ~/Work/git/rack&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config set local.rack ~/Work/git/rack&#x000A;</code></pre></div>
 <div class='description'>
 and setup the git repo pointing to a branch:
 </div>
@@ -353,7 +353,7 @@ forces you to fetch the latest changes in the remotes.
 <div class='description'>
 <p>If you do not want bundler to make these branch checks, you can override it by setting this option:</p>
 </div>
-<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config disable_local_branch_check true&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight plaintext"><code>$ bundle config set disable_local_branch_check true&#x000A;</code></pre></div>
 </div>
 </div>
 </div>
