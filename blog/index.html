@@ -65,66 +65,28 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='col-md-12 col-lg-10 col-lg-offset-1'>
 <div class='contents blog'>
 <h2 class='title'>
-<a href="/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html">Solutions for 'Cant find gem bundler (>= 0.a) with executable bundle'</a>
+<a href="/blog/2020/04/27/march-monthly-update.html">March Bundler Update</a>
 </h2>
 <div class='subtitle'>
 by
-<a href="#" target="_blank">Colby Swandale</a>
+<a href="#" target="_blank">Gift Egwuenu</a>
 on
 <time>
-May 14 2019
+Apr 27 2020
 </time>
 </div>
 <div class='blog-content'>
-<p>TL;DR: run <code>gem update --system</code>.</p>
+<p>Welcome to the Bundler monthly update! As part of our efforts at <a href="https://rubytogether.org">Ruby Together</a>, we publish a recap of the work that we’ve done the previous month. Read on to find out what updates were made to Bundler in March.</p>
 
-<h2 id="what-is-this-bug">What is this bug?</h2>
+<p>Amazingly, all that work that the entire Bundler and RubyGems teams have been working at for years has paid off in a really big way: Bundler and RubyGems have merged repositories! On GitHub, <code>bundler/bundler</code> is archived, and all ongoing work on both projects now takes place inside <code>RubyGems/RubyGems</code>. All other repositories from the Bundler organization have either been archived (if unused) or moved to the RubyGems organization.</p>
 
-<p>Some versions of RubyGems try to use the exact version of Bundler listed in your Gemfile.lock anytime you run the bundle command. If you are using one of those versions of RubyGems, but do not have that exact version of Bundler installed, you will run into this error:</p>
+<p>Not just the repositories have changed, either: the Bundler and RubyGems teams have merged as well. It’ll take us some time to work through 20 years worth of documentation and webpages, but we’ll be combining and updating them as fast as we can.</p>
 
-<p><code>&#x000A;Can't find gem bundler (&gt;= 0.a) with executable bundle (Gem::GemNotFoundException)</code></p>
-
-<p>This error is saying (in a very particular way) that RubyGems was unable to find the exact version of Bundler that is in your Gemfile.lock.</p>
-
-<p>This is a bug, and RubyGems should be willing to use the version of Bundler that you have installed. The bug is fixed in RubyGems 2.7.10 or 3.0.0 and above, which you can install by running <code>gem update --system</code>.</p>
-
-<p>If you want to know more about how this happened, keep reading!</p>
-
-<h2 id="why-does-this-bug-exist">Why does this bug exist?</h2>
-
-<p>Starting in RubyGems 2.7, the RubyGems and Bundler teams worked together to add a feature for the future: a Bundler version switcher. The intention was that later on when Bundler 2 eventually came out, RubyGems would be able to lock Bundler’s version on a per-application basis. It did this by reading the Gemfile.lock and using the version of Bundler listed in the <code>BUNDLED WITH</code> section.</p>
-
-<p>After more discussion and experimentation, before Bundler 2 actually shipped, the Bunder team decided that this was too surprising and the user experience did not meet expectations.</p>
-
-<p>Unfortunately, the code in RubyGems that looked for an exact version of the Bundler gem based on <code>BUNDLED WITH</code> was already out there. We didn’t realize it in advance, but that code causes this error anytime the <code>BUNDLED WITH</code> version is even slightly different from the exact Bundler gem you have installed. (For example, you might have only Bundler 2.0.3, while <code>BUNDLED WITH</code> calls for 2.0.2. In that case, RubyGems will unfortunately raise this error.)</p>
-
-<h2 id="what-are-the-possible-solutions">What are the possible solutions?</h2>
-
-<p>There are a few options, depending on what you are able to update to newer versions.</p>
-
-<h2 id="update-rubygems">Update RubyGems</h2>
-
-<p>The easiest way is to update to the latest RubyGems (2.7.10 and 3.0.4) or higher. You can do that by running <code>gem update --system</code>.</p>
-
-<h2 id="update-ruby">Update Ruby</h2>
-
-<p>Ruby 2.6.3 includes a version of RubyGems with the fix for this issue.</p>
-
-<h2 id="install-the-exact-bundler">Install the exact Bundler</h2>
-
-<p>If updating Ruby or RubyGems is not an available option, you install the exact version of Bundler that RubyGems is looking for by running:</p>
-
-<p><code>&#x000A;$ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"</code></p>
-
-<p>Once you’ve installed the exact version that RubyGems will try to load, future bundle commands should work.</p>
-
-<h2 id="im-still-having-this-problem-after-trying-everything-else">I’m still having this problem after trying everything else</h2>
-
-<p>Oh no! We’d like to help you figure it out. Head over to the GitHub issue tracker and open a new issue, and we’ll do what we can to help.</p>
+<p>From this point forward, Bundler news will be reported together with RubyGems news. Hooray! 🎉</p>
 
 <hr />
+<p>Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the <a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/contributing/README.md">Bundler Contributor Guidelines</a> on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of <a href="https://rubytogether.org/">Ruby Together</a> to help fund our work to keep Bundler working for everyone.</p>
 
-<p>— Colby and the Bundler team</p>
 
 </div>
 </div>
@@ -137,6 +99,10 @@ May 14 2019
 <div class='contents blog'>
 <h1>Previous Posts</h1>
 <ul class='posts'>
+<li>
+<div class='date'>May 14, 2019</div>
+<a href="/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html">Solutions for 'Cant find gem bundler (>= 0.a) with executable bundle'</a>
+</li>
 <li>
 <div class='date'>Mar 12, 2019</div>
 <a href="/blog/2019/03/12/january-february-bimonthly-update.html">January and February Bundler Update</a>

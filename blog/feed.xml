@@ -5,16 +5,38 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2019-05-14T00:00:00+00:00</updated>
+  <updated>2020-04-27T00:00:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>March Bundler Update</title>
+    <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
+    <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
+    <published>2020-04-27T00:00:00+00:00</published>
+    <updated>2020-04-29T20:27:28+00:00</updated>
+    <author>
+      <name>Gift Egwuenu</name>
+    </author>
+    <content type="html">&lt;p&gt;Welcome to the Bundler monthly update! As part of our efforts at &lt;a href="https://rubytogether.org"&gt;Ruby Together&lt;/a&gt;, we publish a recap of the work that we’ve done the previous month. Read on to find out what updates were made to Bundler in March.&lt;/p&gt;
+
+&lt;p&gt;Amazingly, all that work that the entire Bundler and RubyGems teams have been working at for years has paid off in a really big way: Bundler and RubyGems have merged repositories! On GitHub, &lt;code&gt;bundler/bundler&lt;/code&gt; is archived, and all ongoing work on both projects now takes place inside &lt;code&gt;RubyGems/RubyGems&lt;/code&gt;. All other repositories from the Bundler organization have either been archived (if unused) or moved to the RubyGems organization.&lt;/p&gt;
+
+&lt;p&gt;Not just the repositories have changed, either: the Bundler and RubyGems teams have merged as well. It’ll take us some time to work through 20 years worth of documentation and webpages, but we’ll be combining and updating them as fast as we can.&lt;/p&gt;
+
+&lt;p&gt;From this point forward, Bundler news will be reported together with RubyGems news. Hooray! 🎉&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
+
+</content>
+  </entry>
   <entry>
     <title>Solutions for 'Cant find gem bundler (&gt;= 0.a) with executable bundle'</title>
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
+    <updated>2020-04-29T20:27:28+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -78,7 +100,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
+    <updated>2020-04-29T20:27:28+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -135,7 +157,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
+    <updated>2020-04-29T20:27:28+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -155,7 +177,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
+    <updated>2020-04-29T20:27:28+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -193,7 +215,7 @@ $ gem install bundler -v '1.17.3'
     <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
     <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
     <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
+    <updated>2020-04-29T20:27:28+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -270,28 +292,6 @@ $ gem install bundler -v '1.17.3'
 &lt;p&gt;We hope you enjoy this release. Happy Bundling!&lt;/p&gt;
 
 &lt;p&gt;— Colby and the Bundler team&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>November 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2018/12/08/november-monthly-update.html"/>
-    <id>http://bundler.io/blog/2018/12/08/november-monthly-update.html</id>
-    <published>2018-12-08T00:00:00+00:00</published>
-    <updated>2020-04-29T20:12:29+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the November monthly update!&lt;/p&gt;
-
-&lt;p&gt;This month, we &lt;a href="https://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html"&gt;announced the upcoming Bundler 2.0 release&lt;/a&gt; and shipped a few prerelease versions. As mentioned in the blog post, Bundler 2 will drop support for Ruby versions that are no longer supported by the Ruby core team.&lt;/p&gt;
-
-&lt;p&gt;If you’re feeling adventurous, you can even try the Bundler 2 prerelease by running &lt;code&gt;gem install bundler --pre&lt;/code&gt;. (You can even use the Bundler 2 prerelease on Heroku, with the &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;Bundler 2 buildpack&lt;/a&gt;!).&lt;/p&gt;
-
-&lt;p&gt;For the less adventurous, we’re writing documentation furiously, and we will post a full Bundler 2 upgrade guide along with the final 2.0.0 release.&lt;/p&gt;
-
-&lt;p&gt;This month, Bundler gained 44 new commits, contributed by 10 authors. There were 331 additions and 150 deletions across 51 files.&lt;/p&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>
   </entry>
 </feed>
