@@ -356,12 +356,12 @@ or <a href="#reinstalling-ruby-from-os-package-managers">package manager</a>.)</
 
 <h3 id="automated-ssl-check">Automated SSL check</h3>
 
-<p>First, <a href="https://github.com/bundler/ruby-ssl-check/blob/master/check.rb">run this script</a> to
+<p>First, <a href="https://github.com/rubygems/ruby-ssl-check/blob/master/check.rb">run this script</a> to
 check whether your errors result from the SSL certs issue or the TLS versions issue.</p>
 
-<p>You can run the script immediately with this command:</p>
+<p>You can run the script immediately with this command (Windows 10 also):</p>
 
-<p><code>$ ruby -ropen-uri -e 'eval open("https://git.io/vQhWq").read'</code></p>
+<p><code>$ curl -Lks 'https://git.io/rg-ssl' | ruby</code></p>
 
 <p>If the output reads “Your Ruby can’t connect to rubygems.org because you are missing the
 certificate” you have a certificate verification error, and need to update your certs.</p>
