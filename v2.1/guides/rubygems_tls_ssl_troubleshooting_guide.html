@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: How to troubleshoot RubyGems and Bundler TLS/SSL Issues
+</title>
+
+<link href='/guides/rubygems_tls_ssl_troubleshooting_guide.html' rel='canonical'>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="Docs header transparent bg" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v2.1/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.1/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<h1 id="how-to-troubleshoot-rubygems-and-bundler-tlsssl-issues">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</h1>
+
+<p>If you’ve experienced issues related to SSL certificates and/or TLS versions, you’ve come
+to the right place. In this guide, we’ll explain how both of those issues come about and how
+to solve them. Many of the instructions in this guide can help fix either the SSL certs issue
+or the TLS version issue.</p>
+
+<p>If you’re not interested in the reasons, and just want to get things fixed as quickly as
+possible, you can jump straight to <a href="#solutions-for-ssl-issues">solutions for SSL issues</a>.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><strong>The Problems</strong>
+    <ul>
+      <li><a href="#why-am-i-seeing--code-certificate-verify-failed--code--">Why am I seeing <code>certificate verify failed</code>?</a>
+        <ul>
+          <li><a href="#what-are-these-certificates">What are these certificates?</a></li>
+          <li><a href="#how-ruby-uses-ca-certificates">How Ruby uses CA certificates</a></li>
+          <li><a href="#troubleshooting-certificate-errors">Troubleshooting certificate errors</a></li>
+        </ul>
+      </li>
+      <li><a href="#why-am-i-seeing--code-read-server-hello-a--code--">Why am I seeing <code>read server hello A</code>?</a>
+        <ul>
+          <li><a href="#ssl-and-tls-protocol-versions">SSL and TLS protocol versions</a></li>
+          <li><a href="#tls-10-and-11-are-deprecated">TLS 1.0 and 1.1 are deprecated</a></li>
+          <li><a href="#troubleshooting-protocol-errors">Troubleshooting protocol errors</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>The Solutions</strong>
+    <ul>
+      <li><a href="#automated-ssl-check">Automated SSL check</a></li>
+      <li><a href="#updating-bundler">Updating Bundler</a></li>
+      <li><a href="#updating-rubygems">Updating RubyGems</a></li>
+      <li><a href="#updating-system-clock">Updating System Clock</a></li>
+      <li><a href="#updating-ca-certificates">Updating CA certificates</a>
+        <ul>
+          <li><a href="#installing-new-rubygems-certificates">Installing new RubyGems certificates</a></li>
+          <li><a href="#installing-new-os-certificates">Installing new OS certificates</a></li>
+        </ul>
+      </li>
+      <li><a href="#reinstalling-ruby-from-version-managers">Reinstalling Ruby from version managers</a>
+        <ul>
+          <li><a href="#installed-with-rvm">Installed with <code>rvm</code></a></li>
+          <li><a href="#installed-with-ruby-build-or-rbenv-install">Installed with <code>ruby-build</code> or <code>rbenv install</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#reinstalling-ruby-from-os-package-managers">Reinstalling Ruby from OS package managers</a>
+        <ul>
+          <li><a href="#macos-built-in-ruby">macOS: Built-in Ruby</a></li>
+          <li><a href="#macos-installed-with-homebrew">macOS: Installed with Homebrew</a></li>
+          <li><a href="#debian-or-ubuntu-installed-with-apt-get">Debian or Ubuntu 16.04: Installed with <code>apt-get</code></a></li>
+          <li><a href="#fedora-installed-with-dnf">Fedora: Installed with <code>dnf</code></a></li>
+          <li><a href="#rhel-or-centos-installed-with-yum">RHEL or CentOS: Installed with <code>yum</code></a></li>
+          <li><a href="#windows-installed-with-ruby-installer">Windows: Installed with Ruby Installer</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Additional Help</strong>
+    <ul>
+      <li><a href="#running-another-automated-ssl-check">Another automated SSL check</a></li>
+      <li><a href="#creating-an-issue">Creating an issue</a></li>
+      <li><a href="#contributing-to-this-guide">Contributing to this guide</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="the-problems">The Problems</h2>
+
+<h3 id="why-am-i-seeing-certificate-verify-failed">Why am I seeing <code>certificate verify failed</code>?</h3>
+
+<p>If you’ve seen the following SSL error when trying to pull updates from RubyGems:
+<code>OpenSSL::SSL::SSLError: SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed</code></p>
+
+<p>This error happens when your computer is missing a file that it needs to verify that the server
+behind RubyGems.org is the correct one.</p>
+
+<p>The latest version of RubyGems should fix this problem, so we recommend updating to the current
+version. To tell RubyGems to update itself to the latest version, run <code>gem update --system</code>. If
+that doesn’t work, try the manual update process below.</p>
+
+<p>(What do we mean by updating “should fix this problem”? Review the <a href="#what-are-these-certificates">What are these certificates?</a>
+and <a href="#how-ruby-uses-ca-certificates">How Ruby uses CA certificates</a> sections
+below to gain a better understanding of the underlying problems.)</p>
+
+<h4 id="what-are-these-certificates">What are these certificates?</h4>
+
+<p>Anytime your computer is talking to a server using HTTPS, it uses an <em>SSL certificate</em> as part
+of that connection. The certificate allows your computer to know that it is talking to the real
+server for a domain, and allows it to make sure that your computer and that server can
+communicate completely privately, without any other computer knowing what is sent back and forth.</p>
+
+<p>To know if the certificate for RubyGems.org is correct, your computer consults another
+certificate from a Certificate Authority (CA). The CA certificate bundle includes certificates
+from every company that provides SSL certificates for servers, like Verisign, Globalsign, and
+many others.</p>
+
+<p>Each CA has a “root” certificate that they use to verify other certificates. The CA certificates
+are called “root” because they sign other certificates that sign yet other certificates, and a
+graph of the certificates would look like a tree, with the “root” certificates at the root of
+the tree. Your computer will use its built-in CA bundle of many root certificates to know
+whether to trust an SSL certificate provided by a particular website, such as RubyGems.org.</p>
+
+<p>Occasionally, new companies are added to the CA bundle, or existing companies have their certificates
+expire and need to distribute new ones. For most websites, this isn’t a huge
+problem, because web browsers regularly update their CA bundle as part of general browser
+updates.</p>
+
+<h4 id="how-ruby-uses-ca-certificates">How Ruby uses CA certificates</h4>
+
+<p>The SSL certificate used by RubyGems.org descends from a new-ish root certificate. Ruby (and
+therefore RubyGems and Bundler) does not have a regularly updated CA bundle to use when
+contacting websites. Usually, Ruby uses a CA bundle provided by the operating system (OS). On
+older OSes, this CA bundle can be really old—as in a decade old. Since a CA bundle that old
+can’t verify the (new-ish) certificate for RubyGems.org, you might see the error in question:
+<code>certificate verify failed</code>.</p>
+
+<p>Further complicating things, an otherwise unrelated change 18-24 months ago lead to a new SSL
+certificate being issued for RubyGems.org. This meant the “root” certificate that needed to
+verify connections changed. So even if you’d previously upgraded RubyGems/Bundler in order to
+fix the SSL problem, you would need to upgrade again—this time to an even newer version with
+even newer certificates.</p>
+
+<h4 id="troubleshooting-certificate-errors">Troubleshooting certificate errors</h4>
+
+<p>Start by <a href="#automated-ssl-check">running the automatic SSL check</a>, and follow the instructions. You might need
+to <a href="#updating-bundler">update Bundler</a>, <a href="#updating-rubygems">update RubyGems</a>,
+<a href="#installing-new-rubygems-certificates">manually update RubyGems certificates</a>, or perhaps
+even <a href="#installing-new-os-certificates">install new OS certificates</a>.</p>
+
+<h3 id="why-am-i-seeing-read-server-hello-a">Why am I seeing <code>read server hello A</code>?</h3>
+
+<p>This error means that your machine was unable to establish a secure connection to RubyGems.org.
+The most common cause for that problem is a Ruby that uses an old version of OpenSSL. OpenSSL
+1.0.1, released March 12, 2012, is the minimum version required to connect to
+RubyGems.org, starting January 1, 2018.</p>
+
+<p>To understand why that version is required, keep reading. To see instructions on how to update
+OpenSSL and/or Ruby to fix the problem, skip to the
+<a href="#troubleshooting-protocol-errors">troubleshooting section</a>.</p>
+
+<h4 id="ssl-and-tls-protocol-versions">SSL and TLS protocol versions</h4>
+
+<p>Secure connections on the internet use <a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a>,
+the secure version of HTTP. That security was originally provided by SSL, an acronym
+for Secure Sockets Layer. Over time, researchers discovered flaws in SSL, and network
+developers responded with changes and fixes. After SSL 3.0, it was replaced by TLS, or
+<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>.</p>
+
+<p>Over time, TLS was also revised. TLS version 1.2, originally defined in 2011, and supported
+by OpenSSL starting in 2012, is the current standard. In 2017, every version of SSL and TLS
+older than TLS 1.2 has been found to have critical flaws that can be exploited by a
+determined or knowledable adversary. As a result, security best practices suggest actively
+blocking all versions of SSL, as well as TLS versions 1.0 and 1.1.</p>
+
+<h4 id="tls-10-and-11-are-deprecated">TLS 1.0 and 1.1 are deprecated</h4>
+
+<p>RubyGems.org uses a 3rd party CDN provider called <a href="https://www.fastly.com/">Fastly</a>, which lets
+users all around the world download gems really quickly.</p>
+
+<p>Last year, Fastly announced it will deprecate TLS versions 1.0 and 1.1 due to a mandate
+published by the PCI Security Standard Council.
+(<a href="https://www.fastly.com/blog/phase-two-our-tls-10-and-11-deprecation-plan">Read more about this in Fastly’s blog post.</a>)</p>
+
+<p>As a result, RubyGems.org will require TLSv1.2 at minimum starting January 2018. This means
+RubyGems.org and the <code>gem</code> command will no longer support versions of Ruby and OpenSSL that are
+do not have support of TLS 1.2.</p>
+
+<h4 id="troubleshooting-protocol-errors">Troubleshooting protocol errors</h4>
+
+<p>To troubleshoot protocol connection errors, start by <a href="#automated-ssl-check">running the automatic SSL check</a>,
+and follow the instructions. You might need to <a href="#updating-bundler">update Bundler</a>,
+<a href="#updating-rubygems">update RubyGems</a>, or even reinstall Ruby (you can find reinstallation
+instructions by <a href="#reinstalling-ruby-from-version-managers">version manager</a>
+or <a href="#reinstalling-ruby-from-os-package-managers">package manager</a>.)</p>
+
+<h2 id="the-solutions">The Solutions</h2>
+
+<h3 id="automated-ssl-check">Automated SSL check</h3>
+
+<p>First, <a href="https://github.com/rubygems/ruby-ssl-check/blob/master/check.rb">run this script</a> to
+check whether your errors result from the SSL certs issue or the TLS versions issue.</p>
+
+<p>You can run the script immediately with this command (Windows 10 also):</p>
+
+<p><code>$ curl -Lks 'https://git.io/rg-ssl' | ruby</code></p>
+
+<p>If the output reads “Your Ruby can’t connect to rubygems.org because you are missing the
+certificate” you have a certificate verification error, and need to update your certs.</p>
+
+<p>If you instead see “Your Ruby can’t connect to rubygems.org because your version of OpenSSL is
+too old” your OpenSSL version is old and incompatible with TLSv1.2, and you need to upgrade your
+OpenSSL and/or recompile Ruby to use a newer version of SSL.</p>
+
+<p>The instructions in this guide can help you troubleshoot both problems.</p>
+
+<h3 id="updating-bundler">Updating Bundler</h3>
+
+<p>Update to the latest version of Bundler by running:</p>
+
+<p><code>gem install bundler</code></p>
+
+<h3 id="updating-rubygems">Updating RubyGems</h3>
+
+<p>You might be able to upgrade RubyGems using the self-update command:</p>
+
+<p><code>gem update --system</code></p>
+
+<p>If that command fails, you can try downloading the latest RubyGems yourself and installing it, using these steps. In this example, we will be downloading and installing RubyGems 2.7.6. If the latest version of RubyGems has changed by the time you are reading this, you will need to change anyplace you see <code>2.7.6</code> to the version of RubyGems that you have downloaded.</p>
+
+<ol>
+  <li>Using your web browser, head to the <a href="https://rubygems.org/pages/download">Download RubyGems</a> page, and download the gem version of the latest rubygems.</li>
+  <li>Once you’ve downloaded the gem, open Terminal.app on macOS, or Command Prompt with Ruby on Windows.</li>
+  <li>Change directories to your Downloads folder. On macOS, the command would be <code>cd ~/Downloads</code>. On Windows, it would be <code>cd C:\Users\%USERNAME%\Downloads</code>.</li>
+  <li>Install the downloaded RubyGems upgrade gem by running <code>gem install --local rubygems-update-2.7.6.gem</code>.</li>
+  <li>Run the upgrade command <code>update_rubygems</code>.</li>
+</ol>
+
+<p>You’re done! Run <code>gem --version</code> to verify that you are using the latest version of RubyGems.</p>
+
+<h3 id="updating-system-clock">Updating System Clock</h3>
+
+<p>If your system clock is set to a time in the past or future, your machine will not be able to establish a secure connection to RubyGems.org. To resolve the issue, you will need to set your system clock to the current time. In Linux, you can update the system clock by running <code>sudo ntpdate ntp.ubuntu.com</code>.</p>
+
+<p>Here are other possible solutions for updating a system clock:</p>
+
+<ul>
+  <li>macOS: <a href="https://support.apple.com/kb/PH25523?locale=en_US">Set the time and date on your Mac</a></li>
+  <li>Ubuntu: <a href="https://help.ubuntu.com/community/UbuntuTime">Ubuntu Time Management</a></li>
+  <li>Windows: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_10-other_settings-winpc/how-to-force-windows-10-time-to-synch-with-a-time/20f3b546-af38-42fb-a2d0-d4df13cc8f43">Getting Windows 10 time to sync with a time server</a></li>
+  <li>Vagrant: <a href="https://stackoverflow.com/questions/33939834/how-to-correct-system-clock-in-vagrant-automatically">Correcting the system clock in Vagrant</a></li>
+</ul>
+
+<h3 id="updating-ca-certificates">Updating CA certificates</h3>
+
+<h4 id="installing-new-rubygems-certificates">Installing new RubyGems certificates</h4>
+
+<p>If you’re unable to update RubyGems, you can manually add the certificate RubyGems needs. If you
+have a version of RubyGems new enough (version 2.1.x and above) that can use those “vendored”
+certificates—and you install the certificate successfully—it will work without upgrading the
+RubyGems version.</p>
+
+<p><strong>Warning</strong>: These instructions will only add new certs; Ruby will be left untouched. To ensure
+your Ruby version can use TLSv1.2, run the snippet again. If not, follow a different set of
+instructions in this guide for upgrading Ruby as well.</p>
+
+<p><strong>Step 1: Get the new trust certificate</strong></p>
+
+<p>Download the <code>.pem</code> file from this link: <a href="https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem">GlobalSignRootCA.pem</a></p>
+
+<p>Then, find the downloaded file, and check to make sure the filename ends in <code>.pem</code>.
+(<em>Note</em>: Some browsers will change the extension to <code>.txt</code>, which will prevent this from working.
+So it’s important to make sure the file you downloaded ends in a <code>.pem</code> extension.)</p>
+
+<p><strong>Step 2: Locate RubyGems certificate directory in your installation</strong></p>
+
+<p>Next, you’ll want to find the directory where you installed Ruby in order to add the .pem file there.</p>
+
+<p><strong>On Windows</strong>:</p>
+
+<p>Open your command line and type in:</p>
+
+<p><code>C:\&gt;gem which rubygems</code></p>
+
+<p>You’ll see output like this:</p>
+
+<p><code>C:/Ruby21/lib/ruby/2.1.0/rubygems.rb</code></p>
+
+<p>To open a window showing the directory we need to find, enter the path part up to the file
+extension in the same window (but using backslashes instead). For example, based on the output
+above, you would run this command:</p>
+
+<p><code>C:\&gt;start C:\Ruby21\lib\ruby\2.1.0\rubygems</code></p>
+
+<p>This will open an Explorer window, showing the directory RubyGems is installed into.</p>
+
+<p><strong>On macOS</strong>:</p>
+
+<p>Open Terminal and run this command:</p>
+
+<p><code>$ gem which rubygems</code></p>
+
+<p>You’ll see output like this:</p>
+
+<p><code>/opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems.rb</code></p>
+
+<p>To open a window showing the directory we need to find, use the <code>open</code> command on that output
+without the “.rb” on the end, like this:</p>
+
+<p><code>$ open /opt/rubies/2.4.1/lib/ruby/2.4.0/rubygems</code></p>
+
+<p>A Finder window will open showing the directory that RubyGems is installed into.</p>
+
+<p><strong>Step 3: Copy new trust certificate</strong></p>
+
+<p>In the window, open the <code>ssl_certs</code> directory and drag your <code>.pem</code>
+file into it. It will be listed with other files like <code>AddTrustExternalCARoot.pem</code>.</p>
+
+<p>Once you’ve done this, it should be possible to follow the directions at the very top to
+automatically update RubyGems. Visit the <a href="#updating-rubygems">Update RubyGems</a> section for
+step-by-step instructions. If that doesn’t work, keep following this guide.</p>
+
+<h4 id="installing-new-os-certificates">Installing new OS certificates</h4>
+
+<p>This solution might work when the version of OpenSSL installed with Homebrew interferes
+with Ruby’s ability to find the correct certificates. Sometimes, uninstalling everything and
+starting again from scratch is enough to fix things.</p>
+
+<p>First, you’ll want to remove RVM. You can do that by running this command:</p>
+
+<p><code>$ rvm implode</code></p>
+
+<p>Next, you’ll want to remove OpenSSL from Homebrew. (Using <code>--force</code> ensures that you remove all
+versions of OpenSSL you might have):</p>
+
+<p><code>$ brew uninstall openssl --force</code></p>
+
+<p>Now, you can reinstall RVM, following the instructions from the previous step.</p>
+
+<h3 id="reinstalling-ruby-from-version-managers">Reinstalling Ruby from version managers</h3>
+
+<h4 id="installed-with-rvm">Installed with <code>rvm</code></h4>
+
+<p><strong>Note</strong>: Try this solution if updating SSL certificates with RVM doesn’t work. If Ruby
+installed with RVM can’t find the correct certificates even after they have been updated,
+ you might be able to fix it by reinstalling RVM and then reinstalling your Ruby version.</p>
+
+<p>Run these commands to remove RVM and reinstall it:</p>
+
+<p><code>$ rvm implode&#x000A;   $ \curl -sSL https://get.rvm.io | bash -s stable</code></p>
+
+<p>Then, reinstall Ruby while telling RVM that you don’t want to use precompiled binaries.
+(Unfortunately, this will take longer, but it will hopefully fix the SSL problem.)</p>
+
+<p>This command will install Ruby 2.2.3. Adjust the command to install the version(s) of Ruby that you need:</p>
+
+<p><code>$ rvm install 2.2.3 --disable-binary</code></p>
+
+<h4 id="installed-with-ruby-build-or-rbenv-install">Installed with <code>ruby-build</code> or <code>rbenv install</code></h4>
+
+<p>Follow the instructions outlined in the <a href="https://github.com/rbenv/ruby-build/wiki#updating-ruby-build">Updating and Troubleshooting ruby-build guide</a> by rbenv.</p>
+
+<h3 id="reinstalling-ruby-from-os-package-managers">Reinstalling Ruby from OS package managers</h3>
+
+<h4 id="macos-built-in-ruby">macOS: Built-in Ruby</h4>
+
+<p>macOS 10.13 High Sierra comes with default Ruby that is compatible with TLSv1.2.</p>
+
+<p>To check your current macOS version, go to the Apple menu and choose “About This Mac”.
+If you see anything other than “macOS High Sierra”, you will need to upgrade to the newest
+macOS (or else install a newer version of Ruby with Homebrew by following the next set of
+instructions after these).</p>
+
+<p>To upgrade to High Sierra:
+- 1. Open the App Store application
+- 2. Choose the “Updates” tab
+- 3. Click the “Install” button for “macOS High Sierra”</p>
+
+<h4 id="macos-installed-with-homebrew">macOS: Installed with Homebrew</h4>
+
+<p><em>Note</em>: To install a newer version of Ruby with Homebrew, first make sure Homebrew is installed.
+If the <code>brew</code> command is not present, follow the installation instructions at <a href="https://brew.sh">https://brew.sh</a>
+and then come back to these steps.</p>
+
+<ul>
+  <li>
+    <ol>
+      <li>Run <code>brew update</code></li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Run <code>brew install ruby</code></li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>If Ruby is already installed, run <code>brew upgrade ruby</code> to upgrade to the latest version.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="debian-or-ubuntu-1604-installed-with-apt-get">Debian or Ubuntu 16.04: Installed with <code>apt-get</code></h4>
+
+<p><strong>Note</strong>: To remove Ruby with <code>apt</code>, you’ll need to check which versions of Ruby you have installed.
+<code>apt</code> installs Ruby v2.3.1.</p>
+
+<p>To uninstall, follow the <a href="https://stackoverflow.com/a/22753859">directions listed here</a>.
+(These instructions work for both Ubuntu and Debian.)</p>
+
+<p>Once you’ve successfully uninstalled Ruby, reinstall it by running:</p>
+
+<p><code>$ sudo apt-get install ruby</code></p>
+
+<h4 id="fedora-installed-with-dnf">Fedora: Installed with <code>dnf</code></h4>
+
+<p><strong>Note</strong>: The newest versions of Fedora use <code>dnf</code> as its package manager, but older versions
+use <code>yum</code> instead. If you see the error message <code>dnf: command not found</code>, replace the <code>dnf</code>
+in these instructions with <code>yum</code>.</p>
+
+<p>First, uninstall Ruby by running:</p>
+
+<p><code>$ dnf remove ruby</code></p>
+
+<p>And then reinstall (this command will install Ruby 2.3):</p>
+
+<p><code>$ dnf install ruby</code></p>
+
+<h4 id="rhel-or-centos-installed-with-yum">RHEL or CentOS: Installed with <code>yum</code></h4>
+
+<p>Follow these directions for <a href="http://ask.xmodulo.com/upgrade-ruby-centos.html">upgrading Ruby on CentOS</a>.
+(They also include instructions for troubleshooting OpenSSL.)</p>
+
+<h4 id="windows-installed-with-ruby-installer">Windows: Installed with Ruby Installer</h4>
+
+<p>From the Control Panel, find the Ruby installer in “Programs”. Click on the folder, and click
+again on “Uninstall Ruby”.
+Reinstall by downloading <a href="https://rubyinstaller.org/downloads/">Ruby and the Ruby DevKit</a> at RubyInstaller.</p>
+
+<h2 id="additional-help">Additional Help</h2>
+
+<h3 id="running-another-automated-ssl-check">Running another automated SSL check</h3>
+
+<p>Rerun the automated <a href="#automated-ssl-check">SSL check</a> to verify if the issue lies with an SSL issue
+or a TLS issue. If you’ve already followed the troubleshooting steps above and are still
+encountering an issue, go to the <a href="#creating-an-issue">creating an issue</a> section below for next steps.</p>
+
+<h3 id="creating-an-issue">Creating an issue</h3>
+
+<p>If none of these instructions fixed the problem, the next step is to open an issue.</p>
+
+<p>(Create an issue in the <a href="https://github.com/rubygems/rubygems/issues">RubyGems issue tracker</a>
+if your error came from <code>gem install</code>. If it came from <code>bundle install</code>, create an issue in
+the <a href="https://github.com/bundler/bundler">Bundler issue tracker</a>.)</p>
+
+<p>Please include:
+- The output from running <code>gem env</code>:
+- The output from running <code>bundle env</code>:
+- Output from running <code>ruby -ropenssl -e 'puts OpenSSL::OPENSSL_LIBRARY_VERSION'</code>:
+- Your Ruby version manager (if any):
+- Your OS and OS version:
+- Your package manager name and version (if applicable):</p>
+
+<h3 id="contributing-to-this-guide">Contributing to this guide</h3>
+
+<p>If you found a solution not listed here, submit a PR to add your solution to <a href="https://github.com/rubygems/bundler-site/blob/master/source/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html.md">this guide</a>!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v2.1/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.1/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.1/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    anchors.add();
+  });
+</script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/rubygems/bundler-site/blob/master/source/v2.1/guides/rubygems_tls_ssl_troubleshooting_guide.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<style>
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+</style>
