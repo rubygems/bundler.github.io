@@ -191,10 +191,11 @@ Read the manual for an in-depth discussion of all of the options available in th
 <div class='description'>
 Gemfiles require at least one gem source, in the form of the URL for a RubyGems server. Generate a Gemfile with the default rubygems.org source by running <code>bundle init</code>. If you can, use <code>https</code> so your connection to the rubygems.org server will be verified with SSL.
 </div>
-<div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span> <span class="k">do</span>&#x000A;  <span class="c1"># Gems here</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="c1"># Gems here</span>&#x000A;</code></pre></div>
 <div class='notes'>
-Global source lines are a security risk and should not be used as they can lead to gems being installed from unintended sources.
+If you want to pick up gems from a different source, make sure to wrap the extra sources in a block. Multiple global source lines are a security risk and should not be used as they can lead to gems being installed from unintended sources.
 </div>
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;&#x000A;<span class="c1"># Gems here</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s1">'https://gems.example.com'</span> <span class="k">do</span>&#x000A;  <span class="c1"># Gems from the alternative source here</span>&#x000A;<span class="k">end</span>&#x000A;&#x000A;</code></pre></div>
 </div>
 <div class='bullet'>
 <div class='description'>
