@@ -230,10 +230,13 @@ Using a plugin
 Install a plugin from a command
 </h4>
 <p>
-Plugins can be installed from RubyGems (default) or from a Git server. To use a gem on your machine, you can run <code>bundler plugin install <gem_name></code>. Once the plugin is installed, the commands will be available for use and the hooks will be automatically registered with Bundler.
+Plugins can be installed from RubyGems (default) or from a Git server. To use a gem on your machine, you can run <code>bundler plugin install gem_name</code>. Once the plugin is installed, the commands will be available for use and the hooks will be automatically registered with Bundler.
 </p>
 <p>
 Run <code>bundler plugin help install</code> for more details help and instructions on installing from Git.
+</p>
+<p>
+In Bundler 2.2.0, you can uninstall with <code>bundler plugin uninstall gem_name</code>.
 </p>
 <h4 id='install_from_command'>
 Install a plugin from your Gemfile
@@ -282,7 +285,7 @@ Bundler commands allow you to extend the Bundler interface with additional funct
 <p>
 To add a Bundler command, you need to make a class that registers itself (or another class) as a command. For example, to add support for a <code>bundler my_command</code> command, you might create a class like so:
 </p>
-<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">MyCommand</span> <span class="o">&lt;</span> <span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="o">::</span><span class="no">API</span>&#x000A;  <span class="c1"># Register this class as a handler for the `my_command` command</span>&#x000A;  <span class="n">command</span> <span class="s2">"my_command"</span>&#x000A;&#x000A;  <span class="c1"># The exec method will be called with the `command` and the `args`.</span>&#x000A;  <span class="c1"># This is where you should handle all logic and functionality</span>&#x000A;  <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>&#x000A;    <span class="nb">puts</span> <span class="s2">"You called "</span> <span class="o">+</span> <span class="n">command</span> <span class="o">+</span> <span class="s2">" with args: "</span> <span class="o">+</span> <span class="n">args</span><span class="p">.</span><span class="nf">inspect</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">MyCommand</span> <span class="o">&lt;</span> <span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="o">::</span><span class="no">API</span>&#x000A;  <span class="c1"># Register this class as a handler for the `my_command` command</span>&#x000A;  <span class="n">command</span> <span class="s2">"my_command"</span>&#x000A;&#x000A;  <span class="c1"># The exec method will be called with the `command` and the `args`.</span>&#x000A;  <span class="c1"># This is where you should handle all logic and functionality</span>&#x000A;  <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>&#x000A;    <span class="k">if</span> <span class="n">args</span><span class="p">.</span><span class="nf">empty?</span>&#x000A;      <span class="c1"># Using BundlerError in plugins is recommended. See below.</span>&#x000A;      <span class="k">raise</span> <span class="no">BundlerError</span><span class="p">,</span> <span class="s1">'My plugin requires arguments'</span>&#x000A;    <span class="k">end</span>&#x000A;    <span class="nb">puts</span> <span class="s2">"You called "</span> <span class="o">+</span> <span class="n">command</span> <span class="o">+</span> <span class="s2">" with args: "</span> <span class="o">+</span> <span class="n">args</span><span class="p">.</span><span class="nf">inspect</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
 or
 <div class="highlight"><pre class="highlight ruby"><code><span class="k">module</span> <span class="nn">MyCommand</span>&#x000A;  <span class="c1"># Register this class as a handler for the `my_command` command</span>&#x000A;  <span class="no">Bundler</span><span class="o">::</span><span class="no">Plugin</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">command</span><span class="p">(</span><span class="s1">'my_command'</span><span class="p">,</span> <span class="nb">self</span><span class="p">)</span>&#x000A;&#x000A;  <span class="c1"># The exec method will be called with the `command_name` and the `args`.</span>&#x000A;  <span class="c1"># This is where you should handle all logic and functionality</span>&#x000A;  <span class="k">def</span> <span class="nf">exec</span><span class="p">(</span><span class="n">command_name</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>&#x000A;    <span class="nb">puts</span> <span class="s2">"You called "</span> <span class="o">+</span> <span class="n">command_name</span> <span class="o">+</span> <span class="s2">" with args: "</span> <span class="o">+</span> <span class="n">args</span><span class="p">.</span><span class="nf">inspect</span>&#x000A;  <span class="k">end</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
 <p>
@@ -296,6 +299,15 @@ These two elements are important in order for a command to register in Bundler:
 The class defines the instance method <code>exec(command_name, args)</code>
 </li>
 </ol>
+<h4 id='raising_errors'>
+Raising Errors
+</h4>
+<p>
+If something goes wrong, your plugins should raise a `BundlerError`. It's not recommended to raise e.g. `Exception` in a plugin, because that will cause Bundler to print its own bug report template, asking users to report the bug to Bundler itself.
+</p>
+<p>
+To see in detail how bundler rescues errors, check out `bundler/friendly_errors.rb`.
+</p>
 <h3 id='developing_your_plugin_hooks'>
 4. Using Bundler hooks
 </h3>
