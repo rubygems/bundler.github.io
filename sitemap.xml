@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2020-10-30T23:27:44Z</lastmod>
+    <lastmod>2020-11-03T07:47:14Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -371,6 +371,9 @@
   </url>
   <url>
     <loc>http://bundler.io/bundle_outdated.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/bundle_plugin.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_show.html</loc>
@@ -3656,6 +3659,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v2.1/bundle_platform.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v2.1/bundle_plugin.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v2.1/bundle_pristine.html</loc>
