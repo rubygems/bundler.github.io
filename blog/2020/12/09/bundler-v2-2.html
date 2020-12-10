@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Bundler v2.2: Multiplatform, Funding, and more.
+</title>
+
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/analytics.js" async="true"></script>
+<link href="/stylesheets/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="Blog header transparent bg" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2020/12/09/bundler-v2-2.html">Bundler v2.2: Multiplatform, Funding, and more.</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="https://github.com/deivid-rodriguez/" target="_blank">David Rodríguez</a>
+on
+<time>
+Dec  9 2020
+</time>
+</div>
+<div class='blog-content'>
+<p>After an intense year of work, we’re finally ready to announce the release of
+the final version of bundler 2.2, right in time to be included with Christmas’
+eve Ruby 3.0 release.</p>
+
+<h2 id="multiplatform-support">Multiplatform support</h2>
+
+<p>Historically, bundler has had issues when it comes to choosing and prioritizing
+platform specific versions of gems during resolution. With this release, we have
+made several improvements in this regard and we expect to ship a much more user
+friendly behavior here.</p>
+
+<p>Huge thanks to <a href="https://github.com/kou">@kou</a> for contributing awesome fixes in
+this area, and to <a href="https://github.com/larskanis">@larskanis</a> for early testing
+the improvements and giving us feedback.</p>
+
+<p>Bundler now needs to record the specific platform it used to resolve a given
+<code>Gemfile</code> in the lockfile, so you will notice some source control differences
+there when you upgrade. Commit these changes for all your supported platforms to
+make sure all developers of your application get a consistent resolution under
+all platforms.</p>
+
+<h2 id="find-out-about-gems-you-depend-on-that-need-funding">Find out about gems you depend on that need funding</h2>
+
+<p>We really want to help building a more sustainable ruby ecosystem, so we’re
+shipping a new <code>bundle fund</code> command that helps you discovering the libraries
+you depend on that need funding.</p>
+
+<p>If you develop a gem that needs funding, make sure you fill in the <code>funding_uri</code>
+metadata in your gemspec, like this:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">gem</span><span class="o">|</span>&#x000A;  <span class="n">gem</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_NAME</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="n">gem</span><span class="p">.</span><span class="nf">homepage</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_HOMEPAGE</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="n">s</span><span class="p">.</span><span class="nf">metadata</span> <span class="o">=</span> <span class="p">{</span>&#x000A;    <span class="s2">"funding_uri"</span> <span class="o">=&gt;</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_FUNDING_PAGE</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<p>As soon as people start filling this metadata, <code>bundle fund</code> will start
+reporting all of your dependencies that need funding.</p>
+
+<p>Big kudos to <a href="https://github.com/gjtorikian">@gjtorikian</a> for coding this
+feature both on the server and the client sides, and for waiting so patiently
+until we had time to review his work.</p>
+
+<p>And talking about funding, remember: <a href="https://rubytogether.org/">RubyTogether</a> needs ❤️.</p>
+
+<h2 id="improved-windows-support">Improved Windows support</h2>
+
+<p>Partly because of the improved multiplatform support, but also because of many
+other fixes, bundler now supports Windows much better. We even have a Windows CI
+running to make sure we minimize regressions under that platform.</p>
+
+<h2 id="better-integration-inside-ruby-core">Better integration inside ruby-core</h2>
+
+<p>Since ruby 2.6 bundler is included as default gem with ruby. This change was
+exciting but didn’t happen without issues. We have made many fixes in this
+regard and we believe things should be much smoother now. As in, you shouldn’t
+notice any behavioral difference at all when running bundler as a regular gem vs
+as a default gem.</p>
+
+<h2 id="better-support-for-jruby">Better support for JRuby</h2>
+
+<p>We have been working on improving our compatibility with jruby as well. We now
+run a small subset of our CI under jruby to prevent regressions and cover the
+related bug fixes that we ship.</p>
+
+<h2 id="better-more-flexible-gem-templates">Better, more flexible, gem templates</h2>
+
+<p>We have shipped a lot of improvements to the default <code>bundle gem</code> template. You
+can now automatically set up a configuration for the main CI providers, or
+include <code>rubocop</code> to check your code style, among other improvements. We also
+make sure all gems are now generated with a default minimum supported ruby,
+which is a good practice that we really want to promote.</p>
+
+<h2 id="and-a-bunch-of-bug-fixes">And a bunch of bug fixes!</h2>
+
+<p>Last but not least, we have fixed about 60 bugs in this release. Our main focus
+at the moment is stability, so we want to kill all those issues that sometimes
+make bundler get in the middle.</p>
+
+<h2 id="how-to-get-it">How to get it</h2>
+
+<p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
+
+<hr />
+
+<p>That’s all for now. We really hope you enjoy this release. Happy Bundling!</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>

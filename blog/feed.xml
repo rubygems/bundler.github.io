@@ -5,16 +5,115 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2020-04-27T00:00:00+00:00</updated>
+  <updated>2020-12-09T16:32:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler v2.2: Multiplatform, Funding, and more.</title>
+    <link rel="alternate" href="http://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
+    <id>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
+    <published>2020-12-09T16:32:00+00:00</published>
+    <updated>2020-12-10T11:25:42+00:00</updated>
+    <author>
+      <name>David Rodríguez</name>
+    </author>
+    <content type="html">&lt;p&gt;After an intense year of work, we’re finally ready to announce the release of
+the final version of bundler 2.2, right in time to be included with Christmas’
+eve Ruby 3.0 release.&lt;/p&gt;
+
+&lt;h2 id="multiplatform-support"&gt;Multiplatform support&lt;/h2&gt;
+
+&lt;p&gt;Historically, bundler has had issues when it comes to choosing and prioritizing
+platform specific versions of gems during resolution. With this release, we have
+made several improvements in this regard and we expect to ship a much more user
+friendly behavior here.&lt;/p&gt;
+
+&lt;p&gt;Huge thanks to &lt;a href="https://github.com/kou"&gt;@kou&lt;/a&gt; for contributing awesome fixes in
+this area, and to &lt;a href="https://github.com/larskanis"&gt;@larskanis&lt;/a&gt; for early testing
+the improvements and giving us feedback.&lt;/p&gt;
+
+&lt;p&gt;Bundler now needs to record the specific platform it used to resolve a given
+&lt;code&gt;Gemfile&lt;/code&gt; in the lockfile, so you will notice some source control differences
+there when you upgrade. Commit these changes for all your supported platforms to
+make sure all developers of your application get a consistent resolution under
+all platforms.&lt;/p&gt;
+
+&lt;h2 id="find-out-about-gems-you-depend-on-that-need-funding"&gt;Find out about gems you depend on that need funding&lt;/h2&gt;
+
+&lt;p&gt;We really want to help building a more sustainable ruby ecosystem, so we’re
+shipping a new &lt;code&gt;bundle fund&lt;/code&gt; command that helps you discovering the libraries
+you depend on that need funding.&lt;/p&gt;
+
+&lt;p&gt;If you develop a gem that needs funding, make sure you fill in the &lt;code&gt;funding_uri&lt;/code&gt;
+metadata in your gemspec, like this:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="no"&gt;Gem&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="no"&gt;Specification&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;GEM_NAME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;homepage&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;GEM_HOMEPAGE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;metadata&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"funding_uri"&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;GEM_FUNDING_PAGE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As soon as people start filling this metadata, &lt;code&gt;bundle fund&lt;/code&gt; will start
+reporting all of your dependencies that need funding.&lt;/p&gt;
+
+&lt;p&gt;Big kudos to &lt;a href="https://github.com/gjtorikian"&gt;@gjtorikian&lt;/a&gt; for coding this
+feature both on the server and the client sides, and for waiting so patiently
+until we had time to review his work.&lt;/p&gt;
+
+&lt;p&gt;And talking about funding, remember: &lt;a href="https://rubytogether.org/"&gt;RubyTogether&lt;/a&gt; needs ❤️.&lt;/p&gt;
+
+&lt;h2 id="improved-windows-support"&gt;Improved Windows support&lt;/h2&gt;
+
+&lt;p&gt;Partly because of the improved multiplatform support, but also because of many
+other fixes, bundler now supports Windows much better. We even have a Windows CI
+running to make sure we minimize regressions under that platform.&lt;/p&gt;
+
+&lt;h2 id="better-integration-inside-ruby-core"&gt;Better integration inside ruby-core&lt;/h2&gt;
+
+&lt;p&gt;Since ruby 2.6 bundler is included as default gem with ruby. This change was
+exciting but didn’t happen without issues. We have made many fixes in this
+regard and we believe things should be much smoother now. As in, you shouldn’t
+notice any behavioral difference at all when running bundler as a regular gem vs
+as a default gem.&lt;/p&gt;
+
+&lt;h2 id="better-support-for-jruby"&gt;Better support for JRuby&lt;/h2&gt;
+
+&lt;p&gt;We have been working on improving our compatibility with jruby as well. We now
+run a small subset of our CI under jruby to prevent regressions and cover the
+related bug fixes that we ship.&lt;/p&gt;
+
+&lt;h2 id="better-more-flexible-gem-templates"&gt;Better, more flexible, gem templates&lt;/h2&gt;
+
+&lt;p&gt;We have shipped a lot of improvements to the default &lt;code&gt;bundle gem&lt;/code&gt; template. You
+can now automatically set up a configuration for the main CI providers, or
+include &lt;code&gt;rubocop&lt;/code&gt; to check your code style, among other improvements. We also
+make sure all gems are now generated with a default minimum supported ruby,
+which is a good practice that we really want to promote.&lt;/p&gt;
+
+&lt;h2 id="and-a-bunch-of-bug-fixes"&gt;And a bunch of bug fixes!&lt;/h2&gt;
+
+&lt;p&gt;Last but not least, we have fixed about 60 bugs in this release. Our main focus
+at the moment is stability, so we want to kill all those issues that sometimes
+make bundler get in the middle.&lt;/p&gt;
+
+&lt;h2 id="how-to-get-it"&gt;How to get it&lt;/h2&gt;
+
+&lt;p&gt;Run &lt;code&gt;gem install bundler&lt;/code&gt; to upgrade to the newest version of Bundler.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;That’s all for now. We really hope you enjoy this release. Happy Bundling!&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>March Bundler Update</title>
     <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
     <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
     <published>2020-04-27T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
+    <updated>2020-12-10T11:25:42+00:00</updated>
     <author>
       <name>Gift Egwuenu</name>
     </author>
@@ -36,7 +135,7 @@
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
+    <updated>2020-12-10T11:25:42+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -100,7 +199,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
+    <updated>2020-12-10T11:25:42+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -157,7 +256,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
+    <updated>2020-12-10T11:25:42+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -177,7 +276,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
     <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
     <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
+    <updated>2020-12-10T11:25:42+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -208,90 +307,6 @@ $ gem install bundler -v '1.17.3'
 &lt;ul&gt;
   &lt;li&gt;Colby and the Bundler team&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Announcing Bundler 2.0</title>
-    <link rel="alternate" href="http://bundler.io/blog/2019/01/03/announcing-bundler-2.html"/>
-    <id>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</id>
-    <published>2019-01-03T00:00:00+00:00</published>
-    <updated>2020-12-10T08:43:36+00:00</updated>
-    <author>
-      <name>Colby Swandale</name>
-    </author>
-    <content type="html">&lt;p&gt;The Bundler team is excited to announce the release of Bundler 2.0 🎉!&lt;/p&gt;
-
-&lt;p&gt;This release focuses on removing offical support of versions of Ruby and RubyGems that have reached their end of life, with a few other small breaking changes.&lt;/p&gt;
-
-&lt;p&gt;The following is the full list of changes to Bundler 2:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Removed support for Ruby &amp;lt; 2.3&lt;/li&gt;
-  &lt;li&gt;Removed support for RubyGems &amp;lt; 3.0.0&lt;/li&gt;
-  &lt;li&gt;Changed the &lt;code&gt;github: 'some/repo'&lt;/code&gt; gem source to use the  &lt;code&gt;https&lt;/code&gt; schema by default&lt;/li&gt;
-  &lt;li&gt;Errors/warnings will now print to &lt;code&gt;STDERR&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Bundler now auto-switches between version 1 and 2 based on the Lockfile&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="update"&gt;Update&lt;/h3&gt;
-
-&lt;p&gt;We’ve posted an update on the &lt;a href="/blog/2019/01/04/an-update-on-the-bundler-2-release.html"&gt;release of Bundler 2&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id="what-is-version-autoswitching"&gt;What is version autoswitching?&lt;/h3&gt;
-
-&lt;p&gt;Version autoswitching means that Bundler will automatically run the correct 1.x or 2.x version based on your lockfile. This means you can have both Bundler 1.17.3 and Bundler 2.0.0 installed at the same time, and each application will use the version saved in your lockfile when you run &lt;code&gt;bundle install&lt;/code&gt;. Every existing application should continue to work using Bundler 1, even after you have installed Bundler 2 (or even Bundler 3 or 4, later on).&lt;/p&gt;
-
-&lt;h3 id="installing-bundler-2"&gt;Installing Bundler 2&lt;/h3&gt;
-
-&lt;p&gt;Bundler 2 requires RubyGems 3.0, so install that first by running:&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gem update --system
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Then, install Bundler 2 by running:&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ gem install bundler
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="why-does-bundler-depend-on-rubygems-30"&gt;Why does Bundler depend on RubyGems 3.0?&lt;/h3&gt;
-
-&lt;p&gt;To make Bundler’s user experience when it auto-switches between versions as smooth as possible, Bundler depends on particular features in RubyGems that were publicly introduced in RubyGems v3.0.&lt;/p&gt;
-
-&lt;p&gt;RubyGems is able to be upgraded to newest release using the &lt;code&gt;gem update --system&lt;/code&gt; command. See &lt;a href="https://guides.rubygems.org/command-reference/#gem-update"&gt;RubyGems Guides&lt;/a&gt; for more information.&lt;/p&gt;
-
-&lt;h3 id="upgrading-existing-applications-to-use-bundler-2"&gt;Upgrading existing applications to use Bundler 2&lt;/h3&gt;
-
-&lt;p&gt;Bundler will never automatically upgrade an application to Bundler 2 without your explicit permission. If you are ready to upgrade an existing application to use Bundler 2, you can run this command and then commit your lockfile:&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bundle update --bundler
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="upgrading-new-applications-to-use-bundler-2"&gt;Upgrading new applications to use Bundler 2&lt;/h3&gt;
-
-&lt;p&gt;If you have Bundler 2 installed, new applications will use Bundler 2 automatically. After you run &lt;code&gt;bundle install&lt;/code&gt;, you can check the lockfile to see which version of Bundler your application will use.&lt;/p&gt;
-
-&lt;h3 id="can-i-use-bundler-2-on-heroku"&gt;Can I use Bundler 2 on Heroku?&lt;/h3&gt;
-
-&lt;p&gt;Yes you can! The Heroku team has said they plan to upgrade the official Ruby buildpack to Bundler 2, but it will take some time. They have a zillion users, so that totally makes sense.&lt;/p&gt;
-
-&lt;p&gt;In the meantime, you can use our &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;buildpack&lt;/a&gt;, which is exactly the same as Heroku’s but with Bundler 2.&lt;/p&gt;
-
-&lt;p&gt;Note: Support for the Bundler 2 buildpack is limited. You are welcome to report issues at the &lt;a href="https://github.com/bundler/heroku-buildpack-bundler2"&gt;bundler/heroku-buildpack-bundler2&lt;/a&gt; repository, but we can’t guarantee solutions.&lt;/p&gt;
-
-&lt;h3 id="major-releases-going-forward"&gt;Major releases going forward&lt;/h3&gt;
-
-&lt;p&gt;With the release of Bundler 2, the core team now kicks off a new release schedule for Bundler: we’re going to aim for one major version release per year, so we can drop support for older Ruby and RubyGems versions around the same time that the Ruby core team does. Being able to stop supporting Ruby 1.8.7 is a huge relief!&lt;/p&gt;
-
-&lt;h3 id="more-information"&gt;More Information&lt;/h3&gt;
-
-&lt;p&gt;If you have more questions, or want more information about Bundler 2, read our &lt;a href="https://bundler.io/guides/bundler_2_upgrade.html"&gt;detailed Bundler 2 guide&lt;/a&gt; for the full scoop.&lt;/p&gt;
-
-&lt;h3 id="i-tried-to-upgrade-but-something-is-broken"&gt;I tried to upgrade but something is broken!&lt;/h3&gt;
-
-&lt;p&gt;Oh no! Sorry about that. Please head over to our &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/ISSUES.md"&gt;troubleshooting guide&lt;/a&gt; and open a ticket so that we can try to fix your problem ASAP.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;We hope you enjoy this release. Happy Bundling!&lt;/p&gt;
-
-&lt;p&gt;— Colby and the Bundler team&lt;/p&gt;
 </content>
   </entry>
 </feed>

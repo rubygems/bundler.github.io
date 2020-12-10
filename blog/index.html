@@ -65,28 +65,98 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='col-md-12 col-lg-10 col-lg-offset-1'>
 <div class='contents blog'>
 <h2 class='title'>
-<a href="/blog/2020/04/27/march-monthly-update.html">March Bundler Update</a>
+<a href="/blog/2020/12/09/bundler-v2-2.html">Bundler v2.2: Multiplatform, Funding, and more.</a>
 </h2>
 <div class='subtitle'>
 by
-<a href="#" target="_blank">Gift Egwuenu</a>
+<a href="https://github.com/deivid-rodriguez/" target="_blank">David Rodríguez</a>
 on
 <time>
-Apr 27 2020
+Dec  9 2020
 </time>
 </div>
 <div class='blog-content'>
-<p>Welcome to the Bundler monthly update! As part of our efforts at <a href="https://rubytogether.org">Ruby Together</a>, we publish a recap of the work that we’ve done the previous month. Read on to find out what updates were made to Bundler in March.</p>
+<p>After an intense year of work, we’re finally ready to announce the release of
+the final version of bundler 2.2, right in time to be included with Christmas’
+eve Ruby 3.0 release.</p>
 
-<p>Amazingly, all that work that the entire Bundler and RubyGems teams have been working at for years has paid off in a really big way: Bundler and RubyGems have merged repositories! On GitHub, <code>bundler/bundler</code> is archived, and all ongoing work on both projects now takes place inside <code>RubyGems/RubyGems</code>. All other repositories from the Bundler organization have either been archived (if unused) or moved to the RubyGems organization.</p>
+<h2 id="multiplatform-support">Multiplatform support</h2>
 
-<p>Not just the repositories have changed, either: the Bundler and RubyGems teams have merged as well. It’ll take us some time to work through 20 years worth of documentation and webpages, but we’ll be combining and updating them as fast as we can.</p>
+<p>Historically, bundler has had issues when it comes to choosing and prioritizing
+platform specific versions of gems during resolution. With this release, we have
+made several improvements in this regard and we expect to ship a much more user
+friendly behavior here.</p>
 
-<p>From this point forward, Bundler news will be reported together with RubyGems news. Hooray! 🎉</p>
+<p>Huge thanks to <a href="https://github.com/kou">@kou</a> for contributing awesome fixes in
+this area, and to <a href="https://github.com/larskanis">@larskanis</a> for early testing
+the improvements and giving us feedback.</p>
+
+<p>Bundler now needs to record the specific platform it used to resolve a given
+<code>Gemfile</code> in the lockfile, so you will notice some source control differences
+there when you upgrade. Commit these changes for all your supported platforms to
+make sure all developers of your application get a consistent resolution under
+all platforms.</p>
+
+<h2 id="find-out-about-gems-you-depend-on-that-need-funding">Find out about gems you depend on that need funding</h2>
+
+<p>We really want to help building a more sustainable ruby ecosystem, so we’re
+shipping a new <code>bundle fund</code> command that helps you discovering the libraries
+you depend on that need funding.</p>
+
+<p>If you develop a gem that needs funding, make sure you fill in the <code>funding_uri</code>
+metadata in your gemspec, like this:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">gem</span><span class="o">|</span>&#x000A;  <span class="n">gem</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_NAME</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="n">gem</span><span class="p">.</span><span class="nf">homepage</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_HOMEPAGE</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="n">s</span><span class="p">.</span><span class="nf">metadata</span> <span class="o">=</span> <span class="p">{</span>&#x000A;    <span class="s2">"funding_uri"</span> <span class="o">=&gt;</span> <span class="s2">"</span><span class="si">#{</span><span class="no">GEM_FUNDING_PAGE</span><span class="si">}</span><span class="s2">"</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
+<p>As soon as people start filling this metadata, <code>bundle fund</code> will start
+reporting all of your dependencies that need funding.</p>
+
+<p>Big kudos to <a href="https://github.com/gjtorikian">@gjtorikian</a> for coding this
+feature both on the server and the client sides, and for waiting so patiently
+until we had time to review his work.</p>
+
+<p>And talking about funding, remember: <a href="https://rubytogether.org/">RubyTogether</a> needs ❤️.</p>
+
+<h2 id="improved-windows-support">Improved Windows support</h2>
+
+<p>Partly because of the improved multiplatform support, but also because of many
+other fixes, bundler now supports Windows much better. We even have a Windows CI
+running to make sure we minimize regressions under that platform.</p>
+
+<h2 id="better-integration-inside-ruby-core">Better integration inside ruby-core</h2>
+
+<p>Since ruby 2.6 bundler is included as default gem with ruby. This change was
+exciting but didn’t happen without issues. We have made many fixes in this
+regard and we believe things should be much smoother now. As in, you shouldn’t
+notice any behavioral difference at all when running bundler as a regular gem vs
+as a default gem.</p>
+
+<h2 id="better-support-for-jruby">Better support for JRuby</h2>
+
+<p>We have been working on improving our compatibility with jruby as well. We now
+run a small subset of our CI under jruby to prevent regressions and cover the
+related bug fixes that we ship.</p>
+
+<h2 id="better-more-flexible-gem-templates">Better, more flexible, gem templates</h2>
+
+<p>We have shipped a lot of improvements to the default <code>bundle gem</code> template. You
+can now automatically set up a configuration for the main CI providers, or
+include <code>rubocop</code> to check your code style, among other improvements. We also
+make sure all gems are now generated with a default minimum supported ruby,
+which is a good practice that we really want to promote.</p>
+
+<h2 id="and-a-bunch-of-bug-fixes">And a bunch of bug fixes!</h2>
+
+<p>Last but not least, we have fixed about 60 bugs in this release. Our main focus
+at the moment is stability, so we want to kill all those issues that sometimes
+make bundler get in the middle.</p>
+
+<h2 id="how-to-get-it">How to get it</h2>
+
+<p>Run <code>gem install bundler</code> to upgrade to the newest version of Bundler.</p>
 
 <hr />
-<p>Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the <a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/contributing/README.md">Bundler Contributor Guidelines</a> on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of <a href="https://rubytogether.org/">Ruby Together</a> to help fund our work to keep Bundler working for everyone.</p>
 
+<p>That’s all for now. We really hope you enjoy this release. Happy Bundling!</p>
 
 </div>
 </div>
@@ -99,6 +169,10 @@ Apr 27 2020
 <div class='contents blog'>
 <h1>Previous Posts</h1>
 <ul class='posts'>
+<li>
+<div class='date'>Apr 27, 2020</div>
+<a href="/blog/2020/04/27/march-monthly-update.html">March Bundler Update</a>
+</li>
 <li>
 <div class='date'>May 14, 2019</div>
 <a href="/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html">Solutions for 'Cant find gem bundler (>= 0.a) with executable bundle'</a>
