@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2021-02-03T18:11:20Z</lastmod>
+    <lastmod>2021-02-15T14:29:02Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -350,6 +350,18 @@
   </url>
   <url>
     <loc>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2021/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2021/02/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2021/02/15/</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/bundle_binstubs.html</loc>

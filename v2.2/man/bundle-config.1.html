@@ -378,9 +378,6 @@ configuration only from the local application.</p>
 <p>Executing bundle with the <code>BUNDLE_IGNORE_CONFIG</code> environment variable set will
 cause it to ignore all configuration.</p>
 
-<p>Executing <code>bundle config set --local disable_multisource true</code> upgrades the warning about
-the Gemfile containing multiple primary sources to an error. Executing <code>bundle&#x000A;config unset disable_multisource</code> downgrades this error to a warning.</p>
-
 <h2 id="REMEMBERING-OPTIONS">Remembering Options</h2>
 
 <p>Flags passed to <code>bundle install</code> or the Bundler runtime, such as <code>--path foo</code> or
@@ -526,11 +523,6 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
  Allow Bundler to use a local git override without checking if the revision
  present in the lockfile is present in the repository.</li>
 <li>
-<code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>):
- When set, Gemfiles containing multiple sources will produce errors
- instead of warnings.
- Use <code>bundle config unset disable_multisource</code> to unset.</li>
-<li>
 <code>disable_shared_gems</code> (<code>BUNDLE_DISABLE_SHARED_GEMS</code>):
  Stop Bundler from accessing gems installed to RubyGems' normal location.</li>
 <li>
@@ -562,15 +554,16 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
  Whether Bundler should cache all gems globally, rather than locally to the
  installing Ruby installation.</li>
 <li>
-<code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>): When set, no post install
- messages will be printed. To silence a single gem, use dot notation like
- <code>ignore_messages.httparty true</code>.</li>
+<code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>):
+ When set, no post install messages will be printed. To silence a single gem,
+ use dot notation like <code>ignore_messages.httparty true</code>.</li>
 <li>
-<code>init_gems_rb</code> (<code>BUNDLE_INIT_GEMS_RB</code>)
+<code>init_gems_rb</code> (<code>BUNDLE_INIT_GEMS_RB</code>):
  Generate a <code>gems.rb</code> instead of a <code>Gemfile</code> when running <code>bundle init</code>.</li>
 <li>
 <code>jobs</code> (<code>BUNDLE_JOBS</code>):
- The number of gems Bundler can install in parallel. Defaults to 1.</li>
+ The number of gems Bundler can install in parallel. Defaults to 1 on Windows,
+ and to the the number of processors on other platforms.</li>
 <li>
 <code>no_install</code> (<code>BUNDLE_NO_INSTALL</code>):
  Whether <code>bundle package</code> should skip installing gems.</li>
@@ -600,7 +593,7 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
 <code>prefer_patch</code> (BUNDLE_PREFER_PATCH):
  Prefer updating only to next patch version during updates. Makes <code>bundle update</code> calls equivalent to <code>bundler update --patch</code>.</li>
 <li>
-<code>print_only_version_number</code> (<code>BUNDLE_PRINT_ONLY_VERSION_NUMBER</code>)
+<code>print_only_version_number</code> (<code>BUNDLE_PRINT_ONLY_VERSION_NUMBER</code>):
  Print only version number from <code>bundler --version</code>.</li>
 <li>
 <code>redirect</code> (<code>BUNDLE_REDIRECT</code>):
@@ -650,7 +643,7 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
  Whether running <code>bundle update --source NAME</code> unlocks a gem with the given
  name. Defaults to <code>true</code>.</li>
 <li>
-<code>update_requires_all_flag</code> (<code>BUNDLE_UPDATE_REQUIRES_ALL_FLAG</code>)
+<code>update_requires_all_flag</code> (<code>BUNDLE_UPDATE_REQUIRES_ALL_FLAG</code>):
  Require passing <code>--all</code> to <code>bundle update</code> when everything should be updated,
  and disallow passing no options to <code>bundle update</code>.</li>
 <li>

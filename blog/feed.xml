@@ -5,16 +5,104 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2020-12-09T16:32:00+00:00</updated>
+  <updated>2021-02-15T11:33:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>A more secure bundler: We fixed our source priorities.</title>
+    <link rel="alternate" href="http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html"/>
+    <id>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</id>
+    <published>2021-02-15T11:33:00+00:00</published>
+    <updated>2021-02-15T14:25:38+00:00</updated>
+    <author>
+      <name>David Rodríguez</name>
+    </author>
+    <content type="html">&lt;h2 id="what-happened"&gt;What happened?&lt;/h2&gt;
+
+&lt;p&gt;Last week &lt;a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610"&gt;an article about “Dependency
+Confusion”&lt;/a&gt;
+hit the news, where a developer was able to make thousands of dollars on bug
+bounty programs from big tech companies, by pushing libraries to public
+repositories that ended up unintentionally being installed into these companies
+servers.&lt;/p&gt;
+
+&lt;p&gt;The developer was able to expose (in a non-malicious way) a vulnerability
+present in well-known dependency managers, where given a library name they will
+end up preferring installing it from a public source rather than from a private
+source. This is not secure because the name in the public source is controlled
+by the first person claiming it, whereas the name in the private source is controlled
+by the private source owner.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Bundler had this vulnerability.&lt;/p&gt;
+
+&lt;p&gt;There’s good news though:&lt;/p&gt;
+
+&lt;h2 id="things-were-safe-on-the-rubygemsorg-side"&gt;Things were safe on the rubygems.org side&lt;/h2&gt;
+
+&lt;p&gt;The rubygems.org organization, in collaboration with
+&lt;a href="https://diffend.io"&gt;diffend.io&lt;/a&gt;, have a pretty good malicious code detection
+system. In fact, the only reason this developer was able to make all this money
+by getting these gems installed in companies private servers is because our
+system detected them, flagged them for us, and we determined them to be
+non-malicious, and only for research purposes. If those gems had been malicious,
+we wouldn’t have allowed them.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;a href="https://mensfeld.pl/2021/02/rubygems-dependency-confusion-side-of-things/"&gt;more detailed blog
+post&lt;/a&gt;
+from our diffend.io friends about what happened in the rubygems.org side of
+things, and how things were secure.&lt;/p&gt;
+
+&lt;h2 id="the-issue-has-been-fixed-in-bundler-2210"&gt;The issue has been fixed in bundler 2.2.10&lt;/h2&gt;
+
+&lt;p&gt;We have shipped bundler 2.2.10 with a fix, and now whenever you specify a block
+source in your &lt;code&gt;Gemfile&lt;/code&gt;, bundler will prioritize it when resolving direct
+dependencies specified inside, and also transitive dependencies of those. So in
+the following situation both &lt;code&gt;my-private-gem&lt;/code&gt; and &lt;code&gt;my-another-private-gem&lt;/code&gt; will
+be picked up from &lt;code&gt;https://my-private-server&lt;/code&gt;, even if someone pushes a higher
+version with the same name to &lt;code&gt;rubygems.org&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;# my-private-gem.gemspec&lt;/span&gt;
+&lt;span class="c1"&gt;# ...&lt;/span&gt;
+&lt;span class="n"&gt;gem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;dependency&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"my-another-private-gem"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre class="highlight ruby"&gt;&lt;code&gt;&lt;span class="c1"&gt;# Gemfile&lt;/span&gt;
+
+&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;"https://rubygems.org"&lt;/span&gt;
+
+&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="s2"&gt;"https://my-private-server"&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+  &lt;span class="n"&gt;gem&lt;/span&gt; &lt;span class="s2"&gt;"my-private-gem"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Make sure you upgrade your bundler version either by running &lt;code&gt;gem install
+bundler&lt;/code&gt;, or by upgrading rubygems through &lt;code&gt;gem update --system&lt;/code&gt; (which will
+install bundler 2.2.10 as a default gem).&lt;/p&gt;
+
+&lt;h2 id="final-notes"&gt;Final notes&lt;/h2&gt;
+
+&lt;p&gt;The bundler team had actually been aware of this issue for a while, but
+unfortunately lacks resources to take care of everything we need to take care,
+so the fix was postponed for too long. Maintaining the rubygems.org
+infrastructure and its client libraries requires a big amount of work and we
+barely manage to keep up with it. So, if your company really needs us to stay on
+top of these issues, please consider funding
+&lt;a href="https://rubytogether.org/"&gt;RubyTogether&lt;/a&gt; ❤️.&lt;/p&gt;
+
+&lt;p&gt;That’s all for today,&lt;/p&gt;
+
+&lt;p&gt;Happy bundling!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Deivid, André and the RubyGems team&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Bundler v2.2: Multiplatform, Funding, and more.</title>
     <link rel="alternate" href="http://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
     <id>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
     <published>2020-12-09T16:32:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
+    <updated>2021-02-15T14:25:38+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -113,7 +201,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
     <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
     <published>2020-04-27T00:00:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
+    <updated>2021-02-15T14:25:38+00:00</updated>
     <author>
       <name>Gift Egwuenu</name>
     </author>
@@ -135,7 +223,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
+    <updated>2021-02-15T14:25:38+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -191,7 +279,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
+    <updated>2021-02-15T14:25:38+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -248,7 +336,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
+    <updated>2021-02-15T14:25:38+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -261,44 +349,6 @@ David&lt;/p&gt;
 &lt;p&gt;Bundler gained 55 new commits, contributed by 7 authors. There were 225 additions and 63 deletions across 21 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>An update on the Bundler 2 release</title>
-    <link rel="alternate" href="http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html"/>
-    <id>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</id>
-    <published>2019-01-04T00:00:00+00:00</published>
-    <updated>2021-02-03T18:07:44+00:00</updated>
-    <author>
-      <name>Colby Swandale</name>
-    </author>
-    <content type="html">&lt;p&gt;Yesterday I released Bundler 2.0 that introduced a number of breaking changes. One of the those changes was setting Bundler to require RubyGems v3.0.0. After making the release, it has become clear that lots of our users are running into issues with Bundler 2 requiring a really new version of RubyGems.&lt;/p&gt;
-
-&lt;p&gt;We have been listening closely to feedback from users and have decided to relax the RubyGems requirement to v2.5.0 at minimum. We have released a new Bundler version, v2.0.1, that adjusts this requirement.&lt;/p&gt;
-
-&lt;p&gt;I apologise to our users for the disruption this has caused.&lt;/p&gt;
-
-&lt;h3 id="important-note"&gt;Important Note&lt;/h3&gt;
-
-&lt;p&gt;Bundler 2 introduced a new feature that will automatically switch between Bundler v1 and v2 based on the lockfile. This feature is enabled by RubyGems (only on versions 2.7.0+) which unfortunately has a bug when you run Bundler without the appropriate version installed. You may encounter an error message like:&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;Can't find gem bundler (&amp;gt;= 0.a) with executable bundle (Gem::GemNotFoundException)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you do, it can be fixed by installing the version of Bundler that is declared in the lockfile.&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
-BUNDLED WITH
-   1.17.3
-
-$ gem install bundler -v '1.17.3'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This bug was fixed in RubyGems 3.0.0 but backports are now being prepared for previous major versions of RubyGems. We’ll let you know when they become available.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Colby and the Bundler team&lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
