@@ -14,15 +14,15 @@
     <link rel="alternate" href="http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html"/>
     <id>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</id>
     <published>2021-02-15T11:33:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
     <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The part about the Bundler release in this blog post is not currently
-relevant. We had to revert the change since it created breaking behavior for
-our users. We’ll remove this note once we release a properly working version
-that implements this improvement.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: As of bundler 2.2.15, the part about the Bundler release in this
+blog post is not fully relevant. Issue has been partially addressed for
+situations where there’s an existing lockfile, but we’re still working on
+fixing it when there’s no lockfile.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id="what-happened"&gt;What happened?&lt;/h2&gt;
@@ -109,7 +109,7 @@ top of these issues, please consider funding
     <link rel="alternate" href="http://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
     <id>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
     <published>2020-12-09T16:32:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -208,7 +208,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
     <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
     <published>2020-04-27T00:00:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>Gift Egwuenu</name>
     </author>
@@ -230,7 +230,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -286,7 +286,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -343,7 +343,7 @@ David&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
     <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
     <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2021-02-26T10:49:42+00:00</updated>
+    <updated>2021-03-29T15:10:33+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
