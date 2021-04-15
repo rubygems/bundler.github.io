@@ -545,6 +545,11 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
  lockfile has not been updated, running Bundler commands will be blocked.
  Defaults to <code>true</code> when <code>--deployment</code> is used.</li>
 <li>
+<code>gem.github_username</code> (<code>BUNDLE_GEM__GITHUB_USERNAME</code>):
+ Sets a GitHub username or organization to be used in <code>README</code> file when you
+ create a new gem via <code>bundle gem</code> command. It can be overriden by passing an
+ explicit <code>--github-username</code> flag to <code>bundle gem</code>.</li>
+<li>
 <code>gem.push_key</code> (<code>BUNDLE_GEM__PUSH_KEY</code>):
  Sets the <code>--key</code> parameter for <code>gem push</code> when using the <code>rake release</code>
  command with a private gemstash server.</li>
@@ -576,10 +581,6 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
 <li>
 <code>no_prune</code> (<code>BUNDLE_NO_PRUNE</code>):
  Whether Bundler should leave outdated gems unpruned when caching.</li>
-<li>
-<code>only_update_to_newer_versions</code> (<code>BUNDLE_ONLY_UPDATE_TO_NEWER_VERSIONS</code>):
- During <code>bundle update</code>, only resolve to newer versions of the gems in the
- lockfile.</li>
 <li>
 <code>path</code> (<code>BUNDLE_PATH</code>):
  The location on disk where all gems in your bundle will be located regardless
