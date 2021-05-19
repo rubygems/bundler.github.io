@@ -548,7 +548,7 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
 <li>
 <code>gem.github_username</code> (<code>BUNDLE_GEM__GITHUB_USERNAME</code>):
  Sets a GitHub username or organization to be used in <code>README</code> file when you
- create a new gem via <code>bundle gem</code> command. It can be overriden by passing an
+ create a new gem via <code>bundle gem</code> command. It can be overridden by passing an
  explicit <code>--github-username</code> flag to <code>bundle gem</code>.</li>
 <li>
 <code>gem.push_key</code> (<code>BUNDLE_GEM__PUSH_KEY</code>):
@@ -760,6 +760,26 @@ you to avoid putting secrets into your Gemfile.</p>
 where you can use personal OAuth tokens:</p>
 
 <pre><code>export BUNDLE_GITHUB__COM=abcd0123generatedtoken:x-oauth-basic&#x000A;</code></pre>
+
+<p>Note that any configured credentials will be redacted by informative commands
+such as <code>bundle config list</code> or <code>bundle config get</code>, unless you use the
+<code>--parseable</code> flag. This is to avoid unintentially leaking credentials when
+copy-pasting bundler output.</p>
+
+<p>Also note that to guarantee a sane mapping between valid environment variable
+names and valid host names, bundler makes the following transformations:</p>
+
+<ul>
+<li><p>Any <code>-</code> characters in a host name are mapped to a triple dash (<code>___</code>) in the
+corresponding enviroment variable.</p></li>
+<li><p>Any <code>.</code> characters in a host name are mapped to a double dash (<code>__</code>) in the
+corresponding environment variable.</p></li>
+</ul>
+
+
+<p>This means that if you have a gem server named <code>my.gem-host.com</code>, you'll need to
+use the <code>BUNDLE_MY__GEM___HOST__COM</code> variable to configure credentials for it
+through ENV.</p>
 
 <h2 id="CONFIGURE-BUNDLER-DIRECTORIES">Configure Bundler Directories</h2>
 
