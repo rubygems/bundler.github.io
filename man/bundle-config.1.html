@@ -376,9 +376,6 @@ configuration only from the local application.</p>
 <p>Executing bundle with the <code>BUNDLE_IGNORE_CONFIG</code> environment variable set will
 cause it to ignore all configuration.</p>
 
-<p>Executing <code>bundle config set --local disable_multisource true</code> upgrades the warning about
-the Gemfile containing multiple primary sources to an error. Executing <code>bundle&#x000A;config unset disable_multisource</code> downgrades this error to a warning.</p>
-
 <h2 id="REMEMBERING-OPTIONS">Remembering Options</h2>
 
 <p>Flags passed to <code>bundle install</code> or the Bundler runtime, such as <code>--path foo</code> or
@@ -523,11 +520,6 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
 <code>disable_local_revision_check</code> (<code>BUNDLE_DISABLE_LOCAL_REVISION_CHECK</code>):
  Allow Bundler to use a local git override without checking if the revision
  present in the lockfile is present in the repository.</li>
-<li>
-<code>disable_multisource</code> (<code>BUNDLE_DISABLE_MULTISOURCE</code>):
- When set, Gemfiles containing multiple sources will produce errors
- instead of warnings.
- Use <code>bundle config unset disable_multisource</code> to unset.</li>
 <li>
 <code>disable_shared_gems</code> (<code>BUNDLE_DISABLE_SHARED_GEMS</code>):
  Stop Bundler from accessing gems installed to RubyGems' normal location.</li>
