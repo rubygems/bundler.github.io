@@ -385,7 +385,7 @@ you would call <code>bundle update --source rails</code></p></dd>
 <dt><code>--strict</code></dt>
 <dd><p>Do not allow any gem to be updated past latest <code>--patch</code> | <code>--minor</code> | <code>--major</code>.</p></dd>
 <dt><code>--conservative</code></dt>
-<dd><p>Use bundle install conservative update behavior and do not allow shared dependencies to be updated.</p></dd>
+<dd><p>Use bundle install conservative update behavior and do not allow indirect dependencies to be updated.</p></dd>
 </dl>
 
 
@@ -458,7 +458,7 @@ on <code>rack ~&gt; 1.0</code>. If you run bundle install, you get:</p>
 update all dependencies of that gem, including those that are also dependencies
 of another gem.</p>
 
-<p>To prevent updating shared dependencies, prior to version 1.14 the only option
+<p>To prevent updating indirect dependencies, prior to version 1.14 the only option
 was the <code>CONSERVATIVE UPDATING</code> behavior in <a href="bundle-install.1.html">bundle install(1)</a>:</p>
 
 <p>In this scenario, updating the <code>thin</code> version manually in the <a class="man-ref" href="gemfile.5.html">Gemfile<span class="s">(5)</span></a>,
@@ -466,7 +466,7 @@ and then running <a href="bundle-install.1.html">bundle install(1)</a> will only
 but not <code>rack</code>. For more information, see the <code>CONSERVATIVE UPDATING</code> section
 of <a href="bundle-install.1.html">bundle install(1)</a>.</p>
 
-<p>Starting with 1.14, specifying the <code>--conservative</code> option will also prevent shared
+<p>Starting with 1.14, specifying the <code>--conservative</code> option will also prevent indirect
 dependencies from being updated.</p>
 
 <h2 id="PATCH-LEVEL-OPTIONS">Patch Level Options</h2>
