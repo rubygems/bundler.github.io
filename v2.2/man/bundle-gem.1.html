@@ -424,6 +424,25 @@ the answer will be saved in Bundler's global config for future <code>bundle gem<
 use.</p>
 </dd>
 <dt>
+<code>--linter</code>, <code>--linter=rubocop</code>, <code>--linter=standard</code>
+</dt>
+<dd>
+<p>Specify the linter and code formatter that Bundler should add to the
+project's development dependencies. Acceptable values are <code>rubocop</code> and
+<code>standard</code>. A configuration file will be generated in the project directory.
+Given no option is specified:</p>
+
+<p>When Bundler is configured to add a linter, this defaults to Bundler's
+global config setting <code>gem.linter</code>.</p>
+
+<p>When Bundler is configured not to add a linter, an interactive prompt
+will be displayed and the answer will be used for the current rubygem project.</p>
+
+<p>When Bundler is unconfigured, an interactive prompt will be displayed and
+the answer will be saved in Bundler's global config for future <code>bundle gem</code>
+use.</p>
+</dd>
+<dt>
 <code>-e</code>, <code>--edit[=EDITOR]</code>
 </dt>
 <dd><p>Open the resulting GEM_NAME.gemspec in EDITOR, or the default editor if not

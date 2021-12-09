@@ -684,6 +684,14 @@ same, you can omit one.</p>
 
 <p>Since the <code>github</code> method is a specialization of <code>git_source</code>, it accepts a <code>:branch</code> named argument.</p>
 
+<p>You can also directly pass a pull request URL:</p>
+
+<pre><code>gem "rails", :github =&gt; "https://github.com/rails/rails/pull/43753"&#x000A;</code></pre>
+
+<p>Which is equivalent to:</p>
+
+<pre><code>gem "rails", :github =&gt; "rails/rails", branch: "refs/pull/43753/head"&#x000A;</code></pre>
+
 <h3 id="GIST">Gist</h3>
 
 <p>If the git repository you want to use is hosted as a Github Gist and is public, you can use
