@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: Bundler v2.3: Locking the version of Bundler itself
+</title>
+
+<script src="/application.min.js"></script>
+<link href="/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/blog_header_transparent_bg.png" srcset="/images/blog_header_transparent_bg.png 1x, /images/blog_header_transparent_bg@2x.png 2x, /images/blog_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 350px; padding-top: 5px; width: 64%;" alt="" />
+</div>
+
+<div class='container'>
+<div class='row'>
+<div class='col-md-12 col-lg-10 col-lg-offset-1'>
+<div class='contents blog'>
+<h2 class='title'>
+<a href="/blog/2022/01/23/bundler-v2-3.html">Bundler v2.3: Locking the version of Bundler itself</a>
+</h2>
+<div class='subtitle'>
+by
+<a href="https://github.com/deivid-rodriguez/" target="_blank">David Rodríguez</a>
+on
+<time>
+Jan 23 2022
+</time>
+</div>
+<div class='blog-content'>
+<p>2021 saw a fair amount of development in the RubyGems &amp; Bundler repositories. We
+tried to release more often than ever to catch and fix bugs and distribute our
+improvements as early as possible to our users. That has led to 33 patch-level versions
+in the Bundler 2.x series released about a year ago.</p>
+
+<p>Our goal for Bundler 2.3 was to implement a long-wanted feature of being able to
+fully control the version of Bundler itself an application runs. There’s a long
+story with this feature, because it was shipped a few years ago in a manner that
+was too strict and ended up causing more harm than good, so had to be partially
+reverted.</p>
+
+<h2 id="so-how-did-things-work-before-bundler-23">So, how did things work before Bundler 2.3?</h2>
+
+<p>Up until now, RubyGems would try to activate the version of Bundler recorded in
+the <code>Gemfile.lock</code> file if already installed, and would fall back to the
+highest version installed otherwise. That’s better than nothing, but it did not
+ensure the exact version in the lockfile was always used, which led to
+workarounds like <a href="https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html">manually parsing the lockfile and then installing that
+version</a>.</p>
+
+<h2 id="and-how-do-they-work-now">And how do they work now?</h2>
+
+<p>In Bundler 2.3 and up (if you also have RubyGems 3.3 or higher), running
+<code>bundle install</code> will use the exact version from the BUNDLED WITH section of
+the lockfile.  If that version is not installed before you run <code>bundle&#x000A;install</code>, the running version of Bundler will install the locked version, and
+then run your original command using the newly-installed locked version.</p>
+
+<p>So, if you have a lockfile ending with</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>BUNDLED WITH&#x000A;   2.2.33&#x000A;</code></pre></div>
+<p>and you only have Bundler 2.3.5 installed, you’ll see the following output when
+running <code>bundle install</code>.</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;Bundler 2.3.5 is running, but your lockfile was generated with 2.2.33. Installing Bundler 2.2.33 and restarting using that version.&#x000A;Fetching gem metadata from https://rubygems.org/.&#x000A;Fetching bundler 2.2.33&#x000A;Installing bundler 2.2.33&#x000A;...&#x000A;</code></pre></div>
+<p>After that all your commands will automatically use Bundler 2.2.33, as specified
+by your lockfile. If you want to upgrade the Bundler version used by your
+application, you can run <code>bundle update --bundler</code>, and your lockfile will be
+regenerated using the latest version. From that moment, all users of the
+lockfile will automatically pick up the new version, no matter whether they have
+a newer or older version installed instead.</p>
+
+<p>But..</p>
+
+<h2 id="why-are-we-doing-this">Why are we doing this?</h2>
+
+<p>Being able to lock the version of Bundler itself, just like Bundler is able to
+lock other dependencies, has been a goal of the Bundler team for years. There are
+a number of benefits of locking your dependencies, like avoiding dependency
+nightmares where your application breaks due to third party releases, or
+avoiding “works on my machine” issues. Bundler has a ton of features and edge
+cases, and</p>
+
+<ul>
+  <li>
+    <p>We sometimes introduce regressions when trying to improve things. Locking the
+version of Bundler prevents those issues from hitting you.</p>
+  </li>
+  <li>
+    <p>Once in a while we need to put a security fix out there. Being able to lock
+the Bundler version allows you to ensure that every user of your application
+gets a secure version of Bundler.</p>
+  </li>
+  <li>
+    <p>Occasionally, you might want to use a new feature of the Bundler DSL in your
+Gemfile. However, old versions of Bundler don’t understand this feature and
+you don’t want to suddenly break things for the users of yours that use those
+old versions. With version locking this is no longer a concern. Bundler is now
+able to upgrade itself to the version that your application understands.</p>
+  </li>
+</ul>
+
+<p>All in all, we aim to provide a less surprising, less error prone and more
+consistent experience when using Bundler, and let each application be in control
+of the version that they use, and the moment that they upgrade.</p>
+
+<h1 id="whats-coming-next">What’s coming next?</h1>
+
+<p>Future enhancements to this feature might include:</p>
+
+<ul>
+  <li>Full support for <code>gem "bundler", "&lt;arbitrary_requirement&gt;"</code> in <code>Gemfile</code>.</li>
+  <li>Automatic update of Bundler when running <code>bundle install</code> without a lockfile.</li>
+  <li>Automatic update of Bundler when running <code>bundle update</code>.</li>
+</ul>
+
+<p>In other words, our end goal is to be able to treat Bundler just like any other
+dependency of your application.</p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -64,89 +64,104 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='col-md-12 col-lg-10 col-lg-offset-1'>
 <div class='contents blog'>
 <h2 class='title'>
-<a href="/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html">A more secure bundler: We fixed our source priorities.</a>
+<a href="/blog/2022/01/23/bundler-v2-3.html">Bundler v2.3: Locking the version of Bundler itself</a>
 </h2>
 <div class='subtitle'>
 by
 <a href="https://github.com/deivid-rodriguez/" target="_blank">David Rodríguez</a>
 on
 <time>
-Feb 15 2021
+Jan 23 2022
 </time>
 </div>
 <div class='blog-content'>
-<blockquote>
-  <p><strong>NOTE</strong>: Whereas the issue was initially fixed in bundler 2.2.10, it had to
-be reverted due to several problems caused by the initial approach. A proper
-fix was finally released with bundler 2.2.18.</p>
-</blockquote>
+<p>2021 saw a fair amount of development in the RubyGems &amp; Bundler repositories. We
+tried to release more often than ever to catch and fix bugs and distribute our
+improvements as early as possible to our users. That has led to 33 patch-level versions
+in the Bundler 2.x series released about a year ago.</p>
 
-<h2 id="what-happened">What happened?</h2>
+<p>Our goal for Bundler 2.3 was to implement a long-wanted feature of being able to
+fully control the version of Bundler itself an application runs. There’s a long
+story with this feature, because it was shipped a few years ago in a manner that
+was too strict and ended up causing more harm than good, so had to be partially
+reverted.</p>
 
-<p>Last week <a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610">an article about “Dependency
-Confusion”</a>
-hit the news, where a developer was able to make thousands of dollars on bug
-bounty programs from big tech companies, by pushing libraries to public
-repositories that ended up unintentionally being installed into these companies
-servers.</p>
+<h2 id="so-how-did-things-work-before-bundler-23">So, how did things work before Bundler 2.3?</h2>
 
-<p>The developer was able to expose (in a non-malicious way) a vulnerability
-present in well-known dependency managers, where given a library name they will
-end up preferring installing it from a public source rather than from a private
-source. This is not secure because the name in the public source is controlled
-by the first person claiming it, whereas the name in the private source is controlled
-by the private source owner.</p>
+<p>Up until now, RubyGems would try to activate the version of Bundler recorded in
+the <code>Gemfile.lock</code> file if already installed, and would fall back to the
+highest version installed otherwise. That’s better than nothing, but it did not
+ensure the exact version in the lockfile was always used, which led to
+workarounds like <a href="https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html">manually parsing the lockfile and then installing that
+version</a>.</p>
 
-<p>Unfortunately, Bundler had this vulnerability.</p>
+<h2 id="and-how-do-they-work-now">And how do they work now?</h2>
 
-<p>There’s good news though:</p>
+<p>In Bundler 2.3 and up (if you also have RubyGems 3.3 or higher), running
+<code>bundle install</code> will use the exact version from the BUNDLED WITH section of
+the lockfile.  If that version is not installed before you run <code>bundle&#x000A;install</code>, the running version of Bundler will install the locked version, and
+then run your original command using the newly-installed locked version.</p>
 
-<h2 id="things-were-safe-on-the-rubygemsorg-side">Things were safe on the rubygems.org side</h2>
+<p>So, if you have a lockfile ending with</p>
 
-<p>The rubygems.org organization, in collaboration with
-<a href="https://diffend.io">diffend.io</a>, have a pretty good malicious code detection
-system. In fact, the only reason this developer was able to make all this money
-by getting these gems installed in companies private servers is because our
-system detected them, flagged them for us, and we determined them to be
-non-malicious, and only for research purposes. If those gems had been malicious,
-we wouldn’t have allowed them.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>BUNDLED WITH&#x000A;   2.2.33&#x000A;</code></pre></div>
+<p>and you only have Bundler 2.3.5 installed, you’ll see the following output when
+running <code>bundle install</code>.</p>
 
-<p>Check out the <a href="https://mensfeld.pl/2021/02/rubygems-dependency-confusion-side-of-things/">more detailed blog
-post</a>
-from our diffend.io friends about what happened in the rubygems.org side of
-things, and how things were secure.</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;Bundler 2.3.5 is running, but your lockfile was generated with 2.2.33. Installing Bundler 2.2.33 and restarting using that version.&#x000A;Fetching gem metadata from https://rubygems.org/.&#x000A;Fetching bundler 2.2.33&#x000A;Installing bundler 2.2.33&#x000A;...&#x000A;</code></pre></div>
+<p>After that all your commands will automatically use Bundler 2.2.33, as specified
+by your lockfile. If you want to upgrade the Bundler version used by your
+application, you can run <code>bundle update --bundler</code>, and your lockfile will be
+regenerated using the latest version. From that moment, all users of the
+lockfile will automatically pick up the new version, no matter whether they have
+a newer or older version installed instead.</p>
 
-<h2 id="the-issue-has-been-fixed-in-bundler-2210">The issue has been fixed in bundler 2.2.10</h2>
+<p>But..</p>
 
-<p>We have shipped bundler 2.2.10 with a fix, and now whenever you specify a block
-source in your <code>Gemfile</code>, bundler will prioritize it when resolving direct
-dependencies specified inside, and also transitive dependencies of those. So in
-the following situation both <code>my-private-gem</code> and <code>my-another-private-gem</code> will
-be picked up from <code>https://my-private-server</code>, even if someone pushes a higher
-version with the same name to <code>rubygems.org</code>:</p>
+<h2 id="why-are-we-doing-this">Why are we doing this?</h2>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="c1"># my-private-gem.gemspec</span>&#x000A;<span class="c1"># ...</span>&#x000A;<span class="n">gem</span><span class="p">.</span><span class="nf">dependency</span><span class="p">(</span><span class="s2">"my-another-private-gem"</span><span class="p">)</span>&#x000A;</code></pre></div>
-<div class="highlight"><pre class="highlight ruby"><code><span class="c1"># Gemfile</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>&#x000A;&#x000A;<span class="n">source</span> <span class="s2">"https://my-private-server"</span> <span class="k">do</span>&#x000A;  <span class="n">gem</span> <span class="s2">"my-private-gem"</span>&#x000A;<span class="k">end</span>&#x000A;</code></pre></div>
-<p>Make sure you upgrade your bundler version either by running <code>gem install&#x000A;bundler</code>, or by upgrading rubygems through <code>gem update --system</code> (which will
-install bundler 2.2.10 as a default gem).</p>
+<p>Being able to lock the version of Bundler itself, just like Bundler is able to
+lock other dependencies, has been a goal of the Bundler team for years. There are
+a number of benefits of locking your dependencies, like avoiding dependency
+nightmares where your application breaks due to third party releases, or
+avoiding “works on my machine” issues. Bundler has a ton of features and edge
+cases, and</p>
 
-<h2 id="final-notes">Final notes</h2>
+<ul>
+  <li>
+    <p>We sometimes introduce regressions when trying to improve things. Locking the
+version of Bundler prevents those issues from hitting you.</p>
+  </li>
+  <li>
+    <p>Once in a while we need to put a security fix out there. Being able to lock
+the Bundler version allows you to ensure that every user of your application
+gets a secure version of Bundler.</p>
+  </li>
+  <li>
+    <p>Occasionally, you might want to use a new feature of the Bundler DSL in your
+Gemfile. However, old versions of Bundler don’t understand this feature and
+you don’t want to suddenly break things for the users of yours that use those
+old versions. With version locking this is no longer a concern. Bundler is now
+able to upgrade itself to the version that your application understands.</p>
+  </li>
+</ul>
 
-<p>The bundler team had actually been aware of this issue for a while, but
-unfortunately lacks resources to take care of everything we need to take care,
-so the fix was postponed for too long. Maintaining the rubygems.org
-infrastructure and its client libraries requires a big amount of work and we
-barely manage to keep up with it. So, if your company really needs us to stay on
-top of these issues, please consider funding
-<a href="https://rubytogether.org/">RubyTogether</a> ❤️.</p>
+<p>All in all, we aim to provide a less surprising, less error prone and more
+consistent experience when using Bundler, and let each application be in control
+of the version that they use, and the moment that they upgrade.</p>
 
-<p>That’s all for today,</p>
+<h1 id="whats-coming-next">What’s coming next?</h1>
 
-<p>Happy bundling!</p>
+<p>Future enhancements to this feature might include:</p>
 
-<hr />
+<ul>
+  <li>Full support for <code>gem "bundler", "&lt;arbitrary_requirement&gt;"</code> in <code>Gemfile</code>.</li>
+  <li>Automatic update of Bundler when running <code>bundle install</code> without a lockfile.</li>
+  <li>Automatic update of Bundler when running <code>bundle update</code>.</li>
+</ul>
 
-<p>Deivid, André and the RubyGems team</p>
+<p>In other words, our end goal is to be able to treat Bundler just like any other
+dependency of your application.</p>
 
 </div>
 </div>
@@ -159,6 +174,10 @@ top of these issues, please consider funding
 <div class='contents blog'>
 <h1>Previous Posts</h1>
 <ul class='posts'>
+<li>
+<div class='date'>Feb 15, 2021</div>
+<a href="/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html">A more secure bundler: We fixed our source priorities.</a>
+</li>
 <li>
 <div class='date'>Dec  9, 2020</div>
 <a href="/blog/2020/12/09/bundler-v2-2.html">Bundler v2.2: Multiplatform, Funding, and more.</a>

@@ -5,16 +5,123 @@
   <id>http://bundler.io/blog</id>
   <link href="http://bundler.io/blog"/>
   <link href="http://bundler.io/blog/feed.xml" rel="self"/>
-  <updated>2021-02-15T11:33:00+00:00</updated>
+  <updated>2022-01-23T16:07:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
+  <entry>
+    <title>Bundler v2.3: Locking the version of Bundler itself</title>
+    <link rel="alternate" href="http://bundler.io/blog/2022/01/23/bundler-v2-3.html"/>
+    <id>http://bundler.io/blog/2022/01/23/bundler-v2-3.html</id>
+    <published>2022-01-23T16:07:00+00:00</published>
+    <updated>2022-01-27T10:41:11+00:00</updated>
+    <author>
+      <name>David Rodríguez</name>
+    </author>
+    <content type="html">&lt;p&gt;2021 saw a fair amount of development in the RubyGems &amp;amp; Bundler repositories. We
+tried to release more often than ever to catch and fix bugs and distribute our
+improvements as early as possible to our users. That has led to 33 patch-level versions
+in the Bundler 2.x series released about a year ago.&lt;/p&gt;
+
+&lt;p&gt;Our goal for Bundler 2.3 was to implement a long-wanted feature of being able to
+fully control the version of Bundler itself an application runs. There’s a long
+story with this feature, because it was shipped a few years ago in a manner that
+was too strict and ended up causing more harm than good, so had to be partially
+reverted.&lt;/p&gt;
+
+&lt;h2 id="so-how-did-things-work-before-bundler-23"&gt;So, how did things work before Bundler 2.3?&lt;/h2&gt;
+
+&lt;p&gt;Up until now, RubyGems would try to activate the version of Bundler recorded in
+the &lt;code&gt;Gemfile.lock&lt;/code&gt; file if already installed, and would fall back to the
+highest version installed otherwise. That’s better than nothing, but it did not
+ensure the exact version in the lockfile was always used, which led to
+workarounds like &lt;a href="https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"&gt;manually parsing the lockfile and then installing that
+version&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="and-how-do-they-work-now"&gt;And how do they work now?&lt;/h2&gt;
+
+&lt;p&gt;In Bundler 2.3 and up (if you also have RubyGems 3.3 or higher), running
+&lt;code&gt;bundle install&lt;/code&gt; will use the exact version from the BUNDLED WITH section of
+the lockfile.  If that version is not installed before you run &lt;code&gt;bundle
+install&lt;/code&gt;, the running version of Bundler will install the locked version, and
+then run your original command using the newly-installed locked version.&lt;/p&gt;
+
+&lt;p&gt;So, if you have a lockfile ending with&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;BUNDLED WITH
+   2.2.33
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and you only have Bundler 2.3.5 installed, you’ll see the following output when
+running &lt;code&gt;bundle install&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre class="highlight plaintext"&gt;&lt;code&gt;$ bundle install
+Bundler 2.3.5 is running, but your lockfile was generated with 2.2.33. Installing Bundler 2.2.33 and restarting using that version.
+Fetching gem metadata from https://rubygems.org/.
+Fetching bundler 2.2.33
+Installing bundler 2.2.33
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After that all your commands will automatically use Bundler 2.2.33, as specified
+by your lockfile. If you want to upgrade the Bundler version used by your
+application, you can run &lt;code&gt;bundle update --bundler&lt;/code&gt;, and your lockfile will be
+regenerated using the latest version. From that moment, all users of the
+lockfile will automatically pick up the new version, no matter whether they have
+a newer or older version installed instead.&lt;/p&gt;
+
+&lt;p&gt;But..&lt;/p&gt;
+
+&lt;h2 id="why-are-we-doing-this"&gt;Why are we doing this?&lt;/h2&gt;
+
+&lt;p&gt;Being able to lock the version of Bundler itself, just like Bundler is able to
+lock other dependencies, has been a goal of the Bundler team for years. There are
+a number of benefits of locking your dependencies, like avoiding dependency
+nightmares where your application breaks due to third party releases, or
+avoiding “works on my machine” issues. Bundler has a ton of features and edge
+cases, and&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;We sometimes introduce regressions when trying to improve things. Locking the
+version of Bundler prevents those issues from hitting you.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once in a while we need to put a security fix out there. Being able to lock
+the Bundler version allows you to ensure that every user of your application
+gets a secure version of Bundler.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Occasionally, you might want to use a new feature of the Bundler DSL in your
+Gemfile. However, old versions of Bundler don’t understand this feature and
+you don’t want to suddenly break things for the users of yours that use those
+old versions. With version locking this is no longer a concern. Bundler is now
+able to upgrade itself to the version that your application understands.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All in all, we aim to provide a less surprising, less error prone and more
+consistent experience when using Bundler, and let each application be in control
+of the version that they use, and the moment that they upgrade.&lt;/p&gt;
+
+&lt;h1 id="whats-coming-next"&gt;What’s coming next?&lt;/h1&gt;
+
+&lt;p&gt;Future enhancements to this feature might include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Full support for &lt;code&gt;gem "bundler", "&amp;lt;arbitrary_requirement&amp;gt;"&lt;/code&gt; in &lt;code&gt;Gemfile&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Automatic update of Bundler when running &lt;code&gt;bundle install&lt;/code&gt; without a lockfile.&lt;/li&gt;
+  &lt;li&gt;Automatic update of Bundler when running &lt;code&gt;bundle update&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In other words, our end goal is to be able to treat Bundler just like any other
+dependency of your application.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>A more secure bundler: We fixed our source priorities.</title>
     <link rel="alternate" href="http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html"/>
     <id>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</id>
     <published>2021-02-15T11:33:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
+    <updated>2022-01-27T10:41:11+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -108,7 +215,7 @@ top of these issues, please consider funding
     <link rel="alternate" href="http://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
     <id>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
     <published>2020-12-09T16:32:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
+    <updated>2022-01-27T10:41:11+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -207,7 +314,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
     <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
     <published>2020-04-27T00:00:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
+    <updated>2022-01-27T10:41:11+00:00</updated>
     <author>
       <name>Gift Egwuenu</name>
     </author>
@@ -229,7 +336,7 @@ make bundler get in the middle.&lt;/p&gt;
     <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
     <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
+    <updated>2022-01-27T10:41:11+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -285,7 +392,7 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
     <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
     <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
+    <updated>2022-01-27T10:41:11+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
@@ -333,26 +440,6 @@ David&lt;/p&gt;
 &lt;p&gt;In January and February, Bundler gained 110 new commits, contributed by 11 authors. There were 1,401 additions and 1,503 deletions across 849 files.&lt;/p&gt;
 
 &lt;hr /&gt;
-
-&lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>December 2018 Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2019/02/02/december-monthly-update.html"/>
-    <id>http://bundler.io/blog/2019/02/02/december-monthly-update.html</id>
-    <published>2019-02-02T00:00:00+00:00</published>
-    <updated>2022-01-23T10:38:45+00:00</updated>
-    <author>
-      <name>Stephanie Morillo</name>
-    </author>
-    <content type="html">&lt;p&gt;Welcome to the December 2018 monthly update!&lt;/p&gt;
-
-&lt;p&gt;In December, Bundler reached two huge and exciting milestones. First, Ruby included Bundler for the first time ever, including Bundler 1.17.2 in Ruby 2.6. Special thanks are due to &lt;a href="https://github.com/hsbt"&gt;@hsbt&lt;/a&gt; for years worth of work integrating Bundler into the ruby-core test suite and keeping everything working and up to date.&lt;/p&gt;
-
-&lt;p&gt;Second, Bundler &lt;a href="https://bundler.io/blog/2019/01/03/announcing-bundler-2.html"&gt;shipped version 2.0&lt;/a&gt;! It’s a big milestone, and the Bundler team is very excited to adopt a yearly major release cadence, to better match Ruby itself.&lt;/p&gt;
-
-&lt;p&gt;Bundler gained 55 new commits, contributed by 7 authors. There were 225 additions and 63 deletions across 21 files.&lt;/p&gt;
 
 &lt;p&gt;Interested in contributing to Bundler? We always welcome contributions in the forms of triaging bugs, adding new features, writing docs, and engaging with the wider community. Visit the &lt;a href="https://github.com/bundler/bundler/blob/master/doc/contributing/README.md"&gt;Bundler Contributor Guidelines&lt;/a&gt; on GitHub to get started. Don’t have time to contribute, but want to support our work? Sign up as a member of &lt;a href="https://rubytogether.org/"&gt;Ruby Together&lt;/a&gt; to help fund our work to keep Bundler working for everyone.&lt;/p&gt;
 </content>

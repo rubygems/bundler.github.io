@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+<meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
+<title>
+Bundler: How to Upgrade to Bundler 2
+</title>
+
+<link href='/guides/bundler_2_upgrade.html' rel='canonical'>
+<script src="/application.min.js"></script>
+<link href="/application.css" rel="stylesheet" />
+<link href='/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='/images/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<link href='/images/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='/manifest.json' rel='manifest'>
+<link color='#50bced' href='/images/safari-pinned-tab.svg' rel='mask-icon'>
+<meta content='bundler.io' name='apple-mobile-web-app-title'>
+<meta content='bundler.io' name='application-name'>
+<meta content='#ffffff' name='theme-color'>
+
+<link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+
+</head>
+<body class=''>
+<nav class='navbar navbar-default'>
+<div class='container'>
+<div class='navbar-header'>
+<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='sr-only'>Toggle navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+<b><a href="/" class="navbar-brand">Bundler</a></b>
+</div>
+<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav navbar-right'>
+<li>
+<div class='search-wrapper'>
+<div class='form-group has-feedback'>
+<i class='glyphicon glyphicon-search form-control-feedback'></i>
+<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
+</div>
+</div>
+</li>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer">Repository</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='main-wrapper'>
+<div class='row bg-light-blue header'>
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="" />
+</div>
+<div class='row'>
+<div class='container' id='guide-container'>
+<div id='wrapper'>
+<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
+<ul>
+<li class=''>
+<a href="/v2.3/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.3/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+<div class='guide contents' id='page-content-wrapper'>
+<h1 id="how-to-upgrade-to-bundler-2">How to Upgrade to Bundler 2</h1>
+
+<p>So! You’ve heard that <a href="https://bundler.io/blog/2019/01/03/announcing-bundler-2.html">Bundler 2 was released</a>! If you want to try out Bundler 2 for yourself, this guide will help you do that.</p>
+
+<p>Bundler 2 is almost entirely the same as the previous version, 1.17. The big change is that Bundler now requires at least Ruby 2.3.0 and RubyGems 2.5.0.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you upgrade to Bundler 2, make sure you have the right Ruby and RubyGems. You need to be using Ruby 2.3.0 or higher, and you need to have RubyGems 2.5.0 or higher.</p>
+
+<p>You can check your Ruby version by running <code>ruby --version</code>, and you can check your RubyGems version by running <code>gem --version</code>. If you need to upgrade Ruby, use your ruby version manager’s instructions. If you need to upgrade RubyGems, run <code>gem update --system</code>.</p>
+
+<p>All set? Ruby and RubyGems versions new enough? Great. Keep going.</p>
+
+<h3 id="installing-bundler-2">Installing Bundler 2</h3>
+<p>The first step in upgrading to Bundler 2 is installing the Bundler 2 gem. To install it the usual way, run <code>gem install bundler</code> and RubyGems will install the latest version of Bundler.</p>
+
+<h3 id="version-autoswitch">Version Autoswitch</h3>
+<p>Now that you have Bundler 2 installed, you should know that Bundler will automatically switch between version 1 and version 2 based on your application’s <code>Gemfile.lock</code>. If your lockfile was created by Bundler 1, your commands will be run by Bundler 1. If your lockfile was created by Bundler 2, your commands will be run by Bundler 2.</p>
+
+<p>Here’s an example Gemfile.lock that was created with Bundler 1.17.1.</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>GEM&#x000A;  remote: https://rubygems.org/&#x000A;  specs:&#x000A;    rack (2.0.6)&#x000A;&#x000A;PLATFORMS&#x000A;  ruby&#x000A;&#x000A;DEPENDENCIES&#x000A;  rack&#x000A;&#x000A;BUNDLED WITH&#x000A;   1.17.1&#x000A;</code></pre></div>
+<p>The version of Bundler in the <code>BUNDLED WITH</code> section is read by Bundler to determine which version of Bundler should run. Using the example lock above, Bundler 1 will be used, as you can see here:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>$ grep -A 1 "BUNDLED WITH" Gemfile.lock&#x000A;BUNDLED WITH&#x000A;   1.17.1&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 1.17.1&#x000A;</code></pre></div>
+<p>When a Gemfile has been created by Bundler 2, or manually upgraded by a developer from Bundler 1 to Bundler 2, then commands will be run by the latest installed Bundler 2. Here’s an example of what that looks like:</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>$ grep -A 1 "BUNDLED WITH" Gemfile.lock&#x000A;BUNDLED WITH&#x000A;   2.0.0&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 2.0.0&#x000A;</code></pre></div>
+<p>When Bundler is used outside of an application, the latest version that is installed will always be used.</p>
+
+<div class="highlight"><pre class="highlight plaintext"><code>$ ls -a&#x000A;.	..&#x000A;&#x000A;$ bundle version&#x000A;Bundler version 2.0.0&#x000A;</code></pre></div>
+<h3 id="upgrading-applications-from-bundler-1-to-bundler-2">Upgrading applications from Bundler 1 to Bundler 2</h3>
+<p>Your existing applications will continue to use Bundler 1. Bundler will never change your application to a new major version until you choose to do so. If your application is ready, you can upgrade that application to the latest installed version of Bundler by running <code>bundle update --bundler</code>.</p>
+
+<p>We recommend committing your Gemfile.lock before you upgrade. That way, if something goes wrong or doesn’t work, you can always revert to the previous lockfile and go back to using Bundler 1.</p>
+
+<h3 id="using-bundler-2-with-new-applications">Using Bundler 2 with new applications</h3>
+<p>When you create a new application, using <code>bundle init</code>, <code>rails new</code>, or something like that, your application will use the newest version of Bundler that is currently installed. If you have Bundler 2 installed, your application will be locked to Bundler 2. You can verify this by reading the lockfile, looking for the section named <code>BUNDLED WITH</code>.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="why-does-bundler-have-automatic-version-switching">Why does Bundler have automatic version switching?</h3>
+<p>Many Ruby developers have more than one application on their machines. If we forced all applications on one machine to use either Bundler 1 or Bundler 2 exclusively, it would cause everyone a huge amount of pain.</p>
+
+<p>Version switching allows everyone to have some applications use Bundler 1 while other applications can use Bundler 2, on the same machine, at the same time. Each application can be upgraded to Bundler 2 whenever it makes the most sense for that particular application to upgrade.</p>
+
+<h3 id="what-happens-if-my-application-needs-bundler-2-but-i-only-have-bundler-1-installed">What happens if my application needs Bundler 2, but I only have Bundler 1 installed?</h3>
+<p>If you try to use Bundler 1 on an application that requires Bundler 2, you’ll see an error message explaining that you need to install Bundler 2. Go ahead and run <code>gem install bundler</code>, and then it should work.</p>
+
+<h3 id="what-happens-if-my-application-needs-bundler-1-but-i-only-have-bundler-2-installed">What happens if my application needs Bundler 1, but I only have Bundler 2 installed?</h3>
+<p>If you try to use Bundler 2 on an application that needs Bundler 1, and you also don’t have Bundler 1 installed at all, you’ll see an error message asking you to install Bundler 1. Go ahead and run <code>gem install bundler -v "~&gt;1.0"</code> to install the latest 1.x version of Bundler, and then try your command again.</p>
+
+<h3 id="can-i-downgrade-my-application-from-bundler-2-to-bundler-1">Can I downgrade my application from Bundler 2 to Bundler 1?</h3>
+<p>Bundler 2 does not provide a way to downgrade a Gemfile back to Bundler 1. Instead, we recommend checking in your <code>Gemfile</code> and <code>Gemfile.lock</code> before you upgrade your application. That way, if something goes wrong, you can revert to the previous commit and go back to using Bundler 1.</p>
+
+<h3 id="there-was-an-issue-upgrading-my-application-to-bundler-2">There was an issue upgrading my application to Bundler 2</h3>
+<p>Oh no! Sorry about that. Please head over to our <a href="https://github.com/bundler/bundler/blob/master/doc/TROUBLESHOOTING.md#other-problems">troubleshooting guide</a> and open a ticket so that we can try to fix your problem ASAP.</p>
+
+<h3 id="will-bundler-2-have-any-other-notable-changes">Will Bundler 2 have any other notable changes?</h3>
+<p>Bundler 2 includes these changes:</p>
+
+<ul>
+  <li>Remove support for deprecated versions of Ruby (&lt; 2.3)</li>
+  <li>Remove support for deprecated versions of RubyGems (&lt; 2.5.0)</li>
+  <li>Print Bundler errors to STDERR instead of STDOUT</li>
+  <li>The <code>github:</code> shortcut in the <code>Gemfile</code> will use <code>https</code> instead of <code>http</code></li>
+</ul>
+
+<h3 id="can-i-use-bundler-2-on-heroku">Can I use Bundler 2 on Heroku?</h3>
+<p>Yes you can! The Heroku team has upgraded the official Ruby buildpack to <a href="https://devcenter.heroku.com/articles/ruby-support#libraries">support Bundler 2</a>. See <a href="https://devcenter.heroku.com/articles/bundler-version">Heroku’s article on Bundler version</a> for more details.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='container'>
+<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='bottom-sidebar-nav'>
+<ul>
+<li class=''>
+<a href="/v2.3/guides/faq.html">Frequently Asked Questions</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class='active'>
+<a href="/v2.3/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/deploying.html">How to deploy bundled applications</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/git.html">How to install gems from git repositories</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/groups.html">How to manage groups of gems</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/updating_gems.html">How to update gems with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/rails.html">How to use Bundler with Rails</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_setup.html">How to use Bundler with Ruby</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/sinatra.html">How to use Bundler with Sinatra</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/git_bisect.html">How to use git bisect with Bundler</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+<li class=''>
+<a href="/v2.3/guides/bundler_plugins.html">How to write a Bundler plugin</a>
+</li>
+<li class='separator'>
+<hr>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<script src="/anchors.min.js"></script>
+
+<div class='row bg-light-blue'>
+<div class='container'>
+<div class='contents'>
+<div class='edit-on-github text-center'>
+<a href="https://github.com/rubygems/bundler-site/blob/master/source/v2.3/guides/bundler_2_upgrade.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='footer'>
+<div class='row'>
+<div class='container text-center'>
+<ul class='nav navbar-nav'>
+<li><a href="/docs.html">Docs</a></li>
+<li><a href="/contributors.html">Team</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler">Repository</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</body>
+</html>
+<style>
+  .main-wrapper {
+    padding-bottom: 0;
+  }
+</style>
