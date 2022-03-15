@@ -97,42 +97,6 @@ v1.13
 <option value='/v1.12/man/bundle-install.1.html'>
 v1.12
 </option>
-<option value='/v1.11/man/bundle-install.1.html'>
-v1.11
-</option>
-<option value='/v1.10/man/bundle-install.1.html'>
-v1.10
-</option>
-<option value='/v1.9/man/bundle-install.1.html'>
-v1.9
-</option>
-<option value='/v1.8/man/bundle-install.1.html'>
-v1.8
-</option>
-<option value='/v1.7/man/bundle-install.1.html'>
-v1.7
-</option>
-<option value='/v1.6/man/bundle-install.1.html'>
-v1.6
-</option>
-<option value='/v1.5/man/bundle-install.1.html'>
-v1.5
-</option>
-<option value='/v1.3/man/bundle-install.1.html'>
-v1.3
-</option>
-<option value='/v1.2/man/bundle-install.1.html'>
-v1.2
-</option>
-<option value='/v1.1/man/bundle-install.1.html'>
-v1.1
-</option>
-<option value='/v1.0/man/bundle-install.1.html'>
-v1.0
-</option>
-<option value='/v0.9/bundle_install.html'>
-v0.9
-</option>
 </select>
 </div>
 <h4>Primary Commands</h4>
@@ -333,7 +297,7 @@ v0.9
 
 
 
-<pre><code>bundle outdated</code> [GEM] [--local]&#x000A;                        [--pre]&#x000A;                        [--source]&#x000A;                        [--strict]&#x000A;                        [--parseable | --porcelain]&#x000A;                        [--group=GROUP]&#x000A;                        [--groups]&#x000A;                        [--update-strict]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--filter-major]&#x000A;                        [--filter-minor]&#x000A;                        [--filter-patch]&#x000A;                        [--only-explicit]</pre>
+<pre><code>bundle outdated</code> [GEM] [--local]&#x000A;                        [--pre]&#x000A;                        [--source]&#x000A;                        [--strict]&#x000A;                        [--parseable | --porcelain]&#x000A;                        [--group=GROUP]&#x000A;                        [--groups]&#x000A;                        [--patch|--minor|--major]&#x000A;                        [--filter-major]&#x000A;                        [--filter-minor]&#x000A;                        [--filter-patch]&#x000A;                        [--only-explicit]</pre>
 
 <h2 id="DESCRIPTION">Description</h2>
 
@@ -352,7 +316,7 @@ are up to date, Bundler will exit with a status of 0. Otherwise, it will exit 1.
 <dt><code>--source</code></dt>
 <dd><p>Check against a specific source.</p></dd>
 <dt><code>--strict</code></dt>
-<dd><p>Only list newer versions allowed by your Gemfile requirements.</p></dd>
+<dd><p>Only list newer versions allowed by your Gemfile requirements, also respecting conservative update flags (--patch, --minor, --major).</p></dd>
 <dt>
 <code>--parseable</code>, <code>--porcelain</code>
 </dt>
@@ -361,8 +325,6 @@ are up to date, Bundler will exit with a status of 0. Otherwise, it will exit 1.
 <dd><p>List gems from a specific group.</p></dd>
 <dt><code>--groups</code></dt>
 <dd><p>List gems organized by groups.</p></dd>
-<dt><code>--update-strict</code></dt>
-<dd><p>Strict conservative resolution, do not allow any gem to be updated past latest --patch | --minor| --major.</p></dd>
 <dt class="flush"><code>--minor</code></dt>
 <dd><p>Prefer updating only to next minor version.</p></dd>
 <dt class="flush"><code>--major</code></dt>
@@ -383,11 +345,6 @@ are up to date, Bundler will exit with a status of 0. Otherwise, it will exit 1.
 <h2 id="PATCH-LEVEL-OPTIONS">Patch Level Options</h2>
 
 <p>See <a href="bundle-update.1.html">bundle update(1)</a> for details.</p>
-
-<p>One difference between the patch level options in <code>bundle update</code> and here is the <code>--strict</code> option.
-<code>--strict</code> was already an option on outdated before the patch level options were added. <code>--strict</code>
-wasn't altered, and the <code>--update-strict</code> option on <code>outdated</code> reflects what <code>--strict</code> does on
-<code>bundle update</code>.</p>
 
 <h2 id="FILTERING-OUTPUT">Filtering Output</h2>
 
@@ -462,42 +419,6 @@ v1.13
 </option>
 <option value='/v1.12/man/bundle-install.1.html'>
 v1.12
-</option>
-<option value='/v1.11/man/bundle-install.1.html'>
-v1.11
-</option>
-<option value='/v1.10/man/bundle-install.1.html'>
-v1.10
-</option>
-<option value='/v1.9/man/bundle-install.1.html'>
-v1.9
-</option>
-<option value='/v1.8/man/bundle-install.1.html'>
-v1.8
-</option>
-<option value='/v1.7/man/bundle-install.1.html'>
-v1.7
-</option>
-<option value='/v1.6/man/bundle-install.1.html'>
-v1.6
-</option>
-<option value='/v1.5/man/bundle-install.1.html'>
-v1.5
-</option>
-<option value='/v1.3/man/bundle-install.1.html'>
-v1.3
-</option>
-<option value='/v1.2/man/bundle-install.1.html'>
-v1.2
-</option>
-<option value='/v1.1/man/bundle-install.1.html'>
-v1.1
-</option>
-<option value='/v1.0/man/bundle-install.1.html'>
-v1.0
-</option>
-<option value='/v0.9/bundle_install.html'>
-v0.9
 </option>
 </select>
 </div>
