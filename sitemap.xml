@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2022-03-15T01:24:27Z</lastmod>
+    <lastmod>2022-03-16T00:01:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -961,9 +961,6 @@
     <loc>http://bundler.io/v1.13/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/commands.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/v1.13/deploying.html</loc>
   </url>
   <url>
@@ -1124,9 +1121,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.14/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v1.14/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.14/deploying.html</loc>
@@ -1295,9 +1289,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.15/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v1.15/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.15/docs.html</loc>
@@ -1511,9 +1502,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.16/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v1.16/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.16/docs.html</loc>
@@ -1745,9 +1733,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v1.17/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v1.17/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v1.17/docs.html</loc>
@@ -1982,9 +1967,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v2.0/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v2.0/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v2.0/docs.html</loc>
@@ -2230,9 +2212,6 @@
     <loc>http://bundler.io/v2.1/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/commands.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/v2.1/docs.html</loc>
   </url>
   <url>
@@ -2476,9 +2455,6 @@
     <loc>http://bundler.io/v2.2/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/commands.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/v2.2/docs.html</loc>
   </url>
   <url>
@@ -2717,9 +2693,6 @@
   </url>
   <url>
     <loc>http://bundler.io/v2.3/bundler_workflow.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/v2.3/commands.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v2.3/docs.html</loc>
