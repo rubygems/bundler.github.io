@@ -320,17 +320,19 @@ was set.</p>
 <p>Executing <code>bundle config get &lt;name&gt;</code> will print the value of that configuration
 setting, and where it was set.</p>
 
-<p>Executing <code>bundle config set &lt;name&gt; &lt;value&gt;</code> will set that configuration to the
-value specified for all bundles executed as the current user. The configuration
-will be stored in <code>~/.bundle/config</code>. If <var>name</var> already is set, <var>name</var> will be
-overridden and user will be warned.</p>
-
-<p>Executing <code>bundle config set --global &lt;name&gt; &lt;value&gt;</code> works the same as above.</p>
+<p>Executing <code>bundle config set &lt;name&gt; &lt;value&gt;</code> defaults to setting <code>local</code>
+configuration if executing from within a local application, otherwise it will
+set <code>global</code> configuration. See <code>--local</code> and <code>--global</code> options below.</p>
 
 <p>Executing <code>bundle config set --local &lt;name&gt; &lt;value&gt;</code> will set that configuration
 in the directory for the local application. The configuration will be stored in
 <code>&lt;project_root&gt;/.bundle/config</code>. If <code>BUNDLE_APP_CONFIG</code> is set, the configuration
 will be stored in <code>$BUNDLE_APP_CONFIG/config</code>.</p>
+
+<p>Executing <code>bundle config set --global &lt;name&gt; &lt;value&gt;</code> will set that
+configuration to the value specified for all bundles executed as the current
+user. The configuration will be stored in <code>~/.bundle/config</code>. If <var>name</var> already
+is set, <var>name</var> will be overridden and user will be warned.</p>
 
 <p>Executing <code>bundle config unset &lt;name&gt;</code> will delete the configuration in both
 local and global sources.</p>
