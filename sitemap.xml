@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://bundler.io</loc>
-    <lastmod>2022-07-11T10:36:03Z</lastmod>
+    <lastmod>2022-07-11T12:52:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -490,12 +490,6 @@
     <loc>http://bundler.io/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/en/guides/creating_gem.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/en/guides/using_bundler_in_applications.html</loc>
-  </url>
-  <url>
     <loc>http://bundler.io/es/</loc>
   </url>
   <url>
@@ -509,12 +503,6 @@
   </url>
   <url>
     <loc>http://bundler.io/es/v1.15/guides/bundler_sharing.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/es/v2.3/guides/bundler_setup.html</loc>
-  </url>
-  <url>
-    <loc>http://bundler.io/es/v2.3/guides/bundler_sharing.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/gemfile.html</loc>
@@ -1996,6 +1984,9 @@
     <loc>http://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v2.0/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
@@ -2239,6 +2230,9 @@
     <loc>http://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
+    <loc>http://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
+  </url>
+  <url>
     <loc>http://bundler.io/v2.1/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
@@ -2477,6 +2471,9 @@
   </url>
   <url>
     <loc>http://bundler.io/v2.2/gemfile_ruby.html</loc>
+  </url>
+  <url>
+    <loc>http://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
     <loc>http://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
