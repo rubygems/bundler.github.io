@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-12T18:54:56Z</lastmod>
+    <lastmod>2022-07-12T22:30:52Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -529,6 +529,9 @@
     <loc>https://bundler.io/guides/bundler_sharing.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/guides/bundler_workflow.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/guides/creating_gem.html</loc>
   </url>
   <url>
@@ -536,6 +539,12 @@
   </url>
   <url>
     <loc>https://bundler.io/guides/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/guides/gemfile.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/guides/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/guides/git.html</loc>
@@ -550,7 +559,16 @@
     <loc>https://bundler.io/guides/rails.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/guides/rationale.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/guides/rubygems.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/guides/rubymotion.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/guides/sinatra.html</loc>
@@ -790,19 +808,10 @@
     <loc>https://bundler.io/v1.12/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.12/guides/bundler_setup.html</loc>
@@ -877,15 +886,6 @@
     <loc>https://bundler.io/v1.12/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/whats_new.html</loc>
   </url>
   <url>
@@ -955,19 +955,10 @@
     <loc>https://bundler.io/v1.13/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.13/guides/bundler_setup.html</loc>
@@ -1039,15 +1030,6 @@
     <loc>https://bundler.io/v1.13/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/whats_new.html</loc>
   </url>
   <url>
@@ -1117,19 +1099,10 @@
     <loc>https://bundler.io/v1.14/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.14/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.14/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/guides/bundler_setup.html</loc>
@@ -1202,15 +1175,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.14/man/gemfile.5.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/rubymotion.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/whats_new.html</loc>
@@ -1291,19 +1255,10 @@
     <loc>https://bundler.io/v1.15/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.15/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.15/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.15/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.15/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.15/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.15/guides/bundler_setup.html</loc>
@@ -1411,15 +1366,6 @@
     <loc>https://bundler.io/v1.15/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.15/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.15/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.15/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.15/whats_new.html</loc>
   </url>
   <url>
@@ -1504,19 +1450,10 @@
     <loc>https://bundler.io/v1.16/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.16/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.16/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.16/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.16/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.16/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.16/guides/bundler_docker_guide.html</loc>
@@ -1639,15 +1576,6 @@
     <loc>https://bundler.io/v1.16/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.16/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.16/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.16/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.16/whats_new.html</loc>
   </url>
   <url>
@@ -1735,19 +1663,10 @@
     <loc>https://bundler.io/v1.17/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.17/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.17/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.17/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.17/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.17/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.17/guides/bundler_docker_guide.html</loc>
@@ -1873,15 +1792,6 @@
     <loc>https://bundler.io/v1.17/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.17/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.17/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.17/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.17/whats_new.html</loc>
   </url>
   <url>
@@ -1969,19 +1879,10 @@
     <loc>https://bundler.io/v2.0/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.0/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.0/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.0/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.0/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.0/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
@@ -2113,15 +2014,6 @@
     <loc>https://bundler.io/v2.0/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.0/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.0/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.0/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.0/whats_new.html</loc>
   </url>
   <url>
@@ -2215,19 +2107,10 @@
     <loc>https://bundler.io/v2.1/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.1/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.1/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.1/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.1/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.1/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
@@ -2362,15 +2245,6 @@
     <loc>https://bundler.io/v2.1/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.1/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.1/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.1/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.1/whats_new.html</loc>
   </url>
   <url>
@@ -2461,19 +2335,10 @@
     <loc>https://bundler.io/v2.2/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.2/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.2/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.2/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.2/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.2/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
@@ -2605,15 +2470,6 @@
     <loc>https://bundler.io/v2.2/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.2/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.2/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.2/rubymotion.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.2/whats_new.html</loc>
   </url>
   <url>
@@ -2704,19 +2560,10 @@
     <loc>https://bundler.io/v2.3/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.3/bundler_workflow.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.3/docs.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.3/gemfile.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.3/gemfile_man.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.3/gemfile_ruby.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.3/guides/bundler_2_upgrade.html</loc>
@@ -2843,15 +2690,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.3/man/gemfile.5.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.3/rationale.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.3/rubygems.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.3/rubymotion.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.3/whats_new.html</loc>
