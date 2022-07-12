@@ -1,2859 +1,2859 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://bundler.io</loc>
-    <lastmod>2022-07-12T05:59:47Z</lastmod>
+    <loc>https://bundler.io</loc>
+    <lastmod>2022-07-12T09:45:15Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://bundler.io/</loc>
+    <loc>https://bundler.io/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/404.html</loc>
+    <loc>https://bundler.io/404.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/</loc>
+    <loc>https://bundler.io/blog/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/</loc>
+    <loc>https://bundler.io/blog/2013/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/10/</loc>
+    <loc>https://bundler.io/blog/2013/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/10/12/</loc>
+    <loc>https://bundler.io/blog/2013/10/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</loc>
+    <loc>https://bundler.io/blog/2013/10/12/goodbye-bundler-14-hello-bundler-15.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/12/</loc>
+    <loc>https://bundler.io/blog/2013/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/12/07/</loc>
+    <loc>https://bundler.io/blog/2013/12/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</loc>
+    <loc>https://bundler.io/blog/2013/12/07/the-rumors-of-bundlers-death-have-been-greatly-exaggerated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/</loc>
+    <loc>https://bundler.io/blog/2014/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/07/</loc>
+    <loc>https://bundler.io/blog/2014/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/07/16/</loc>
+    <loc>https://bundler.io/blog/2014/07/16/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/07/16/bundler-api-outages.html</loc>
+    <loc>https://bundler.io/blog/2014/07/16/bundler-api-outages.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/08/</loc>
+    <loc>https://bundler.io/blog/2014/08/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/08/14/</loc>
+    <loc>https://bundler.io/blog/2014/08/14/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</loc>
+    <loc>https://bundler.io/blog/2014/08/14/bundler-may-install-gems-from-a-different-source-than-expected-cve-2013-0334.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/08/15/</loc>
+    <loc>https://bundler.io/blog/2014/08/15/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</loc>
+    <loc>https://bundler.io/blog/2014/08/15/gem-not-found-error-on-1-7-0.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/</loc>
+    <loc>https://bundler.io/blog/2015/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/</loc>
+    <loc>https://bundler.io/blog/2015/03/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/19/</loc>
+    <loc>https://bundler.io/blog/2015/03/19/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/19/announcing-ruby-together.html</loc>
+    <loc>https://bundler.io/blog/2015/03/19/announcing-ruby-together.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/20/</loc>
+    <loc>https://bundler.io/blog/2015/03/20/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</loc>
+    <loc>https://bundler.io/blog/2015/03/20/moving-bins-to-exe.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/21/</loc>
+    <loc>https://bundler.io/blog/2015/03/21/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/03/21/hello-bundler-19.html</loc>
+    <loc>https://bundler.io/blog/2015/03/21/hello-bundler-19.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/06/</loc>
+    <loc>https://bundler.io/blog/2015/06/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/06/24/</loc>
+    <loc>https://bundler.io/blog/2015/06/24/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/06/24/version-1-10-released.html</loc>
+    <loc>https://bundler.io/blog/2015/06/24/version-1-10-released.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/12/</loc>
+    <loc>https://bundler.io/blog/2015/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/12/12/</loc>
+    <loc>https://bundler.io/blog/2015/12/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2015/12/12/version-1-11-released.html</loc>
+    <loc>https://bundler.io/blog/2015/12/12/version-1-11-released.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/</loc>
+    <loc>https://bundler.io/blog/2016/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/04/</loc>
+    <loc>https://bundler.io/blog/2016/04/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/04/28/</loc>
+    <loc>https://bundler.io/blog/2016/04/28/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</loc>
+    <loc>https://bundler.io/blog/2016/04/28/the-new-index-format-fastly-and-bundler-1-12.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/07/</loc>
+    <loc>https://bundler.io/blog/2016/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/07/10/</loc>
+    <loc>https://bundler.io/blog/2016/07/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</loc>
+    <loc>https://bundler.io/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/09/</loc>
+    <loc>https://bundler.io/blog/2016/09/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/09/08/</loc>
+    <loc>https://bundler.io/blog/2016/09/08/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2016/09/08/bundler-1-13.html</loc>
+    <loc>https://bundler.io/blog/2016/09/08/bundler-1-13.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/</loc>
+    <loc>https://bundler.io/blog/2017/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/03/</loc>
+    <loc>https://bundler.io/blog/2017/03/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/03/28/</loc>
+    <loc>https://bundler.io/blog/2017/03/28/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</loc>
+    <loc>https://bundler.io/blog/2017/03/28/bundler-1-14-so-many-fixes.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/05/</loc>
+    <loc>https://bundler.io/blog/2017/05/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/05/19/</loc>
+    <loc>https://bundler.io/blog/2017/05/19/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</loc>
+    <loc>https://bundler.io/blog/2017/05/19/bundler-1-15-bundle-oh-so-fast.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/10/</loc>
+    <loc>https://bundler.io/blog/2017/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/10/31/</loc>
+    <loc>https://bundler.io/blog/2017/10/31/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2017/10/31/bundler-1-16.html</loc>
+    <loc>https://bundler.io/blog/2017/10/31/bundler-1-16.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/</loc>
+    <loc>https://bundler.io/blog/2018/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/01/</loc>
+    <loc>https://bundler.io/blog/2018/01/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/01/08/</loc>
+    <loc>https://bundler.io/blog/2018/01/08/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</loc>
+    <loc>https://bundler.io/blog/2018/01/08/monthly-update-for-december-and-yearly-update-for-2017.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/01/17/</loc>
+    <loc>https://bundler.io/blog/2018/01/17/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</loc>
+    <loc>https://bundler.io/blog/2018/01/17/making-gem-development-a-little-better.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/03/</loc>
+    <loc>https://bundler.io/blog/2018/03/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/03/09/</loc>
+    <loc>https://bundler.io/blog/2018/03/09/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/03/09/february-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/03/09/february-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/04/</loc>
+    <loc>https://bundler.io/blog/2018/04/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/04/09/</loc>
+    <loc>https://bundler.io/blog/2018/04/09/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/04/09/march-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/04/09/march-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/05/</loc>
+    <loc>https://bundler.io/blog/2018/05/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/05/07/</loc>
+    <loc>https://bundler.io/blog/2018/05/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2018/05/07/april-bundler-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/06/</loc>
+    <loc>https://bundler.io/blog/2018/06/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/06/07/</loc>
+    <loc>https://bundler.io/blog/2018/06/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/06/07/may-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/06/07/may-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/07/</loc>
+    <loc>https://bundler.io/blog/2018/07/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/07/12/</loc>
+    <loc>https://bundler.io/blog/2018/07/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/07/12/june-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/07/12/june-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/08/</loc>
+    <loc>https://bundler.io/blog/2018/08/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/08/10/</loc>
+    <loc>https://bundler.io/blog/2018/08/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/08/10/july-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/08/10/july-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/09/</loc>
+    <loc>https://bundler.io/blog/2018/09/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/09/10/</loc>
+    <loc>https://bundler.io/blog/2018/09/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/09/10/august-bundler-update.html</loc>
+    <loc>https://bundler.io/blog/2018/09/10/august-bundler-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/10/</loc>
+    <loc>https://bundler.io/blog/2018/10/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/10/15/</loc>
+    <loc>https://bundler.io/blog/2018/10/15/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/10/15/september-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2018/10/15/september-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/10/25/</loc>
+    <loc>https://bundler.io/blog/2018/10/25/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</loc>
+    <loc>https://bundler.io/blog/2018/10/25/announcing-bundler-1-17-0.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/11/</loc>
+    <loc>https://bundler.io/blog/2018/11/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/11/04/</loc>
+    <loc>https://bundler.io/blog/2018/11/04/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</loc>
+    <loc>https://bundler.io/blog/2018/11/04/an-update-on-bundler-2.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/11/05/</loc>
+    <loc>https://bundler.io/blog/2018/11/05/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/11/05/october-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2018/11/05/october-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/12/</loc>
+    <loc>https://bundler.io/blog/2018/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/12/08/</loc>
+    <loc>https://bundler.io/blog/2018/12/08/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2018/12/08/november-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2018/12/08/november-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/</loc>
+    <loc>https://bundler.io/blog/2019/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/01/</loc>
+    <loc>https://bundler.io/blog/2019/01/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/01/03/</loc>
+    <loc>https://bundler.io/blog/2019/01/03/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/01/03/announcing-bundler-2.html</loc>
+    <loc>https://bundler.io/blog/2019/01/03/announcing-bundler-2.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/01/04/</loc>
+    <loc>https://bundler.io/blog/2019/01/04/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</loc>
+    <loc>https://bundler.io/blog/2019/01/04/an-update-on-the-bundler-2-release.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/02/</loc>
+    <loc>https://bundler.io/blog/2019/02/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/02/02/</loc>
+    <loc>https://bundler.io/blog/2019/02/02/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/02/02/december-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2019/02/02/december-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/03/</loc>
+    <loc>https://bundler.io/blog/2019/03/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/03/12/</loc>
+    <loc>https://bundler.io/blog/2019/03/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</loc>
+    <loc>https://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/05/</loc>
+    <loc>https://bundler.io/blog/2019/05/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/05/14/</loc>
+    <loc>https://bundler.io/blog/2019/05/14/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</loc>
+    <loc>https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/</loc>
+    <loc>https://bundler.io/blog/2020/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/04/</loc>
+    <loc>https://bundler.io/blog/2020/04/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/04/27/</loc>
+    <loc>https://bundler.io/blog/2020/04/27/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/04/27/march-monthly-update.html</loc>
+    <loc>https://bundler.io/blog/2020/04/27/march-monthly-update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/12/</loc>
+    <loc>https://bundler.io/blog/2020/12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/12/09/</loc>
+    <loc>https://bundler.io/blog/2020/12/09/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</loc>
+    <loc>https://bundler.io/blog/2020/12/09/bundler-v2-2.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2021/</loc>
+    <loc>https://bundler.io/blog/2021/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2021/02/</loc>
+    <loc>https://bundler.io/blog/2021/02/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2021/02/15/</loc>
+    <loc>https://bundler.io/blog/2021/02/15/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</loc>
+    <loc>https://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2022/</loc>
+    <loc>https://bundler.io/blog/2022/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2022/01/</loc>
+    <loc>https://bundler.io/blog/2022/01/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2022/01/23/</loc>
+    <loc>https://bundler.io/blog/2022/01/23/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/blog/2022/01/23/bundler-v2-3.html</loc>
+    <loc>https://bundler.io/blog/2022/01/23/bundler-v2-3.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_check.html</loc>
+    <loc>https://bundler.io/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_clean.html</loc>
+    <loc>https://bundler.io/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_console.html</loc>
+    <loc>https://bundler.io/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_help.html</loc>
+    <loc>https://bundler.io/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_init.html</loc>
+    <loc>https://bundler.io/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_inject.html</loc>
+    <loc>https://bundler.io/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_install.html</loc>
+    <loc>https://bundler.io/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_open.html</loc>
+    <loc>https://bundler.io/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_outdated.html</loc>
+    <loc>https://bundler.io/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_plugin.html</loc>
+    <loc>https://bundler.io/bundle_plugin.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_show.html</loc>
+    <loc>https://bundler.io/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_version.html</loc>
+    <loc>https://bundler.io/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundle_viz.html</loc>
+    <loc>https://bundler.io/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/bundler_workflow.html</loc>
+    <loc>https://bundler.io/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/commands.html</loc>
+    <loc>https://bundler.io/commands.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/compatibility.html</loc>
+    <loc>https://bundler.io/compatibility.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/conduct.html</loc>
+    <loc>https://bundler.io/conduct.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/contributors.html</loc>
+    <loc>https://bundler.io/contributors.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/bug_triage.html</loc>
+    <loc>https://bundler.io/doc/contributing/bug_triage.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/community.html</loc>
+    <loc>https://bundler.io/doc/contributing/community.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/getting_help.html</loc>
+    <loc>https://bundler.io/doc/contributing/getting_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/how_you_can_help.html</loc>
+    <loc>https://bundler.io/doc/contributing/how_you_can_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/issues.html</loc>
+    <loc>https://bundler.io/doc/contributing/issues.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/contributing/readme.html</loc>
+    <loc>https://bundler.io/doc/contributing/readme.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/development/new_features.html</loc>
+    <loc>https://bundler.io/doc/development/new_features.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/development/pull_requests.html</loc>
+    <loc>https://bundler.io/doc/development/pull_requests.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/development/readme.html</loc>
+    <loc>https://bundler.io/doc/development/readme.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/development/setup.html</loc>
+    <loc>https://bundler.io/doc/development/setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/documentation/readme.html</loc>
+    <loc>https://bundler.io/doc/documentation/readme.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/documentation/vision.html</loc>
+    <loc>https://bundler.io/doc/documentation/vision.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/documentation/writing.html</loc>
+    <loc>https://bundler.io/doc/documentation/writing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/playbooks/releasing.html</loc>
+    <loc>https://bundler.io/doc/playbooks/releasing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/playbooks/team_changes.html</loc>
+    <loc>https://bundler.io/doc/playbooks/team_changes.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/policies.html</loc>
+    <loc>https://bundler.io/doc/policies.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/readme.html</loc>
+    <loc>https://bundler.io/doc/readme.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/doc/troubleshooting.html</loc>
+    <loc>https://bundler.io/doc/troubleshooting.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/docs.html</loc>
+    <loc>https://bundler.io/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/es/</loc>
+    <loc>https://bundler.io/es/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/es/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/es/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/es/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/es/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/es/v1.15/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/es/v1.15/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/es/v1.15/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/es/v1.15/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/gemfile.html</loc>
+    <loc>https://bundler.io/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/deploying.html</loc>
+    <loc>https://bundler.io/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/faq.html</loc>
+    <loc>https://bundler.io/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/git.html</loc>
+    <loc>https://bundler.io/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/groups.html</loc>
+    <loc>https://bundler.io/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/rails.html</loc>
+    <loc>https://bundler.io/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/sinatra.html</loc>
+    <loc>https://bundler.io/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/issues.html</loc>
+    <loc>https://bundler.io/issues.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-cache.1.html</loc>
+    <loc>https://bundler.io/man/bundle-cache.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/bundle.1.html</loc>
+    <loc>https://bundler.io/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/older_versions.html</loc>
+    <loc>https://bundler.io/older_versions.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/</loc>
+    <loc>https://bundler.io/pl/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.12/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.12/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.12/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.12/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.13/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.13/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.13/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.13/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.14/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.14/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.14/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.14/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.15/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.15/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.15/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.15/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.16/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.16/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.16/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.16/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.17/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v1.17/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v1.17/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v1.17/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.0/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v2.0/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.0/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v2.0/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.1/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v2.1/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.1/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v2.1/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.2/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v2.2/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.2/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v2.2/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.3/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/pl/v2.3/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/pl/v2.3/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/pl/v2.3/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/rationale.html</loc>
+    <loc>https://bundler.io/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/rubygems.html</loc>
+    <loc>https://bundler.io/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/rubymotion.html</loc>
+    <loc>https://bundler.io/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/sponsors.html</loc>
+    <loc>https://bundler.io/sponsors.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/</loc>
+    <loc>https://bundler.io/v1.12/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle.html</loc>
+    <loc>https://bundler.io/v1.12/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.12/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.12/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.12/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.12/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/deploying.html</loc>
+    <loc>https://bundler.io/v1.12/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/docs.html</loc>
+    <loc>https://bundler.io/v1.12/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/faq.html</loc>
+    <loc>https://bundler.io/v1.12/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/gemfile.html</loc>
+    <loc>https://bundler.io/v1.12/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.12/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.12/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/git.html</loc>
+    <loc>https://bundler.io/v1.12/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.12/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/groups.html</loc>
+    <loc>https://bundler.io/v1.12/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.12/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.12/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.12/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.12/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/rails23.html</loc>
+    <loc>https://bundler.io/v1.12/rails23.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/rails3.html</loc>
+    <loc>https://bundler.io/v1.12/rails3.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/rationale.html</loc>
+    <loc>https://bundler.io/v1.12/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/rubygems.html</loc>
+    <loc>https://bundler.io/v1.12/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.12/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/sinatra.html</loc>
+    <loc>https://bundler.io/v1.12/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.12/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.12/whats_new.html</loc>
+    <loc>https://bundler.io/v1.12/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/</loc>
+    <loc>https://bundler.io/v1.13/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle.html</loc>
+    <loc>https://bundler.io/v1.13/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.13/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.13/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.13/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.13/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/deploying.html</loc>
+    <loc>https://bundler.io/v1.13/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/docs.html</loc>
+    <loc>https://bundler.io/v1.13/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/faq.html</loc>
+    <loc>https://bundler.io/v1.13/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/gemfile.html</loc>
+    <loc>https://bundler.io/v1.13/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.13/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.13/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/git.html</loc>
+    <loc>https://bundler.io/v1.13/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.13/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/groups.html</loc>
+    <loc>https://bundler.io/v1.13/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.13/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.13/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.13/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.13/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/rails.html</loc>
+    <loc>https://bundler.io/v1.13/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/rationale.html</loc>
+    <loc>https://bundler.io/v1.13/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/rubygems.html</loc>
+    <loc>https://bundler.io/v1.13/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.13/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/sinatra.html</loc>
+    <loc>https://bundler.io/v1.13/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.13/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.13/whats_new.html</loc>
+    <loc>https://bundler.io/v1.13/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/</loc>
+    <loc>https://bundler.io/v1.14/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle.html</loc>
+    <loc>https://bundler.io/v1.14/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.14/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.14/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.14/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.14/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/deploying.html</loc>
+    <loc>https://bundler.io/v1.14/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/docs.html</loc>
+    <loc>https://bundler.io/v1.14/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/faq.html</loc>
+    <loc>https://bundler.io/v1.14/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/gemfile.html</loc>
+    <loc>https://bundler.io/v1.14/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.14/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.14/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/git.html</loc>
+    <loc>https://bundler.io/v1.14/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.14/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/groups.html</loc>
+    <loc>https://bundler.io/v1.14/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.14/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.14/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.14/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.14/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/rails.html</loc>
+    <loc>https://bundler.io/v1.14/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/rationale.html</loc>
+    <loc>https://bundler.io/v1.14/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/rubygems.html</loc>
+    <loc>https://bundler.io/v1.14/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.14/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/sinatra.html</loc>
+    <loc>https://bundler.io/v1.14/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.14/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.14/whats_new.html</loc>
+    <loc>https://bundler.io/v1.14/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/</loc>
+    <loc>https://bundler.io/v1.15/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle.html</loc>
+    <loc>https://bundler.io/v1.15/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_add.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_info.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.15/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.15/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/docs.html</loc>
+    <loc>https://bundler.io/v1.15/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/gemfile.html</loc>
+    <loc>https://bundler.io/v1.15/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.15/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.15/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.15/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.15/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.15/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/deploying.html</loc>
+    <loc>https://bundler.io/v1.15/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/faq.html</loc>
+    <loc>https://bundler.io/v1.15/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/git.html</loc>
+    <loc>https://bundler.io/v1.15/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.15/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/groups.html</loc>
+    <loc>https://bundler.io/v1.15/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/rails.html</loc>
+    <loc>https://bundler.io/v1.15/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v1.15/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v1.15/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.15/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.15/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.15/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.15/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/rationale.html</loc>
+    <loc>https://bundler.io/v1.15/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/rubygems.html</loc>
+    <loc>https://bundler.io/v1.15/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.15/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.15/whats_new.html</loc>
+    <loc>https://bundler.io/v1.15/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/</loc>
+    <loc>https://bundler.io/v1.16/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle.html</loc>
+    <loc>https://bundler.io/v1.16/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_add.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_info.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_list.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.16/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.16/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/docs.html</loc>
+    <loc>https://bundler.io/v1.16/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/gemfile.html</loc>
+    <loc>https://bundler.io/v1.16/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.16/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.16/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v1.16/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v1.16/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v1.16/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.16/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.16/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.16/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/deploying.html</loc>
+    <loc>https://bundler.io/v1.16/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/faq.html</loc>
+    <loc>https://bundler.io/v1.16/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/git.html</loc>
+    <loc>https://bundler.io/v1.16/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.16/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/groups.html</loc>
+    <loc>https://bundler.io/v1.16/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/rails.html</loc>
+    <loc>https://bundler.io/v1.16/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v1.16/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v1.16/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.16/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.16/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.16/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.16/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/rationale.html</loc>
+    <loc>https://bundler.io/v1.16/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/rubygems.html</loc>
+    <loc>https://bundler.io/v1.16/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.16/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.16/whats_new.html</loc>
+    <loc>https://bundler.io/v1.16/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/</loc>
+    <loc>https://bundler.io/v1.17/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle.html</loc>
+    <loc>https://bundler.io/v1.17/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_add.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_check.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_clean.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_config.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_console.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_exec.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_gem.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_help.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_info.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_init.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_inject.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_install.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_list.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_lock.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_open.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_package.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_platform.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_remove.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_remove.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_show.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_update.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_version.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundle_viz.html</loc>
+    <loc>https://bundler.io/v1.17/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v1.17/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/docs.html</loc>
+    <loc>https://bundler.io/v1.17/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/gemfile.html</loc>
+    <loc>https://bundler.io/v1.17/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/gemfile_man.html</loc>
+    <loc>https://bundler.io/v1.17/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v1.17/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v1.17/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v1.17/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v1.17/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v1.17/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v1.17/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v1.17/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/deploying.html</loc>
+    <loc>https://bundler.io/v1.17/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/faq.html</loc>
+    <loc>https://bundler.io/v1.17/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/git.html</loc>
+    <loc>https://bundler.io/v1.17/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v1.17/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/groups.html</loc>
+    <loc>https://bundler.io/v1.17/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/rails.html</loc>
+    <loc>https://bundler.io/v1.17/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v1.17/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v1.17/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v1.17/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v1.17/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v1.17/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v1.17/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/rationale.html</loc>
+    <loc>https://bundler.io/v1.17/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/rubygems.html</loc>
+    <loc>https://bundler.io/v1.17/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/rubymotion.html</loc>
+    <loc>https://bundler.io/v1.17/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v1.17/whats_new.html</loc>
+    <loc>https://bundler.io/v1.17/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/</loc>
+    <loc>https://bundler.io/v2.0/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle.html</loc>
+    <loc>https://bundler.io/v2.0/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_add.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_check.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_clean.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_config.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_console.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_exec.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_gem.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_help.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_info.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_init.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_inject.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_install.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_list.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_lock.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_open.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_package.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_platform.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_remove.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_remove.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_show.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_update.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_version.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundle_viz.html</loc>
+    <loc>https://bundler.io/v2.0/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v2.0/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/docs.html</loc>
+    <loc>https://bundler.io/v2.0/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/gemfile.html</loc>
+    <loc>https://bundler.io/v2.0/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/gemfile_man.html</loc>
+    <loc>https://bundler.io/v2.0/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v2.0/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v2.0/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v2.0/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/deploying.html</loc>
+    <loc>https://bundler.io/v2.0/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/faq.html</loc>
+    <loc>https://bundler.io/v2.0/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/git.html</loc>
+    <loc>https://bundler.io/v2.0/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v2.0/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/groups.html</loc>
+    <loc>https://bundler.io/v2.0/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/rails.html</loc>
+    <loc>https://bundler.io/v2.0/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v2.0/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v2.0/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v2.0/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v2.0/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v2.0/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v2.0/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/rationale.html</loc>
+    <loc>https://bundler.io/v2.0/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/rubygems.html</loc>
+    <loc>https://bundler.io/v2.0/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/rubymotion.html</loc>
+    <loc>https://bundler.io/v2.0/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.0/whats_new.html</loc>
+    <loc>https://bundler.io/v2.0/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/</loc>
+    <loc>https://bundler.io/v2.1/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle.html</loc>
+    <loc>https://bundler.io/v2.1/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_add.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_cache.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_cache.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_check.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_clean.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_config.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_console.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_exec.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_gem.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_help.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_info.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_init.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_inject.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_install.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_list.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_lock.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_open.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_package.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_package.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_platform.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_plugin.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_plugin.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_remove.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_remove.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_show.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_update.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_version.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundle_viz.html</loc>
+    <loc>https://bundler.io/v2.1/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v2.1/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/docs.html</loc>
+    <loc>https://bundler.io/v2.1/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/gemfile.html</loc>
+    <loc>https://bundler.io/v2.1/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/gemfile_man.html</loc>
+    <loc>https://bundler.io/v2.1/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v2.1/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v2.1/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v2.1/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/deploying.html</loc>
+    <loc>https://bundler.io/v2.1/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/faq.html</loc>
+    <loc>https://bundler.io/v2.1/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/git.html</loc>
+    <loc>https://bundler.io/v2.1/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v2.1/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/groups.html</loc>
+    <loc>https://bundler.io/v2.1/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/rails.html</loc>
+    <loc>https://bundler.io/v2.1/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v2.1/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v2.1/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v2.1/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v2.1/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-cache.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-cache.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-package.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-package.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v2.1/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v2.1/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/rationale.html</loc>
+    <loc>https://bundler.io/v2.1/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/rubygems.html</loc>
+    <loc>https://bundler.io/v2.1/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/rubymotion.html</loc>
+    <loc>https://bundler.io/v2.1/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.1/whats_new.html</loc>
+    <loc>https://bundler.io/v2.1/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/</loc>
+    <loc>https://bundler.io/v2.2/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle.html</loc>
+    <loc>https://bundler.io/v2.2/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_add.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_cache.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_cache.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_check.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_clean.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_config.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_console.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_exec.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_gem.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_help.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_info.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_init.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_inject.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_install.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_list.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_lock.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_open.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_platform.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_plugin.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_plugin.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_remove.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_remove.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_show.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_update.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_version.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundle_viz.html</loc>
+    <loc>https://bundler.io/v2.2/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v2.2/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/docs.html</loc>
+    <loc>https://bundler.io/v2.2/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/gemfile.html</loc>
+    <loc>https://bundler.io/v2.2/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/gemfile_man.html</loc>
+    <loc>https://bundler.io/v2.2/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v2.2/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v2.2/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v2.2/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/deploying.html</loc>
+    <loc>https://bundler.io/v2.2/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/faq.html</loc>
+    <loc>https://bundler.io/v2.2/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/git.html</loc>
+    <loc>https://bundler.io/v2.2/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v2.2/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/groups.html</loc>
+    <loc>https://bundler.io/v2.2/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/rails.html</loc>
+    <loc>https://bundler.io/v2.2/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v2.2/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v2.2/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v2.2/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v2.2/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-cache.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-cache.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v2.2/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v2.2/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/rationale.html</loc>
+    <loc>https://bundler.io/v2.2/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/rubygems.html</loc>
+    <loc>https://bundler.io/v2.2/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/rubymotion.html</loc>
+    <loc>https://bundler.io/v2.2/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.2/whats_new.html</loc>
+    <loc>https://bundler.io/v2.2/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/</loc>
+    <loc>https://bundler.io/v2.3/</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle.html</loc>
+    <loc>https://bundler.io/v2.3/bundle.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_add.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_add.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_binstubs.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_binstubs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_cache.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_cache.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_check.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_check.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_clean.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_clean.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_config.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_config.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_console.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_console.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_doctor.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_doctor.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_exec.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_exec.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_gem.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_help.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_help.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_info.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_info.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_init.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_init.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_inject.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_inject.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_install.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_install.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_list.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_list.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_lock.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_lock.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_open.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_open.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_outdated.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_outdated.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_platform.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_platform.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_plugin.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_plugin.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_pristine.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_pristine.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_remove.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_remove.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_show.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_show.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_update.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_update.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_version.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_version.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundle_viz.html</loc>
+    <loc>https://bundler.io/v2.3/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/bundler_workflow.html</loc>
+    <loc>https://bundler.io/v2.3/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/docs.html</loc>
+    <loc>https://bundler.io/v2.3/docs.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/gemfile.html</loc>
+    <loc>https://bundler.io/v2.3/gemfile.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/gemfile_man.html</loc>
+    <loc>https://bundler.io/v2.3/gemfile_man.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/gemfile_ruby.html</loc>
+    <loc>https://bundler.io/v2.3/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_2_upgrade.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_docker_guide.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_in_a_single_file_ruby_script.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_in_a_single_file_ruby_script.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_plugins.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_plugins.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_setup.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/bundler_sharing.html</loc>
+    <loc>https://bundler.io/v2.3/guides/bundler_sharing.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/creating_gem.html</loc>
+    <loc>https://bundler.io/v2.3/guides/creating_gem.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/deploying.html</loc>
+    <loc>https://bundler.io/v2.3/guides/deploying.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/faq.html</loc>
+    <loc>https://bundler.io/v2.3/guides/faq.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/git.html</loc>
+    <loc>https://bundler.io/v2.3/guides/git.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/git_bisect.html</loc>
+    <loc>https://bundler.io/v2.3/guides/git_bisect.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/groups.html</loc>
+    <loc>https://bundler.io/v2.3/guides/groups.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/rails.html</loc>
+    <loc>https://bundler.io/v2.3/guides/rails.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
+    <loc>https://bundler.io/v2.3/guides/rubygems_tls_ssl_troubleshooting_guide.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/sinatra.html</loc>
+    <loc>https://bundler.io/v2.3/guides/sinatra.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/updating_gems.html</loc>
+    <loc>https://bundler.io/v2.3/guides/updating_gems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/guides/using_bundler_in_applications.html</loc>
+    <loc>https://bundler.io/v2.3/guides/using_bundler_in_applications.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-add.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-add.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-binstubs.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-binstubs.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-cache.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-cache.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-check.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-check.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-clean.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-clean.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-config.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-config.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-doctor.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-doctor.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-exec.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-exec.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-gem.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-gem.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-info.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-info.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-init.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-init.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-inject.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-inject.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-install.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-install.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-list.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-list.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-lock.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-lock.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-open.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-open.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-outdated.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-outdated.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-platform.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-platform.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-pristine.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-pristine.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-remove.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-remove.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-show.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-show.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-update.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-update.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle-viz.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle-viz.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/bundle.1.html</loc>
+    <loc>https://bundler.io/v2.3/man/bundle.1.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/man/gemfile.5.html</loc>
+    <loc>https://bundler.io/v2.3/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/rationale.html</loc>
+    <loc>https://bundler.io/v2.3/rationale.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/rubygems.html</loc>
+    <loc>https://bundler.io/v2.3/rubygems.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/rubymotion.html</loc>
+    <loc>https://bundler.io/v2.3/rubymotion.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/v2.3/whats_new.html</loc>
+    <loc>https://bundler.io/v2.3/whats_new.html</loc>
   </url>
   <url>
-    <loc>http://bundler.io/whats_new.html</loc>
+    <loc>https://bundler.io/whats_new.html</loc>
   </url>
 </urlset>
