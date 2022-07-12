@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-12T18:16:05Z</lastmod>
+    <lastmod>2022-07-12T18:54:56Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -790,22 +790,10 @@
     <loc>https://bundler.io/v1.12/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/bundler_setup.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/bundler_sharing.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/deploying.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/docs.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/faq.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.12/gemfile.html</loc>
@@ -817,16 +805,43 @@
     <loc>https://bundler.io/v1.12/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/git.html</loc>
+    <loc>https://bundler.io/v1.12/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/git_bisect.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/groups.html</loc>
+    <loc>https://bundler.io/v1.12/guides/bundler_sharing.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.12/guides/creating_gem.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/deploying.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/git.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/git_bisect.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/groups.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/rails.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/rails23.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/rails3.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/sinatra.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.12/guides/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.12/guides/using_bundler_in_applications.html</loc>
@@ -862,12 +877,6 @@
     <loc>https://bundler.io/v1.12/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.12/rails23.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/rails3.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.12/rationale.html</loc>
   </url>
   <url>
@@ -875,12 +884,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.12/rubymotion.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/sinatra.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.12/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.12/whats_new.html</loc>
@@ -952,22 +955,10 @@
     <loc>https://bundler.io/v1.13/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/bundler_setup.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/bundler_sharing.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/deploying.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/docs.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/faq.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.13/gemfile.html</loc>
@@ -979,16 +970,37 @@
     <loc>https://bundler.io/v1.13/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/git.html</loc>
+    <loc>https://bundler.io/v1.13/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/git_bisect.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/groups.html</loc>
+    <loc>https://bundler.io/v1.13/guides/bundler_sharing.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.13/guides/creating_gem.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/deploying.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/git.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/git_bisect.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/groups.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/rails.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/sinatra.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.13/guides/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.13/guides/using_bundler_in_applications.html</loc>
@@ -1027,9 +1039,6 @@
     <loc>https://bundler.io/v1.13/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.13/rails.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.13/rationale.html</loc>
   </url>
   <url>
@@ -1037,12 +1046,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.13/rubymotion.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/sinatra.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.13/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.13/whats_new.html</loc>
@@ -1114,22 +1117,10 @@
     <loc>https://bundler.io/v1.14/bundle_viz.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/bundler_setup.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/bundler_sharing.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.14/bundler_workflow.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/deploying.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.14/docs.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/faq.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/gemfile.html</loc>
@@ -1141,16 +1132,37 @@
     <loc>https://bundler.io/v1.14/gemfile_ruby.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/git.html</loc>
+    <loc>https://bundler.io/v1.14/guides/bundler_setup.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/git_bisect.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/groups.html</loc>
+    <loc>https://bundler.io/v1.14/guides/bundler_sharing.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/guides/creating_gem.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/deploying.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/faq.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/git.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/git_bisect.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/groups.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/rails.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/sinatra.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/guides/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/guides/using_bundler_in_applications.html</loc>
@@ -1192,9 +1204,6 @@
     <loc>https://bundler.io/v1.14/man/gemfile.5.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v1.14/rails.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v1.14/rationale.html</loc>
   </url>
   <url>
@@ -1202,12 +1211,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.14/rubymotion.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/sinatra.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v1.14/updating_gems.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/whats_new.html</loc>
