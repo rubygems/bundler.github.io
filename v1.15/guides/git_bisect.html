@@ -26,44 +26,34 @@ Bundler: How to git bisect in projects using Bundler
 
 </head>
 <body class=''>
-<nav class='navbar navbar-default'>
-<div class='container'>
-<div class='navbar-header'>
-<button aria-expanded='false' class='navbar-toggle collapsed' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
-<span class='sr-only'>Toggle navigation</span>
-<span class='icon-bar'></span>
-<span class='icon-bar'></span>
-<span class='icon-bar'></span>
+<link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==' referrerpolicy='no-referrer' rel='stylesheet'>
+<nav class='navbar navbar-expand-md navbar-light container-md justify-content-between'>
+<a href="/" class="navbar-brand mr-auto font-weight-bold">Bundler</a>
+<button aria-controls='bs-navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
 </button>
-<b><a href="/" class="navbar-brand">Bundler</a></b>
-</div>
-<div class='collapse navbar-collapse' id='bs-navbar-collapse'>
-<ul class='nav navbar-nav navbar-right'>
-<li>
-<div class='search-wrapper'>
-<div class='form-group has-feedback'>
-<i class='glyphicon glyphicon-search form-control-feedback'></i>
-<input class='input-search' id='input-search' placeholder='Type to search...' type='text'>
-</div>
-</div>
+<div class='collapse navbar-collapse flex-grow-0' id='bs-navbar-collapse'>
+<ul class='nav navbar-nav'>
+<li class='nav-item'>
+<input class='input-search my-1 pl-1 pt-1' id='input-search' placeholder='Type to search...' type='text'>
+<i class='fa fa-search text-opacity-40 px-1 py-2'></i>
 </li>
-<li><a href="/docs.html">Docs</a></li>
-<li><a href="/contributors.html">Team</a></li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer">Repository</a></li>
+<li class='nav-item'><a href="/docs.html" class="nav-link">Docs</a></li>
+<li class='nav-item'><a href="/contributors.html" class="nav-link">Team</a></li>
+<li class='nav-item'><a href="/blog" class="nav-link">Blog</a></li>
+<li class='nav-item'><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer" class="nav-link">Repository</a></li>
 </ul>
-</div>
 </div>
 </nav>
 
-<div class='main-wrapper'>
+<div class='main-wrapper container-fluid'>
 <div class='row bg-light-blue header'>
-<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-responsive header-padding" style="max-width: 400px;" alt="" />
+<img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-fluid header-padding" style="max-width: 400px;" alt="" />
 </div>
 <div class='row'>
 <div class='container' id='guide-container'>
 <div id='wrapper'>
-<div class='hidden-xs' id='sidebar-wrapper'>
+<div class='d-none d-sm-block' id='sidebar-wrapper'>
 <div class='sidebar-nav'>
 <h4>Guides</h4>
 <ul>
@@ -183,7 +173,7 @@ to test if they are not reset.</li>
 </div>
 <div class='row'>
 <div class='container'>
-<div class='hidden-lg hidden-md hidden-sm' id='bottom-sidebar-wrapper'>
+<div class='d-sm-none' id='bottom-sidebar-wrapper'>
 <div class='bottom-sidebar-nav'>
 <ul>
 <li class=''>
@@ -284,22 +274,15 @@ to test if they are not reset.</li>
 
 </div>
 <div class='footer'>
-<div class='row'>
-<div class='container text-center'>
-<ul class='nav navbar-nav'>
-<li><a href="/docs.html">Docs</a></li>
-<li><a href="/contributors.html">Team</a></li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="https://github.com/rubygems/rubygems/tree/master/bundler">Repository</a></li>
+<nav class='navbar justify-content-center'>
+<ul class='navbar-nav'>
+<li class='nav-item'><a href="/docs.html" class="nav-link px-3">Docs</a></li>
+<li class='nav-item'><a href="/contributors.html" class="nav-link px-3">Team</a></li>
+<li class='nav-item'><a href="/blog" class="nav-link px-3">Blog</a></li>
+<li class='nav-item'><a href="https://github.com/rubygems/rubygems/tree/master/bundler" class="nav-link px-3">Repository</a></li>
 </ul>
-</div>
-</div>
+</nav>
 
 </div>
 </body>
 </html>
-<style>
-  .main-wrapper {
-    padding-bottom: 0;
-  }
-</style>
