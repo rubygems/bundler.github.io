@@ -49,120 +49,9 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='row bg-light-blue header'>
 <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-fluid header-padding" style="max-width: 400px;" alt="" />
 </div>
-<div class='row'>
-<div class='container' id='guide-container'>
-<div id='wrapper'>
-<div class='d-none d-sm-block' id='sidebar-wrapper'>
-<div class='sidebar-nav'>
-<h4>Guides</h4>
-<ul>
-<li class=''>
-<a href="/guides/faq.html">Frequently Asked Questions</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/deploying.html">How to deploy bundled applications</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/git.html">How to install gems from git repositories</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/groups.html">How to manage groups of gems</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/updating_gems.html">How to update gems with Bundler</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/rails.html">How to use Bundler with Rails</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_setup.html">How to use Bundler with Ruby</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/sinatra.html">How to use Bundler with Sinatra</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/git_bisect.html">How to use git bisect with Bundler</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/guides/bundler_plugins.html">How to write a Bundler plugin</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-</ul>
-
-</div>
-</div>
-<div class='guide contents' id='page-content-wrapper'>
+<div class='container'>
+<div class='row flex-column flex-md-row-reverse'>
+<div class='col-12 col-md-9 guide contents' id='page-content-wrapper'>
 <h1 id="troubleshooting-common-issues">Troubleshooting common issues</h1>
 
 <p>Stuck using Bundler? Browse these common issues before <a href="/doc/contributing/issues.html">filing a new issue</a>.</p>
@@ -196,13 +85,9 @@ list</a>, and make sure that the version of Bundler that you are using works wit
 
 <div class="highlight"><pre class="highlight plaintext"><code># Update to the latest version of bundler&#x000A;gem install bundler&#x000A;&#x000A;# Remove user-specific gems and git repos&#x000A;rm -rf ~/.bundle/ ~/.gem/bundler/ ~/.gems/cache/bundler/&#x000A;&#x000A;# Remove system-wide git repos and git checkouts&#x000A;rm -rf $GEM_HOME/bundler/ $GEM_HOME/cache/bundler/&#x000A;&#x000A;# Remove project-specific settings&#x000A;rm -rf .bundle/&#x000A;&#x000A;# Remove project-specific cached gems and repos&#x000A;rm -rf vendor/cache/&#x000A;&#x000A;# Remove the saved resolve of the Gemfile&#x000A;rm -rf Gemfile.lock&#x000A;&#x000A;# Uninstall the rubygems-bundler and open_gem gems&#x000A;rvm gemset use global # if using rvm&#x000A;gem uninstall rubygems-bundler open_gem&#x000A;&#x000A;# Try to install one more time&#x000A;bundle install&#x000A;</code></pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class='row'>
-<div class='container'>
-<div class='d-sm-none' id='bottom-sidebar-wrapper'>
-<div class='bottom-sidebar-nav'>
+<div class='col-12 col-md-3 mt-4' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
 <ul>
 <li class=''>
 <a href="/guides/faq.html">Frequently Asked Questions</a>

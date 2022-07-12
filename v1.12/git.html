@@ -50,30 +50,9 @@ Bundler: Gems from git repositories
 <div class='row bg-light-blue header'>
 <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-fluid header-padding" style="max-width: 400px;" alt="" />
 </div>
-<div class='row'>
-<div class='container' id='guide-container'>
-<div id='wrapper'>
-<div class='d-none d-sm-block' id='sidebar-wrapper'>
-<div class='sidebar-nav'>
-<h4>Guides</h4>
-<ul>
-<li class=''>
-<a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v1.15/guides/using_bundler_in_applications.html">Using Bundler In Applications</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-</ul>
-
-</div>
-</div>
-<div class='guide contents' id='page-content-wrapper'>
+<div class='container'>
+<div class='row flex-column flex-md-row-reverse'>
+<div class='col-12 col-md-9 guide contents' id='page-content-wrapper'>
 <h2 id="gems-from-git-repositories">Gems from git repositories</h2>
 
 <p>Bundler adds the ability to use gems directly from git repositories. Setting
@@ -190,13 +169,9 @@ forces you to fetch the latest changes in the remotes.</p>
 
 <div class="highlight"><pre class="highlight plaintext"><code>bundle config disable_local_branch_check true&#x000A;</code></pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class='row'>
-<div class='container'>
-<div class='d-sm-none' id='bottom-sidebar-wrapper'>
-<div class='bottom-sidebar-nav'>
+<div class='col-12 col-md-3 mt-4' id='sidebar-wrapper'>
+<div class='sidebar-nav'>
+<h4>Guides</h4>
 <ul>
 <li class=''>
 <a href="/v1.15/guides/creating_gem.html">Developing a RubyGem using Bundler</a>
