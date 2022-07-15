@@ -26,15 +26,16 @@ Bundler: gemfile
 </head>
 <body class=''>
 <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==' referrerpolicy='no-referrer' rel='stylesheet'>
-<nav class='navbar navbar-expand-md navbar-light container-md justify-content-between'>
-<a href="/" class="navbar-brand mr-auto font-weight-bold">Bundler</a>
-<button aria-controls='bs-navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<nav class='navbar navbar-expand-md navbar-light'>
+<div class='container-md'>
+<a href="/" class="navbar-brand me-auto fw-bold">Bundler</a>
+<button aria-controls='bs-navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#bs-navbar-collapse' data-bs-toggle='collapse' type='button'>
 <span class='navbar-toggler-icon'></span>
 </button>
 <div class='collapse navbar-collapse flex-grow-0' id='bs-navbar-collapse'>
-<ul class='nav navbar-nav'>
+<ul class='navbar-nav'>
 <li class='nav-item'>
-<input class='input-search my-1 pl-1 pt-1' id='input-search' placeholder='Type to search...' type='text'>
+<input class='input-search my-1 ps-1 pt-1' id='input-search' placeholder='Type to search...' type='text'>
 <i class='fa fa-search text-opacity-40 px-1 py-2'></i>
 </li>
 <li class='nav-item'><a href="/docs.html" class="nav-link">Docs</a></li>
@@ -43,10 +44,10 @@ Bundler: gemfile
 <li class='nav-item'><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer" class="nav-link">Repository</a></li>
 </ul>
 </div>
+</div>
 </nav>
 
-<div class='main-wrapper container-fluid'>
-<div class='row bg-light-blue header'>
+<div class='bg-light-blue header'>
 <img src="/images/docs_header_transparent_bg.png" srcset="/images/docs_header_transparent_bg.png 1x, /images/docs_header_transparent_bg@2x.png 2x, /images/docs_header_transparent_bg@3x.png 3x" class="img-fluid header-padding" style="max-width: 400px;" alt="" />
 </div>
 <div class='container'>
@@ -155,13 +156,13 @@ JRuby is an implementation of Ruby on the JVM, short for Java Virtual Machine.</
 specified, an engine <em>must</em> also be specified. If the engine is "ruby" the
 engine version specified <em>must</em> match the Ruby version.</p>
 
-<pre><code>ruby "1.8.7", :engine =&gt; "jruby", :engine_version =&gt; "1.6.7"&#x000A;</code></pre>
+<pre><code>ruby "1.8.7", engine: "jruby", engine_version: "1.6.7"&#x000A;</code></pre>
 
 <h3 id="PATCHLEVEL">Patchlevel</h3>
 
 <p>Each application <em>may</em> specify a Ruby patchlevel.</p>
 
-<pre><code>ruby "2.0.0", :patchlevel =&gt; "247"&#x000A;</code></pre>
+<pre><code>ruby "2.0.0", patchlevel: "247"&#x000A;</code></pre>
 
 <h2 id="GEMS">Gems</h2>
 
@@ -187,18 +188,18 @@ All parameters are <code>OPTIONAL</code> unless otherwise specified.</p>
 you want <code>required</code> has the same name as <em>gem</em> or <code>false</code> to
 prevent any file from being autorequired.</p>
 
-<pre><code>gem "redis", :require =&gt; ["redis/connection/hiredis", "redis"]&#x000A;gem "webmock", :require =&gt; false&#x000A;gem "byebug", :require =&gt; true&#x000A;</code></pre>
+<pre><code>gem "redis", require: ["redis/connection/hiredis", "redis"]&#x000A;gem "webmock", require: false&#x000A;gem "byebug", require: true&#x000A;</code></pre>
 
 <p>The argument defaults to the name of the gem. For example, these are identical:</p>
 
-<pre><code>gem "nokogiri"&#x000A;gem "nokogiri", :require =&gt; "nokogiri"&#x000A;gem "nokogiri", :require =&gt; true&#x000A;</code></pre>
+<pre><code>gem "nokogiri"&#x000A;gem "nokogiri", require: "nokogiri"&#x000A;gem "nokogiri", require: true&#x000A;</code></pre>
 
 <h3 id="GROUPS">Groups</h3>
 
 <p>Each <em>gem</em> <code>MAY</code> specify membership in one or more groups. Any <em>gem</em> that does
 not specify membership in any group is placed in the <code>default</code> group.</p>
 
-<pre><code>gem "rspec", :group =&gt; :test&#x000A;gem "wirble", :groups =&gt; [:development, :test]&#x000A;</code></pre>
+<pre><code>gem "rspec", group: :test&#x000A;gem "wirble", groups: [:development, :test]&#x000A;</code></pre>
 
 <p>The Bundler runtime allows its two main methods, <code>Bundler.setup</code> and
 <code>Bundler.require</code>, to limit their impact to particular groups.</p>
@@ -275,18 +276,35 @@ used on platforms with Ruby 2.3, use:</p>
 
 <p>As with groups, you can specify one or more platforms:</p>
 
-<pre><code>gem "weakling",   :platforms =&gt; :jruby&#x000A;gem "ruby-debug", :platforms =&gt; :mri_18&#x000A;gem "nokogiri",   :platforms =&gt; [:mri_18, :jruby]&#x000A;</code></pre>
+<pre><code>gem "weakling",   platforms: :jruby&#x000A;gem "ruby-debug", platforms: :mri_18&#x000A;gem "nokogiri",   platforms: [:mri_18, :jruby]&#x000A;</code></pre>
 
 <p>All operations involving groups (<a href="bundle-install.1.html"><code>bundle install</code></a>, <code>Bundler.setup</code>,
 <code>Bundler.require</code>) behave exactly the same as if any groups not
 matching the current platform were explicitly excluded.</p>
+
+<h3 id="FORCE_RUBY_PLATFORM">Force_ruby_platform</h3>
+
+<p>If you always want the pure ruby variant of a gem to be chosen over platform
+specific variants, you can use the <code>force_ruby_platform</code> option:</p>
+
+<pre><code>gem "ffi", force_ruby_platform: true&#x000A;</code></pre>
+
+<p>This can be handy (assuming the pure ruby variant works fine) when:</p>
+
+<ul>
+<li>You're having issues with the platform specific variant.</li>
+<li>The platform specific variant does not yet support a newer ruby (and thus has
+a <code>required_ruby_version</code> upper bound), but you still want your Gemfile{.lock}
+files to resolve under that ruby.</li>
+</ul>
+
 
 <h3 id="SOURCE">Source</h3>
 
 <p>You can select an alternate Rubygems repository for a gem using the ':source'
 option.</p>
 
-<pre><code>gem "some_internal_gem", :source =&gt; "https://gems.example.com"&#x000A;</code></pre>
+<pre><code>gem "some_internal_gem", source: "https://gems.example.com"&#x000A;</code></pre>
 
 <p>This forces the gem to be loaded from this source and ignores any global sources
 declared at the top level of the file. If the gem does not exist in this source,
@@ -314,11 +332,11 @@ several protocols:</p>
 
 <dl>
 <dt class="flush"><code>HTTP(S)</code></dt>
-<dd>gem "rails", :git =&gt; "https://github.com/rails/rails.git"</dd>
+<dd>gem "rails", git: "https://github.com/rails/rails.git"</dd>
 <dt class="flush"><code>SSH</code></dt>
-<dd>gem "rails", :git =&gt; "git@github.com:rails/rails.git"</dd>
+<dd>gem "rails", git: "git@github.com:rails/rails.git"</dd>
 <dt class="flush"><code>git</code></dt>
-<dd>gem "rails", :git =&gt; "git://github.com/rails/rails.git"</dd>
+<dd>gem "rails", git: "git://github.com/rails/rails.git"</dd>
 </dl>
 
 
@@ -348,7 +366,7 @@ to, a version specifier, if provided, means that the git repository is
 only valid if the <code>.gemspec</code> specifies a version matching the version
 specifier. If not, bundler will print a warning.</p>
 
-<pre><code>gem "rails", "2.3.8", :git =&gt; "https://github.com/rails/rails.git"&#x000A;# bundle install will fail, because the .gemspec in the rails&#x000A;# repository's master branch specifies version 3.0.0&#x000A;</code></pre>
+<pre><code>gem "rails", "2.3.8", git: "https://github.com/rails/rails.git"&#x000A;# bundle install will fail, because the .gemspec in the rails&#x000A;# repository's master branch specifies version 3.0.0&#x000A;</code></pre>
 
 <p>If a git repository does <code>not</code> have a <code>.gemspec</code> for the gem you attached
 it to, a version specifier <code>MUST</code> be provided. Bundler will use this
@@ -362,18 +380,18 @@ version in the simple <code>.gemspec</code> it creates.</p>
 </dt>
 <dd>
 <p>You <code>MUST</code> only specify at most one of these options. The default
-is <code>:branch =&gt; "master"</code>.  For example:</p>
+is <code>branch: "master"</code>.  For example:</p>
 
-<p>  gem "rails", :git =&gt; "https://github.com/rails/rails.git", :branch =&gt; "5-0-stable"</p>
+<p>  gem "rails", git: "https://github.com/rails/rails.git", branch: "5-0-stable"</p>
 
-<p>  gem "rails", :git =&gt; "https://github.com/rails/rails.git", :tag =&gt; "v5.0.0"</p>
+<p>  gem "rails", git: "https://github.com/rails/rails.git", tag: "v5.0.0"</p>
 
-<p>  gem "rails", :git =&gt; "https://github.com/rails/rails.git", :ref =&gt; "4aded"</p>
+<p>  gem "rails", git: "https://github.com/rails/rails.git", ref: "4aded"</p>
 </dd>
 <dt><code>submodules</code></dt>
 <dd><p>For reference, a <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">git submodule</a>
 lets you have another git repository within a subfolder of your repository.
-Specify <code>:submodules =&gt; true</code> to cause bundler to expand any
+Specify <code>submodules: true</code> to cause bundler to expand any
 submodules included in the git repository</p></dd>
 </dl>
 
@@ -396,11 +414,11 @@ the context of the directory in which it is located.</p>
 as an argument, and a block which receives a single argument and interpolates it into a
 string to return the full repo address:</p>
 
-<pre><code>git_source(:stash){ |repo_name| "https://stash.corp.acme.pl/#{repo_name}.git" }&#x000A;gem 'rails', :stash =&gt; 'forks/rails'&#x000A;</code></pre>
+<pre><code>git_source(:stash){ |repo_name| "https://stash.corp.acme.pl/#{repo_name}.git" }&#x000A;gem 'rails', stash: 'forks/rails'&#x000A;</code></pre>
 
 <p>In addition, if you wish to choose a specific branch:</p>
 
-<pre><code>gem "rails", :stash =&gt; "forks/rails", :branch =&gt; "branch_name"&#x000A;</code></pre>
+<pre><code>gem "rails", stash: "forks/rails", branch: "branch_name"&#x000A;</code></pre>
 
 <h3 id="GITHUB">Github</h3>
 
@@ -413,32 +431,32 @@ man-in-the-middle attacker to compromise your system.</p>
 trailing ".git"), separated by a slash. If both the username and repository name are the
 same, you can omit one.</p>
 
-<pre><code>gem "rails", :github =&gt; "rails/rails"&#x000A;gem "rails", :github =&gt; "rails"&#x000A;</code></pre>
+<pre><code>gem "rails", github: "rails/rails"&#x000A;gem "rails", github: "rails"&#x000A;</code></pre>
 
 <p>Are both equivalent to</p>
 
-<pre><code>gem "rails", :git =&gt; "git://github.com/rails/rails.git"&#x000A;</code></pre>
+<pre><code>gem "rails", git: "git://github.com/rails/rails.git"&#x000A;</code></pre>
 
 <p>Since the <code>github</code> method is a specialization of <code>git_source</code>, it accepts a <code>:branch</code> named argument.</p>
 
 <p>You can also directly pass a pull request URL:</p>
 
-<pre><code>gem "rails", :github =&gt; "https://github.com/rails/rails/pull/43753"&#x000A;</code></pre>
+<pre><code>gem "rails", github: "https://github.com/rails/rails/pull/43753"&#x000A;</code></pre>
 
 <p>Which is equivalent to:</p>
 
-<pre><code>gem "rails", :github =&gt; "rails/rails", branch: "refs/pull/43753/head"&#x000A;</code></pre>
+<pre><code>gem "rails", github: "rails/rails", branch: "refs/pull/43753/head"&#x000A;</code></pre>
 
 <h3 id="GIST">Gist</h3>
 
 <p>If the git repository you want to use is hosted as a GitHub Gist and is public, you can use
 the :gist shorthand to specify the gist identifier (without the trailing ".git").</p>
 
-<pre><code>gem "the_hatch", :gist =&gt; "4815162342"&#x000A;</code></pre>
+<pre><code>gem "the_hatch", gist: "4815162342"&#x000A;</code></pre>
 
 <p>Is equivalent to:</p>
 
-<pre><code>gem "the_hatch", :git =&gt; "https://gist.github.com/4815162342.git"&#x000A;</code></pre>
+<pre><code>gem "the_hatch", git: "https://gist.github.com/4815162342.git"&#x000A;</code></pre>
 
 <p>Since the <code>gist</code> method is a specialization of <code>git_source</code>, it accepts a <code>:branch</code> named argument.</p>
 
@@ -449,11 +467,11 @@ the :gist shorthand to specify the gist identifier (without the trailing ".git")
 trailing ".git"), separated by a slash. If both the username and repository name are the
 same, you can omit one.</p>
 
-<pre><code>gem "rails", :bitbucket =&gt; "rails/rails"&#x000A;gem "rails", :bitbucket =&gt; "rails"&#x000A;</code></pre>
+<pre><code>gem "rails", bitbucket: "rails/rails"&#x000A;gem "rails", bitbucket: "rails"&#x000A;</code></pre>
 
 <p>Are both equivalent to</p>
 
-<pre><code>gem "rails", :git =&gt; "https://rails@bitbucket.org/rails/rails.git"&#x000A;</code></pre>
+<pre><code>gem "rails", git: "https://rails@bitbucket.org/rails/rails.git"&#x000A;</code></pre>
 
 <p>Since the <code>bitbucket</code> method is a specialization of <code>git_source</code>, it accepts a <code>:branch</code> named argument.</p>
 
@@ -471,7 +489,7 @@ version that bundler should use.</p>
 <p>Unlike <code>:git</code>, bundler does not compile C extensions for
 gems specified as paths.</p>
 
-<pre><code>gem "rails", :path =&gt; "vendor/rails"&#x000A;</code></pre>
+<pre><code>gem "rails", path: "vendor/rails"&#x000A;</code></pre>
 
 <p>If you would like to use multiple local gems directly from the filesystem, you can set a global <code>path</code> option to the path containing the gem's files. This will automatically load gemspec files from subdirectories.</p>
 
@@ -482,7 +500,7 @@ gems specified as paths.</p>
 <p>The <code>:source</code>, <code>:git</code>, <code>:path</code>, <code>:group</code>, and <code>:platforms</code> options may be
 applied to a group of gems by using block form.</p>
 
-<pre><code>source "https://gems.example.com" do&#x000A;  gem "some_internal_gem"&#x000A;  gem "another_internal_gem"&#x000A;end&#x000A;&#x000A;git "https://github.com/rails/rails.git" do&#x000A;  gem "activesupport"&#x000A;  gem "actionpack"&#x000A;end&#x000A;&#x000A;platforms :ruby do&#x000A;  gem "ruby-debug"&#x000A;  gem "sqlite3"&#x000A;end&#x000A;&#x000A;group :development, :optional =&gt; true do&#x000A;  gem "wirble"&#x000A;  gem "faker"&#x000A;end&#x000A;</code></pre>
+<pre><code>source "https://gems.example.com" do&#x000A;  gem "some_internal_gem"&#x000A;  gem "another_internal_gem"&#x000A;end&#x000A;&#x000A;git "https://github.com/rails/rails.git" do&#x000A;  gem "activesupport"&#x000A;  gem "actionpack"&#x000A;end&#x000A;&#x000A;platforms :ruby do&#x000A;  gem "ruby-debug"&#x000A;  gem "sqlite3"&#x000A;end&#x000A;&#x000A;group :development, optional: true do&#x000A;  gem "wirble"&#x000A;  gem "faker"&#x000A;end&#x000A;</code></pre>
 
 <p>In the case of the group block form the :optional option can be given
 to prevent a group from being installed unless listed in the <code>--with</code>
@@ -520,7 +538,7 @@ the <code>.gemspec</code> file.</p>
 
 <p>The <code>gemspec</code> method adds any runtime dependencies as gem requirements in the
 default group. It also adds development dependencies as gem requirements in the
-<code>development</code> group. Finally, it adds a gem requirement on your project (<code>:path&#x000A;=&gt; '.'</code>). In conjunction with <code>Bundler.setup</code>, this allows you to require project
+<code>development</code> group. Finally, it adds a gem requirement on your project (<code>path:&#x000A;'.'</code>). In conjunction with <code>Bundler.setup</code>, this allows you to require project
 files in your test code as you would if the project were installed as a gem; you
 need not manipulate the load path manually or require project files via relative
 paths.</p>
@@ -561,8 +579,7 @@ bundler uses the following priority order:</p>
 <div class='col-12 col-md-3 mt-4' id='sidebar-wrapper'>
 <div class='sidebar-nav'>
 <h4>Choose version</h4>
-<div class='form-group'>
-<select class='version-selects form-control'>
+<select class='version-selects form-select mb-3'>
 <option selected value='/v2.3/man/bundle-install.1.html'>
 v2.3
 </option>
@@ -594,7 +611,6 @@ v1.13
 v1.12
 </option>
 </select>
-</div>
 <h4>Primary Commands</h4>
 <ul>
 <li class=''>
@@ -782,7 +798,7 @@ v1.12
 </div>
 <script src="/commands_layout.min.js"></script>
 
-<div class='row bg-light-blue'>
+<div class='bg-light-blue'>
 <div class='container'>
 <div class='contents'>
 <div class='edit-on-github text-center'>
@@ -792,7 +808,6 @@ v1.12
 </div>
 </div>
 
-</div>
 <div class='footer'>
 <nav class='navbar justify-content-center'>
 <ul class='navbar-nav'>

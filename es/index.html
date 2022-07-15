@@ -26,15 +26,16 @@ Bundler: The best way to manage a Ruby application's gems
 </head>
 <body class=''>
 <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' integrity='sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==' referrerpolicy='no-referrer' rel='stylesheet'>
-<nav class='navbar navbar-expand-md navbar-light container-md justify-content-between'>
-<a href="/es/" class="navbar-brand mr-auto font-weight-bold">Bundler</a>
-<button aria-controls='bs-navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#bs-navbar-collapse' data-toggle='collapse' type='button'>
+<nav class='navbar navbar-expand-md navbar-light'>
+<div class='container-md'>
+<a href="/es/" class="navbar-brand me-auto fw-bold">Bundler</a>
+<button aria-controls='bs-navbar-collapse' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#bs-navbar-collapse' data-bs-toggle='collapse' type='button'>
 <span class='navbar-toggler-icon'></span>
 </button>
 <div class='collapse navbar-collapse flex-grow-0' id='bs-navbar-collapse'>
-<ul class='nav navbar-nav'>
+<ul class='navbar-nav'>
 <li class='nav-item'>
-<input class='input-search my-1 pl-1 pt-1' id='input-search' placeholder='Haga búsqueda...' type='text'>
+<input class='input-search my-1 ps-1 pt-1' id='input-search' placeholder='Haga búsqueda...' type='text'>
 <i class='fa fa-search text-opacity-40 px-1 py-2'></i>
 </li>
 <li class='nav-item'><a href="/docs.html" class="nav-link">Docs</a></li>
@@ -43,20 +44,16 @@ Bundler: The best way to manage a Ruby application's gems
 <li class='nav-item'><a href="https://github.com/rubygems/rubygems/tree/master/bundler" target="_blank" rel="noopener noreferrer" class="nav-link">Repositorio</a></li>
 </ul>
 </div>
+</div>
 </nav>
 
-<div class='main-wrapper container-fluid'>
-<div class='row bg-dark-blue'>
-<div class='container'>
-<div class='col-md-12'>
+<div class='bg-dark-blue'>
+<div class='mx-auto text-center'>
 <img src="/images/header_transparent_bg.png" srcset="/images/header_transparent_bg.png 1x, /images/header_transparent_bg@2x.png 2x, /images/header_transparent_bg@3x.png 3x" class="img-fluid" alt="" />
 </div>
 </div>
-</div>
-<div class='row btn-margin-top'>
 <div class='container'>
-<div class='col-md-12'>
-<div class='content-padding large-font'>
+<div class='my-5 large-font'>
 <p>Bundler provee un ambiente consistente para los proyectos de Ruby por modo de siguiendo
 e instalando las gemas exactas y versiones necesarias.
 </p>
@@ -72,11 +69,8 @@ Empezando trabajar en un proyecto es tan simple como <code>bundle install</code>
 <a href="http://slack.bundler.io" class="btn btn-primary btn-lg btn-responsive">translation missing: es.home.chat_with_us</a>
 </p>
 </div>
-</div>
-</div>
-<div class='row bg-light-blue'>
+<div class='bg-light-blue'>
 <div class='container'>
-<div class='col-md-12'>
 <h2>
 The latest news
 </h2>
@@ -84,13 +78,10 @@ The latest news
 Jan 23, 2022
 <a href="/blog/2022/01/23/bundler-v2-3.html">Bundler v2.3: Locking the version of Bundler itself</a>
 </h3>
-<br>
 </div>
 </div>
-</div>
-<div class='row btn-margin-top'>
+<div class='my-3 my-md-4 p-3'>
 <div class='container'>
-<div class='col-md-12'>
 <h2 id='getting-started'>
 <b>Para empezar</b>
 </h2>
@@ -108,27 +99,24 @@ Jan 23, 2022
 </p>
 </div>
 <div class="highlight"><pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>&#x000A;<span class="n">gem</span> <span class="s1">'nokogiri'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rack'</span><span class="p">,</span> <span class="s1">'~&gt; 2.0.1'</span>&#x000A;<span class="n">gem</span> <span class="s1">'rspec'</span>&#x000A;</code></pre></div>
-<p class='center-on-xs'>
-<a href="./gemfile.html" class="btn btn-primary btn-lg float-right btn-responsive">Aprenda más: Gemfiles</a>
+<p class='text-center text-md-end'>
+<a href="./gemfile.html" class="btn btn-primary btn-lg btn-responsive">Aprenda más: Gemfiles</a>
 </p>
 </div>
-<div class='clearfix'></div>
 <div class='bullet'>
 <div class='description'>
 <p>Instala todas de las gemas necesarias de sus fuentes especificadas:</p>
 </div>
 <div class="highlight"><pre class="highlight plaintext"><code>$ bundle install&#x000A;$ git add Gemfile Gemfile.lock&#x000A;</code></pre></div>
-<p class='center-on-xs'>
-<a href="./v2.3/man/bundle-install.1.html" class="btn btn-primary btn-lg float-right btn-responsive">Aprenda más: bundle install</a>
+<p class='text-center text-md-end'>
+<a href="./v2.3/man/bundle-install.1.html" class="btn btn-primary btn-lg btn-responsive">Aprenda más: bundle install</a>
 </p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class='row bg-light-blue'>
+<div class='bg-light-blue'>
 <div class='container'>
-<div class='col-md-12'>
 <h2 id='get-involved'>Get involved</h2>
 <div class='large-font'>
 Bundler has a lot of contributors and users, and we would love to have your help! If you have questions, join <a href="http://slack.bundler.io">the Bundler Slack</a> and we'll try to answer them. If you're interested in contributing (no programming skills needed), start with <a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/contributing/README.md">the contributing guide</a>. While participating in the Bundler project, please keep the <a href="/conduct.html">code of conduct</a> in mind, and be inclusive and friendly towards everyone. If you think you've found a security issue, please report it via <a href="https://hackerone.com/rubygems">HackerOne</a>.
@@ -143,11 +131,9 @@ Bundler has a lot of contributors and users, and we would love to have your help
 </div>
 </div>
 </div>
-</div>
 
 
 
-</div>
 <div class='footer'>
 <nav class='navbar justify-content-center'>
 <ul class='navbar-nav'>
