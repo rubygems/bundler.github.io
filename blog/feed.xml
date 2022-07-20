@@ -2,19 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Bundler Blog</title>
   <subtitle>The latest news on Bundler</subtitle>
-  <id>http://bundler.io/blog</id>
-  <link href="http://bundler.io/blog"/>
-  <link href="http://bundler.io/blog/feed.xml" rel="self"/>
+  <id>https://bundler.io/blog</id>
+  <link href="https://bundler.io/blog"/>
+  <link href="https://bundler.io/blog/feed.xml" rel="self"/>
   <updated>2022-01-23T16:07:00+00:00</updated>
   <author>
     <name>The Bundler Team</name>
   </author>
   <entry>
     <title>Bundler v2.3: Locking the version of Bundler itself</title>
-    <link rel="alternate" href="http://bundler.io/blog/2022/01/23/bundler-v2-3.html"/>
-    <id>http://bundler.io/blog/2022/01/23/bundler-v2-3.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2022/01/23/bundler-v2-3.html"/>
+    <id>https://bundler.io/blog/2022/01/23/bundler-v2-3.html</id>
     <published>2022-01-23T16:07:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -118,10 +118,10 @@ dependency of your application.&lt;/p&gt;
   </entry>
   <entry>
     <title>A more secure bundler: We fixed our source priorities.</title>
-    <link rel="alternate" href="http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html"/>
-    <id>http://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html"/>
+    <id>https://bundler.io/blog/2021/02/15/a-more-secure-bundler-we-fixed-our-source-priorities.html</id>
     <published>2021-02-15T11:33:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -212,10 +212,10 @@ top of these issues, please consider funding
   </entry>
   <entry>
     <title>Bundler v2.2: Multiplatform, Funding, and more.</title>
-    <link rel="alternate" href="http://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
-    <id>http://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2020/12/09/bundler-v2-2.html"/>
+    <id>https://bundler.io/blog/2020/12/09/bundler-v2-2.html</id>
     <published>2020-12-09T16:32:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>David Rodríguez</name>
     </author>
@@ -311,10 +311,10 @@ make bundler get in the middle.&lt;/p&gt;
   </entry>
   <entry>
     <title>March Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
-    <id>http://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2020/04/27/march-monthly-update.html"/>
+    <id>https://bundler.io/blog/2020/04/27/march-monthly-update.html</id>
     <published>2020-04-27T00:00:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>Gift Egwuenu</name>
     </author>
@@ -333,10 +333,10 @@ make bundler get in the middle.&lt;/p&gt;
   </entry>
   <entry>
     <title>Solutions for 'Cant find gem bundler (&gt;= 0.a) with executable bundle'</title>
-    <link rel="alternate" href="http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
-    <id>http://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html"/>
+    <id>https://bundler.io/blog/2019/05/14/solutions-for-cant-find-gem-bundler-with-executable-bundle.html</id>
     <published>2019-05-14T00:00:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>Colby Swandale</name>
     </author>
@@ -389,10 +389,10 @@ $ gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
   </entry>
   <entry>
     <title>January and February Bundler Update</title>
-    <link rel="alternate" href="http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
-    <id>http://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
+    <link rel="alternate" href="https://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html"/>
+    <id>https://bundler.io/blog/2019/03/12/january-february-bimonthly-update.html</id>
     <published>2019-03-12T00:00:00+00:00</published>
-    <updated>2022-07-19T14:51:27+00:00</updated>
+    <updated>2022-07-20T01:59:37+00:00</updated>
     <author>
       <name>Stephanie Morillo</name>
     </author>
