@@ -7,7 +7,7 @@
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <meta content='276VSYOko8B8vIu1i8i5qbj7_ql5PXo0dU69XQy-SL' name='globalsign-domain-verification'>
 <title>
-Bundler: bundle init
+Bundler: About this site
 </title>
 
 <script src="/application.min.js"></script>
@@ -54,266 +54,184 @@ Bundler: bundle init
 </div>
 <div class='container'>
 <div class='row flex-column flex-md-row-reverse'>
-<div class='col-12 col-md-9 commands contents' id='page-content-wrapper'>
-
-  <div class="mp" id="man">
-
-  
-
-  
-
-  <h2 id="NAME">bundle init</h2>
-<p class="man-name">
-  <code>bundle-init</code> - <span class="man-whatis">Generates a Gemfile into the current working directory</span>
+<div class='col-12 col-md-9 guide contents' id='page-content-wrapper'>
+<div class='container'>
+<div class='row my-5'>
+<h1>
+About this Web site
+</h1>
+<h2>
+Source code
+</h2>
+<p>
+<a href="https://github.com/rubygems/bundler-site">https://github.com/rubygems/bundler-site</a>
 </p>
-
-
-
-<pre><code>bundle init</code> [--gemspec=FILE]</pre>
-
-<h2 id="DESCRIPTION">Description</h2>
-
-<p>Init generates a default <a href="gemfile.5.html"><code>Gemfile(5)</code></a> in the current working directory. When
-adding a <a href="gemfile.5.html"><code>Gemfile(5)</code></a> to a gem with a gemspec, the <code>--gemspec</code> option will
-automatically add each dependency listed in the gemspec file to the newly
-created <a href="gemfile.5.html"><code>Gemfile(5)</code></a>.</p>
-
-<h2 id="OPTIONS">Options</h2>
-
-<dl>
-<dt><code>--gemspec</code></dt>
-<dd>Use the specified .gemspec to create the <a href="gemfile.5.html"><code>Gemfile(5)</code></a>
-</dd>
-</dl>
-
-
-<h2 id="FILES">Files</h2>
-
-<p>Included in the default <a href="gemfile.5.html"><code>Gemfile(5)</code></a>
-generated is the line <code># frozen_string_literal: true</code>. This is a magic comment
-supported for the first time in Ruby 2.3. The presence of this line
-results in all string literals in the file being implicitly frozen.</p>
-
-<h2 id="SEE-ALSO">See Also</h2>
-
-<p><a href="https://bundler.io/man/gemfile.5.html">Gemfile(5)</a></p>
-
-
-  
-
-  </div>
+<h2>
+Architecture
+</h2>
+<p>
+Middleman 4.4 is the core system of this Web site.
+A half of source code is located in
+<code>./source</code>
+, but the other half is located in
+<a href="https://github.com/rubygems/rubygems/tree/master/bundler/lib/bundler/man">rubygems/rubygems/tree/master/bundler/lib/bundler/man</a>,
+which would be retrieved by executing
+<code>bundle exec rake man</code>
+.
+</p>
+<p>
+When the source code is merged to the default branch
+<code>master</code>
+on GitHub,
+<a href="https://github.com/rubygems/bundler-site/blob/HEAD/.github/workflows/deploy.yml">Deploy job on GitHub Actions</a>
+would be automatically triggered to push build source (HTML, JS, CSS and
+font) to
+<a href="https://github.com/rubygems/bundler.github.io">rubygems/bundler.github.io</a>.
+Custom domain is used as defined in
+<a href="https://github.com/rubygems/bundler.github.io/blob/master/CNAME">CNAME in bundler.github.io</a>
+(see also
+<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-a-subdomain">Managing a custom domain for your GitHub Pages site</a>).
+</p>
+<p>
+As seen above, you might sometimes take care about the difference in
+deploy methods between review apps and production. Unlike production
+mentioned above, review apps of this Web site rely on Heroku architecture,
+which run as middleman server with Puma.
+</p>
+<h2>
+Localization
+</h2>
+<p>
+While
+<a href="/blog/2016/07/10/bundler-1-13-and-redesigned-bundler-io.html">internationalization system was introduced in 2016</a>,
+multilingualization is still ongoing.
+We welcome multilingualize more guides and other documentations.
+To get started, move some files existing in
+<code>/source</code>
+or create a file to
+<code>/source/localizable</code>
+to multiligualize
+files.
+</p>
+<h2>
+Becoming a maintainer of this Web site (namely
+<code>rubygems/bundler-site</code>)
+</h2>
+<p>
+If you want to be an official maintainer, start by helping out.
+</p>
+<p>
+As a first step, we welcome you to create a few of pull requests to improve
+the Web site to
+<a href="https://github.com/rubygems/bundler-site/pulls">the repo</a>.
+Also new feature improvement proposals are welcome.
+</p>
+</div>
+</div>
 
 </div>
 <div class='col-12 col-md-3 mt-4' id='sidebar-wrapper'>
 <div class='sidebar-nav'>
-<h4>Choose version</h4>
-<select class='version-selects form-select mb-3'>
-<option selected value='/v2.3/man/bundle-install.1.html'>
-v2.3
-</option>
-<option value='/v2.2/man/bundle-install.1.html'>
-v2.2
-</option>
-<option value='/v2.1/man/bundle-install.1.html'>
-v2.1
-</option>
-<option value='/v2.0/man/bundle-install.1.html'>
-v2.0
-</option>
-<option value='/v1.17/man/bundle-install.1.html'>
-v1.17
-</option>
-<option value='/v1.16/man/bundle-install.1.html'>
-v1.16
-</option>
-<option value='/v1.15/man/bundle-install.1.html'>
-v1.15
-</option>
-<option value='/v1.14/man/bundle-install.1.html'>
-v1.14
-</option>
-<option value='/v1.13/man/bundle-install.1.html'>
-v1.13
-</option>
-<option value='/v1.12/man/bundle-install.1.html'>
-v1.12
-</option>
-</select>
-<h4>Primary Commands</h4>
+<h4>Guides</h4>
 <ul>
 <li class=''>
-<a href="/v2.3/man/bundle-install.1.html">bundle install</a>
+<a href="/guides/faq.html">Frequently Asked Questions</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-update.1.html">bundle update</a>
+<a href="/guides/bundler_2_upgrade.html">How to Upgrade to Bundler 2</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-cache.1.html">bundle cache</a>
+<a href="/guides/creating_gem.html">How to create a Ruby gem with Bundler</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-exec.1.html">bundle exec</a>
+<a href="/guides/deploying.html">How to deploy bundled applications</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-config.1.html">bundle config</a>
+<a href="/guides/git.html">How to install gems from git repositories</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/bundle_help.html">bundle help</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-</ul>
-<h4>Utilities</h4>
-<ul>
-<li class=''>
-<a href="/v2.3/man/bundle.1.html">bundle</a>
+<a href="/guides/using_bundler_in_applications.html">How to manage application dependencies with Bundler</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-add.1.html">bundle add</a>
+<a href="/guides/groups.html">How to manage groups of gems</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-binstubs.1.html">bundle binstubs</a>
+<a href="/guides/bundler_sharing.html">How to package and share code using a Gemfile</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-check.1.html">bundle check</a>
+<a href="/guides/rubygems_tls_ssl_troubleshooting_guide.html">How to troubleshoot RubyGems and Bundler TLS/SSL Issues</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-clean.1.html">bundle clean</a>
+<a href="/guides/updating_gems.html">How to update gems with Bundler</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/bundle_console.html">bundle console</a>
+<a href="/guides/bundler_in_a_single_file_ruby_script.html">How to use Bundler in a single-file Ruby script</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-doctor.1.html">bundle doctor</a>
+<a href="/guides/bundler_docker_guide.html">How to use Bundler with Docker</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-gem.1.html">bundle gem</a>
+<a href="/guides/rails.html">How to use Bundler with Rails</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-info.1.html">bundle info</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class='active'>
-<a href="/v2.3/man/bundle-init.1.html">bundle init</a>
+<a href="/guides/bundler_setup.html">How to use Bundler with Ruby</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-inject.1.html">bundle inject</a>
+<a href="/guides/sinatra.html">How to use Bundler with Sinatra</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-list.1.html">bundle list</a>
+<a href="/guides/git_bisect.html">How to use git bisect with Bundler</a>
 </li>
 <li class='separator'>
 <hr>
 </li>
 <li class=''>
-<a href="/v2.3/man/bundle-lock.1.html">bundle lock</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-open.1.html">bundle open</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-outdated.1.html">bundle outdated</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-platform.1.html">bundle platform</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/bundle_plugin.html">bundle plugin</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-pristine.1.html">bundle pristine</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-remove.1.html">bundle remove</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-show.1.html">bundle show</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/bundle_version.html">bundle version</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/bundle-viz.1.html">bundle viz</a>
-</li>
-<li class='separator'>
-<hr>
-</li>
-<li class=''>
-<a href="/v2.3/man/gemfile.5.html">gemfile</a>
+<a href="/guides/bundler_plugins.html">How to write a Bundler plugin</a>
 </li>
 <li class='separator'>
 <hr>
@@ -324,13 +242,13 @@ v1.12
 </div>
 </div>
 </div>
-<script src="/commands_layout.min.js"></script>
+<script src="/anchors.min.js"></script>
 
 <div class='bg-light-blue'>
 <div class='container'>
 <div class='contents'>
 <div class='edit-on-github text-center'>
-<a href="https://github.com/rubygems/bundler-site/blob/master/source/man/bundle-init.1.html.erb">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+<a href="https://github.com/rubygems/bundler-site/blob/master/source/localizable/about.en.html.haml">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
 </div>
 </div>
 </div>
