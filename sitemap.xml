@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-23T09:49:49Z</lastmod>
+    <lastmod>2022-07-23T12:44:54Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -844,6 +844,9 @@
     <loc>https://bundler.io/v1.14/bundle_outdated.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v1.14/bundle_outdated.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v1.14/bundle_package.html</loc>
   </url>
   <url>
@@ -992,6 +995,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.15/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.15/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.15/bundle_outdated.html</loc>
@@ -1193,6 +1199,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.16/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_outdated.html</loc>
@@ -1427,6 +1436,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.17/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.17/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.17/bundle_outdated.html</loc>
@@ -1667,6 +1679,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.0/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_outdated.html</loc>
@@ -1916,6 +1931,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.1/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.1/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.1/bundle_outdated.html</loc>
@@ -2176,6 +2194,9 @@
     <loc>https://bundler.io/v2.2/bundle_outdated.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v2.2/bundle_outdated.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v2.2/bundle_platform.html</loc>
   </url>
   <url>
@@ -2420,6 +2441,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_open.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.3/bundle_outdated.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_outdated.html</loc>
