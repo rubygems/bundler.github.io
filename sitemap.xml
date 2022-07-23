@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-23T12:44:54Z</lastmod>
+    <lastmod>2022-07-23T13:47:20Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -544,6 +544,9 @@
     <loc>https://bundler.io/v1.12/bundle_install.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v1.12/bundle_install.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v1.12/bundle_lock.html</loc>
   </url>
   <url>
@@ -691,6 +694,9 @@
     <loc>https://bundler.io/v1.13/bundle_install.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v1.13/bundle_install.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v1.13/bundle_lock.html</loc>
   </url>
   <url>
@@ -830,6 +836,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.14/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.14/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.14/bundle_install.html</loc>
@@ -986,6 +995,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.15/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.15/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.15/bundle_install.html</loc>
@@ -1187,6 +1199,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.16/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_install.html</loc>
@@ -1424,6 +1439,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.17/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.17/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.17/bundle_install.html</loc>
@@ -1667,6 +1685,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.0/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_install.html</loc>
@@ -1919,6 +1940,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.1/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.1/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.1/bundle_install.html</loc>
@@ -2182,6 +2206,9 @@
     <loc>https://bundler.io/v2.2/bundle_install.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v2.2/bundle_install.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v2.2/bundle_list.html</loc>
   </url>
   <url>
@@ -2429,6 +2456,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_inject.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.3/bundle_install.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_install.html</loc>
