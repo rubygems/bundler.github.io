@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-23T06:44:05Z</lastmod>
+    <lastmod>2022-07-23T09:49:49Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1009,6 +1009,9 @@
     <loc>https://bundler.io/v1.15/bundle_show.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v1.15/bundle_show.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v1.15/bundle_update.html</loc>
   </url>
   <url>
@@ -1202,6 +1205,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_pristine.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v1.16/bundle_show.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v1.16/bundle_show.html</loc>
@@ -1441,6 +1447,9 @@
     <loc>https://bundler.io/v1.17/bundle_show.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v1.17/bundle_show.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v1.17/bundle_update.html</loc>
   </url>
   <url>
@@ -1673,6 +1682,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_remove.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.0/bundle_show.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.0/bundle_show.html</loc>
@@ -1927,6 +1939,9 @@
     <loc>https://bundler.io/v2.1/bundle_show.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v2.1/bundle_show.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v2.1/bundle_update.html</loc>
   </url>
   <url>
@@ -2176,6 +2191,9 @@
     <loc>https://bundler.io/v2.2/bundle_show.html</loc>
   </url>
   <url>
+    <loc>https://bundler.io/v2.2/bundle_show.html</loc>
+  </url>
+  <url>
     <loc>https://bundler.io/v2.2/bundle_update.html</loc>
   </url>
   <url>
@@ -2417,6 +2435,9 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_remove.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/v2.3/bundle_show.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.3/bundle_show.html</loc>
