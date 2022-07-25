@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-25T00:07:48Z</lastmod>
+    <lastmod>2022-07-25T06:07:33Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1756,9 +1756,6 @@
     <loc>https://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.0/guides/bundler_2_upgrade.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.0/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
@@ -2014,9 +2011,6 @@
     <loc>https://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/v2.1/guides/bundler_2_upgrade.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/v2.1/guides/bundler_docker_guide.html</loc>
   </url>
   <url>
@@ -2267,9 +2261,6 @@
   </url>
   <url>
     <loc>https://bundler.io/v2.2/gemfile_ruby.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/v2.2/guides/bundler_2_upgrade.html</loc>
