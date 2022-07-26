@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-26T08:17:27Z</lastmod>
+    <lastmod>2022-07-26T08:34:44Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -305,6 +305,9 @@
   </url>
   <url>
     <loc>https://bundler.io/guides/gemfile_ruby.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/guides/getting_started.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/guides/git.html</loc>
