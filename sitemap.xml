@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bundler.io</loc>
-    <lastmod>2022-07-27T03:13:30Z</lastmod>
+    <lastmod>2022-07-27T06:43:04Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -199,13 +199,7 @@
     <loc>https://bundler.io/doc/contributing/community.html</loc>
   </url>
   <url>
-    <loc>https://bundler.io/doc/contributing/getting_help.html</loc>
-  </url>
-  <url>
     <loc>https://bundler.io/doc/contributing/how_you_can_help.html</loc>
-  </url>
-  <url>
-    <loc>https://bundler.io/doc/contributing/issues.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/doc/contributing/readme.html</loc>
@@ -230,6 +224,9 @@
   </url>
   <url>
     <loc>https://bundler.io/doc/documentation/writing.html</loc>
+  </url>
+  <url>
+    <loc>https://bundler.io/doc/playbooks/merging_a_pr.html</loc>
   </url>
   <url>
     <loc>https://bundler.io/doc/playbooks/releasing.html</loc>

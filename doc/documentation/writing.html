@@ -57,6 +57,8 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='col-12 col-md-9 contents guide' id='page-content-wrapper'>
 <h1 id="writing-docs-for-man-pages">Writing docs for man pages</h1>
 
+<p><em>Any commands or file paths in this document assume that you are inside <a href="https://github.com/rubygems/rubygems/tree/master/bundler">the bundler/ directory of the rubygems/rubygems repository</a>.</em></p>
+
 <p>A primary source of help for Bundler users are the man pages: the output printed when you run <code>bundle help</code> (or <code>bundler help</code>). These pages can be a little tricky to format and preview, but are pretty straightforward once you get the hang of it.</p>
 
 <p><em>Note: <code>bundler</code> and <code>bundle</code> may be used interchangeably in the CLI. This guide uses <code>bundle</code> because it’s cuter.</em></p>
@@ -74,9 +76,9 @@ Bundler: The best way to manage a Ruby application's gems
 
 <h2 id="creating-a-new-man-page">Creating a new man page</h2>
 
-<p>To create a new man page, simply create a new <code>.ronn</code> file in the <code>man/</code> directory.</p>
+<p>To create a new man page, simply create a new <code>.ronn</code> file in the <code>lib/bundler/man/</code> directory.</p>
 
-<p>For example: to create a man page for the command <code>bundle cookies</code> (not a real command, sadly), I would create a file <code>man/bundle-cookies.ronn</code> and add my documentation there.</p>
+<p>For example: to create a man page for the command <code>bundle cookies</code> (not a real command, sadly), I would create a file <code>lib/bundler/man/bundle-cookies.1.ronn</code> and add my documentation there.</p>
 
 <h2 id="formatting">Formatting</h2>
 
@@ -94,7 +96,7 @@ Bundler: The best way to manage a Ruby application's gems
 
 <p><code>&#x000A;$ rake spec:deps&#x000A;$ rake man:build&#x000A;$ man man/bundle-cookies.1</code></p>
 
-<p>If you make more changes to <code>bundle-cookies.ronn</code>, you’ll need to run the <code>rake man:build</code> again before previewing.</p>
+<p>If you make more changes to <code>bundle-cookies.1.ronn</code>, you’ll need to run the <code>rake man:build</code> again before previewing.</p>
 
 <h2 id="testing">Testing</h2>
 
@@ -104,9 +106,9 @@ Bundler: The best way to manage a Ruby application's gems
 
 <h1 id="writing-docs-for-the-bundler-documentation-sitehttpsbundlerio">Writing docs for <a href="https://bundler.io">the Bundler documentation site</a></h1>
 
-<p>If you’d like to submit a pull request for any of the primary commands or utilities on <a href="https://bundler.io">the Bundler documentation site</a>, please follow the instructions above for writing documentation for man pages from the <code>rubygems/bundler</code> repository. They are the same in each case.</p>
+<p>If you’d like to submit a pull request for any of the primary commands or utilities on <a href="https://bundler.io">the Bundler documentation site</a>, please follow the instructions above for writing documentation for man pages from the <code>rubygems/rubygems</code> repository. They are the same in each case.</p>
 
-<p>Note: Editing <code>.ronn</code> files from the <code>rubygems/bundler</code> repository for the primary commands and utilities documentation is all you need 🎉. There is no need to manually change anything in the <code>rubygems/bundler-site</code> repository, because the man pages and the docs for primary commands and utilities on <a href="https://bundler.io">the Bundler documentation site</a> are one in the same. They are generated automatically from the <code>rubygems/bundler</code> repository’s <code>.ronn</code> files from the <code>rake man/build</code> command. In other words, after updating <code>.ronn</code> file and running <code>rake man/build</code> in <code>bundler</code>, <code>.ronn</code> files map to the auto-generated files in the <code>source/man</code> directory of <code>bundler-site</code>.</p>
+<p>Note: Editing <code>.ronn</code> files from the <code>rubygems/rubygems</code> repository for the primary commands and utilities documentation is all you need 🎉. There is no need to manually change anything in the <code>rubygems/bundler-site</code> repository, because the man pages and the docs for primary commands and utilities on <a href="https://bundler.io">the Bundler documentation site</a> are one in the same. They are generated automatically from the <code>rubygems/rubygems</code> repository’s <code>.ronn</code> files from the <code>rake man/build</code> command.</p>
 
 <p>Additionally, if you’d like to add a guide or tutorial: in the <code>rubygems/bundler-site</code> repository, go to <code>/bundler-site/source/current_version_of_bundler/guides</code> and add <a href="https://guides.github.com/features/mastering-markdown/">a new Markdown file</a> (with an extension ending in <code>.md</code>). Be sure to correctly format the title of your new guide, like so:
 <code>&#x000A;---&#x000A;title: RubyGems.org SSL/TLS Troubleshooting Guide&#x000A;---</code></p>

@@ -55,22 +55,52 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='container'>
 <div class='row flex-column flex-md-row-reverse'>
 <div class='col-12 col-md-9 contents guide' id='page-content-wrapper'>
-<h1 id="getting-help">Getting help</h1>
+<h1 id="merging-a-pr">Merging a PR</h1>
 
-<p>If you have any questions after reading the documentation for contributing, please feel free to contact either <a href="https://github.com/indirect">@indirect</a>, <a href="https://github.com/segiddins">@segiddins</a>, or <a href="https://github.com/RochesterinNYC">@RochesterinNYC</a>. They are all happy to provide help working through your first bug fix or thinking through the problem you’re trying to resolve.</p>
+<p>Bundler requires all CI status checks to pass before a PR can me merged. So make
+sure that’s the case before merging.</p>
 
-<p>The best ways to get in touch are:</p>
+<p>Also, bundler manages the changelog automatically using information from merged
+PRs. So, if a PR has user visible changes that should be included in a future
+release, make sure the following information is accurate:</p>
 
 <ul>
-  <li><a href="https://bundler.slack.com">Bundler Slack</a>.
-    <ul>
-      <li>Not a member of the Slack? Join the Bundler team slack <a href="https://slack.bundler.io/">here</a>!</li>
-    </ul>
+  <li>
+    <p>The PR has a good descriptive title. That will be the wording for the
+corresponding changelog entry.</p>
   </li>
-  <li><a href="https://groups.google.com/group/ruby-bundler">Bundler mailing list</a></li>
+  <li>
+    <p>The PR has an accurate label. If a PR is to be included in the changelog since
+it has user visible changes, the label must be one of the following:</p>
+
+    <ul>
+      <li>“bundler: security fix”</li>
+      <li>“bundler: breaking change”</li>
+      <li>“bundler: major enhancement”</li>
+      <li>“bundler: deprecation”</li>
+      <li>“bundler: feature”</li>
+      <li>“bundler: performance”</li>
+      <li>“bundler: documentation”</li>
+      <li>“bundler: minor enhancement”</li>
+      <li>“bundler: bug fix”</li>
+    </ul>
+
+    <p>This label will indicate the section in the changelog that the PR will take,
+and it will also be automatically used by our release tasks for backporting.
+The labels that should be backported only to patch level releases, and to
+either patch level or minor releases can be configured in the <code>.changelog.yml</code>
+file.</p>
+
+    <p>If for some reason you need a PR to be backported to a stable branch, but it
+doesn’t have any user visible changes, apply the “bundler: backport” label to
+it so that our release scripts know about that.</p>
+  </li>
 </ul>
 
-<p>You may also find our guide on <a href="/doc/contributing/issues.html">filing issues</a> to be helpful as well!</p>
+<p>Finally, don’t forget to review the changes in detail. Make sure you try them
+locally if they are not trivial and make sure you request changes and ask as
+many questions as needed until you are convinced that including the changes into
+bundler is a strict improvement and will not make things regress in any way.</p>
 
 </div>
 <div class='col-12 col-md-3 mt-4' id='sidebar-wrapper'>
@@ -197,7 +227,7 @@ Bundler: The best way to manage a Ruby application's gems
 <div class='container'>
 <div class='contents'>
 <div class='edit-on-github text-center'>
-<a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/contributing/getting_help.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
+<a href="https://github.com/rubygems/rubygems/blob/master/bundler/doc/playbooks/merging_a_pr.html.md">Edit this document on GitHub</a> if you caught an error or noticed something was missing.
 </div>
 </div>
 </div>
