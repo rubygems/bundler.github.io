@@ -143,6 +143,8 @@ behavior. If these options must be remembered, it's better to set them using
 <dd><p> In deployment mode, Bundler will 'roll-out' the bundle for
  <code>production</code> use. Please check carefully if you want to have this option
  enabled in <code>development</code> or <code>test</code> environments.</p></dd>
+<dt class="flush"><code>only</code></dt>
+<dd><p> A space-separated list of groups to install only gems of the specified groups.</p></dd>
 <dt class="flush"><code>path</code></dt>
 <dd><p> The location to install the specified gems to. This defaults to Rubygems'
  setting. Bundler shares this location with Rubygems, <code>gem install ...</code> will
@@ -300,6 +302,9 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
  Whether Bundler should cache all gems globally, rather than locally to the
  installing Ruby installation.</li>
 <li>
+<code>ignore_funding_requests</code> (<code>BUNDLE_IGNORE_FUNDING_REQUESTS</code>):
+ When set, no funding requests will be printed.</li>
+<li>
 <code>ignore_messages</code> (<code>BUNDLE_IGNORE_MESSAGES</code>):
  When set, no post install messages will be printed. To silence a single gem,
  use dot notation like <code>ignore_messages.httparty true</code>.</li>
@@ -316,6 +321,9 @@ learn more about their operation in <a href="bundle-install.1.html">bundle insta
 <li>
 <code>no_prune</code> (<code>BUNDLE_NO_PRUNE</code>):
  Whether Bundler should leave outdated gems unpruned when caching.</li>
+<li>
+<code>only</code> (<code>BUNDLE_ONLY</code>):
+ A space-separated list of groups to install only gems of the specified groups.</li>
 <li>
 <code>path</code> (<code>BUNDLE_PATH</code>):
  The location on disk where all gems in your bundle will be located regardless
@@ -445,9 +453,9 @@ mirror to fetch gems.</p>
 
 <pre><code>bundle config set --global mirror.SOURCE_URL MIRROR_URL&#x000A;</code></pre>
 
-<p>For example, to use a mirror of rubygems.org hosted at rubygems-mirror.org:</p>
+<p>For example, to use a mirror of https://rubygems.org hosted at https://example.org:</p>
 
-<pre><code>bundle config set --global mirror.http://rubygems.org http://rubygems-mirror.org&#x000A;</code></pre>
+<pre><code>bundle config set --global mirror.https://rubygems.org https://example.org&#x000A;</code></pre>
 
 <p>Each mirror also provides a fallback timeout setting. If the mirror does not
 respond within the fallback timeout, Bundler will try to use the original

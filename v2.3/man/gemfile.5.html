@@ -81,23 +81,28 @@ directory as the <code>Rakefile</code>.</p>
 <p>A <code>Gemfile</code> is evaluated as Ruby code, in a context which makes available
 a number of methods used to describe the gem requirements.</p>
 
-<h2 id="GLOBAL-SOURCES">Global Sources</h2>
+<h2 id="GLOBAL-SOURCE">Global Source</h2>
 
-<p>At the top of the <code>Gemfile</code>, add a line for the <code>Rubygems</code> source that contains
-the gems listed in the <code>Gemfile</code>.</p>
+<p>At the top of the <code>Gemfile</code>, add a single line for the <code>RubyGems</code> source that
+contains the gems listed in the <code>Gemfile</code>.</p>
 
 <pre><code>source "https://rubygems.org"&#x000A;</code></pre>
 
-<p>It is possible, but not recommended as of Bundler 1.7, to add multiple global
-<code>source</code> lines. Each of these <code>source</code>s <code>MUST</code> be a valid Rubygems repository.</p>
+<p>You can add only one global source. In Bundler 1.13, adding multiple global
+sources was deprecated. The <code>source</code> <code>MUST</code> be a valid RubyGems repository.</p>
 
-<p>Sources are checked for gems following the heuristics described in
-<a href="#SOURCE-PRIORITY" title="SOURCE PRIORITY" data-bare-link="true">SOURCE PRIORITY</a>. If a gem is found in more than one global source, Bundler
+<p>To use more than one source of RubyGems, you should use <a href="#BLOCK-FORM-OF-SOURCE-GIT-PATH-GROUP-and-PLATFORMS" data-bare-link="true"><code>source</code> block
+</a>.</p>
+
+<p>A source is checked for gems following the heuristics described in
+<a href="#SOURCE-PRIORITY" title="SOURCE PRIORITY" data-bare-link="true">SOURCE PRIORITY</a>.</p>
+
+<p><strong>Note about a behavior of the feature deprecated in Bundler 1.13</strong>:
+If a gem is found in more than one global source, Bundler
 will print a warning after installing the gem indicating which source was used,
 and listing the other sources where the gem is available. A specific source can
 be selected for gems that need to use a non-standard repository, suppressing
-this warning, by using the <a href="#SOURCE" data-bare-link="true"><code>:source</code> option</a> or a
-<a href="#BLOCK-FORM-OF-SOURCE-GIT-PATH-GROUP-and-PLATFORMS" data-bare-link="true"><code>source</code> block</a>.</p>
+this warning, by using the <a href="#SOURCE" data-bare-link="true"><code>:source</code> option</a> or <code>source</code> block.</p>
 
 <h3 id="CREDENTIALS">Credentials</h3>
 
@@ -304,22 +309,22 @@ files to resolve under that ruby.</li>
 
 <h3 id="SOURCE">Source</h3>
 
-<p>You can select an alternate Rubygems repository for a gem using the ':source'
+<p>You can select an alternate RubyGems repository for a gem using the ':source'
 option.</p>
 
 <pre><code>gem "some_internal_gem", source: "https://gems.example.com"&#x000A;</code></pre>
 
-<p>This forces the gem to be loaded from this source and ignores any global sources
+<p>This forces the gem to be loaded from this source and ignores the global source
 declared at the top level of the file. If the gem does not exist in this source,
 it will not be installed.</p>
 
 <p>Bundler will search for child dependencies of this gem by first looking in the
 source selected for the parent, but if they are not found there, it will fall
-back on global sources using the ordering described in <a href="#SOURCE-PRIORITY" title="SOURCE PRIORITY" data-bare-link="true">SOURCE PRIORITY</a>.</p>
+back on the global source.</p>
 
-<p>Selecting a specific source repository this way also suppresses the ambiguous
-gem warning described above in
-<a href="#GLOBAL-SOURCES" data-bare-link="true">GLOBAL SOURCES (#source)</a>.</p>
+<p><strong>Note about a behavior of the feature deprecated in Bundler 1.13</strong>:
+Selecting a specific source repository this way also suppresses the ambiguous
+gem warning described above in <a href="#GLOBAL-SOURCE" data-bare-link="true">GLOBAL SOURCE</a>.</p>
 
 <p>Using the <code>:source</code> option for an individual gem will also make that source
 available as a possible global source for any other gems which do not specify
@@ -568,8 +573,10 @@ bundler uses the following priority order:</p>
  ActiveSupport gem from the Rails git repository over ones from
  <code>rubygems.org</code>
 </li>
-<li>The sources specified via global <code>source</code> lines, searching each source in
- your <code>Gemfile</code> from last added to first added.</li>
+<li>If neither of the above conditions are met, the global source will be used.
+ If multiple global sources are specified, they will be prioritized from
+ last to first, but this is deprecated since Bundler 1.13, so Bundler prints
+ a warning and will abort with an error in the future.</li>
 </ol>
 
 

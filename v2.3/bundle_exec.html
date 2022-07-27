@@ -213,7 +213,7 @@ their plugins.</p>
 <p>You can find a list of all the gems containing gem plugins
 by running</p>
 
-<pre><code>ruby -rrubygems -e "puts Gem.find_files('rubygems_plugin.rb')"&#x000A;</code></pre>
+<pre><code>ruby -e "puts Gem.find_files('rubygems_plugin.rb')"&#x000A;</code></pre>
 
 <p>At the very least, you should remove all but the newest
 version of each gem plugin, and also remove all gem plugins
